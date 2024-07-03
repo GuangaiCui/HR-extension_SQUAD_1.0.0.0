@@ -1,0 +1,28 @@
+<Package xmlns="http://schemas.microsoft.com/navx/2015/manifest">
+  <App Id="61ae59fa-2241-4239-9ce1-d7300dbd5c69" Name="BC19PTRH" Publisher="SQUAD IT" Brief="" Description="" Version="1.0.0.0" CompatibilityId="0.0.0.0" PrivacyStatement="" EULA="" Help="" HelpBaseUrl="" Url="" Logo="" Platform="19.0.0.0" Application="19.0.0.0" Runtime="8.0" Target="OnPrem" ShowMyCode="False" />
+  <IdRanges>
+    <IdRange MinObjectId="50000" MaxObjectId="31007419" />
+  </IdRanges>
+  <Dependencies>
+    <Dependency Id="63ca2fa4-4f03-4f2b-a480-172fef340d3f" Name="System Application" Publisher="Microsoft" MinVersion="19.1.31886.32186" CompatibilityId="0.0.0.0" />
+    <Dependency Id="437dbf0e-84ff-417a-965d-ed2bb9650972" Name="Base Application" Publisher="Microsoft" MinVersion="19.1.31886.32186" CompatibilityId="0.0.0.0" />
+    <Dependency Id="9d1268e8-b1fa-48b1-8e24-29463465b1b3" Name="SOFTSTORE External Pack for Portugal" Publisher="Softstore SA" MinVersion="19.1.5.0" CompatibilityId="0.0.0.0" />
+    <Dependency Id="1001061e-4378-4fe4-8706-edceddd1588b" Name="SOFTSTORE Fixed Asset Pack for Portugal" Publisher="Softstore SA" MinVersion="19.1.5.0" CompatibilityId="0.0.0.0" />
+    <Dependency Id="2f9675e9-d254-4b60-a615-d43e0a3baa41" Name="SOFTSTORE Language Pack for Portugal" Publisher="Softstore SA" MinVersion="19.1.5.0" CompatibilityId="0.0.0.0" />
+    <Dependency Id="0b0a0933-50d9-4352-8803-7bf91e6c5491" Name="SOFTSTORE Localization Pack for Portugal" Publisher="Softstore SA" MinVersion="19.2.5.0" CompatibilityId="0.0.0.0" />
+  </Dependencies>
+  <InternalsVisibleTo />
+  <ScreenShots />
+  <SupportedLocales>
+    <SupportedLocale Local="pt-PT" />
+    <SupportedLocale Local="en-US" />
+  </SupportedLocales>
+  <Features>
+    <Feature>TRANSLATIONFILE</Feature>
+    <Feature>GENERATECAPTIONS</Feature>
+  </Features>
+  <PreprocessorSymbols />
+  <SuppressWarnings />
+  <ResourceExposurePolicy AllowDebugging="true" AllowDownloadingSource="false" IncludeSourceInSymbolFile="false" />
+  <KeyVaultUrls />
+</Package>
