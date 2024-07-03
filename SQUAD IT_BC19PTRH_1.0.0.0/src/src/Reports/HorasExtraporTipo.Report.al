@@ -1,4 +1,4 @@
-report 31003065 "Horas Extra por Tipo"
+report 53065 "Horas Extra por Tipo"
 {
     // //-------------------------------------------------------
     //               Horas Extra por Tipos

@@ -1,4 +1,4 @@
-page 31003056 "Informação Confidencial"
+page 53056 "Informação Confidencial"
 {
     AutoSplitKey = true;
     Caption = 'Confidential Information';

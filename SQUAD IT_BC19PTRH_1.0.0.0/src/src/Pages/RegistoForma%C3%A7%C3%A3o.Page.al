@@ -1,4 +1,4 @@
-page 31003121 "Registo Formação"
+page 53121 "Registo Formação"
 {
     DelayedInsert = true;
     PageType = List;
@@ -108,7 +108,7 @@ page 31003121 "Registo Formação"
 
                     trigger OnAction()
                     begin
-                        REPORT.RunModal(31003090);
+                        REPORT.RunModal(53090);
                     end;
                 }
                 action("Situação Face à Frequência")

@@ -1,4 +1,4 @@
-table 31003113 "Integração Contabilistica"
+table 53113 "Integração Contabilistica"
 {
     DrillDownPageID = "Lista Hist. Movs. Empregado";
     LookupPageID = "Lista Hist. Movs. Empregado";

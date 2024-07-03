@@ -1,4 +1,4 @@
-report 31003060 "Ausência por Empregado"
+report 53060 "Ausência por Empregado"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = HumanResourcesAppArea;

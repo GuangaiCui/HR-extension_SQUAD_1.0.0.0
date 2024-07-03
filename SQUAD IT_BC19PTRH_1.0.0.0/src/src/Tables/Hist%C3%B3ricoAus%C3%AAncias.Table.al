@@ -1,4 +1,4 @@
-table 31003105 "Histórico Ausências"
+table 53105 "Histórico Ausências"
 {
     Caption = 'Employee Absence';
     DataCaptionFields = "Employee No.";
@@ -46,8 +46,8 @@ table 31003105 "Histórico Ausências"
         }
         field(11; Comment; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (HAus),
-                                                                      "Table Line No." = FIELD ("Entry No.")));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(HAus),
+                                                                      "Table Line No." = FIELD("Entry No.")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

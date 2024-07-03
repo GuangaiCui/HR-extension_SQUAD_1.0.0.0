@@ -1,4 +1,4 @@
-page 31003126 "Lista Tipo Empregado"
+page 53126 "Lista Tipo Empregado"
 {
     PageType = List;
     SourceTable = "Tipo Empregado";

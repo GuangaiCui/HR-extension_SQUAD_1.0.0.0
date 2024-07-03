@@ -1,4 +1,4 @@
-page 31003106 "Hist. Cab. Movs. Empregado"
+page 53106 "Hist. Cab. Movs. Empregado"
 {
     DeleteAllowed = false;
     InsertAllowed = false;

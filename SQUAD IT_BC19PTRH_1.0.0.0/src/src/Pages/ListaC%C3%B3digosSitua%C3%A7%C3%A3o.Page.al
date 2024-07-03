@@ -1,4 +1,4 @@
-page 31003116 "Lista Códigos Situação"
+page 53116 "Lista Códigos Situação"
 {
     PageType = List;
     SourceTable = "Códigos Situação";

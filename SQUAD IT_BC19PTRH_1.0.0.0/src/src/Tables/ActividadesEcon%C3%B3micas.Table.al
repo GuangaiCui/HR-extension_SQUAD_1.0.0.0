@@ -1,4 +1,4 @@
-table 31003095 "Actividades Económicas"
+table 53095 "Actividades Económicas"
 {
     LookupPageID = "Lista Actividades Económicas";
 

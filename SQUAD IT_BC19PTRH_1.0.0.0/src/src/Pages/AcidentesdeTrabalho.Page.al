@@ -1,4 +1,4 @@
-page 31003151 "Acidentes de Trabalho"
+page 53151 "Acidentes de Trabalho"
 {
     PageType = List;
     SourceTable = "Acidentes de Trabalho";

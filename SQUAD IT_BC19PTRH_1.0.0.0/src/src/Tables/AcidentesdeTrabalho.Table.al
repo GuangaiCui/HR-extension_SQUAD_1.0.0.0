@@ -1,4 +1,4 @@
-table 31003083 "Acidentes de Trabalho"
+table 53083 "Acidentes de Trabalho"
 {
 
     fields

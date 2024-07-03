@@ -1,4 +1,4 @@
-page 31003040 "Qualificações"
+page 53040 "Qualificações"
 {
     Caption = 'Qualifications';
     PageType = List;

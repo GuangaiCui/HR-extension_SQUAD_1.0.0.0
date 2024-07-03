@@ -1,4 +1,4 @@
-page 31003037 "Imagem Empregado"
+page 53037 "Imagem Empregado"
 {
     Caption = 'Employee Picture';
     DeleteAllowed = false;

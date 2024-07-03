@@ -1,4 +1,4 @@
-table 31003118 "Pessoal dos Serviços Ext"
+table 53118 "Pessoal dos Serviços Ext"
 {
 
     fields
@@ -27,7 +27,7 @@ table 31003118 "Pessoal dos Serviços Ext"
         field(8; "Tipo de Empresa"; Code[20])
         {
             Caption = 'Tipo de Empresa';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (TEmp));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(TEmp));
 
             trigger OnValidate()
             begin

@@ -1,4 +1,4 @@
-page 31003131 "Importação Templates"
+page 53131 "Importação Templates"
 {
     // //C+  -LCF- Fiz uma reestruturação no form de modo a que se pode-se escolher os ficheiros
     // //a importar e deixar de se usar o HARDcode para ir buscar os nomes do ficheiros

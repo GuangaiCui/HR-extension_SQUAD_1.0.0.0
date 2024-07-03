@@ -1,4 +1,4 @@
-table 31003088 "Códigos Situação"
+table 53088 "Códigos Situação"
 {
     LookupPageID = "Lista Códigos Situação";
 

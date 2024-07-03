@@ -1,4 +1,4 @@
-page 31003039 "Lista Endereços Alternativos"
+page 53039 "Lista Endereços Alternativos"
 {
     Caption = 'Alternative Address List';
     CardPageID = "Ficha Endç. Alternativo";

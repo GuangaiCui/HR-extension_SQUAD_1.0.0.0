@@ -1,4 +1,4 @@
-xmlport 31003044 "Export Ficheiro Texto"
+xmlport 53044 "Export Ficheiro Texto"
 {
     Direction = Export;
     FieldDelimiter = '<None>';

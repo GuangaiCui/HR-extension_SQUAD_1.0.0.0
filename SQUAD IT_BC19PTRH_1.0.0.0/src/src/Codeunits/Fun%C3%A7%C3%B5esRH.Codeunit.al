@@ -1,4 +1,4 @@
-codeunit 31003037 "Funções RH"
+codeunit 53037 "Funções RH"
 {
     // IT001 - CPA: não passar o campo Nav User ID - APD - 25-11-2014
     //       - A pedido do cliente para que não seja transportado da ficha do Empregado para a Ficha do Professor o campo "NAV User ID"

@@ -1,4 +1,4 @@
-xmlport 31003036 "RU - Anexo A - QP"
+xmlport 53036 "RU - Anexo A - QP"
 {
     // IT001 - Correção Processo exportação - 30-04-2018
     //           -Estava a exportar registo de trabalhador mesmo quando não existem.

@@ -1,4 +1,4 @@
-table 31003123 "Cab. Acções Médicas"
+table 53123 "Cab. Acções Médicas"
 {
     LookupPageID = "Lista Acções Médicas";
 
@@ -17,15 +17,15 @@ table 31003123 "Cab. Acções Médicas"
         field(3; "Code"; Code[20])
         {
             Caption = 'Código';
-            TableRelation = IF ("Exam Type" = CONST ("Exame Admissão")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (ExAd))
+            TableRelation = IF ("Exam Type" = CONST("Exame Admissão")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(ExAd))
             ELSE
-            IF ("Exam Type" = CONST ("Exame Periódico")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (ExP))
+            IF ("Exam Type" = CONST("Exame Periódico")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(ExP))
             ELSE
-            IF ("Exam Type" = CONST ("Exame Ocasional")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (ExO))
+            IF ("Exam Type" = CONST("Exame Ocasional")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(ExO))
             ELSE
-            IF ("Exam Type" = CONST ("Exame Complementar")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (ExC))
+            IF ("Exam Type" = CONST("Exame Complementar")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(ExC))
             ELSE
-            IF ("Exam Type" = CONST ("Acções Imunização")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (Vac));
+            IF ("Exam Type" = CONST("Acções Imunização")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(Vac));
 
             trigger OnValidate()
             begin

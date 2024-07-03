@@ -1,4 +1,4 @@
-page 31003096 "Registo Abonos-Descontos Extra"
+page 53096 "Registo Abonos-Descontos Extra"
 {
     DelayedInsert = true;
     PageType = List;

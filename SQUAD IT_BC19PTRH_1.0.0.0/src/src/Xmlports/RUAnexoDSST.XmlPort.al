@@ -1,4 +1,4 @@
-xmlport 31003039 "RU - Anexo D - SST"
+xmlport 53039 "RU - Anexo D - SST"
 {
     Encoding = UTF8;
     Namespaces = ru = 'http://www.gep.mtss.gov.pt/sguri/ru', t = 'http://www.gep.mtss.gov.pt/sguri/tipos_comuns',

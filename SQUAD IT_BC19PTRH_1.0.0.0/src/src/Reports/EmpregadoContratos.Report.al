@@ -1,4 +1,4 @@
-report 31003099 "Empregado - Contratos"
+report 53099 "Empregado - Contratos"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = HumanResourcesAppArea;

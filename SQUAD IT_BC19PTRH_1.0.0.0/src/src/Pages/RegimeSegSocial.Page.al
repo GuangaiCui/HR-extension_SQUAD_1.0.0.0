@@ -1,4 +1,4 @@
-page 31003084 "Regime Seg. Social"
+page 53084 "Regime Seg. Social"
 {
     PageType = List;
     SourceTable = "Regime Seg. Social";

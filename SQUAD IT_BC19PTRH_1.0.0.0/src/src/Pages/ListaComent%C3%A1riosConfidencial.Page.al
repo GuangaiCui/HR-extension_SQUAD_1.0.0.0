@@ -1,4 +1,4 @@
-page 31003070 "Lista Comentários Confidencial"
+page 53070 "Lista Comentários Confidencial"
 {
     Caption = 'Comment List';
     Editable = false;

@@ -1,4 +1,4 @@
-report 31003094 "Declarações RH"
+report 53094 "Declarações RH"
 {
     //ProcessingOnly = true;
     //UsageCategory = Tasks;

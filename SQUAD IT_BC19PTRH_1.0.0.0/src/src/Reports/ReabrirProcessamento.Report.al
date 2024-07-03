@@ -1,4 +1,4 @@
-report 31003104 "Reabrir Processamento"
+report 53104 "Reabrir Processamento"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './src/Reports/Layouts/ReabrirProcessamento.rdlc';

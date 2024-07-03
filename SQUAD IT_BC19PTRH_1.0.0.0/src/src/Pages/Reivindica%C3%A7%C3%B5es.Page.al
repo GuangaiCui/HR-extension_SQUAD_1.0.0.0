@@ -1,4 +1,4 @@
-page 31003161 "Reivindicações"
+page 53161 "Reivindicações"
 {
     PageType = CardPart;
     SourceTable = Greves;

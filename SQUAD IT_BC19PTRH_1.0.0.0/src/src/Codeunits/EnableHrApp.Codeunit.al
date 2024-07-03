@@ -1,4 +1,4 @@
-codeunit 31003042 "Enable HR Extension"
+codeunit 53042 "Enable HR Extension"
 {
     // Extend and modify Essential experience tier with "Example App Area"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Application Area Mgmt.", 'OnGetEssentialExperienceAppAreas', '', false, false)]

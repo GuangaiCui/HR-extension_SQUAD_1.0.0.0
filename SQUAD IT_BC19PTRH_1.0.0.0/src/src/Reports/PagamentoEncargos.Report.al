@@ -1,4 +1,4 @@
-report 31003077 "Pagamento Encargos"
+report 53077 "Pagamento Encargos"
 {
     // //---------------------Pagamento de Vencimentos ------------------------
     // //Rotina que pega nos registos do Histórico Movs. de Empregado e os leva

@@ -1,4 +1,4 @@
-table 31003096 "Natureza Jurídica"
+table 53096 "Natureza Jurídica"
 {
     LookupPageID = "Lista Natureza Jurídica";
 

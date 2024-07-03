@@ -1,4 +1,4 @@
-page 31003082 "Lista Horário Empregado"
+page 53082 "Lista Horário Empregado"
 {
     AutoSplitKey = true;
     DataCaptionFields = "No. Empregado";

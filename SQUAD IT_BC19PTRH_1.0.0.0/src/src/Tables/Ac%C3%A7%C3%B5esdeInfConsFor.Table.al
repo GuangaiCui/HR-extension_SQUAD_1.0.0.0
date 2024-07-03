@@ -1,4 +1,4 @@
-table 31003120 "Acções de Inf. Cons. For"
+table 53120 "Acções de Inf. Cons. For"
 {
 
     fields
@@ -26,11 +26,11 @@ table 31003120 "Acções de Inf. Cons. For"
         field(7; "Código"; Code[20])
         {
             Caption = 'Código';
-            TableRelation = IF ("Tipo de Acção" = CONST ("Informação")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (AcInf))
+            TableRelation = IF ("Tipo de Acção" = CONST("Informação")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(AcInf))
             ELSE
-            IF ("Tipo de Acção" = CONST (Consulta)) "RU - Tabelas"."Código" WHERE (Tipo = CONST (AcCon))
+            IF ("Tipo de Acção" = CONST(Consulta)) "RU - Tabelas"."Código" WHERE(Tipo = CONST(AcCon))
             ELSE
-            IF ("Tipo de Acção" = CONST ("Formação")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (AcFor));
+            IF ("Tipo de Acção" = CONST("Formação")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(AcFor));
 
             trigger OnValidate()
             begin

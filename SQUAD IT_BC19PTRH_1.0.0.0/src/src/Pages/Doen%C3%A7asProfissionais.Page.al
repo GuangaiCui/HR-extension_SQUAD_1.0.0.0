@@ -1,4 +1,4 @@
-page 31003152 "Doenças Profissionais"
+page 53152 "Doenças Profissionais"
 {
     PageType = List;
     SourceTable = "Doenças Profissionais";

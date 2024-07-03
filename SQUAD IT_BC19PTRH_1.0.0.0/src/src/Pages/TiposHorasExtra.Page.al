@@ -1,4 +1,4 @@
-page 31003089 "Tipos Horas Extra"
+page 53089 "Tipos Horas Extra"
 {
     PageType = List;
     SourceTable = "Tipos Horas Extra";

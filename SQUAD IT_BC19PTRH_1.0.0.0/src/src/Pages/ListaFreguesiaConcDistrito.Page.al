@@ -1,4 +1,4 @@
-page 31003095 "Lista Freguesia/Conc/Distrito"
+page 53095 "Lista Freguesia/Conc/Distrito"
 {
     PageType = List;
     SourceTable = "Cód. Freguesia/Conc/Distrito";

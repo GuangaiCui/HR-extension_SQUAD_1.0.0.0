@@ -1,4 +1,4 @@
-report 31003053 "Mapa CGA - Fechado"
+report 53053 "Mapa CGA - Fechado"
 {
     // //-------------------------------------------------------
     //               Ficheiro da CGA
@@ -371,9 +371,9 @@ report 31003053 "Mapa CGA - Fechado"
                         //--------Obrigatoriedade dos campos-------------------
                         ConfRH.TestField(ConfRH."Nº Serviço");
                         if DataIni = 0D then
-                            Error(Text31003035);
+                            Error(Text53035);
                         if DataFim = 0D then
-                            Error(Text31003036);
+                            Error(Text53036);
                         "Hist. Linhas Movs. Empregado".TestField("Hist. Linhas Movs. Empregado"."Cód. Situação");
                         ConfRH.TestField(ConfRH."Nome Serviço");
                         //------------------------------------------------------
@@ -825,9 +825,9 @@ report 31003053 "Mapa CGA - Fechado"
         ConfRH.TestField(ConfRH."Nº Serviço");
         ConfRH.TestField(ConfRH."Nome Serviço");
         if DataIni = 0D then
-            Error(Text31003035);
+            Error(Text53035);
         if DataFim = 0D then
-            Error(Text31003036);
+            Error(Text53036);
         //------------------------------------------------------
         //>>>>>>  LINHA TIPO1 - Registo Identificação da RD >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabTempFichTexto.Init;
@@ -907,8 +907,8 @@ report 31003053 "Mapa CGA - Fechado"
         DescEmp: Decimal;
         DescEntPat: Decimal;
         FLAG: Boolean;
-        Text31003035: Label 'The Initial Date field must be populated.';
-        Text31003036: Label 'The End Date field must be populated.';
+        Text53035: Label 'The Initial Date field must be populated.';
+        Text53036: Label 'The End Date field must be populated.';
 
 
     procedure InserirLinha00()

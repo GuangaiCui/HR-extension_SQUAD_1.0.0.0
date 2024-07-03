@@ -1,4 +1,4 @@
-page 31003123 "Lista Actividades Económicas"
+page 53123 "Lista Actividades Económicas"
 {
     PageType = List;
     SourceTable = "Actividades Económicas";

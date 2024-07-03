@@ -1,4 +1,4 @@
-xmlport 31003043 "Tabelas IRS"
+xmlport 53043 "Tabelas IRS"
 {
     Direction = Import;
     FieldDelimiter = '<None>';

@@ -1,4 +1,4 @@
-page 31003063 "Vista Artigos Diversos"
+page 53063 "Vista Artigos Diversos"
 {
     AutoSplitKey = true;
     Caption = 'Misc. Article Information';

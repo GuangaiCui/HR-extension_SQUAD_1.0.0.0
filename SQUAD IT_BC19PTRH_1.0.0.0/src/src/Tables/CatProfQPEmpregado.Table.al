@@ -1,4 +1,4 @@
-table 31003061 "Cat. Prof. QP Empregado"
+table 53061 "Cat. Prof. QP Empregado"
 {
     DrillDownPageID = "Lista Cat. Prof. Emp. QP";
     LookupPageID = "Lista Cat. Prof. Emp. QP";
@@ -39,9 +39,9 @@ table 31003061 "Cat. Prof. QP Empregado"
         }
         field(10; Comment; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (CatProfQP),
-                                                                      "No." = FIELD ("No. Empregado"),
-                                                                      "Table Line No." = FIELD ("No. Linha")));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(CatProfQP),
+                                                                      "No." = FIELD("No. Empregado"),
+                                                                      "Table Line No." = FIELD("No. Linha")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

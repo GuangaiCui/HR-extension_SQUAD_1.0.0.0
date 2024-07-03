@@ -1,4 +1,4 @@
-table 31003079 "Cab. Movs. Empregado"
+table 53079 "Cab. Movs. Empregado"
 {
     DrillDownPageID = "Lista Cab. Movs. Empregado";
     LookupPageID = "Lista Cab. Movs. Empregado";

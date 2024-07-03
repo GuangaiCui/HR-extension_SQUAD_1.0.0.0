@@ -1,4 +1,4 @@
-table 31003069 "Tabela IRS"
+table 53069 "Tabela IRS"
 {
     DrillDownPageID = "Lista Tabela IRS";
     LookupPageID = "Lista Tabela IRS";

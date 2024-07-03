@@ -1,4 +1,4 @@
-table 31003043 "Linha Coment. Recurso Humano"
+table 53043 "Linha Coment. Recurso Humano"
 {
     Caption = 'Human Resource Comment Line';
     DataCaptionFields = "No.";

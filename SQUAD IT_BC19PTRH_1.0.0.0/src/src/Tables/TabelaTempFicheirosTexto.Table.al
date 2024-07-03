@@ -1,4 +1,4 @@
-table 31003112 "Tabela Temp Ficheiros Texto"
+table 53112 "Tabela Temp Ficheiros Texto"
 {
     //  //Tabela usada quando se está a gerar mapasque exportam para txt
 

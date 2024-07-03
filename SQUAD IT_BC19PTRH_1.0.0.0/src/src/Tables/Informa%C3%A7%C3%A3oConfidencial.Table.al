@@ -1,4 +1,4 @@
-table 31003051 "Informação Confidencial"
+table 53051 "Informação Confidencial"
 {
     Caption = 'Confidential Information';
     DataCaptionFields = "Employee No.";
@@ -34,9 +34,9 @@ table 31003051 "Informação Confidencial"
         }
         field(5; Comment; Boolean)
         {
-            CalcFormula = Exist ("Lin. Coment. Confidencial RH" WHERE ("Table Name" = CONST ("Informação Confidencial"),
-                                                                      "No." = FIELD ("Employee No."),
-                                                                      "Table Line No." = FIELD ("Line No.")));
+            CalcFormula = Exist("Lin. Coment. Confidencial RH" WHERE("Table Name" = CONST("Informação Confidencial"),
+                                                                      "No." = FIELD("Employee No."),
+                                                                      "Table Line No." = FIELD("Line No.")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

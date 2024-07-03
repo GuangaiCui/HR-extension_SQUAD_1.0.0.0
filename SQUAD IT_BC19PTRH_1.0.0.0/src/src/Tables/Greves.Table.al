@@ -1,4 +1,4 @@
-table 31003126 Greves
+table 53126 Greves
 {
     DrillDownPageID = "Greve Lista";
     LookupPageID = "Greve Lista";
@@ -17,7 +17,7 @@ table 31003126 Greves
         field(3; "Strike Code"; Code[10])
         {
             Caption = 'Cód. Greve';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (Grv));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(Grv));
 
             trigger OnValidate()
             begin
@@ -41,7 +41,7 @@ table 31003126 Greves
         field(10; Claim; Code[10])
         {
             Caption = 'Reivindicação';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (Rvd));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(Rvd));
 
             trigger OnValidate()
             begin

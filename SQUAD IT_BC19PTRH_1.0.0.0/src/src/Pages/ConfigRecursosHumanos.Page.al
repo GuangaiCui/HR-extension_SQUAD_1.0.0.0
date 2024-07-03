@@ -1,4 +1,4 @@
-page 31003068 "Config. Recursos Humanos"
+page 53068 "Config. Recursos Humanos"
 {
     // 
     //  IT004 - Tagus - 20191121 - novo campo Balance Cash-Flow Code utilizado no pagamento de vencientos

@@ -1,4 +1,4 @@
-codeunit 31003043 "Install HR Extension"
+codeunit 53043 "Install HR Extension"
 {
     Subtype = Install;
 

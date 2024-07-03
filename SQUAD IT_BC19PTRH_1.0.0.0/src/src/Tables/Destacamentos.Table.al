@@ -1,4 +1,4 @@
-table 31003052 Destacamentos
+table 53052 Destacamentos
 {
 
     fields

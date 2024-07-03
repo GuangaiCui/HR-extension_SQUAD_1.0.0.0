@@ -1,4 +1,4 @@
-table 31003038 "Qualificação Empregado"
+table 53038 "Qualificação Empregado"
 {
     Caption = 'Employee Qualification';
     DataCaptionFields = "Employee No.";
@@ -68,9 +68,9 @@ table 31003038 "Qualificação Empregado"
         }
         field(12; Comment; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (Qual),
-                                                                      "No." = FIELD ("Employee No."),
-                                                                      "Table Line No." = FIELD ("Line No.")));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Qual),
+                                                                      "No." = FIELD("Employee No."),
+                                                                      "Table Line No." = FIELD("Line No.")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

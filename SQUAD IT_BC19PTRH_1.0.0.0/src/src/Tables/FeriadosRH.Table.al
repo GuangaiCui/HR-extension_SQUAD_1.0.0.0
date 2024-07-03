@@ -1,4 +1,4 @@
-table 31003085 "Feriados RH"
+table 53085 "Feriados RH"
 {
     Description = 'Lista de Feriados Fixos e Variáveis para RH';
 

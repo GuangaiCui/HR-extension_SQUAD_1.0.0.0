@@ -1,4 +1,4 @@
-table 31003128 "Seguro Saude Empregado"
+table 53128 "Seguro Saude Empregado"
 {
     DataCaptionFields = "No. Empregado", "Nome Empregado";
     DrillDownPageID = "Seg Saude Empregado";

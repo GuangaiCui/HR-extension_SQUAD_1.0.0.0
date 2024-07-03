@@ -1,4 +1,4 @@
-table 31003093 "Formação Empregado"
+table 53093 "Formação Empregado"
 {
     // C+ -LCF-HR.02 BS criei a seguinte chave "Nº Empregado,Data Início,Tipo"
 
@@ -93,7 +93,7 @@ table 31003093 "Formação Empregado"
         {
             Caption = 'Certificate Type';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (Cert));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(Cert));
         }
     }
 

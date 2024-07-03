@@ -1,4 +1,4 @@
-page 31003105 "Periodos Processamento"
+page 53105 "Periodos Processamento"
 {
     Caption = 'Abertura do Processamento';
     PageType = List;

@@ -1,4 +1,4 @@
-page 31003122 "Consultas Médicas Empregado"
+page 53122 "Consultas Médicas Empregado"
 {
     DelayedInsert = true;
     PageType = List;

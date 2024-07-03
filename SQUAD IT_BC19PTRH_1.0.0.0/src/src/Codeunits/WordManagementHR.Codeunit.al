@@ -1,4 +1,4 @@
-codeunit 31003038 "WordManagement HR"
+codeunit 53038 "WordManagement HR"
 {
 
     trigger OnRun()

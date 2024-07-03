@@ -1,4 +1,4 @@
-table 31003053 "Config. Recursos Humanos"
+table 53053 "Config. Recursos Humanos"
 {
     //  IT004 - Tagus - 20191121 - novo campo Balance Cash-Flow Code utilizado no pagamento de vencientos
 

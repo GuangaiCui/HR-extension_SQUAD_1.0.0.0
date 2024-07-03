@@ -1,4 +1,4 @@
-page 31003101 "Lista Rubrica Salarial Emp."
+page 53101 "Lista Rubrica Salarial Emp."
 {
     AutoSplitKey = true;
     DataCaptionFields = "No. Empregado";

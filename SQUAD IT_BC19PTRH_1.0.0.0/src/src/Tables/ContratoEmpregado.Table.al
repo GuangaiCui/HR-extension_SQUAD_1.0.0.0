@@ -1,4 +1,4 @@
-table 31003056 "Contrato Empregado"
+table 53056 "Contrato Empregado"
 {
     DataCaptionFields = "Cód. Empregado";
     DrillDownPageID = "Lista Contrato Empregado";

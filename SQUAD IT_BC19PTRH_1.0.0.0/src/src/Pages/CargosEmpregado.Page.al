@@ -1,4 +1,4 @@
-page 31003115 "Cargos Empregado"
+page 53115 "Cargos Empregado"
 {
     PageType = List;
     SourceTable = "Dispensa Sit - Cargos Empregad";

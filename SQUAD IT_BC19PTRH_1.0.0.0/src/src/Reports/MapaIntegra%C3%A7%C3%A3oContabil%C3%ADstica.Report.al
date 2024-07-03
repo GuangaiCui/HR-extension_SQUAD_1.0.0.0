@@ -1,4 +1,4 @@
-report 31003070 "Mapa Integração Contabilística"
+report 53070 "Mapa Integração Contabilística"
 {
     // //---------------------Integração Contabilistica ------------------------
     //   //Rotina que pega nos registos do Histórico Movs. de Empregado e os leva
@@ -246,7 +246,7 @@ report 31003070 "Mapa Integração Contabilística"
                             //Se o Empregado não tem distribuição de custos vai buscar o que estiver na ficha
                             //************************************************************************************************
                             EmpDefaultDim.Reset;
-                            EmpDefaultDim.SetRange(EmpDefaultDim."Table ID", 31003035);
+                            EmpDefaultDim.SetRange(EmpDefaultDim."Table ID", 53035);
                             EmpDefaultDim.SetRange(EmpDefaultDim."No.", DimDistribuir."No. Empregado");
                             EmpDefaultDim.SetFilter(EmpDefaultDim."Dimension Value Code", '<>%1', '');
                             if EmpDefaultDim.Find('-') then begin
@@ -279,7 +279,7 @@ report 31003070 "Mapa Integração Contabilística"
 
                                 if GenLedgerSetup."Global Dimension 1 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 31003035);
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Global Dimension 1 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
@@ -289,7 +289,7 @@ report 31003070 "Mapa Integração Contabilística"
 
                                 if GenLedgerSetup."Global Dimension 2 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 31003035);
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Global Dimension 2 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
@@ -299,7 +299,7 @@ report 31003070 "Mapa Integração Contabilística"
 
                                 if GenLedgerSetup."Shortcut Dimension 3 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 31003035);
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 3 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
@@ -309,7 +309,7 @@ report 31003070 "Mapa Integração Contabilística"
 
                                 if GenLedgerSetup."Shortcut Dimension 4 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 31003035);
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 4 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
@@ -319,7 +319,7 @@ report 31003070 "Mapa Integração Contabilística"
 
                                 if GenLedgerSetup."Shortcut Dimension 5 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 31003035);
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 5 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
@@ -329,7 +329,7 @@ report 31003070 "Mapa Integração Contabilística"
 
                                 if GenLedgerSetup."Shortcut Dimension 6 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 31003035);
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 6 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
@@ -339,7 +339,7 @@ report 31003070 "Mapa Integração Contabilística"
 
                                 if GenLedgerSetup."Shortcut Dimension 7 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 31003035);
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 7 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
@@ -349,7 +349,7 @@ report 31003070 "Mapa Integração Contabilística"
 
                                 if GenLedgerSetup."Shortcut Dimension 8 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 31003035);
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 8 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');

@@ -1,4 +1,4 @@
-page 31003047 "Registo Ausência"
+page 53047 "Registo Ausência"
 {
     //  //CPA - Novo campo Novo Valor Ausencia
 

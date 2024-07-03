@@ -1,4 +1,4 @@
-page 31003133 "Ficha Acção Formação"
+page 53133 "Ficha Acção Formação"
 {
     PageType = Card;
     SourceTable = "Acções Formação";

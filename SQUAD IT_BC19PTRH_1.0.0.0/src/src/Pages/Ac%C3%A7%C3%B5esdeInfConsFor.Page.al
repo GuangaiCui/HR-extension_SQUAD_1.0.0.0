@@ -1,4 +1,4 @@
-page 31003143 "Acções de Inf. Cons. For"
+page 53143 "Acções de Inf. Cons. For"
 {
     PageType = List;
     SourceTable = "Acções de Inf. Cons. For";

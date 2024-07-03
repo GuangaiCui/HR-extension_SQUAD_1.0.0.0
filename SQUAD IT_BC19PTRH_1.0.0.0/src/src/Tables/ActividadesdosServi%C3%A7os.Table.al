@@ -1,4 +1,4 @@
-table 31003119 "Actividades dos Serviços"
+table 53119 "Actividades dos Serviços"
 {
 
     fields

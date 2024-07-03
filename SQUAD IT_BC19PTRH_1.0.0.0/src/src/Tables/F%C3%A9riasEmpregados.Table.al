@@ -1,4 +1,4 @@
-table 31003090 "Férias Empregados"
+table 53090 "Férias Empregados"
 {
     DrillDownPageID = "Lista Férias Empregado";
     LookupPageID = "Lista Férias Empregado";

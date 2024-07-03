@@ -1,4 +1,4 @@
-page 31003066 "Vista Ausências por Categorias"
+page 53066 "Vista Ausências por Categorias"
 {
     Caption = 'Absence Overview by Categories';
     DataCaptionExpression = '';

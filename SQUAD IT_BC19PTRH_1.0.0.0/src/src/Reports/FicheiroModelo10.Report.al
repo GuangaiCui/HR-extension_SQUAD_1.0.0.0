@@ -1,4 +1,4 @@
-report 31003048 "Ficheiro Modelo 10"
+report 53048 "Ficheiro Modelo 10"
 {
     //  //-------------------------------------------------------
     //                 Ficheiro Anexo J
@@ -693,8 +693,8 @@ report 31003048 "Ficheiro Modelo 10"
         TabelaTempFichTexto.Reset;
         TabelaTempFichTexto.SetRange(TabelaTempFichTexto."Tipo Ficheiro", TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ);
         if TabelaTempFichTexto.Find('-') then
-            //DATAPORT.RUNMODAL(31003036,TRUE,TabelaTempFichTexto);
-            //XMLPORT.RUN(31003043,FALSE,FALSE,TabelaTempFichTexto);
+            //DATAPORT.RUNMODAL(53036,TRUE,TabelaTempFichTexto);
+            //XMLPORT.RUN(53043,FALSE,FALSE,TabelaTempFichTexto);
             //ExportFicheirosTexto.RUN;
             XMLPORT.Run(XMLPORT::"Export Ficheiro Texto", true, false, TabelaTempFichTexto);
     end;

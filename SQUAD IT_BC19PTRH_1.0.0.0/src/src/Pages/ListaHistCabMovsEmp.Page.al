@@ -1,4 +1,4 @@
-page 31003108 "Lista Hist. Cab. Movs. Emp"
+page 53108 "Lista Hist. Cab. Movs. Emp"
 {
     AutoSplitKey = true;
     CardPageID = "Hist. Cab. Movs. Empregado";

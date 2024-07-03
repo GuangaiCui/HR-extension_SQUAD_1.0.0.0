@@ -1,4 +1,4 @@
-table 31003080 "Linhas Movs. Empregado"
+table 53080 "Linhas Movs. Empregado"
 {
     DrillDownPageID = "Lista Movs. Empregado";
     LookupPageID = "Lista Movs. Empregado";
@@ -162,14 +162,14 @@ table 31003080 "Linhas Movs. Empregado"
             CaptionClass = '1,1,1';
             Caption = 'Global Dimension 1 Code';
             Description = 'Para as horas extra';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(111; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
             Caption = 'Global Dimension 2 Code';
             Description = 'Para as horas extra';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(112; "Tipo Rendimento Cat.A"; Option)
         {

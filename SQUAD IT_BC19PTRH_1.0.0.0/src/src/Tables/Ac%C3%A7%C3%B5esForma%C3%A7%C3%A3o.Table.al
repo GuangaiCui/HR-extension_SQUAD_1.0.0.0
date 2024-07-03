@@ -1,4 +1,4 @@
-table 31003092 "Acções Formação"
+table 53092 "Acções Formação"
 {
     DrillDownPageID = "Registo Formação";
     LookupPageID = "Lista Acções Formação";
@@ -53,7 +53,7 @@ table 31003092 "Acções Formação"
         }
         field(14; "Participantes Inscritos"; Integer)
         {
-            CalcFormula = Count ("Formação Empregado" WHERE ("Cód. Acção" = FIELD ("Código")));
+            CalcFormula = Count("Formação Empregado" WHERE("Cód. Acção" = FIELD("Código")));
             Caption = 'Enrolled Trainees';
             FieldClass = FlowField;
         }
@@ -66,7 +66,7 @@ table 31003092 "Acções Formação"
         {
             Caption = 'Education Area Code';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (AreaEdu));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(AreaEdu));
 
             trigger OnValidate()
             begin
@@ -88,7 +88,7 @@ table 31003092 "Acções Formação"
         {
             Caption = 'Modality Code';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (ModFor));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(ModFor));
 
             trigger OnValidate()
             begin
@@ -110,7 +110,7 @@ table 31003092 "Acções Formação"
         {
             Caption = 'Training Organization Code';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (EntFor));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(EntFor));
 
             trigger OnValidate()
             begin
@@ -132,7 +132,7 @@ table 31003092 "Acções Formação"
         {
             Caption = 'Code of Qualification Training Level';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (QualFor));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(QualFor));
 
             trigger OnValidate()
             begin

@@ -1,4 +1,4 @@
-report 31003105 "Copiar Ficha Empregado"
+report 53105 "Copiar Ficha Empregado"
 {
     ProcessingOnly = true;
     UseRequestPage = false;
@@ -9,8 +9,8 @@ report 31003105 "Copiar Ficha Empregado"
         {
             dataitem("Endereço Alternativo"; "Endereço Alternativo")
             {
-                DataItemLink = "Employee No." = FIELD ("No.");
-                DataItemTableView = SORTING ("Employee No.", Code);
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", Code);
 
                 trigger OnAfterGetRecord()
                 begin
@@ -22,8 +22,8 @@ report 31003105 "Copiar Ficha Empregado"
             }
             dataitem("Contrato Empregado"; "Contrato Empregado")
             {
-                DataItemLink = "Cód. Empregado" = FIELD ("No.");
-                DataItemTableView = SORTING ("Cód. Empregado", "Cód. Contrato", "No. Linha");
+                DataItemLink = "Cód. Empregado" = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Empregado", "Cód. Contrato", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -35,8 +35,8 @@ report 31003105 "Copiar Ficha Empregado"
             }
             dataitem("Cat. Prof. Int. Empregado"; "Cat. Prof. Int. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD ("No.");
-                DataItemTableView = SORTING ("No. Empregado", "Cód. Cat. Prof.", "No. Linha");
+                DataItemLink = "No. Empregado" = FIELD("No.");
+                DataItemTableView = SORTING("No. Empregado", "Cód. Cat. Prof.", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -48,8 +48,8 @@ report 31003105 "Copiar Ficha Empregado"
             }
             dataitem("Cat. Prof. QP Empregado"; "Cat. Prof. QP Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD ("No.");
-                DataItemTableView = SORTING ("No. Empregado", "Cód. Cat. Prof. QP", "No. Linha");
+                DataItemLink = "No. Empregado" = FIELD("No.");
+                DataItemTableView = SORTING("No. Empregado", "Cód. Cat. Prof. QP", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -61,8 +61,8 @@ report 31003105 "Copiar Ficha Empregado"
             }
             dataitem("Qualificação Empregado"; "Qualificação Empregado")
             {
-                DataItemLink = "Employee No." = FIELD ("No.");
-                DataItemTableView = SORTING ("Employee No.", Type, "Line No.");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", Type, "Line No.");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -74,8 +74,8 @@ report 31003105 "Copiar Ficha Empregado"
             }
             dataitem("Horário Empregado"; "Horário Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD ("No.");
-                DataItemTableView = SORTING ("No. Empregado", "Cód. Horário", "No. Linha");
+                DataItemLink = "No. Empregado" = FIELD("No.");
+                DataItemTableView = SORTING("No. Empregado", "Cód. Horário", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -87,8 +87,8 @@ report 31003105 "Copiar Ficha Empregado"
             }
             dataitem("Rubrica Salarial Empregado"; "Rubrica Salarial Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD ("No.");
-                DataItemTableView = SORTING ("No. Empregado", "No. Linha");
+                DataItemLink = "No. Empregado" = FIELD("No.");
+                DataItemTableView = SORTING("No. Empregado", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -100,8 +100,8 @@ report 31003105 "Copiar Ficha Empregado"
             }
             dataitem("Distribuição Custos"; "Distribuição Custos")
             {
-                DataItemLink = "No. Empregado" = FIELD ("No.");
-                DataItemTableView = SORTING ("No. Empregado", "Data Inicio", "Global Dimension 1 Code", "Global Dimension 2 Code", "Shortcut Dimension 3 Code", "Shortcut Dimension 4 Code", "Shortcut Dimension 5 Code", "Shortcut Dimension 6 Code", "Shortcut Dimension 7 Code", "Shortcut Dimension 8 Code");
+                DataItemLink = "No. Empregado" = FIELD("No.");
+                DataItemTableView = SORTING("No. Empregado", "Data Inicio", "Global Dimension 1 Code", "Global Dimension 2 Code", "Shortcut Dimension 3 Code", "Shortcut Dimension 4 Code", "Shortcut Dimension 5 Code", "Shortcut Dimension 6 Code", "Shortcut Dimension 7 Code", "Shortcut Dimension 8 Code");
 
                 trigger OnAfterGetRecord()
                 begin

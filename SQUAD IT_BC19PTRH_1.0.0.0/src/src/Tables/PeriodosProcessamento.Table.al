@@ -1,4 +1,4 @@
-table 31003081 "Periodos Processamento"
+table 53081 "Periodos Processamento"
 {
     Caption = 'Periodos Processamento';
     DataCaptionFields = "Cód. Processamento", "Tipo Processamento";
@@ -94,8 +94,8 @@ table 31003081 "Periodos Processamento"
         }
         field(30; Pendente; Boolean)
         {
-            CalcFormula = Lookup ("Hist. Cab. Movs. Empregado".Pendente WHERE ("Cód. Processamento" = FIELD ("Cód. Processamento"),
-                                                                              "Tipo Processamento" = FIELD ("Tipo Processamento")));
+            CalcFormula = Lookup("Hist. Cab. Movs. Empregado".Pendente WHERE("Cód. Processamento" = FIELD("Cód. Processamento"),
+                                                                              "Tipo Processamento" = FIELD("Tipo Processamento")));
             Caption = 'Open';
             FieldClass = FlowField;
         }

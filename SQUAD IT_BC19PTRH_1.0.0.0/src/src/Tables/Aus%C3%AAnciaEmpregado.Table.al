@@ -1,4 +1,4 @@
-table 31003042 "Ausência Empregado"
+table 53042 "Ausência Empregado"
 {
     //  //CPA - novo campo "Novo Valor Ausencia"
 
@@ -100,8 +100,8 @@ table 31003042 "Ausência Empregado"
         }
         field(11; Comment; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (Aus),
-                                                                      "Table Line No." = FIELD ("Entry No.")));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Aus),
+                                                                      "Table Line No." = FIELD("Entry No.")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

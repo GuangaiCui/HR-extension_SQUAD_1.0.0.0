@@ -1,4 +1,4 @@
-page 31003088 "Lista Histórico Ausências"
+page 53088 "Lista Histórico Ausências"
 {
     // //IT001 - CPA - 2017.02.16 . novo campo proc referencia
 

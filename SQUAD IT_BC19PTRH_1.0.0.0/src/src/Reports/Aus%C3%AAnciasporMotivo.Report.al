@@ -1,4 +1,4 @@
-report 31003061 "Ausências por Motivo"
+report 53061 "Ausências por Motivo"
 {
     //  //-------------------------------------------------------
     //                 Ausencias por Motivos

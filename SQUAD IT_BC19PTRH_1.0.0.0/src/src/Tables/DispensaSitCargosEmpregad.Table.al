@@ -1,4 +1,4 @@
-table 31003087 "Dispensa Sit - Cargos Empregad"
+table 53087 "Dispensa Sit - Cargos Empregad"
 {
     DataCaptionFields = "Nº Empregado";
 

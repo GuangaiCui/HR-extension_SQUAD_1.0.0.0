@@ -1,4 +1,4 @@
-xmlport 31003035 "RU - Anexo 0"
+xmlport 53035 "RU - Anexo 0"
 {
     Encoding = UTF8;
     //DefaultNamespace = 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_zero';

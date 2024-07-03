@@ -1,4 +1,4 @@
-table 31003110 "Tabela Temporária Relatórios"
+table 53110 "Tabela Temporária Relatórios"
 {
     // //Tabela auxiliar usada para gerar um relatório
 

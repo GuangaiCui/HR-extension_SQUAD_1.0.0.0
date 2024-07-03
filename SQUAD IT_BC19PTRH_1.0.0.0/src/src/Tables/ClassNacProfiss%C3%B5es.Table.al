@@ -1,4 +1,4 @@
-table 31003071 "Class. Nac. Profissões"
+table 53071 "Class. Nac. Profissões"
 {
     DrillDownPageID = "Matriz Vista Ferias";
     LookupPageID = "Matriz Vista Ferias";

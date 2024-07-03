@@ -1,4 +1,4 @@
-table 31003124 "Linhas Acções Médicas"
+table 53124 "Linhas Acções Médicas"
 {
 
     fields

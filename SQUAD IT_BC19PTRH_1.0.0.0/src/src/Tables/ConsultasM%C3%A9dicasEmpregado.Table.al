@@ -1,4 +1,4 @@
-table 31003094 "Consultas Médicas Empregado"
+table 53094 "Consultas Médicas Empregado"
 {
     LookupPageID = "Consultas Médicas Empregado";
 

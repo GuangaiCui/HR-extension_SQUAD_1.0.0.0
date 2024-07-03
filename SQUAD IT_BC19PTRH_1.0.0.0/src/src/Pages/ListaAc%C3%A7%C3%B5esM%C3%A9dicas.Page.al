@@ -1,4 +1,4 @@
-page 31003149 "Lista Acções Médicas"
+page 53149 "Lista Acções Médicas"
 {
     Editable = false;
     PageType = List;

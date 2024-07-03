@@ -1,4 +1,4 @@
-table 31003058 "Categoria Profissional Interna"
+table 53058 "Categoria Profissional Interna"
 {
     DrillDownPageID = "Categoria Profissional Interna";
     LookupPageID = "Categoria Profissional Interna";
@@ -15,9 +15,9 @@ table 31003058 "Categoria Profissional Interna"
         }
         field(3; "No. Empregados"; Integer)
         {
-            CalcFormula = Count ("Cat. Prof. Int. Empregado" WHERE ("Cód. Cat. Prof." = FIELD ("Código"),
-                                                                   "Data Inicio Cat. Prof." = FIELD ("Data Filtro Inicio"),
-                                                                   "Data Fim Cat. Prof." = FIELD ("Data Filtro Fim")));
+            CalcFormula = Count("Cat. Prof. Int. Empregado" WHERE("Cód. Cat. Prof." = FIELD("Código"),
+                                                                   "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
+                                                                   "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Number of Employees';
             FieldClass = FlowField;
         }

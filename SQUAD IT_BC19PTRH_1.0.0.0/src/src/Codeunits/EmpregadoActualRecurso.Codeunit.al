@@ -1,4 +1,4 @@
-codeunit 31003035 "Empregado/Actual. Recurso"
+codeunit 53035 "Empregado/Actual. Recurso"
 {
     Permissions = TableData Resource = rimd;
 

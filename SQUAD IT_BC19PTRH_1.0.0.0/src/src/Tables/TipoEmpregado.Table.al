@@ -1,4 +1,4 @@
-table 31003098 "Tipo Empregado"
+table 53098 "Tipo Empregado"
 {
     LookupPageID = "Lista Tipo Empregado";
 

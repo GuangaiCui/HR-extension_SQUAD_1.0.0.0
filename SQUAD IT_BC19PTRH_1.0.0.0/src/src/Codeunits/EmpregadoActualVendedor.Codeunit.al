@@ -1,4 +1,4 @@
-codeunit 31003036 "Empregado/Actual. Vendedor"
+codeunit 53036 "Empregado/Actual. Vendedor"
 {
     Permissions = TableData "Salesperson/Purchaser" = rimd;
 

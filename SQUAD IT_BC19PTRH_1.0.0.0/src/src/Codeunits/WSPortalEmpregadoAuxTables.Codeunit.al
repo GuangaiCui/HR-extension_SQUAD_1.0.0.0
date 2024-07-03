@@ -1,4 +1,4 @@
-codeunit 31003041 "WS Portal Empregado AuxTables"
+codeunit 53041 "WS Portal Empregado AuxTables"
 {
 
     trigger OnRun()

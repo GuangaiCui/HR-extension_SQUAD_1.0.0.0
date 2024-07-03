@@ -1,4 +1,4 @@
-page 31003035 "Ficha Empregado"
+page 53035 "Ficha Empregado"
 {
     // ww
     // Tagus - Novo campo NIB cartao Ref
@@ -922,7 +922,7 @@ page 31003035 "Ficha Empregado"
             {
                 ApplicationArea = All;
                 Caption = 'Attachments';
-                SubPageLink = "Table ID" = CONST(31003035),
+                SubPageLink = "Table ID" = CONST(53035),
                               "No." = FIELD("No.");
             }
         }
@@ -950,7 +950,7 @@ page 31003035 "Ficha Empregado"
                     Caption = 'Dimensions';
                     Image = Dimensions;
                     RunObject = Page "Default Dimensions";
-                    RunPageLink = "Table ID" = CONST(31003035),
+                    RunPageLink = "Table ID" = CONST(53035),
                                   "No." = FIELD("No.");
                     ShortCutKey = 'Shift+Ctrl+D';
                 }
@@ -1336,7 +1336,7 @@ page 31003035 "Ficha Empregado"
                     begin
 
                         TabEmpregado.SetRange(TabEmpregado."No.", Rec."No.");
-                        REPORT.RunModal(31003037, true, false, TabEmpregado);
+                        REPORT.RunModal(53037, true, false, TabEmpregado);
                     end;
                 }
                 action("Processamento Sub. Férias")
@@ -1349,7 +1349,7 @@ page 31003035 "Ficha Empregado"
                     begin
 
                         TabEmpregado.SetRange(TabEmpregado."No.", Rec."No.");
-                        REPORT.RunModal(31003041, true, false, TabEmpregado);
+                        REPORT.RunModal(53041, true, false, TabEmpregado);
                     end;
                 }
                 action("Processamento Sub. Natal")
@@ -1362,7 +1362,7 @@ page 31003035 "Ficha Empregado"
                     begin
 
                         TabEmpregado.SetRange(TabEmpregado."No.", Rec."No.");
-                        REPORT.RunModal(31003040, true, false, TabEmpregado);
+                        REPORT.RunModal(53040, true, false, TabEmpregado);
                     end;
                 }
                 action("Movs. empregado")
@@ -1389,7 +1389,7 @@ page 31003035 "Ficha Empregado"
 
                     TabEmpregado.Reset;
                     TabEmpregado.SetRange(TabEmpregado."No.", "No.");
-                    REPORT.Run(31003082, true, false, TabEmpregado);
+                    REPORT.Run(53082, true, false, TabEmpregado);
                 end;
             }
             action("<Report Ficha Empregado>")

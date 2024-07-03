@@ -1,4 +1,4 @@
-table 31003114 "Importação Templates"
+table 53114 "Importação Templates"
 {
     // //Tabela usada para guardar os templates (doc / xml) usados no modulo de RH
 

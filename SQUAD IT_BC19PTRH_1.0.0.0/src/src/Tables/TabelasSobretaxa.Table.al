@@ -1,4 +1,4 @@
-table 31003127 "Tabelas Sobretaxa"
+table 53127 "Tabelas Sobretaxa"
 {
 
     fields

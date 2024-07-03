@@ -1,4 +1,4 @@
-page 31003130 "Qualificações Empregado RU"
+page 53130 "Qualificações Empregado RU"
 {
     AutoSplitKey = true;
     Caption = 'Employee Qualifications RU ';

@@ -1,4 +1,4 @@
-table 31003049 "Informação Artigos Div."
+table 53049 "Informação Artigos Div."
 {
     Caption = 'Misc. Article Information';
     DataCaptionFields = "Employee No.";
@@ -47,10 +47,10 @@ table 31003049 "Informação Artigos Div."
         }
         field(8; Comment; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (InfArt),
-                                                                      "No." = FIELD ("Employee No."),
-                                                                      "Alternative Address Code" = FIELD ("Misc. Article Code"),
-                                                                      "Table Line No." = FIELD ("Line No.")));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(InfArt),
+                                                                      "No." = FIELD("Employee No."),
+                                                                      "Alternative Address Code" = FIELD("Misc. Article Code"),
+                                                                      "Table Line No." = FIELD("Line No.")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

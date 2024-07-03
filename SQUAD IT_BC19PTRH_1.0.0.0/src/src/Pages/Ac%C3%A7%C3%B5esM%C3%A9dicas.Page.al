@@ -1,4 +1,4 @@
-page 31003146 "Acções Médicas"
+page 53146 "Acções Médicas"
 {
     PageType = Card;
     SourceTable = "Cab. Acções Médicas";

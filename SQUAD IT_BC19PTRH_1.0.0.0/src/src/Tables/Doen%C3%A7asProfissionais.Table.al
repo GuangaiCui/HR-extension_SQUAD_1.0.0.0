@@ -1,4 +1,4 @@
-table 31003084 "Doenças Profissionais"
+table 53084 "Doenças Profissionais"
 {
 
     fields
@@ -20,7 +20,7 @@ table 31003084 "Doenças Profissionais"
         field(7; "Factor Risco"; Code[20])
         {
             Caption = 'Risk Factor';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (RDoeProf));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(RDoeProf));
 
             trigger OnValidate()
             begin
@@ -42,8 +42,8 @@ table 31003084 "Doenças Profissionais"
         field(9; "Doença Profissional"; Code[20])
         {
             Caption = 'Profissional Disease';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (DoeProf),
-                                                           "Classificação" = FIELD ("Factor Risco"));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(DoeProf),
+                                                           "Classificação" = FIELD("Factor Risco"));
 
             trigger OnValidate()
             begin

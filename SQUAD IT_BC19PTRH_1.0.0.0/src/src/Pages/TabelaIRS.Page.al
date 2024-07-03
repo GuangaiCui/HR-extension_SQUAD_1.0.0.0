@@ -1,4 +1,4 @@
-page 31003085 "Tabela IRS"
+page 53085 "Tabela IRS"
 {
     PageType = List;
     SourceTable = "Tabela IRS";

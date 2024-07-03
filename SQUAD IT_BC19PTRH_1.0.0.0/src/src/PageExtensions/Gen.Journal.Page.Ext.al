@@ -1,5 +1,5 @@
 
-pageextension 31003036 GenJournalRH extends "General Journal"
+pageextension 53036 GenJournalRH extends "General Journal"
 {
     layout
     {

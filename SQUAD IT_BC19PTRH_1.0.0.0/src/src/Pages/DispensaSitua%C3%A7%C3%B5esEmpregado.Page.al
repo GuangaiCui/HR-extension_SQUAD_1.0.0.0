@@ -1,4 +1,4 @@
-page 31003137 "Dispensa Situações Empregado"
+page 53137 "Dispensa Situações Empregado"
 {
     PageType = List;
     SourceTable = "Dispensa Sit - Cargos Empregad";

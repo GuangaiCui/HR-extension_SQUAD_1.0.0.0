@@ -1,4 +1,4 @@
-page 31003150 "Acções Promoção da Saúde"
+page 53150 "Acções Promoção da Saúde"
 {
     PageType = List;
     SourceTable = "Acções Promoção da Saúde";

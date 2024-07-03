@@ -1,4 +1,4 @@
-table 31003054 "Lin. Coment. Confidencial RH"
+table 53054 "Lin. Coment. Confidencial RH"
 {
     Caption = 'HR Confidential Comment Line';
     DataCaptionFields = "No.";

@@ -1,4 +1,4 @@
-codeunit 31003039 "Gerar Relatório Único"
+codeunit 53039 "Gerar Relatório Único"
 {
 
     trigger OnRun()

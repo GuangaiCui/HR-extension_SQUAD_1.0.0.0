@@ -1,4 +1,4 @@
-table 31003102 RU
+table 53102 RU
 {
 
     fields
@@ -41,7 +41,7 @@ table 31003102 RU
         field(11; "Origem Enc. A- Subsídio Doen"; Code[20])
         {
             Caption = 'Código referente à Origem do Encargo';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (OriEnc));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(OriEnc));
         }
         field(12; "Enc. Adm. Pensões Velhice"; Decimal)
         {
@@ -50,7 +50,7 @@ table 31003102 RU
         field(13; "Origem Enc. A- Pensões Velhice"; Code[20])
         {
             Caption = 'Código referente à Origem do Encargo';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (OriEnc));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(OriEnc));
         }
         field(14; "Enc. Adm. Outras Prestações"; Decimal)
         {
@@ -59,7 +59,7 @@ table 31003102 RU
         field(15; "Origem Enc. A- Outras Prestaç"; Code[20])
         {
             Caption = 'Código referente à Origem do Encargo';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (OriEnc));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(OriEnc));
         }
         field(16; "Enc. não Adm. Subsídio por Doe"; Decimal)
         {
@@ -68,7 +68,7 @@ table 31003102 RU
         field(17; "Origem Enc. NA- Subsídio Doen"; Code[20])
         {
             Caption = 'Código referente à Origem do Encargo';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (OriEnc));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(OriEnc));
         }
         field(18; "Enc. não Adm. Pensões Velhice"; Decimal)
         {
@@ -77,7 +77,7 @@ table 31003102 RU
         field(19; "Origem Enc. NA- Pensões Velhic"; Code[20])
         {
             Caption = 'Código referente à Origem do Encargo';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (OriEnc));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(OriEnc));
         }
         field(20; "Enc. não Adm. Outras Prestaç"; Decimal)
         {
@@ -86,7 +86,7 @@ table 31003102 RU
         field(21; "Origem Enc. NA- Outras Prestaç"; Code[20])
         {
             Caption = 'Código referente à Origem do Encargo';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (OriEnc));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(OriEnc));
         }
         field(22; "Enc. de Acção e Apoio Social"; Decimal)
         {

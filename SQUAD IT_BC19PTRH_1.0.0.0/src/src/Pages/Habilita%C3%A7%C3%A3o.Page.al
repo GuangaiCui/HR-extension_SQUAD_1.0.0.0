@@ -1,4 +1,4 @@
-page 31003080 "Habilitação"
+page 53080 "Habilitação"
 {
     PageType = List;
     SourceTable = "Habilitação";

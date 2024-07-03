@@ -1,4 +1,4 @@
-table 31003055 "Unid. Medida Recursos Humanos"
+table 53055 "Unid. Medida Recursos Humanos"
 {
     Caption = 'Human Resource Unit of Measure';
     DataCaptionFields = "Code";

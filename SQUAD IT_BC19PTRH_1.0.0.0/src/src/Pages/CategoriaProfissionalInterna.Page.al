@@ -1,4 +1,4 @@
-page 31003074 "Categoria Profissional Interna"
+page 53074 "Categoria Profissional Interna"
 {
     PageType = List;
     SourceTable = "Categoria Profissional Interna";

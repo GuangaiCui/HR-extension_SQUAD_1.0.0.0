@@ -1,4 +1,4 @@
-page 31003098 "Ficha Rubrica Salarial"
+page 53098 "Ficha Rubrica Salarial"
 {
     //  IT001 - CPA:Novo campo para a funcionalidade de acertos de Duodécimos
     // 

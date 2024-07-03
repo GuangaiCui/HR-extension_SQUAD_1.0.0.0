@@ -1,4 +1,4 @@
-page 31003147 "Linhas Acções Médicas"
+page 53147 "Linhas Acções Médicas"
 {
     AutoSplitKey = true;
     PageType = ListPart;

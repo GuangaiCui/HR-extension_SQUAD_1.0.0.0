@@ -1,4 +1,4 @@
-table 31003065 "Horário RH"
+table 53065 "Horário RH"
 {
     DrillDownPageID = "Horário RH";
     LookupPageID = "Horário RH";

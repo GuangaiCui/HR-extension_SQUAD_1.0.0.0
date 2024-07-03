@@ -1,4 +1,4 @@
-xmlport 31003048 "Tabelas Auxiliares"
+xmlport 53048 "Tabelas Auxiliares"
 {
     Direction = Export;
     UseDefaultNamespace = true;
@@ -178,7 +178,7 @@ xmlport 31003048 "Tabelas Auxiliares"
         Clear(OptionString);
         Clear(total);
 
-        vRecRef.Open(31003035);
+        vRecRef.Open(53035);
         vFieldRef := vRecRef.Field(IDCampo);
         if Format(vFieldRef.Type) = 'Option' then begin
             OptionString := vFieldRef.OptionString;

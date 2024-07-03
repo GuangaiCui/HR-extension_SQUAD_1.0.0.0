@@ -1,4 +1,4 @@
-report 31003044 "Mapa Seg. Social - Fechado"
+report 53044 "Mapa Seg. Social - Fechado"
 {
     // //-------------------------------------------------------
     //               Ficheiro da Seg. Social
@@ -1387,53 +1387,53 @@ report 31003044 "Mapa Seg. Social - Fechado"
                     end;
                 end;
             else begin
-                    ////////////////////////////////////Parte 2.4 - Restantes Casos //////////////////////////////
-                    SinalDiasTrabalho := '0';
-                    SinalValor := '0';
-                    //IT001 - JTP - 2020.06.08 - Begin
-                    if "Hist. Linhas Movs. Empregado"."Data a que se refere o mov" <> 0D then
-                        Datareferencia := Format("Hist. Linhas Movs. Empregado"."Data a que se refere o mov", 0, '<Year4><Month,2>')
-                    else
-                        //IT001 - JTP - 2020.06.08 - End
-                        Datareferencia := Format("Periodos Processamento"."Data Registo", 0, '<Year4><Month,2>');
-                    LValorLancar := Valorlancar;
+                ////////////////////////////////////Parte 2.4 - Restantes Casos //////////////////////////////
+                SinalDiasTrabalho := '0';
+                SinalValor := '0';
+                //IT001 - JTP - 2020.06.08 - Begin
+                if "Hist. Linhas Movs. Empregado"."Data a que se refere o mov" <> 0D then
+                    Datareferencia := Format("Hist. Linhas Movs. Empregado"."Data a que se refere o mov", 0, '<Year4><Month,2>')
+                else
+                    //IT001 - JTP - 2020.06.08 - End
+                    Datareferencia := Format("Periodos Processamento"."Data Registo", 0, '<Year4><Month,2>');
+                LValorLancar := Valorlancar;
 
-                    //24.02.2011 - Como agora se pode ter valores a negativo o sinal (-) tem de passar para a direita do valor
-                    if LValorLancar < 0 then begin
-                        SinalValor := '-';
-                        LValorLancar := Abs(LValorLancar);
-                        SinalDiasTrabalho := '-';
-                    end;
-                    //24.02.2011 - fim
-
-                    if StrLen(DiasTrabalho) = 1 then
-                        DiasTrabalho := '00' + DiasTrabalho;
-                    if StrLen(DiasTrabalho) = 2 then
-                        DiasTrabalho := '0' + DiasTrabalho;
-                    if LValorLancar <> 0 then begin //2012.12.11 Normatica - Coloquei o if para não enviar linhas a 0
-                        TabTempFichTexto.Init;
-                        TabTempFichTexto."Tipo Ficheiro" := 0;
-                        TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                        TabTempFichTexto.Data := WorkDate;
-                        TabTempFichTexto.Texto1 := 'R2'
-                         + TabInfEmpresa."Social Security No."                                                          //Nº Seg. Social da empresa
-                         + "Estabelecimentos da Empresa"."Instituição Seg. Social"                                //Estabelecimento do Empregado
-                         + PadStr(Empregado."No. Segurança Social", 11, ' ')                                          //Nº Seg. Social do Empregado
-                                                                                                                      //+ Converter.Ascii2Ansi(PADSTR(UPPERCASE(COPYSTR(Empregado.Name,1,60)),60,' '))            //Nome do empregado
-                         + PadStr(UpperCase(CopyStr(Empregado.Name, 1, 60)), 60, ' ')                                    //Nome do empregado
-                         + Format(Empregado."Birth Date", 0, '<Year4><Month,2><Day,2>')                              //Data Nascimento
-                         + Datareferencia                                                                    //Mes e ano a que se referem as remuner
-                         + DiasTrabalho                                                                        //Dias de trabalho
-                         + SinalDiasTrabalho                                                                                 //sinal dias trabalho
-                         + strNatrem                                                                               //NATREM
-                         + DelChr(ConvertStr(Format(Round(LValorLancar, 0.01), 10, '<Sign><Integer><Decimals,3>'), ' ', '0'), '=', ',')  //Valor
-                         + SinalValor;                                                                                    //Sinal do valor
-                        TabTempFichTexto.Insert;
-
-                        TotalRemuneracaoes := TotalRemuneracaoes + Round(Valorlancar, 0.01); //20150904 - acrescentei round
-                        TotalRegistos := TotalRegistos + 1;
-                    end;
+                //24.02.2011 - Como agora se pode ter valores a negativo o sinal (-) tem de passar para a direita do valor
+                if LValorLancar < 0 then begin
+                    SinalValor := '-';
+                    LValorLancar := Abs(LValorLancar);
+                    SinalDiasTrabalho := '-';
                 end;
+                //24.02.2011 - fim
+
+                if StrLen(DiasTrabalho) = 1 then
+                    DiasTrabalho := '00' + DiasTrabalho;
+                if StrLen(DiasTrabalho) = 2 then
+                    DiasTrabalho := '0' + DiasTrabalho;
+                if LValorLancar <> 0 then begin //2012.12.11 Normatica - Coloquei o if para não enviar linhas a 0
+                    TabTempFichTexto.Init;
+                    TabTempFichTexto."Tipo Ficheiro" := 0;
+                    TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
+                    TabTempFichTexto.Data := WorkDate;
+                    TabTempFichTexto.Texto1 := 'R2'
+                     + TabInfEmpresa."Social Security No."                                                          //Nº Seg. Social da empresa
+                     + "Estabelecimentos da Empresa"."Instituição Seg. Social"                                //Estabelecimento do Empregado
+                     + PadStr(Empregado."No. Segurança Social", 11, ' ')                                          //Nº Seg. Social do Empregado
+                                                                                                                  //+ Converter.Ascii2Ansi(PADSTR(UPPERCASE(COPYSTR(Empregado.Name,1,60)),60,' '))            //Nome do empregado
+                     + PadStr(UpperCase(CopyStr(Empregado.Name, 1, 60)), 60, ' ')                                    //Nome do empregado
+                     + Format(Empregado."Birth Date", 0, '<Year4><Month,2><Day,2>')                              //Data Nascimento
+                     + Datareferencia                                                                    //Mes e ano a que se referem as remuner
+                     + DiasTrabalho                                                                        //Dias de trabalho
+                     + SinalDiasTrabalho                                                                                 //sinal dias trabalho
+                     + strNatrem                                                                               //NATREM
+                     + DelChr(ConvertStr(Format(Round(LValorLancar, 0.01), 10, '<Sign><Integer><Decimals,3>'), ' ', '0'), '=', ',')  //Valor
+                     + SinalValor;                                                                                    //Sinal do valor
+                    TabTempFichTexto.Insert;
+
+                    TotalRemuneracaoes := TotalRemuneracaoes + Round(Valorlancar, 0.01); //20150904 - acrescentei round
+                    TotalRegistos := TotalRegistos + 1;
+                end;
+            end;
         end;
     end;
 }

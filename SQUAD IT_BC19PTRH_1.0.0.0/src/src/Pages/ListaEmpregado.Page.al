@@ -1,4 +1,4 @@
-page 31003036 "Lista Empregado"
+page 53036 "Lista Empregado"
 {
     CaptionML = ENU = 'Employee List', PTG = 'Lista Empregado';
 
@@ -636,7 +636,7 @@ page 31003036 "Lista Empregado"
                         Caption = 'Dimensions-Single';
                         Image = Dimensions;
                         RunObject = Page "Default Dimensions";
-                        RunPageLink = "Table ID" = CONST(31003035),
+                        RunPageLink = "Table ID" = CONST(53035),
                                       "No." = FIELD("No.");
                         ShortCutKey = 'Shift+Ctrl+D';
                     }

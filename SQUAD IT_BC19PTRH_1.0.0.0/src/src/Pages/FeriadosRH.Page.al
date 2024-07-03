@@ -1,4 +1,4 @@
-page 31003114 "Feriados RH"
+page 53114 "Feriados RH"
 {
     Caption = 'Human Resource Units of Measure';
     PageType = List;

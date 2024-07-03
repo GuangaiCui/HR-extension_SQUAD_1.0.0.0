@@ -1,4 +1,4 @@
-table 31003048 "Artigo Diverso"
+table 53048 "Artigo Diverso"
 {
     Caption = 'Misc. Article';
     LookupPageID = "Artigos Diversos";

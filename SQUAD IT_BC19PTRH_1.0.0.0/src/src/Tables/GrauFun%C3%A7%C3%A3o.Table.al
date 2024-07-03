@@ -1,4 +1,4 @@
-table 31003062 "Grau Função"
+table 53062 "Grau Função"
 {
     DrillDownPageID = "Grau Função";
     LookupPageID = "Grau Função";
@@ -35,9 +35,9 @@ table 31003062 "Grau Função"
         }
         field(8; "Employees No."; Integer)
         {
-            CalcFormula = Count ("Grau Função Empregado" WHERE ("Cód. Grau Função" = FIELD ("Código"),
-                                                               "Data Inicio Grau Função" = FIELD ("Data Filtro Inicio"),
-                                                               "Data Fim Grau Função" = FIELD ("Data Filtro Fim")));
+            CalcFormula = Count("Grau Função Empregado" WHERE("Cód. Grau Função" = FIELD("Código"),
+                                                               "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
+                                                               "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
             Caption = 'Number of Employees';
             FieldClass = FlowField;
         }

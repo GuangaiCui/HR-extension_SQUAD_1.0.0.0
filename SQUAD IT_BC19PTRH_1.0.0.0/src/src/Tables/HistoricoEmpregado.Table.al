@@ -1,4 +1,4 @@
-table 31003111 "Historico Empregado"
+table 53111 "Historico Empregado"
 {
     Caption = 'Employee';
     DataCaptionFields = "No.", "First Name", "Last Name";
@@ -77,7 +77,7 @@ table 31003111 "Historico Empregado"
         field(16; "Alt. Address Code"; Code[10])
         {
             Caption = 'Alt. Address Code';
-            TableRelation = "Endereço Alternativo".Code WHERE ("Employee No." = FIELD ("No."));
+            TableRelation = "Endereço Alternativo".Code WHERE("Employee No." = FIELD("No."));
         }
         field(17; "Alt. Address Start Date"; Date)
         {
@@ -128,9 +128,9 @@ table 31003111 "Historico Empregado"
         }
         field(27; "Emplymt. Contract Code"; Code[10])
         {
-            CalcFormula = Lookup ("Contrato Empregado"."Cód. Contrato" WHERE ("Cód. Empregado" = FIELD ("No."),
-                                                                             "Data Inicio Contrato" = FIELD ("Data Filtro Inicio"),
-                                                                             "Data Fim Contrato" = FIELD ("Data Filtro Fim")));
+            CalcFormula = Lookup("Contrato Empregado"."Cód. Contrato" WHERE("Cód. Empregado" = FIELD("No."),
+                                                                             "Data Inicio Contrato" = FIELD("Data Filtro Inicio"),
+                                                                             "Data Fim Contrato" = FIELD("Data Filtro Fim")));
             Caption = 'Emplymt. Contract Code';
             FieldClass = FlowField;
         }
@@ -165,30 +165,30 @@ table 31003111 "Historico Empregado"
         field(35; "Grounds for Term. Code"; Code[10])
         {
             Caption = 'Grounds for Term. Code';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (MotSai));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSai));
         }
         field(36; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
             Caption = 'Global Dimension 1 Code';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(37; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
             Caption = 'Global Dimension 2 Code';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(38; "Resource No."; Code[20])
         {
             Caption = 'Resource No.';
-            TableRelation = Resource WHERE (Type = CONST (Person));
+            TableRelation = Resource WHERE(Type = CONST(Person));
         }
         field(39; Comment; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (Emp),
-                                                                      "No." = FIELD ("No."),
-                                                                      "Table Line No." = CONST (0)));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Emp),
+                                                                      "No." = FIELD("No."),
+                                                                      "Table Line No." = CONST(0)));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;
@@ -208,14 +208,14 @@ table 31003111 "Historico Empregado"
             CaptionClass = '1,3,1';
             Caption = 'Global Dimension 1 Filter';
             FieldClass = FlowFilter;
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(43; "Global Dimension 2 Filter"; Code[20])
         {
             CaptionClass = '1,3,2';
             Caption = 'Global Dimension 2 Filter';
             FieldClass = FlowFilter;
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(44; "Cause of Absence Filter"; Code[10])
         {
@@ -225,9 +225,9 @@ table 31003111 "Historico Empregado"
         }
         field(45; "Total Absence (Base)"; Decimal)
         {
-            CalcFormula = Sum ("Histórico Ausências"."Quantity (Base)" WHERE ("Employee No." = FIELD ("No."),
-                                                                             "Cause of Absence Code" = FIELD ("Cause of Absence Filter"),
-                                                                             "From Date" = FIELD ("Date Filter")));
+            CalcFormula = Sum("Histórico Ausências"."Quantity (Base)" WHERE("Employee No." = FIELD("No."),
+                                                                             "Cause of Absence Code" = FIELD("Cause of Absence Filter"),
+                                                                             "From Date" = FIELD("Date Filter")));
             Caption = 'Total Absence (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -463,7 +463,7 @@ table 31003111 "Historico Empregado"
         field(91; "Cod. Regime SS"; Code[10])
         {
             Caption = 'SS Regime Code';
-            TableRelation = "Regime Seg. Social"."Código" WHERE ("Código" = FIELD ("Cod. Regime SS"));
+            TableRelation = "Regime Seg. Social"."Código" WHERE("Código" = FIELD("Cod. Regime SS"));
         }
         field(92; "Subscritor ADSE"; Boolean)
         {
@@ -515,12 +515,12 @@ table 31003111 "Historico Empregado"
         {
             Caption = 'End Reason';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (MotSai));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSai));
         }
         field(104; "Cód. IRCT"; Code[5])
         {
             Caption = 'Cód. IRCT';
-            TableRelation = "Código IRCT"."Código IRCT" WHERE ("Código IRCT" = FIELD ("Cód. IRCT"));
+            TableRelation = "Código IRCT"."Código IRCT" WHERE("Código IRCT" = FIELD("Cód. IRCT"));
         }
         field(105; "Acordo Colectivo"; Code[20])
         {
@@ -539,40 +539,40 @@ table 31003111 "Historico Empregado"
         }
         field(108; "Cód. Cat. Profissional"; Code[20])
         {
-            CalcFormula = Lookup ("Cat. Prof. Int. Empregado"."Cód. Cat. Prof." WHERE ("No. Empregado" = FIELD ("No."),
-                                                                                      "Data Inicio Cat. Prof." = FIELD ("Data Filtro Inicio"),
-                                                                                      "Data Fim Cat. Prof." = FIELD ("Data Filtro Fim")));
+            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Cód. Cat. Prof." WHERE("No. Empregado" = FIELD("No."),
+                                                                                      "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
+                                                                                      "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Professional Category Code';
             FieldClass = FlowField;
         }
         field(109; "Descrição Cat Prof"; Text[100])
         {
-            CalcFormula = Lookup ("Cat. Prof. Int. Empregado"."Descrição" WHERE ("No. Empregado" = FIELD ("No."),
-                                                                                "Data Inicio Cat. Prof." = FIELD ("Data Filtro Inicio"),
-                                                                                "Data Fim Cat. Prof." = FIELD ("Data Filtro Fim")));
+            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Descrição" WHERE("No. Empregado" = FIELD("No."),
+                                                                                "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
+                                                                                "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. Description';
             FieldClass = FlowField;
         }
         field(110; "Cód. Cat. Prof QP"; Code[20])
         {
-            CalcFormula = Lookup ("Cat. Prof. QP Empregado"."Cód. Cat. Prof. QP" WHERE ("No. Empregado" = FIELD ("No."),
-                                                                                       "Data Inicio Cat. Prof." = FIELD ("Data Filtro Inicio"),
-                                                                                       "Data Fim Cat. Prof." = FIELD ("Data Filtro Fim")));
+            CalcFormula = Lookup("Cat. Prof. QP Empregado"."Cód. Cat. Prof. QP" WHERE("No. Empregado" = FIELD("No."),
+                                                                                       "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
+                                                                                       "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. QP Code';
             FieldClass = FlowField;
         }
         field(111; "Descrição Cat Prof QP"; Text[100])
         {
-            CalcFormula = Lookup ("Cat. Prof. QP Empregado".Description WHERE ("No. Empregado" = FIELD ("No."),
-                                                                              "Data Inicio Cat. Prof." = FIELD ("Data Filtro Inicio"),
-                                                                              "Data Fim Cat. Prof." = FIELD ("Data Filtro Fim")));
+            CalcFormula = Lookup("Cat. Prof. QP Empregado".Description WHERE("No. Empregado" = FIELD("No."),
+                                                                              "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
+                                                                              "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. QP Description';
             FieldClass = FlowField;
         }
         field(112; "Class. Nac. Profi."; Code[20])
         {
             Caption = 'Nac. Profe. Class.';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (CNP));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(CNP));
         }
         field(113; "Descrição Class. Nac."; Text[150])
         {
@@ -596,25 +596,25 @@ table 31003111 "Historico Empregado"
         }
         field(117; "Grau Função"; Code[20])
         {
-            CalcFormula = Lookup ("Grau Função Empregado"."Cód. Grau Função" WHERE ("No. Empregado" = FIELD ("No."),
-                                                                                   "Data Inicio Grau Função" = FIELD ("Data Filtro Inicio"),
-                                                                                   "Data Fim Grau Função" = FIELD ("Data Filtro Fim")));
+            CalcFormula = Lookup("Grau Função Empregado"."Cód. Grau Função" WHERE("No. Empregado" = FIELD("No."),
+                                                                                   "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
+                                                                                   "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
             Caption = 'Degree Role';
             FieldClass = FlowField;
         }
         field(118; "Descrição Grau Função"; Text[200])
         {
-            CalcFormula = Lookup ("Grau Função Empregado"."Descrição" WHERE ("No. Empregado" = FIELD ("No."),
-                                                                            "Data Inicio Grau Função" = FIELD ("Data Filtro Inicio"),
-                                                                            "Data Fim Grau Função" = FIELD ("Data Filtro Fim")));
+            CalcFormula = Lookup("Grau Função Empregado"."Descrição" WHERE("No. Empregado" = FIELD("No."),
+                                                                            "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
+                                                                            "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
             Caption = 'Degree Role Description';
             FieldClass = FlowField;
         }
         field(119; "Cód. Horário"; Code[20])
         {
-            CalcFormula = Lookup ("Horário Empregado"."Cód. Horário" WHERE ("No. Empregado" = FIELD ("No."),
-                                                                           "Data Iníco Horário" = FIELD ("Data Filtro Inicio"),
-                                                                           "Data Fim Horário" = FIELD ("Data Filtro Fim")));
+            CalcFormula = Lookup("Horário Empregado"."Cód. Horário" WHERE("No. Empregado" = FIELD("No."),
+                                                                           "Data Iníco Horário" = FIELD("Data Filtro Inicio"),
+                                                                           "Data Fim Horário" = FIELD("Data Filtro Fim")));
             Caption = 'Schedule Code';
             FieldClass = FlowField;
             //The property 'ValidateTableRelation' can only be set if the property 'TableRelation' is set
@@ -676,7 +676,7 @@ table 31003111 "Historico Empregado"
         {
             Caption = 'Gen. Journal Section';
             Description = 'Pagamento';
-            TableRelation = "Gen. Journal Batch".Name WHERE ("Journal Template Name" = FIELD ("Nome Livro Diario Pag."));
+            TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Nome Livro Diario Pag."));
         }
         field(132; Pagamento; Option)
         {
@@ -689,9 +689,9 @@ table 31003111 "Historico Empregado"
         {
             Caption = 'Payment Acc.';
             Description = 'Pagamento';
-            TableRelation = IF (Pagamento = CONST ("Bank Account")) "Bank Account"."No."
+            TableRelation = IF (Pagamento = CONST("Bank Account")) "Bank Account"."No."
             ELSE
-            IF (Pagamento = CONST ("G/L Account")) "G/L Account"."No.";
+            IF (Pagamento = CONST("G/L Account")) "G/L Account"."No.";
         }
         field(134; "Envio Recibo via E-Mail"; Boolean)
         {
@@ -730,8 +730,8 @@ table 31003111 "Historico Empregado"
         }
         field(140; "Total Férias"; Decimal)
         {
-            CalcFormula = Sum ("Férias Empregados"."Qtd." WHERE ("No. Empregado" = FIELD ("No."),
-                                                                Data = FIELD ("Date Filter")));
+            CalcFormula = Sum("Férias Empregados"."Qtd." WHERE("No. Empregado" = FIELD("No."),
+                                                                Data = FIELD("Date Filter")));
             Caption = 'Total Vacations';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -745,9 +745,9 @@ table 31003111 "Historico Empregado"
         }
         field(142; "Hora Extra Total (Base)"; Decimal)
         {
-            CalcFormula = Sum ("Histórico Horas Extra".Quantidade WHERE ("No. Empregado" = FIELD ("No."),
-                                                                        "Cód. Hora Extra" = FIELD ("Filtro Hora Extra"),
-                                                                        Data = FIELD ("Date Filter")));
+            CalcFormula = Sum("Histórico Horas Extra".Quantidade WHERE("No. Empregado" = FIELD("No."),
+                                                                        "Cód. Hora Extra" = FIELD("Filtro Hora Extra"),
+                                                                        Data = FIELD("Date Filter")));
             Caption = 'Extra Hour Total (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -770,7 +770,7 @@ table 31003111 "Historico Empregado"
         }
         field(146; "Profissionalização"; Boolean)
         {
-            CalcFormula = Exist ("Profissionalização" WHERE ("Cod Empregado" = FIELD ("No.")));
+            CalcFormula = Exist("Profissionalização" WHERE("Cod Empregado" = FIELD("No.")));
             Caption = 'Professionalization';
             FieldClass = FlowField;
         }
@@ -1015,7 +1015,7 @@ table 31003111 "Historico Empregado"
         {
             Caption = 'Applied Code Regime Reform';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (RRef));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(RRef));
         }
         field(194; "Regime Reforma Aplicado"; Text[30])
         {
@@ -1026,7 +1026,7 @@ table 31003111 "Historico Empregado"
         {
             Caption = 'Work Time Duration';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (DTT));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(DTT));
         }
         field(196; "Desc. Duração Tempo Trabalho"; Text[200])
         {
@@ -1037,7 +1037,7 @@ table 31003111 "Historico Empregado"
         {
             Caption = 'Training-Situation face the freq.';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (SitFF));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(SitFF));
         }
         field(198; Marcado; Boolean)
         {
@@ -1181,7 +1181,7 @@ table 31003111 "Historico Empregado"
         TabGrauFuncaoEmpr: Record "Grau Função Empregado";
         Text0030: Label 'Importado com sucesso.';
         TabFreguesias: Record "Cód. Freguesia/Conc/Distrito";
-        Text73100: Label 'The password must have more then 6 characters.';
+        Text75: Label 'The password must have more then 6 characters.';
         RUTabelas: Record "RU - Tabelas";
 }
 

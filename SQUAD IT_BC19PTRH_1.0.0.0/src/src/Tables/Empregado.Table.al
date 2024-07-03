@@ -1,4 +1,4 @@
-table 31003035 Empregado
+table 53035 Empregado
 {
     // Tagus - novo campo 50000
 
@@ -1567,7 +1567,7 @@ table 31003035 Empregado
         TabGrauFuncaoEmpr: Record "Grau Função Empregado";
         Text0030: Label 'Importado com sucesso.';
         TabFreguesias: Record "Cód. Freguesia/Conc/Distrito";
-        Text73100: Label 'The password must have more then 6 characters.';
+        Text75: Label 'The password must have more then 6 characters.';
         RUTabelas: Record "RU - Tabelas";
         RespCenter: Record "Responsibility Center";
         CompanyInfo: Record "Company Information";

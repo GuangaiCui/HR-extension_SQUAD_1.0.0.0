@@ -1,4 +1,4 @@
-table 31003115 "Segurança e Saúde no Trabalho"
+table 53115 "Segurança e Saúde no Trabalho"
 {
     LookupPageID = "Org. dos Serviços Lista";
 

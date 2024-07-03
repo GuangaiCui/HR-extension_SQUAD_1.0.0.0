@@ -1,4 +1,4 @@
-table 31003041 "Absence Reason"
+table 53041 "Absence Reason"
 {
     Caption = 'Absence Reason';
     DrillDownPageID = "Motivos Ausência";
@@ -22,9 +22,9 @@ table 31003041 "Absence Reason"
         }
         field(4; "Total Absence (Base)"; Decimal)
         {
-            CalcFormula = Sum ("Histórico Ausências"."Quantity (Base)" WHERE ("Cause of Absence Code" = FIELD (Code),
-                                                                             "Employee No." = FIELD ("Employee No. Filter"),
-                                                                             "From Date" = FIELD ("Date Filter")));
+            CalcFormula = Sum("Histórico Ausências"."Quantity (Base)" WHERE("Cause of Absence Code" = FIELD(Code),
+                                                                             "Employee No." = FIELD("Employee No. Filter"),
+                                                                             "From Date" = FIELD("Date Filter")));
             Caption = 'Total Absence (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
@@ -35,14 +35,14 @@ table 31003041 "Absence Reason"
             CaptionClass = '1,3,1';
             Caption = 'Global Dimension 1 Filter';
             FieldClass = FlowFilter;
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(6; "Global Dimension 2 Filter"; Code[20])
         {
             CaptionClass = '1,3,2';
             Caption = 'Global Dimension 2 Filter';
             FieldClass = FlowFilter;
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(7; "Employee No. Filter"; Code[20])
         {
@@ -87,7 +87,7 @@ table 31003041 "Absence Reason"
         {
             Caption = 'Reason Code of Non Work Hours';
             Description = 'RU';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (MotHNTrab));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotHNTrab));
 
             trigger OnValidate()
             begin

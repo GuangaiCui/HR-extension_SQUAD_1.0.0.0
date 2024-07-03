@@ -1,4 +1,4 @@
-page 31003140 "Pessoal dos Serviços Internos"
+page 53140 "Pessoal dos Serviços Internos"
 {
     AutoSplitKey = true;
     Caption = 'Pessoal dos Serviços Internos';

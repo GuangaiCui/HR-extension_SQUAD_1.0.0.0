@@ -1,4 +1,4 @@
-tableextension 31003035 "ApplicationAreaSetupRH" extends "Application Area Setup"
+tableextension 53035 "ApplicationAreaSetupRH" extends "Application Area Setup"
 {
     fields
     {

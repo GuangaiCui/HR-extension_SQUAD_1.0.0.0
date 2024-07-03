@@ -1,4 +1,4 @@
-pageextension 31003038 RecurringGeneralJournalRH extends "Recurring General Journal"
+pageextension 53038 RecurringGeneralJournalRH extends "Recurring General Journal"
 {
     layout
     {

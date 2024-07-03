@@ -1,4 +1,4 @@
-page 31003090 "Registo Horas Extra"
+page 53090 "Registo Horas Extra"
 {
     DelayedInsert = true;
     PageType = List;
@@ -95,7 +95,7 @@ page 31003090 "Registo Horas Extra"
 
                     trigger OnAction()
                     begin
-                        REPORT.RunModal(31003036);
+                        REPORT.RunModal(53036);
                     end;
                 }
             }

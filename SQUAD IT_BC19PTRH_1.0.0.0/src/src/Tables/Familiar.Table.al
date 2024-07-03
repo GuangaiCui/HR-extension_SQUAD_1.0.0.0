@@ -1,4 +1,4 @@
-table 31003039 Familiar
+table 53039 Familiar
 {
     Caption = 'Relative';
     DrillDownPageID = Familiares;

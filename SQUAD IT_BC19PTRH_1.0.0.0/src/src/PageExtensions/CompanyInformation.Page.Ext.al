@@ -1,4 +1,4 @@
-pageextension 31003035 CompanyInfoRH extends "Company Information"
+pageextension 53035 CompanyInfoRH extends "Company Information"
 {
     layout
     {

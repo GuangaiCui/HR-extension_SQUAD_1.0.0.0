@@ -1,4 +1,4 @@
-page 31003075 "Lista Cat. Prof. Int. Emp."
+page 53075 "Lista Cat. Prof. Int. Emp."
 {
     AutoSplitKey = true;
     DataCaptionFields = "No. Empregado";

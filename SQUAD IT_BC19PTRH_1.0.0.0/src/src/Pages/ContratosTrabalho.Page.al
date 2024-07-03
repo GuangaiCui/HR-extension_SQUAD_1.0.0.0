@@ -1,4 +1,4 @@
-page 31003052 "Contratos Trabalho"
+page 53052 "Contratos Trabalho"
 {
     Caption = 'Employment Contracts';
     PageType = List;

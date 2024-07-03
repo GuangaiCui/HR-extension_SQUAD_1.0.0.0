@@ -1,4 +1,4 @@
-report 31003074 "Não utilizar esta numeração"
+report 53074 "Não utilizar esta numeração"
 {
     DefaultLayout = RDLC;
     RDLCLayout = './src/Reports/Layouts/Nãoutilizarestanumeração.rdlc';

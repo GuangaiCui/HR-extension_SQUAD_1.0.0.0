@@ -1,4 +1,4 @@
-report 31003036 "Hora Extra Colectiva"
+report 53036 "Hora Extra Colectiva"
 {
     //  //-------------------------------------------------------
     //                Hora Extra Colectiva

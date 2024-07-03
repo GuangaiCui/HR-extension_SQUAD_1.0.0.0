@@ -1,4 +1,4 @@
-table 31003086 "Perdas e Anomalias Emp."
+table 53086 "Perdas e Anomalias Emp."
 {
 
     fields

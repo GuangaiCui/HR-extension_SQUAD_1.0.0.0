@@ -1,4 +1,4 @@
-page 31003111 "Estabelecimentos da Empresa"
+page 53111 "Estabelecimentos da Empresa"
 {
     AutoSplitKey = false;
     PageType = List;

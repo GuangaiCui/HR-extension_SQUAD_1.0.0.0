@@ -1,4 +1,4 @@
-page 31003073 "Lista Inactividade Empregado"
+page 53073 "Lista Inactividade Empregado"
 {
     AutoSplitKey = true;
     Caption = 'Inactividade Empregado ';

@@ -1,4 +1,4 @@
-page 31003145 "Medidas Adoptadas"
+page 53145 "Medidas Adoptadas"
 {
     AutoSplitKey = true;
     PageType = List;

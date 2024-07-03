@@ -1,4 +1,4 @@
-page 31003166 "Tabelas Sobretaxa"
+page 53166 "Tabelas Sobretaxa"
 {
     PageType = List;
     SourceTable = "Tabelas Sobretaxa";

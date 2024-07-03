@@ -1,4 +1,4 @@
-page 31003053 "Artigos Diversos"
+page 53053 "Artigos Diversos"
 {
     Caption = 'Misc. Articles';
     PageType = List;

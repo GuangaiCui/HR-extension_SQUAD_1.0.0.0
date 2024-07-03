@@ -1,4 +1,4 @@
-table 31003107 "Histórico Abonos - Desc. Extra"
+table 53107 "Histórico Abonos - Desc. Extra"
 {
     DrillDownPageID = "Lista Hist. Abon. - Des. Extr.";
     LookupPageID = "Lista Hist. Abon. - Des. Extr.";
@@ -54,13 +54,13 @@ table 31003107 "Histórico Abonos - Desc. Extra"
         {
             CaptionClass = '1,1,1';
             Caption = 'Global Dimension 1 Code';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(31; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
             Caption = 'Global Dimension 2 Code';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(35; "Anular Falta"; Boolean)
         {

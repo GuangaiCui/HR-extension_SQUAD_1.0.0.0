@@ -1,4 +1,4 @@
-page 31003120 "Lista Acções Formação"
+page 53120 "Lista Acções Formação"
 {
     CardPageID = "Ficha Acção Formação";
     DelayedInsert = true;

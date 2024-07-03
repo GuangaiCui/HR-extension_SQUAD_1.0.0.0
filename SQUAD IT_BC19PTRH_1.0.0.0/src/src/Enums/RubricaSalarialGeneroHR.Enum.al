@@ -1,4 +1,4 @@
-enum 31003035 "Rubrica Salarial Genero"
+enum 53035 "Rubrica Salarial Genero"
 {
     Extensible = true;
     AssignmentCompatibility = true;
@@ -26,7 +26,7 @@ enum 31003035 "Rubrica Salarial Genero"
 
 }
 
-enum 31003036 "Rubrica Salarial Genero Fecho"
+enum 53036 "Rubrica Salarial Genero Fecho"
 {
     Extensible = true;
     AssignmentCompatibility = true;
@@ -45,7 +45,7 @@ enum 31003036 "Rubrica Salarial Genero Fecho"
     value(10; "Cred. Formacao") { Caption = 'Crédito Formação'; }
 }
 
-enum 31003037 "Rubrica Salarial Nat. Rem."
+enum 53037 "Rubrica Salarial Nat. Rem."
 {
     Extensible = true;
     AssignmentCompatibility = true;

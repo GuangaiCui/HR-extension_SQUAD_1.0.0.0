@@ -1,4 +1,4 @@
-table 31003078 "Rubrica Salarial Empregado"
+table 53078 "Rubrica Salarial Empregado"
 {
     // //C+ -LCF-  Acrescentei a chave a tabela (Nº Empregado,Ordenação,Cód. Rúbrica Salarial,Data Início)
     // //IT001 - CPA - 2016.10.24 - mudei o nome do campo "Data Falta" para "Data a que se refere o mov" pois agora é usado para acerto de duodécimos
@@ -190,14 +190,14 @@ table 31003078 "Rubrica Salarial Empregado"
             CaptionClass = '1,1,1';
             Caption = 'Global Dimension 1 Code';
             Description = 'Para as horas extra';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(111; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
             Caption = 'Global Dimension 2 Code';
             Description = 'Para as horas extra';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(120; "Garnishmen No."; Code[50])
         {

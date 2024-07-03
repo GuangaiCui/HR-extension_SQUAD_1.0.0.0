@@ -1,4 +1,4 @@
-xmlport 31003038 "RU - Anexo C - RFC"
+xmlport 53038 "RU - Anexo C - RFC"
 {
     // IT001 - Correção Exportação - 30-04-2018
     //           - Estava a exportar registos mesmo quando não estava a encontrar registos e dava erro nas valições.

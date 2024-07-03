@@ -1,4 +1,4 @@
-page 31003171 MyEmpregado
+page 53171 MyEmpregado
 {
     PageType = ListPart;
     SourceTable = Empregado;

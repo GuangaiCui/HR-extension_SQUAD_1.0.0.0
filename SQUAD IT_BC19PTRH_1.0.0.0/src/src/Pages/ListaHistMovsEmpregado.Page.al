@@ -1,4 +1,4 @@
-page 31003110 "Lista Hist. Movs. Empregado"
+page 53110 "Lista Hist. Movs. Empregado"
 {
     AutoSplitKey = true;
     DeleteAllowed = false;

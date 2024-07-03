@@ -1,4 +1,4 @@
-page 31003170 "Human Resources Role Center"
+page 53170 "Human Resources Role Center"
 {
     Caption = 'Human Resources Role Center';
     PageType = RoleCenter;

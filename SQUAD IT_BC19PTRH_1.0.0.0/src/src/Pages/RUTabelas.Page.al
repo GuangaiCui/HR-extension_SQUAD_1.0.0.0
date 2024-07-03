@@ -1,4 +1,4 @@
-page 31003156 "RU - Tabelas"
+page 53156 "RU - Tabelas"
 {
     PageType = List;
     SourceTable = "RU - Tabelas";

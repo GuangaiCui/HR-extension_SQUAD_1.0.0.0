@@ -1,4 +1,4 @@
-table 31003063 "Grau Função Empregado"
+table 53063 "Grau Função Empregado"
 {
     DataCaptionFields = "No. Empregado";
     DrillDownPageID = "Lista Grau Função Empregado";
@@ -40,9 +40,9 @@ table 31003063 "Grau Função Empregado"
         }
         field(7; "Comentário"; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (Grau),
-                                                                      "No." = FIELD ("No. Empregado"),
-                                                                      "Table Line No." = FIELD ("No. Linha")));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Grau),
+                                                                      "No." = FIELD("No. Empregado"),
+                                                                      "Table Line No." = FIELD("No. Linha")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

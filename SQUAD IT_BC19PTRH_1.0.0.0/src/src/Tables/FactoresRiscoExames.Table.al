@@ -1,4 +1,4 @@
-table 31003125 "Factores Risco - Exames"
+table 53125 "Factores Risco - Exames"
 {
 
     fields
@@ -14,7 +14,7 @@ table 31003125 "Factores Risco - Exames"
         field(5; "Risk Factor"; Code[20])
         {
             Caption = 'Factor de Risco';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (ExCFR));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(ExCFR));
 
             trigger OnValidate()
             begin

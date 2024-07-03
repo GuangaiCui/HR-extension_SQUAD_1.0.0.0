@@ -1,4 +1,4 @@
-table 31003116 "Pessoal dos Serviços"
+table 53116 "Pessoal dos Serviços"
 {
 
     fields
@@ -45,8 +45,8 @@ table 31003116 "Pessoal dos Serviços"
         }
         field(14; "Médicos do Trabalho"; Integer)
         {
-            CalcFormula = Count ("Pessoal dos Serviços Int" WHERE (Ano = FIELD (Ano),
-                                                                  "Tipo de Técnico" = CONST ("Médico do Trabalho")));
+            CalcFormula = Count("Pessoal dos Serviços Int" WHERE(Ano = FIELD(Ano),
+                                                                  "Tipo de Técnico" = CONST("Médico do Trabalho")));
             Caption = 'Médicos do Trabalho';
             FieldClass = FlowField;
         }
@@ -56,15 +56,15 @@ table 31003116 "Pessoal dos Serviços"
         }
         field(16; "Técnicos Superiores de SHT"; Integer)
         {
-            CalcFormula = Count ("Pessoal dos Serviços Int" WHERE (Ano = FIELD (Ano),
-                                                                  "Tipo de Técnico" = CONST ("Técnico Sup. de SHT")));
+            CalcFormula = Count("Pessoal dos Serviços Int" WHERE(Ano = FIELD(Ano),
+                                                                  "Tipo de Técnico" = CONST("Técnico Sup. de SHT")));
             Caption = 'Técnicos Superiores de SHT';
             FieldClass = FlowField;
         }
         field(17; "Técnicos de SHT"; Integer)
         {
-            CalcFormula = Count ("Pessoal dos Serviços Int" WHERE (Ano = FIELD (Ano),
-                                                                  "Tipo de Técnico" = CONST ("Técnico de SHT")));
+            CalcFormula = Count("Pessoal dos Serviços Int" WHERE(Ano = FIELD(Ano),
+                                                                  "Tipo de Técnico" = CONST("Técnico de SHT")));
             Caption = 'Técnicos de SHT';
             FieldClass = FlowField;
         }

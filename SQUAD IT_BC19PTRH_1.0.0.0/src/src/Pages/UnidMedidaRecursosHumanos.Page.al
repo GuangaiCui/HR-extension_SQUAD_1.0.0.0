@@ -1,4 +1,4 @@
-page 31003071 "Unid. Medida Recursos Humanos"
+page 53071 "Unid. Medida Recursos Humanos"
 {
     Caption = 'Human Resource Units of Measure';
     PageType = List;

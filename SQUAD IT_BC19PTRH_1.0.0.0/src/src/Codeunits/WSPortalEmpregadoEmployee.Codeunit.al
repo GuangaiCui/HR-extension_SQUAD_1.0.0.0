@@ -1,4 +1,4 @@
-codeunit 31003040 "WS Portal Empregado Employee"
+codeunit 53040 "WS Portal Empregado Employee"
 {
 
     trigger OnRun()

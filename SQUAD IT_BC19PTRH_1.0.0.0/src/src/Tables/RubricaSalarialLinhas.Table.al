@@ -1,4 +1,4 @@
-table 31003077 "Rubrica Salarial Linhas"
+table 53077 "Rubrica Salarial Linhas"
 {
 
     fields

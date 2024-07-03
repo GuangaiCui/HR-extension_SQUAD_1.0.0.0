@@ -1,4 +1,4 @@
-table 31003047 "Departamentos Empregado"
+table 53047 "Departamentos Empregado"
 {
     Caption = 'Employee Statistics Group';
     DrillDownPageID = "Departamentos Empregado";

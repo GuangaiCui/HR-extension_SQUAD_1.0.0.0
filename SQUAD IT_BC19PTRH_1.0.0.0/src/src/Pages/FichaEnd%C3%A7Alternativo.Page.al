@@ -1,4 +1,4 @@
-page 31003038 "Ficha Endç. Alternativo"
+page 53038 "Ficha Endç. Alternativo"
 {
     Caption = 'Alternative Address Card';
     DataCaptionExpression = Caption;

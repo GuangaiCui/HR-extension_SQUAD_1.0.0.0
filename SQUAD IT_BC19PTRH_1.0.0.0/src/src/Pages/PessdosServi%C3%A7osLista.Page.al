@@ -1,4 +1,4 @@
-page 31003154 "Pess. dos Serviços Lista"
+page 53154 "Pess. dos Serviços Lista"
 {
     CardPageID = "Pessoal dos Serviços";
     Editable = false;

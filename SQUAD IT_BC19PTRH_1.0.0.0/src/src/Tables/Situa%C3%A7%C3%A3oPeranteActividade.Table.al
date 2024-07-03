@@ -1,4 +1,4 @@
-table 31003089 "Situação Perante Actividade"
+table 53089 "Situação Perante Actividade"
 {
 
     fields
@@ -18,7 +18,7 @@ table 31003089 "Situação Perante Actividade"
         field(8; "Situação"; Code[20])
         {
             Caption = 'Situation';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (SitAct));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(SitAct));
 
             trigger OnValidate()
             begin
@@ -38,7 +38,7 @@ table 31003089 "Situação Perante Actividade"
         field(10; Motivo; Code[20])
         {
             Caption = 'Reason Code';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (MotSit));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSit));
 
             trigger OnValidate()
             begin

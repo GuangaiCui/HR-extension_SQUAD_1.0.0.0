@@ -1,4 +1,4 @@
-page 31003079 "Lista Grau Função Empregado"
+page 53079 "Lista Grau Função Empregado"
 {
     AutoSplitKey = true;
     DataCaptionFields = "No. Empregado";

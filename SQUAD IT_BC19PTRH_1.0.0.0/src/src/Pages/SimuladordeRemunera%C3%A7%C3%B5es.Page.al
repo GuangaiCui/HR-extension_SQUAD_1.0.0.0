@@ -1,4 +1,4 @@
-page 31003117 "Simulador de Remunerações"
+page 53117 "Simulador de Remunerações"
 {
     Caption = 'Remuneration Simulator';
     /**/

@@ -1,4 +1,4 @@
-table 31003066 "Horário Empregado"
+table 53066 "Horário Empregado"
 {
     // //C+ -LCF-  21.05.2008
     // //tive de alterar a chave para "Nº Empregado,Data Iníco Horário,Data Fim Horário"

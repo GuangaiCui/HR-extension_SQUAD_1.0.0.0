@@ -1,4 +1,4 @@
-table 31003097 "Formação - Período Referência"
+table 53097 "Formação - Período Referência"
 {
     DrillDownPageID = "Registo Formação";
     LookupPageID = "Registo Formação";
@@ -22,7 +22,7 @@ table 31003097 "Formação - Período Referência"
         field(4; "Período Ref. Formação"; Code[20])
         {
             Caption = 'Training Period';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (PRF));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(PRF));
 
             trigger OnValidate()
             begin

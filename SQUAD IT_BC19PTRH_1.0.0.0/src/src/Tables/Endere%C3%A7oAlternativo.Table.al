@@ -1,4 +1,4 @@
-table 31003036 "Endereço Alternativo"
+table 53036 "Endereço Alternativo"
 {
     Caption = 'Alternative Address';
     DataCaptionFields = "Employee No.", Name, "Code";
@@ -80,9 +80,9 @@ table 31003036 "Endereço Alternativo"
         }
         field(13; Comment; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST ("Edç"),
-                                                                      "No." = FIELD ("Employee No."),
-                                                                      "Alternative Address Code" = FIELD (Code)));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST("Edç"),
+                                                                      "No." = FIELD("Employee No."),
+                                                                      "Alternative Address Code" = FIELD(Code)));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

@@ -1,4 +1,4 @@
-page 31003072 "Lista Contrato Empregado"
+page 53072 "Lista Contrato Empregado"
 {
     AutoSplitKey = true;
     Caption = 'Employee Relatives';

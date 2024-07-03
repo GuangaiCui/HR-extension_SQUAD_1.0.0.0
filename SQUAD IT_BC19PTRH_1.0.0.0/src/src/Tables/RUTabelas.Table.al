@@ -1,4 +1,4 @@
-table 31003101 "RU - Tabelas"
+table 53101 "RU - Tabelas"
 {
     LookupPageID = "RU - Tabelas";
 

@@ -1,4 +1,4 @@
-page 31003058 "Lista Comentários RH"
+page 53058 "Lista Comentários RH"
 {
     AutoSplitKey = true;
     Caption = 'Comment List';

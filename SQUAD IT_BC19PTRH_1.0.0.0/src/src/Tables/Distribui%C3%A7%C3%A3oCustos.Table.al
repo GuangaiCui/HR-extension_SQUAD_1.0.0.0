@@ -1,4 +1,4 @@
-table 31003099 "Distribuição Custos"
+table 53099 "Distribuição Custos"
 {
 
     fields

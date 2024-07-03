@@ -1,4 +1,4 @@
-page 31003054 "Informação Artigos Div."
+page 53054 "Informação Artigos Div."
 {
     AutoSplitKey = true;
     Caption = 'Misc. Article Information';

@@ -1,4 +1,4 @@
-table 31003072 "Tipos Horas Extra"
+table 53072 "Tipos Horas Extra"
 {
     DrillDownPageID = "Tipos Horas Extra";
     LookupPageID = "Tipos Horas Extra";
@@ -35,9 +35,9 @@ table 31003072 "Tipos Horas Extra"
         }
         field(17; "Total Hora Extra"; Decimal)
         {
-            CalcFormula = Sum ("Histórico Horas Extra".Quantidade WHERE ("No. Empregado" = FIELD ("Employee No. Filter"),
-                                                                        "Cód. Hora Extra" = FIELD ("Código"),
-                                                                        Data = FIELD ("Date Filter")));
+            CalcFormula = Sum("Histórico Horas Extra".Quantidade WHERE("No. Empregado" = FIELD("Employee No. Filter"),
+                                                                        "Cód. Hora Extra" = FIELD("Código"),
+                                                                        Data = FIELD("Date Filter")));
             Caption = 'Total Absence (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;

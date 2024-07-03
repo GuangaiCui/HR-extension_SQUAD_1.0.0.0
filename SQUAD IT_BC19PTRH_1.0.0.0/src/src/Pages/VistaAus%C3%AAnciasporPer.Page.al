@@ -1,4 +1,4 @@
-page 31003061 "Vista Ausências por Per."
+page 53061 "Vista Ausências por Per."
 {
     Caption = 'Absence Overview by Periods';
     DataCaptionExpression = '';

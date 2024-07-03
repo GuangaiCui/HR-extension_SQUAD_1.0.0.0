@@ -1,4 +1,4 @@
-page 31003049 "Motivos Inactividade"
+page 53049 "Motivos Inactividade"
 {
     Caption = 'Causes of Inactivity';
     PageType = List;

@@ -1,4 +1,4 @@
-table 31003121 "Factores de Risco"
+table 53121 "Factores de Risco"
 {
 
     fields
@@ -21,15 +21,15 @@ table 31003121 "Factores de Risco"
         field(7; Agente; Code[20])
         {
             Caption = 'Agente';
-            TableRelation = IF ("Tipo de Risco" = CONST ("Físico")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RF))
+            TableRelation = IF ("Tipo de Risco" = CONST("Físico")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RF))
             ELSE
-            IF ("Tipo de Risco" = CONST ("Biológico")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RB))
+            IF ("Tipo de Risco" = CONST("Biológico")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RB))
             ELSE
-            IF ("Tipo de Risco" = CONST ("Músculo-esquelético")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RM))
+            IF ("Tipo de Risco" = CONST("Músculo-esquelético")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RM))
             ELSE
-            IF ("Tipo de Risco" = CONST (Psicossociais)) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RP))
+            IF ("Tipo de Risco" = CONST(Psicossociais)) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RP))
             ELSE
-            IF ("Tipo de Risco" = CONST (Outros)) "RU - Tabelas"."Código" WHERE (Tipo = CONST (OR));
+            IF ("Tipo de Risco" = CONST(Outros)) "RU - Tabelas"."Código" WHERE(Tipo = CONST(OR));
 
             trigger OnValidate()
             begin
@@ -65,7 +65,7 @@ table 31003121 "Factores de Risco"
         field(11; "No. Ordem - Código"; Code[20])
         {
             Caption = 'No. Ordem - Código';
-            TableRelation = IF ("Tipo de Risco" = CONST ("Químico")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RQ));
+            TableRelation = IF ("Tipo de Risco" = CONST("Químico")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RQ));
 
             trigger OnValidate()
             begin
@@ -85,7 +85,7 @@ table 31003121 "Factores de Risco"
         field(13; "Menção ou Frase de Risco"; Code[20])
         {
             Caption = 'Menção ou Frase de Risco';
-            TableRelation = IF ("Tipo de Risco" = CONST ("Químico")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RQMF));
+            TableRelation = IF ("Tipo de Risco" = CONST("Químico")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RQMF));
         }
         field(14; "Classificação do Agente"; Text[1])
         {

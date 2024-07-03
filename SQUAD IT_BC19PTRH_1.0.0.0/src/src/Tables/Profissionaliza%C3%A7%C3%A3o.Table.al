@@ -1,4 +1,4 @@
-table 31003100 "Profissionalização"
+table 55 "Profissionalização"
 {
 
     fields

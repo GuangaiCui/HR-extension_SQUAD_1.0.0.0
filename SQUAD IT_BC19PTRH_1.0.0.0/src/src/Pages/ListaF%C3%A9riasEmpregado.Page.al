@@ -1,4 +1,4 @@
-page 31003119 "Lista Férias Empregado"
+page 53119 "Lista Férias Empregado"
 {
     PageType = List;
     SourceTable = "Férias Empregados";
@@ -61,7 +61,7 @@ page 31003119 "Lista Férias Empregado"
 
                 trigger OnAction()
                 begin
-                    REPORT.Run(31003092);
+                    REPORT.Run(53092);
                 end;
             }
         }

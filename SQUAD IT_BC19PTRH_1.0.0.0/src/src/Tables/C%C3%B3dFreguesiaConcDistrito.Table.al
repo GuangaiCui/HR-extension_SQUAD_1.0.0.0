@@ -1,4 +1,4 @@
-table 31003091 "Cód. Freguesia/Conc/Distrito"
+table 53091 "Cód. Freguesia/Conc/Distrito"
 {
     LookupPageID = "Lista Freguesia/Conc/Distrito";
 

@@ -1,4 +1,4 @@
-table 31003106 "Histórico Horas Extra"
+table 53106 "Histórico Horas Extra"
 {
     DataCaptionFields = "No. Empregado";
     DrillDownPageID = "Lista Histórico Horas Extra";
@@ -47,8 +47,8 @@ table 31003106 "Histórico Horas Extra"
         }
         field(25; "Comentário"; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (HHorEx),
-                                                                      "No." = FIELD ("No. Empregado")));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(HHorEx),
+                                                                      "No." = FIELD("No. Empregado")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;
@@ -57,13 +57,13 @@ table 31003106 "Histórico Horas Extra"
         {
             CaptionClass = '1,1,1';
             Caption = 'Global Dimension 1 Code';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (1));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(31; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
             Caption = 'Global Dimension 2 Code';
-            TableRelation = "Dimension Value".Code WHERE ("Global Dimension No." = CONST (2));
+            TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(50; "Processamento Referencia"; Code[10])
         {

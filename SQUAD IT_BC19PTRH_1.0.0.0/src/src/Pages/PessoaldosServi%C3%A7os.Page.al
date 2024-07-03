@@ -1,4 +1,4 @@
-page 31003139 "Pessoal dos Serviços"
+page 53139 "Pessoal dos Serviços"
 {
     Caption = 'Pessoal dos Serviços';
     PageType = Card;

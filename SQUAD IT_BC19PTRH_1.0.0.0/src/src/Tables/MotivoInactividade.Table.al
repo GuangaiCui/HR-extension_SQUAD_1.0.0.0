@@ -1,4 +1,4 @@
-table 31003045 "Motivo Inactividade"
+table 53045 "Motivo Inactividade"
 {
     Caption = 'Cause of Inactivity';
     DrillDownPageID = "Motivos Inactividade";

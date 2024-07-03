@@ -1,4 +1,4 @@
-page 31003078 "Grau Função"
+page 53078 "Grau Função"
 {
     PageType = List;
     SourceTable = "Grau Função";

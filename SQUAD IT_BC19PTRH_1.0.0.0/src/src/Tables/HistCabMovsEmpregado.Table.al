@@ -1,4 +1,4 @@
-table 31003108 "Hist. Cab. Movs. Empregado"
+table 53108 "Hist. Cab. Movs. Empregado"
 {
     //   IT001 - CPA:Novo campo para a Desccrição Cat. prof. Interna
 

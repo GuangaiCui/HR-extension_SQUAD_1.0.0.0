@@ -2685,7 +2685,7 @@
           <source>The password must have more then 6 characters.</source>
           <target>A password tem de ter mais de 6 caracteres.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - NamedType Text73100</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - NamedType Text75</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Method 2293048957 - NamedType 3114637384" size-unit="char" translate="yes" xml:space="preserve">
           <source>Deseja também actualizar os restantes empregados?</source>
@@ -5373,7 +5373,7 @@
           <source>The password must have more then 6 characters.</source>
           <target>A password tem de ter mais de 6 caracteres.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - NamedType Text73100</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - NamedType Text75</note>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 3813281282 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Collective Agreement</source>
@@ -9060,7 +9060,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table RU - Field Trab. Suplementar visado - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2233419849 - Field 3431009440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 2233419849 - Field 3459440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Valor Acrescentado Bruto (VAB)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table RU - Field Valor Acrescentado Bruto (VAB) - Property Caption</note>
@@ -15208,13 +15208,13 @@
           <source>The Initial Date field must be populated.</source>
           <target>O campo Data Início Registo tem de estar preenchido.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Ficheiro CGA Nova Versão - NamedType Text31003035</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Ficheiro CGA Nova Versão - NamedType Text53035</note>
         </trans-unit>
         <trans-unit id="Report 2059627292 - NamedType 1434840379" size-unit="char" translate="yes" xml:space="preserve">
           <source>The End Date field must be populated.</source>
           <target>O campo Data Fim Registo tem de estar preenchido.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Ficheiro CGA Nova Versão - NamedType Text31003036</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Ficheiro CGA Nova Versão - NamedType Text53036</note>
         </trans-unit>
         <trans-unit id="Report 2059627292 - NamedType 2018001435" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total de </source>
@@ -16580,13 +16580,13 @@
           <source>The Initial Date field must be populated.</source>
           <target>O campo Data Início Registo tem de estar preenchido.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Mapa CGA - Aberto - NamedType Text31003035</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Mapa CGA - Aberto - NamedType Text53035</note>
         </trans-unit>
         <trans-unit id="Report 3596507518 - NamedType 1434840379" size-unit="char" translate="yes" xml:space="preserve">
           <source>The End Date field must be populated.</source>
           <target>O campo Data Fim Registo tem de estar preenchido.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Mapa CGA - Aberto - NamedType Text31003036</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Mapa CGA - Aberto - NamedType Text53036</note>
         </trans-unit>
         <trans-unit id="Report 3596507518 - NamedType 2018001435" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total de </source>
@@ -16771,13 +16771,13 @@
           <source>The Initial Date field must be populated.</source>
           <target>O campo Data Início Registo tem de estar preenchido.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Mapa CGA - Fechado - NamedType Text31003035</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Mapa CGA - Fechado - NamedType Text53035</note>
         </trans-unit>
         <trans-unit id="Report 2889506945 - NamedType 1434840379" size-unit="char" translate="yes" xml:space="preserve">
           <source>The End Date field must be populated.</source>
           <target>O campo Data Fim Registo tem de estar preenchido.</target>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Mapa CGA - Fechado - NamedType Text31003036</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Mapa CGA - Fechado - NamedType Text53036</note>
         </trans-unit>
         <trans-unit id="Report 2889506945 - NamedType 2018001435" size-unit="char" translate="yes" xml:space="preserve">
           <source>Total de </source>
@@ -18146,163 +18146,163 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Imp. Extraordinário 2011 - Control codRubSalarial - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Mapa Integração Contabilística</source>
           <target>Mapa Integração Contabilística</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 1987762555" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 1987762555" size-unit="char" translate="yes" xml:space="preserve">
           <source>Page</source>
           <target>Pág.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType CurrReport_PAGENOCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 1529909896" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 1529909896" size-unit="char" translate="yes" xml:space="preserve">
           <source>Data Reg.</source>
           <target>Data Reg.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Data_Reg_CaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 1719721463" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 1719721463" size-unit="char" translate="yes" xml:space="preserve">
           <source>Descrição</source>
           <target>Descrição</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType DescriçãoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 2752799165" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 2752799165" size-unit="char" translate="yes" xml:space="preserve">
           <source>INTEGRAÇÃO CONTABILÍSTICA</source>
           <target>INTEGRAÇÃO CONTABILÍSTICA</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType INTEGRAÇÃO_CONTABILÍSTICACaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 4031591703" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 4031591703" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nº Conta</source>
           <target>Nº Conta</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType N__ContaCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 3599605334" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 3599605334" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nº Documento</source>
           <target>Nº Documento</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType N__DocumentoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 2601538438" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 2601538438" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nº Empre.</source>
           <target>Nº Empre.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType N__Empre_CaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 1792352049" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 1792352049" size-unit="char" translate="yes" xml:space="preserve">
           <source>Periodo de Processamento:</source>
           <target>Periodo de Processamento:</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Periodo_de_Processamento_CaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 3304367180" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 3304367180" size-unit="char" translate="yes" xml:space="preserve">
           <source>Processado por Computador</source>
           <target>Processado por Computador</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Processado_por_ComputadorCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
           <source>Processo concluído.</source>
           <target>Processo concluído.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0001</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
           <source>Este periodo já foi integrado.</source>
           <target>Este periodo já foi integrado.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0002</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve">
           <source>O processamento tem de estar fechado.</source>
           <target>O processamento tem de estar fechado.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0003</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 4257629171" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 4257629171" size-unit="char" translate="yes" xml:space="preserve">
           <source>Não pode escolher Agrupar as contas balanço, pois está a usar a Distribuição p/ Centros de Custo.</source>
           <target>Não pode escolher Agrupar as contas balanço, pois está a usar a Distribuição p/ Centros de Custo.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0004</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 600358492" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 600358492" size-unit="char" translate="yes" xml:space="preserve">
           <source>Atenção, a rubrica %1, do empregado %2, não tem conta poc definida o que impede de aparecer no mapa.</source>
           <target>Atenção, a rubrica %1, do empregado %2, não tem conta poc definida o que impede de aparecer no mapa.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0005</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 1238055109" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 1238055109" size-unit="char" translate="yes" xml:space="preserve">
           <source>Para o empregado %1, a conta poc %2 da rubrica %3 tem de ser auxiliar.</source>
           <target>Para o empregado %1, a conta poc %2 da rubrica %3 tem de ser auxiliar.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0006</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 1875751726" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 1875751726" size-unit="char" translate="yes" xml:space="preserve">
           <source>A conta poc %1, não existe.</source>
           <target>A conta poc %1, não existe.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0007</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 2190223474" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 2190223474" size-unit="char" translate="yes" xml:space="preserve">
           <source>Não pode agrupar as contas balanço por centro de custo se não está a usar a Distribuição p/ Centros Custo.</source>
           <target>Não pode agrupar as contas balanço por centro de custo se não está a usar a Distribuição p/ Centros Custo.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0012</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 1552526857" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 1552526857" size-unit="char" translate="yes" xml:space="preserve">
           <source>Não pode agrupar as contas se quer usar um nº de documento diferente por Empregado.</source>
           <target>Não pode agrupar as contas se quer usar um nº de documento diferente por Empregado.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0013</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 3465616708" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 3465616708" size-unit="char" translate="yes" xml:space="preserve">
           <source>A distribuição de custos - dimensões, não perfaz um total de 100 para o empregado %1.</source>
           <target>A distribuição de custos - dimensões, não perfaz um total de 100 para o empregado %1.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0014</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 2827920091" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 2827920091" size-unit="char" translate="yes" xml:space="preserve">
           <source>Não pode agrupar as contas contas de perdas e ganhos por centro de custo se não está a usar a Distribuição p/ Centros Custo.</source>
           <target>Não pode agrupar as contas contas de perdas e ganhos por centro de custo se não está a usar a Distribuição p/ Centros Custo.</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Text0015</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 3640527010" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 3640527010" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipo Conta</source>
           <target>Tipo Conta</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Tipo_ContaCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 2777895381" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 2777895381" size-unit="char" translate="yes" xml:space="preserve">
           <source>Valor Crédito</source>
           <target>Valor Crédito</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Valor_CréditoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - NamedType 1191067260" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - NamedType 1191067260" size-unit="char" translate="yes" xml:space="preserve">
           <source>Valor Débito</source>
           <target>Valor Débito</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType Valor_DébitoCaptionLbl</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - Control 4134755879 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - Control 4134755879 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Periodo Processamento</source>
           <target>Periodo Processamento</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - Control Periodo Processamento - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - Control 1405928958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - Control 1405928958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Agrupar contas de balanço</source>
           <target>Agrupar contas de balanço</target>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - Control AgruparContasBalanco - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 1031003887 - Control 1591096361 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1053887 - Control 1591096361 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Periodo Processamento</source>
           <target>Cód. Processamento</target>
           <note from="Developer" annotates="general" priority="2"></note>

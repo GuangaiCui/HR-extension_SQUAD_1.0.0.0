@@ -1,4 +1,4 @@
-table 31003117 "Pessoal dos Serviços Int"
+table 53117 "Pessoal dos Serviços Int"
 {
     DrillDownPageID = "Pessoal dos Serviços Internos";
 

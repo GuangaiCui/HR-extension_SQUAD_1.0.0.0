@@ -1,4 +1,4 @@
-page 31003157 "Situação Perante Actividade"
+page 53157 "Situação Perante Actividade"
 {
     AutoSplitKey = true;
     PageType = List;

@@ -1,4 +1,4 @@
-table 31003070 "Código IRCT"
+table 53070 "Código IRCT"
 {
     DrillDownPageID = "Código IRCT";
     LookupPageID = "Código IRCT";

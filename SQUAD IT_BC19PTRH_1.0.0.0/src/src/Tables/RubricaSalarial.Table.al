@@ -1,4 +1,4 @@
-table 31003076 "Rubrica Salarial"
+table 53076 "Rubrica Salarial"
 {
     // IT001 - CPA:Novo campo para a funcionalidade de certos de Duodécimos
     // 

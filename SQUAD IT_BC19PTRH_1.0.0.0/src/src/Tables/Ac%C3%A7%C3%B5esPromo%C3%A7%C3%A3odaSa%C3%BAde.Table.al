@@ -1,4 +1,4 @@
-table 31003082 "Acções Promoção da Saúde"
+table 53082 "Acções Promoção da Saúde"
 {
 
     fields
@@ -12,7 +12,7 @@ table 31003082 "Acções Promoção da Saúde"
         }
         field(6; "Actividade Desenvolvida"; Code[20])
         {
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (ActDes));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(ActDes));
         }
         field(7; "No. Acções Realizadas"; Integer)
         {

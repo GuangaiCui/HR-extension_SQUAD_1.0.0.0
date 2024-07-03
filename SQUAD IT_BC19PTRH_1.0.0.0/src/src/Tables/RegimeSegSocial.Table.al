@@ -1,4 +1,4 @@
-table 31003068 "Regime Seg. Social"
+table 53068 "Regime Seg. Social"
 {
     DrillDownPageID = "Regime Seg. Social";
     LookupPageID = "Regime Seg. Social";

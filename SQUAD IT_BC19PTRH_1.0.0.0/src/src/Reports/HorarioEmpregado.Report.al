@@ -1,4 +1,4 @@
-report 31003086 "Horario Empregado"
+report 53086 "Horario Empregado"
 {
     UsageCategory = ReportsAndAnalysis;
     ApplicationArea = HumanResourcesAppArea;

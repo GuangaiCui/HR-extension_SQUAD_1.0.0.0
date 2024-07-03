@@ -1,4 +1,4 @@
-table 31003046 "Contrato Trabalho"
+table 53046 "Contrato Trabalho"
 {
     Caption = 'Employment Contract';
     DataCaptionFields = "Code", Description;

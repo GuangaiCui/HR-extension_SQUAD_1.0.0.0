@@ -1,4 +1,4 @@
-page 31003059 "Lista Tabela IRS"
+page 53059 "Lista Tabela IRS"
 {
     Editable = false;
     PageType = List;

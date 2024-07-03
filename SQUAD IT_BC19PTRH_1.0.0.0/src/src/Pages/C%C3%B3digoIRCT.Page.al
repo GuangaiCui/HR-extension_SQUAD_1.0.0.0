@@ -1,4 +1,4 @@
-page 31003086 "Código IRCT"
+page 53086 "Código IRCT"
 {
     PageType = List;
     SourceTable = "Código IRCT";

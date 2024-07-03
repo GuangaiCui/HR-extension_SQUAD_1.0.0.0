@@ -1,4 +1,4 @@
-table 31003050 Confidencial
+table 53050 Confidencial
 {
     Caption = 'Confidential';
     LookupPageID = Confidencial;

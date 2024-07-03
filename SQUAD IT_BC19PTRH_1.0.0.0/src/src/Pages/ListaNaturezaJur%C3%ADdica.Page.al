@@ -1,4 +1,4 @@
-page 31003124 "Lista Natureza Jurídica"
+page 53124 "Lista Natureza Jurídica"
 {
     PageType = List;
     SourceTable = "Natureza Jurídica";

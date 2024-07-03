@@ -1,4 +1,4 @@
-table 31003057 "Inactividade Empregado"
+table 53057 "Inactividade Empregado"
 {
     DataCaptionFields = "No. Empregado";
 

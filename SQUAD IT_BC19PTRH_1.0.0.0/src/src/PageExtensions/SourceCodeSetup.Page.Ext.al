@@ -1,4 +1,4 @@
-pageextension 31003039 SourceCodeSetupRH extends "Source Code Setup"
+pageextension 53039 SourceCodeSetupRH extends "Source Code Setup"
 {
     layout
     {

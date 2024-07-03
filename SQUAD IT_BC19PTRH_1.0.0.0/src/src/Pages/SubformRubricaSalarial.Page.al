@@ -1,4 +1,4 @@
-page 31003099 "Subform Rubrica Salarial"
+page 53099 "Subform Rubrica Salarial"
 {
     AutoSplitKey = true;
     DelayedInsert = true;

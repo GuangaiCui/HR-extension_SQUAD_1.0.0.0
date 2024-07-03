@@ -1,4 +1,4 @@
-table 31003037 "Qualificação"
+table 53037 "Qualificação"
 {
     Caption = 'Qualification';
     DataCaptionFields = "Code", Description;
@@ -18,9 +18,9 @@ table 31003037 "Qualificação"
         }
         field(3; "Qualified Employees"; Integer)
         {
-            CalcFormula = Count ("Qualificação Empregado" WHERE ("Qualification Code" = FIELD (Code),
-                                                                "From Date" = FIELD ("Initial Filter Date"),
-                                                                "To Date" = FIELD ("End Filter Date")));
+            CalcFormula = Count("Qualificação Empregado" WHERE("Qualification Code" = FIELD(Code),
+                                                                "From Date" = FIELD("Initial Filter Date"),
+                                                                "To Date" = FIELD("End Filter Date")));
             Caption = 'Qualified Employees';
             Editable = false;
             FieldClass = FlowField;

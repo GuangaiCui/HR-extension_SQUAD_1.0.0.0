@@ -1,4 +1,4 @@
-table 31003103 Penhoras
+table 53103 Penhoras
 {
 
     fields
@@ -33,8 +33,8 @@ table 31003103 Penhoras
         }
         field(11; "Amount Already Garnishment"; Decimal)
         {
-            CalcFormula = - Sum ("Hist. Linhas Movs. Empregado".Valor WHERE ("No. Empregado" = FIELD ("Employee No."),
-                                                                           "Garnishmen No." = FIELD ("Garnishmen No.")));
+            CalcFormula = - Sum("Hist. Linhas Movs. Empregado".Valor WHERE("No. Empregado" = FIELD("Employee No."),
+                                                                           "Garnishmen No." = FIELD("Garnishmen No.")));
             Caption = 'Amount Already Garnishment';
             Editable = false;
             FieldClass = FlowField;

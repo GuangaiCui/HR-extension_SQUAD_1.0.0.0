@@ -1,4 +1,4 @@
-page 31003172 "MyRegistoAusências"
+page 53172 "MyRegistoAusências"
 {
     Caption = 'Registo Ausências';
     PageType = ListPart;

@@ -1,4 +1,4 @@
-page 31003042 "Empregados Qualificados"
+page 53042 "Empregados Qualificados"
 {
     Caption = 'Qualified Employees';
     DataCaptionFields = "Qualification Code";

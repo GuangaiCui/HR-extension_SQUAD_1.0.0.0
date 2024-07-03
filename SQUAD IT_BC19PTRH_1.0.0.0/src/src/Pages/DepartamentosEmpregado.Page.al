@@ -1,4 +1,4 @@
-page 31003051 "Departamentos Empregado"
+page 53051 "Departamentos Empregado"
 {
     Caption = 'Employee Statistics Groups';
     PageType = List;

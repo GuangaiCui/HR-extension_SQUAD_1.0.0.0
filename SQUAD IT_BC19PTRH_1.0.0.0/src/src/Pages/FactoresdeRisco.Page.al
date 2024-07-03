@@ -1,4 +1,4 @@
-page 31003144 "Factores de Risco"
+page 53144 "Factores de Risco"
 {
     PageType = List;
     SourceTable = "Factores de Risco";

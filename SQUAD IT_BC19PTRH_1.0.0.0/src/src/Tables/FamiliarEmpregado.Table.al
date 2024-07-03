@@ -1,4 +1,4 @@
-table 31003040 "Familiar Empregado"
+table 53040 "Familiar Empregado"
 {
     Caption = 'Employee Relative';
     DataCaptionFields = "Employee No.";
@@ -41,9 +41,9 @@ table 31003040 "Familiar Empregado"
         }
         field(10; Comment; Boolean)
         {
-            CalcFormula = Exist ("Linha Coment. Recurso Humano" WHERE ("Table Name" = CONST (Fam),
-                                                                      "No." = FIELD ("Employee No."),
-                                                                      "Table Line No." = FIELD ("Line No.")));
+            CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Fam),
+                                                                      "No." = FIELD("Employee No."),
+                                                                      "Table Line No." = FIELD("Line No.")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;

@@ -1,4 +1,4 @@
-table 31003122 "Medidas Adoptadas"
+table 53122 "Medidas Adoptadas"
 {
 
     fields
@@ -19,17 +19,17 @@ table 31003122 "Medidas Adoptadas"
         field(5; "Medida de Prevenção Adoptada"; Code[20])
         {
             Caption = 'Medida de Prevenção Adoptada';
-            TableRelation = IF ("Tipo de Risco" = CONST ("Físico")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RFMed))
+            TableRelation = IF ("Tipo de Risco" = CONST("Físico")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RFMed))
             ELSE
-            IF ("Tipo de Risco" = CONST ("Químico")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RQMed))
+            IF ("Tipo de Risco" = CONST("Químico")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RQMed))
             ELSE
-            IF ("Tipo de Risco" = CONST ("Biológico")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RBMed))
+            IF ("Tipo de Risco" = CONST("Biológico")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RBMed))
             ELSE
-            IF ("Tipo de Risco" = CONST ("Músculo-esquelético")) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RMMed))
+            IF ("Tipo de Risco" = CONST("Músculo-esquelético")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RMMed))
             ELSE
-            IF ("Tipo de Risco" = CONST (Psicossociais)) "RU - Tabelas"."Código" WHERE (Tipo = CONST (RPMed))
+            IF ("Tipo de Risco" = CONST(Psicossociais)) "RU - Tabelas"."Código" WHERE(Tipo = CONST(RPMed))
             ELSE
-            IF ("Tipo de Risco" = CONST (Outros)) "RU - Tabelas"."Código" WHERE (Tipo = CONST (ORMed));
+            IF ("Tipo de Risco" = CONST(Outros)) "RU - Tabelas"."Código" WHERE(Tipo = CONST(ORMed));
 
             trigger OnValidate()
             begin

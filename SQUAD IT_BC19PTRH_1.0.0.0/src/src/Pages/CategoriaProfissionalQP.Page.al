@@ -1,4 +1,4 @@
-page 31003076 "Categoria Profissional QP"
+page 53076 "Categoria Profissional QP"
 {
     PageType = List;
     SourceTable = "Categoria Profissional QP";

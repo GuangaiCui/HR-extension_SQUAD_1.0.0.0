@@ -1,4 +1,4 @@
-page 31003046 "Ausências Empregado"
+page 53046 "Ausências Empregado"
 {
     Caption = 'Employee Absences';
     DataCaptionFields = "Employee No.";

@@ -1,4 +1,4 @@
-page 31003044 "Familiares Empregado"
+page 53044 "Familiares Empregado"
 {
     AutoSplitKey = true;
     Caption = 'Employee Relatives';

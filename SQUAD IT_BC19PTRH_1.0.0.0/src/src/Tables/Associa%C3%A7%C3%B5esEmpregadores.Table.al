@@ -1,4 +1,4 @@
-table 31003104 "Associações Empregadores"
+table 53104 "Associações Empregadores"
 {
 
     fields
@@ -10,7 +10,7 @@ table 31003104 "Associações Empregadores"
         field(5; "Associação de Empregadores"; Code[20])
         {
             Caption = 'Employers Association';
-            TableRelation = "RU - Tabelas"."Código" WHERE (Tipo = CONST (AssEmp));
+            TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(AssEmp));
 
             trigger OnValidate()
             begin
