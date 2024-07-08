@@ -1,4 +1,4 @@
-page 55 "Lista Rubrica Salarial"
+page 53100 "Lista Rubrica Salarial"
 {
     CardPageID = "Ficha Rubrica Salarial";
     DelayedInsert = true;

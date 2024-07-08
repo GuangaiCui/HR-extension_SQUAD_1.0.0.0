@@ -1,4 +1,4 @@
-report 55 "Enviar Recibo via EMail"
+report 53100 "Enviar Recibo via EMail"
 {
     // #001 SQD RTV 20200428
     //   Changed email body text;
