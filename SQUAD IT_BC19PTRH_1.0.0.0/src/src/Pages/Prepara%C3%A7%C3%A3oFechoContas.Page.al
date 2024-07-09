@@ -734,10 +734,10 @@ page 53112 "Preparação Fecho Contas"
                                     NDiasIndemn := NDiasIndemn + ((20121031D - TabContratoEmp."Data Inicio Contrato" + 1) / 30 * 2);
                                     NDiasIndemn := NDiasIndemn + ((DataTerminacao - 20121101D + 1) / 365 * 20);
                                 end else begin
-                                    if (DataTerminacao >= 20151D) then begin
+                                    if (DataTerminacao >= 20150101D) then begin
                                         NDiasIndemn := NDiasIndemn + ((20121031D - TabContratoEmp."Data Inicio Contrato" + 1) / 30 * 2);
                                         NDiasIndemn := NDiasIndemn + ((20130930D - 20121101D + 1) / 365 * 20);
-                                        NDiasIndemn := NDiasIndemn + ((DataTerminacao - 20151D + 1) / 365 * 18);
+                                        NDiasIndemn := NDiasIndemn + ((DataTerminacao - 20150101D + 1) / 365 * 18);
                                     end;
                                 end;
                             end;
@@ -753,7 +753,7 @@ page 53112 "Preparação Fecho Contas"
                                 NDiasIndemn := NDiasIndemn + ((DataTerminacao - TabContratoEmp."Data Inicio Contrato" + 1) / 365 * 20);
                             end else begin
                                 NDiasIndemn := NDiasIndemn + ((20130930D - TabContratoEmp."Data Inicio Contrato" + 1) / 365 * 20);
-                                AnosdeCasa := Round((DataTerminacao - 20151D + 1) / 365, 0.01);
+                                AnosdeCasa := Round((DataTerminacao - 20150101D + 1) / 365, 0.01);
                                 if AnosdeCasa <= 3 then
                                     NDiasIndemn := NDiasIndemn + (3 * 18)
                                 else begin
@@ -766,7 +766,7 @@ page 53112 "Preparação Fecho Contas"
 
                     //Contratos com Data Inicio superior a 01-10-2013
                     //-----------------------
-                    if (TabContratoEmp."Data Inicio Contrato" >= 20151D) then begin
+                    if (TabContratoEmp."Data Inicio Contrato" >= 20150101D) then begin
                         //Contrato sem termo
                         if (TabContratoEmp."Tipo Contrato" = TabContratoEmp."Tipo Contrato"::"Sem Termo") then begin
                             if MotivoTerminacao = MotivoTerminacao::"Mútuo Acordo" then begin
@@ -905,7 +905,7 @@ page 53112 "Preparação Fecho Contas"
                                 NDiasCaducidadeCont := NDiasCaducidadeCont + ((TabContratoEmp."Data Fim Contrato" - TabContratoEmp."Data Inicio Contrato" + 1) / 365 * 20)
                             else begin
                                 NDiasCaducidadeCont := NDiasCaducidadeCont + ((20130930D - TabContratoEmp."Data Inicio Contrato" + 1) / 365 * 20);
-                                AnosdeCasa := Round((TabContratoEmp."Data Fim Contrato" - 20151D + 1) / 365, 0.01);
+                                AnosdeCasa := Round((TabContratoEmp."Data Fim Contrato" - 20150101D + 1) / 365, 0.01);
                                 if AnosdeCasa <= 3 then
                                     NDiasCaducidadeCont := NDiasCaducidadeCont + (AnosdeCasa * 18)
                                 else begin
