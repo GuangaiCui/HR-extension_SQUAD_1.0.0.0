@@ -1031,7 +1031,7 @@ report 53093 "Mapa Companhia Seguros"
         ListaRubricas: Page "Lista Rubrica Salarial";
         decVencBase: Decimal;
 
-    [Scope('Internal')]
+
     procedure Month(mes: Integer) Mensal: Text[30]
     var
         i: Integer;
@@ -1064,7 +1064,7 @@ report 53093 "Mapa Companhia Seguros"
         end;
     end;
 
-    [Scope('Internal')]
+
     procedure Vencimentos(pEmpregado: Code[30])
     var
         rLinhasMovsEmpregado: Record "Linhas Movs. Empregado";
@@ -1110,7 +1110,7 @@ report 53093 "Mapa Companhia Seguros"
         //RFV
     end;
 
-    [Scope('Internal')]
+
     procedure Diuturnidades(pEmpregado: Code[30])
     var
         rLinhasMovsEmpregado: Record "Linhas Movs. Empregado";
@@ -1154,7 +1154,7 @@ report 53093 "Mapa Companhia Seguros"
         //RFV
     end;
 
-    [Scope('Internal')]
+
     procedure SubsAlmoco(pEmpregado: Code[30])
     var
         rLinhasMovsEmpregado: Record "Linhas Movs. Empregado";
@@ -1196,7 +1196,7 @@ report 53093 "Mapa Companhia Seguros"
         //RFV
     end;
 
-    [Scope('Internal')]
+
     procedure SubsNatalFerias(pEmpregado: Code[30])
     var
         rLinhasMovsEmpregado: Record "Linhas Movs. Empregado";
@@ -1238,7 +1238,7 @@ report 53093 "Mapa Companhia Seguros"
         //RFV
     end;
 
-    [Scope('Internal')]
+
     procedure OutrosAbonos(pEmpregado: Code[30])
     var
         rLinhasMovsEmpregado: Record "Linhas Movs. Empregado";
@@ -1282,7 +1282,7 @@ report 53093 "Mapa Companhia Seguros"
         //RFV
     end;
 
-    [Scope('Internal')]
+
     procedure CalcTotal()
     begin
         //RFV 24.01.2008
@@ -1294,7 +1294,7 @@ report 53093 "Mapa Companhia Seguros"
         //RFV
     end;
 
-    [Scope('Internal')]
+
     procedure ProcessaOutros(pEmpregado: Code[30])
     var
         rLinhasMovsEmpregado: Record "Linhas Movs. Empregado";
@@ -1366,7 +1366,7 @@ report 53093 "Mapa Companhia Seguros"
         //RFV
     end;
 
-    [Scope('Internal')]
+
     procedure ProcessaFaltas(pEmpregado: Code[30])
     var
         rLinhasMovsEmpregado: Record "Linhas Movs. Empregado";
