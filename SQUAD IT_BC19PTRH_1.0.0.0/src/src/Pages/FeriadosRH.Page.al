@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53114 "Feriados RH"
 {
     Caption = 'Human Resource Units of Measure';
@@ -14,23 +15,23 @@ page 53114 "Feriados RH"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Data; Data)
+                field(Data; Rec.Data)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descritivo feriado"; "Descritivo feriado")
+                field("Descritivo feriado"; Rec."Descritivo feriado")
                 {
                     ApplicationArea = All;
 
                     Caption = 'Descritivo do feriado';
                 }
-                field(Nacional; Nacional)
+                field(Nacional; Rec.Nacional)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Estabelecimento; Estabelecimento)
+                field(Estabelecimento; Rec.Estabelecimento)
                 {
                     ApplicationArea = All;
 
@@ -45,7 +46,9 @@ page 53114 "Feriados RH"
 
     trigger OnInit()
     begin
-        SetCurrentKey(Data);
+        Rec.SetCurrentKey(Data);
     end;
 }
+
+#pragma implicitwith restore
 

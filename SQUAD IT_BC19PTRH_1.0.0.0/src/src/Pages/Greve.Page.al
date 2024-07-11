@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53160 Greve
 {
     PageType = Card;
@@ -12,7 +13,7 @@ page 53160 Greve
             group(Greve)
             {
                 Caption = 'Greve';
-                field(Year; Year)
+                field(Year; Rec.Year)
                 {
                     ApplicationArea = All;
 
@@ -20,12 +21,12 @@ page 53160 Greve
                     Style = Strong;
                     StyleExpr = TRUE;
                 }
-                field("Strike Code"; "Strike Code")
+                field("Strike Code"; Rec."Strike Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Strike Description"; "Strike Description")
+                field("Strike Description"; Rec."Strike Description")
                 {
                     ApplicationArea = All;
 
@@ -61,7 +62,9 @@ page 53160 Greve
 
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
-        "Line No." := 10000;
+        Rec."Line No." := 10000;
     end;
 }
+
+#pragma implicitwith restore
 

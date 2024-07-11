@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53075 "Lista Cat. Prof. Int. Emp."
 {
     AutoSplitKey = true;
@@ -15,32 +16,32 @@ page 53075 "Lista Cat. Prof. Int. Emp."
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Cat. Prof."; "Cód. Cat. Prof.")
+                field("Cód. Cat. Prof."; Rec."Cód. Cat. Prof.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Inicio Cat. Prof."; "Data Inicio Cat. Prof.")
+                field("Data Inicio Cat. Prof."; Rec."Data Inicio Cat. Prof.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Fim Cat. Prof."; "Data Fim Cat. Prof.")
+                field("Data Fim Cat. Prof."; Rec."Data Fim Cat. Prof.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Comentário"; Comentário)
+                field("Comentário"; Rec."Comentário")
                 {
                     ApplicationArea = All;
 
@@ -70,4 +71,6 @@ page 53075 "Lista Cat. Prof. Int. Emp."
         }
     }
 }
+
+#pragma implicitwith restore
 

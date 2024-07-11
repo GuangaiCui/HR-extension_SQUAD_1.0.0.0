@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53104 "Lista Cab. Movs. Empregado"
 {
     AutoSplitKey = true;
@@ -18,32 +19,32 @@ page 53104 "Lista Cab. Movs. Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Cód. Processamento"; "Cód. Processamento")
+                field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Processamento"; "Tipo Processamento")
+                field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Designação Empregado"; "Designação Empregado")
+                field("Designação Empregado"; Rec."Designação Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Registo"; "Data Registo")
+                field("Data Registo"; Rec."Data Registo")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Valor; Valor)
+                field(Valor; Rec.Valor)
                 {
                     ApplicationArea = All;
 
@@ -76,4 +77,6 @@ page 53104 "Lista Cab. Movs. Empregado"
         }
     }
 }
+
+#pragma implicitwith restore
 

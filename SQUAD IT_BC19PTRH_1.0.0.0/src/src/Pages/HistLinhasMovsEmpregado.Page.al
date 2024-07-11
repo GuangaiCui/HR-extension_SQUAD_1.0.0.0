@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53107 "Hist. Linhas Movs. Empregado"
 {
     AutoSplitKey = true;
@@ -15,37 +16,37 @@ page 53107 "Hist. Linhas Movs. Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Cód. Rubrica"; "Cód. Rubrica")
+                field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Rubrica"; "Descrição Rubrica")
+                field("Descrição Rubrica"; Rec."Descrição Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta a Debitar"; "No. Conta a Debitar")
+                field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta a Creditar"; "No. Conta a Creditar")
+                field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
                     ApplicationArea = All;
 
                 }
-                field(UnidadeMedida; UnidadeMedida)
+                field(UnidadeMedida; Rec.UnidadeMedida)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Quantidade; Quantidade)
+                field(Quantidade; Rec.Quantidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Unitário"; "Valor Unitário")
+                field("Valor Unitário"; Rec."Valor Unitário")
                 {
                     ApplicationArea = All;
 
@@ -70,13 +71,15 @@ page 53107 "Hist. Linhas Movs. Empregado"
         // usamos uma variável que vai buscar o Abs(valor) para que os descontos não
         //apareçam a negativo, o que faz confusão ao utilizador.
 
-        if "Tipo Rubrica" = "Tipo Rubrica"::Desconto then
-            ValorSemSinal := Abs(Valor)
+        if Rec."Tipo Rubrica" = Rec."Tipo Rubrica"::Desconto then
+            ValorSemSinal := Abs(Rec.Valor)
         else
-            ValorSemSinal := Valor;
+            ValorSemSinal := Rec.Valor;
     end;
 
     var
         ValorSemSinal: Decimal;
 }
+
+#pragma implicitwith restore
 

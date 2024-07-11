@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 pageextension 53037 PaymentJournalRH extends "Payment Journal"
 {
     layout
@@ -6,7 +7,7 @@ pageextension 53037 PaymentJournalRH extends "Payment Journal"
 
         {
 
-            field("No. Empregado"; "No. Empregado")
+            field("No. Empregado"; Rec."No. Empregado")
 
             {
 
@@ -17,3 +18,4 @@ pageextension 53037 PaymentJournalRH extends "Payment Journal"
 
     }
 }
+#pragma implicitwith restore

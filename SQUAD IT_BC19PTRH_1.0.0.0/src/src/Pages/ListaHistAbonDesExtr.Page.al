@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53097 "Lista Hist. Abon. - Des. Extr."
 {
     DeleteAllowed = false;
@@ -14,67 +15,67 @@ page 53097 "Lista Hist. Abon. - Des. Extr."
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Mov."; "No. Mov.")
+                field("No. Mov."; Rec."No. Mov.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Data; Data)
+                field(Data; Rec.Data)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Rubrica"; "Cód. Rubrica")
+                field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Rubrica"; "Tipo Rubrica")
+                field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field(UnidadeMedida; UnidadeMedida)
+                field(UnidadeMedida; Rec.UnidadeMedida)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Quantidade; Quantidade)
+                field(Quantidade; Rec.Quantidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Unitário"; "Valor Unitário")
+                field("Valor Unitário"; Rec."Valor Unitário")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Total"; "Valor Total")
+                field("Valor Total"; Rec."Valor Total")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Anular Falta"; "Anular Falta")
+                field("Anular Falta"; Rec."Anular Falta")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data a que se refere o Mov."; "Data a que se refere o Mov.")
+                field("Data a que se refere o Mov."; Rec."Data a que se refere o Mov.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Global Dimension 1 Code"; "Global Dimension 1 Code")
+                field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Global Dimension 2 Code"; "Global Dimension 2 Code")
+                field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
                     ApplicationArea = All;
 
@@ -87,4 +88,6 @@ page 53097 "Lista Hist. Abon. - Des. Extr."
     {
     }
 }
+
+#pragma implicitwith restore
 

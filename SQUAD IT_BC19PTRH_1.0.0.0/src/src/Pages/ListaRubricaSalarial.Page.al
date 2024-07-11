@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53100 "Lista Rubrica Salarial"
 {
     CardPageID = "Ficha Rubrica Salarial";
@@ -15,67 +16,67 @@ page 53100 "Lista Rubrica Salarial"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Código)
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Rubrica"; "Tipo Rubrica")
+                field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Periodicidade; Periodicidade)
+                field(Periodicidade; Rec.Periodicidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Mês Início Periocidade"; "Mês Início Periocidade")
+                field("Mês Início Periocidade"; Rec."Mês Início Periocidade")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta a Debitar"; "No. Conta a Debitar")
+                field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta a Creditar"; "No. Conta a Creditar")
+                field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Quantidade; Quantidade)
+                field(Quantidade; Rec.Quantidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Unitário"; "Valor Unitário")
+                field("Valor Unitário"; Rec."Valor Unitário")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Total"; "Valor Total")
+                field("Valor Total"; Rec."Valor Total")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Genero; Genero)
+                field(Genero; Rec.Genero)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Genero Rubrica Fecho"; "Genero Rubrica Fecho")
+                field("Genero Rubrica Fecho"; Rec."Genero Rubrica Fecho")
                 {
                     ApplicationArea = All;
 
                 }
-                field(NATREM; NATREM)
+                field(NATREM; Rec.NATREM)
                 {
                     ApplicationArea = All;
 
@@ -146,4 +147,6 @@ page 53100 "Lista Rubrica Salarial"
         //RFV
     end;
 }
+
+#pragma implicitwith restore
 

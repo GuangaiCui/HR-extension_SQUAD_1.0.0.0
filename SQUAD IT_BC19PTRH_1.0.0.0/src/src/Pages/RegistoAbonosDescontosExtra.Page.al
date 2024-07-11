@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53096 "Registo Abonos-Descontos Extra"
 {
     DelayedInsert = true;
@@ -13,87 +14,87 @@ page 53096 "Registo Abonos-Descontos Extra"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Mov."; "No. Mov.")
+                field("No. Mov."; Rec."No. Mov.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Data; Data)
+                field(Data; Rec.Data)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Rubrica"; "Cód. Rubrica")
+                field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Rubrica"; "Tipo Rubrica")
+                field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Rubrica"; "Descrição Rubrica")
+                field("Descrição Rubrica"; Rec."Descrição Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Quantidade; Quantidade)
+                field(Quantidade; Rec.Quantidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field(UnidadeMedida; UnidadeMedida)
+                field(UnidadeMedida; Rec.UnidadeMedida)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Unitário"; "Valor Unitário")
+                field("Valor Unitário"; Rec."Valor Unitário")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Total"; "Valor Total")
+                field("Valor Total"; Rec."Valor Total")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Anular Falta"; "Anular Falta")
+                field("Anular Falta"; Rec."Anular Falta")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data a que se refere o Mov."; "Data a que se refere o Mov.")
+                field("Data a que se refere o Mov."; Rec."Data a que se refere o Mov.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Qtd. Perca Sub. Alimentação"; "Qtd. Perca Sub. Alimentação")
+                field("Qtd. Perca Sub. Alimentação"; Rec."Qtd. Perca Sub. Alimentação")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Abono - Desconto Bloqueado"; "Abono - Desconto Bloqueado")
+                field("Abono - Desconto Bloqueado"; Rec."Abono - Desconto Bloqueado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Global Dimension 1 Code"; "Global Dimension 1 Code")
+                field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Global Dimension 2 Code"; "Global Dimension 2 Code")
+                field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Garnishmen No."; "Garnishmen No.")
+                field("Garnishmen No."; Rec."Garnishmen No.")
                 {
                     ApplicationArea = All;
 
@@ -112,7 +113,7 @@ page 53096 "Registo Abonos-Descontos Extra"
         //Não deixar apagar Abono-Desconto bloqueadas
 
         //2009.03.24 - a mensagem só deve aparecer uma vez por cada delete e não por cada registo
-        if ("Abono - Desconto Bloqueado" = true) and (Flag = false) then begin
+        if (Rec."Abono - Desconto Bloqueado" = true) and (Flag = false) then begin
             Message(Text0001);
             Flag := true;
         end;
@@ -125,13 +126,13 @@ page 53096 "Registo Abonos-Descontos Extra"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
 
-        exit(Employee.Get("No. Empregado"));
+        exit(Employee.Get(Rec."No. Empregado"));
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         //HG
-        "No. Empregado" := GetFilter("No. Empregado");
+        Rec."No. Empregado" := Rec.GetFilter("No. Empregado");
     end;
 
     var
@@ -140,4 +141,6 @@ page 53096 "Registo Abonos-Descontos Extra"
         Flag: Boolean;
         AbonDescExtra: Record "Abonos - Descontos Extra";
 }
+
+#pragma implicitwith restore
 

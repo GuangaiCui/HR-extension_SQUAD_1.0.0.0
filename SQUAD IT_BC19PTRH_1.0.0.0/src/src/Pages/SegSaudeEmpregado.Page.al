@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53167 "Seg Saude Empregado"
 {
     AutoSplitKey = true;
@@ -10,57 +11,57 @@ page 53167 "Seg Saude Empregado"
         {
             repeater(Group)
             {
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Nome Empregado"; "Nome Empregado")
+                field("Nome Empregado"; Rec."Nome Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Seguro"; "No. Seguro")
+                field("No. Seguro"; Rec."No. Seguro")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Parentesco; Parentesco)
+                field(Parentesco; Rec.Parentesco)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Nome Beneficiário"; "Nome Beneficiário")
+                field("Nome Beneficiário"; Rec."Nome Beneficiário")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Inclusão"; "Data Inclusão")
+                field("Data Inclusão"; Rec."Data Inclusão")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Exclusão"; "Data Exclusão")
+                field("Data Exclusão"; Rec."Data Exclusão")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Tipo; Tipo)
+                field(Tipo; Rec.Tipo)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Anual"; "Valor Anual")
+                field("Valor Anual"; Rec."Valor Anual")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Suportado pela Empresa"; "Valor Suportado pela Empresa")
+                field("Valor Suportado pela Empresa"; Rec."Valor Suportado pela Empresa")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Suportado pelo Colab."; "Valor Suportado pelo Colab.")
+                field("Valor Suportado pelo Colab."; Rec."Valor Suportado pelo Colab.")
                 {
                     ApplicationArea = All;
 
@@ -73,4 +74,6 @@ page 53167 "Seg Saude Empregado"
     {
     }
 }
+
+#pragma implicitwith restore
 

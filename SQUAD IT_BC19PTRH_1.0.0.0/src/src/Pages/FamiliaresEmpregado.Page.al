@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53044 "Familiares Empregado"
 {
     AutoSplitKey = true;
@@ -13,48 +14,48 @@ page 53044 "Familiares Empregado"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Relative Code"; "Relative Code")
+                field("Relative Code"; Rec."Relative Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Birth Date"; "Birth Date")
+                field("Birth Date"; Rec."Birth Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Phone No."; "Phone No.")
+                field("Phone No."; Rec."Phone No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Gender; Gender)
+                field(Gender; Rec.Gender)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Vat Number"; "Vat Number")
+                field("Vat Number"; Rec."Vat Number")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Emergency Contact"; "Emergency Contact")
+                field("Emergency Contact"; Rec."Emergency Contact")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Employee Relative No."; "Employee Relative No.")
+                field("Employee Relative No."; Rec."Employee Relative No.")
                 {
                     ApplicationArea = All;
 
                     Visible = false;
                 }
-                field(Comment; Comment)
+                field(Comment; Rec.Comment)
                 {
                     ApplicationArea = All;
 
@@ -101,4 +102,6 @@ page 53044 "Familiares Empregado"
         }
     }
 }
+
+#pragma implicitwith restore
 

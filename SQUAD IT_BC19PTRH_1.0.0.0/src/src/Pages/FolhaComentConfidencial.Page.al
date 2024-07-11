@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53069 "Folha Coment. Confidencial"
 {
     AutoSplitKey = true;
@@ -15,17 +16,17 @@ page 53069 "Folha Coment. Confidencial"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field(Date; Date)
+                field(Date; Rec.Date)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Comment; Comment)
+                field(Comment; Rec.Comment)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 
@@ -41,7 +42,7 @@ page 53069 "Folha Coment. Confidencial"
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        SetUpNewLine;
+        Rec.SetUpNewLine;
     end;
 
     var
@@ -60,4 +61,6 @@ page 53069 "Folha Coment. Confidencial"
         exit(Text000);
     end;
 }
+
+#pragma implicitwith restore
 

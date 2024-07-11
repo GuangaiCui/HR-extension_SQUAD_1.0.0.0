@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53072 "Lista Contrato Empregado"
 {
     AutoSplitKey = true;
@@ -13,52 +14,52 @@ page 53072 "Lista Contrato Empregado"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Cód. Empregado"; "Cód. Empregado")
+                field("Cód. Empregado"; Rec."Cód. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Contrato"; "Cód. Contrato")
+                field("Cód. Contrato"; Rec."Cód. Contrato")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Contrato"; "Tipo Contrato")
+                field("Tipo Contrato"; Rec."Tipo Contrato")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Duração Contrato"; "Duração Contrato")
+                field("Duração Contrato"; Rec."Duração Contrato")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Inicio Contrato"; "Data Inicio Contrato")
+                field("Data Inicio Contrato"; Rec."Data Inicio Contrato")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Fim Contrato"; "Data Fim Contrato")
+                field("Data Fim Contrato"; Rec."Data Fim Contrato")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Motivo Entrada"; "Motivo Entrada")
+                field("Motivo Entrada"; Rec."Motivo Entrada")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Comentário"; Comentário)
+                field("Comentário"; Rec."Comentário")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Ficheiro Contrato Trabalho"; "Ficheiro Contrato Trabalho")
+                field("Ficheiro Contrato Trabalho"; Rec."Ficheiro Contrato Trabalho")
                 {
                     ApplicationArea = All;
 
@@ -94,7 +95,7 @@ page 53072 "Lista Contrato Empregado"
 
                     trigger OnAction()
                     begin
-                        CriarContratoConformeTemplate;
+                        Rec.CriarContratoConformeTemplate;
                         Commit;
                         Message(Text0001);
                     end;
@@ -109,7 +110,7 @@ page 53072 "Lista Contrato Empregado"
                     trigger OnAction()
                     begin
 
-                        ImportarContrato;
+                        Rec.ImportarContrato;
                     end;
                 }
                 separator(Action1102065003)
@@ -124,7 +125,7 @@ page 53072 "Lista Contrato Empregado"
 
                     trigger OnAction()
                     begin
-                        VisualizarContrato;
+                        Rec.VisualizarContrato;
                     end;
                 }
                 action(Exportar)
@@ -137,7 +138,7 @@ page 53072 "Lista Contrato Empregado"
                     trigger OnAction()
                     begin
 
-                        ExportarContrato;
+                        Rec.ExportarContrato;
                     end;
                 }
             }
@@ -151,7 +152,9 @@ page 53072 "Lista Contrato Empregado"
     procedure Cliente(inCliente: Code[20])
     begin
 
-        "Cod. Cliente" := inCliente;
+        Rec."Cod. Cliente" := inCliente;
     end;
 }
+
+#pragma implicitwith restore
 

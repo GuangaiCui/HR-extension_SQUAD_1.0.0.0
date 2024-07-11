@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53050 Penhoras
 {
     PageType = List;
@@ -9,47 +10,47 @@ page 53050 Penhoras
         {
             repeater(Group)
             {
-                field("Employee No."; "Employee No.")
+                field("Employee No."; Rec."Employee No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Garnishmen No."; "Garnishmen No.")
+                field("Garnishmen No."; Rec."Garnishmen No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Garnishment Date"; "Garnishment Date")
+                field("Garnishment Date"; Rec."Garnishment Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Garnishment Coefficient"; "Garnishment Coefficient")
+                field("Garnishment Coefficient"; Rec."Garnishment Coefficient")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Garnishment Amount"; "Garnishment Amount")
+                field("Garnishment Amount"; Rec."Garnishment Amount")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Amount Already Garnishment"; "Amount Already Garnishment")
+                field("Amount Already Garnishment"; Rec."Amount Already Garnishment")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Garnishment Rubric"; "Garnishment Rubric")
+                field("Garnishment Rubric"; Rec."Garnishment Rubric")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Status; Status)
+                field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Observation; Observation)
+                field(Observation; Rec.Observation)
                 {
                     ApplicationArea = All;
 
@@ -62,4 +63,6 @@ page 53050 Penhoras
     {
     }
 }
+
+#pragma implicitwith restore
 

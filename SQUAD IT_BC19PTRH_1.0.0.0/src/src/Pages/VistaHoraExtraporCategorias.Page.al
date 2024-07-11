@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53092 "Vista HoraExtra por Categorias"
 {
     Caption = 'Extra Hour Overview by Categories';
@@ -118,8 +119,8 @@ page 53092 "Vista HoraExtra por Categorias"
     trigger OnOpenPage()
     begin
         MATRIX_GenerateColumnCaptions(SetWanted::Initial);
-        if HasFilter then
-            EmployeeNoFilter := GetFilter("Employee No. Filter");
+        if Rec.HasFilter then
+            EmployeeNoFilter := Rec.GetFilter("Employee No. Filter");
     end;
 
     var
@@ -167,4 +168,6 @@ page 53092 "Vista HoraExtra por Categorias"
         end;
     end;
 }
+
+#pragma implicitwith restore
 

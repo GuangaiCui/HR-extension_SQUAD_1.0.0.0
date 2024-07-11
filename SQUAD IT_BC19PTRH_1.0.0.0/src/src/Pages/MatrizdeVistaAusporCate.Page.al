@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53067 "Matriz de Vista Aus. por Cate."
 {
     Caption = 'Absence Overview by Categories Matrix';
@@ -14,13 +15,13 @@ page 53067 "Matriz de Vista Aus. por Cate."
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Period Start"; "Period Start")
+                field("Period Start"; Rec."Period Start")
                 {
                     ApplicationArea = All;
 
                     Caption = 'Period Start';
                 }
-                field("Period Name"; "Period Name")
+                field("Period Name"; Rec."Period Name")
                 {
                     ApplicationArea = All;
 
@@ -611,9 +612,9 @@ page 53067 "Matriz de Vista Aus. por Cate."
     local procedure MatrixOnDrillDown(ColumnID: Integer)
     begin
         if AbsenceAmountType = AbsenceAmountType::"Net Change" then
-            EmployeeAbsence.SetRange("From Date", "Period Start", "Period End")
+            EmployeeAbsence.SetRange("From Date", Rec."Period Start", Rec."Period End")
         else
-            EmployeeAbsence.SetRange("From Date", 0D, "Period End");
+            EmployeeAbsence.SetRange("From Date", 0D, Rec."Period End");
         EmployeeAbsence.SetFilter("Employee No.", EmployeeNoFilter);
         EmployeeAbsence.SetRange("Cause of Absence Code", MatrixRecords[ColumnID].Code);
         PAGE.Run(0, EmployeeAbsence);
@@ -623,9 +624,9 @@ page 53067 "Matriz de Vista Aus. por Cate."
     begin
         CauseOfAbsence.Code := MatrixRecords[ColumnID].Code;
         if AbsenceAmountType = AbsenceAmountType::"Net Change" then
-            CauseOfAbsence.SetRange("Date Filter", "Period Start", "Period End")
+            CauseOfAbsence.SetRange("Date Filter", Rec."Period Start", Rec."Period End")
         else
-            CauseOfAbsence.SetRange("Date Filter", 0D, "Period End");
+            CauseOfAbsence.SetRange("Date Filter", 0D, Rec."Period End");
         CauseOfAbsence.SetFilter("Employee No. Filter", EmployeeNoFilter);
         CauseOfAbsence.CalcFields("Total Absence (Base)");
         MATRIX_CellData[ColumnID] := CauseOfAbsence."Total Absence (Base)";
@@ -669,4 +670,6 @@ page 53067 "Matriz de Vista Aus. por Cate."
         Field32Visible := MATRIX_ColumnCaption[32] <> '';
     end;
 }
+
+#pragma implicitwith restore
 

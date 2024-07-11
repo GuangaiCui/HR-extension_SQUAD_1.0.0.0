@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53055 Confidencial
 {
     Caption = 'Confidential';
@@ -13,12 +14,12 @@ page 53055 Confidencial
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
 
@@ -31,4 +32,6 @@ page 53055 Confidencial
     {
     }
 }
+
+#pragma implicitwith restore
 

@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53115 "Cargos Empregado"
 {
     PageType = List;
@@ -9,12 +10,12 @@ page 53115 "Cargos Empregado"
         {
             repeater(Group)
             {
-                field("Designação Cargo"; "Designação Cargo")
+                field("Designação Cargo"; Rec."Designação Cargo")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Horas Totais do Cargo"; "Horas Totais do Cargo")
+                field("Horas Totais do Cargo"; Rec."Horas Totais do Cargo")
                 {
                     ApplicationArea = All;
 
@@ -27,4 +28,6 @@ page 53115 "Cargos Empregado"
     {
     }
 }
+
+#pragma implicitwith restore
 

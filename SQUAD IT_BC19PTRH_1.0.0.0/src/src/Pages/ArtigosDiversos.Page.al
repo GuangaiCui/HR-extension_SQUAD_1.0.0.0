@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53053 "Artigos Diversos"
 {
     Caption = 'Misc. Articles';
@@ -12,12 +13,12 @@ page 53053 "Artigos Diversos"
         {
             repeater(Group)
             {
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
 
@@ -30,4 +31,6 @@ page 53053 "Artigos Diversos"
     {
     }
 }
+
+#pragma implicitwith restore
 

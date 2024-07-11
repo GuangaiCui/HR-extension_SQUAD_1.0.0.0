@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53090 "Registo Horas Extra"
 {
     DelayedInsert = true;
@@ -11,51 +12,51 @@ page 53090 "Registo Horas Extra"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Mov."; "No. Mov.")
+                field("No. Mov."; Rec."No. Mov.")
                 {
                     ApplicationArea = All;
                 }
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
                 }
-                field(Data; Data)
+                field(Data; Rec.Data)
                 {
                     ApplicationArea = All;
                 }
-                field("Cód. Hora Extra"; "Cód. Hora Extra")
+                field("Cód. Hora Extra"; Rec."Cód. Hora Extra")
                 {
                     ApplicationArea = All;
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
                 }
-                field("Cód. Rubrica"; "Cód. Rubrica")
+                field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
                     ApplicationArea = All;
                 }
-                field(Quantidade; Quantidade)
+                field(Quantidade; Rec.Quantidade)
                 {
                     ApplicationArea = All;
                 }
-                field(Factor; Factor)
+                field(Factor; Rec.Factor)
                 {
                     ApplicationArea = All;
                 }
-                field("Valor Unitário"; "Valor Unitário")
+                field("Valor Unitário"; Rec."Valor Unitário")
                 {
                     ApplicationArea = All;
                 }
-                field("Comentário"; Comentário)
+                field("Comentário"; Rec."Comentário")
                 {
                     ApplicationArea = All;
                 }
-                field("Global Dimension 1 Code"; "Global Dimension 1 Code")
+                field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
                     ApplicationArea = All;
                 }
-                field("Global Dimension 2 Code"; "Global Dimension 2 Code")
+                field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
                     ApplicationArea = All;
                 }
@@ -104,7 +105,7 @@ page 53090 "Registo Horas Extra"
 
     trigger OnDeleteRecord(): Boolean
     begin
-        if "Hora Extra Bloqueada" = true then    //HG 23.01.08
+        if Rec."Hora Extra Bloqueada" = true then    //HG 23.01.08
             Message(Text0001);
     end;
 
@@ -112,13 +113,13 @@ page 53090 "Registo Horas Extra"
     begin
 
 
-        exit(Employee.Get("No. Empregado"));
+        exit(Employee.Get(Rec."No. Empregado"));
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         //HG
-        "No. Empregado" := GetFilter("No. Empregado");
+        Rec."No. Empregado" := Rec.GetFilter("No. Empregado");
     end;
 
     var
@@ -127,4 +128,6 @@ page 53090 "Registo Horas Extra"
         recPeriodosProcessamento: Record "Periodos Processamento";
         Text0002: Label 'Não pode apagar o registo de Hora Extra %1, porque o mês já se encontra fechado.';
 }
+
+#pragma implicitwith restore
 

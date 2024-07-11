@@ -302,15 +302,14 @@ report 53100 "Enviar Recibo via EMail"
         Result: Text[1024];
     begin
         Result := '';
-        with SMTPFields do
-            Result :=
+        Result :=
               varMail.Send(
-                "SMTP Server",
-                "SMTP Server Port",
-                Authentication <> Authentication::Anonymous,
-                "User ID",
-                "Password Key",
-                "Secure Connection");
+                SMTPFields."SMTP Server",
+                SMTPFields."SMTP Server Port",
+                SMTPFields.Authentication <> SMTPFields.Authentication::Anonymous,
+                SMTPFields."User ID",
+                SMTPFields."Password Key",
+                SMTPFields."Secure Connection");
 
         varMail.Dispose;
         Clear(varMail);

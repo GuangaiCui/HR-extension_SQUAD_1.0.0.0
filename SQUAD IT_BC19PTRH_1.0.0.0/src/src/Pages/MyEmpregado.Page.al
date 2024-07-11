@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53171 MyEmpregado
 {
     PageType = ListPart;
@@ -9,52 +10,52 @@ page 53171 MyEmpregado
         {
             repeater(Group)
             {
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Address; Address)
+                field(Address; Rec.Address)
                 {
                     ApplicationArea = All;
 
                 }
-                field(City; City)
+                field(City; Rec.City)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Phone No."; "Phone No.")
+                field("Phone No."; Rec."Phone No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Mobile Phone No."; "Mobile Phone No.")
+                field("Mobile Phone No."; Rec."Mobile Phone No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("E-Mail"; "E-Mail")
+                field("E-Mail"; Rec."E-Mail")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Birth Date"; "Birth Date")
+                field("Birth Date"; Rec."Birth Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Sex; Sex)
+                field(Sex; Rec.Sex)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Employment Date"; "Employment Date")
+                field("Employment Date"; Rec."Employment Date")
                 {
                     ApplicationArea = All;
 
@@ -74,7 +75,7 @@ page 53171 MyEmpregado
 
                 trigger OnAction()
                 begin
-                    if Empregado.Get("No.") then
+                    if Empregado.Get(Rec."No.") then
                         PAGE.Run(PAGE::"Ficha Empregado", Empregado)
                 end;
             }
@@ -84,4 +85,6 @@ page 53171 MyEmpregado
     var
         Empregado: Record Empregado;
 }
+
+#pragma implicitwith restore
 

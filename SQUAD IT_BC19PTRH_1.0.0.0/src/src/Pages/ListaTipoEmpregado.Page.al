@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53126 "Lista Tipo Empregado"
 {
     PageType = List;
@@ -12,12 +13,12 @@ page 53126 "Lista Tipo Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Código)
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
@@ -30,4 +31,6 @@ page 53126 "Lista Tipo Empregado"
     {
     }
 }
+
+#pragma implicitwith restore
 

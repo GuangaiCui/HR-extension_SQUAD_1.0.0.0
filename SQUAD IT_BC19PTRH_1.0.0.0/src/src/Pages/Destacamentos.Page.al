@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53159 Destacamentos
 {
     AutoSplitKey = true;
@@ -11,17 +12,17 @@ page 53159 Destacamentos
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field("Local de Destacamento"; "Local de Destacamento")
+                field("Local de Destacamento"; Rec."Local de Destacamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Início Destacamento"; "Data Início Destacamento")
+                field("Data Início Destacamento"; Rec."Data Início Destacamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Fim Destacamento"; "Data Fim Destacamento")
+                field("Data Fim Destacamento"; Rec."Data Fim Destacamento")
                 {
                     ApplicationArea = All;
 
@@ -34,4 +35,6 @@ page 53159 Destacamentos
     {
     }
 }
+
+#pragma implicitwith restore
 

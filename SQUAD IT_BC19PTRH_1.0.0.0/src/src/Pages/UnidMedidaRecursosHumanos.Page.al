@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53071 "Unid. Medida Recursos Humanos"
 {
     Caption = 'Human Resource Units of Measure';
@@ -13,17 +14,17 @@ page 53071 "Unid. Medida Recursos Humanos"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Qty. per Unit of Measure"; "Qty. per Unit of Measure")
+                field("Qty. per Unit of Measure"; Rec."Qty. per Unit of Measure")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Designação Interna"; "Designação Interna")
+                field("Designação Interna"; Rec."Designação Interna")
                 {
                     ApplicationArea = All;
 
@@ -36,4 +37,6 @@ page 53071 "Unid. Medida Recursos Humanos"
     {
     }
 }
+
+#pragma implicitwith restore
 

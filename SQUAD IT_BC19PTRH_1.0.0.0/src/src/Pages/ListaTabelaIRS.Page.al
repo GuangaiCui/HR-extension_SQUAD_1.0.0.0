@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53059 "Lista Tabela IRS"
 {
     Editable = false;
@@ -13,32 +14,32 @@ page 53059 "Lista Tabela IRS"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field(Ano; Ano)
+                field(Ano; Rec.Ano)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Região"; Região)
+                field("Região"; Rec."Região")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Até"; Até)
+                field("Até"; Rec."Até")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Tabela; Tabela)
+                field(Tabela; Rec.Tabela)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Valor; Valor)
+                field(Valor; Rec.Valor)
                 {
                     ApplicationArea = All;
 
@@ -51,4 +52,6 @@ page 53059 "Lista Tabela IRS"
     {
     }
 }
+
+#pragma implicitwith restore
 

@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53105 "Periodos Processamento"
 {
     Caption = 'Abertura do Processamento';
@@ -13,58 +14,58 @@ page 53105 "Periodos Processamento"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Cód. Processamento"; "Cód. Processamento")
+                field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
                     ApplicationArea = All;
 
                     Editable = boolEnable;
                 }
-                field("Tipo Processamento"; "Tipo Processamento")
+                field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
                     ApplicationArea = All;
 
                     Editable = boolEnable;
                 }
-                field("Data Registo"; "Data Registo")
+                field("Data Registo"; Rec."Data Registo")
                 {
                     ApplicationArea = All;
 
                     Editable = boolEnable;
                 }
-                field(Estado; Estado)
+                field(Estado; Rec.Estado)
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
-                field("Data Inicio Processamento"; "Data Inicio Processamento")
+                field("Data Inicio Processamento"; Rec."Data Inicio Processamento")
                 {
                     ApplicationArea = All;
 
                     Editable = boolEnable;
                     Enabled = boolEnable;
                 }
-                field("Data Fim Processamento"; "Data Fim Processamento")
+                field("Data Fim Processamento"; Rec."Data Fim Processamento")
                 {
                     ApplicationArea = All;
 
                     Editable = boolEnable;
                     Enabled = boolEnable;
                 }
-                field("Integrado na Contabilidade"; "Integrado na Contabilidade")
+                field("Integrado na Contabilidade"; Rec."Integrado na Contabilidade")
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                     Enabled = boolEnable;
                 }
-                field("Data Inicio Proces. Faltas"; "Data Inicio Proces. Faltas")
+                field("Data Inicio Proces. Faltas"; Rec."Data Inicio Proces. Faltas")
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
-                field("Data Fim Proces. Faltas"; "Data Fim Proces. Faltas")
+                field("Data Fim Proces. Faltas"; Rec."Data Fim Proces. Faltas")
                 {
                     ApplicationArea = All;
 
@@ -100,23 +101,25 @@ page 53105 "Periodos Processamento"
     trigger OnAfterGetRecord()
     begin
         boolEnable := true;
-        if Estado = Estado::Fechado then
+        if Rec.Estado = Rec.Estado::Fechado then
             boolEnable := false;
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         boolEnable := true;
-        if Estado = Estado::Fechado then
+        if Rec.Estado = Rec.Estado::Fechado then
             boolEnable := false;
     end;
 
     trigger OnOpenPage()
     begin
-        SetCurrentKey("Data Registo");
+        Rec.SetCurrentKey("Data Registo");
     end;
 
     var
         boolEnable: Boolean;
 }
+
+#pragma implicitwith restore
 

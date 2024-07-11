@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53098 "Ficha Rubrica Salarial"
 {
     //  IT001 - CPA:Novo campo para a funcionalidade de acertos de Duodécimos
@@ -14,52 +15,43 @@ page 53098 "Ficha Rubrica Salarial"
             group(Geral)
             {
                 Caption = 'Geral';
-                field("Código"; Código)
+                field("Código"; Rec."
+                )
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Rubrica"; "Tipo Rubrica")
+                field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Periodicidade; Periodicidade)
+                field(Periodicidade; Rec.Periodicidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Mês Início Periocidade"; "Mês Início Periocidade")
+                field("Mês Início Periocidade"; Rec."Mês Início Periocidade")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta a Debitar"; "No. Conta a Debitar")
+                field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta a Creditar"; "No. Conta a Creditar")
+                field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Quantidade; Quantidade)
-                {
-                    ApplicationArea = All;
-
-
-                    trigger OnValidate()
-                    begin
-                        Validacao;
-                    end;
-                }
-                field("Valor Unitário"; "Valor Unitário")
+                field(Quantidade; Rec.Quantidade)
                 {
                     ApplicationArea = All;
 
@@ -69,7 +61,7 @@ page 53098 "Ficha Rubrica Salarial"
                         Validacao;
                     end;
                 }
-                field("Valor Total"; "Valor Total")
+                field("Valor Unitário"; Rec."Valor Unitário")
                 {
                     ApplicationArea = All;
 
@@ -79,12 +71,22 @@ page 53098 "Ficha Rubrica Salarial"
                         Validacao;
                     end;
                 }
-                field("Tipo Rendimento Cat.A"; "Tipo Rendimento Cat.A")
+                field("Valor Total"; Rec."Valor Total")
+                {
+                    ApplicationArea = All;
+
+
+                    trigger OnValidate()
+                    begin
+                        Validacao;
+                    end;
+                }
+                field("Tipo Rendimento Cat.A"; Rec."Tipo Rendimento Cat.A")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Vencimento Base"; "Vencimento Base")
+                field("Vencimento Base"; Rec."Vencimento Base")
                 {
                     ApplicationArea = All;
 
@@ -103,7 +105,7 @@ page 53098 "Ficha Rubrica Salarial"
             {
 
                 Caption = 'Dados Seg. Social';
-                field(NATREM; NATREM)
+                field(NATREM; Rec.NATREM)
                 {
                     ApplicationArea = All;
 
@@ -114,7 +116,7 @@ page 53098 "Ficha Rubrica Salarial"
             group("Relatório Único")
             {
                 Caption = 'Relatório Único';
-                field("Tipo de Remuneração"; "Tipo de Remuneração")
+                field("Tipo de Remuneração"; Rec."Tipo de Remuneração")
                 {
                     ApplicationArea = All;
 
@@ -123,17 +125,17 @@ page 53098 "Ficha Rubrica Salarial"
             group(CGA)
             {
                 Caption = 'CGA';
-                field("Cód. Situação"; "Cód. Situação")
+                field("Cód. Situação"; Rec."Cód. Situação")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Movimento"; "Cód. Movimento")
+                field("Cód. Movimento"; Rec."Cód. Movimento")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Acertos; Acertos)
+                field(Acertos; Rec.Acertos)
                 {
                     ApplicationArea = All;
 
@@ -153,17 +155,17 @@ page 53098 "Ficha Rubrica Salarial"
                     ApplicationArea = All;
 
                 }
-                field("Sobretaxa em Sede de IRS"; "Sobretaxa em Sede de IRS")
+                field("Sobretaxa em Sede de IRS"; Rec."Sobretaxa em Sede de IRS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Imposto Extraordinário"; "Imposto Extraordinário")
+                field("Imposto Extraordinário"; Rec."Imposto Extraordinário")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Rubrica Acerto Duo"; "Rubrica Acerto Duo")
+                field("Rubrica Acerto Duo"; Rec."Rubrica Acerto Duo")
                 {
                     ApplicationArea = All;
 
@@ -172,7 +174,7 @@ page 53098 "Ficha Rubrica Salarial"
             group("Ausências")
             {
                 Caption = 'Ausências';
-                field(Faults; Faults)
+                field(Faults; Rec.Faults)
                 {
                     ApplicationArea = All;
 
@@ -186,7 +188,7 @@ page 53098 "Ficha Rubrica Salarial"
                     ApplicationArea = All;
 
                 }
-                field("Usado no cálculo indemnização"; "Usado no cálculo indemnização")
+                field("Usado no cálculo indemnização"; Rec."Usado no cálculo indemnização")
                 {
                     ApplicationArea = All;
 
@@ -201,14 +203,14 @@ page 53098 "Ficha Rubrica Salarial"
 
     trigger OnAfterGetRecord()
     begin
-        SetRange(Código);
+        Rec.SetRange(Código);
     end;
 
     trigger OnDeleteRecord(): Boolean
     begin
         //HG - 10.05.07 não deixar apagar uma rubrical se esta já tiver sido usada num processamento fechado
         TabHisLinhasMovEmp.Reset;
-        TabHisLinhasMovEmp.SetRange(TabHisLinhasMovEmp."Cód. Rubrica", Código);
+        TabHisLinhasMovEmp.SetRange(TabHisLinhasMovEmp."Cód. Rubrica", Rec."Código");
         if TabHisLinhasMovEmp.Find('-') then begin
             Error(Text0005);
             exit(false);
@@ -220,15 +222,15 @@ page 53098 "Ficha Rubrica Salarial"
         //    2 - tem de apagar as filhas dela
 
         TabRubricaLinhas.Reset;
-        TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica Filha", Código);
+        TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica Filha", Rec."Código");
         if TabRubricaLinhas.Find('-') then begin
-            if not Confirm(Text0003, false, Código) then
+            if not Confirm(Text0003, false, Rec."Código") then
                 exit(false);
         end else begin
             TabRubricaLinhas.Reset;
-            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", Código);
+            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", Rec."Código");
             if TabRubricaLinhas.Find('-') then
-                if not Confirm(Text0003, false, Código) then
+                if not Confirm(Text0003, false, Rec."Código") then
                     exit(false);
 
         end;
@@ -244,7 +246,7 @@ page 53098 "Ficha Rubrica Salarial"
 
         //Alertar que vai alterar uma rubrica salarial que já foi usada num processamento fechado
         TabHisLinhasMovEmp.Reset;
-        TabHisLinhasMovEmp.SetRange(TabHisLinhasMovEmp."Cód. Rubrica", Código);
+        TabHisLinhasMovEmp.SetRange(TabHisLinhasMovEmp."Cód. Rubrica", Rec."Código");
         if TabHisLinhasMovEmp.Find('-') then begin
             if not Confirm(Text0004) then
                 exit(false);
@@ -268,25 +270,27 @@ page 53098 "Ficha Rubrica Salarial"
     begin
         //HG 21.10.05 - Não deixar uma Rubrica ter valor e Rubricas Filhas ao mesmo tempo
 
-        if (Quantidade = 0) and ("Valor Unitário" = 0) and ("Valor Total" = 0) then
+        if (Rec.Quantidade = 0) and (Rec."Valor Unitário" = 0) and (Rec."Valor Total" = 0) then
             RubricaSalarialLinhasEditable := true
         else
             RubricaSalarialLinhasEditable := false;
 
         TabRubricaLinhas.Reset;
-        TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", Código);
+        TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", Rec."Código");
         if TabRubricaLinhas.Find('-') then begin
-            Quantidade := 0;
-            "Valor Unitário" := 0;
-            "Valor Total" := 0;
-            Message(Text0002, Código);
+            Rec.Quantidade := 0;
+            Rec."Valor Unitário" := 0;
+            Rec."Valor Total" := 0;
+            Message(Text0002, Rec."Código");
         end;
     end;
 
     local procedure RubricaSalarialLinhasOnActivat()
     begin
         if RubricaSalarialLinhasEditable = false then
-            Message(Text0001, Código);
+            Message(Text0001, Rec."Código");
     end;
 }
+
+#pragma implicitwith restore
 

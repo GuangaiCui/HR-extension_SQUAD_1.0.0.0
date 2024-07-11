@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53043 Familiares
 {
     Caption = 'Relatives';
@@ -13,12 +14,12 @@ page 53043 Familiares
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
 
@@ -46,4 +47,6 @@ page 53043 Familiares
     {
     }
 }
+
+#pragma implicitwith restore
 

@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53074 "Categoria Profissional Interna"
 {
     PageType = List;
@@ -10,17 +11,17 @@ page 53074 "Categoria Profissional Interna"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Código)
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Empregados"; "No. Empregados")
+                field("No. Empregados"; Rec."No. Empregados")
                 {
                     ApplicationArea = All;
 
@@ -35,8 +36,10 @@ page 53074 "Categoria Profissional Interna"
 
     trigger OnOpenPage()
     begin
-        SetFilter("Data Filtro Inicio", '<=%1', WorkDate);
-        SetFilter("Data Filtro Fim", '>=%1|%2', WorkDate, 0D);
+        Rec.SetFilter("Data Filtro Inicio", '<=%1', WorkDate);
+        Rec.SetFilter("Data Filtro Fim", '>=%1|%2', WorkDate, 0D);
     end;
 }
+
+#pragma implicitwith restore
 

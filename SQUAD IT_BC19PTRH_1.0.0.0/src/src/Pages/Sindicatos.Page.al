@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53048 Sindicatos
 {
     Caption = 'Unions';
@@ -13,40 +14,40 @@ page 53048 Sindicatos
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Address; Address)
-                {
-                    ApplicationArea = All;
-
-                    Visible = false;
-                }
-                field("Post Code"; "Post Code")
+                field(Address; Rec.Address)
                 {
                     ApplicationArea = All;
 
                     Visible = false;
                 }
-                field(City; City)
+                field("Post Code"; Rec."Post Code")
                 {
                     ApplicationArea = All;
 
                     Visible = false;
                 }
-                field("Phone No."; "Phone No.")
+                field(City; Rec.City)
+                {
+                    ApplicationArea = All;
+
+                    Visible = false;
+                }
+                field("Phone No."; Rec."Phone No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. of Members Employed"; "No. of Members Employed")
+                field("No. of Members Employed"; Rec."No. of Members Employed")
                 {
                     ApplicationArea = All;
 
@@ -74,4 +75,6 @@ page 53048 Sindicatos
     {
     }
 }
+
+#pragma implicitwith restore
 

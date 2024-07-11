@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53068 "Config. Recursos Humanos"
 {
     // 
@@ -18,33 +19,33 @@ page 53068 "Config. Recursos Humanos"
             group("Numeração")
             {
                 Caption = 'Numbering';
-                field("Employee Nos."; "Employee Nos.")
+                field("Employee Nos."; Rec."Employee Nos.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Base Unit of Measure"; "Base Unit of Measure")
+                field("Base Unit of Measure"; Rec."Base Unit of Measure")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Nome Livro Diario"; "Nome Livro Diario")
+                field("Nome Livro Diario"; Rec."Nome Livro Diario")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Secção Diario"; "Secção Diario")
+                field("Secção Diario"; Rec."Secção Diario")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Nos. Contratos"; "Nos. Contratos")
+                field("Nos. Contratos"; Rec."Nos. Contratos")
                 {
                     ApplicationArea = All;
 
                     Visible = false;
                 }
-                field("Balance Cash-Flow Code"; "Balance Cash-Flow Code")
+                field("Balance Cash-Flow Code"; Rec."Balance Cash-Flow Code")
                 {
                     ApplicationArea = All;
 
@@ -53,17 +54,17 @@ page 53068 "Config. Recursos Humanos"
             group("Ausências")
             {
                 Caption = 'Ausências';
-                field("Valor Cálculo Ausências"; "Valor Cálculo Ausências")
+                field("Valor Cálculo Ausências"; Rec."Valor Cálculo Ausências")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Atribuição dias extra de féria"; "Atribuição dias extra de féria")
+                field("Atribuição dias extra de féria"; Rec."Atribuição dias extra de féria")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Limite dias falta abate SN/F"; "Limite dias falta abate SN/F")
+                field("Limite dias falta abate SN/F"; Rec."Limite dias falta abate SN/F")
                 {
                     ApplicationArea = All;
 
@@ -72,17 +73,17 @@ page 53068 "Config. Recursos Humanos"
             group("Sub. Alimentação")
             {
                 Caption = 'Sub. Alimentação';
-                field("Mês Abate Sub. Alimentação"; "Mês Abate Sub. Alimentação")
+                field("Mês Abate Sub. Alimentação"; Rec."Mês Abate Sub. Alimentação")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Abate Sub. Alim. dias gozo fer"; "Abate Sub. Alim. dias gozo fer")
+                field("Abate Sub. Alim. dias gozo fer"; Rec."Abate Sub. Alim. dias gozo fer")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Usar Feriados calculo Sub Ali"; "Usar Feriados calculo Sub Ali")
+                field("Usar Feriados calculo Sub Ali"; Rec."Usar Feriados calculo Sub Ali")
                 {
                     ApplicationArea = All;
 
@@ -91,22 +92,22 @@ page 53068 "Config. Recursos Humanos"
             group("Responsável")
             {
                 Caption = 'Responsável';
-                field("Nome responsável RH"; "Nome responsável RH")
+                field("Nome responsável RH"; Rec."Nome responsável RH")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Telefone responsável RH"; "Telefone responsável RH")
+                field("Telefone responsável RH"; Rec."Telefone responsável RH")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Fax responsável RH"; "Fax responsável RH")
+                field("Fax responsável RH"; Rec."Fax responsável RH")
                 {
                     ApplicationArea = All;
 
                 }
-                field("E-mail responsável RH"; "E-mail responsável RH")
+                field("E-mail responsável RH"; Rec."E-mail responsável RH")
                 {
                     ApplicationArea = All;
 
@@ -115,12 +116,12 @@ page 53068 "Config. Recursos Humanos"
             group("Trab. Independentes")
             {
                 Caption = 'Trab. Independentes';
-                field("%IRS"; "%IRS")
+                field("%IRS"; Rec."%IRS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("%IVA"; "%IVA")
+                field("%IVA"; Rec."%IVA")
                 {
                     ApplicationArea = All;
 
@@ -129,27 +130,27 @@ page 53068 "Config. Recursos Humanos"
             group(CGA)
             {
                 Caption = 'CGA';
-                field("Nº Serviço"; "Nº Serviço")
+                field("Nº Serviço"; Rec."Nº Serviço")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Nome Serviço"; "Nome Serviço")
+                field("Nome Serviço"; Rec."Nome Serviço")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Taxa Contributiva Empregado"; "Taxa Contributiva Empregado")
+                field("Taxa Contributiva Empregado"; Rec."Taxa Contributiva Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Taxa Contributiva Ent Patronal"; "Taxa Contributiva Ent Patronal")
+                field("Taxa Contributiva Ent Patronal"; Rec."Taxa Contributiva Ent Patronal")
                 {
                     ApplicationArea = All;
 
                 }
-                field("NIPC CGA"; "NIPC CGA")
+                field("NIPC CGA"; Rec."NIPC CGA")
                 {
                     ApplicationArea = All;
 
@@ -158,17 +159,17 @@ page 53068 "Config. Recursos Humanos"
             group(ADSE)
             {
                 Caption = 'ADSE';
-                field("Taxa Contr. Empregado ADSE"; "Taxa Contr. Empregado ADSE")
+                field("Taxa Contr. Empregado ADSE"; Rec."Taxa Contr. Empregado ADSE")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Contribui. Ent. Patronal ADSE"; "Contribui. Ent. Patronal ADSE")
+                field("Contribui. Ent. Patronal ADSE"; Rec."Contribui. Ent. Patronal ADSE")
                 {
                     ApplicationArea = All;
 
                 }
-                field("NIPC ADSE"; "NIPC ADSE")
+                field("NIPC ADSE"; Rec."NIPC ADSE")
                 {
                     ApplicationArea = All;
 
@@ -177,42 +178,42 @@ page 53068 "Config. Recursos Humanos"
             group(Outros)
             {
                 Caption = 'Outros';
-                field(Seguradora; Seguradora)
+                field(Seguradora; Rec.Seguradora)
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Apólice"; "No. Apólice")
+                field("No. Apólice"; Rec."No. Apólice")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cod. Seguradora"; "Cod. Seguradora")
+                field("Cod. Seguradora"; Rec."Cod. Seguradora")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Mod10 - Incluir Fornecedores"; "Mod10 - Incluir Fornecedores")
+                field("Mod10 - Incluir Fornecedores"; Rec."Mod10 - Incluir Fornecedores")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Mod10-Forn - Conta Valor Sujei"; "Mod10-Forn - Conta Valor Sujei")
+                field("Mod10-Forn - Conta Valor Sujei"; Rec."Mod10-Forn - Conta Valor Sujei")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Mod10-Forn - Conta Valor Reten"; "Mod10-Forn - Conta Valor Reten")
+                field("Mod10-Forn - Conta Valor Reten"; Rec."Mod10-Forn - Conta Valor Reten")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Ordenado Mínimo"; "Ordenado Mínimo")
+                field("Ordenado Mínimo"; Rec."Ordenado Mínimo")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Sobretaxa %"; "Sobretaxa %")
+                field("Sobretaxa %"; Rec."Sobretaxa %")
                 {
                     ApplicationArea = All;
 
@@ -222,45 +223,45 @@ page 53068 "Config. Recursos Humanos"
             group(Pagamentos)
             {
                 Caption = 'Pagamentos';
-                field("No. Conta Pag. Enc. SSocialEmp"; "No. Conta Pag. Enc. SSocialEmp")
+                field("No. Conta Pag. Enc. SSocialEmp"; Rec."No. Conta Pag. Enc. SSocialEmp")
                 {
                     ApplicationArea = All;
 
                     Caption = 'No. Conta Pag. Enc. Seg. Social Empregado';
                 }
-                field("No. Conta Pag. Enc. SSocialPat"; "No. Conta Pag. Enc. SSocialPat")
+                field("No. Conta Pag. Enc. SSocialPat"; Rec."No. Conta Pag. Enc. SSocialPat")
                 {
                     ApplicationArea = All;
 
                     Caption = 'No. Conta Pag. Enc. Seg. Social Ent. Patronal';
                 }
-                field("No. Conta Pag. Enc. CGA Emp"; "No. Conta Pag. Enc. CGA Emp")
+                field("No. Conta Pag. Enc. CGA Emp"; Rec."No. Conta Pag. Enc. CGA Emp")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta Pag. Enc. CGA Pat"; "No. Conta Pag. Enc. CGA Pat")
+                field("No. Conta Pag. Enc. CGA Pat"; Rec."No. Conta Pag. Enc. CGA Pat")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta Pag. IRS"; "No. Conta Pag. IRS")
+                field("No. Conta Pag. IRS"; Rec."No. Conta Pag. IRS")
                 {
                     ApplicationArea = All;
 
                     Caption = 'No. Conta Pag. IRS';
                 }
-                field("No. Conta Pag. Enc. ADSE"; "No. Conta Pag. Enc. ADSE")
+                field("No. Conta Pag. Enc. ADSE"; Rec."No. Conta Pag. Enc. ADSE")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta Pag. Enc. ADSE Pat"; "No. Conta Pag. Enc. ADSE Pat")
+                field("No. Conta Pag. Enc. ADSE Pat"; Rec."No. Conta Pag. Enc. ADSE Pat")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta Pag. Enc. FCT-FGCT"; "No. Conta Pag. Enc. FCT-FGCT")
+                field("No. Conta Pag. Enc. FCT-FGCT"; Rec."No. Conta Pag. Enc. FCT-FGCT")
                 {
                     ApplicationArea = All;
 
@@ -270,33 +271,33 @@ page 53068 "Config. Recursos Humanos"
             group(Avisos)
             {
                 Caption = 'Avisos';
-                field("Aniversários"; Aniversários)
+                field("Aniversários"; Rec."Aniversários")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Dias de antecedência Aniversár"; "Dias de antecedência Aniversár")
+                field("Dias de antecedência Aniversár"; Rec."Dias de antecedência Aniversár")
                 {
                     ApplicationArea = All;
 
                     Caption = 'Dias de antecedência Aniversário';
                 }
-                field("Contratos a terminar"; "Contratos a terminar")
+                field("Contratos a terminar"; Rec."Contratos a terminar")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Dias de antecedência Contrato"; "Dias de antecedência Contrato")
+                field("Dias de antecedência Contrato"; Rec."Dias de antecedência Contrato")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Consultas; Consultas)
+                field(Consultas; Rec.Consultas)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Dias de antecedência Consultas"; "Dias de antecedência Consultas")
+                field("Dias de antecedência Consultas"; Rec."Dias de antecedência Consultas")
                 {
                     ApplicationArea = All;
 
@@ -305,12 +306,12 @@ page 53068 "Config. Recursos Humanos"
             group("Sub. Férias")
             {
                 Caption = 'Sub. Férias';
-                field("Mês Acerto Sub. Férias"; "Mês Acerto Sub. Férias")
+                field("Mês Acerto Sub. Férias"; Rec."Mês Acerto Sub. Férias")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Pagamento total Sub. Férias"; "Pagamento total Sub. Férias")
+                field("Pagamento total Sub. Férias"; Rec."Pagamento total Sub. Férias")
                 {
                     ApplicationArea = All;
 
@@ -320,17 +321,17 @@ page 53068 "Config. Recursos Humanos"
             group("Provisão Duodécimos")
             {
                 Caption = 'Provisão Duodécimos';
-                field("Nome Diário Duodécimos"; "Nome Diário Duodécimos")
+                field("Nome Diário Duodécimos"; Rec."Nome Diário Duodécimos")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Nome Secção Duodécimos"; "Nome Secção Duodécimos")
+                field("Nome Secção Duodécimos"; Rec."Nome Secção Duodécimos")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Meses"; "No. Meses")
+                field("No. Meses"; Rec."No. Meses")
                 {
                     ApplicationArea = All;
 
@@ -338,32 +339,32 @@ page 53068 "Config. Recursos Humanos"
                 group("Contas dos Duodécimos do Venc. Base")
                 {
                     Caption = 'Contas dos Duodécimos do Venc. Base';
-                    field("No. Conta Duo. SF"; "No. Conta Duo. SF")
+                    field("No. Conta Duo. SF"; Rec."No. Conta Duo. SF")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Duo. SN"; "No. Conta Duo. SN")
+                    field("No. Conta Duo. SN"; Rec."No. Conta Duo. SN")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Duo. F"; "No. Conta Duo. F")
+                    field("No. Conta Duo. F"; Rec."No. Conta Duo. F")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Contrap. Duo. SF"; "No. Conta Contrap. Duo. SF")
+                    field("No. Conta Contrap. Duo. SF"; Rec."No. Conta Contrap. Duo. SF")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Contrap. Duo. SN"; "No. Conta Contrap. Duo. SN")
+                    field("No. Conta Contrap. Duo. SN"; Rec."No. Conta Contrap. Duo. SN")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Contrap. Duo. F"; "No. Conta Contrap. Duo. F")
+                    field("No. Conta Contrap. Duo. F"; Rec."No. Conta Contrap. Duo. F")
                     {
                         ApplicationArea = All;
 
@@ -372,32 +373,32 @@ page 53068 "Config. Recursos Humanos"
                 group("Contas dos Encargos dos Duodécimos")
                 {
                     Caption = 'Contas dos Encargos dos Duodécimos';
-                    field("No. Conta Enc. Duo. SF"; "No. Conta Enc. Duo. SF")
+                    field("No. Conta Enc. Duo. SF"; Rec."No. Conta Enc. Duo. SF")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Enc. Duo. SN"; "No. Conta Enc. Duo. SN")
+                    field("No. Conta Enc. Duo. SN"; Rec."No. Conta Enc. Duo. SN")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Enc. Duo. F"; "No. Conta Enc. Duo. F")
+                    field("No. Conta Enc. Duo. F"; Rec."No. Conta Enc. Duo. F")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Contrap. Enc. Duo.SF"; "No. Conta Contrap. Enc. Duo.SF")
+                    field("No. Conta Contrap. Enc. Duo.SF"; Rec."No. Conta Contrap. Enc. Duo.SF")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Contrap. Enc. Duo.SN"; "No. Conta Contrap. Enc. Duo.SN")
+                    field("No. Conta Contrap. Enc. Duo.SN"; Rec."No. Conta Contrap. Enc. Duo.SN")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Contrap. Enc. Duo.F"; "No. Conta Contrap. Enc. Duo.F")
+                    field("No. Conta Contrap. Enc. Duo.F"; Rec."No. Conta Contrap. Enc. Duo.F")
                     {
                         ApplicationArea = All;
 
@@ -406,17 +407,17 @@ page 53068 "Config. Recursos Humanos"
                 group("Orgãos Sociais")
                 {
                     Caption = 'Orgãos Sociais';
-                    field("No. Conta Enc. Duo. SF OrgSoc"; "No. Conta Enc. Duo. SF OrgSoc")
+                    field("No. Conta Enc. Duo. SF OrgSoc"; Rec."No. Conta Enc. Duo. SF OrgSoc")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Enc. Duo. SN OrgSoc"; "No. Conta Enc. Duo. SN OrgSoc")
+                    field("No. Conta Enc. Duo. SN OrgSoc"; Rec."No. Conta Enc. Duo. SN OrgSoc")
                     {
                         ApplicationArea = All;
 
                     }
-                    field("No. Conta Enc. Duo. F OrgSoc"; "No. Conta Enc. Duo. F OrgSoc")
+                    field("No. Conta Enc. Duo. F OrgSoc"; Rec."No. Conta Enc. Duo. F OrgSoc")
                     {
                         ApplicationArea = All;
 
@@ -426,12 +427,12 @@ page 53068 "Config. Recursos Humanos"
             group("Relatório Único")
             {
                 Caption = 'Relatório Único';
-                field("Caminho Exportação Rel. Único"; "Caminho Exportação Rel. Único")
+                field("Caminho Exportação Rel. Único"; Rec."Caminho Exportação Rel. Único")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Entidade; Entidade)
+                field(Entidade; Rec.Entidade)
                 {
                     ApplicationArea = All;
 
@@ -446,11 +447,13 @@ page 53068 "Config. Recursos Humanos"
 
     trigger OnOpenPage()
     begin
-        Reset;
-        if not Get then begin
-            Init;
-            Insert;
+        Rec.Reset;
+        if not Rec.Get then begin
+            Rec.Init;
+            Rec.Insert;
         end;
     end;
 }
+
+#pragma implicitwith restore
 

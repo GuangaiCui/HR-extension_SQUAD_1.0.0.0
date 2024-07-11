@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53036 "Lista Empregado"
 {
     CaptionML = ENU = 'Employee List', PTG = 'Lista Empregado';
@@ -24,557 +25,557 @@ page 53036 "Lista Empregado"
                     Style = Strong;
                     StyleExpr = TRUE;
                 }
-                field(Name; Name)
+                field(Name; Rec.Name)
                 {
                     ApplicationArea = All;
 
                     Style = Strong;
                     StyleExpr = TRUE;
                 }
-                field("First Name"; "First Name")
+                field("First Name"; Rec."First Name")
                 {
                     ApplicationArea = All;
 
                     Visible = false;
                 }
-                field("Last Name"; "Last Name")
+                field("Last Name"; Rec."Last Name")
                 {
                     ApplicationArea = All;
 
                     Visible = false;
                 }
-                field(Initials; Initials)
+                field(Initials; Rec.Initials)
                 {
                     ApplicationArea = All;
 
                     Visible = false;
                 }
-                field("Job Title"; "Job Title")
+                field("Job Title"; Rec."Job Title")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Search Name"; "Search Name")
+                field("Search Name"; Rec."Search Name")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Address; Address)
+                field(Address; Rec.Address)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Address 2"; "Address 2")
+                field("Address 2"; Rec."Address 2")
                 {
                     ApplicationArea = All;
 
                 }
-                field(City; City)
+                field(City; Rec.City)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Post Code"; "Post Code")
+                field("Post Code"; Rec."Post Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field(County; County)
+                field(County; Rec.County)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Phone No."; "Phone No.")
+                field("Phone No."; Rec."Phone No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Mobile Phone No."; "Mobile Phone No.")
+                field("Mobile Phone No."; Rec."Mobile Phone No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("E-Mail"; "E-Mail")
+                field("E-Mail"; Rec."E-Mail")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Alt. Address Code"; "Alt. Address Code")
+                field("Alt. Address Code"; Rec."Alt. Address Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Alt. Address Start Date"; "Alt. Address Start Date")
+                field("Alt. Address Start Date"; Rec."Alt. Address Start Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Alt. Address End Date"; "Alt. Address End Date")
+                field("Alt. Address End Date"; Rec."Alt. Address End Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Birth Date"; "Birth Date")
+                field("Birth Date"; Rec."Birth Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Union Code"; "Union Code")
+                field("Union Code"; Rec."Union Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Union Membership No."; "Union Membership No.")
+                field("Union Membership No."; Rec."Union Membership No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Sex; Sex)
+                field(Sex; Rec.Sex)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Country Code"; "Country Code")
+                field("Country Code"; Rec."Country Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Emplymt. Contract Code"; "Emplymt. Contract Code")
+                field("Emplymt. Contract Code"; Rec."Emplymt. Contract Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Statistics Group Code"; "Statistics Group Code")
+                field("Statistics Group Code"; Rec."Statistics Group Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Employment Date"; "Employment Date")
+                field("Employment Date"; Rec."Employment Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Status; Status)
+                field(Status; Rec.Status)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Inactive Date"; "Inactive Date")
+                field("Inactive Date"; Rec."Inactive Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cause of Inactivity Code"; "Cause of Inactivity Code")
+                field("Cause of Inactivity Code"; Rec."Cause of Inactivity Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Termination Date"; "Termination Date")
+                field("Termination Date"; Rec."Termination Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Grounds for Term. Code"; "Grounds for Term. Code")
+                field("Grounds for Term. Code"; Rec."Grounds for Term. Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Last Date Modified"; "Last Date Modified")
+                field("Last Date Modified"; Rec."Last Date Modified")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Extension; Extension)
+                field(Extension; Rec.Extension)
                 {
                     ApplicationArea = All;
 
                 }
-                field(CompanyMobilePhoneNo; CompanyMobilePhoneNo)
+                field(CompanyMobilePhoneNo; Rec.CompanyMobilePhoneNo)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Company Phone No."; "Company Phone No.")
+                field("Company Phone No."; Rec."Company Phone No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Company E-Mail"; "Company E-Mail")
+                field("Company E-Mail"; Rec."Company E-Mail")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Title; Title)
+                field(Title; Rec.Title)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Empregado"; "Tipo Empregado")
+                field("Tipo Empregado"; Rec."Tipo Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Estabelecimento; Estabelecimento)
+                field(Estabelecimento; Rec.Estabelecimento)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Seguradora; Seguradora)
+                field(Seguradora; Rec.Seguradora)
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Apólice"; "No. Apólice")
+                field("No. Apólice"; Rec."No. Apólice")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Documento Identificação"; "Documento Identificação")
+                field("Documento Identificação"; Rec."Documento Identificação")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Doc. Identificação"; "No. Doc. Identificação")
+                field("No. Doc. Identificação"; Rec."No. Doc. Identificação")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Local Emissão Doc. Ident."; "Local Emissão Doc. Ident.")
+                field("Local Emissão Doc. Ident."; Rec."Local Emissão Doc. Ident.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Doc. Ident."; "Data Doc. Ident.")
+                field("Data Doc. Ident."; Rec."Data Doc. Ident.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Validade Doc. Ident."; "Data Validade Doc. Ident.")
+                field("Data Validade Doc. Ident."; Rec."Data Validade Doc. Ident.")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Naturalidade; Naturalidade)
+                field(Naturalidade; Rec.Naturalidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Nacionalidade; Nacionalidade)
+                field(Nacionalidade; Rec.Nacionalidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Nacionalidade Descrição"; "Nacionalidade Descrição")
+                field("Nacionalidade Descrição"; Rec."Nacionalidade Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Contribuinte"; "No. Contribuinte")
+                field("No. Contribuinte"; Rec."No. Contribuinte")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Contribuinte"; "Tipo Contribuinte")
+                field("Tipo Contribuinte"; Rec."Tipo Contribuinte")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cod. Repartição Finanças"; "Cod. Repartição Finanças")
+                field("Cod. Repartição Finanças"; Rec."Cod. Repartição Finanças")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Repartição Finanças"; "Repartição Finanças")
+                field("Repartição Finanças"; Rec."Repartição Finanças")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Emissão NIF"; "Data Emissão NIF")
+                field("Data Emissão NIF"; Rec."Data Emissão NIF")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Rendimento"; "Tipo Rendimento")
+                field("Tipo Rendimento"; Rec."Tipo Rendimento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Local Obtenção Rendimento"; "Local Obtenção Rendimento")
+                field("Local Obtenção Rendimento"; Rec."Local Obtenção Rendimento")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Deficiente; Deficiente)
+                field(Deficiente; Rec.Deficiente)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Estado Civil"; "Estado Civil")
+                field("Estado Civil"; Rec."Estado Civil")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Titular Rendimentos"; "Titular Rendimentos")
+                field("Titular Rendimentos"; Rec."Titular Rendimentos")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Conjuge Deficiente"; "Conjuge Deficiente")
+                field("Conjuge Deficiente"; Rec."Conjuge Deficiente")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Dependentes"; "No. Dependentes")
+                field("No. Dependentes"; Rec."No. Dependentes")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Dependentes Deficientes"; "No. Dependentes Deficientes")
+                field("No. Dependentes Deficientes"; Rec."No. Dependentes Deficientes")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tabela IRS"; "Tabela IRS")
+                field("Tabela IRS"; Rec."Tabela IRS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Tabela IRS"; "Descrição Tabela IRS")
+                field("Descrição Tabela IRS"; Rec."Descrição Tabela IRS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("IRS %"; "IRS %")
+                field("IRS %"; Rec."IRS %")
                 {
                     ApplicationArea = All;
 
                 }
-                field("IRS % Fixa"; "IRS % Fixa")
+                field("IRS % Fixa"; Rec."IRS % Fixa")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Subscritor SS"; "Subscritor SS")
+                field("Subscritor SS"; Rec."Subscritor SS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Segurança Social"; "No. Segurança Social")
+                field("No. Segurança Social"; Rec."No. Segurança Social")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data da Admissão SS"; "Data da Admissão SS")
+                field("Data da Admissão SS"; Rec."Data da Admissão SS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Emissão SS"; "Data Emissão SS")
+                field("Data Emissão SS"; Rec."Data Emissão SS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cod. Instituição SS"; "Cod. Instituição SS")
+                field("Cod. Instituição SS"; Rec."Cod. Instituição SS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cod. Regime SS"; "Cod. Regime SS")
+                field("Cod. Regime SS"; Rec."Cod. Regime SS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data de Antiguidade"; "Data de Antiguidade")
+                field("Data de Antiguidade"; Rec."Data de Antiguidade")
                 {
                     ApplicationArea = All;
 
                 }
-                field("End Date"; "End Date")
+                field("End Date"; Rec."End Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Motivo de Terminação"; "Motivo de Terminação")
+                field("Motivo de Terminação"; Rec."Motivo de Terminação")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. IRCT"; "Cód. IRCT")
+                field("Cód. IRCT"; Rec."Cód. IRCT")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Acordo Colectivo"; "Acordo Colectivo")
+                field("Acordo Colectivo"; Rec."Acordo Colectivo")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição IRCT"; "Descrição IRCT")
+                field("Descrição IRCT"; Rec."Descrição IRCT")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Cat. Profissional"; "Cód. Cat. Profissional")
+                field("Cód. Cat. Profissional"; Rec."Cód. Cat. Profissional")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Cat Prof"; "Descrição Cat Prof")
+                field("Descrição Cat Prof"; Rec."Descrição Cat Prof")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Cat. Prof QP"; "Cód. Cat. Prof QP")
+                field("Cód. Cat. Prof QP"; Rec."Cód. Cat. Prof QP")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Cat Prof QP"; "Descrição Cat Prof QP")
+                field("Descrição Cat Prof QP"; Rec."Descrição Cat Prof QP")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Class. Nac. Profi."; "Class. Nac. Profi.")
+                field("Class. Nac. Profi."; Rec."Class. Nac. Profi.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Class. Nac."; "Descrição Class. Nac.")
+                field("Descrição Class. Nac."; Rec."Descrição Class. Nac.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Habilitações"; "Cód. Habilitações")
+                field("Cód. Habilitações"; Rec."Cód. Habilitações")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Habilitações"; "Descrição Habilitações")
+                field("Descrição Habilitações"; Rec."Descrição Habilitações")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Situação Profissional"; "Situação Profissional")
+                field("Situação Profissional"; Rec."Situação Profissional")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Grau Função"; "Grau Função")
+                field("Grau Função"; Rec."Grau Função")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Grau Função"; "Descrição Grau Função")
+                field("Descrição Grau Função"; Rec."Descrição Grau Função")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Horário"; "Cód. Horário")
+                field("Cód. Horário"; Rec."Cód. Horário")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Vencimento Base"; "Valor Vencimento Base")
+                field("Valor Vencimento Base"; Rec."Valor Vencimento Base")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Dia"; "Valor Dia")
+                field("Valor Dia"; Rec."Valor Dia")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Hora"; "Valor Hora")
+                field("Valor Hora"; Rec."Valor Hora")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Horas Semanais"; "No. Horas Semanais")
+                field("No. Horas Semanais"; Rec."No. Horas Semanais")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Mês Proc. Sub. Férias"; "Mês Proc. Sub. Férias")
+                field("Mês Proc. Sub. Férias"; Rec."Mês Proc. Sub. Férias")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Regime Duração Trabalho"; "Regime Duração Trabalho")
+                field("Regime Duração Trabalho"; Rec."Regime Duração Trabalho")
                 {
                     ApplicationArea = All;
 
                 }
-                field(IBAN; IBAN)
+                field(IBAN; Rec.IBAN)
                 {
                     ApplicationArea = All;
 
                 }
-                field("SWIFT Code"; "SWIFT Code")
+                field("SWIFT Code"; Rec."SWIFT Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Usa Transf. Bancária"; "Usa Transf. Bancária")
+                field("Usa Transf. Bancária"; Rec."Usa Transf. Bancária")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Banco Transf."; "Cód. Banco Transf.")
+                field("Cód. Banco Transf."; Rec."Cód. Banco Transf.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("IVA %"; "IVA %")
+                field("IVA %"; Rec."IVA %")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Nome Livro Diario Pag."; "Nome Livro Diario Pag.")
+                field("Nome Livro Diario Pag."; Rec."Nome Livro Diario Pag.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Secção Diario Pag."; "Secção Diario Pag.")
+                field("Secção Diario Pag."; Rec."Secção Diario Pag.")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Pagamento; Pagamento)
+                field(Pagamento; Rec.Pagamento)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Conta Pag."; "Conta Pag.")
+                field("Conta Pag."; Rec."Conta Pag.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Naturalidade - Concelho"; "Naturalidade - Concelho")
+                field("Naturalidade - Concelho"; Rec."Naturalidade - Concelho")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Profissionalização"; Profissionalização)
+                field("Profissionalização"; Rec."Profissionalização")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Profissionalização"; "Data Profissionalização")
+                field("Data Profissionalização"; Rec."Data Profissionalização")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Rúbrica Enc. Seg. Social"; "Cód. Rúbrica Enc. Seg. Social")
+                field("Cód. Rúbrica Enc. Seg. Social"; Rec."Cód. Rúbrica Enc. Seg. Social")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. antigo do Empregado"; "No. antigo do Empregado")
+                field("No. antigo do Empregado"; Rec."No. antigo do Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Comment; Comment)
+                field(Comment; Rec.Comment)
                 {
                     ApplicationArea = All;
 
@@ -703,4 +704,6 @@ page 53036 "Lista Empregado"
         varEmpActivos: Integer;
         ConfRH: Record "Config. Recursos Humanos";
 }
+
+#pragma implicitwith restore
 

@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53089 "Tipos Horas Extra"
 {
     PageType = List;
@@ -12,32 +13,32 @@ page 53089 "Tipos Horas Extra"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Código)
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Rubrica"; "Cód. Rubrica")
+                field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Factor; Factor)
+                field(Factor; Rec.Factor)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Lei n. 7/2009 de 12 Fevereiro"; "Lei n. 7/2009 de 12 Fevereiro")
+                field("Lei n. 7/2009 de 12 Fevereiro"; Rec."Lei n. 7/2009 de 12 Fevereiro")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Dia semanal"; "Dia semanal")
+                field("Dia semanal"; Rec."Dia semanal")
                 {
                     ApplicationArea = All;
 
@@ -50,4 +51,6 @@ page 53089 "Tipos Horas Extra"
     {
     }
 }
+
+#pragma implicitwith restore
 

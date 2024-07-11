@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53148 "Factores Risco - Exames"
 {
     AutoSplitKey = true;
@@ -13,17 +14,17 @@ page 53148 "Factores Risco - Exames"
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field("Risk Factor"; "Risk Factor")
+                field("Risk Factor"; Rec."Risk Factor")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Risk Factor Description"; "Risk Factor Description")
+                field("Risk Factor Description"; Rec."Risk Factor Description")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Observations; Observations)
+                field(Observations; Rec.Observations)
                 {
                     ApplicationArea = All;
 
@@ -36,4 +37,6 @@ page 53148 "Factores Risco - Exames"
     {
     }
 }
+
+#pragma implicitwith restore
 

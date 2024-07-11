@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53166 "Tabelas Sobretaxa"
 {
     PageType = List;
@@ -11,27 +12,27 @@ page 53166 "Tabelas Sobretaxa"
         {
             repeater(Group)
             {
-                field("Echelon Code"; "Echelon Code")
+                field("Echelon Code"; Rec."Echelon Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Table"; Table)
+                field("Table"; Rec.Table)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Minimum Value"; "Minimum Value")
+                field("Minimum Value"; Rec."Minimum Value")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Maximum Value"; "Maximum Value")
+                field("Maximum Value"; Rec."Maximum Value")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tax %"; "Tax %")
+                field("Tax %"; Rec."Tax %")
                 {
                     ApplicationArea = All;
 
@@ -44,4 +45,6 @@ page 53166 "Tabelas Sobretaxa"
     {
     }
 }
+
+#pragma implicitwith restore
 

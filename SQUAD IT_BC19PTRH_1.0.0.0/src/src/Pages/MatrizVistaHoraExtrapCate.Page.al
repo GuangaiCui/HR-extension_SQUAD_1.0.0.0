@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53093 "Matriz Vista HoraExtra p Cate."
 {
     Caption = 'Extra hour Overview by Categories Matrix';
@@ -14,13 +15,13 @@ page 53093 "Matriz Vista HoraExtra p Cate."
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Period Start"; "Period Start")
+                field("Period Start"; Rec."Period Start")
                 {
                     ApplicationArea = All;
 
                     Caption = 'Period Start';
                 }
-                field("Period Name"; "Period Name")
+                field("Period Name"; Rec."Period Name")
                 {
                     ApplicationArea = All;
 
@@ -611,9 +612,9 @@ page 53093 "Matriz Vista HoraExtra p Cate."
     local procedure MatrixOnDrillDown(ColumnID: Integer)
     begin
         if ExtraHourAmountType = ExtraHourAmountType::"Net Change" then
-            EmployeeExtraHour.SetRange(Data, "Period Start", "Period End")
+            EmployeeExtraHour.SetRange(Data, Rec."Period Start", Rec."Period End")
         else
-            EmployeeExtraHour.SetRange(Data, 0D, "Period End");
+            EmployeeExtraHour.SetRange(Data, 0D, Rec."Period End");
         EmployeeExtraHour.SetFilter("No. Empregado", EmployeeNoFilter);
         EmployeeExtraHour.SetRange("Cód. Hora Extra", MatrixRecords[ColumnID].Código);
         PAGE.Run(0, EmployeeExtraHour);
@@ -623,9 +624,9 @@ page 53093 "Matriz Vista HoraExtra p Cate."
     begin
         CauseOfExtraHour.Código := MatrixRecords[ColumnID].Código;
         if ExtraHourAmountType = ExtraHourAmountType::"Net Change" then
-            CauseOfExtraHour.SetRange("Date Filter", "Period Start", "Period End")
+            CauseOfExtraHour.SetRange("Date Filter", Rec."Period Start", Rec."Period End")
         else
-            CauseOfExtraHour.SetRange("Date Filter", 0D, "Period End");
+            CauseOfExtraHour.SetRange("Date Filter", 0D, Rec."Period End");
         CauseOfExtraHour.SetFilter("Employee No. Filter", EmployeeNoFilter);
         CauseOfExtraHour.CalcFields("Total Hora Extra");
         MATRIX_CellData[ColumnID] := CauseOfExtraHour."Total Hora Extra";
@@ -669,4 +670,6 @@ page 53093 "Matriz Vista HoraExtra p Cate."
         Field32Visible := MATRIX_ColumnCaption[32] <> '';
     end;
 }
+
+#pragma implicitwith restore
 

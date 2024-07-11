@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53087 "Matriz Vista Ferias"
 {
     Caption = 'Matriz Vista de Ferias';
@@ -15,12 +16,12 @@ page 53087 "Matriz Vista Ferias"
             {
                 FreezeColumn = "Full Name";
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Full Name"; FullName)
+                field("Full Name"; Rec.FullName)
                 {
                     ApplicationArea = All;
 
@@ -477,11 +478,11 @@ page 53087 "Matriz Vista Ferias"
     begin
         if VacationAmountType = VacationAmountType::"Net Change" then
             if MatrixRecords[ColumnID]."Period Start" = MatrixRecords[ColumnID]."Period End" then
-                SetRange("Date Filter", MatrixRecords[ColumnID]."Period Start")
+                Rec.SetRange("Date Filter", MatrixRecords[ColumnID]."Period Start")
             else
-                SetRange("Date Filter", MatrixRecords[ColumnID]."Period Start", MatrixRecords[ColumnID]."Period End")
+                Rec.SetRange("Date Filter", MatrixRecords[ColumnID]."Period Start", MatrixRecords[ColumnID]."Period End")
         else
-            SetRange("Date Filter", 0D, MatrixRecords[ColumnID]."Period End");
+            Rec.SetRange("Date Filter", 0D, MatrixRecords[ColumnID]."Period End");
     end;
 
 
@@ -501,19 +502,21 @@ page 53087 "Matriz Vista Ferias"
         EmployeeAbsence: Record "Férias Empregados";
     begin
         SetDateFilter(ColumnID);
-        EmployeeAbsence.SetRange("No. Empregado", "No.");
+        EmployeeAbsence.SetRange("No. Empregado", Rec."No.");
         EmployeeAbsence.SetRange(Tipo, 0);
-        SetFilter("Cause of Absence Filter", CauseOfVacationFilter);
-        EmployeeAbsence.SetFilter(Data, Format("Date Filter"));
+        Rec.SetFilter("Cause of Absence Filter", CauseOfVacationFilter);
+        EmployeeAbsence.SetFilter(Data, Format(Rec."Date Filter"));
         PAGE.Run(0, EmployeeAbsence);
     end;
 
     local procedure MATRIX_OnAfterGetRecord(ColumnID: Integer)
     begin
         SetDateFilter(ColumnID);
-        SetFilter("Cause of Absence Filter", CauseOfVacationFilter);
-        CalcFields("Total Férias");
-        MATRIX_CellData[ColumnID] := "Total Férias";
+        Rec.SetFilter("Cause of Absence Filter", CauseOfVacationFilter);
+        Rec.CalcFields("Total Férias");
+        MATRIX_CellData[ColumnID] := Rec."Total Férias";
     end;
 }
+
+#pragma implicitwith restore
 

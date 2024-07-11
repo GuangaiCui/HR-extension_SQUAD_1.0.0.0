@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53144 "Factores de Risco"
 {
     PageType = List;
@@ -10,52 +11,52 @@ page 53144 "Factores de Risco"
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field(Data; Data)
+                field(Data; Rec.Data)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo de Risco"; "Tipo de Risco")
+                field("Tipo de Risco"; Rec."Tipo de Risco")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Agente; Agente)
+                field(Agente; Rec.Agente)
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Trab. Expostos H"; "No. Trab. Expostos H")
+                field("No. Trab. Expostos H"; Rec."No. Trab. Expostos H")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Trab. Expostos M"; "No. Trab. Expostos M")
+                field("No. Trab. Expostos M"; Rec."No. Trab. Expostos M")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Avaliações Efectuadas"; "No. Avaliações Efectuadas")
+                field("No. Avaliações Efectuadas"; Rec."No. Avaliações Efectuadas")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Ordem - Código"; "No. Ordem - Código")
+                field("No. Ordem - Código"; Rec."No. Ordem - Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Identificação do Agente"; "Identificação do Agente")
+                field("Identificação do Agente"; Rec."Identificação do Agente")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Menção ou Frase de Risco"; "Menção ou Frase de Risco")
+                field("Menção ou Frase de Risco"; Rec."Menção ou Frase de Risco")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Classificação do Agente"; "Classificação do Agente")
+                field("Classificação do Agente"; Rec."Classificação do Agente")
                 {
                     ApplicationArea = All;
 
@@ -83,4 +84,6 @@ page 53144 "Factores de Risco"
         }
     }
 }
+
+#pragma implicitwith restore
 

@@ -1,3 +1,5 @@
+
+#pragma implicitwith disable
 page 53151 "Acidentes de Trabalho"
 {
     PageType = List;
@@ -12,57 +14,57 @@ page 53151 "Acidentes de Trabalho"
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Nome; Nome)
+                field(Nome; Rec.Nome)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Acidente"; "Data Acidente")
+                field("Data Acidente"; Rec."Data Acidente")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Hora Acidente"; "Hora Acidente")
+                field("Hora Acidente"; Rec."Hora Acidente")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Local Acidente"; "Local Acidente")
+                field("Local Acidente"; Rec."Local Acidente")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Localização"; "Cód. Localização")
+                field("Cód. Localização"; Rec."Cód. Localização")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Localização"; Localização)
+                field("Localização"; Rec."Localização")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Acidente"; "Descrição Acidente")
+                field("Descrição Acidente"; Rec."Descrição Acidente")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Dias de trabalho perdidos"; "Dias de trabalho perdidos")
+                field("Dias de trabalho perdidos"; Rec."Dias de trabalho perdidos")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data ínicio da interrupção"; "Data ínicio da interrupção")
+                field("Data ínicio da interrupção"; Rec."Data ínicio da interrupção")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data fim da interrupção"; "Data fim da interrupção")
+                field("Data fim da interrupção"; Rec."Data fim da interrupção")
                 {
                     ApplicationArea = All;
 
@@ -75,4 +77,6 @@ page 53151 "Acidentes de Trabalho"
     {
     }
 }
+
+#pragma implicitwith restore
 

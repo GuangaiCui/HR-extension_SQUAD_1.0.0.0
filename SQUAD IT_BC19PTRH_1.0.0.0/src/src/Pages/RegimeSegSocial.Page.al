@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53084 "Regime Seg. Social"
 {
     PageType = List;
@@ -12,32 +13,32 @@ page 53084 "Regime Seg. Social"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Código)
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Dedução SS"; "Tipo Dedução SS")
+                field("Tipo Dedução SS"; Rec."Tipo Dedução SS")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Taxa Contributiva Empregado"; "Taxa Contributiva Empregado")
+                field("Taxa Contributiva Empregado"; Rec."Taxa Contributiva Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Taxa Contributiva Ent Patronal"; "Taxa Contributiva Ent Patronal")
+                field("Taxa Contributiva Ent Patronal"; Rec."Taxa Contributiva Ent Patronal")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Majorante; Majorante)
+                field(Majorante; Rec.Majorante)
                 {
                     ApplicationArea = All;
 
@@ -71,4 +72,6 @@ page 53084 "Regime Seg. Social"
             exit(TabRegSS.Código);
     end;
 }
+
+#pragma implicitwith restore
 

@@ -1575,17 +1575,15 @@ table 53035 Empregado
 
     procedure AssistEdit(OldEmployee: Record Empregado): Boolean
     begin
-        with Employee do begin
-            Employee := Rec;
+        Employee := Rec;
+        HumanResSetup.Get;
+        HumanResSetup.TestField("Employee Nos.");
+        if NoSeriesMgt.SelectSeries(HumanResSetup."Employee Nos.", OldEmployee."No. Series", Employee."No. Series") then begin
             HumanResSetup.Get;
             HumanResSetup.TestField("Employee Nos.");
-            if NoSeriesMgt.SelectSeries(HumanResSetup."Employee Nos.", OldEmployee."No. Series", "No. Series") then begin
-                HumanResSetup.Get;
-                HumanResSetup.TestField("Employee Nos.");
-                NoSeriesMgt.SetSeries("No.");
-                Rec := Employee;
-                exit(true);
-            end;
+            NoSeriesMgt.SetSeries(Employee."No.");
+            Rec := Employee;
+            exit(true);
         end;
     end;
 

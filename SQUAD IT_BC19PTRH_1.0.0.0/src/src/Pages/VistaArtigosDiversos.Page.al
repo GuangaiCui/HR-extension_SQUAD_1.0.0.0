@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53063 "Vista Artigos Diversos"
 {
     AutoSplitKey = true;
@@ -18,7 +19,7 @@ page 53063 "Vista Artigos Diversos"
             repeater(Control1)
             {
                 ShowCaption = false;
-                field("Employee No."; "Employee No.")
+                field("Employee No."; Rec."Employee No.")
                 {
                     ApplicationArea = All;
 
@@ -31,37 +32,37 @@ page 53063 "Vista Artigos Diversos"
                     Caption = 'Name';
                     Visible = boolVisible;
                 }
-                field("Misc. Article Code"; "Misc. Article Code")
+                field("Misc. Article Code"; Rec."Misc. Article Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Serial No."; "Serial No.")
+                field("Serial No."; Rec."Serial No.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("From Date"; "From Date")
+                field("From Date"; Rec."From Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("To Date"; "To Date")
+                field("To Date"; Rec."To Date")
                 {
                     ApplicationArea = All;
 
                 }
-                field("In Use"; "In Use")
+                field("In Use"; Rec."In Use")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Comment; Comment)
+                field(Comment; Rec.Comment)
                 {
                     ApplicationArea = All;
 
@@ -95,7 +96,7 @@ page 53063 "Vista Artigos Diversos"
 
     trigger OnAfterGetRecord()
     begin
-        if recEmpregado.Get("Employee No.") then;
+        if recEmpregado.Get(Rec."Employee No.") then;
         //MESSAGE('%1 <> %2', Rec."Employee No.",xRec."Employee No.");
         if Rec."Employee No." <> xRec."Employee No." then
             boolVisible := true
@@ -114,4 +115,6 @@ page 53063 "Vista Artigos Diversos"
         boolShow: Boolean;
         boolVisible: Boolean;
 }
+
+#pragma implicitwith restore
 

@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53163 "Greve Lista"
 {
     Caption = 'Lista Greve';
@@ -17,17 +18,17 @@ page 53163 "Greve Lista"
             {
 
                 ShowCaption = false;
-                field(Year; Year)
+                field(Year; Rec.Year)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Strike Code"; "Strike Code")
+                field("Strike Code"; Rec."Strike Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Strike Description"; "Strike Description")
+                field("Strike Description"; Rec."Strike Description")
                 {
                     ApplicationArea = All;
 
@@ -112,4 +113,6 @@ page 53163 "Greve Lista"
         CurrPage.SetSelectionFilter(Cust);
     end;
 }
+
+#pragma implicitwith restore
 

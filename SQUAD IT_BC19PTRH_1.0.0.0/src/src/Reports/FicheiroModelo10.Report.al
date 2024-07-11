@@ -643,7 +643,7 @@ report 53048 "Ficheiro Modelo 10"
         begin
             campoDataEditable := true;
             InfEmpresa.Get;
-            NIFRepLegal := InfEmpresa."Legal Rep. VAT Reg. No.";
+            NIFRepLegal := InfEmpresa."PTSS Legal Rep. VAT Reg. No.";
             NIFTecOficialContas := InfEmpresa."PTSS TOC VAT Reg. No.";
             CodRepFinancas := InfEmpresa."PTSS Tax Authority Code";
         end;
@@ -749,7 +749,7 @@ report 53048 "Ficheiro Modelo 10"
         TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
         TabelaTempFichTexto.Texto1 := '003'
         + PadStr('0', 4 - StrLen(CodRepFinancas), '0') + CodRepFinancas                                        //Cod. Rep. finanças
-        + PadStr('0', 5 - StrLen(InfEmpresa."CAE Code"), '0') + InfEmpresa."CAE Code"                          //CAE
+        + PadStr('0', 5 - StrLen(InfEmpresa."PTSS CAE Code"), '0') + InfEmpresa."PTSS CAE Code"                          //CAE
         + PadStr('0', 3 - StrLen(PercVolNegocios), '0') + PercVolNegocios                                      //Perc vol neg
         + PadStr('0', 4 - StrLen(CodActividade), '0') + CodActividade                                          //Perc vol neg
         + '00000';

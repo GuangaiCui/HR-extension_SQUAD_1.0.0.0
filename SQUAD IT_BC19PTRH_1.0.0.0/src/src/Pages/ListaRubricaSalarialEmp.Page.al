@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53101 "Lista Rubrica Salarial Emp."
 {
     AutoSplitKey = true;
@@ -14,62 +15,62 @@ page 53101 "Lista Rubrica Salarial Emp."
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Rúbrica Salarial"; "Cód. Rúbrica Salarial")
+                field("Cód. Rúbrica Salarial"; Rec."Cód. Rúbrica Salarial")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Rubrica"; "Tipo Rubrica")
+                field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Rubrica"; "Descrição Rubrica")
+                field("Descrição Rubrica"; Rec."Descrição Rubrica")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta a Debitar"; "No. Conta a Debitar")
+                field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Conta a Creditar"; "No. Conta a Creditar")
+                field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Quantidade; Quantidade)
+                field(Quantidade; Rec.Quantidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Unitário"; "Valor Unitário")
+                field("Valor Unitário"; Rec."Valor Unitário")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Total"; "Valor Total")
+                field("Valor Total"; Rec."Valor Total")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Início"; "Data Início")
+                field("Data Início"; Rec."Data Início")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Fim"; "Data Fim")
+                field("Data Fim"; Rec."Data Fim")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Ordenação"; Ordenação)
+                field("Ordenação"; Rec."Ordenação")
                 {
                     ApplicationArea = All;
 
@@ -89,8 +90,8 @@ page 53101 "Lista Rubrica Salarial Emp."
         //uma rubrica CGA se não for subscritor
         //uma rubrica IVA se for Cat. A
 
-        if TabEmpregado.Get("No. Empregado") then begin
-            if TabRubricaSalarial.Get("Cód. Rúbrica Salarial") then begin
+        if TabEmpregado.Get(Rec."No. Empregado") then begin
+            if TabRubricaSalarial.Get(Rec."Cód. Rúbrica Salarial") then begin
 
                 //SS
                 if (TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::SS) and
@@ -126,4 +127,6 @@ page 53101 "Lista Rubrica Salarial Emp."
         Text0002: Label 'Não pode parametrizar uma Rúbrica do tipo CGA, pois este empregado não é Subscritor.';
         Text0003: Label 'Não pode parametrizar uma Rúbrica do tipo IVA, pois este empregado é da Cat. A.';
 }
+
+#pragma implicitwith restore
 

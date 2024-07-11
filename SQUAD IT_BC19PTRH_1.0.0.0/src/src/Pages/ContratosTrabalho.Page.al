@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53052 "Contratos Trabalho"
 {
     Caption = 'Employment Contracts';
@@ -12,32 +13,33 @@ page 53052 "Contratos Trabalho"
         {
             repeater(Group)
             {
-                field("Code"; Code)
+                field("Code"; Rec.
+                )
                 {
                     ApplicationArea = All;
 
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Contrato"; "Tipo Contrato")
+                field("Tipo Contrato"; Rec."Tipo Contrato")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Tipo Contrato"; "Cód. Tipo Contrato")
+                field("Cód. Tipo Contrato"; Rec."Cód. Tipo Contrato")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. of Contracts"; "No. of Contracts")
+                field("No. of Contracts"; Rec."No. of Contracts")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Template Contrato"; "Template Contrato")
+                field("Template Contrato"; Rec."Template Contrato")
                 {
                     ApplicationArea = All;
 
@@ -59,7 +61,7 @@ page 53052 "Contratos Trabalho"
 
                 trigger OnAction()
                 begin
-                    VisualizarContrato;
+                    Rec.VisualizarContrato;
                 end;
             }
             action("&Importar")
@@ -71,7 +73,7 @@ page 53052 "Contratos Trabalho"
 
                 trigger OnAction()
                 begin
-                    ImportarContrato;
+                    Rec.ImportarContrato;
                 end;
             }
             action("&Exportar")
@@ -83,7 +85,7 @@ page 53052 "Contratos Trabalho"
 
                 trigger OnAction()
                 begin
-                    ExportarContrato;
+                    Rec.ExportarContrato;
                 end;
             }
         }
@@ -96,9 +98,11 @@ page 53052 "Contratos Trabalho"
         //Isto serve para filtrar os contratos para que só apareçam os que estão em vigor
         //ou seja, os que têm a data de inicio de contrato anterior à Workdate
         // e que têm a data de fim de contrato posterior à workdate
-        SetFilter("Data Filtro Inicio", '<=%1', WorkDate);
-        SetFilter("Data Filtro Fim", '>=%1|=%2', WorkDate, 0D);
+        Rec.SetFilter("Data Filtro Inicio", '<=%1', WorkDate);
+        Rec.SetFilter("Data Filtro Fim", '>=%1|=%2', WorkDate, 0D);
         //HG - Fim
     end;
 }
+
+#pragma implicitwith restore
 

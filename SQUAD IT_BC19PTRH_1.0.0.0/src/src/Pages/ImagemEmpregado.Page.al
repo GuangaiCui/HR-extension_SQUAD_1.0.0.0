@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53037 "Imagem Empregado"
 {
     Caption = 'Employee Picture';
@@ -11,7 +12,7 @@ page 53037 "Imagem Empregado"
     {
         area(content)
         {
-            field(Picture; Picture)
+            field(Picture; Rec.Picture)
             {
                 ApplicationArea = All;
 
@@ -23,4 +24,6 @@ page 53037 "Imagem Empregado"
     {
     }
 }
+
+#pragma implicitwith restore
 

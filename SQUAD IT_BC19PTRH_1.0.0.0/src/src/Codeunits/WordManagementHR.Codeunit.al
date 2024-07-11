@@ -243,10 +243,8 @@ codeunit 53038 "WordManagement HR"
             exit;
         end;
 
-        with TempDeliverySorter do begin
-            SetCurrentKey("Attachment No.", "Correspondence Type", Subject);
-            Find('-');
-        end;
+        TempDeliverySorter.SetCurrentKey("Attachment No.", "Correspondence Type", Subject);
+        TempDeliverySorter.Find('-');
         Row := 2;
 
         MainFileName := FileMgt.ServerTempFileName('DOC');
@@ -330,11 +328,9 @@ codeunit 53038 "WordManagement HR"
         if TempDeliverySorter.Find('-') then begin
             InteractLogEntry.LockTable;
             repeat
-                with InteractLogEntry do begin
-                    Get(TempDeliverySorter."No.");
-                    "Delivery Status" := "Delivery Status"::" ";
-                    Modify;
-                end;
+                InteractLogEntry.Get(TempDeliverySorter."No.");
+                InteractLogEntry."Delivery Status" := InteractLogEntry."Delivery Status"::" ";
+                InteractLogEntry.Modify;
             until TempDeliverySorter.Next = 0;
             Commit;
         end;
@@ -879,21 +875,20 @@ codeunit 53038 "WordManagement HR"
         Contact: Record Contact;
         Mail: Codeunit Mail;
     begin
-        with InteractLogEntry do
-            repeat
-                LockTable;
-                Get(DeliverySorter."No.");
-                if DeliverySorter."Correspondence Type" = DeliverySorter."Correspondence Type"::Email then begin
-                    Contact.Get("Contact No.");
-                    Mail.NewMessage(
-                      AttachmentManagement.InteractionEMail(InteractLogEntry), '', '',
-                      DeliverySorter.Subject, '', MainFileName, false);
-                end else
-                    WordHelper.CallPrintOut(WordDocument);
-                "Delivery Status" := "Delivery Status"::" ";
-                Modify;
-                Commit;
-            until DeliverySorter.Next = 0;
+        repeat
+            InteractLogEntry.LockTable;
+            InteractLogEntry.Get(DeliverySorter."No.");
+            if DeliverySorter."Correspondence Type" = DeliverySorter."Correspondence Type"::Email then begin
+                Contact.Get(InteractLogEntry."Contact No.");
+                Mail.NewMessage(
+                  AttachmentManagement.InteractionEMail(InteractLogEntry), '', '',
+                  DeliverySorter.Subject, '', MainFileName, false);
+            end else
+                WordHelper.CallPrintOut(WordDocument);
+            InteractLogEntry."Delivery Status" := InteractLogEntry."Delivery Status"::" ";
+            InteractLogEntry.Modify;
+            Commit;
+        until DeliverySorter.Next = 0;
     end;
 
 

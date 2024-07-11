@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53108 "Lista Hist. Cab. Movs. Emp"
 {
     AutoSplitKey = true;
@@ -17,58 +18,58 @@ page 53108 "Lista Hist. Cab. Movs. Emp"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Cód. Processamento"; "Cód. Processamento")
+                field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Processamento"; "Tipo Processamento")
+                field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Designação Empregado"; "Designação Empregado")
+                field("Designação Empregado"; Rec."Designação Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Registo"; "Data Registo")
+                field("Data Registo"; Rec."Data Registo")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Valor; Valor)
+                field(Valor; Rec.Valor)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Pendente; Pendente)
+                field(Pendente; Rec.Pendente)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Pago por No. Documento"; "Pago por No. Documento")
+                field("Pago por No. Documento"; Rec."Pago por No. Documento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Recibo enviado via E-Mail"; "Recibo enviado via E-Mail")
+                field("Recibo enviado via E-Mail"; Rec."Recibo enviado via E-Mail")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Vacation Days Received"; "Vacation Days Received")
+                field("Vacation Days Received"; Rec."Vacation Days Received")
                 {
                     ApplicationArea = All;
 
                     Visible = false;
                 }
-                field("Vacation Days Spent"; "Vacation Days Spent")
+                field("Vacation Days Spent"; Rec."Vacation Days Spent")
                 {
                     ApplicationArea = All;
 
@@ -102,4 +103,6 @@ page 53108 "Lista Hist. Cab. Movs. Emp"
         }
     }
 }
+
+#pragma implicitwith restore
 

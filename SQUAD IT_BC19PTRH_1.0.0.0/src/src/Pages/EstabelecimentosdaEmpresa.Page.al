@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53111 "Estabelecimentos da Empresa"
 {
     AutoSplitKey = false;
@@ -14,97 +15,97 @@ page 53111 "Estabelecimentos da Empresa"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field(Sede; Sede)
+                field(Sede; Rec.Sede)
                 {
                     ApplicationArea = All;
 
                 }
-                field("ID Unidade Local"; "ID Unidade Local")
+                field("ID Unidade Local"; Rec."ID Unidade Local")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Número da Unidade Local"; "Número da Unidade Local")
+                field("Número da Unidade Local"; Rec."Número da Unidade Local")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Morada; Morada)
+                field(Morada; Rec.Morada)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Localidade; Localidade)
+                field(Localidade; Rec.Localidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Postal"; "Cód. Postal")
+                field("Cód. Postal"; Rec."Cód. Postal")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Cidade; Cidade)
+                field(Cidade; Rec.Cidade)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Distrito/Concelho/Freg."; "Cód. Distrito/Concelho/Freg.")
+                field("Cód. Distrito/Concelho/Freg."; Rec."Cód. Distrito/Concelho/Freg.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Freguesia"; "Descrição Freguesia")
+                field("Descrição Freguesia"; Rec."Descrição Freguesia")
                 {
                     ApplicationArea = All;
 
                 }
-                field("País"; País)
+                field("País"; Rec."País")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Telefone; Telefone)
+                field(Telefone; Rec.Telefone)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Fax; Fax)
+                field(Fax; Rec.Fax)
                 {
                     ApplicationArea = All;
 
                 }
-                field("E-mail"; "E-mail")
+                field("E-mail"; Rec."E-mail")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Inicio"; "Data Inicio")
+                field("Data Inicio"; Rec."Data Inicio")
                 {
                     ApplicationArea = All;
 
                 }
-                field("CAE Code"; "CAE Code")
+                field("CAE Code"; Rec."CAE Code")
                 {
                     ApplicationArea = All;
 
                 }
-                field("CAE Description"; "CAE Description")
+                field("CAE Description"; Rec."CAE Description")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Instituição Seg. Social"; "Instituição Seg. Social")
+                field("Instituição Seg. Social"; Rec."Instituição Seg. Social")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Região"; Região)
+                field("Região"; Rec."Região")
                 {
                     ApplicationArea = All;
 
@@ -131,4 +132,6 @@ page 53111 "Estabelecimentos da Empresa"
         }
     }
 }
+
+#pragma implicitwith restore
 

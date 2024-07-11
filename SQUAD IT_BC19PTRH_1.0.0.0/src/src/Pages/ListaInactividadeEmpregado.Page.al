@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53073 "Lista Inactividade Empregado"
 {
     AutoSplitKey = true;
@@ -13,27 +14,27 @@ page 53073 "Lista Inactividade Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Cód. Inactividade"; "Cód. Inactividade")
+                field("Cód. Inactividade"; Rec."Cód. Inactividade")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Inicio Inactividade"; "Data Inicio Inactividade")
+                field("Data Inicio Inactividade"; Rec."Data Inicio Inactividade")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Fim Inactividade"; "Data Fim Inactividade")
+                field("Data Fim Inactividade"; Rec."Data Fim Inactividade")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Comentário"; Comentário)
+                field("Comentário"; Rec."Comentário")
                 {
                     ApplicationArea = All;
 
@@ -63,4 +64,6 @@ page 53073 "Lista Inactividade Empregado"
         }
     }
 }
+
+#pragma implicitwith restore
 

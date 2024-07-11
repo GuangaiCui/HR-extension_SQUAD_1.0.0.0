@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53155 "Perdas e Anomalias Emp."
 {
     AutoSplitKey = true;
@@ -13,17 +14,17 @@ page 53155 "Perdas e Anomalias Emp."
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field("Grau de Incapacidade"; "Grau de Incapacidade")
+                field("Grau de Incapacidade"; Rec."Grau de Incapacidade")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Grau de Incapacidade"; "Data Grau de Incapacidade")
+                field("Data Grau de Incapacidade"; Rec."Data Grau de Incapacidade")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Observações"; Observações)
+                field("Observações"; Rec."Observações")
                 {
                     ApplicationArea = All;
 
@@ -36,4 +37,6 @@ page 53155 "Perdas e Anomalias Emp."
     {
     }
 }
+
+#pragma implicitwith restore
 

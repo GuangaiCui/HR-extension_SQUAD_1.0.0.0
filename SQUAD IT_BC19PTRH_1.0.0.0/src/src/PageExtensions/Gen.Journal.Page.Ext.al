@@ -1,4 +1,5 @@
 
+#pragma implicitwith disable
 pageextension 53036 GenJournalRH extends "General Journal"
 {
     layout
@@ -7,7 +8,7 @@ pageextension 53036 GenJournalRH extends "General Journal"
 
         {
 
-            field("No. Empregado"; "No. Empregado")
+            field("No. Empregado"; Rec."No. Empregado")
 
             {
 
@@ -18,3 +19,4 @@ pageextension 53036 GenJournalRH extends "General Journal"
 
     }
 }
+#pragma implicitwith restore

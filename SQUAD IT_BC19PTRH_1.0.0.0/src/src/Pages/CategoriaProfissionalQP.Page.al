@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53076 "Categoria Profissional QP"
 {
     PageType = List;
@@ -10,17 +11,17 @@ page 53076 "Categoria Profissional QP"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Código)
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Empregados"; "No. Empregados")
+                field("No. Empregados"; Rec."No. Empregados")
                 {
                     ApplicationArea = All;
 
@@ -39,9 +40,11 @@ page 53076 "Categoria Profissional QP"
         //Isto serve para filtrar as cat. Prof para que só apareçam os que estão em vigor
         //ou seja, os que têm a data de inicio anterior à Workdate
         // e que têm a data de fim  posterior à workdate
-        SetFilter("Data Filtro Inicio", '<=%1', WorkDate);
-        SetFilter("Data Filtro Fim", '>=%1|%2', WorkDate, 0D);
+        Rec.SetFilter("Data Filtro Inicio", '<=%1', WorkDate);
+        Rec.SetFilter("Data Filtro Fim", '>=%1|%2', WorkDate, 0D);
         //HG - Fim
     end;
 }
+
+#pragma implicitwith restore
 

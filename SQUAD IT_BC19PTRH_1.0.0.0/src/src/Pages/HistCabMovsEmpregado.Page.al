@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53106 "Hist. Cab. Movs. Empregado"
 {
     DeleteAllowed = false;
@@ -16,43 +17,43 @@ page 53106 "Hist. Cab. Movs. Empregado"
             group(Geral)
             {
                 Caption = 'Geral';
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Designação Empregado"; "Designação Empregado")
+                field("Designação Empregado"; Rec."Designação Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Valor; Valor)
+                field(Valor; Rec.Valor)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Processamento"; "Cód. Processamento")
+                field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Processamento"; "Tipo Processamento")
+                field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Registo"; "Data Registo")
+                field("Data Registo"; Rec."Data Registo")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Pendente; Pendente)
+                field(Pendente; Rec.Pendente)
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
-                field("Pago por No. Documento"; "Pago por No. Documento")
+                field("Pago por No. Documento"; Rec."Pago por No. Documento")
                 {
                     ApplicationArea = All;
 
@@ -90,4 +91,6 @@ page 53106 "Hist. Cab. Movs. Empregado"
         Text19008238: Label 'ABONOS:';
         Text19053246: Label 'DESCONTOS:';
 }
+
+#pragma implicitwith restore
 

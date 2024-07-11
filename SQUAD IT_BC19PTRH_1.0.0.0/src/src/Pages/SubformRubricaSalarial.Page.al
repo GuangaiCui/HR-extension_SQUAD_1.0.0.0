@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53099 "Subform Rubrica Salarial"
 {
     AutoSplitKey = true;
@@ -13,27 +14,27 @@ page 53099 "Subform Rubrica Salarial"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Cód. Rubrica Filha"; "Cód. Rubrica Filha")
+                field("Cód. Rubrica Filha"; Rec."Cód. Rubrica Filha")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição Rubrica Filha"; "Descrição Rubrica Filha")
+                field("Descrição Rubrica Filha"; Rec."Descrição Rubrica Filha")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Rubrica Filha"; "Tipo Rubrica Filha")
+                field("Tipo Rubrica Filha"; Rec."Tipo Rubrica Filha")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Percentagem; Percentagem)
+                field(Percentagem; Rec.Percentagem)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Limite Máximo"; "Valor Limite Máximo")
+                field("Valor Limite Máximo"; Rec."Valor Limite Máximo")
                 {
                     ApplicationArea = All;
 
@@ -46,4 +47,6 @@ page 53099 "Subform Rubrica Salarial"
     {
     }
 }
+
+#pragma implicitwith restore
 

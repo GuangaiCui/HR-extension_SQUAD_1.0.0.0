@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53173 MyHistMovsEmp
 {
     Caption = 'Hist. Movs. Emp';
@@ -10,47 +11,47 @@ page 53173 MyHistMovsEmp
         {
             repeater(Group)
             {
-                field("Cód. Processamento"; "Cód. Processamento")
+                field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo Processamento"; "Tipo Processamento")
+                field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Designação Empregado"; "Designação Empregado")
+                field("Designação Empregado"; Rec."Designação Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Registo"; "Data Registo")
+                field("Data Registo"; Rec."Data Registo")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Valor; Valor)
+                field(Valor; Rec.Valor)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Pendente; Pendente)
+                field(Pendente; Rec.Pendente)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Vencimento Base"; "Valor Vencimento Base")
+                field("Valor Vencimento Base"; Rec."Valor Vencimento Base")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Valor Hora"; "Valor Hora")
+                field("Valor Hora"; Rec."Valor Hora")
                 {
                     ApplicationArea = All;
 
@@ -71,7 +72,7 @@ page 53173 MyHistMovsEmp
 
                 trigger OnAction()
                 begin
-                    if HistCabMovEmp.Get("Cód. Processamento", "Tipo Processamento", "No. Empregado") then
+                    if HistCabMovEmp.Get(Rec."Cód. Processamento", Rec."Tipo Processamento", Rec."No. Empregado") then
                         PAGE.Run(PAGE::"Hist. Cab. Movs. Empregado", HistCabMovEmp)
                 end;
             }
@@ -81,4 +82,6 @@ page 53173 MyHistMovsEmp
     var
         HistCabMovEmp: Record "Hist. Cab. Movs. Empregado";
 }
+
+#pragma implicitwith restore
 

@@ -306,12 +306,10 @@ table 53114 "Importação Templates"
         Attachment2: Record "Importação Templates";
         FileName: Text[260];
     begin
-        with RMSetup do begin
-            Get;
-            if "Attachment Storage Type" = "Attachment Storage Type"::Embedded then begin
-                "Storage Pointer" := '';
-                exit;
-            end;
+        RMSetup.Get;
+        if RMSetup."Attachment Storage Type" = RMSetup."Attachment Storage Type"::Embedded then begin
+            "Storage Pointer" := '';
+            exit;
         end;
 
         "Storage Pointer" := RMSetup."Attachment Storage Location";
@@ -321,15 +319,13 @@ table 53114 "Importação Templates"
                 Attachment.Export(FileName);
         end;
 
-        with Attachment2 do begin
-            "No." := Rec."No.";
-            "Storage Type" := "Storage Type"::"Disk File";
-            "Storage Pointer" := RMSetup."Attachment Storage Location";
-            "File Extension" := Rec."File Extension";
-            "Read Only" := Rec."Read Only";
-            "Last Date Modified" := Rec."Last Date Modified";
-            "Last Time Modified" := Rec."Last Time Modified";
-        end;
+        Attachment2."No." := Rec."No.";
+        Attachment2."Storage Type" := Attachment2."Storage Type"::"Disk File";
+        Attachment2."Storage Pointer" := RMSetup."Attachment Storage Location";
+        Attachment2."File Extension" := Rec."File Extension";
+        Attachment2."Read Only" := Rec."Read Only";
+        Attachment2."Last Date Modified" := Rec."Last Date Modified";
+        Attachment2."Last Time Modified" := Rec."Last Time Modified";
         Clear(Rec);
         Rec := Attachment2;
     end;

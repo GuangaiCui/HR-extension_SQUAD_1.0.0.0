@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53051 "Departamentos Empregado"
 {
     Caption = 'Employee Statistics Groups';
@@ -12,12 +13,12 @@ page 53051 "Departamentos Empregado"
         {
             repeater(Group)
             {
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
 
@@ -30,4 +31,6 @@ page 53051 "Departamentos Empregado"
     {
     }
 }
+
+#pragma implicitwith restore
 

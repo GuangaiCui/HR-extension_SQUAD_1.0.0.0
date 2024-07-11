@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53077 "Lista Cat. Prof. Emp. QP"
 {
     AutoSplitKey = true;
@@ -16,37 +17,37 @@ page 53077 "Lista Cat. Prof. Emp. QP"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; "No. Empregado")
+                field("No. Empregado"; Rec."No. Empregado")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Cód. Cat. Prof. QP"; "Cód. Cat. Prof. QP")
+                field("Cód. Cat. Prof. QP"; Rec."Cód. Cat. Prof. QP")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Inicio Cat. Prof."; "Data Inicio Cat. Prof.")
+                field("Data Inicio Cat. Prof."; Rec."Data Inicio Cat. Prof.")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Data Fim Cat. Prof."; "Data Fim Cat. Prof.")
+                field("Data Fim Cat. Prof."; Rec."Data Fim Cat. Prof.")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Comment; Comment)
+                field(Comment; Rec.Comment)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Reconversion; Reconversion)
+                field(Reconversion; Rec.Reconversion)
                 {
                     ApplicationArea = All;
 
@@ -57,7 +58,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                         ReconversaoOnAfterValidate;
                     end;
                 }
-                field("Promotion Reason"; "Promotion Reason")
+                field("Promotion Reason"; Rec."Promotion Reason")
                 {
                     ApplicationArea = All;
 
@@ -68,13 +69,13 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                         Motivopromo231227oOnAfterValid;
                     end;
                 }
-                field("Reconversion Date"; "Reconversion Date")
+                field("Reconversion Date"; Rec."Reconversion Date")
                 {
                     ApplicationArea = All;
 
                     Editable = "Data reconversãoEditable";
                 }
-                field("Reconversion Reason"; "Reconversion Reason")
+                field("Reconversion Reason"; Rec."Reconversion Reason")
                 {
                     ApplicationArea = All;
 
@@ -140,7 +141,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
 
     local procedure Motivopromo231227oOnAfterValid()
     begin
-        if "Promotion Reason" <> 0 then begin
+        if Rec."Promotion Reason" <> 0 then begin
             ReconversaoEditable := false;
             "Data reconversãoEditable" := false;
             "Motivo reconversãoEditable" := false;
@@ -157,7 +158,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
         //Se tiver um valor no campo motivo promoção então ja nao se pode fazer nada relacionada com reconversão
         //validações feitas no onvalidate do campo
 
-        if Reconversion then begin
+        if Rec.Reconversion then begin
             "Motivo promoçãoEditable" := false;
             "Data reconversãoEditable" := true;
             "Motivo reconversãoEditable" := true;
@@ -168,4 +169,6 @@ page 53077 "Lista Cat. Prof. Emp. QP"
         end;
     end;
 }
+
+#pragma implicitwith restore
 

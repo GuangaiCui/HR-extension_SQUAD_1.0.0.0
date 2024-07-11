@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53095 "Lista Freguesia/Conc/Distrito"
 {
     PageType = List;
@@ -12,22 +13,22 @@ page 53095 "Lista Freguesia/Conc/Distrito"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Código)
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field(Freguesia; Freguesia)
+                field(Freguesia; Rec.Freguesia)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Concelho; Concelho)
+                field(Concelho; Rec.Concelho)
                 {
                     ApplicationArea = All;
 
                 }
-                field(Distrito; Distrito)
+                field(Distrito; Rec.Distrito)
                 {
                     ApplicationArea = All;
 
@@ -41,4 +42,6 @@ page 53095 "Lista Freguesia/Conc/Distrito"
 
     }
 }
+
+#pragma implicitwith restore
 
