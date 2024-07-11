@@ -338,7 +338,8 @@ table 53114 "Importação Templates"
         if FileName = '' then
             exit(false);
 
-        if not Exists(FileName) then
+        //if not Exists(FileName) then
+        if FileName <> '' then
             exit(true);
 
         repeat

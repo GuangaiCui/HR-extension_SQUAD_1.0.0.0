@@ -154,7 +154,7 @@ table 53046 "Contrato Trabalho"
 
     procedure VisualizarContrato()
     var
-        [RunOnClient]
+
         DirectoryHelper: DotNet BCTestDirectory;
         environment: DotNet BCTestEnvironment;
     begin

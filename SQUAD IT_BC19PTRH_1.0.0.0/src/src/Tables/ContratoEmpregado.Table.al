@@ -156,7 +156,7 @@ table 53056 "Contrato Empregado"
         Text006: Label 'Não pode importar o contrato porque o mesmo ja foi registado.';
         Text007: Label 'Não pode alterar o contrato de trabalho porque já foi gerado.';
         FileMgt: Codeunit "File Management";
-        [RunOnClient]
+
         DirectoryHelper: DotNet BCTestDirectory;
         MyOutStream: OutStream;
         MyFile: File;

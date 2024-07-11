@@ -599,7 +599,6 @@ codeunit 53037 "Funções RH"
     var
         TextLocal001: Label 'Define Path';
         FileMgt: Codeunit "File Management";
-        [RunOnClient]
         DirectoryHelper: DotNet BCTestDirectory;
         SearchDirectory: Text[50];
     begin

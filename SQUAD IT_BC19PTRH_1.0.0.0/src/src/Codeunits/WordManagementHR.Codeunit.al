@@ -28,7 +28,6 @@ codeunit 53038 "WordManagement HR"
         Text023: Label 'Another user has modified the record for this %1\after you retrieved it from the database.\\Enter the changes again in the updated document.';
         FileMgt: Codeunit "File Management";
         AttachmentManagement: Codeunit AttachmentManagement;
-        [RunOnClient]
         WordHelper: DotNet BCTestWordHelper;
         Window: Dialog;
         Text030: Label 'Formal Salutation';
@@ -41,11 +40,11 @@ codeunit 53038 "WordManagement HR"
     procedure CreateWordAttachment(WordCaption: Text[260]; LanguageCode: Code[10]) NewAttachNo: Code[10]
     var
         Attachment: Record "Importação Templates";
-        [RunOnClient]
+
         WordApplication: DotNet WordApplicationClass;
-        [RunOnClient]
+
         WordDocument: DotNet WordDocument;
-        [RunOnClient]
+
         WordMergefile: DotNet BCTestMergeHandler;
         FileName: Text;
         MergeFileName: Text;
@@ -81,11 +80,11 @@ codeunit 53038 "WordManagement HR"
 
     procedure OpenWordAttachment(var Attachment: Record "Importação Templates"; FileName: Text; Caption: Text[260]; IsTemporary: Boolean; LanguageCode: Code[10])
     var
-        [RunOnClient]
+
         WordApplication: DotNet WordApplicationClass;
-        [RunOnClient]
+
         WordDocument: DotNet WordDocument;
-        [RunOnClient]
+
         WordMergefile: DotNet BCTestMergeHandler;
         MergeFileName: Text;
         ParamInt: Integer;
@@ -118,7 +117,7 @@ codeunit 53038 "WordManagement HR"
     procedure Merge(var TempDeliverySorter: Record "Delivery Sorter" temporary)
     var
         TempDeliverySorter2: Record "Delivery Sorter" temporary;
-        [RunOnClient]
+
         WordApplication: DotNet WordApplicationClass;
         LastAttachmentNo: Integer;
         LastCorrType: Integer;
@@ -208,15 +207,15 @@ codeunit 53038 "WordManagement HR"
         Attachment: Record "Importação Templates";
         InteractLogEntry: Record "Interaction Log Entry";
         TempSegLine: Record "Segment Line" temporary;
-        [RunOnClient]
+
         WordDocument: DotNet WordDocument;
-        [RunOnClient]
+
         WordInlineShape: DotNet BCTestInlineShape;
-        [RunOnClient]
+
         WordMergefile: DotNet BCTestMergeHandler;
-        [RunOnClient]
+
         WordOLEFormat: DotNet BCTestOLEFormat;
-        [RunOnClient]
+
         WordLinkFormat: DotNet BCTestLinkFormat;
         MergeFile: File;
         MergeClientFileName: Text;
@@ -352,11 +351,11 @@ codeunit 53038 "WordManagement HR"
     procedure ShowMergedDocument(var SegLine: Record "Segment Line"; var Attachment: Record "Importação Templates"; WordCaption: Text[260]; IsTemporary: Boolean)
     var
         TempInteractLogEntry: Record "Interaction Log Entry" temporary;
-        [RunOnClient]
+
         WordMergefile: DotNet BCTestMergeHandler;
-        [RunOnClient]
+
         WordApplication: DotNet WordApplicationClass;
-        [RunOnClient]
+
         WordDocument: DotNet WordDocument;
         MergeClientFileName: Text;
         MainFileName: Text;
@@ -501,7 +500,7 @@ codeunit 53038 "WordManagement HR"
     local procedure WordHandler(var WordDocument: DotNet WordDocument; var Attachment: Record "Importação Templates"; Caption: Text[260]; IsTemporary: Boolean; FileName: Text; IsInherited: Boolean) DocImported: Boolean
     var
         Attachment2: Record Attachment;
-        [RunOnClient]
+
         WordHandler: DotNet BCTestWordHandler;
         NewFileName: Text;
     begin
@@ -558,9 +557,9 @@ codeunit 53038 "WordManagement HR"
 
     local procedure DocumentContainMergefields(var Attachment: Record "Importação Templates") MergeFields: Boolean
     var
-        [RunOnClient]
+
         WordApplication: DotNet WordApplicationClass;
-        [RunOnClient]
+
         WordDocument: DotNet WordDocument;
         ParamBln: Boolean;
         FileName: Text;
@@ -894,7 +893,7 @@ codeunit 53038 "WordManagement HR"
 
     procedure SendAttachmentWithoutMergeFields(var WordApplication: DotNet WordApplicationClass; var TempDeliverySorter: Record "Delivery Sorter" temporary; var Attachment: Record "Importação Templates")
     var
-        [RunOnClient]
+
         WordDocument: DotNet WordDocument;
         FileName: Text;
     begin

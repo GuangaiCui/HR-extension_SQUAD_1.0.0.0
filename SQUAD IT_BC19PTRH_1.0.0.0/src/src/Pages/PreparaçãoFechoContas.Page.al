@@ -331,7 +331,7 @@ page 53112 "Preparação Fecho Contas"
                     SetLayout;
                 end;
             }
-            action(Concluir)
+            action(Concluir1)
             {
                 ApplicationArea = All;
 

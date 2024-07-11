@@ -369,7 +369,7 @@ page 53117 "Simulador de Remunerações"
     {
         area(processing)
         {
-            group(Calcular)
+            group(Calcular1)
             {
                 Caption = 'Calcular';
                 action("Calcular Líquido")
