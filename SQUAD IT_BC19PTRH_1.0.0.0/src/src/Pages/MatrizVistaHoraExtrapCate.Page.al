@@ -477,7 +477,7 @@ page 53093 "Matriz Vista HoraExtra p Cate."
 
     trigger OnFindRecord(Which: Text): Boolean
     begin
-        exit(PeriodFormMgt.FindDate(Which, Rec, PeriodType));
+        exit(PeriodPageMgt.FindDate(Which, Rec, PeriodType));
     end;
 
     trigger OnInit()
@@ -518,12 +518,12 @@ page 53093 "Matriz Vista HoraExtra p Cate."
 
     trigger OnNextRecord(Steps: Integer): Integer
     begin
-        exit(PeriodFormMgt.NextDate(Steps, Rec, PeriodType));
+        exit(PeriodPageMgt.NextDate(Steps, Rec, PeriodType));
     end;
 
     var
         EmployeeExtraHour: Record "Histórico Horas Extra";
-        PeriodFormMgt: Codeunit PeriodFormManagement;
+        PeriodPageMgt: Codeunit PeriodPageManagement;
         PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
         ExtraHourAmountType: Option "Net Change","Balance at Date";
         EmployeeNoFilter: Text[250];
