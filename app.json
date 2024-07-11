@@ -3,33 +3,36 @@
   "name": "HR extension",
   "publisher": "SQUAD",
   "version": "1.0.0.0",
-  "runtime": "13.0",
-  "target": "Cloud",
-  "platform": "24.0.18037.0",
-  "resourceExposurePolicy": {
-    "allowDebugging": true,
-    "allowDownloadingSource": true,
-    "includeSourceInSymbolFile": true,
-    "applyToDevExtension": false
-  },
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
   "dependencies": [
-    {
-      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-      "name": "Base Application",
-      "version": "24.0.16410.18056",
-      "publisher": "Microsoft"
-    },
     {
       "id": "0b0a0933-50d9-4352-8803-7bf91e6c5491",
       "name": "SOFTSTORE Localization Pack for Portugal",
-      "version": "24.1.2400.2402",
-      "publisher": "Softstore SA"
+      "publisher": "Softstore SA",
+      "version": "24.1.2400.2402"
     }
   ],
+  "screenshots": [],
+  "platform": "22.0.0.0",
+  "application": "22.0.0.0",
   "idRanges": [
     {
       "from": 50000,
       "to": 99000
     }
-  ]
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "target": "Cloud",
+  "runtime": "11.0",
+  "features":["TranslationFile", "GenerateCaptions"]
 }

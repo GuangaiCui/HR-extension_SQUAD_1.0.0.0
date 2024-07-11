@@ -18,7 +18,7 @@ codeunit 53037 "Funções RH"
         PeriodosProce: Integer;
         FormatAddress: Codeunit "Format Address";
 
-    [Scope('OnPrem')]
+
     procedure CalcularTaxaIRS(ValorVencimento: Decimal; Empregado: Record Empregado; Ano: Integer) TaxaIRS: Decimal
     var
         TabelaIRS: Record "Tabela IRS";
@@ -326,7 +326,7 @@ codeunit 53037 "Funções RH"
         end;
     end;
 
-    [Scope('OnPrem')]
+
     procedure GetPeriodicidade(TabRubrica: Record "Rubrica Salarial"; Data: Date) Processar: Boolean
     var
         i: Integer;
@@ -356,7 +356,7 @@ codeunit 53037 "Funções RH"
         Processar := false;
     end;
 
-    [Scope('OnPrem')]
+
     procedure CalcularVencimentoBase(Data: Date; Empregado: Record Empregado) VencimentoBase: Decimal
     var
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
@@ -402,7 +402,7 @@ codeunit 53037 "Funções RH"
         end;
     end;
 
-    [Scope('OnPrem')]
+
     procedure CalcularVencimentoBaseFaltas(Data: Date; Empregado: Record Empregado) VencimentoBase: Decimal
     var
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
@@ -479,7 +479,7 @@ codeunit 53037 "Funções RH"
         end;
     end;
 
-    [Scope('OnPrem')]
+
     procedure CalcularValorDia(VencimentoBase: Decimal; Empregado: Record Empregado) ValorDia: Decimal
     begin
         //HG - Obter o Valor Dia Empregado dado um Vencimento Base
@@ -496,7 +496,7 @@ codeunit 53037 "Funções RH"
         //
     end;
 
-    [Scope('OnPrem')]
+
     procedure CalcularValorHora(VencimentoBase: Decimal; Empregado: Record Empregado) ValorHora: Decimal
     var
         ConfRH: Record "Config. Recursos Humanos";
@@ -518,7 +518,7 @@ codeunit 53037 "Funções RH"
         //
     end;
 
-    [Scope('OnPrem')]
+
     procedure CalcularDiasUteisMes(VarEstabelecimento: Code[4]; DataInicioProce: Date; DataFimProce: Date) NDias: Integer
     var
         I: Date;
@@ -549,7 +549,7 @@ codeunit 53037 "Funções RH"
         end;
     end;
 
-    [Scope('OnPrem')]
+
     procedure CriarClienteContratoEmpregado(InrecEmpregado: Record Empregado): Code[20]
     var
         recCustomer: Record Customer;
@@ -594,7 +594,7 @@ codeunit 53037 "Funções RH"
         end;
     end;
 
-    [Scope('OnPrem')]
+
     procedure SaveDirectoryPath() Foldertxt: Text[1024]
     var
         TextLocal001: Label 'Define Path';
@@ -613,21 +613,21 @@ codeunit 53037 "Funções RH"
         end;
     end;
 
-    [Scope('OnPrem')]
+
     procedure Ansi2Ascii(_Text: Text[350]): Text[350]
     begin
         MakeVars;
         exit(ConvertStr(_Text, AnsiStr, AsciiStr));
     end;
 
-    [Scope('OnPrem')]
+
     procedure Ascii2Ansi(_Text: Text[350]): Text[350]
     begin
         MakeVars;
         exit(ConvertStr(_Text, AsciiStr, AnsiStr));
     end;
 
-    [Scope('OnPrem')]
+
     procedure MakeVars()
     begin
         AsciiStr := ' ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»¦¦¦¦¦ÁÂÀ©¦¦++¢¥++--+-+ãÃ++--¦-+';
@@ -676,7 +676,7 @@ codeunit 53037 "Funções RH"
         AnsiStr := AnsiStr + '¿À' + Format(CharVar[30]) + Format(CharVar[31]) + Format(CharVar[32]) + '_ ';
     end;
 
-    [Scope('OnPrem')]
+
     procedure CalcularDiasMes(pEmpregado: Record Empregado) Numdia: Decimal
     var
         rConfRH: Record "Config. Recursos Humanos";
@@ -717,7 +717,7 @@ codeunit 53037 "Funções RH"
         //Normatica 2014.10.08 - fim
     end;
 
-    [Scope('OnPrem')]
+
     procedure Ascii2Ascii7bit(_Text: Text[350]): Text[350]
     var
         AsciiNormal: Text[100];
@@ -734,10 +734,9 @@ codeunit 53037 "Funções RH"
     procedure FormatAddressEmpregado(var AddrArray: array[8] of Text[75]; var Empregado: Record Empregado)
     begin
         //HR10.0 Nova função Empregado usada nos mapas dos Recursos Humanos
-        with Empregado do
-            FormatAddress.FormatAddr(
-              AddrArray, CopyStr(FullName, 1, 50), '', '', Address, "Address 2",
-              City, "Post Code", County, "Country Code");
+        FormatAddress.FormatAddr(
+              AddrArray, CopyStr(Empregado.FullName, 1, 50), '', '', Empregado.Address, Empregado."Address 2",
+              Empregado.City, Empregado."Post Code", Empregado.County, Empregado."Country Code");
     end;
 
     procedure FormatAddressEmpregadoAltAddr(var AddrArray: array[8] of Text[75]; var Empregado: Record Empregado)
@@ -747,10 +746,9 @@ codeunit 53037 "Funções RH"
         //HR10.0 Nova função EmpregadoAltAddr usada nos mapas dos Recursos Humanos
 
         AlternativeAddr.Get(Empregado."No.", Empregado."Alt. Address Code");
-        with AlternativeAddr do
-            FormatAddress.FormatAddr(
-              AddrArray, CopyStr(Empregado.FullName, 1, 50), '', '', Address,
-              "Address 2", City, "Post Code", County, "Country Code");
+        FormatAddress.FormatAddr(
+              AddrArray, CopyStr(Empregado.FullName, 1, 50), '', '', AlternativeAddr.Address,
+              AlternativeAddr."Address 2", AlternativeAddr.City, AlternativeAddr."Post Code", AlternativeAddr.County, AlternativeAddr."Country Code");
     end;
 
     procedure EditDimensionSet2(DimSetID: Integer; NewCaption: Text[250]; VAR GlobalDimVal1: Code[20]; VAR GlobalDimVal2: Code[20]): Integer

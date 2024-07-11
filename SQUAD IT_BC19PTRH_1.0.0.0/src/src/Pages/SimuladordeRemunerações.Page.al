@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53117 "Simulador de Remunerações"
 {
     Caption = 'Remuneration Simulator';
@@ -65,7 +66,7 @@ page 53117 "Simulador de Remunerações"
                     Caption = 'Titular Rendimentos';
                     ShowMandatory = true;
                 }
-                field(Deficiente; Deficiente)
+                field(Deficiente; Rec.Deficiente)
                 {
                     ApplicationArea = All;
 
@@ -483,7 +484,7 @@ page 53117 "Simulador de Remunerações"
             TempEmpregado."Valor Vencimento Base" := B_RemuneracaoBruta1;
 
         TempEmpregado."Local Obtenção Rendimento" := LocalObtenRend;
-        TempEmpregado.Deficiente := Deficiente;
+        TempEmpregado.Deficiente := Rec.Deficiente;
         TempEmpregado."Estado Civil" := EstadoCivil;
         TempEmpregado."Titular Rendimentos" := TitularRendimentos;
         TempEmpregado."Conjuge Deficiente" := ConjDeficiente;
@@ -675,4 +676,6 @@ page 53117 "Simulador de Remunerações"
             Tabela := 9;
     end;
 }
+
+#pragma implicitwith restore
 

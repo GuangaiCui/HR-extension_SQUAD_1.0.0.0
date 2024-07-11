@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53143 "Acções de Inf. Cons. For"
 {
     PageType = List;
@@ -12,37 +13,37 @@ page 53143 "Acções de Inf. Cons. For"
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field("Data da Acção"; "Data da Acção")
+                field("Data da Acção"; Rec."Data da Acção")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Tipo de Acção"; "Tipo de Acção")
+                field("Tipo de Acção"; Rec."Tipo de Acção")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Código"; Código)
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 
                 }
-                field("Descrição"; Descrição)
+                field("Descrição"; Rec."Descrição")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Acções Realizadas"; "No. Acções Realizadas")
+                field("No. Acções Realizadas"; Rec."No. Acções Realizadas")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Participantes Homens"; "No. Participantes Homens")
+                field("No. Participantes Homens"; Rec."No. Participantes Homens")
                 {
                     ApplicationArea = All;
 
                 }
-                field("No. Participantes Mulheres"; "No. Participantes Mulheres")
+                field("No. Participantes Mulheres"; Rec."No. Participantes Mulheres")
                 {
                     ApplicationArea = All;
 
@@ -55,4 +56,6 @@ page 53143 "Acções de Inf. Cons. For"
     {
     }
 }
+
+#pragma implicitwith restore
 

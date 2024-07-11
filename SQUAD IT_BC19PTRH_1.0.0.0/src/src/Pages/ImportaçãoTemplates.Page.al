@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53131 "Importação Templates"
 {
     // //C+  -LCF- Fiz uma reestruturação no form de modo a que se pode-se escolher os ficheiros
@@ -18,31 +19,31 @@ page 53131 "Importação Templates"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No."; "No.")
+                field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
-                field(Attachment; Attachment)
+                field(Attachment; Rec.Attachment)
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
-                field("File Extension"; "File Extension")
+                field("File Extension"; Rec."File Extension")
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
-                field("Last Date Modified"; "Last Date Modified")
+                field("Last Date Modified"; Rec."Last Date Modified")
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
-                field("Last Time Modified"; "Last Time Modified")
+                field("Last Time Modified"; Rec."Last Time Modified")
                 {
                     ApplicationArea = All;
 
@@ -98,10 +99,10 @@ page 53131 "Importação Templates"
                     begin
                         //29.05.2008 - usar o environ em vez do c:
                         //path1 := ENVIRON('userprofile')+'\';
-                        file1 := "No." + '.' + "File Extension";
+                        file1 := Rec."No." + '.' + Rec."File Extension";
                         path1 := FileMgt.BrowseForFolderDialog('', 'Navision', true);
                         path1 := path1 + '\';
-                        ExportAttachment(path1 + file1);
+                        Rec.ExportAttachment(path1 + file1);
                         Message('Exportado com sucesso para: %1%2', path1, file1);
                     end;
                 }
@@ -166,4 +167,6 @@ page 53131 "Importação Templates"
         exit(FileNameImport);
     end;
 }
+
+#pragma implicitwith restore
 

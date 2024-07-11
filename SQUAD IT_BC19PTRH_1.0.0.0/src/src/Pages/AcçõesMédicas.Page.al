@@ -1,3 +1,4 @@
+#pragma implicitwith disable
 page 53146 "Acções Médicas"
 {
     PageType = Card;
@@ -12,13 +13,13 @@ page 53146 "Acções Médicas"
             group(Geral)
             {
                 Caption = 'Geral';
-                field("Entry No."; "Entry No.")
+                field("Entry No."; Rec."Entry No.")
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
-                field("Exam Type"; "Exam Type")
+                field("Exam Type"; Rec."Exam Type")
                 {
                     ApplicationArea = All;
 
@@ -28,19 +29,19 @@ page 53146 "Acções Médicas"
                         CamposEnabled;
                     end;
                 }
-                field("Code"; Code)
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 
                     Enabled = CodigoEnable;
                 }
-                field(Description; Description)
+                field(Description; Rec.Description)
                 {
                     ApplicationArea = All;
 
                     Enabled = CodigoEnable;
                 }
-                field(Reason; Reason)
+                field(Reason; Rec.Reason)
                 {
                     ApplicationArea = All;
 
@@ -104,31 +105,33 @@ page 53146 "Acções Médicas"
 
     procedure CamposEnabled()
     begin
-        if "Exam Type" = "Exam Type"::"Exame Admissão" then begin
+        if Rec."Exam Type" = Rec."Exam Type"::"Exame Admissão" then begin
             CodigoEnable := false;
             MotivoEnable := false;
         end;
 
-        if "Exam Type" = "Exam Type"::"Exame Periódico" then begin
+        if Rec."Exam Type" = Rec."Exam Type"::"Exame Periódico" then begin
             CodigoEnable := false;
             MotivoEnable := false;
         end;
 
-        if "Exam Type" = "Exam Type"::"Exame Ocasional" then begin
+        if Rec."Exam Type" = Rec."Exam Type"::"Exame Ocasional" then begin
             CodigoEnable := false;
             MotivoEnable := true;
         end;
 
-        if "Exam Type" = "Exam Type"::"Exame Complementar" then begin
+        if Rec."Exam Type" = Rec."Exam Type"::"Exame Complementar" then begin
             CodigoEnable := true;
             MotivoEnable := false;
         end;
 
-        if "Exam Type" = "Exam Type"::"Acções Imunização" then begin
+        if Rec."Exam Type" = Rec."Exam Type"::"Acções Imunização" then begin
             CodigoEnable := true;
             MotivoEnable := false;
 
         end;
     end;
 }
+
+#pragma implicitwith restore
 
