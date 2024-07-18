@@ -15,8 +15,7 @@ page 53098 "Ficha Rubrica Salarial"
             group(Geral)
             {
                 Caption = 'Geral';
-                field("Código"; Rec."
-                )
+                field("Código"; Rec."Código")
                 {
                     ApplicationArea = All;
 

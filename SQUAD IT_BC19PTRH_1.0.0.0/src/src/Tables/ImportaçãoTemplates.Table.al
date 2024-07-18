@@ -95,7 +95,7 @@ table 53114 "Importação Templates"
 
     procedure OpenAttachment(Caption: Text[260]; IsTemporary: Boolean)
     var
-        WordManagement: Codeunit "WordManagement HR";
+        //WordManagement: Codeunit "WordManagement HR";
         FileName: Text[260];
     begin
         if "Storage Type" = "Storage Type"::Embedded then begin
@@ -124,7 +124,7 @@ table 53114 "Importação Templates"
 
     procedure ShowAttachment(var SegLine: Record "Segment Line"; WordCaption: Text[260]; IsTemporary: Boolean)
     var
-        WordManagement: Codeunit "WordManagement HR";
+        //WordManagement: Codeunit "WordManagement HR";
         FileName: Text[260];
     begin
         FileName := ConstFilename;
@@ -317,6 +317,7 @@ table 53114 "Importação Templates"
             FileName := ConstDiskFileName;
             if FileName <> '' then
                 Attachment.Export(FileName);
+            //Exports a binary large object (BLOB) to a file.
         end;
 
         Attachment2."No." := Rec."No.";
@@ -338,6 +339,10 @@ table 53114 "Importação Templates"
         if FileName = '' then
             exit(false);
 
+        // procedure ServerFileExists(FilePath: Text): Boolean
+        // begin
+        //     exit(Exists(FilePath));
+        // end;
         if not Exists(FileName) then
             exit(true);
 

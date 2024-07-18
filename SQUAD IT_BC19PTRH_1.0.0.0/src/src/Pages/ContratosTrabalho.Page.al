@@ -13,8 +13,7 @@ page 53052 "Contratos Trabalho"
         {
             repeater(Group)
             {
-                field("Code"; Rec.
-                )
+                field("Code"; Rec.Code)
                 {
                     ApplicationArea = All;
 

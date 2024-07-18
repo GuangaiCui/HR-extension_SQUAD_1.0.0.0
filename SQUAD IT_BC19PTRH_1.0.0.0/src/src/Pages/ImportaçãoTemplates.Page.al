@@ -95,7 +95,7 @@ page 53131 "Importação Templates"
                     var
                         path1: Text[100];
                         file1: Text[30];
-                        environment: DotNet BCTestEnvironment;
+                    //environment: DotNet BCTestEnvironment;
                     begin
                         //29.05.2008 - usar o environ em vez do c:
                         //path1 := ENVIRON('userprofile')+'\';

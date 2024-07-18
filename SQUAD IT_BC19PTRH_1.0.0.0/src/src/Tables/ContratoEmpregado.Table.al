@@ -160,7 +160,7 @@ table 53056 "Contrato Empregado"
         DirectoryHelper: DotNet BCTestDirectory;
         MyOutStream: OutStream;
         MyFile: File;
-        wdRange: DotNet WordRange;
+        //wdRange: DotNet WordRange;
         wdDoc: DotNet WordDocument;
         wdApp: DotNet WordApplicationClass;
 

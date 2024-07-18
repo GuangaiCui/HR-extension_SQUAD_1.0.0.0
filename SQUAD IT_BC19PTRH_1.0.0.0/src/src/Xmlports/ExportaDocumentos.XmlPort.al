@@ -57,7 +57,7 @@ xmlport 53050 "Exporta Documentos"
                         FilePathAndName: Text;
                         FileManagement: Codeunit "File Management";
                         dnetByte: DotNet BCTestArray;
-                        dnetByte1: DotNet BCTestArray;
+                        //dnetByte1: DotNet BCTestArray;
                         dnetConvert: DotNet BCTestConvert;
                         dnetMemoryStream: DotNet BCTestMemoryStream;
                         objInstream: InStream;
@@ -67,15 +67,15 @@ xmlport 53050 "Exporta Documentos"
                         HistCabMovEmp: Record "Hist. Cab. Movs. Empregado";
                     begin
 
-                        //Correr o report e gravar como PDF
-
                         FilePathAndName := FileManagement.ServerTempFileName('pdf');
+                        //insert a type and get a name
                         Flag := false;
 
                         if vType = 'DecIRS' then begin
                             DeclaracaoIRS.InitData(vAno);
                             DeclaracaoIRS.UseRequestPage(false);
                             DeclaracaoIRS.SaveAsPdf(FilePathAndName);
+                            //Saves a report as a .pdf file.
                             Flag := true;
                             Clear(DeclaracaoIRS);
                         end else begin

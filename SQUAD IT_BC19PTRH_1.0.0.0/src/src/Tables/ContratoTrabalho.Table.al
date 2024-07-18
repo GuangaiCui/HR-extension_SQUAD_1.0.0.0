@@ -99,6 +99,7 @@ table 53046 "Contrato Trabalho"
         Text002: Label 'O contrato %1 foi exportado com sucesso!';
         RUTabelas: Record "RU - Tabelas";
         FileMgt: Codeunit "File Management";
+        AFSFileClient: Codeunit "AFS File Client";
 
 
     procedure ImportarContrato()
@@ -120,8 +121,10 @@ table 53046 "Contrato Trabalho"
         Text006: Label 'O ficheiro %1 foi importado com sucesso!';
     begin
         Clear(Link);
-
+        //import word file to the field "Template Contrato"
+        //LInk:=AFSFileClient.PutFileStream();
         Link := FileMgt.OpenFileDialog(Text011, Filename, Format('Word (*.doc*)|*.doc*'));
+
         if StrLen(Link) > 0 then begin
             "Template Contrato".Import(Link);
             Modify;

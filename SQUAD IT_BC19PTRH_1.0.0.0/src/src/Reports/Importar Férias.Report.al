@@ -97,10 +97,10 @@ report 53106 "Importar Férias"
         TempNameValueBufferOut: Record "Name/Value Buffer" temporary;
         Fich: File;
         InStr: InStream;
-        XlWrkBkReader: DotNet WorkbookReader;
-        SheetNames: DotNet ArrayList;
-        CellPosition: DotNet CellPosition;
-        CellData: DotNet CellData;
+        //XlWrkBkReader: DotNet WorkbookReader;
+        //SheetNames: DotNet ArrayList;
+        //CellPosition: DotNet CellPosition;
+        //CellData: DotNet CellData;
         SheetName: Text[250];
         SheetsFound: Boolean;
         FicheiroFerias: Text[250];

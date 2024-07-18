@@ -203,7 +203,7 @@ report 53100 "Enviar Recibo via EMail"
         ProgressWindow: Dialog;
         TimeProgress: Time;
         FileMgt: Codeunit "File Management";
-        environment: DotNet BCTestEnvironment;
+        //environment: DotNet BCTestEnvironment;
         FuncoesRH: Codeunit "Funções RH";
         CodProcess: Code[10];
         FileManagement: Codeunit "File Management";
