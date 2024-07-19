@@ -1,4 +1,4 @@
-tableextension 53035 "Employee Ext" extends Employee
+tableextension 53040 "Employee Ext" extends Employee
 {
     // Tagus - novo campo 50000
 
