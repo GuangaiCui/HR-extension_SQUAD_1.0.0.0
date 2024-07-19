@@ -101,82 +101,70 @@ table 53046 "Contrato Trabalho"
         FileMgt: Codeunit "File Management";
         AFSFileClient: Codeunit "AFS File Client";
 
-
+    //RH_MIG_VC.S
     procedure ImportarContrato()
     var
-        _varText: Text[255];
-        _varTextA: Text[255];
-        _varTextB: Text[255];
-        _varTextC: Text[255];
-        _varTextD: Text[255];
-        _varTextE: Text[255];
-        Text001: Label 'Selecionar o Caminho do Documento';
-        Text002: Label '*.*';
-        Text003: Label ' ';
         Text011: Label 'Selecionar o Caminho do Documento';
-        Text012: Label '*.*';
-        Text013: Label ' ';
-        Text004: Label '*.doc';
-        Text005: Label 'O ficheiro tem que ser do tipo .Doc ou .XDoc.';
         Text006: Label 'O ficheiro %1 foi importado com sucesso!';
-    begin
-        Clear(Link);
-        //import word file to the field "Template Contrato"
-        //LInk:=AFSFileClient.PutFileStream();
-        Link := FileMgt.OpenFileDialog(Text011, Filename, Format('Word (*.doc*)|*.doc*'));
+        OutStr: OutStream;
+        InStr: InStream;
+        tempFileName: Text;
 
-        if StrLen(Link) > 0 then begin
-            "Template Contrato".Import(Link);
-            Modify;
-            Message(Text006, Link);
+    begin
+        Clear(tempFileName);
+        UploadIntoStream(Text011, '', 'Word (*.doc*)|*.doc*', tempFileName, InStr);
+        if tempFileName <> '' then begin
+            rec."Template Contrato".CreateOutStream(OutStr);
+            CopyStream(OutStr, InStr);
+            rec.Modify();
+            if rec."Template Contrato".HasValue then
+                Message(Text006, tempFileName);
         end;
     end;
-
 
     procedure ExportarContrato()
     var
-        Text011: Label 'Selecionar o Caminho do Documento';
-        Text012: Label '*.*';
-        Text013: Label ' ';
-        _DestinoFile: Text[255];
-        _DestinoFileAux: Text[255];
+        ResponseStream: InStream;
+        tempFileName: Text;
+        ErrorAttachment: Label ' No File Available.';
+
     begin
-        CalcFields("Template Contrato");
-        if "Template Contrato".HasValue then begin
-            Clear(Link);
-            Link := FuncoesRH.SaveDirectoryPath;
-            Clear(_DestinoFile);
-            _DestinoFile := Link + '\' + Format(Code) + '.doc';
-            if (Link <> '') and (_DestinoFile <> '') then begin
-                "Template Contrato".Export(_DestinoFile);
-            end;
-        end else
+        Rec.CalcFields("Template Contrato");
+        if rec."Template Contrato".HasValue then begin
+
+            rec."Template Contrato".CreateInStream(ResponseStream);
+            clear(tempFileName);
+            tempFileName := Format(Code) + '.doc';
+            DownloadFromStream(ResponseStream, 'Export', '', 'AllFiles (*.*)|*.*', tempFileName);
+        end
+        else
             Error(Text001);
     end;
+    /*
 
+        procedure VisualizarContrato()
+        var
 
-    procedure VisualizarContrato()
-    var
-
-        DirectoryHelper: DotNet BCTestDirectory;
-        environment: DotNet BCTestEnvironment;
-    begin
-        CalcFields("Template Contrato");
-        if "Template Contrato".HasValue then begin
-            VarUserID := UserId;
-            SearchDirectory := Format(environment.GetEnvironmentVariable('temp')) + '\NAV_' + VarUserID;
-            if not FileMgt.ClientDirectoryExists(SearchDirectory) then
-                DirectoryHelper.CreateDirectory(SearchDirectory);
-            Path := SearchDirectory + '\';
-            Filename := Format(Code);
-            PathFile := Path + Filename + '.DOC';
-            if PathFile <> '' then begin
-                "Template Contrato".Export(PathFile);
-                HyperLink(PathFile);
+            DirectoryHelper: DotNet BCTestDirectory;
+            environment: DotNet BCTestEnvironment;
+        begin
+            CalcFields("Template Contrato");
+            if "Template Contrato".HasValue then begin
+                VarUserID := UserId;
+                SearchDirectory := Format(environment.GetEnvironmentVariable('temp')) + '\NAV_' + VarUserID;
+                if not FileMgt.ClientDirectoryExists(SearchDirectory) then
+                    DirectoryHelper.CreateDirectory(SearchDirectory);
+                Path := SearchDirectory + '\';
+                Filename := Format(Code);
+                PathFile := Path + Filename + '.DOC';
+                if PathFile <> '' then begin
+                    "Template Contrato".Export(PathFile);
+                    HyperLink(PathFile);
+                end;
+            end else begin
+                Error(Text001);
             end;
-        end else begin
-            Error(Text001);
-        end;
-    end;
+        end;*/
+    //RH_MIG_VC.E
 }
 
