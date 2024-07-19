@@ -1780,6 +1780,48 @@ table 53035 Empregado
 
         EscreveWord2('«data de trabalho»', Format(Today, 0, '<day> de <month text> de <year4>'), wdApp2);
     end;
+    //CGA SQD
+    //GerarContrato in Navision
+    // path := FORMAT('C:\Temp') + 'Contrato' +  Empregado."No." + '.Doc';
+
+    // //CLEAR(winword2);
+    // rTemplates.GET('RH-CONTRAC');
+    // rTemplates.ExportAttachment(path);
+    // //CREATE(winword2);
+    // wdApp2.Visible(TRUE);
+    // wdApp2.Documents.Open2002(path);
+
+
+
+    // //TEXTO
+    // EscreveWord2('«nome»',Empregado.Name,wdApp2);
+
+    // IF Empregado."Documento Identificação" = Empregado."Documento Identificação"::BI THEN
+    //     EscreveWord2('«tipo doc»','Bilhete de Identidade',wdApp2)
+    // ELSE
+    //     EscreveWord2('«tipo doc»',FORMAT(Empregado."Documento Identificação"),wdApp2);
+
+    // EscreveWord2('«nº doc. Identificação»', Empregado."No. Doc. Identificação",wdApp2);
+    // EscreveWord2('«data emissão»', FORMAT(Empregado."Data Doc. Ident."),wdApp2);
+    // EscreveWord2('«local emissão»', Empregado."Local Emissão Doc. Ident.",wdApp2);
+    // EscreveWord2('«NIF»', Empregado."No. Contribuinte",wdApp2);
+    // EscreveWord2('«morada»', Empregado.Address + ' ' + Empregado."Address 2",wdApp2);
+    // EscreveWord2('«cidade»', Empregado.City,wdApp2);
+    // EscreveWord2('«cod. postal»', Empregado."Post Code",wdApp2);
+
+    // Empregado.CALCFIELDS(Empregado.Profissionalização);
+    // IF Empregado.Profissionalização = TRUE THEN
+    //    EscreveWord2('«profissionalizado»', 'Profissionalizado' ,wdApp2)
+    // ELSE
+    //     EscreveWord2('«profissionalizado»', 'não Profissionalizado' ,wdApp2);
+
+    // TabQualificacoes.RESET;
+    // TabQualificacoes.SETRANGE(TabQualificacoes."Employee No.", Empregado."No.");
+    // TabQualificacoes.SETRANGE(TabQualificacoes.Type, TabQualificacoes.Type::"Habilitações Académicas");
+    // IF TabQualificacoes.FIND('+') THEN
+    //    EscreveWord2('«Descrição código habilitação»', '',wdApp2);
+
+    // EscreveWord2('«data de trabalho»', FORMAT(TODAY,0,'<day> de <month text> de <year4>'),wdApp2);
 
 
     procedure EscreveWord2(pText1: Text[1024]; pText2: Text[1024]; wdApp2: DotNet WordApplicationClass)

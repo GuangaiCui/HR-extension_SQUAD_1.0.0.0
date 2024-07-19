@@ -489,105 +489,79 @@ table 53056 "Contrato Empregado"
     end;
 
 
+
+    //RH_MIG_VC.S
     procedure ImportarContrato()
     var
-        _varText: Text[255];
-        _varTextA: Text[255];
-        _varTextB: Text[255];
-        _varTextC: Text[255];
-        _varTextD: Text[255];
-        _varTextE: Text[255];
-        Text001: Label 'Selecionar o Caminho do Documento';
-        Text002: Label '*.*';
-        Text003: Label ' ';
         Text011: Label 'Selecionar o Caminho do Documento';
-        Text012: Label '*.*';
-        Text013: Label ' ';
-        Text004: Label '*.pdf';
-        Text005: Label 'O ficheiro tem que ser do tipo PDF.';
         Text006: Label 'O ficheiro %1 foi importado com sucesso!';
+        OutStr: OutStream;
+        InStr: InStream;
+        tempFileName: Text;
+        Text004: Label '*.pdf';
+
     begin
-        //Funcionalidade Contratos
-        //Permite importar uma template para este empregado, para este contrato
-
-        if "No. Contrato Trabalho" <> '' then
-            Error(Text006);
-
-        Clear(_varText);
-        Clear(Link);
-
-        Link := FileMgt.OpenFileDialog(Text011, Filename, Format(Text004));
-        if StrLen(Link) > 0 then begin
-            _varText := CopyStr(Link, (StrLen(Link) - 3), 5);
-
-            if (UpperCase(_varText) <> '.PDF') then
-                Error(Text005);
-
-            if StrLen(Link) > 0 then begin
-                "Ficheiro Contrato Trabalho".Import(Link);
-                "Extensão Ficheiro" := '.PDF';
-                Modify;
-                Message(Text006, Link);
-            end;
+        Clear(tempFileName);
+        UploadIntoStream(Text011, '', 'PDF (*.pdf*)|*.pdf*', tempFileName, InStr);
+        if tempFileName <> '' then begin
+            rec."Ficheiro Contrato Trabalho".CreateOutStream(OutStr);
+            "Extensão Ficheiro" := '.PDF';
+            CopyStream(OutStr, InStr);
+            rec.Modify();
+            if rec."Ficheiro Contrato Trabalho".HasValue then
+                Message(Text006, tempFileName);
         end;
-        Modify;
     end;
-
 
     procedure ExportarContrato()
     var
-        Text011: Label 'Selecionar o Caminho do Documento';
-        Text012: Label '*.*';
-        Text013: Label ' ';
-        _DestinoFile: Text[255];
-        _DestinoFileAux: Text[255];
+        ResponseStream: InStream;
+        tempFileName: Text;
+        ErrorAttachment: Label ' No File Available.';
+
     begin
-        //Funcionalidade Contratos
-        //Permite exportar o contrato previamente importado
+        Rec.CalcFields("Ficheiro Contrato Trabalho");
+        if rec."Ficheiro Contrato Trabalho".HasValue then begin
 
-        CalcFields("Ficheiro Contrato Trabalho");
-        if "Ficheiro Contrato Trabalho".HasValue then begin
-
-            Clear(Link);
-            Link := FuncoesRH.SaveDirectoryPath;
-
-            Clear(_DestinoFile);
-
-            _DestinoFile := Link + Format("Cód. Empregado") + '-' + Format("Cód. Contrato") + "Extensão Ficheiro";
-            if (Link <> '') and (_DestinoFile <> '') then begin
-                Link := "Ficheiro Contrato Trabalho".Export(_DestinoFile);
-            end;
-        end else
+            rec."Ficheiro Contrato Trabalho".CreateInStream(ResponseStream);
+            clear(tempFileName);
+            tempFileName := Format("Cód. Empregado") + '-' + Format("Cód. Contrato") + "Extensão Ficheiro";
+            DownloadFromStream(ResponseStream, 'Export', '', 'AllFiles (*.*)|*.*', tempFileName);
+        end
+        else
             Error(Text001);
     end;
 
+    /*
 
-    procedure VisualizarContrato()
-    begin
-        //Funcionalidade Contratos
-        //Abre o contrato, mostrando-0
+        procedure VisualizarContrato()
+        begin
+            //Funcionalidade Contratos
+            //Abre o contrato, mostrando-0
 
-        //CLEAR(rtFileSystem);
-        CalcFields("Ficheiro Contrato Trabalho");
-        if "Ficheiro Contrato Trabalho".HasValue then begin
-            VarUserID := UserId;
-            SearchDirectory := Format('C:\temp') + '\NAV_' + VarUserID;
+            //CLEAR(rtFileSystem);
+            CalcFields("Ficheiro Contrato Trabalho");
+            if "Ficheiro Contrato Trabalho".HasValue then begin
+                VarUserID := UserId;
+                SearchDirectory := Format('C:\temp') + '\NAV_' + VarUserID;
 
-            if not FileMgt.ClientDirectoryExists(SearchDirectory) then
-                DirectoryHelper.CreateDirectory(SearchDirectory);
+                if not FileMgt.ClientDirectoryExists(SearchDirectory) then
+                    DirectoryHelper.CreateDirectory(SearchDirectory);
 
-            Path := Format('C:\temp') + '\NAV_' + VarUserID + '\';
-            Filename := Format("Cód. Empregado") + '_' + Format("Cód. Contrato");
+                Path := Format('C:\temp') + '\NAV_' + VarUserID + '\';
+                Filename := Format("Cód. Empregado") + '_' + Format("Cód. Contrato");
 
-            PathFile := Path + Filename + "Extensão Ficheiro";
+                PathFile := Path + Filename + "Extensão Ficheiro";
 
-            if PathFile <> '' then begin
-                "Ficheiro Contrato Trabalho".Export(PathFile);
-                HyperLink(PathFile);
+                if PathFile <> '' then begin
+                    "Ficheiro Contrato Trabalho".Export(PathFile);
+                    HyperLink(PathFile);
+                end;
+            end else begin
+                Error(Text001);
             end;
-        end else begin
-            Error(Text001);
         end;
-    end;
+        */
+    //RH_MIG_VC.E
 }
 
