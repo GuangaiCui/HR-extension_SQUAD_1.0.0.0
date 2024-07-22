@@ -155,7 +155,7 @@ xmlport 53042 "RU - Anexo F - IPS"
                             }
                             textelement(prestadores)
                             {
-                                tableelement(empregado; Empregado)
+                                tableelement(empregado; Employee)
                                 {
                                     XmlName = 'prestador';
                                     SourceTableView = WHERE("Tipo Contribuinte" = CONST("Trabalhador Independente"));

@@ -24,7 +24,7 @@ report 53055 "Pagamento Vencimentos"
                 SetFilter("Cód. Processamento", PeriodoCode);
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.", "Tipo Contribuinte";
             dataitem("Hist. Cab. Movs. Empregado"; "Hist. Cab. Movs. Empregado")

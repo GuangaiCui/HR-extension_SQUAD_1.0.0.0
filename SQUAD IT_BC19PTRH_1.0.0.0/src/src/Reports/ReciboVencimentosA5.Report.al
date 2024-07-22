@@ -43,7 +43,7 @@ report 53043 "Recibo Vencimentos A5"
                 "Periodos Processamento".SetRange("Cód. Processamento", CodProcess);
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.";

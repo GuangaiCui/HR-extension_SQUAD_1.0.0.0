@@ -257,7 +257,7 @@ xmlport 53038 "RU - Anexo C - RFC"
                             }
                             textelement(trabalhadores)
                             {
-                                tableelement(empregado; Empregado)
+                                tableelement(empregado; Employee)
                                 {
                                     XmlName = 'trabalhador';
                                     fieldelement(ident_reg_apli; Empregado."Cod. Regime Reforma Aplicado")

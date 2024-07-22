@@ -575,7 +575,7 @@ codeunit 53037 "Funções RH"
 
         recCustomer.City := InrecEmpregado.City;
         recCustomer."Phone No." := InrecEmpregado."Phone No.";
-        recCustomer."Country/Region Code" := InrecEmpregado."Country Code";
+        recCustomer."Country/Region Code" := InrecEmpregado."Country/Region Code";
         recCustomer."Fax No." := InrecEmpregado."Company Phone No.";
         recCustomer."Post Code" := InrecEmpregado."Post Code";
         recCustomer."E-Mail" := InrecEmpregado."E-Mail";

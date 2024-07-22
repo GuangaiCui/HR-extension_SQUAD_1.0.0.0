@@ -42,7 +42,7 @@ report 53037 "Processamento Vencimentos"
                 SetFilter("Cód. Processamento", PeriodoCode);
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = WHERE(Status = CONST(Active));
             RequestFilterFields = "No.", "Tipo Contribuinte";
@@ -1438,7 +1438,7 @@ report 53037 "Processamento Vencimentos"
                     TempRubricaEmpregado2.SetRange(TempRubricaEmpregado2."Cód. Rúbrica Salarial");
                 end;
             }
-            dataitem(Empregado2; Empregado)
+            dataitem(Empregado2; Employee)
             {
                 DataItemLink = "No." = FIELD("No.");
                 DataItemTableView = SORTING("No.");

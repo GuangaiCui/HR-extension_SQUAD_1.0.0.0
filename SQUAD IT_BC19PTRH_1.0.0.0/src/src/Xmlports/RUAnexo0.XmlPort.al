@@ -1632,7 +1632,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Genderderder, rEmpregado.Gender::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat

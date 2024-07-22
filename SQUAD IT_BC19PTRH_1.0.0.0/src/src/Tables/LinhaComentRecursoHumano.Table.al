@@ -16,7 +16,7 @@ table 53043 "Linha Coment. Recurso Humano"
         field(2; "No."; Code[20])
         {
             Caption = 'No.';
-            TableRelation = IF ("Table Name" = CONST(Emp)) Empregado."No."
+            TableRelation = IF ("Table Name" = CONST(Emp)) Employee."No."
             ELSE
             IF ("Table Name" = CONST("Edç")) "Endereço Alternativo"."Employee No."
             ELSE

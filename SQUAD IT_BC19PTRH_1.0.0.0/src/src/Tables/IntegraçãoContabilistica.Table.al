@@ -20,7 +20,7 @@ table 53113 "Integração Contabilistica"
             trigger OnValidate()
             begin
                 CreateDim(
-                  DATABASE::Empregado, "No. Empregado",
+                  DATABASE::Employee, "No. Empregado",
                   DATABASE::"Periodos Processamento", "Cód. Processamento");
             end;
         }

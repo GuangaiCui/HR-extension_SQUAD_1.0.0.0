@@ -4,7 +4,7 @@ report 53068 "Provisão Duodécimos"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("No.") WHERE(Status = CONST(Active));
             RequestFilterFields = "No.";
@@ -171,7 +171,7 @@ report 53068 "Provisão Duodécimos"
                     GenLedSetup.Reset;
                     if GenLedSetup.FindFirst then begin
                         DefDim.Reset;
-                        DefDim.SetRange(DefDim."Table ID", DATABASE::Empregado);
+                        DefDim.SetRange(DefDim."Table ID", DATABASE::Employee);
                         DefDim.SetRange(DefDim."No.", Empregado."No.");
                         DefDim.SetRange(DefDim."Dimension Code", GenLedSetup."Global Dimension 1 Code");
                         if DefDim.FindSet then begin
@@ -478,7 +478,7 @@ report 53068 "Provisão Duodécimos"
                     GenLedSetup.Reset;
                     if GenLedSetup.FindFirst then begin
                         DefDim.Reset;
-                        DefDim.SetRange(DefDim."Table ID", DATABASE::Empregado);
+                        DefDim.SetRange(DefDim."Table ID", DATABASE::Employee);
                         DefDim.SetRange(DefDim."No.", Empregado."No.");
                         DefDim.SetRange(DefDim."Dimension Code", GenLedSetup."Global Dimension 1 Code");
                         if DefDim.FindSet then begin

@@ -4,7 +4,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("No.") WHERE(Status = FILTER(<> Terminated), "Tipo Contribuinte" = FILTER("Conta de Outrem" | Pensionista));
             RequestFilterFields = "No.";
