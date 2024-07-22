@@ -150,7 +150,7 @@ report 53046 "Mapa Transferência Bancária"
                     varProvisorio := '';
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("No.") ORDER(Ascending);
             RequestFilterFields = "No.";
@@ -455,7 +455,7 @@ report 53046 "Mapa Transferência Bancária"
     var
         TabTempFichTexto: Record "Tabela Temp Ficheiros Texto";
         BankAccount: Record "Bank Account";
-        Employee: Record Empregado;
+        Employee: Record Employee;
         TabConfEmpresa: Record "Company Information";
         PerProc: Record "Periodos Processamento";
         FiltroDataInicProc: Text[1024];

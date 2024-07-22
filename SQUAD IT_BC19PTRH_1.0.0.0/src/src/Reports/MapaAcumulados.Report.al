@@ -33,7 +33,7 @@ report 53076 "Mapa Acumulados"
                 FiltroCodProc := "Periodos Processamento".GetFilter("Cód. Processamento");
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("Tipo Rendimento", "No.", "Statistics Group Code");
             RequestFilterFields = "No.";

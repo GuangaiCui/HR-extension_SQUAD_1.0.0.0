@@ -19,5 +19,5 @@ report 50000 "Atualiza Total Horas Semanais"
 
 
     var
-        Employee: Record Empregado;
+        Employee: Record Employee;
 }

@@ -1,5 +1,6 @@
 codeunit 53035 "Empregado/Actual. Recurso"
 {
+    //CGA SQD - changed record empregado to record employee in functions
     Permissions = TableData Resource = rimd;
 
     trigger OnRun()
@@ -10,7 +11,7 @@ codeunit 53035 "Empregado/Actual. Recurso"
         Res: Record Resource;
 
 
-    procedure HumanResToRes(OldEmployee: Record Empregado; Employee: Record Empregado)
+    procedure HumanResToRes(OldEmployee: Record Employee; Employee: Record Employee)
     begin
         if (Employee."Resource No." <> '') and
            ((OldEmployee."Resource No." <> Employee."Resource No.") or
@@ -29,7 +30,7 @@ codeunit 53035 "Empregado/Actual. Recurso"
     end;
 
 
-    procedure ResUpdate(Employee: Record Empregado)
+    procedure ResUpdate(Employee: Record Employee)
     begin
         Res.Get(Employee."Resource No.");
         Res."Job Title" := Employee."Job Title";

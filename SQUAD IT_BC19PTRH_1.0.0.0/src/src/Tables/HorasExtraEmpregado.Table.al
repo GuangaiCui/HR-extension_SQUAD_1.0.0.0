@@ -13,7 +13,7 @@ table 53073 "Horas Extra Empregado"
         field(2; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(3; Data; Date)
         {
@@ -117,8 +117,8 @@ table 53073 "Horas Extra Empregado"
     var
         TabHora: Record "Tipos Horas Extra";
         TabHoraExtraEmpregado: Record "Horas Extra Empregado";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         HumanResComment: Record "Linha Coment. Recurso Humano";
-        Employee: Record Empregado;
+        Employee: Record Employee;
 }
 

@@ -11,7 +11,7 @@ table 53084 "Doenças Profissionais"
         field(5; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(6; "Data Participação"; Date)
         {
@@ -37,7 +37,7 @@ table 53084 "Doenças Profissionais"
         field(8; "Designação Factor Risco"; Text[70])
         {
             Caption = 'Risk Factor Description';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(9; "Doença Profissional"; Code[20])
         {

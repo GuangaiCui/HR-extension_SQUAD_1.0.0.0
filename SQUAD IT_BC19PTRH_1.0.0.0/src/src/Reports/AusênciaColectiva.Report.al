@@ -13,7 +13,7 @@ report 53035 "Ausência Colectiva"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.";
 

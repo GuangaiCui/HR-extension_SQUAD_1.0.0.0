@@ -9,7 +9,7 @@ table 53063 "Grau Função Empregado"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(2; "No. Linha"; Integer)
         {
@@ -81,7 +81,7 @@ table 53063 "Grau Função Empregado"
 
     var
         TabGrauFuncao: Record "Grau Função";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         Pergunta: Text[200];
 }
 

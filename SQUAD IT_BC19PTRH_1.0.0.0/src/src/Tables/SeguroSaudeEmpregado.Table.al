@@ -8,7 +8,7 @@ table 53128 "Seguro Saude Empregado"
     {
         field(1; "No. Empregado"; Code[20])
         {
-            TableRelation = Empregado;
+            TableRelation = Employee;
 
             trigger OnValidate()
             begin
@@ -96,7 +96,7 @@ table 53128 "Seguro Saude Empregado"
     end;
 
     var
-        Empregado: Record Empregado;
+        Empregado: Record Employee;
         FamiliarEmp: Record "Familiar Empregado";
 }
 

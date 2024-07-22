@@ -21,7 +21,7 @@ table 53109 "Hist. Linhas Movs. Empregado"
         field(3; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(4; "No. Linha"; Integer)
         {

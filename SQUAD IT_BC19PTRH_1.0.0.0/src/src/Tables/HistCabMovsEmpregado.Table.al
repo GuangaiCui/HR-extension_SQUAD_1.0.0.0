@@ -20,7 +20,7 @@ table 53108 "Hist. Cab. Movs. Empregado"
         field(3; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(5; "Designação Empregado"; Text[75])
         {
@@ -84,7 +84,7 @@ table 53108 "Hist. Cab. Movs. Empregado"
                 num: BigInteger;
                 X: Integer;
                 txtnum: Text[30];
-                rEmpregado: Record Empregado;
+                rEmpregado: Record Employee;
                 OK: Boolean;
                 text01: Label 'Está a inserir um NIB já existente!\Empregado: %1\NIB: %2\Continuar?';
                 text02: Label 'Introduza de novo o NIB.';

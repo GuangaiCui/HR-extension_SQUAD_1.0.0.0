@@ -9,7 +9,7 @@ table 53051 "Informação Confidencial"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(2; "Confidential Code"; Code[10])
         {

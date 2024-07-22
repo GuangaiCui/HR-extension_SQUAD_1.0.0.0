@@ -460,7 +460,7 @@ xmlport 53038 "RU - Anexo C - RFC"
     end;
 
     var
-        rEmpregado: Record Empregado;
+        rEmpregado: Record Employee;
         rCompInf: Record "Company Information";
         rAccaoFormacao: Record "Acções Formação";
         rAccaoFormacaoAux: Record "Acções Formação";

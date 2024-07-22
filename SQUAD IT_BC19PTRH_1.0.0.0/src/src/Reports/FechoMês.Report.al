@@ -126,7 +126,7 @@ report 53038 "Fecho Mês"
                 SetFilter("Cód. Processamento", PeriodoCode);
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("No.");
             dataitem("Ausência Empregado"; "Ausência Empregado")
@@ -334,7 +334,7 @@ report 53038 "Fecho Mês"
     var
         HistCabMovEmp: Record "Hist. Cab. Movs. Empregado";
         HistLinhasMovEmp: Record "Hist. Linhas Movs. Empregado";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         HistAusencia: Record "Histórico Ausências";
         HistHorasExtra: Record "Histórico Horas Extra";
         HistAboDesExtra: Record "Histórico Abonos - Desc. Extra";
@@ -345,7 +345,7 @@ report 53038 "Fecho Mês"
         Text0002: Label 'Escolha um Processamento do tipo Vencimentos.';
         ConfRH: Record "Config. Recursos Humanos";
         RubricSalarial: Record "Rubrica Salarial";
-        TabEmp: Record Empregado;
+        TabEmp: Record Employee;
         ContratoEmp: Record "Contrato Empregado";
         varTotalEmpregado: Integer;
         Window: Dialog;

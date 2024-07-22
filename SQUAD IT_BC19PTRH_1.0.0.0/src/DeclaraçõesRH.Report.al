@@ -10,7 +10,7 @@ report 53094 "Declarações RH"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.";
 

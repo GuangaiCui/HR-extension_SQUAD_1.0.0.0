@@ -11,7 +11,7 @@ table 53036 "Endereço Alternativo"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Empregado;
+            TableRelation = Employee;
 
             trigger OnValidate()
             begin
@@ -108,6 +108,6 @@ table 53036 "Endereço Alternativo"
 
     var
         PostCode: Record "Post Code";
-        Employee: Record Empregado;
+        Employee: Record Employee;
 }
 

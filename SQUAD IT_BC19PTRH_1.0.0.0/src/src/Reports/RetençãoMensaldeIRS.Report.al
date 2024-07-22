@@ -482,7 +482,7 @@ report 53067 "Retenção Mensal de IRS"
         Ano: Integer;
         Mensal: Text[30];
         Empregado: Code[20];
-        recEmpregado: Record Empregado;
+        recEmpregado: Record Employee;
         mostra: Boolean;
         Text0001: Label 'Escolha um processamento já fechado.';
         FiltroDataInicProc: Text[1024];

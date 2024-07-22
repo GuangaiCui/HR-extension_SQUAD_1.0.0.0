@@ -162,7 +162,7 @@ report 53055 "Pagamento Vencimentos"
 
             trigger OnPreDataItem()
             var
-                l_Empregado: Record Empregado;
+                l_Empregado: Record Employee;
             begin
                 if ConfRH.Get then; //IT004,n
 

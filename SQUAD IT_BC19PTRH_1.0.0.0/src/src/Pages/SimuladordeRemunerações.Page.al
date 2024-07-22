@@ -14,7 +14,7 @@ page 53117 "Simulador de Remunerações"
     /**/
     PageType = Document;
     DelayedInsert = true;
-    SourceTable = Empregado;
+    SourceTable = Employee;
     SourceTableTemporary = true;
 
     layout
@@ -425,7 +425,7 @@ page 53117 "Simulador de Remunerações"
         NDependentes: Integer;
         TabRegSS: Record "Regime Seg. Social";
         RegSS: Code[10];
-        TempEmpregado: Record Empregado temporary;
+        TempEmpregado: Record Employee temporary;
         FuncoesRH: Codeunit "Funções RH";
         l_TaxaIRS: Decimal;
         b_TaxaIRS: Decimal;
@@ -628,7 +628,7 @@ page 53117 "Simulador de Remunerações"
     end;
 
 
-    procedure SaberTabelaIRS(Empregado: Record Empregado; Ano: Integer) Tabela: Integer
+    procedure SaberTabelaIRS(Empregado: Record Employee; Ano: Integer) Tabela: Integer
     begin
 
 

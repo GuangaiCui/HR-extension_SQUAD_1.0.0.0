@@ -36,7 +36,7 @@ report 53049 "Mapa Modelo 10"
 
     dataset
     {
-        dataitem(EmpregadoFiltro; Empregado)
+        dataitem(EmpregadoFiltro; Employee)
         {
             DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.";
@@ -166,7 +166,7 @@ report 53049 "Mapa Modelo 10"
 
             trigger OnAfterGetRecord()
             var
-                rAuxEmp: Record Empregado;
+                rAuxEmp: Record Employee;
             begin
                 //Novo codigo versão 2013 que estava no Group Section
                 if "Hist. Linhas Movs. Empregado2"."No. Empregado" <> CodEmp then begin
@@ -316,7 +316,7 @@ report 53049 "Mapa Modelo 10"
 
             trigger OnPostDataItem()
             var
-                rAuxEmp: Record Empregado;
+                rAuxEmp: Record Employee;
             begin
                 //Novo codigo versão 2013 que estava no Group Section
                 if rAuxEmp.Get("Hist. Linhas Movs. Empregado2"."No. Empregado") then begin
@@ -858,11 +858,11 @@ report 53049 "Mapa Modelo 10"
         ImportanciasRetidas: Decimal;
         TotalImpRetidas: Decimal;
         AuxEmp: Code[20];
-        Empregado: Record Empregado;
+        Empregado: Record Employee;
         TotalRegistosJ99: Integer;
         AuxTipoRend: Integer;
         varLimite: Decimal;
-        TabTempEmpregado: Record Empregado temporary;
+        TabTempEmpregado: Record Employee temporary;
         Desconto: Decimal;
         TotalDescontos: Decimal;
         ValorSindicato: Decimal;

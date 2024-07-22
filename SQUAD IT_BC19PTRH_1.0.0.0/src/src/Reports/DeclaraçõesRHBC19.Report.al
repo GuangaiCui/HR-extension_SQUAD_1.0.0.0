@@ -13,7 +13,7 @@ report 53095 "Declarações RH BC"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.";
 

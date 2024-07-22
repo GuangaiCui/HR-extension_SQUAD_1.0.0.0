@@ -111,7 +111,7 @@ report 53039 "Fecho Sub. Férias/Natal"
                 SetFilter("Cód. Processamento", PeriodoCode);
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("No.");
             dataitem("Abonos - Descontos Extra"; "Abonos - Descontos Extra")
@@ -210,12 +210,12 @@ report 53039 "Fecho Sub. Férias/Natal"
         HistLinhasMovEmp: Record "Hist. Linhas Movs. Empregado";
         Text0001: Label 'Este processamento já está fechado.';
         Text0002: Label 'Escolha um Processamento do tipo Sub. Férias ou Natal.';
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         HistAboDesExtra: Record "Histórico Abonos - Desc. Extra";
         VarNMov: Integer;
         ConfRH: Record "Config. Recursos Humanos";
         RubricSalarial: Record "Rubrica Salarial";
-        TabEmp: Record Empregado;
+        TabEmp: Record Employee;
         ContratoEmp: Record "Contrato Empregado";
         PeriodoCode: Code[10];
 }

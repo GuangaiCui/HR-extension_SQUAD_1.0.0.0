@@ -12,7 +12,7 @@ report 53090 "Formação Colectiva"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.";
 

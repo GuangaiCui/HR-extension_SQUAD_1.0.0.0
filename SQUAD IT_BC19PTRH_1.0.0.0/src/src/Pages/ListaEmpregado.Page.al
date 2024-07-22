@@ -6,7 +6,7 @@ page 53036 "Lista Empregado"
     CardPageID = "Ficha Empregado";
     Editable = false;
     PageType = List;
-    SourceTable = Empregado;
+    SourceTable = Employee;
     UsageCategory = Lists;
     ApplicationArea = HumanResourcesAppArea;
 
@@ -130,12 +130,12 @@ page 53036 "Lista Empregado"
                     ApplicationArea = All;
 
                 }
-                field(Sex; Rec.Sex)
+                field(Sex; Rec.Gender)
                 {
                     ApplicationArea = All;
 
                 }
-                field("Country Code"; Rec."Country Code")
+                field("Country Code"; Rec."Country/Region Code")
                 {
                     ApplicationArea = All;
 
@@ -255,7 +255,7 @@ page 53036 "Lista Empregado"
                     ApplicationArea = All;
 
                 }
-                field(Naturalidade; Rec.Naturalidade)
+                field(Naturalidade; Rec."Birth Date")
                 {
                     ApplicationArea = All;
 
@@ -700,7 +700,7 @@ page 53036 "Lista Empregado"
     end;
 
     var
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         varEmpActivos: Integer;
         ConfRH: Record "Config. Recursos Humanos";
 }

@@ -6,7 +6,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
     Editable = false;
     LinksAllowed = false;
     PageType = List;
-    SourceTable = Empregado;
+    SourceTable = Employee;
 
     layout
     {

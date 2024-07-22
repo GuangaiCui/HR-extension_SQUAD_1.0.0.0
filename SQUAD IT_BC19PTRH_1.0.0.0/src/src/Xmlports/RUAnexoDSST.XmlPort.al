@@ -225,8 +225,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                            (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
                                                                             vTotPessoas := vTotPessoas + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                         end else begin
 
                                                                             if (rContratoTrab.Get(rContratoEmpregado."Cód. Contrato")) and
@@ -234,8 +234,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                               or (rContratoTrab."Cód. Tipo Contrato" = '32') or (rContratoTrab."Cód. Tipo Contrato" = '14')
                                                                               or (rContratoTrab."Cód. Tipo Contrato" = '11') or (rContratoTrab."Cód. Tipo Contrato" = '21')) then begin
                                                                                 vTotPessoas := vTotPessoas + 1;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                             end;
 
 
@@ -302,8 +302,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                            (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
                                                                             vTotPessoas := vTotPessoas + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                         end;
                                                                     end;
                                                                 end;
@@ -366,8 +366,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                            or (rContratoTrab."Cód. Tipo Contrato" = '32') or (rContratoTrab."Cód. Tipo Contrato" = '14')
                                                                            or (rContratoTrab."Cód. Tipo Contrato" = '11') or (rContratoTrab."Cód. Tipo Contrato" = '21')) then begin
                                                                             vTotPessoas := vTotPessoas + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                         end;
                                                                     end;
                                                                 end;
@@ -429,8 +429,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                            ((rContratoTrab."Cód. Tipo Contrato" = '12') or (rContratoTrab."Cód. Tipo Contrato" = '22')
                                                                            or (rContratoTrab."Cód. Tipo Contrato" = '32')) then begin
                                                                             vTotPessoas := vTotPessoas + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                         end;
                                                                     end;
                                                                 end;
@@ -491,8 +491,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if (rContratoTrab.Get(rContratoEmpregado."Cód. Contrato")) and
                                                                            ((rContratoTrab."Cód. Tipo Contrato" = '14')) then begin
                                                                             vTotPessoas := vTotPessoas + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                         end;
                                                                     end;
                                                                 end;
@@ -553,8 +553,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if (rContratoTrab.Get(rContratoEmpregado."Cód. Contrato")) and
                                                                            ((rContratoTrab."Cód. Tipo Contrato" = '11') or (rContratoTrab."Cód. Tipo Contrato" = '21')) then begin
                                                                             vTotPessoas := vTotPessoas + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                            if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                            if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                         end;
                                                                     end;
                                                                 end;
@@ -608,8 +608,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rEmpregado."Tipo Contribuinte" = rEmpregado."Tipo Contribuinte"::"Trabalhador Independente") and
                                                                    (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                     vTotPessoas := vTotPessoas + 1;
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                 end;
                                                             until rHistCabMovEmp.Next = 0;
                                                         end;
@@ -694,8 +694,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                 if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
                                                                    (rEmpregado."Tipo Contribuinte" = rEmpregado."Tipo Contribuinte"::"Trabalhador Independente") then begin
                                                                     vTotPessoas := vTotPessoas + 1;
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                 end;
                                                             until rHistCabMovEmp.Next = 0;
                                                         end;
@@ -2110,8 +2110,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Periódico") or
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional")) then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2155,8 +2155,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional")) then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2201,8 +2201,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2247,8 +2247,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2292,8 +2292,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional")) then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2338,8 +2338,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                 if (rCabAccoesMedicas.Get(rLinhasAccoesMedicas."Entry No.")) and
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Admissão") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2381,8 +2381,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Admissão") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2425,8 +2425,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2469,8 +2469,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2512,8 +2512,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Admissão") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2558,8 +2558,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                 if (rCabAccoesMedicas.Get(rLinhasAccoesMedicas."Entry No.")) and
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Periódico") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2601,8 +2601,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Periódico") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2645,8 +2645,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2689,8 +2689,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2732,8 +2732,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Periódico") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2778,8 +2778,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                 if (rCabAccoesMedicas.Get(rLinhasAccoesMedicas."Entry No.")) and
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2821,8 +2821,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2865,8 +2865,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2909,8 +2909,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2952,8 +2952,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -2999,8 +2999,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") and
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Mudança de Posto Trab.") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3043,8 +3043,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Mudança de Posto Trab.") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3088,8 +3088,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3133,8 +3133,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3177,8 +3177,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Mudança de Posto Trab.") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3223,8 +3223,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") and
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Alterações no Posto Trab.") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3267,8 +3267,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Alterações no Posto Trab.") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3312,8 +3312,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3357,8 +3357,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3401,8 +3401,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Alterações no Posto Trab.") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3450,8 +3450,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason =
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por doença")) then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3497,8 +3497,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por doença")) then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3545,8 +3545,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3593,8 +3593,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3640,8 +3640,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por doença")) then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3687,8 +3687,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason =
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por acidente de trabalho") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3732,8 +3732,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por acidente de trabalho") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3778,8 +3778,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3824,8 +3824,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3869,8 +3869,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por acidente de trabalho") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3916,8 +3916,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason =
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por doença") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -3961,8 +3961,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por doença") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4007,8 +4007,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4053,8 +4053,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4098,8 +4098,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    rCabAccoesMedicas.Reason::"Regresso ao Trab. após ausência sup. a 30 dias por doença") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4144,8 +4144,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") and
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Iniciativa do médico") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4188,8 +4188,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Iniciativa do médico") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4233,8 +4233,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4278,8 +4278,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4322,8 +4322,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Iniciativa do médico") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4368,8 +4368,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") and
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Pedido do trabalhador") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4412,8 +4412,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Pedido do trabalhador") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4457,8 +4457,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4502,8 +4502,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4546,8 +4546,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Pedido do trabalhador") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4592,8 +4592,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") and
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Por cessação do contrato de trabalho") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4636,8 +4636,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Por cessação do contrato de trabalho") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4681,8 +4681,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4726,8 +4726,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4770,8 +4770,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Por cessação do contrato de trabalho") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4816,8 +4816,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas."Exam Type" = rCabAccoesMedicas."Exam Type"::"Exame Ocasional") and
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Outras Razões") then begin
                                                                     if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4860,8 +4860,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Outras Razões") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4905,8 +4905,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 18) or
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') = 19)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4950,8 +4950,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        ((Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 20) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 49)) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -4994,8 +4994,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                    (rCabAccoesMedicas.Reason = rCabAccoesMedicas.Reason::"Outras Razões") then begin
                                                                     if (rEmpregado.Get(rLinhasAccoesMedicas."Employee No.")) and
                                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 50) then begin
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                        if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                        if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                     end;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
@@ -5155,8 +5155,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         if rLinhasAccoesMedicas.FindSet then begin
                                                             repeat
                                                                 if rEmpregado.Get(rLinhasAccoesMedicas."Employee No.") then begin
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                 end;
                                                             until rLinhasAccoesMedicas.Next = 0;
                                                         end;
@@ -5315,8 +5315,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                                 vTotalAcidentes := vTotalAcidentes + 1;
                                                                             end;
                                                                         end;
@@ -5366,8 +5366,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5416,8 +5416,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5465,8 +5465,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5514,8 +5514,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                             end;
                                                                         end;
 
@@ -5564,8 +5564,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5622,8 +5622,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + NDias;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + NDias;
                                                                                 vNumDiasPerdidos := vNumDiasPerdidos + 1;
 
                                                                             end;
@@ -5678,8 +5678,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + NDias;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + NDias;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5732,8 +5732,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + NDias;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + NDias;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5786,8 +5786,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + NDias;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + NDias;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5845,8 +5845,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + NDias;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + NDias;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5900,8 +5900,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + NDias;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + NDias;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -5955,8 +5955,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + NDias;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + NDias;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -6010,8 +6010,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                         if rContratoEmpregado.FindFirst then begin
                                                                             if (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"Sem Termo") or
                                                                                (rContratoEmpregado."Tipo Contrato" = rContratoEmpregado."Tipo Contrato"::"A Termo") then begin
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + NDias;
-                                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + NDias;
+                                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + NDias;
                                                                             end;
                                                                         end;
                                                                     end;
@@ -6167,8 +6167,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         if rDoencas.FindSet then begin
                                                             repeat
                                                                 if rEmpregado.Get(rDoencas."No. Empregado") then begin
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                 end;
                                                             until rDoencas.Next = 0;
                                                         end;
@@ -6272,8 +6272,8 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         if rDoencas.FindSet then begin
                                                             repeat
                                                                 if rEmpregado.Get(rDoencas."No. Empregado") then begin
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
-                                                                    if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + 1;
+                                                                    if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + 1;
                                                                 end;
                                                             until rDoencas.Next = 0;
                                                         end;
@@ -6315,7 +6315,7 @@ xmlport 53039 "RU - Anexo D - SST"
     end;
 
     var
-        rEmpregado: Record Empregado;
+        rEmpregado: Record Employee;
         rPessoalServicos: Record "Pessoal dos Serviços";
         rCompInf: Record "Company Information";
         rHistEmpregado: Record "Historico Empregado";

@@ -193,7 +193,7 @@ page 53047 "Registo Ausência"
     end;
 
     var
-        Employee: Record Empregado;
+        Employee: Record Employee;
         VarAusenciaBloqueada: Record "Ausência Empregado";
         recPeriodosProcessamento: Record "Periodos Processamento";
         Text0001: Label 'Esta Ausência já foi processada, será necessário refazer o processamento para este empregado.';

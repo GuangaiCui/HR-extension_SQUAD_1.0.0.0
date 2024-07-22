@@ -13,7 +13,7 @@ table 53106 "Histórico Horas Extra"
         field(2; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(3; Data; Date)
         {

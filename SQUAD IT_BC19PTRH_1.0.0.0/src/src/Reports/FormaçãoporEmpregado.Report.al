@@ -165,7 +165,7 @@ report 53089 "Formação por Empregado"
     end;
 
     var
-        Employee: Record Empregado;
+        Employee: Record Employee;
         LastFieldNo: Integer;
         FooterPrinted: Boolean;
         FormacaoFilter: Text[250];

@@ -124,7 +124,7 @@ page 53038 "Ficha Endç. Alternativo"
 
     var
         Text000: Label 'untitled';
-        Employee: Record Empregado;
+        Employee: Record Employee;
 
 
     procedure Caption(): Text[110]

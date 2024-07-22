@@ -18,7 +18,7 @@ table 53080 "Linhas Movs. Empregado"
         field(3; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
 
             trigger OnValidate()
             begin
@@ -220,7 +220,7 @@ table 53080 "Linhas Movs. Empregado"
     }
 
     var
-        TabEmp: Record Empregado;
+        TabEmp: Record Employee;
         TabRubrica: Record "Rubrica Salarial";
         TabConta: Record "G/L Account";
         TabMovEmp: Record "Cab. Movs. Empregado";

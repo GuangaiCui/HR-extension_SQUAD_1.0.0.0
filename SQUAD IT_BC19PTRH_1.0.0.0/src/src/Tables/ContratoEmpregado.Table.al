@@ -9,7 +9,7 @@ table 53056 "Contrato Empregado"
         field(1; "Cód. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado."No.";
+            TableRelation = Employee."No.";
         }
         field(2; "No. Linha"; Integer)
         {
@@ -126,7 +126,7 @@ table 53056 "Contrato Empregado"
 
     var
         TabContratoTrabalho: Record "Contrato Trabalho";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         Pergunta: Text[200];
         VarUserID: Text[30];
         SearchDirectory: Text[200];
@@ -170,7 +170,7 @@ table 53056 "Contrato Empregado"
         _ContratoEmp: Record "Contrato Empregado";
         _DestinoFile: Text[255];
         _SaveFile: Boolean;
-        _Emp: Record Empregado;
+        _Emp: Record Employee;
         _Habilita: Record "Habilitação";
         _Estab_Emp: Record "Estabelecimentos da Empresa";
         _Company: Record "Company Information";
@@ -178,7 +178,7 @@ table 53056 "Contrato Empregado"
         _HabLitText: Text[1024];
         _DataText: Text[1024];
         _PostCode: Record "Post Code";
-        _Emp2: Record Empregado;
+        _Emp2: Record Employee;
     begin
 
         if "No. Contrato Trabalho" <> '' then

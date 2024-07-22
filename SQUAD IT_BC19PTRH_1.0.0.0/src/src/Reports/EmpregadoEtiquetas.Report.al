@@ -18,7 +18,7 @@ report 53058 "Empregado - Etiquetas"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.", "First Name", "Last Name";
             column(EmployeeAddr_1__1_; EmployeeAddr[1] [1])

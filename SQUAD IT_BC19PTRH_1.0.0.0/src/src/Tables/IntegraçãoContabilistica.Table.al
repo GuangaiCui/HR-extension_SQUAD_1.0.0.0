@@ -15,7 +15,7 @@ table 53113 "Integração Contabilistica"
         }
         field(3; "No. Empregado"; Code[20])
         {
-            TableRelation = Empregado;
+            TableRelation = Employee;
 
             trigger OnValidate()
             begin

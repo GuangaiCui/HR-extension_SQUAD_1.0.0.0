@@ -11,7 +11,7 @@ table 53105 "Histórico Ausências"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(2; "Entry No."; Integer)
         {

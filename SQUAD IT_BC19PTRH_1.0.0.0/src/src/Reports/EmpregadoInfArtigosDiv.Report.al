@@ -143,7 +143,7 @@ report 53059 "Empregado - Inf. Artigos Div"
     end;
 
     var
-        Employee: Record Empregado;
+        Employee: Record Employee;
         LastFieldNo: Integer;
         FooterPrinted: Boolean;
         MiscArticleFilter: Text[250];

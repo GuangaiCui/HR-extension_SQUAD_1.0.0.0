@@ -186,7 +186,7 @@ report 53091 "Formação por Acção"
         TabConfEmpresa: Record "Company Information";
         DataInicio: Date;
         DataFim: Date;
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         Nome: Text[250];
         TotalFormandos: Integer;
         "FORMAÇÃO_POR_ACÇÃOCaptionLbl": Label 'FORMAÇÃO POR ACÇÃO';

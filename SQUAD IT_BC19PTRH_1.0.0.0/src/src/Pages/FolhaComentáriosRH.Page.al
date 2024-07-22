@@ -47,7 +47,7 @@ page 53057 "Folha Comentários RH"
 
     var
         Text000: Label 'untitled';
-        Employee: Record Empregado;
+        Employee: Record Employee;
         EmployeeAbsence: Record "Ausência Empregado";
         EmployeeQualification: Record "Qualificação Empregado";
         EmployeeRelative: Record "Familiar Empregado";

@@ -8,7 +8,7 @@ table 53061 "Cat. Prof. QP Empregado"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(2; "No. Linha"; Integer)
         {
@@ -85,7 +85,7 @@ table 53061 "Cat. Prof. QP Empregado"
 
     var
         TabCatProfQPEmp: Record "Categoria Profissional QP";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         Pergunta: Text[200];
 }
 

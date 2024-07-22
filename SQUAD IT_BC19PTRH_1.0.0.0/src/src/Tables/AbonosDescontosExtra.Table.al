@@ -12,7 +12,7 @@ table 53074 "Abonos - Descontos Extra"
         field(2; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(3; Data; Date)
         {
@@ -157,10 +157,10 @@ table 53074 "Abonos - Descontos Extra"
 
     var
         TabAbonosDescExtra: Record "Abonos - Descontos Extra";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         TabRubrica: Record "Rubrica Salarial";
         ConfRH: Record "Config. Recursos Humanos";
         HumanResComment: Record "Linha Coment. Recurso Humano";
-        Employee: Record Empregado;
+        Employee: Record Employee;
 }
 

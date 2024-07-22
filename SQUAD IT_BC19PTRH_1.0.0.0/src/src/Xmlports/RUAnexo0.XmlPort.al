@@ -497,7 +497,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -517,7 +517,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -541,7 +541,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -562,7 +562,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -587,7 +587,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -608,7 +608,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -633,7 +633,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -654,7 +654,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -679,7 +679,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -699,7 +699,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -727,7 +727,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -748,7 +748,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -773,7 +773,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -795,7 +795,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -821,7 +821,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -843,7 +843,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -869,7 +869,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -891,7 +891,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -917,7 +917,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -938,7 +938,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -966,7 +966,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -987,7 +987,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -1012,7 +1012,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -1034,7 +1034,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -1060,7 +1060,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -1082,7 +1082,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -1108,7 +1108,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -1130,7 +1130,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -1156,7 +1156,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -1177,7 +1177,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -1205,7 +1205,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -1226,7 +1226,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -1251,7 +1251,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -1273,7 +1273,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -1299,7 +1299,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -1321,7 +1321,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -1347,7 +1347,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -1369,7 +1369,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -1395,7 +1395,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -1416,7 +1416,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Gender = rEmpregado.Gender::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -1445,7 +1445,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1475,7 +1475,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1508,7 +1508,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1537,7 +1537,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1570,7 +1570,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1599,7 +1599,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1632,7 +1632,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Genderderder, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1661,7 +1661,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1695,7 +1695,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1725,7 +1725,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1762,7 +1762,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1793,7 +1793,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1827,7 +1827,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1857,7 +1857,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1891,7 +1891,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1921,7 +1921,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1955,7 +1955,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -1985,7 +1985,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2020,7 +2020,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2051,7 +2051,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2089,7 +2089,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2120,7 +2120,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2154,7 +2154,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2184,7 +2184,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2218,7 +2218,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2248,7 +2248,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2282,7 +2282,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2312,7 +2312,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2347,7 +2347,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2378,7 +2378,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2416,7 +2416,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2447,7 +2447,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2481,7 +2481,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2511,7 +2511,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2545,7 +2545,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2575,7 +2575,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2609,7 +2609,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2639,7 +2639,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2674,7 +2674,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Male);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Male);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -2705,7 +2705,7 @@ xmlport 53035 "RU - Anexo 0"
                                         if rHabilitacao.FindSet then begin
                                             repeat
                                                 rEmpregado.Reset;
-                                                rEmpregado.SetRange(rEmpregado.Sex, rEmpregado.Sex::Female);
+                                                rEmpregado.SetRange(rEmpregado.Gender, rEmpregado.Gender::Female);
                                                 rEmpregado.SetRange(rEmpregado."Cód. Habilitações", rHabilitacao.Código);
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
@@ -3371,8 +3371,8 @@ xmlport 53035 "RU - Anexo 0"
                                                                 Qtd := rHistAusen.Quantity;
 
                                                             if rEmpregado.Get(rHistAusen."Employee No.") then begin
-                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + Qtd;
-                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + Qtd;
+                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + Qtd;
+                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + Qtd;
                                                             end;
 
 
@@ -3471,8 +3471,8 @@ xmlport 53035 "RU - Anexo 0"
 
                                                             if (rEmpregado.Get(rHistAusen."Employee No.")) and
                                                                (rEmpregado."Tipo Contribuinte" = rEmpregado."Tipo Contribuinte"::"Conta de Outrem") then begin
-                                                                if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + Qtd;
-                                                                if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + Qtd;
+                                                                if rEmpregado.Gender = rEmpregado.Gender::Female then vContM := vContM + Qtd;
+                                                                if rEmpregado.Gender = rEmpregado.Gender::Male then vContH := vContH + Qtd;
                                                             end;
 
 
@@ -3536,7 +3536,7 @@ xmlport 53035 "RU - Anexo 0"
     var
         rHistEmpregado: Record "Historico Empregado";
         rDestacamentos: Record Destacamentos;
-        rEmpregado: Record Empregado;
+        rEmpregado: Record Employee;
         rAssociacoes: Record "Associações Empregadores";
         rPerdAnomEmp: Record "Perdas e Anomalias Emp.";
         rHabilitacao: Record "Habilitação";

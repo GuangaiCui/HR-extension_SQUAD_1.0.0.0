@@ -283,7 +283,7 @@ report 53061 "Ausências por Motivo"
     end;
 
     var
-        Employee: Record Empregado;
+        Employee: Record Employee;
         HumanResSetup: Record "Config. Recursos Humanos";
         LastFieldNo: Integer;
         FooterPrinted: Boolean;

@@ -788,7 +788,7 @@ report 53040 "Processamento Sub. Natal"
                     {
                         ApplicationArea = All;
                         Caption = 'Nº Empregado a apagar';
-                        TableRelation = Empregado;
+                        TableRelation = Employee;
                     }
                     field(apagaTodosEmp; apagaTodosEmp)
                     {

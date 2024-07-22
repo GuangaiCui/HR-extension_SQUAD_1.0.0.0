@@ -43,7 +43,7 @@ report 53084 "Mapa Sindicato"
                 FiltroCodProc := "Periodos Processamento".GetFilter("Cód. Processamento");
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.";
@@ -335,7 +335,7 @@ report 53084 "Mapa Sindicato"
 
     var
         TabConfContab: Record "General Ledger Setup";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         TabConfEmpresa: Record "Company Information";
         TabHistLinhasMov: Record "Hist. Linhas Movs. Empregado";
         TabRubrica: Record "Rubrica Salarial";

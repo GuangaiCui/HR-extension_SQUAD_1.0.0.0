@@ -5,7 +5,7 @@ report 53105 "Copiar Ficha Empregado"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             dataitem("Endereço Alternativo"; "Endereço Alternativo")
             {
@@ -147,7 +147,7 @@ report 53105 "Copiar Ficha Empregado"
     end;
 
     var
-        NovoEmpregado: Record Empregado;
+        NovoEmpregado: Record Employee;
         HumanResSetup: Record "Config. Recursos Humanos";
         NovoEnderecoAlt: Record "Endereço Alternativo";
         NovoContratoEmp: Record "Contrato Empregado";

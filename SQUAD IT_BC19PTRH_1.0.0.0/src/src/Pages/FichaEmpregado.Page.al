@@ -6,7 +6,7 @@ page 53035 "Ficha Empregado"
 
     CaptionML = ENU = 'Employee Card', PTG = 'Ficha Empregado';
     PageType = Card;
-    SourceTable = Empregado;
+    SourceTable = Employee;
 
     layout
     {
@@ -78,7 +78,7 @@ page 53035 "Ficha Empregado"
                 {
                     ApplicationArea = All;
                 }
-                field("Country Code"; Rec."Country Code")
+                field("Country Code"; Rec."Country/Region Code")
                 {
                     ApplicationArea = All;
                 }
@@ -94,7 +94,7 @@ page 53035 "Ficha Empregado"
                 {
                     ApplicationArea = All;
                 }
-                field(Sex; Rec.Sex)
+                field(Sex; Rec.Gender)
                 {
                     ApplicationArea = All;
                 }
@@ -281,7 +281,7 @@ page 53035 "Ficha Empregado"
 
                     Importance = Promoted;
                 }
-                field(Naturalidade; Rec.Naturalidade)
+                field(Naturalidade; Rec."Birth Date")
                 {
                     ApplicationArea = All;
 
@@ -1228,7 +1228,7 @@ page 53035 "Ficha Empregado"
 
                     trigger OnAction()
                     var
-                        TabEmpregado: Record Empregado;
+                        TabEmpregado: Record Employee;
                     begin
 
                         //Actualiza o Valor Dia e Hora na Ficha do empregado tendo em conta todos os abonos
@@ -1288,7 +1288,7 @@ page 53035 "Ficha Empregado"
 
                     trigger OnAction()
                     var
-                        Emp: Record Empregado;
+                        Emp: Record Employee;
                     begin
                         Emp.SetRange(Emp."No.", Rec."No.");
                         rCriarFichaEmp.SetTableView(Emp);
@@ -1459,7 +1459,7 @@ page 53035 "Ficha Empregado"
     var
         [InDataSet]
         MapPointVisible: Boolean;
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         Text0001: Label 'Não existe em vigor nenhuma Rúbrica do tipo Vencimento Base para o empregado %1.';
         Text0002: Label 'Por favor preencha a data de admissão do novo empregado %1.';
         Text0003: Label 'Por favor preencha a data de fim do empregado %1.';
