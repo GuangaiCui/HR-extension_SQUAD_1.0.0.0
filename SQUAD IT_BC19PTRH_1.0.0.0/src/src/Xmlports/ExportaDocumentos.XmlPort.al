@@ -89,6 +89,10 @@ xmlport 53050 "Exporta Documentos"
                                 ReciboVenc.SaveAsPdf(FilePathAndName);
                                 Flag := true;
                                 Clear(DeclaracaoIRS);
+
+
+
+
                             end;
                         end;
 

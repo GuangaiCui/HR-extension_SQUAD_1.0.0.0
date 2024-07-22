@@ -2,6 +2,9 @@ codeunit 53039 "Gerar Relatório Único"
 {
 
     trigger OnRun()
+    var
+        TempBlob: Codeunit "Temp Blob";
+        inStream: InStream;
     begin
 
         if ConfRH.Get then;
@@ -10,27 +13,27 @@ codeunit 53039 "Gerar Relatório Único"
         for i := 1 to 6 do begin
             Clear(OutputFile);
             Clear(OutPutStream);
+            Clear(inStream);
 
 
             //IF i = 1 THEN FilePath := ConfRH."Caminho Exportação Rel. Único" + '\ru.xml';
 
             //JTP - Temoprário para testar os outros XMLPORTS
             if i = 1 then begin
-                FilePath := ConfRH."Caminho Exportação Rel. Único" + '\Zero.xml';
-                TempFilePath := ConfRH."Caminho Exportação Rel. Único" + '\Zero_tmp.xml';
+                FileName := 'Zero.xml';
+                //TempFilePath := ConfRH."Caminho Exportação Rel. Único" + '\Zero_tmp.xml';
             end;
-            if i = 2 then FilePath := ConfRH."Caminho Exportação Rel. Único" + '\QP.xml';
-            if i = 3 then FilePath := ConfRH."Caminho Exportação Rel. Único" + '\FEST.xml';
-            if i = 4 then FilePath := ConfRH."Caminho Exportação Rel. Único" + '\RFC.xml';
-            if i = 5 then FilePath := ConfRH."Caminho Exportação Rel. Único" + '\SST.xml';
-            if i = 6 then FilePath := ConfRH."Caminho Exportação Rel. Único" + '\GRV.xml';
+            if i = 2 then FileName := 'QP.xml';
+            if i = 3 then FileName := 'FEST.xml';
+            if i = 4 then FileName := 'RFC.xml';
+            if i = 5 then FileName := 'SST.xml';
+            if i = 6 then FileName := 'GRV.xml';
 
-            if TempFilePath <> '' then begin
-                if Exists(TempFilePath) then
-                    Erase(TempFilePath);
+            if FileName <> '' then begin
+                if ConfRH.CheckIsFileExists(ConfRH."Caminho Exportação Rel. Único", FileName) then
+                    ConfRH.DeleteFile(ConfRH."Caminho Exportação Rel. Único" + '/' + FileName);
 
-                OutputFile.Create(TempFilePath);
-                OutputFile.CreateOutStream(OutPutStream);
+                TempBlob.CreateOutStream(OutPutStream);
 
                 //JTP - 2022/05/10 - Estava comentado no CPA - dimuídos os i's
                 //if i = 1 then
@@ -39,30 +42,33 @@ codeunit 53039 "Gerar Relatório Único"
                 //JTP - Temporário para testar os outros XMLPORTS
                 if i = 1 then begin
                     XMLPORT.Export(XMLPORT::"RU - Anexo 0", OutPutStream);
-                    OutputFile.close;
-                    ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_zero');
+                    inStream := TempBlob.CreateInStream();
+                    ConfRH.CreateFileFromInStream(ConfRH."Caminho Exportação Rel. Único" + '/' + FileName, inStream);
+                    //ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_zero');
 
                     //Clean Empty tags //
-                    XmlDoc := XmlDoc.XmlDocument();
-                    XMLDoc.load(FilePath);
+                    //   XmlDoc := XmlDoc.XmlDocument();
+                    //   XMLDoc.load(FilePath);
                 end;
                 if i = 2 then begin
                     XMLPORT.Export(XMLPORT::"RU - Anexo A - QP", OutPutStream);
-                    OutputFile.Close;
+                    inStream := TempBlob.CreateInStream();
+                    ConfRH.CreateFileFromInStream(ConfRH."Caminho Exportação Rel. Único" + '/' + FileName, inStream);
                     //ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_qp');
 
                     //Clean Empty tags //
-                    XmlDoc := XmlDoc.XmlDocument();
-                    XMLDoc.load(TempFilePath);
+                    //  XmlDoc := XmlDoc.XmlDocument();
+                    //  XMLDoc.load(TempFilePath);
                 end;
                 if i = 3 then begin
                     XMLPORT.Export(XMLPORT::"RU - Anexo B - FEST", OutPutStream);
-                    OutputFile.Close;
-                    ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_fest');
+                    inStream := TempBlob.CreateInStream();
+                    ConfRH.CreateFileFromInStream(ConfRH."Caminho Exportação Rel. Único" + '/' + FileName, inStream);
+                    ////ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_fest');
 
                     //Clean Empty tags //
-                    XmlDoc := XmlDoc.XmlDocument();
-                    XMLDoc.load(FilePath);
+                    //XmlDoc := XmlDoc.XmlDocument();
+                    // XMLDoc.load(FilePath);
                 end;
                 if i = 4 then begin
                     //Normatica 2013.04.18 - para limpar as acções do ano anterior
@@ -70,44 +76,47 @@ codeunit 53039 "Gerar Relatório Único"
                     rAccoesFormacao.ModifyAll(rAccoesFormacao."Temp No. Accao", 0);
                     //Normatica 2013.04.18 - fim
                     XMLPORT.Export(XMLPORT::"RU - Anexo C - RFC", OutPutStream);
-                    OutputFile.Close;
-                    ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.msss.gov.pt/sguri/ru/anexo_rfc');
+                    inStream := TempBlob.CreateInStream();
+                    ConfRH.CreateFileFromInStream(ConfRH."Caminho Exportação Rel. Único" + '/' + FileName, inStream);
+                    //ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.msss.gov.pt/sguri/ru/anexo_rfc');
 
                     //Clean Empty tags //
-                    XmlDoc := XmlDoc.XmlDocument();
-                    XMLDoc.load(FilePath);
+                    // XmlDoc := XmlDoc.XmlDocument();
+                    // XMLDoc.load(FilePath);
                 end;
                 if i = 5 then begin
                     XMLPORT.Export(XMLPORT::"RU - Anexo D - SST", OutPutStream);
-                    OutputFile.Close;
+                    inStream := TempBlob.CreateInStream();
+                    ConfRH.CreateFileFromInStream(ConfRH."Caminho Exportação Rel. Único" + '/' + FileName, inStream);
 
-                    ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_sst');
+                    // ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_sst');
 
                     //Clean Empty tags //
-                    XmlDoc := XmlDoc.XmlDocument();
-                    XMLDoc.load(FilePath);
+                    //XmlDoc := XmlDoc.XmlDocument();
+                    //XMLDoc.load(FilePath);
                 end;
                 if i = 6 then begin
                     XMLPORT.Export(XMLPORT::"RU - Anexo E - GRV", OutPutStream);
-                    OutputFile.Close;
+                    inStream := TempBlob.CreateInStream();
+                    ConfRH.CreateFileFromInStream(ConfRH."Caminho Exportação Rel. Único" + '/' + FileName, inStream);
 
-                    ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_grv');
+                    //ProcessAnexo(TempFilePath, FilePath, 'http://www.gep.mtss.gov.pt/sguri/ru/anexo_grv');
 
                     //Clean Empty tags //
-                    XmlDoc := XmlDoc.XmlDocument();
-                    XMLDoc.load(FilePath);
+                    // XmlDoc := XmlDoc.XmlDocument();
+                    // XMLDoc.load(FilePath);
 
                 end;
 
-                EmptyElements := xmlDoc.SelectNodes('//*[not(node())]');
+                //    EmptyElements := xmlDoc.SelectNodes('//*[not(node())]');
 
-                for j := EmptyElements.Count - 1 downto 0 do begin
-                    CurrNode := EmptyElements.Item(j);
-                    CurrNode.ParentNode.RemoveChild(CurrNode);
+                //   for j := EmptyElements.Count - 1 downto 0 do begin
+                //         CurrNode := EmptyElements.Item(j);
+                //         CurrNode.ParentNode.RemoveChild(CurrNode);
 
-                end;
+                //      end;
 
-                xmlDoc.Save(FilePath);
+                //xmlDoc.Save(FilePath);
 
             end;
 
@@ -124,19 +133,20 @@ codeunit 53039 "Gerar Relatório Único"
         OutputFile: File;
         OutPutStream: OutStream;
         TempFilePath: Text[250];
-        FilePath: Text[250];
-        Filename: Text[250];
+        FileName: Text[250];
         InputStream: InStream;
         i: Integer;
         j: Integer;
         Text0001: Label 'Relatório Único';
         Text0002: Label 'Os ficheiros foram criados com sucesso.';
         rAccoesFormacao: Record "Acções Formação";
-        XmlDoc: DotNet SystemXmlDocument;
-        CurrNode: DotNet SystemXmlNode;
-        EmptyElements: DotNet SystemXmlNodeList;
+    //XmlDoc: DotNet SystemXmlDocument;
+    //CurrNode: DotNet SystemXmlNode;
+    //EmptyElements: DotNet SystemXmlNodeList;
 
-    procedure ProcessAnexo(TempFilePath: Text[250]; FilePath: Text[250]; NameSpace: Text)
+
+    //VC_MIG.S
+    /*procedure ProcessAnexo(TempFilePath: Text[250]; FilePath: Text[250]; NameSpace: Text)
 
     var
         InPutFile: File;
@@ -175,6 +185,6 @@ codeunit 53039 "Gerar Relatório Único"
 
     end;
 
-
+*/
 }
 

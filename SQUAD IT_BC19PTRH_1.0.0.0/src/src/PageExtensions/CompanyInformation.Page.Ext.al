@@ -7,7 +7,7 @@ pageextension 53035 CompanyInfoRH extends "Company Information"
             group("Single Report")
 
             {
-                CaptionML = ENU = 'Single Report', PTG = 'Relatório Único';
+                Caption = 'Single Report';
 
                 field("Social Security No."; Rec."Social Security No.")
                 {

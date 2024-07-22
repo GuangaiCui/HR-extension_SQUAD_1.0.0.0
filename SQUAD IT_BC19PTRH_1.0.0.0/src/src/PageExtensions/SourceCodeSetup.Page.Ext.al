@@ -7,7 +7,7 @@ pageextension 53039 SourceCodeSetupRH extends "Source Code Setup"
             group("Human Resources")
 
             {
-                CaptionML = ENU = 'Human Resources', PTG = 'Recursos Humanos';
+                Caption = 'Human Resources';
 
                 field("Integração Vencimentos"; Rec."Integração Vencimentos")
                 {

@@ -260,7 +260,6 @@ page 53098 "Ficha Rubrica Salarial"
         TabHisLinhasMovEmp: Record "Hist. Linhas Movs. Empregado";
         Text0004: Label 'Tem a certeza que quer alterar uma rúbrica que já foi usada num processamento fechado.';
         Text0005: Label 'Não pode apagar uma rúbrica que já tenha sido usada num processamento fechado.';
-        [InDataSet]
         RubricaSalarialLinhasEditable: Boolean;
         Text19055726: Label 'Códigos NATREM:';
 
