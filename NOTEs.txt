@@ -1,0 +1,2 @@
+1. HR extension no. starts from 53035
+2. Employee Ext - GerarContrato() is not called anywhere
