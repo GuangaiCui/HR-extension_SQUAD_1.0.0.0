@@ -11,7 +11,7 @@ table 53038 "Qualificação Empregado"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(2; "Line No."; Integer)
         {
@@ -147,6 +147,6 @@ table 53038 "Qualificação Empregado"
     var
         Text000: Label 'You cannot delete employee qualification information if there are comments associated with it.';
         Qualification: Record "Qualificação";
-        Employee: Record Empregado;
+        Employee: Record Employee;
 }
 

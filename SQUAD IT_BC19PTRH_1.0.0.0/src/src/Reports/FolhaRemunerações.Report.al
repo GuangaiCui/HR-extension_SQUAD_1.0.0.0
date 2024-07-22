@@ -42,7 +42,7 @@ report 53075 "Folha Remunerações"
                     SetRange("Data Fim Processamento", DataFim);
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.", "Tipo Empregado";

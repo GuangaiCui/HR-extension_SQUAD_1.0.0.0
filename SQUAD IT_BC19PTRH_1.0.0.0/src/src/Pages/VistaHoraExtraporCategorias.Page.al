@@ -7,7 +7,7 @@ page 53092 "Vista HoraExtra por Categorias"
     InsertAllowed = false;
     LinksAllowed = false;
     PageType = Card;
-    SourceTable = Empregado;
+    sourcetable = Employee;
     UsageCategory = Lists;
     ApplicationArea = HumanResourcesAppArea;
 
@@ -23,7 +23,7 @@ page 53092 "Vista HoraExtra por Categorias"
                     ApplicationArea = All;
 
                     Caption = 'Employee No. Filter';
-                    TableRelation = Empregado;
+                    TableRelation = Employee;
                 }
             }
             group("Opções de Matriz")

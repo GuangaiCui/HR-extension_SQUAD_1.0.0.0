@@ -9,7 +9,7 @@ report 53060 "Ausência por Empregado"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.";

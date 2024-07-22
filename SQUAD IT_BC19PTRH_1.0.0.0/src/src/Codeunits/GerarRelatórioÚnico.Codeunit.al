@@ -1,4 +1,5 @@
 codeunit 53039 "Gerar Relatório Único"
+//"Generate Single Report"
 {
 
     trigger OnRun()
@@ -19,6 +20,7 @@ codeunit 53039 "Gerar Relatório Único"
             //IF i = 1 THEN FilePath := ConfRH."Caminho Exportação Rel. Único" + '\ru.xml';
 
             //JTP - Temoprário para testar os outros XMLPORTS
+            //Suitable for testing other XMLPORTS 适合测试其他 XMLPORTS
             if i = 1 then begin
                 FileName := 'Zero.xml';
                 //TempFilePath := ConfRH."Caminho Exportação Rel. Único" + '\Zero_tmp.xml';
@@ -157,7 +159,9 @@ codeunit 53039 "Gerar Relatório Único"
     begin
         if TempFilePath <> '' then begin
             InPutFile.TextMode := true;
+            //Sets whether a file should be opened as an ASCII file or a binary file
             InPutFile.WriteMode := false;
+            //Use this method before you use OPEN method (File)] to set or test whether you can write to a file in later calls.
             if InPutFile.open(TempFilePath) then begin
 
                 if FilePath <> '' then begin

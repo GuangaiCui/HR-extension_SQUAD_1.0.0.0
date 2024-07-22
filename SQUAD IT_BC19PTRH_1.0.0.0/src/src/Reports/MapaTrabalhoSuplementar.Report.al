@@ -238,7 +238,7 @@ report 53069 "Mapa Trabalho Suplementar"
     end;
 
     var
-        Employee: Record Empregado;
+        Employee: Record Employee;
         LastFieldNo: Integer;
         FooterPrinted: Boolean;
         HoraExtraFiltro: Text[250];

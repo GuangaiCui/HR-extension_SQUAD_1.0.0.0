@@ -8,7 +8,7 @@ page 53118 "Vista Férias Empregados"
     LinksAllowed = false;
     PageType = Card;
     SaveValues = true;
-    SourceTable = Empregado;
+    SourceTable = Employee;
     UsageCategory = Lists;
     ApplicationArea = HumanResourcesAppArea;
 

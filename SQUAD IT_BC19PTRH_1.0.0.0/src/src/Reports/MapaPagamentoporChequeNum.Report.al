@@ -66,7 +66,7 @@ report 53083 "Mapa Pagamento por Cheque/Num"
                 end;
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("No.") ORDER(Ascending);
             RequestFilterFields = "No.";
@@ -395,7 +395,7 @@ report 53083 "Mapa Pagamento por Cheque/Num"
     var
         TabTempFichTexto: Record "Tabela Temp Ficheiros Texto";
         BankAccount: Record "Bank Account";
-        Employee: Record Empregado;
+        Employee: Record Employee;
         Datacab: Date;
         TabConfEmpresa: Record "Company Information";
         FiltroDataInicProc: Text[1024];

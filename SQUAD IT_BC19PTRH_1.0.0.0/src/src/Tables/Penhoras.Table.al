@@ -7,7 +7,7 @@ table 53103 Penhoras
         {
             Caption = 'Employee No.';
             DataClassification = ToBeClassified;
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(2; "Garnishmen No."; Code[50])
         {

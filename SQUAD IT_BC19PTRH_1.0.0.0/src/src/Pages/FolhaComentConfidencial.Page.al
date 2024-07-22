@@ -47,7 +47,7 @@ page 53069 "Folha Coment. Confidencial"
 
     var
         Text000: Label 'untitled';
-        Employee: Record Empregado;
+        Employee: Record Employee;
         ConfidentialInfo: Record "Informação Confidencial";
 
 

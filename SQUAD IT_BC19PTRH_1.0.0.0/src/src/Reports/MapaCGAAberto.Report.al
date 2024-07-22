@@ -67,7 +67,7 @@ report 53052 "Mapa CGA - Aberto"
             {
             }
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("No.") WHERE("Subsccritor CGA" = CONST(true));
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
@@ -867,7 +867,7 @@ report 53052 "Mapa CGA - Aberto"
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         TabRubricaEmpregado: Record "Rubrica Salarial Empregado";
         TabHistMovEmp: Record "Linhas Movs. Empregado";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         TabDisCC: Record "Distribuição Custos";
         NhorasSem: Decimal;
         TabHistCabMovEmp: Record "Cab. Movs. Empregado";

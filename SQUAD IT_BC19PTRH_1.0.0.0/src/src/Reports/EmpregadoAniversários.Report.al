@@ -17,7 +17,7 @@ report 53063 "Empregado - Aniversários"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.";
             column(FORMAT_TODAY_0_4_; Format(Today, 0, 4))

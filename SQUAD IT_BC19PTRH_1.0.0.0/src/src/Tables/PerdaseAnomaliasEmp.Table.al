@@ -6,7 +6,7 @@ table 53086 "Perdas e Anomalias Emp."
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(2; "No. Linha"; Integer)
         {

@@ -8,7 +8,7 @@ table 53097 "Formação - Período Referência"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado."No.";
+            TableRelation = Employee."No.";
         }
         field(2; "Cód. Acção"; Code[10])
         {

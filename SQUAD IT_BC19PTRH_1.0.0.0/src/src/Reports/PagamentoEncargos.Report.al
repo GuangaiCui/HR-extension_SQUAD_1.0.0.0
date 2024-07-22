@@ -12,7 +12,7 @@ report 53077 "Pagamento Encargos"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.", "Tipo Contribuinte";
 

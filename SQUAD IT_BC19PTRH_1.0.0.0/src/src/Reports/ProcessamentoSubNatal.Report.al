@@ -53,7 +53,7 @@ report 53040 "Processamento Sub. Natal"
                 SetFilter("Cód. Processamento", PeriodoCode);
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = WHERE(Status = CONST(Active), "Tipo Contribuinte" = FILTER(<> "Trabalhador Independente"));
             RequestFilterFields = "No.", "Tipo Contribuinte";
@@ -455,7 +455,7 @@ report 53040 "Processamento Sub. Natal"
                         until TempRubricaEmpregado.Next = 0;
                 end;
             }
-            dataitem(Empregado2; Empregado)
+            dataitem(Empregado2; Employee)
             {
                 DataItemLink = "No." = FIELD("No.");
                 DataItemTableView = SORTING("No.");
@@ -788,7 +788,7 @@ report 53040 "Processamento Sub. Natal"
                     {
                         ApplicationArea = All;
                         Caption = 'Nº Empregado a apagar';
-                        TableRelation = Empregado;
+                        TableRelation = Employee;
                     }
                     field(apagaTodosEmp; apagaTodosEmp)
                     {

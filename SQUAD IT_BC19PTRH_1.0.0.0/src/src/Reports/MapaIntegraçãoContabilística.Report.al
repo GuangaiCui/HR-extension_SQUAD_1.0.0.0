@@ -1016,7 +1016,7 @@ report 53070 "Mapa Integração Contabilística"
         Text0012: Label 'Não pode agrupar as contas balanço por centro de custo se não está a usar a Distribuição p/ Centros Custo.';
         TabTempIntegracaoContab2: Record "Integração Contabilistica" temporary;
         AgruparContasPGCC: Boolean;
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         LastFieldNo: Integer;
         FooterPrinted: Boolean;
         NumDocDif: Boolean;

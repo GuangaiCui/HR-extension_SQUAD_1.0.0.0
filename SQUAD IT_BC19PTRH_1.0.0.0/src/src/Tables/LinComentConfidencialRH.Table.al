@@ -16,7 +16,7 @@ table 53054 "Lin. Coment. Confidencial RH"
         field(2; "No."; Code[20])
         {
             Caption = 'No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(3; "Code"; Code[10])
         {

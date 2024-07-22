@@ -155,7 +155,7 @@ xmlport 53042 "RU - Anexo F - IPS"
                             }
                             textelement(prestadores)
                             {
-                                tableelement(empregado; Empregado)
+                                tableelement(empregado; Employee)
                                 {
                                     XmlName = 'prestador';
                                     SourceTableView = WHERE("Tipo Contribuinte" = CONST("Trabalhador Independente"));
@@ -293,13 +293,13 @@ xmlport 53042 "RU - Anexo F - IPS"
     end;
 
     var
-        rEmpregado: Record Empregado;
+        rEmpregado: Record Employee;
         rCompInf: Record "Company Information";
         rContratoEmpregado: Record "Contrato Empregado";
         rContrato: Record "Contrato Trabalho";
         rHistHorasExtra: Record "Histórico Horas Extra";
         rHorasExtra: Record "Tipos Horas Extra";
-        TempEmpregado: Record Empregado temporary;
+        TempEmpregado: Record Employee temporary;
         rConfRH: Record "Config. Recursos Humanos";
         optSit_prof: Option ,"1","2","3","4","8";
         vAno: Integer;

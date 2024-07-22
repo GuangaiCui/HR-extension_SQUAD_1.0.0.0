@@ -10,7 +10,7 @@ report 53094 "Declarações RH"
 
     dataset
     {
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.";
 
@@ -194,7 +194,8 @@ report 53094 "Declarações RH"
         TabRubrica: Record "Rubrica Salarial";
         VencimentoBase: Decimal;
         wdApp: DotNet WordApplicationClass;
-        environment: DotNet BCTestEnvironment;
+        //environment: DotNet BCTestEnvironment;
+        //CGA SQD commented dotnet
         //varTempBLOB: Record TempBlob;
         varTempBLOB: Codeunit "Temp Blob";
         FILEMGT: Codeunit "File Management";

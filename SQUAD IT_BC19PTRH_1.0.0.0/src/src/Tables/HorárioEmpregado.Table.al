@@ -12,7 +12,7 @@ table 53066 "Horário Empregado"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
         }
         field(2; "No. Linha"; Integer)
         {
@@ -115,7 +115,7 @@ table 53066 "Horário Empregado"
 
     var
         "TabHorário": Record "Horário RH";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         Pergunta: Text[200];
 }
 

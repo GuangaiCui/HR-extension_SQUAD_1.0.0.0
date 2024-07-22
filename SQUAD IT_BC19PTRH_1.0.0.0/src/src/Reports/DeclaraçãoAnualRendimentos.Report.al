@@ -20,7 +20,7 @@ report 53054 "Declaração Anual Rendimentos"
         {
             DataItemTableView = SORTING("Primary Key");
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.";

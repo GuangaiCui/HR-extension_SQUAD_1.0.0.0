@@ -98,7 +98,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
             dataitem("Regime Seg. Social"; "Regime Seg. Social")
             {
                 DataItemTableView = SORTING("Código");
-                dataitem(Empregado; Empregado)
+                dataitem(Empregado; Employee)
                 {
                     DataItemLink = "Cod. Regime SS" = FIELD("Código");
                     DataItemTableView = SORTING(Estabelecimento, "Cod. Regime SS", "No.") WHERE("Subscritor SS" = CONST(true));

@@ -47,7 +47,7 @@ table 53044 Sindicato
         }
         field(7; "No. of Members Employed"; Integer)
         {
-            CalcFormula = Count(Empregado WHERE(Status = FILTER(<> Terminated),
+            CalcFormula = Count(Employee WHERE(Status = FILTER(<> Terminated),
                                                  "Union Code" = FIELD(Code)));
             Caption = 'No. of Members Employed';
             Editable = false;

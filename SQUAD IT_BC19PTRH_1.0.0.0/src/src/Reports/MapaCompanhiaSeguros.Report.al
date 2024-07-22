@@ -926,7 +926,7 @@ report 53093 "Mapa Companhia Seguros"
         LastFieldNo: Integer;
         FooterPrinted: Boolean;
         TabConfContab: Record "General Ledger Setup";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         TabConfEmpresa: Record "Company Information";
         Total: Decimal;
         TotalGlobal: Decimal;

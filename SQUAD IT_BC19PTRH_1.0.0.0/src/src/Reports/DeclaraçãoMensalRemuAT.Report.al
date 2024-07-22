@@ -798,11 +798,11 @@ report 53087 "Declaração Mensal Remu. AT"
         ImportanciasRetidas: Decimal;
         TotalImpRetidas: Decimal;
         AuxEmp: Code[20];
-        Empregado: Record Empregado;
+        Empregado: Record Employee;
         TotalRegistos: Integer;
         AuxTipoRend: Integer;
         varLimite: Decimal;
-        TabTempEmpregado: Record Empregado temporary;
+        TabTempEmpregado: Record Employee temporary;
         Desconto: Decimal;
         TotalDescontos: Decimal;
         ValorSindicato: Decimal;

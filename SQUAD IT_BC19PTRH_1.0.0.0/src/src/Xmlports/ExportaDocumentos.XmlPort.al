@@ -10,7 +10,7 @@ xmlport 53050 "Exporta Documentos"
         {
             MaxOccurs = Once;
             MinOccurs = Once;
-            tableelement(Empregado; Empregado)
+            tableelement(Empregado; Employee)
             {
                 MinOccurs = Zero;
                 XmlName = 'EmployeeDocumentType';

@@ -11,7 +11,7 @@ table 53083 "Acidentes de Trabalho"
         field(4; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado;
+            TableRelation = Employee;
 
             trigger OnValidate()
             begin
@@ -90,7 +90,7 @@ table 53083 "Acidentes de Trabalho"
     }
 
     var
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         TabLocalidades: Record "Cód. Freguesia/Conc/Distrito";
 }
 

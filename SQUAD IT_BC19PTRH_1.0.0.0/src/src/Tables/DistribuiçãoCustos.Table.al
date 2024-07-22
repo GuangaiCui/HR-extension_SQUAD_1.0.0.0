@@ -6,7 +6,7 @@ table 53099 "Distribuição Custos"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Empregado."No.";
+            TableRelation = Employee."No.";
 
             trigger OnValidate()
             begin
@@ -142,7 +142,7 @@ table 53099 "Distribuição Custos"
     }
 
     var
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         rConfigRecursosHumanos: Record "Config. Recursos Humanos";
         DimMgt: Codeunit DimensionManagement;
 

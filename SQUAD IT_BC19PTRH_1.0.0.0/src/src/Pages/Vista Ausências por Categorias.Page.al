@@ -7,7 +7,7 @@ page 53066 "Vista Ausências por Categorias"
     InsertAllowed = false;
     LinksAllowed = false;
     PageType = Card;
-    SourceTable = Empregado;
+    SourceTable = Employee;
     UsageCategory = Lists;
     ApplicationArea = HumanResourcesAppArea;
 
@@ -23,7 +23,7 @@ page 53066 "Vista Ausências por Categorias"
                     ApplicationArea = All;
 
                     Caption = 'Employee No. Filter';
-                    TableRelation = Empregado;
+                    TableRelation = Employee;
                 }
             }
             group("Opções de Matriz")

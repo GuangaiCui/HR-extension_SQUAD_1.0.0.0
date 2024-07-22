@@ -50,7 +50,7 @@ report 53071 "Mapa Fundos Compensação Trab."
                 varRubrica[Conta] := "Rubrica Salarial".Código;
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             RequestFilterFields = "No.";
             column(FORMAT_TODAY_0_4_; Format(Today, 0, 4))
@@ -242,7 +242,7 @@ report 53071 "Mapa Fundos Compensação Trab."
 
     var
         TabConfEmpresa: Record "Company Information";
-        recEmpregado: Record Empregado;
+        recEmpregado: Record Employee;
         Text0001: Label 'Escolha um processamento já fechado.';
         HistLinhaMovEmp: Record "Hist. Linhas Movs. Empregado";
         FiltroDataInicProc: Text[100];

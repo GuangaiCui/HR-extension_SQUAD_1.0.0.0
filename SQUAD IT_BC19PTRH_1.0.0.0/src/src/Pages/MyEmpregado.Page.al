@@ -2,7 +2,7 @@
 page 53171 MyEmpregado
 {
     PageType = ListPart;
-    SourceTable = Empregado;
+    SourceTable = Employee;
 
     layout
     {
@@ -50,7 +50,7 @@ page 53171 MyEmpregado
                     ApplicationArea = All;
 
                 }
-                field(Sex; Rec.Sex)
+                field(Sex; Rec.Gender)
                 {
                     ApplicationArea = All;
 
@@ -83,7 +83,7 @@ page 53171 MyEmpregado
     }
 
     var
-        Empregado: Record Empregado;
+        Empregado: Record Employee;
 }
 
 #pragma implicitwith restore

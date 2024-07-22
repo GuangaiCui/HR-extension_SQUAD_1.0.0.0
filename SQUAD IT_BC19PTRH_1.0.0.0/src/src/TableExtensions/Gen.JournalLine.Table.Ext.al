@@ -6,7 +6,7 @@ tableextension 53037 GenJournalLineRH extends "Gen. Journal Line"
         field(53035; "No. Empregado"; Code[20])
         {
             CaptionML = PTG = 'No. Empregado';
-            TableRelation = "Empregado";
+            TableRelation = "Employee";
         }
 
         //HR10.0- Pagamento
@@ -17,7 +17,7 @@ tableextension 53037 GenJournalLineRH extends "Gen. Journal Line"
         field(53037; "Cód. Processamento"; Code[20])
         {
             CaptionML = PTG = 'Cód. Processamento';
-            TableRelation = "Empregado";
+            TableRelation = "Employee";
         }
 
         //HR10.0

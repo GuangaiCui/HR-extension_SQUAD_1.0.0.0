@@ -22,7 +22,7 @@ page 53112 "Preparação Fecho Contas"
                     ApplicationArea = All;
 
                     Caption = 'Empregado';
-                    TableRelation = Empregado;
+                    TableRelation = Employee;
 
                     trigger OnValidate()
                     begin
@@ -399,7 +399,7 @@ page 53112 "Preparação Fecho Contas"
         FeriasTotal: Integer;
         TabContratoEmp: Record "Contrato Empregado";
         TabFeriasEmp: Record "Férias Empregados";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
         AbonosDescExtra: Record "Abonos - Descontos Extra";
         TabRubricaEmp: Record "Rubrica Salarial Empregado";
         TabRubSal: Record "Rubrica Salarial";

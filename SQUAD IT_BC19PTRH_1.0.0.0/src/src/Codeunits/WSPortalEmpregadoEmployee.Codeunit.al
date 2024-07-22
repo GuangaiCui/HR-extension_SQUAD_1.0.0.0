@@ -7,7 +7,7 @@ codeunit 53040 "WS Portal Empregado Employee"
 
     var
         XmlEmp2: XMLport "Exporta Empregados";
-        Empregado: Record Empregado;
+        Empregado: Record Employee;
         xmlTabelas: XMLport "Tabelas Auxiliares";
 
 
@@ -18,7 +18,7 @@ codeunit 53040 "WS Portal Empregado Employee"
 
     procedure GetEmployeeInformation(var XMLEmpExp: XMLport "Exporta Empregados"; employeeNumber: Code[20])
     var
-        Empregado: Record Empregado;
+        Empregado: Record Employee;
     begin
         if employeeNumber <> '' then
             Empregado.SetFilter(Empregado."No.", employeeNumber);

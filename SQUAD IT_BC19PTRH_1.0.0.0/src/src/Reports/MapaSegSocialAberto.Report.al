@@ -146,7 +146,7 @@ report 53045 "Mapa Seg. Social - Aberto"
             dataitem("Regime Seg. Social"; "Regime Seg. Social")
             {
                 DataItemTableView = SORTING("Código");
-                dataitem(Empregado; Empregado)
+                dataitem(Empregado; Employee)
                 {
                     DataItemLink = "Cod. Regime SS" = FIELD("Código");
                     DataItemTableView = SORTING(Estabelecimento, "Cod. Regime SS", "No.") WHERE("Subscritor SS" = CONST(true));
@@ -610,7 +610,7 @@ report 53045 "Mapa Seg. Social - Aberto"
 
             trigger OnAfterGetRecord()
             var
-                lEmpregado: Record Empregado;
+                lEmpregado: Record Employee;
             begin
                 lEmpregado.Reset;
                 lEmpregado.SetRange(lEmpregado."No. Segurança Social", CopyStr("Tabela Temp Ficheiros Texto".Texto1, 18, 11));

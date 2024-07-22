@@ -137,7 +137,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
     var
         Text0001: Label 'Este Abono-Desconto Extra já foi processado, será necessário refazer o processamento para este empregado.';
-        Employee: Record Empregado;
+        Employee: Record Employee;
         Flag: Boolean;
         AbonDescExtra: Record "Abonos - Descontos Extra";
 }

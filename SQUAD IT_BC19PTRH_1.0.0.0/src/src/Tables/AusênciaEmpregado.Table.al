@@ -13,7 +13,7 @@ table 53042 "Ausência Empregado"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Empregado;
+            TableRelation = Employee;
 
             trigger OnValidate()
             begin
@@ -225,7 +225,7 @@ table 53042 "Ausência Empregado"
 
     var
         CauseOfAbsence: Record "Absence Reason";
-        Employee: Record Empregado;
+        Employee: Record Employee;
         EmployeeAbsence: Record "Ausência Empregado";
         HumanResUnitOfMeasure: Record "Unid. Medida Recursos Humanos";
         Text0001: Label 'tem que ser maior ou igual ';

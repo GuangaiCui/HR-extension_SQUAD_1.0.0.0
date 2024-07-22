@@ -15,7 +15,7 @@ table 53124 "Linhas Acções Médicas"
         field(3; "Employee No."; Code[20])
         {
             Caption = 'Nº Empregado';
-            TableRelation = Empregado;
+            TableRelation = Employee;
 
             trigger OnValidate()
             begin
@@ -66,6 +66,6 @@ table 53124 "Linhas Acções Médicas"
 
     var
         RUTabelas: Record "RU - Tabelas";
-        TabEmpregado: Record Empregado;
+        TabEmpregado: Record Employee;
 }
 

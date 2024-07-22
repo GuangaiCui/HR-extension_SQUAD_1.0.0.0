@@ -157,7 +157,7 @@ report 53056 "Mapa Resumo Processamento"
                     Error(Text0004);
             end;
         }
-        dataitem(Empregado; Empregado)
+        dataitem(Empregado; Employee)
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.", "Tipo Contribuinte";

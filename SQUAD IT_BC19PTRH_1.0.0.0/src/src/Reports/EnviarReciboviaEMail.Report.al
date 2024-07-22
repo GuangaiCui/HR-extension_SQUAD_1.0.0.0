@@ -183,7 +183,7 @@ report 53100 "Enviar Recibo via EMail"
     var
         RReciboVencimentos: Report "Recibo Vencimentos A4";
         PeriodosProce: Record "Periodos Processamento";
-        Empregado: Record Empregado;
+        Empregado: Record Employee;
         ReportID: Integer;
         "Object": Record "Object";
         FileDirectory: Text;
