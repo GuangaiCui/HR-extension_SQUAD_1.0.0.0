@@ -1,66 +1,71 @@
 pageextension 53040 "Employee Card Ext" extends "Employee Card"
 {
+    //TODO: Check the order of fields(group etc.)
     layout
     {
-        addafter()
+        addafter("No.")
         {
-            group(Geral)
+            field(Name; Rec.Name)
             {
-                CaptionML = ENU = 'General', PTG = 'Geral';
-                field(Name; Rec.Name)
-                {
-                    ApplicationArea = All;
-                    Style = Strong;
-                    StyleExpr = TRUE;
-                }
-                field(Locality; Rec.Locality)
-                {
-                    ApplicationArea = All;
-                }
-                field("Cod. Freguesia"; Rec."Cod. Freguesia")
-                {
-                    ApplicationArea = All;
-                }
-                field(Freguesia; Rec.Freguesia)
-                {
-                    ApplicationArea = All;
-                }
-                field("Tipo Empregado"; Rec."Tipo Empregado")
-                {
-                    ApplicationArea = All;
-                }
-                field(Sex; Rec.Gender)
-                {
-                    ApplicationArea = All;
-                }
-                field("No. antigo do Empregado"; Rec."No. antigo do Empregado")
-                {
-                    ApplicationArea = All;
-                }
-                field("NAV User Id"; Rec."NAV User Id")
-                {
-                    ApplicationArea = All;
-                }
-                field(Docente; Rec.Docente)
-                {
-                    ApplicationArea = All;
-                }
-                field("Nº Professor"; Rec."Nº Professor")
-                {
-                    ApplicationArea = All;
-                }
-                field("Exportar para o MISI"; Rec."Exportar para o MISI")
-                {
-                    ApplicationArea = All;
-                }
-                field(Intern; Rec.Intern)
-                {
-                    ApplicationArea = All;
-                }
-                field("Orgão Social"; Rec."Orgão Social")
-                {
-                    ApplicationArea = All;
-                }
+                ApplicationArea = All;
+                Style = Strong;
+                StyleExpr = TRUE;
+            }
+        }
+        addafter("Address 2")
+        {
+            field(Locality; Rec.Locality)
+            {
+                ApplicationArea = All;
+            }
+        }
+        addafter(City)
+        {
+            field("Cod. Freguesia"; Rec."Cod. Freguesia")
+            {
+                ApplicationArea = All;
+            }
+            field(Freguesia; Rec.Freguesia)
+            {
+                ApplicationArea = All;
+            }
+        }
+        addafter("Job Title")
+        {
+            field("Tipo Empregado"; Rec."Tipo Empregado")
+            {
+                ApplicationArea = All;
+            }
+        }
+        addafter("Last Date Modified")
+        {
+            field("No. antigo do Empregado"; Rec."No. antigo do Empregado")
+            {
+                ApplicationArea = All;
+            }
+            field("NAV User Id"; Rec."NAV User Id")
+            {
+                ApplicationArea = All;
+            }
+            field(Docente; Rec.Docente)
+            {
+                ApplicationArea = All;
+            }
+            field("Nº Professor"; Rec."Nº Professor")
+            {
+                ApplicationArea = All;
+            }
+            field("Exportar para o MISI"; Rec."Exportar para o MISI")
+            {
+                ApplicationArea = All;
+            }
+            field(Intern; Rec.Intern)
+            {
+                ApplicationArea = All;
+            }
+            field("Orgão Social"; Rec."Orgão Social")
+            {
+                ApplicationArea = All;
             }
             group("Comunicação")
             {

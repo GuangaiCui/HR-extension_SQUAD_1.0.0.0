@@ -1,5 +1,6 @@
 codeunit 60000 MyCodeunit
 {
+    //TODO: to delete
     trigger OnRun()
     begin
 

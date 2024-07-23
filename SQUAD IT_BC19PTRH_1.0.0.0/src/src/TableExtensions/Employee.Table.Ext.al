@@ -7,8 +7,8 @@ tableextension 53040 "Employee Ext" extends Employee
 
     Caption = 'Employee';
     DataCaptionFields = "No.", "First Name", "Last Name", Status;
-    DrillDownPageID = "Lista Empregado";
-    LookupPageID = "Lista Empregado";
+    DrillDownPageID = "Employee List";
+    LookupPageID = "Employee List";
 
     fields
     {

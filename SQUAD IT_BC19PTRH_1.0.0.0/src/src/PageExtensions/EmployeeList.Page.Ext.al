@@ -1,8 +1,9 @@
 pageextension 53041 "Employee List Ext" extends "Employee List"
 {
+    //TODO: Check the order of fields
     layout
     {
-        addafter()
+        addafter("No.")
         {
             field(Name; Rec.Name)
             {
@@ -11,6 +12,9 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
                 Style = Strong;
                 StyleExpr = TRUE;
             }
+        }
+        addafter("Search Name")
+        {
             field(Address; Rec.Address)
             {
                 ApplicationArea = All;
@@ -31,6 +35,9 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
                 ApplicationArea = All;
 
             }
+        }
+        addafter("E-Mail")
+        {
             field("Alt. Address Code"; Rec."Alt. Address Code")
             {
                 ApplicationArea = All;
@@ -57,11 +64,6 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
 
             }
             field("Union Membership No."; Rec."Union Membership No.")
-            {
-                ApplicationArea = All;
-
-            }
-            field(Sex; Rec.Gender)
             {
                 ApplicationArea = All;
 
@@ -508,86 +510,43 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
 
     actions
     {
-        addafter()
+        addafter("&Picture")
         {
-
-            group("E&mployee")
+            action("Rubricas Salariais")
             {
+                ApplicationArea = All;
 
-                Caption = 'E&mpregado';
-                Image = Employee;
-                action("Comentários")
-                {
-                    ApplicationArea = All;
+                Caption = 'Rubricas Salariais';
+                Image = SalesTaxStatement;
+                RunObject = Page "Lista Rubrica Salarial Emp.";
+                RunPageLink = "No. Empregado" = FIELD("No.");
+            }
+            action("Hist. Ausências")
+            {
+                ApplicationArea = All;
 
-                    Caption = 'Co&mments';
-                    Image = ViewComments;
-                    RunObject = Page "Folha Comentários RH";
-                    RunPageLink = "Table Name" = CONST(Emp),
-                                  "No." = FIELD("No.");
-                }
-                group("Dimensões")
-                {
+                Caption = 'Hist. Ausências';
+                Image = absence;
+                RunObject = Page "Ausências Empregado";
+                RunPageLink = "Employee No." = FIELD("No.");
+            }
+            action("Hist. Horas Extra")
+            {
+                ApplicationArea = All;
 
-                    Caption = 'Dimensions';
-                    Image = Dimensions;
-                    action("Dimensões-Single")
-                    {
-                        ApplicationArea = All;
+                Caption = 'Hist. Horas Extra';
+                Image = ServiceHours;
+                RunObject = Page "Registo Horas Extra";
+                RunPageLink = "No. Empregado" = FIELD("No.");
+            }
+            action("Hist. Abonos e Descontos extra")
+            {
+                ApplicationArea = All;
 
-                        Caption = 'Dimensions-Single';
-                        Image = Dimensions;
-                        RunObject = Page "Default Dimensions";
-                        RunPageLink = "Table ID" = CONST(53035),
-                                      "No." = FIELD("No.");
-                        ShortCutKey = 'Shift+Ctrl+D';
-                    }
-                }
-                action(Imagem)
-                {
-                    ApplicationArea = All;
-
-                    Caption = '&Picture';
-                    Image = Picture;
-                    RunObject = Page "Imagem Empregado";
-                    RunPageLink = "No." = FIELD("No.");
-                }
-                action("Rubricas Salariais")
-                {
-                    ApplicationArea = All;
-
-                    Caption = 'Rubricas Salariais';
-                    Image = SalesTaxStatement;
-                    RunObject = Page "Lista Rubrica Salarial Emp.";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
-                }
-                action("Hist. Ausências")
-                {
-                    ApplicationArea = All;
-
-                    Caption = 'Hist. Ausências';
-                    Image = absence;
-                    RunObject = Page "Ausências Empregado";
-                    RunPageLink = "Employee No." = FIELD("No.");
-                }
-                action("Hist. Horas Extra")
-                {
-                    ApplicationArea = All;
-
-                    Caption = 'Hist. Horas Extra';
-                    Image = ServiceHours;
-                    RunObject = Page "Registo Horas Extra";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
-                }
-                action("Hist. Abonos e Descontos extra")
-                {
-                    ApplicationArea = All;
-
-                    Caption = 'Hist. Abonos e Descontos extra';
-                    Image = ChangePaymentTolerance;
-                    RunObject = Page "Lista Hist. Abon. - Des. Extr.";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
-                }
+                Caption = 'Hist. Abonos e Descontos extra';
+                Image = ChangePaymentTolerance;
+                RunObject = Page "Lista Hist. Abon. - Des. Extr.";
+                RunPageLink = "No. Empregado" = FIELD("No.");
             }
         }
     }

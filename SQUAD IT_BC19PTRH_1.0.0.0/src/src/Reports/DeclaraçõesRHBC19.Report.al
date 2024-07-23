@@ -1,14 +1,15 @@
 report 53095 "Declarações RH BC"
 {
+    //FIXME: Template layout needed to be organized
     //ProcessingOnly = true;
     //UsageCategory = Tasks;
     ApplicationArea = HumanResourcesAppArea;
     UsageCategory = ReportsAndAnalysis;
 
-    DefaultLayout = Word;
-    //DefaultLayout = RDLC;
-    WordLayout = './src/Reports/Layouts/DeclaraçõesRHBC19.docx';
-    //RDLCLayout = './src/Reports/Layouts/DeclaraçõesRHBC19.rdlc';
+    //DefaultLayout = Word;
+    DefaultLayout = RDLC;
+    //WordLayout = './src/Reports/Layouts/DeclaraçõesRHBC19.docx';
+    RDLCLayout = './src/Reports/Layouts/DeclaraçõesRHBC19.rdl';
     PreviewMode = PrintLayout;
 
     dataset
