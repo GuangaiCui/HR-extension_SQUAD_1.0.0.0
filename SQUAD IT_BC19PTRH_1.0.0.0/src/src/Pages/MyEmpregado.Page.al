@@ -76,7 +76,7 @@ page 53171 MyEmpregado
                 trigger OnAction()
                 begin
                     if Empregado.Get(Rec."No.") then
-                        PAGE.Run(PAGE::"Ficha Empregado", Empregado)
+                        PAGE.Run(PAGE::"Employee Card", Empregado)
                 end;
             }
         }

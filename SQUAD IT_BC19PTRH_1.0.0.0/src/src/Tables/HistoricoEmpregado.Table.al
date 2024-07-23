@@ -2,8 +2,8 @@ table 53111 "Historico Empregado"
 {
     Caption = 'Employee';
     DataCaptionFields = "No.", "First Name", "Last Name";
-    DrillDownPageID = "Lista Empregado";
-    LookupPageID = "Lista Empregado";
+    DrillDownPageID = "Employee List";
+    LookupPageID = "Employee List";
 
     fields
     {

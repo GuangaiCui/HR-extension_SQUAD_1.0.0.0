@@ -52,7 +52,7 @@ page 53170 "Human Resources Role Center"
                 ApplicationArea = All;
 
                 Caption = 'Employee';
-                RunObject = Page "Lista Empregado";
+                RunObject = Page "Employee List";
             }
             action("Registo Ausências")
             {
@@ -101,7 +101,7 @@ page 53170 "Human Resources Role Center"
 
                     Caption = 'Employee';
                     Image = HumanResources;
-                    RunObject = Page "Lista Empregado";
+                    RunObject = Page "Employee List";
                 }
                 group(Tarefas)
                 {
