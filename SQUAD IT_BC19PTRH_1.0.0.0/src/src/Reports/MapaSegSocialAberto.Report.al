@@ -95,9 +95,7 @@ report 53045 "Mapa Seg. Social - Aberto"
             column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
+
             column("MAPA_SEGURANÇA_SOCIALCaption"; MAPA_SEGURANÇA_SOCIALCaptionLbl)
             {
             }

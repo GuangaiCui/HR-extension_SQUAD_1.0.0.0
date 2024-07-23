@@ -22,9 +22,6 @@ report 53059 "Empregado - Inf. Artigos Div"
         {
             DataItemTableView = SORTING("Employee No.", "Misc. Article Code", "Line No.");
             RequestFilterFields = "Employee No.", "Misc. Article Code";
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Picture; TabConfEmpresa.Picture)
             {
             }

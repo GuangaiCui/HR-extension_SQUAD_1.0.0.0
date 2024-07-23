@@ -26,9 +26,6 @@ report 53063 "Empregado - Aniversários"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Picture; TabConfEmpresa.Picture)
             {
             }

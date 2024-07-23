@@ -34,9 +34,6 @@ report 53089 "Formação por Empregado"
             column(TabConfEmpresa__Post_Code_; TabConfEmpresa."Post Code")
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Picture; TabConfEmpresa.Picture)
             {
             }
@@ -136,7 +133,8 @@ report 53089 "Formação por Empregado"
             trigger OnPreDataItem()
             begin
                 LastFieldNo := FieldNo("Formação Empregado"."No. Empregado");
-                CurrReport.CreateTotals(Total);
+                //TODO: Check is Total has right value
+                // CurrReport.CreateTotals(Total);
             end;
         }
     }

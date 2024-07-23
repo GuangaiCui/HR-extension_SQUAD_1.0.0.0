@@ -19,9 +19,6 @@ report 53086 "Horario Empregado"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_City; TabConfEmpresa.City)
             {
             }

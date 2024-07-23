@@ -16,11 +16,11 @@ table 53114 "Importação Templates"
         {
             Caption = 'Attachment';
         }
-        field(3; "Storage Type"; Option)
+        field(3; "Storage Type"; enum "Setup Attachment Storage Type")
         {
             Caption = 'Storage Type';
-            OptionCaption = 'Embedded,Disk File,Exchange Storage';
-            OptionMembers = Embedded,"Disk File","Exchange Storage";
+            //OptionCaption = 'Embedded,Disk File,Exchange Storage';
+            //OptionMembers = Embedded,"Disk File","Exchange Storage";
         }
         field(4; "Storage Pointer"; Text[250])
         {
@@ -89,7 +89,7 @@ table 53114 "Importação Templates"
         Text013: Label 'Only Microsoft Word documents can be printed.';
         Text014: Label 'Only Microsoft Word documents can be faxed.';
         RMSetup: Record "Marketing Setup";
-        EMailLogging: Codeunit "Email Logging Dispatcher";
+        //EMailLogging: Codeunit "Email Logging Dispatcher";
         varTempBlob: Codeunit "Temp Blob";
 
 

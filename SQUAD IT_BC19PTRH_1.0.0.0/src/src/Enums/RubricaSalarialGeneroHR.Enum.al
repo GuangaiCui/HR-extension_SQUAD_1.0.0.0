@@ -72,3 +72,23 @@ enum 53037 "Rubrica Salarial Nat. Rem."
     value(18; "Compensação Cont. Intermitente") { Caption = 'Compensação Cont. Intermitente - I'; }
 }
 
+enum 53038 "Period Type"
+{
+    Extensible = true;
+    AssignmentCompatibility = true;
+
+    value(0; Day) { Caption = 'Day'; }
+    value(1; "Week") { Caption = 'Week'; }
+    value(2; "Quarter") { Caption = 'Quarter'; }
+    value(3; "Year") { Caption = 'Year'; }
+    value(4; "Accounting Period") { Caption = 'Accounting Period'; }
+}
+
+enum 53039 EmployeeStatus
+{
+    Extensible = true;
+
+    value(0; Active) { Caption = 'Active'; }
+    value(1; "Inactive") { Caption = 'Inactive'; }
+    value(2; "Terminated") { Caption = 'Terminated'; }
+}

@@ -851,7 +851,7 @@ report 53048 "Ficheiro Modelo 10"
         SobreTaxa: Decimal;
         valorSobreTaxa: Decimal;
         TotSobreTaxa: Decimal;
-        [InDataSet]
+
         campoDataEditable: Boolean;
         Text19075912: Label 'Declaração apresentada nos termos da al. d), nº1, art.º 119 do CIRS';
         CodEmp: Code[20];

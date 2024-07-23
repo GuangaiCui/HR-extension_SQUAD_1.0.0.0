@@ -214,7 +214,7 @@ page 53112 "Preparação Fecho Contas"
                 Caption = 'Anterior';
                 Image = PreviousRecord;
                 InFooterBar = true;
-                Promoted = false;
+                //Promoted = false;
                 Visible = AnteriorVisible;
 
                 trigger OnAction()
@@ -275,7 +275,7 @@ page 53112 "Preparação Fecho Contas"
                 Caption = 'Seguinte';
                 Image = NextRecord;
                 InFooterBar = true;
-                Promoted = false;
+                //Promoted = false;
                 Visible = SeguinteVisible;
 
                 trigger OnAction()
@@ -338,7 +338,7 @@ page 53112 "Preparação Fecho Contas"
                 Caption = 'Concluir';
                 Image = Save;
                 InFooterBar = true;
-                Promoted = false;
+                //Promoted = false;
                 //The property 'PromotedCategory' can only be set if the property 'Promoted' is set to 'true'
                 //PromotedCategory = Process;
                 //The property 'PromotedIsBig' can only be set if the property 'Promoted' is set to 'true'
@@ -429,32 +429,32 @@ page 53112 "Preparação Fecho Contas"
         CodRubPropSubNatal: Code[20];
         CodRubSubFeriasAnoAnterior: Code[20];
         CodRubHorasFormacao: Code[20];
-        [InDataSet]
+
         PeriodoExpVisible: Boolean;
         SeguinteXPos: Integer;
         FrmWidth: Integer;
-        [InDataSet]
+
         TxtNDiasAvisoEmpVisible: Boolean;
-        [InDataSet]
+
         TxtNDiasAvisoEmpresaVisible: Boolean;
-        [InDataSet]
+
         FrameEmpVisible: Boolean;
-        [InDataSet]
+
         FrameAvisosVisible: Boolean;
-        [InDataSet]
+
         FrameFeriasVisible: Boolean;
-        [InDataSet]
+
         FrameRubVisible: Boolean;
         FrameFormacaoVisible: Boolean;
-        [InDataSet]
+
         SeguinteVisible: Boolean;
-        [InDataSet]
+
         AnteriorVisible: Boolean;
-        [InDataSet]
+
         ConcluirVisible: Boolean;
-        [InDataSet]
+
         TxtIndemDiasVisible: Boolean;
-        [InDataSet]
+
         TxtIndemMesVisible: Boolean;
         ConcluirXPos: Integer;
         FrameAvisosXPos: Integer;

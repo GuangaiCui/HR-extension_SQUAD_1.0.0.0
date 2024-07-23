@@ -35,7 +35,7 @@ page 53066 "Vista Ausências por Categorias"
                     ApplicationArea = All;
 
                     Caption = 'View by';
-                    OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
+                    // OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
 
                     trigger OnValidate()
                     begin
@@ -127,7 +127,7 @@ page 53066 "Vista Ausências por Categorias"
     var
         MatrixRecord: Record "Absence Reason";
         MatrixRecords: array[32] of Record "Absence Reason";
-        PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
+        PeriodType: enum "Period Type";
         AbsenceAmountType: Option "Balance at Date","Net Change";
         MATRIX_CaptionSet: array[32] of Text[1024];
         EmployeeNoFilter: Text[250];
@@ -137,7 +137,7 @@ page 53066 "Vista Ausências por Categorias"
         SetWanted: Option Initial,Previous,Same,Next;
 
 
-    procedure MatrixUpdate(NewAbsenceType: Option "Absence to Date","Absence at Date"; NewPeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period"; NewEmployeeNoFilter: Text[250])
+    procedure MatrixUpdate(NewAbsenceType: Option "Absence to Date","Absence at Date"; NewPeriodType: enum "Period Type"; NewEmployeeNoFilter: Text[250])
     begin
         AbsenceAmountType := NewAbsenceType;
         PeriodType := NewPeriodType;

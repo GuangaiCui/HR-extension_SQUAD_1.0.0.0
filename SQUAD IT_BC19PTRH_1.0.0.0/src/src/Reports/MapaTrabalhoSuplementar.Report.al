@@ -34,9 +34,7 @@ report 53069 "Mapa Trabalho Suplementar"
             column(TabConfEmpresa_Name; TabConfEmpresa.Name)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
+
             column(TabConfEmpresa_City; TabConfEmpresa.City)
             {
             }
@@ -187,7 +185,9 @@ report 53069 "Mapa Trabalho Suplementar"
                     "Histórico Horas Extra".SetRange("Histórico Horas Extra".Data, DMY2Date(1, 7, Ano), DMY2Date(31, 12, Ano));
                     txtSemestre := Format(DMY2Date(1, 7, Ano)) + ' a ' + Format(DMY2Date(31, 12, Ano));
                 end;
-                CurrReport.CreateTotals(ValorMes);
+
+                //TODO:Check this report
+                // CurrReport.CreateTotals(ValorMes);
             end;
         }
     }

@@ -59,12 +59,12 @@ table 53038 "Qualificação Empregado"
         {
             Caption = 'Course Grade';
         }
-        field(11; "Employee Status"; Option)
+        field(11; "Employee Status"; Enum "Employee Status")
         {
             Caption = 'Employee Status';
             Editable = false;
-            OptionCaption = 'Active,Inactive,Terminated';
-            OptionMembers = Active,Inactive,Terminated;
+            //OptionCaption = 'Active,Inactive,Terminated';
+            // OptionMembers = Active,Inactive,Terminated;
         }
         field(12; Comment; Boolean)
         {

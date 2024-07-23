@@ -59,9 +59,7 @@ report 53098 "Mapa Resumo Processamento B"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
+
             column(TabConfEmpresa_City; TabConfEmpresa.City)
             {
             }
@@ -330,7 +328,8 @@ report 53098 "Mapa Resumo Processamento B"
             trigger OnPreDataItem()
             begin
                 //Para aparecerem os totais
-                CurrReport.CreateTotals(VarHonorario, VarIVA, VarOutrosRendim, VarTotAbonos, VarIRS, VarOutrosDesc, VarLiquido);
+                //TODO: Check this report
+                //CurrReport.CreateTotals(VarHonorario, VarIVA, VarOutrosRendim, VarTotAbonos, VarIRS, VarOutrosDesc, VarLiquido);
             end;
         }
         dataitem(Rodape; "Integer")

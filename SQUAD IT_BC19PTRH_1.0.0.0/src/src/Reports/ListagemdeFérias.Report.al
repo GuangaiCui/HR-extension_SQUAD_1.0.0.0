@@ -28,9 +28,6 @@ report 53085 "Listagem de Férias"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_City; TabConfEmpresa.City)
             {
             }

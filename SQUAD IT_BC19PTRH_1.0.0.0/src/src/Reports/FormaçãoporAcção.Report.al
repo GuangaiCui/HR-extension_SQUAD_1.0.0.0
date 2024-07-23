@@ -31,9 +31,6 @@ report 53091 "Formação por Acção"
             column(TabConfEmpresa_Address; TabConfEmpresa.Address)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa__Name_2_; TabConfEmpresa."Name 2")
             {
             }

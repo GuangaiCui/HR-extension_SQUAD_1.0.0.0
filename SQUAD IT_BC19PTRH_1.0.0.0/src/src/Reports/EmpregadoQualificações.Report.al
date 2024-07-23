@@ -27,9 +27,6 @@ report 53062 "Empregado - Qualificações"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Picture; TabConfEmpresa.Picture)
             {
             }

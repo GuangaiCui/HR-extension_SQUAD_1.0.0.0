@@ -14,7 +14,7 @@ tableextension 53040 "Employee Ext" extends Employee
     {
         field(53035; Name; Text[75])
         {
-            CaptionML = ENU = 'Name', PTG = 'Nome Completo';
+            Caption = 'Nome Completo';
 
             trigger OnValidate()
             begin

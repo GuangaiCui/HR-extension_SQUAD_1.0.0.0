@@ -25,9 +25,6 @@ report 53060 "Ausência por Empregado"
             column(TabConfEmpresa__Name_2_; TabConfEmpresa."Name 2")
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Address; TabConfEmpresa.Address)
             {
             }

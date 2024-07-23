@@ -977,7 +977,7 @@ report 53037 "Processamento Vencimentos"
                                 if rRubricaSalarialLinhas.FindSet then begin
                                     repeat
                                         if rRubricaSalarial.Get(rRubricaSalarialLinhas."Cód. Rubrica Filha") then
-                                            if rRubricaSalarial.NATREM = 0 then
+                                            if rRubricaSalarial.NATREM = rRubricaSalarial.NATREM::" " then
                                                 Error(Text001, rRubricaSalarial.Código);
                                     until rRubricaSalarialLinhas.Next = 0;
                                 end;
@@ -2209,7 +2209,7 @@ report 53037 "Processamento Vencimentos"
 
             //Preencher o Tipo Rendimento por causa do Anexo J
             TabLinhaMovEmpregado."Tipo Rendimento" := Empregado."Tipo Rendimento";
-            if TabRubSalarial.Genero = 12 then begin
+            if TabRubSalarial.Genero = TabRubSalarial.Genero::"Enc. CGA" then begin
                 TabLinhaMovEmpregado."Cód. Situação" := Descontos."Cód. Situação";
                 TabLinhaMovEmpregado."Cód. Movimento" := Descontos."Cód. Movimento";
                 if Descontos."Data Efeito" <> 0D then

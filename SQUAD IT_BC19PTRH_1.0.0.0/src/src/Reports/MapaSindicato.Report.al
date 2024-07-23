@@ -53,9 +53,6 @@ report 53084 "Mapa Sindicato"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Name; TabConfEmpresa.Name)
             {
             }

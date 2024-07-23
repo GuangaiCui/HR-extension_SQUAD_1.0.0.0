@@ -35,9 +35,7 @@ report 53046 "Mapa Transferência Bancária"
             column(TabConfEmpresa_Address; TabConfEmpresa.Address)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
+
             column(TabConfEmpresa_City; TabConfEmpresa.City)
             {
             }

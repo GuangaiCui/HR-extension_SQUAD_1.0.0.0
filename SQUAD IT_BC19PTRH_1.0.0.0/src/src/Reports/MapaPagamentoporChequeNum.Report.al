@@ -186,9 +186,6 @@ report 53083 "Mapa Pagamento por Cheque/Num"
                 column(TabConfEmpresa_Address; TabConfEmpresa.Address)
                 {
                 }
-                column(CurrReport_PAGENO; CurrReport.PageNo)
-                {
-                }
                 column(TabConfEmpresa_City; TabConfEmpresa.City)
                 {
                 }

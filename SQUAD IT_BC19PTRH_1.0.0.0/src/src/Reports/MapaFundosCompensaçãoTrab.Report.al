@@ -59,9 +59,6 @@ report 53071 "Mapa Fundos Compensação Trab."
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Name; TabConfEmpresa.Name)
             {
             }

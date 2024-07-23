@@ -58,9 +58,6 @@ report 53075 "Folha Remunerações"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Picture; TabConfEmpresa.Picture)
             {
             }

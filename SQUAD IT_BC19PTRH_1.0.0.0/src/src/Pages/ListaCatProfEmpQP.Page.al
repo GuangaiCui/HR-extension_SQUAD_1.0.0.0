@@ -108,7 +108,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
 
     trigger OnAfterGetRecord()
     begin
-        OnAfterGetCurrRecord;
+        fx_OnAfterGetCurrRecord;
     end;
 
     trigger OnInit()
@@ -121,17 +121,17 @@ page 53077 "Lista Cat. Prof. Emp. QP"
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
-        OnAfterGetCurrRecord;
+        fx_OnAfterGetCurrRecord;
     end;
 
     var
-        [InDataSet]
+
         ReconversaoEditable: Boolean;
-        [InDataSet]
+
         "Data reconversãoEditable": Boolean;
-        [InDataSet]
+
         "Motivo reconversãoEditable": Boolean;
-        [InDataSet]
+
         "Motivo promoçãoEditable": Boolean;
 
     local procedure ReconversaoOnAfterValidate()
@@ -151,7 +151,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
         end;
     end;
 
-    local procedure OnAfterGetCurrRecord()
+    local procedure fx_OnAfterGetCurrRecord()
     begin
         xRec := Rec;
         //No caso de o campo reconversao ter o pisco os campos "Data reconversão" e "Motivo reconversão" ficam editaveis para o utilizador

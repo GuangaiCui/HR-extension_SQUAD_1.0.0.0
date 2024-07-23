@@ -167,7 +167,7 @@ report 53053 "Mapa CGA - Fechado"
                                     TabHistMovEmp.SetRange(TabHistMovEmp."No. Empregado", Empregado."No.");
                                     TabHistMovEmp.SetRange(TabHistMovEmp."Tipo Processamento", TabHistMovEmp."Tipo Processamento"::Vencimentos);
                                     TabHistMovEmp.SetRange(TabHistMovEmp."Cód. Situação", TabCodigosSituacao."Cód. Situação");
-                                    if TabHistMovEmp.FindSet(true, false) then begin
+                                    if TabHistMovEmp.FINDSET() then begin
                                         repeat
                                             ValorRemuneracao := ValorRemuneracao - Abs(TabHistMovEmp.Valor);
                                         until TabHistMovEmp.Next = 0;

@@ -30,9 +30,6 @@ report 53056 "Mapa Resumo Processamento"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Name; TabConfEmpresa.Name)
             {
             }
@@ -501,8 +498,9 @@ report 53056 "Mapa Resumo Processamento"
 
             trigger OnPreDataItem()
             begin
-                CurrReport.CreateTotals(VarVencimentoBase, VarSubAlimentacao, VarSubFerias, VarSubNatal, VarOutrosRendim, VarTotAbonos);
-                CurrReport.CreateTotals(VarIRS, VarSS, VarCGA, VarOutrosDesc, VarEncSS, VarEncCGA, VarLiquido, VarFCT);
+                //TODO: Check this report
+                //CurrReport.CreateTotals(VarVencimentoBase, VarSubAlimentacao, VarSubFerias, VarSubNatal, VarOutrosRendim, VarTotAbonos);
+                //CurrReport.CreateTotals(VarIRS, VarSS, VarCGA, VarOutrosDesc, VarEncSS, VarEncCGA, VarLiquido, VarFCT);
             end;
         }
         dataitem(Rodape; "Integer")

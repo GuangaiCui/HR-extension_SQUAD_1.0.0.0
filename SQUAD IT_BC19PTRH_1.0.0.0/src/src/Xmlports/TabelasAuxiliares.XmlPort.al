@@ -181,7 +181,7 @@ xmlport 53048 "Tabelas Auxiliares"
         vRecRef.Open(53035);
         vFieldRef := vRecRef.Field(IDCampo);
         if Format(vFieldRef.Type) = 'Option' then begin
-            OptionString := vFieldRef.OptionString;
+            OptionString := vFieldRef.OptionMembers;
             OptionStringAux := OptionString;
             while StrPos(OptionStringAux, ',') <> 0 do begin
                 OptionStringAux := CopyStr(OptionStringAux, StrPos(OptionStringAux, ',') + 1);

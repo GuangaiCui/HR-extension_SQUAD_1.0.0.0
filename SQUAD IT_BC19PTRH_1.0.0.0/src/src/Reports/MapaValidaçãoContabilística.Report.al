@@ -763,9 +763,6 @@ report 53073 "Mapa Validação Contabilística"
                 column(TabConfEmpresa__Post_Code_; TabConfEmpresa."Post Code")
                 {
                 }
-                column(CurrReport_PAGENO; CurrReport.PageNo)
-                {
-                }
                 column(TabConfEmpresa_Address; TabConfEmpresa.Address)
                 {
                 }
@@ -889,8 +886,8 @@ report 53073 "Mapa Validação Contabilística"
                     GenJnl.Reset;
                     Dimensoes.SetFilter(Dimensoes.Number, '%1..%2', 1, GenJnl.Count);
                     if GenJnl.Find('-') then;
-
-                    CurrReport.CreateTotals(GenJnl."Debit Amount", GenJnl."Credit Amount");
+                    //TODO: CHECK THIS REPORT
+                    //CurrReport.CreateTotals(GenJnl."Debit Amount", GenJnl."Credit Amount");
                 end;
             }
 

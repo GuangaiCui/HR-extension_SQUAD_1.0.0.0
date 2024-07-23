@@ -103,7 +103,7 @@ table 53076 "Rubrica Salarial"
                 lRubricaSal: Record "Rubrica Salarial";
                 lRubricaSalLinhas: Record "Rubrica Salarial Linhas";
             begin
-                if NATREM <> 0 then begin
+                if NATREM <> NATREM::" " then begin
                     lRubricaSal.Reset;
                     lRubricaSal.SetRange(lRubricaSal.Genero, lRubricaSal.Genero::SS);
                     if lRubricaSal.Find('-') then begin
@@ -149,7 +149,7 @@ table 53076 "Rubrica Salarial"
         }
         field(57; "Mapa Companhia Seguros"; Boolean)
         {
-            CaptionML = ENU = 'Insurance Company Report', PTG = 'Mapa Companhia Seguros';
+            Caption = 'Mapa Companhia Seguros';
             Description = 'Mapa Companhia Seguros';
         }
         field(58; Faults; Boolean)

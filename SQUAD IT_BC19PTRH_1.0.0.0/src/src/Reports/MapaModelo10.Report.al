@@ -484,9 +484,6 @@ report 53049 "Mapa Modelo 10"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
             {
             }
@@ -874,7 +871,7 @@ report 53049 "Mapa Modelo 10"
         SobreTaxa: Decimal;
         valorSobreTaxa: Decimal;
         TotSobreTaxa: Decimal;
-        [InDataSet]
+
         campoDataEditable: Boolean;
         Text19075912: Label 'Declaração apresentada nos termos da al. d), nº1, art.º 119 do CIRS';
         CodEmp: Code[20];

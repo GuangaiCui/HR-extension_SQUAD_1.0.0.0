@@ -54,9 +54,7 @@ report 53067 "Retenção Mensal de IRS"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
+
             column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
             {
             }
@@ -250,7 +248,6 @@ report 53067 "Retenção Mensal de IRS"
             }
             dataitem(IntegerA; "Integer")
             {
-                DataItemLinkReference = "Hist. Linhas Movs. EmpregadoA";
                 DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
                 PrintOnlyIfDetail = false;
                 column(EmpregadoA__No__; EmpregadoA."No.")

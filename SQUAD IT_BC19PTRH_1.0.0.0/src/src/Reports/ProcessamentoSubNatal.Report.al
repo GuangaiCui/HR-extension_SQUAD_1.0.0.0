@@ -911,7 +911,7 @@ report 53040 "Processamento Sub. Natal"
             TabLinhaMovEmpregado.Quantidade := VarTaxa;
             TabLinhaMovEmpregado.Valor := Round(Valor * VarTaxa / 100, 0.01);
             TabLinhaMovEmpregado."Tipo Rendimento" := Empregado."Tipo Rendimento";
-            if TabRubSalarial.Genero = 12 then begin
+            if TabRubSalarial.Genero = TabRubSalarial.Genero::"Enc. CGA" then begin
                 TabLinhaMovEmpregado."Cód. Situação" := Descontos."Cód. Situação";
                 TabLinhaMovEmpregado."Cód. Movimento" := Descontos."Cód. Movimento";
                 if Descontos."Data Efeito" <> 0D then

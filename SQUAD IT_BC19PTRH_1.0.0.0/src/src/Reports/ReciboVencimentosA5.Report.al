@@ -930,7 +930,8 @@ report 53043 "Recibo Vencimentos A5"
                     TabHistLinhasMov.SetRange(TabHistLinhasMov."Tipo Processamento", "Periodos Processamento"."Tipo Processamento");
                     TabHistLinhasMov.SetRange(TabHistLinhasMov."No. Empregado", Empregado."No.");
                     if not TabHistLinhasMov.Find('-') then begin
-                        CurrReport.ShowOutput(false);
+                        //TODO: change this to RDLC HIDDEN
+                        //CurrReport.ShowOutput(false);
                     end;
                 end;
             end;

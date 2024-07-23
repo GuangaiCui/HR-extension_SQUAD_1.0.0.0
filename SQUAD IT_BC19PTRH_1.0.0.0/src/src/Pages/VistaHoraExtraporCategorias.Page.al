@@ -34,7 +34,7 @@ page 53092 "Vista HoraExtra por Categorias"
                     ApplicationArea = All;
 
                     Caption = 'View by';
-                    OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
+                    //  OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
 
                     trigger OnValidate()
                     begin
@@ -126,7 +126,7 @@ page 53092 "Vista HoraExtra por Categorias"
     var
         MatrixRecord: Record "Tipos Horas Extra";
         MatrixRecords: array[32] of Record "Tipos Horas Extra";
-        PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
+        PeriodType: enum "Period Type";
         ExtraHourAmountType: Option "Balance at Date","Net Change";
         MATRIX_CaptionSet: array[32] of Text[1024];
         EmployeeNoFilter: Text[250];
@@ -136,7 +136,7 @@ page 53092 "Vista HoraExtra por Categorias"
         SetWanted: Option Initial,Previous,Same,Next;
 
 
-    procedure MatrixUpdate(NewExtraHourType: Option "ExtraHour to Date","ExtraHour at Date"; NewPeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period"; NewEmployeeNoFilter: Text[250])
+    procedure MatrixUpdate(NewExtraHourType: Option "ExtraHour to Date","ExtraHour at Date"; NewPeriodType: enum "Period Type"; NewEmployeeNoFilter: Text[250])
     begin
         ExtraHourAmountType := NewExtraHourType;
         PeriodType := NewPeriodType;

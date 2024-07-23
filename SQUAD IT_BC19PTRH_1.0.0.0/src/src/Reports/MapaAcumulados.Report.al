@@ -35,7 +35,7 @@ report 53076 "Mapa Acumulados"
         }
         dataitem(Empregado; Employee)
         {
-            DataItemTableView = SORTING("Tipo Rendimento", "No.", "Statistics Group Code");
+            DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.";
             column(FiltroCodProc; FiltroCodProc)
             {
@@ -44,9 +44,6 @@ report 53076 "Mapa Acumulados"
             {
             }
             column(USERID; UserId)
-            {
-            }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
             {
             }
             column(TabConfEmpresa_City; TabConfEmpresa.City)
@@ -80,9 +77,6 @@ report 53076 "Mapa Acumulados"
             {
             }
             column(USERID_Control1102056034; UserId)
-            {
-            }
-            column(CurrReport_PAGENO_Control1102056035; CurrReport.PageNo)
             {
             }
             column(TabConfEmpresa_Picture_Control1102056056; TabConfEmpresa.Picture)

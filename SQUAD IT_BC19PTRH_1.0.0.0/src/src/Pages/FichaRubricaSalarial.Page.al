@@ -109,7 +109,6 @@ page 53098 "Ficha Rubrica Salarial"
                     ApplicationArea = All;
 
                     Caption = 'NATREM';
-                    OptionCaption = '';
                 }
             }
             group("Relatório Único")

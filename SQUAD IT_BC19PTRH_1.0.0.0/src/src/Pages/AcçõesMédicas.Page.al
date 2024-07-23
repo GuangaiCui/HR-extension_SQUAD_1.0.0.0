@@ -99,7 +99,7 @@ page 53146 "Acções Médicas"
     end;
 
     var
-        [InDataSet]
+
         MotivoEnable: Boolean;
         CodigoEnable: Boolean;
 

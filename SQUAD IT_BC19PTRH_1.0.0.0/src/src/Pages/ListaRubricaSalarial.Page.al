@@ -79,8 +79,6 @@ page 53100 "Lista Rubrica Salarial"
                 field(NATREM; Rec.NATREM)
                 {
                     ApplicationArea = All;
-
-                    OptionCaption = '';
                 }
             }
         }

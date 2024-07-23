@@ -48,9 +48,6 @@ report 53093 "Mapa Companhia Seguros"
                 column(USERID; UserId)
                 {
                 }
-                column(CurrReport_PAGENO; CurrReport.PageNo)
-                {
-                }
                 column(TabConfEmpresa__Name_2_; TabConfEmpresa."Name 2")
                 {
                 }
@@ -275,8 +272,9 @@ report 53093 "Mapa Companhia Seguros"
 
                     if ((CodSeg <> '') and (UpperCase(CodSeg) <> UpperCase(Seguradora))) or
                        ((CodApo <> '') and (UpperCase(CodApo) <> UpperCase("No. Apólice"))) then begin
-                        CurrReport.NewPage;
-                        CurrReport.PageNo := 1;
+                        //NOTES:Test this report
+                        //CurrReport.NewPage;
+                        //CurrReport.PageNo := 1;
                         TotalVencimento := 0;
                         TotalDiuturnidades := 0;
                         TotalSubsAlmoco := 0;
@@ -393,9 +391,6 @@ report 53093 "Mapa Companhia Seguros"
                 column(USERID_Control1102059086; UserId)
                 {
                 }
-                column(CurrReport_PAGENO_Control1102059088; CurrReport.PageNo)
-                {
-                }
                 column(TabConfEmpresa__Name_2__Control1102059089; TabConfEmpresa."Name 2")
                 {
                 }
@@ -436,9 +431,6 @@ report 53093 "Mapa Companhia Seguros"
                 {
                 }
                 column(USERID_Control1102059100; UserId)
-                {
-                }
-                column(CurrReport_PAGENO_Control1102059102; CurrReport.PageNo)
                 {
                 }
                 column(Hist__Movs__Empregado__N__Empregado_; "No. Empregado")
@@ -629,8 +621,9 @@ report 53093 "Mapa Companhia Seguros"
 
                     if ((CodSeg <> '') and (UpperCase(CodSeg) <> UpperCase(Seguradora))) or
                        ((CodApo <> '') and (UpperCase(CodApo) <> UpperCase("No. Apólice"))) then begin
-                        CurrReport.NewPage;
-                        CurrReport.PageNo := 1;
+                        //NOTES: Check this report
+                        //CurrReport.NewPage;
+                        //CurrReport.PageNo := 1;
                         TotalVencimento := 0;
                         TotalDiuturnidades := 0;
                         TotalSubsAlmoco := 0;

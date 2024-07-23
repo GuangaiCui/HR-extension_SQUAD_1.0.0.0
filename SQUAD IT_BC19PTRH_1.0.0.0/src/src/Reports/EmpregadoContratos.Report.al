@@ -20,9 +20,6 @@ report 53099 "Empregado - Contratos"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Address; TabConfEmpresa.Address)
             {
             }

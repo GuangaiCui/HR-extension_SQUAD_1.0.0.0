@@ -117,8 +117,7 @@ tableextension 53036 CompanyInfoRH extends "Company Information"
         i: Integer;
         x: Integer;
         num: integer;
-        Text53035: TextConst ENU = 'The Vat Registration no. is invalid.',
-                                PTG = 'O Nº de Contribuinte não é válido.';
+        Text53035: Label 'O Nº de Contribuinte não é válido.';
 
     begin
         FOR i := 0 TO STRLEN(VATNo) - 2 DO BEGIN

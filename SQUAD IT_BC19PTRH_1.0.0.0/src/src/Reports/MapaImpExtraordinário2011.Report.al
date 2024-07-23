@@ -24,9 +24,6 @@ report 53050 "Mapa Imp. Extraordinário 2011"
             column(TabConfEmpresa_City; TabConfEmpresa.City)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Address; TabConfEmpresa.Address)
             {
             }

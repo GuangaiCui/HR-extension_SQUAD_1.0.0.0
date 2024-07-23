@@ -35,7 +35,6 @@ page 53061 "Vista Ausências por Per."
                     ApplicationArea = All;
 
                     Caption = 'View by';
-                    OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
 
                     trigger OnValidate()
                     begin
@@ -127,7 +126,7 @@ page 53061 "Vista Ausências por Per."
     var
         MatrixRecords: array[32] of Record Date;
         QtyType: Option "Balance at Date","Net Change";
-        PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
+        PeriodType: enum "Period Type";
         CauseOfAbsenceFilter: Code[10];
         MatrixColumnCaptions: array[32] of Text[1024];
         ColumnSet: Text[1024];

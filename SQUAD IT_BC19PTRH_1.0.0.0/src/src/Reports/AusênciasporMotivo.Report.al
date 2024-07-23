@@ -23,9 +23,6 @@ report 53061 "Ausências por Motivo"
             DataItemTableView = SORTING(Code);
             PrintOnlyIfDetail = true;
             RequestFilterFields = "Code";
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(USERID; UserId)
             {
             }
@@ -150,7 +147,8 @@ report 53061 "Ausências por Motivo"
                 trigger OnPreDataItem()
                 begin
                     LastFieldNo := FieldNo("Cause of Absence Code");
-                    CurrReport.CreateTotals(TotalAbsence);
+                    //TODO: Check is TotalAbsence has right value
+                    //CurrReport.CreateTotals(TotalAbsence);
 
                     if AbertoFechado = 1 then
                         CurrReport.Break;
@@ -217,7 +215,8 @@ report 53061 "Ausências por Motivo"
                 trigger OnPreDataItem()
                 begin
                     LastFieldNo := FieldNo("Cause of Absence Code");
-                    CurrReport.CreateTotals(TotalAbsence);
+                    //TODO: Check is TotalAbsence has right value
+                    //CurrReport.CreateTotals(TotalAbsence);
                     if AbertoFechado = 2 then
                         CurrReport.Break;
 

@@ -7,7 +7,7 @@ tableextension 53035 "ApplicationAreaSetupRH" extends "Application Area Setup"
         field(50000; "Human Resources App Area"; Boolean)
 
         {
-            CaptionML = ENU = 'Human Resources App Area', PTG = 'App Área Recursos Humanos';
+            Caption = 'App Área Recursos Humanos';
         }
     }
 }

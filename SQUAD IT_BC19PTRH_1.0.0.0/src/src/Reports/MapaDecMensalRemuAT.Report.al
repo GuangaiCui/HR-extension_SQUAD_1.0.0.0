@@ -109,9 +109,6 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
             column(InfEmpresa__Post_Code_; InfEmpresa."Post Code")
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(InfEmpresa_Address; InfEmpresa.Address)
             {
             }

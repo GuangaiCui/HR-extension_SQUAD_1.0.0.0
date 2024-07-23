@@ -253,7 +253,7 @@ xmlport 53042 "RU - Anexo F - IPS"
                                         rEmpregado.Reset;
                                         rEmpregado.ModifyAll(rEmpregado.Marcado, false);
                                         rEmpregado.Reset;
-                                        if rEmpregado.FindSet(true, false) then begin
+                                        if rEmpregado.FindSet() then begin
                                             repeat
                                                 if (rEmpregado."Employment Date" >= DMY2Date(1, 1, vAno)) and (rEmpregado."Employment Date" <= DMY2Date(31, 12, vAno)) then
                                                     rEmpregado.Marcado := true;

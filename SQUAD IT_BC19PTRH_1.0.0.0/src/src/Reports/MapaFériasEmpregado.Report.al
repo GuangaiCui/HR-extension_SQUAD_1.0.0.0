@@ -28,9 +28,6 @@ report 53057 "Mapa Férias Empregado"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_City; TabConfEmpresa.City)
             {
             }

@@ -524,7 +524,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
     var
         EmployeeAbsence: Record "Histórico Ausências";
         PeriodPageMgt: Codeunit PeriodPageManagement;
-        PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
+        PeriodType: Enum "Period Type";
         AbsenceAmountType: Option "Net Change","Balance at Date";
         EmployeeNoFilter: Text[250];
         CauseOfAbsence: Record "Absence Reason";
@@ -597,7 +597,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
         Field32Visible: Boolean;
 
 
-    procedure Load(MatrixColumns1: array[32] of Text[1024]; var MatrixRecords1: array[32] of Record "Absence Reason"; PeriodType1: Option Day,Week,Month,Quarter,Year,"Accounting Period"; AbsenceAmountType1: Option "Balance at Date","Net Change"; EmployeeNoFilter1: Text[250])
+    procedure Load(MatrixColumns1: array[32] of Text[1024]; var MatrixRecords1: array[32] of Record "Absence Reason"; PeriodType1: enum "Period Type"; AbsenceAmountType1: Option "Balance at Date","Net Change"; EmployeeNoFilter1: Text[250])
     var
         i: Integer;
     begin

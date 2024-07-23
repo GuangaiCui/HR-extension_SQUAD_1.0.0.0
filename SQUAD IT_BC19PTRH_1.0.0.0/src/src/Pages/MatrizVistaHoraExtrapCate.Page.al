@@ -524,7 +524,7 @@ page 53093 "Matriz Vista HoraExtra p Cate."
     var
         EmployeeExtraHour: Record "Histórico Horas Extra";
         PeriodPageMgt: Codeunit PeriodPageManagement;
-        PeriodType: Option Day,Week,Month,Quarter,Year,"Accounting Period";
+        PeriodType: enum "Period Type";
         ExtraHourAmountType: Option "Net Change","Balance at Date";
         EmployeeNoFilter: Text[250];
         CauseOfExtraHour: Record "Tipos Horas Extra";
@@ -597,7 +597,7 @@ page 53093 "Matriz Vista HoraExtra p Cate."
         Field32Visible: Boolean;
 
 
-    procedure Load(MatrixColumns1: array[32] of Text[1024]; var MatrixRecords1: array[32] of Record "Tipos Horas Extra"; PeriodType1: Option Day,Week,Month,Quarter,Year,"Accounting Period"; ExtraHourAmountType1: Option "Balance at Date","Net Change"; EmployeeNoFilter1: Text[250])
+    procedure Load(MatrixColumns1: array[32] of Text[1024]; var MatrixRecords1: array[32] of Record "Tipos Horas Extra"; PeriodType1: enum "Period Type"; ExtraHourAmountType1: Option "Balance at Date","Net Change"; EmployeeNoFilter1: Text[250])
     var
         i: Integer;
     begin

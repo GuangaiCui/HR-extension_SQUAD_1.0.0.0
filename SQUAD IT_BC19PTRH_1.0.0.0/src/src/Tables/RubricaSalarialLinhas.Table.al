@@ -20,7 +20,7 @@ table 53077 "Rubrica Salarial Linhas"
                     "Tipo Rubrica Filha" := TabRubrica."Tipo Rubrica";
                     if rRubrica.Get("Cód. Rubrica") then begin
                         if rRubrica.Genero = rRubrica.Genero::SS then
-                            if TabRubrica.NATREM = 0 then
+                            if TabRubrica.NATREM = TabRubrica.NATREM::" " then
                                 Error(Text001, "Cód. Rubrica Filha");
                     end;
                 end;

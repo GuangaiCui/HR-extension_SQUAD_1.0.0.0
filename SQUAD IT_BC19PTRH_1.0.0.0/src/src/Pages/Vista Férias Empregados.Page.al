@@ -24,7 +24,6 @@ page 53118 "Vista Férias Empregados"
                     ApplicationArea = All;
 
                     Caption = 'View by';
-                    OptionCaption = 'Day,Week,Month,Quarter,Year';
 
                     trigger OnValidate()
                     begin
@@ -116,7 +115,7 @@ page 53118 "Vista Férias Empregados"
     var
         MatrixRecords: array[32] of Record Date;
         QtyType: Option "Balance at Date","Net Change";
-        PeriodType: Option Day,Week,Month,Quarter,Year;
+        PeriodType: enum "Period Type";
         CauseOfVacationFilter: Code[10];
         MatrixColumnCaptions: array[32] of Text[1024];
         ColumnSet: Text[1024];

@@ -28,9 +28,6 @@ report 53065 "Horas Extra por Tipo"
             column(USERID; UserId)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
             column(TabConfEmpresa_Picture; TabConfEmpresa.Picture)
             {
             }
@@ -117,7 +114,8 @@ report 53065 "Horas Extra por Tipo"
             trigger OnPreDataItem()
             begin
                 LastFieldNo := FieldNo("Cód. Hora Extra");
-                CurrReport.CreateTotals(TotalHoraExtra);
+                //TODO: Check if this total is right
+                //CurrReport.CreateTotals(TotalHoraExtra);
             end;
         }
     }

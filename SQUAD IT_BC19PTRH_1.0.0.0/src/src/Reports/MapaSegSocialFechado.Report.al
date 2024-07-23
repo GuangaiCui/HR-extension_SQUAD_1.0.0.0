@@ -98,9 +98,7 @@ report 53044 "Mapa Seg. Social - Fechado"
             column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
             {
             }
-            column(CurrReport_PAGENO; CurrReport.PageNo)
-            {
-            }
+
             column("MAPA_SEGURANÇA_SOCIALCaption"; MAPA_SEGURANÇA_SOCIALCaptionLbl)
             {
             }

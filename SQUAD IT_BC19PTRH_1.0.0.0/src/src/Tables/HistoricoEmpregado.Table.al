@@ -561,7 +561,7 @@ table 53111 "Historico Empregado"
             Caption = 'Prof. Cate. QP Code';
             FieldClass = FlowField;
         }
-        field(111; "Descrição Cat Prof QP"; Text[100])
+        field(111; "Descrição Cat Prof QP"; Text[200])
         {
             CalcFormula = Lookup("Cat. Prof. QP Empregado".Description WHERE("No. Empregado" = FIELD("No."),
                                                                               "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
