@@ -4,7 +4,7 @@ page 53035 "Ficha Empregado"
     // ww
     // Tagus - Novo campo NIB cartao Ref
 
-    CaptionML = ENU = 'Employee Card', PTG = 'Ficha Empregado';
+    Caption = 'Ficha Empregado';
     PageType = Card;
     SourceTable = Employee;
 
@@ -14,7 +14,7 @@ page 53035 "Ficha Empregado"
         {
             group(Geral)
             {
-                CaptionML = ENU = 'General', PTG = 'Geral';
+                Caption = 'Geral';
                 field("No."; Rec."No.")
                 {
                     Importance = Promoted;
@@ -1457,7 +1457,6 @@ page 53035 "Ficha Empregado"
     end;
 
     var
-        [InDataSet]
         MapPointVisible: Boolean;
         TabEmpregado: Record Employee;
         Text0001: Label 'Não existe em vigor nenhuma Rúbrica do tipo Vencimento Base para o empregado %1.';

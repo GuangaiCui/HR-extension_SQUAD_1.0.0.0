@@ -23,7 +23,21 @@ report 53100 "Enviar Recibo via EMail"
                 RequestFilterFields = "No. Empregado";
 
                 trigger OnAfterGetRecord()
+
+                var
+                    MailList: list of [Text];
+                    l_CUEmailMessage: Codeunit "Email Message";
+                    l_CuEmail: Codeunit Email;
+                    l_inStream: InStream;
+                    l_OutStream: OutStream;
+                    CU_TempBlob: Codeunit "Temp Blob";
+                    l_ConfgRH: Record "Config. Recursos Humanos";
+                    l_BodyMessage: Text;
+
                 begin
+                    //TODO:Test this.
+                    if l_ConfgRH.get then;
+
                     Clear(Mail);
 
                     //Testar se já foi enviado o Recibo para este empregado
@@ -66,20 +80,24 @@ report 53100 "Enviar Recibo via EMail"
                     //*************************************************
                     //Correr o report do Recibo
                     //********************************
-                    ServerAttachmentFilePath := FileManagement.ServerTempFileName('pdf');
+                    Clear(l_inStream);
+                    Clear(l_OutStream);
+                    Clear(Recipients);
+                    Clear(MailList);
+                    Recipients.Add(EnderecoEmail);
 
+                    CU_TempBlob.CreateOutStream(l_OutStream);
                     RReciboVencimentos.InitData("Periodos Processamento"."Cód. Processamento", "Hist. Cab. Movs. Empregado"."No. Empregado");
                     RReciboVencimentos.UseRequestPage(false);
-                    RReciboVencimentos.SaveAsPdf(ServerAttachmentFilePath);
-
+                    CU_TempBlob.CreateInStream(l_inStream);
                     Clear(RReciboVencimentos);
 
+                    l_BodyMessage := StrSubstNo(Text50000, Format("Data Registo", 0, '<Month Text>'), Format(Date2DMY("Data Registo", 3)));
+                    l_CUEmailMessage.Create(Recipients, Text0001, l_BodyMessage, true, MailList, MailList);
+                    l_CUEmailMessage.AddAttachment(FileName, 'application/pdf', l_inStream);
+                    l_CuEmail.Send(l_CUEmailMessage);
+
                     //#001 START SQD RTV 20200429
-                    //Deixou de ser necessário, no entanto mantenho aqui
-                    LineBreak := 'xx';
-                    LineBreak[1] := 13;   //line feed
-                    LineBreak[2] := 10;   //carriage return
-                                          //#001 STOP SQD RTV 20200429
 
                     //OPCAO 1 -  ENVIO DO EMAIL POR SMTP
                     //********************************
@@ -87,11 +105,11 @@ report 53100 "Enviar Recibo via EMail"
                     //#001 START SQD RTV 20200429
                     //CreateMessage('','',EnderecoEmail,STRSUBSTNO(Text0006,"Hist. Cab. Movs. Empregado"."Cód. Processamento"),'',FALSE,
                     //ServerAttachmentFilePath,FileName);
-                    Recipients.Add(EnderecoEmail);
-                    smtpMail.CreateMessage('RH Taguspark', 'no-reply@taguspark.pt', Recipients, Text0001, StrSubstNo(Text50000, Format("Data Registo", 0, '<Month Text>'), Format(Date2DMY("Data Registo", 3)))
-                    , false);
-                    smtpMail.AddAttachment(ServerAttachmentFilePath, FileName);
-                    smtpMail.Send;
+
+                    //  smtpMail.CreateMessage('RH Taguspark', 'no-reply@taguspark.pt', Recipients, Text0001, StrSubstNo(Text50000, Format("Data Registo", 0, '<Month Text>'), Format(Date2DMY("Data Registo", 3)))
+                    //  , false);
+                    //  smtpMail.AddAttachment(ServerAttachmentFilePath, FileName);
+                    ////  smtpMail.Send;
                     //#001 STOP SQD RTV 20200429
 
                     //Registar o envio
@@ -185,7 +203,6 @@ report 53100 "Enviar Recibo via EMail"
         PeriodosProce: Record "Periodos Processamento";
         Empregado: Record Employee;
         ReportID: Integer;
-        "Object": Record "Object";
         FileDirectory: Text;
         FileName: Text;
         num: Integer;
@@ -208,8 +225,6 @@ report 53100 "Enviar Recibo via EMail"
         CodProcess: Code[10];
         FileManagement: Codeunit "File Management";
         ServerAttachmentFilePath: Text;
-        SMTPFields: Record "SMTP Mail Setup";
-        varMail: DotNet BCTestSmtpMessage;
         Text0007: Label 'The SMTP mail system returned the following error: %1';
         Text0008: Label 'The email address "%1" is invalid.';
         Text0009: Label 'Receipt';
@@ -220,8 +235,6 @@ report 53100 "Enviar Recibo via EMail"
         FileNameNew: Text;
         Text50000: Label 'Junto anexo recibo de vencimento referente ao mês de %1 de %2.';
         Text50001: Label 'Se necessitar de qualquer esclarecimento, entre, por favor, em contacto através do endereço de e-mail: rh@taguspark.pt';
-        LineBreak: Text;
-        smtpMail: Codeunit "SMTP Mail";
         Recipients: List of [Text];
 
 
@@ -254,33 +267,6 @@ report 53100 "Enviar Recibo via EMail"
     end;
 
 
-    procedure CreateMessage(SenderName: Text[100]; SenderAddress: Text[50]; Recipients: Text[1024]; Subject: Text[200]; Body: Text[1024]; HtmlFormatted: Boolean; FileN: Text[260]; FileDir: Text[260])
-    var
-        char10: Char;
-        char13: Char;
-    begin
-        SMTPFields.Get;
-        SMTPFields.TestField("SMTP Server");
-
-        if not IsNull(varMail) then begin
-            varMail.Dispose;
-            Clear(varMail);
-        end;
-
-        varMail := varMail.SmtpMessage;
-
-        varMail.FromAddress := SMTPFields."User ID";
-        varMail."To" := Recipients;
-        varMail.CC := SMTPFields."User ID";
-        varMail.Subject := Subject;
-        varMail.Body := Body;
-        varMail.HtmlFormatted := HtmlFormatted;
-        varMail.AddAttachmentWithName(FileN, FileDir);
-        varMail.Timeout(50000);
-
-        Send;
-    end;
-
     local procedure CheckValidEmailAddresses(Recipients: Text[1024])
     var
         s: Text[1024];
@@ -294,27 +280,6 @@ report 53100 "Enviar Recibo via EMail"
             s := CopyStr(s, StrPos(s, ';') + 1);
         end;
         CheckValidEmailAddress(s);
-    end;
-
-
-    procedure Send()
-    var
-        Result: Text[1024];
-    begin
-        Result := '';
-        Result :=
-              varMail.Send(
-                SMTPFields."SMTP Server",
-                SMTPFields."SMTP Server Port",
-                SMTPFields.Authentication <> SMTPFields.Authentication::Anonymous,
-                SMTPFields."User ID",
-                SMTPFields."Password Key",
-                SMTPFields."Secure Connection");
-
-        varMail.Dispose;
-        Clear(varMail);
-        if Result <> '' then
-            Error(Text0007, Result);
     end;
 
     local procedure CheckValidEmailAddress(EmailAddress: Text[250])

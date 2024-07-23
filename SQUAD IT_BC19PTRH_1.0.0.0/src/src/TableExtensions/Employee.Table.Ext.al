@@ -1027,16 +1027,10 @@ tableextension 53040 "Employee Ext" extends Employee
 
     keys
     {
-        key(Key6; Estabelecimento, "Cod. Regime SS", "No.")
-        {
-        }
         key(Key7; Estabelecimento, "Cód. IRCT")
         {
         }
         key(Key8; "Birth Date")
-        {
-        }
-        key(Key9; "Tipo Rendimento", "No.", "Statistics Group Code")
         {
         }
         key(Key10; Seguradora, "No. Apólice")
@@ -1368,30 +1362,32 @@ tableextension 53040 "Employee Ext" extends Employee
     end;
 
 
-    procedure OpenFile(WindowTitle: Text[50]; DefaultFileName: Text[250]; DefaultFileType: Option " ",Text,Excel,Word,Custom; FilterString: Text[250]; "Action": Option Open,Save; var FileNameImport: Text[250]; var "extensão": Code[50]; var Path: Text[250]): Text[260]
-    var
-        Text0031: Label '.txt';
-        Text0032: Label '.xls';
-        Text0033: Label '.doc';
-        pos: Integer;
-        fileName: Text[250];
-        FileMgt: Codeunit "File Management";
-    begin
-        if DefaultFileType = DefaultFileType::Custom then begin
-            if StrPos(UpperCase(FilterString), '.DOC') > 0 then
-                DefaultFileType := DefaultFileType::Word;
-            if StrPos(UpperCase(FilterString), '.XL') > 0 then
-                DefaultFileType := DefaultFileType::Excel;
+    //VC.MIG.S
+    /* NOTES: Commented because is not called anywhere in the code
+        procedure OpenFile(WindowTitle: Text[50]; DefaultFileName: Text[250]; DefaultFileType: Option " ",Text,Excel,Word,Custom; FilterString: Text[250]; "Action": Option Open,Save; var FileNameImport: Text[250]; var "extensão": Code[50]; var Path: Text[250]): Text[260]
+        var
+            Text0031: Label '.txt';
+            Text0032: Label '.xls';
+            Text0033: Label '.doc';
+            pos: Integer;
+            fileName: Text[250];
+            FileMgt: Codeunit "File Management";
+        begin
+            if DefaultFileType = DefaultFileType::Custom then begin
+                if StrPos(UpperCase(FilterString), '.DOC') > 0 then
+                    DefaultFileType := DefaultFileType::Word;
+                if StrPos(UpperCase(FilterString), '.XL') > 0 then
+                    DefaultFileType := DefaultFileType::Excel;
+            end;
+
+            if Action = Action::Open then
+                FileNameImport := FileMgt.OpenFileDialog('Abrir Ficheiro', '', FilterString)
+            else
+                FileNameImport := FileMgt.SaveFileDialog('Gravar Ficheiro', '', FilterString);
+            Path := FileNameImport;
+            exit(FileMgt.GetFileName(FileNameImport));
         end;
-
-        if Action = Action::Open then
-            FileNameImport := FileMgt.OpenFileDialog('Abrir Ficheiro', '', FilterString)
-        else
-            FileNameImport := FileMgt.SaveFileDialog('Gravar Ficheiro', '', FilterString);
-        Path := FileNameImport;
-        exit(FileMgt.GetFileName(FileNameImport));
-    end;
-
+    */
 
     procedure GerarContrato(Empregado: Record Employee)
     var
@@ -1404,6 +1400,7 @@ tableextension 53040 "Employee Ext" extends Employee
         NumberOfChars: Integer;
         wdApp2: DotNet WordApplicationClass;
     begin
+        //FIXME: Template layout needed to be created diferently
         path := Format('C:\Temp') + 'Contrato' + Empregado."No." + '.Doc';
         rTemplates.Get('RH-CONTRAC');
         rTemplates.ExportAttachment(path);

@@ -596,7 +596,7 @@ codeunit 53037 "Funções RH"
     end;
 
     //RH_MIG_VC.S
-    /*
+    /*NOTES:THis was comment because is no longer supported, it was reworked for Clould support
        procedure SaveDirectoryPath() Foldertxt: Text[1024]
        var
            TextLocal001: Label 'Define Path';

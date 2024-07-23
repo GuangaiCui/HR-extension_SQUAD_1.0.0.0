@@ -116,6 +116,8 @@ page 53072 "Lista Contrato Empregado"
                 separator(Action1102065003)
                 {
                 }
+                //VC_MIG
+                /*NOTES: deleted because is not longer supported oon this version
                 action(Visualizar)
                 {
                     ApplicationArea = All;
@@ -128,6 +130,8 @@ page 53072 "Lista Contrato Empregado"
                         Rec.VisualizarContrato;
                     end;
                 }
+                */
+                //VC_MIG
                 action(Exportar)
                 {
                     ApplicationArea = All;

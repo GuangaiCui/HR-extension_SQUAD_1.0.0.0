@@ -180,7 +180,7 @@ table 53056 "Contrato Empregado"
         _PostCode: Record "Post Code";
         _Emp2: Record Employee;
     begin
-
+        //FIXME: Template layout needed to be created diferently
         if "No. Contrato Trabalho" <> '' then
             Error(Text006);
 

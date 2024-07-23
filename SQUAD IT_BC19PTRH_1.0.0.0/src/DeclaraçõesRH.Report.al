@@ -16,6 +16,7 @@ report 53094 "Declarações RH"
 
             trigger OnAfterGetRecord()
             begin
+                //FIXME: Template layout needed to be created diferently
                 //PATH
                 //wdTemplate.
                 if rTemplates.Get('DECRH') then;

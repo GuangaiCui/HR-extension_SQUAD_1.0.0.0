@@ -18,7 +18,7 @@ report 53106 "Importar Férias"
 
     trigger OnPreReport()
     begin
-
+        //TODO:Test this.
         varAno := Date2DMY(WorkDate, 3);
 
         //---------------------------
@@ -30,7 +30,8 @@ report 53106 "Importar Férias"
 
 
         //FicheiroFerias := currXMLport.Filename;
-        Upload('', '', '*.xlsx|*.*', '', FicheiroFerias);
+        UploadIntoStream('', '', '*.xlsx|*.*', FicheiroFerias, InStr);
+        // Upload('', '', '*.xlsx|*.*', '', FicheiroFerias);
 
 
         /*
@@ -40,14 +41,11 @@ report 53106 "Importar Férias"
         xlSheets := xlActWBook.Worksheets;
         */
 
-        Fich.Open(FicheiroFerias);
-        Fich.CreateInStream(InStr);
         ExcelBuffer.GetSheetsNameListFromStream(InStr, TempNameValueBufferOut);
 
 
-
         If TempNameValueBufferOut.findset then begin
-            ExcelBuffer.OpenBook(FicheiroFerias, TempNameValueBufferOut.Value);
+            ExcelBuffer.OpenBookStream(InStr, TempNameValueBufferOut.Value);
 
             //XlWrkBkReader := XlWrkBkReader.Open(FicheiroFerias);
 

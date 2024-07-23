@@ -143,21 +143,25 @@ table 53113 "Integração Contabilistica"
     procedure CreateDim(Type1: Integer; No1: Code[20]; Type2: Integer; No2: Code[20])
     var
         SourceCodeSetup: Record "Source Code Setup";
-        TableID: array[10] of Integer;
-        No: array[10] of Code[20];
+        TableID: Integer;
+        No: Code[20];
         OldDimSetID: Integer;
+        DimMgt: Codeunit DimensionManagement;
+        DefaultDimSource: List of [Dictionary of [Integer, code[20]]];
     begin
         SourceCodeSetup.Get;
-        TableID[1] := Type1;
-        No[1] := No1;
-        TableID[2] := Type2;
-        No[2] := No2;
-
+        TableID := Type1;
+        No := No1;
         "Shortcut Dimension 1 Code" := '';
         "Shortcut Dimension 2 Code" := '';
         OldDimSetID := "Dimension Set ID";
+
+        //TODO:Check if the Dimension set ID is filled properly
+        DimMgt.AddDimSource(DefaultDimSource, TableID, No);
         "Dimension Set ID" :=
-          DimMgt.GetDefaultDimID(TableID, No, SourceCodeSetup.Sales, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
+          DimMgt.GetDefaultDimID(DefaultDimSource, SourceCodeSetup.Sales, "Shortcut Dimension 1 Code", "Shortcut Dimension 2 Code", 0, 0);
+
+
         if (OldDimSetID <> "Dimension Set ID") then begin
             Modify;
         end;
