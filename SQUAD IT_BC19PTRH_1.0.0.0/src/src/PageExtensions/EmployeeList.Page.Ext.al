@@ -526,6 +526,14 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
                 ApplicationArea = All;
 
                 Caption = 'Hist. Ausências';
+                Image = Absence;
+                RunObject = Page "Ausências Empregado";
+                RunPageLink = "Employee No." = FIELD("No.");
+            }
+            action("Hist. Horas Extra")
+            {
+                ApplicationArea = All;
+                Caption = 'Hist. Ausências';
                 Image = absence;
                 RunObject = Page "Ausências Empregado";
                 RunPageLink = "Employee No." = FIELD("No.");
