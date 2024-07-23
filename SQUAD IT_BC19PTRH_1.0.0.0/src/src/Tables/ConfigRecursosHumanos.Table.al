@@ -517,10 +517,6 @@ table 53053 "Config. Recursos Humanos"
             Caption = 'RU Exportation Path';
             Description = 'RU';
 
-            trigger OnLookup()
-            begin
-                "Caminho Exportação Rel. Único" := FuncoesRH.SaveDirectoryPath;
-            end;
         }
         field(601; Entidade; Text[6])
         {
@@ -582,6 +578,23 @@ table 53053 "Config. Recursos Humanos"
             begin
             end;
         }
+        field(50001; "Azure Files Storage Account"; Text[100])
+        {
+            Caption = 'Azure Files Storage Account';
+        }
+        field(50002; "Azure Files Share Folder"; Text[100])
+        {
+            Caption = 'Azure Files Share Folder';
+        }
+        field(50003; "Azure Files SaS Token"; Text[2048])
+        {
+            Caption = 'Azure Files SaS Token';
+            ExtendedDatatype = Masked;
+        }
+        field(50004; "Azure Files Client Folder"; Text[100])
+        {
+            Caption = 'Azure Files Client Folder';
+        }
     }
 
     keys
@@ -602,6 +615,99 @@ table 53053 "Config. Recursos Humanos"
         Text001: Label 'You cannot change %1 because there are %2.';
         FuncoesRH: Codeunit "Funções RH";
         text50009: Label 'Deseja actualizar os empregados que tem o IVA diferente de zero?';
+
+        AFSFileClientGbl: Codeunit "AFS File Client";
+
+    //HR_MIG_VC.S
+    local procedure Initialize()
+    var
+        StorageServiceAuthorizationLcl: Codeunit "Storage Service Authorization";
+        StorageAccount: Text;
+        FileShare: Text;
+        SasToken: Text;
+    begin
+        Rec.TestField("Azure Files Storage Account");
+        Rec.TestField("Azure Files Share Folder");
+        Rec.TestField("Azure Files SaS Token");
+        StorageAccount := Rec."Azure Files Storage Account";
+        FileShare := Rec."Azure Files Share Folder";
+        SasToken := Rec."Azure Files SaS Token";
+        AFSFileClientGbl.Initialize(StorageAccount, FileShare, StorageServiceAuthorizationLcl.UseReadySAS(SasToken));
+    end;
+
+    procedure CreateFileFromInStream(FilePathPar: Text; InStreamPar: InStream)
+    var
+        AFSOperationResponseLcl: Codeunit "AFS Operation Response";
+    begin
+        Initialize();
+        AFSOperationResponseLcl := AFSFileClientGbl.CreateFile(FilePathPar, InStreamPar);
+        if not AFSOperationResponseLcl.IsSuccessful() then
+            Error(AFSOperationResponseLcl.GetError());
+    end;
+
+
+    procedure DeleteFile(FilePathPar: Text)
+    var
+        AFSOperationResponseLcl: Codeunit "AFS Operation Response";
+        InStreamPar: InStream;
+    begin
+        Initialize();
+        AFSOperationResponseLcl := AFSFileClientGbl.DeleteFile(FilePathPar);
+        if not AFSOperationResponseLcl.IsSuccessful() then
+            Error(AFSOperationResponseLcl.GetError());
+    end;
+
+
+    procedure CheckIsFileExists(FolderDir: Text; FileName: Text): Boolean;
+    var
+        AFSDirectoryContent: Record "AFS Directory Content";
+        AFSOperationResponse: Codeunit "AFS Operation Response";
+        FileNames: List of [Text];
+    begin
+        Initialize();
+
+        AFSOperationResponse := AFSFileClientGbl.ListDirectory(FolderDir, AFSDirectoryContent);
+        if not AFSOperationResponse.IsSuccessful() then begin
+            Error('Failed to list directory. Error: %1', AFSOperationResponse.GetError());
+        end;
+        AFSDirectoryContent.SetRange("Resource Type", AFSDirectoryContent."Resource Type"::File);
+        AFSDirectoryContent.SetRange(Name, FileName);
+        if AFSDirectoryContent.FindFirst() then
+            exit(true)
+        else
+            exit(false)
+    end;
+
+
+    procedure CreateDirectory(DirectoryPar: Text)
+    var
+        AFSOperationResponseLcl: Codeunit "AFS Operation Response";
+        DirectoriesLcl: List of [Text];
+        DirectoryToCreateLcl, DirectoryLcl : Text;
+        ErrorOccuredLcl: Boolean;
+        LatestErrorLcl: Text;
+    begin
+        Initialize();
+        if CopyStr(DirectoryPar, StrLen(DirectoryPar), 1) = '\' then
+            DirectoryPar := CopyStr(DirectoryPar, 1, StrLen(DirectoryPar) - 1);
+
+        DirectoriesLcl := DirectoryPar.Split('\');
+
+        foreach DirectoryLcl in DirectoriesLcl do begin
+            DirectoryToCreateLcl += DirectoryLcl + '\';
+            AFSOperationResponseLcl := AFSFileClientGbl.CreateDirectory(DirectoryToCreateLcl);
+            //only log if last directory creation failed, otherwise when creating nested directories will give error when parent directory exists and we only care about creation of last directory
+            ErrorOccuredLcl := false;
+            if not AFSOperationResponseLcl.IsSuccessful() then begin
+                ErrorOccuredLcl := true;
+                LatestErrorLcl := AFSOperationResponseLcl.GetError();
+            end;
+        end;
+
+        if ErrorOccuredLcl then
+            Message(LatestErrorLcl);
+    end;
+    //HR_MIG_VC.S
 
 
     procedure ValidaApolice(Opcao: Option Seguradora,"Nº Apolice")

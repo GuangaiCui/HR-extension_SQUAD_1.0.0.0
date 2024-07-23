@@ -555,7 +555,7 @@ codeunit 53037 "Funções RH"
     var
         recCustomer: Record Customer;
         recRHSetup: Record "Config. Recursos Humanos";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit "No. Series";
     begin
         //2009.03.04 - Função que cria um cliente para um determinado empregado, com fim a registar o imposto selo
 
@@ -595,24 +595,26 @@ codeunit 53037 "Funções RH"
         end;
     end;
 
+    //RH_MIG_VC.S
+    /*
+       procedure SaveDirectoryPath() Foldertxt: Text[1024]
+       var
+           TextLocal001: Label 'Define Path';
+           FileMgt: Codeunit "File Management";
+           DirectoryHelper: DotNet BCTestDirectory;
+           SearchDirectory: Text[50];
+       begin
+           SearchDirectory := FileMgt.BrowseForFolderDialog(text000001, '', true);
 
-    procedure SaveDirectoryPath() Foldertxt: Text[1024]
-    var
-        TextLocal001: Label 'Define Path';
-        FileMgt: Codeunit "File Management";
-        DirectoryHelper: DotNet BCTestDirectory;
-        SearchDirectory: Text[50];
-    begin
-        SearchDirectory := FileMgt.BrowseForFolderDialog(text000001, '', true);
+           if SearchDirectory <> '' then begin
+               Foldertxt := Format(SearchDirectory);
 
-        if SearchDirectory <> '' then begin
-            Foldertxt := Format(SearchDirectory);
-
-            if not FileMgt.ClientDirectoryExists(SearchDirectory) then
-                DirectoryHelper.CreateDirectory(SearchDirectory);
-        end;
-    end;
-
+               if not FileMgt.ClientDirectoryExists(SearchDirectory) then
+                   DirectoryHelper.CreateDirectory(SearchDirectory);
+           end;
+       end;
+   */
+    //RH_MIG_VC.E
 
     procedure Ansi2Ascii(_Text: Text[350]): Text[350]
     begin

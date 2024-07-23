@@ -16,6 +16,34 @@ page 53068 "Config. Recursos Humanos"
     {
         area(content)
         {
+            group("Pastas Azure")
+            {
+                Caption = 'Pastas Azure';
+                field("Azure Files Storage Account"; Rec."Azure Files Storage Account")
+                {
+                    ApplicationArea = All;
+                }
+                field("Azure Files Share Folder"; Rec."Azure Files Share Folder")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Azure Files SaS Token"; Rec."Azure Files SaS Token")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Azure Files Client Folder"; Rec."Azure Files Client Folder")
+                {
+                    ApplicationArea = All;
+                }
+                field("Caminho Exportação Rel. Único "; Rec."Caminho Exportação Rel. Único")
+                {
+                    ApplicationArea = All;
+
+                }
+
+            }
             group("Numeração")
             {
                 Caption = 'Numbering';
@@ -443,6 +471,24 @@ page 53068 "Config. Recursos Humanos"
 
     actions
     {
+        area(Creation)
+        {
+            //HR_MIG_VC.S
+            action("Criar Pastas Azure")
+            {
+                ApplicationArea = All;
+
+                trigger OnAction()
+                begin
+                    //Criar pasta base
+                    Rec.CreateDirectory(rec."Azure Files Client Folder");
+                    //Criar pasta Caminho Relatorio Unico
+                    Rec.CreateDirectory(rec."Caminho Exportação Rel. Único");
+
+                end;
+            }
+            //HR_MIG_VC.E
+        }
     }
 
     trigger OnOpenPage()

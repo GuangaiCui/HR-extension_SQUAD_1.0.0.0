@@ -51,6 +51,8 @@ page 53052 "Contratos Trabalho"
     {
         area(processing)
         {
+            //VC.MIG.S
+            /*
             action("&Visualizar")
             {
                 ApplicationArea = All;
@@ -62,7 +64,8 @@ page 53052 "Contratos Trabalho"
                 begin
                     Rec.VisualizarContrato;
                 end;
-            }
+            }*/
+            //VC.MIG.E
             action("&Importar")
             {
                 ApplicationArea = All;
