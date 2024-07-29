@@ -1,6 +1,5 @@
 codeunit 60000 MyCodeunit
 {
-    //TODO: to delete
     trigger OnRun()
     begin
 
@@ -74,11 +73,4 @@ codeunit 60000 MyCodeunit
         exit(HttpRequestMessage.GetRequestUri());
     end;
 
-    // procedure SendFile()
-
-    // begin
-    //     if not UploadIntoStream('', '', '', FileName, FileStream) then
-    //         exit;
-    //     WriteFileToShare();
-    // end;
 }
