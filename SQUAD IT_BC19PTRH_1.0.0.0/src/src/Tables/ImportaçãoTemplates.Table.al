@@ -93,35 +93,38 @@ table 53114 "Importação Templates"
         varTempBlob: Codeunit "Temp Blob";
 
 
-    procedure OpenAttachment(Caption: Text[260]; IsTemporary: Boolean)
-    var
-        //WordManagement: Codeunit "WordManagement HR";
-        FileName: Text[260];
-    begin
-        if "Storage Type" = "Storage Type"::Embedded then begin
-            CalcFields(Attachment);
-            if not Attachment.HasValue then
-                Error(Text002);
-        end;
-
-        FileName := ConstFilename;
-        if Exists(FileName) then
-            if not DeleteFile(FileName) then
-                Error(Text003);
-        ExportAttachment(FileName);
-        HyperLink(FileName);
-        if not "Read Only" then begin
-            if Confirm(Text004, true) then begin
-                ImportAttachment(FileName, IsTemporary);
-                Modify(true);
+    //NOTES: Opening Attachment is not longer supported, because it a local file, use "ExportAttachment"THIS might be added in future updates
+    /*
+        procedure OpenAttachment(Caption: Text[260]; IsTemporary: Boolean)
+        var
+            //WordManagement: Codeunit "WordManagement HR";
+            FileName: Text[260];
+        begin
+            if "Storage Type" = "Storage Type"::Embedded then begin
+                CalcFields(Attachment);
+                if not Attachment.HasValue then
+                    Error(Text002);
             end;
-        end else
-            Sleep(10000);
 
-        DeleteFile(FileName);
-    end;
+            FileName := ConstFilename;
+            if Exists(FileName) then
+                if not DeleteFile(FileName) then
+                    Error(Text003);
+            ExportAttachment(FileName);
+            HyperLink(FileName);
+            if not "Read Only" then begin
+                if Confirm(Text004, true) then begin
+                    ImportAttachment(FileName, IsTemporary);
+                    Modify(true);
+                end;
+            end else
+                Sleep(10000);
 
-
+            DeleteFile(FileName);
+        end;
+    */
+    //NOTES: ShowAttachment is not longer supported, because it a local file, use "ExportAttachment"THIS might be added in future updates
+    /*
     procedure ShowAttachment(var SegLine: Record "Segment Line"; WordCaption: Text[260]; IsTemporary: Boolean)
     var
         //WordManagement: Codeunit "WordManagement HR";
@@ -141,30 +144,37 @@ table 53114 "Importação Templates"
             Sleep(10000);
         DeleteFile(FileName);
     end;
+    */
 
-
+    //NOTES: This export function was changed due to no longer being supported in BC. Now it download the Attachment to the download folder.
     procedure ExportAttachment(ExportToFile: Text[260]): Boolean
     var
         FileName: Text[260];
-        FileFilter: Text[260];
-        FileMgt: Codeunit "File Management";
+        //FileFilter: Text[260];
+        //FileMgt: Codeunit "File Management";
         OutStr: OutStream;
         InStr: InStream;
+        confRh: Record "Config. Recursos Humanos";
     begin
+        Clear(OutStr);
+        Clear(InStr);
         RMSetup.Get;
+        confRh.Get;
         case "Storage Type" of
             "Storage Type"::Embedded:
                 begin
-                    if RMSetup."Attachment Storage Type" =
-                       RMSetup."Attachment Storage Type"::"Disk File"
-                    then
-                        RMSetup.TestField("Attachment Storage Location");
+                    //NOTES: Line commented due to not being used anywhere
+                    // if RMSetup."Attachment Storage Type" =
+                    //   RMSetup."Attachment Storage Type"::"Disk File"
+                    //  then
+                    //RMSetup.TestField("Attachment Storage Location");
                     CalcFields(Attachment);
                     if Attachment.HasValue then begin
                         if ExportToFile = '' then begin
-                            FileFilter := UpperCase("File Extension") + ' ';
-                            FileFilter := FileFilter + '(*.' + "File Extension" + ')|*.' + "File Extension";
-                            FileName := FileMgt.OpenFileDialog(Text005, '', FileFilter);
+                            //FileFilter := UpperCase("File Extension") + ' ';
+                            //FileFilter := FileFilter + '(*.' + "File Extension" + ')|*.' + "File Extension";
+                            //FileName := FileMgt.OpenFileDialog(Text005, '', FileFilter);
+                            FileName := Format("No.") + '_' + FORMAT(WorkDate()) + '.' + "File Extension";
                         end else
                             FileName := ExportToFile;
                         if FileName <> '' then begin
@@ -172,8 +182,10 @@ table 53114 "Importação Templates"
                             //varTempBlob.Blob := Attachment;
                             Attachment.CreateOutStream((OutStr));
                             varTempBlob.CreateInStream(InStr);
-                            CopyStream(OutStr, InStr);
-                            FileMgt.BLOBExport(varTempBlob, FileMgt.GetFileName(ExportToFile), true); //2015.08.21
+
+                            DownloadFromStream(InStr, 'Export', '', 'AllFiles (*.*)|*.*', FileName);
+                            //CopyStream(OutStr, InStr);
+                            //FileMgt.BLOBExport(varTempBlob, FileMgt.GetFileName(ExportToFile), true); //2015.08.21
                             exit(true);
                         end else
                             exit(false)
@@ -183,21 +195,26 @@ table 53114 "Importação Templates"
 
             "Storage Type"::"Disk File":
                 begin
-                    if RMSetup."Attachment Storage Type" =
-                       RMSetup."Attachment Storage Type"::"Disk File"
-                    then
-                        RMSetup.TestField("Attachment Storage Location");
+                    //NOTES: not used anywhere
+                    //  if RMSetup."Attachment Storage Type" =
+                    //     RMSetup."Attachment Storage Type"::"Disk File"
+                    //   then
+
+                    //RMSetup.TestField("Attachment Storage Location");
                     if ExportToFile = '' then begin
-                        FileFilter := UpperCase("File Extension") + ' ';
-                        FileFilter := FileFilter + '(*.' + "File Extension" + ')|*.' + "File Extension";
-                        FileName := FileMgt.OpenFileDialog(Text005, '', FileFilter);
+
+                        // FileFilter := UpperCase("File Extension") + ' ';
+                        // FileFilter := FileFilter + '(*.' + "File Extension" + ')|*.' + "File Extension";
+                        FileName := Format("No.") + '_' + Format(WorkDate()) + '.' + "File Extension";
                     end else
                         FileName := ExportToFile;
+
                     if FileName <> '' then begin
-                        if FILE.Copy(ConstDiskFileName, FileName) then
+                        if confRh.GetFileAsStream("Storage Pointer", FileName) then
                             exit(true)
                         else
                             exit(false);
+
                     end else
                         exit(false)
                 end;
@@ -209,9 +226,15 @@ table 53114 "Importação Templates"
     var
         AttachmentManagement: Codeunit AttachmentManagement;
         FileName: Text[260];
+        EmptyText: Text[260];
         FileMgt: Codeunit "File Management";
+        instr: InStream;
+        outstr: OutStream;
+        confRh: Record "Config. Recursos Humanos";
     begin
+        confRh.get;
         if IsTemporary then begin
+            /* NOTES: can't understand what this code does and why is here
             if ImportFromFile = '' then
                 FileName := FileMgt.OpenFileDialog(Text006, ImportFromFile, Text007)
             else
@@ -222,42 +245,59 @@ table 53114 "Importação Templates"
                 exit(true)
             end else
                 exit(false);
+*/
+
+            //NOTES: NEEDs heavy  testing!!!!
+            UploadIntoStream(Text006, '', Text007, ImportFromFile, InStr);
+            if ImportFromFile <> '' then begin
+                rec.Attachment.CreateOutStream(OutStr);
+                CopyStream(OutStr, InStr);
+                Rec."File Extension" := UpperCase(FileMgt.GetExtension(FileName));
+                rec.Modify();
+                if rec.Attachment.HasValue then
+                    exit(true)
+                else
+                    exit(false);
+
+            end;
+
+            TestField("Read Only", false);
+            RMSetup.Get;
+            if RMSetup."Attachment Storage Type" = RMSetup."Attachment Storage Type"::"Disk File" then
+                RMSetup.TestField("Attachment Storage Location");
+
+            if ImportFromFile = '' then
+                UploadIntoStream(Text006, '', Text007, ImportFromFile, InStr)
+            else
+                FileName := ImportFromFile;
+
+            if FileName <> '' then begin
+                if "Storage Pointer" = '' then
+                    "Storage Pointer" := RMSetup."Attachment Storage Location";
+                if RMSetup."Attachment Storage Type" =
+                  RMSetup."Attachment Storage Type"::"Disk File"
+                then begin
+
+                    if confRh.CreateFileFromInStream("Storage Pointer" + '\' + ImportFromFile, InStr) = false then
+                        Error(
+                          Text008);
+                    "File Extension" := UpperCase(FileMgt.GetExtension(FileName));
+                    "Storage Pointer" := RMSetup."Attachment Storage Location";
+                    "Storage Type" := "Storage Type"::"Disk File";
+                    Modify(true);
+                end else begin
+                    rec.Attachment.CreateOutStream(OutStr);
+                    CopyStream(OutStr, InStr);
+                    "File Extension" := UpperCase(FileMgt.GetExtension(FileName));
+                    "Storage Type" := "Storage Type"::Embedded;
+                    if Modify(true) then;
+                end;
+                exit(true);
+            end else
+                exit(false);
         end;
 
-        TestField("Read Only", false);
-        RMSetup.Get;
-        if RMSetup."Attachment Storage Type" = RMSetup."Attachment Storage Type"::"Disk File" then
-            RMSetup.TestField("Attachment Storage Location");
-
-        if ImportFromFile = '' then
-            FileName := FileMgt.OpenFileDialog(Text006, '', Text007)
-        else
-            FileName := ImportFromFile;
-
-        if FileName <> '' then begin
-            if "Storage Pointer" = '' then
-                "Storage Pointer" := RMSetup."Attachment Storage Location";
-            if RMSetup."Attachment Storage Type" =
-              RMSetup."Attachment Storage Type"::"Disk File"
-            then begin
-                if not FILE.Copy(FileName, ConstDiskFileName) then
-                    Error(
-                      Text008);
-                "File Extension" := UpperCase(FileMgt.GetExtension(FileName));
-                "Storage Pointer" := RMSetup."Attachment Storage Location";
-                "Storage Type" := "Storage Type"::"Disk File";
-                Modify(true);
-            end else begin
-                Attachment.Import(FileName);
-                "File Extension" := UpperCase(FileMgt.GetExtension(FileName));
-                "Storage Type" := "Storage Type"::Embedded;
-                if Modify(true) then;
-            end;
-            exit(true);
-        end else
-            exit(false);
     end;
-
 
     procedure RemoveAttachment(Prompt: Boolean) DeleteOK: Boolean
     var
@@ -284,6 +324,9 @@ table 53114 "Importação Templates"
 
     procedure WizEmbeddAttachment(FromAttachment: Record "Importação Templates")
     begin
+        //TODOS: Commented to be able to create app, this process will be renewed
+        Message('WIP');
+        /*
         Rec := FromAttachment;
         "No." := '';
         "Storage Type" := "Storage Type"::Embedded;
@@ -298,6 +341,7 @@ table 53114 "Importação Templates"
                         Attachment := FromAttachment.Attachment;
                 end;
         end;
+        */
     end;
 
 
@@ -306,6 +350,10 @@ table 53114 "Importação Templates"
         Attachment2: Record "Importação Templates";
         FileName: Text[260];
     begin
+        //TODOS: Commented to be able to create app, this process will be renewed
+        Message('WIP');
+
+        /*
         RMSetup.Get;
         if RMSetup."Attachment Storage Type" = RMSetup."Attachment Storage Type"::Embedded then begin
             "Storage Pointer" := '';
@@ -329,28 +377,23 @@ table 53114 "Importação Templates"
         Attachment2."Last Time Modified" := Rec."Last Time Modified";
         Clear(Rec);
         Rec := Attachment2;
+
+        */
     end;
 
 
     procedure DeleteFile(FileName: Text[260]): Boolean
     var
         I: Integer;
+        confRh: Record "Config. Recursos Humanos";
     begin
         if FileName = '' then
             exit(false);
-
+        confRh.DeleteFile(FileName);
         // procedure ServerFileExists(FilePath: Text): Boolean
         // begin
         //     exit(Exists(FilePath));
         // end;
-        if not Exists(FileName) then
-            exit(true);
-
-        repeat
-            Sleep(250);
-            I := I + 1;
-        until Erase(FileName) or (I = 25);
-        exit(not Exists(FileName));
     end;
 
 
@@ -359,6 +402,8 @@ table 53114 "Importação Templates"
         I: Integer;
         DocNo: Text[30];
     begin
+        //TODO: Commented to to be able to create app, will be reworked.
+        /*
         repeat
             if I <> 0 then
                 DocNo := Format(I);
@@ -367,6 +412,8 @@ table 53114 "Importação Templates"
                 exit;
             I := I + 1;
         until I = 999;
+        */
+        Message('Wip');
     end;
 
 

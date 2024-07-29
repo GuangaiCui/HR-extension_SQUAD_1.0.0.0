@@ -16,9 +16,12 @@ report 53094 "Declarações RH"
 
             trigger OnAfterGetRecord()
             begin
+                Message('WIP DOCUMENTO DECRH');
+                //TODO: Commentado para criar APP
                 //FIXME: Template layout needed to be created diferently
                 //PATH
                 //wdTemplate.
+                /*
                 if rTemplates.Get('DECRH') then;
                 rTemplates.CalcFields(Attachment);
 
@@ -119,6 +122,8 @@ report 53094 "Declarações RH"
                 EscreveWord('«data»', Format(Today, 0, '<day> de <month text> de <year4>'));
                 EscreveWord('«nome da pessoa assina»', NomePessoaAssina);
                 EscreveWord('«cargo»', cargo);
+
+                */
             end;
 
             trigger OnPreDataItem()
@@ -194,7 +199,7 @@ report 53094 "Declarações RH"
         varSubs: Text[30];
         TabRubrica: Record "Rubrica Salarial";
         VencimentoBase: Decimal;
-        wdApp: DotNet WordApplicationClass;
+        //wdApp: DotNet WordApplicationClass;
         //environment: DotNet BCTestEnvironment;
         //CGA SQD commented dotnet
         //varTempBLOB: Record TempBlob;
@@ -203,12 +208,14 @@ report 53094 "Declarações RH"
         wdTemplate: Codeunit "Word Template";
 
 
-    procedure EscreveWord(pText1: Text[1024]; pText2: Text[1024])
-    begin
-        wdfindas := 0;
-        wdreplaceon := 2;
-        wdApp.Width := 7;
-        wdApp.Selection.Find.Execute(pText1, fals, fals, fals, fals, fals, tru, wdfindas, fals, pText2, wdreplaceon);
-    end;
+    /*
+        procedure EscreveWord(pText1: Text[1024]; pText2: Text[1024])
+        begin
+            wdfindas := 0;
+            wdreplaceon := 2;
+            wdApp.Width := 7;
+            wdApp.Selection.Find.Execute(pText1, fals, fals, fals, fals, fals, tru, wdfindas, fals, pText2, wdreplaceon);
+        end;
+        */
 }
 

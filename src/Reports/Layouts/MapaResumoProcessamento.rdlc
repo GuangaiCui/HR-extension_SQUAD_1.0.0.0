@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address">
+          <DataField>TabConfEmpresa_Address</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code_">
+          <DataField>TabConfEmpresa__Post_Code_</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="MAPA_RESUMO_DE_PROCESSAMENTOCaption">
+          <DataField>MAPA_RESUMO_DE_PROCESSAMENTOCaption</DataField>
+        </Field>
+        <Field Name="DESCONTOSCaption">
+          <DataField>DESCONTOSCaption</DataField>
+        </Field>
+        <Field Name="ENC__ENT__PATRONALCaption">
+          <DataField>ENC__ENT__PATRONALCaption</DataField>
+        </Field>
+        <Field Name="Outros_DescontosCaption">
+          <DataField>Outros_DescontosCaption</DataField>
+        </Field>
+        <Field Name="Enc__Seg__SocialCaption">
+          <DataField>Enc__Seg__SocialCaption</DataField>
+        </Field>
+        <Field Name="Enc__CGACaption">
+          <DataField>Enc__CGACaption</DataField>
+        </Field>
+        <Field Name="Valor_LíquidoCaption">
+          <DataField>Valor_LíquidoCaption</DataField>
+        </Field>
+        <Field Name="Seg__SocialCaption">
+          <DataField>Seg__SocialCaption</DataField>
+        </Field>
+        <Field Name="CGACaption">
+          <DataField>CGACaption</DataField>
+        </Field>
+        <Field Name="IRSCaption">
+          <DataField>IRSCaption</DataField>
+        </Field>
+        <Field Name="Outros_Rendim_Caption">
+          <DataField>Outros_Rendim_Caption</DataField>
+        </Field>
+        <Field Name="ABONOSCaption">
+          <DataField>ABONOSCaption</DataField>
+        </Field>
+        <Field Name="Sub__NatalCaption">
+          <DataField>Sub__NatalCaption</DataField>
+        </Field>
+        <Field Name="Sub__FériasCaption">
+          <DataField>Sub__FériasCaption</DataField>
+        </Field>
+        <Field Name="Sub__Alim_Caption">
+          <DataField>Sub__Alim_Caption</DataField>
+        </Field>
+        <Field Name="Venc__BaseCaption">
+          <DataField>Venc__BaseCaption</DataField>
+        </Field>
+        <Field Name="CategoriaCaption">
+          <DataField>CategoriaCaption</DataField>
+        </Field>
+        <Field Name="NomeCaption">
+          <DataField>NomeCaption</DataField>
+        </Field>
+        <Field Name="N__EmpregadoCaption">
+          <DataField>N__EmpregadoCaption</DataField>
+        </Field>
+        <Field Name="Total_AbonosCaption">
+          <DataField>Total_AbonosCaption</DataField>
+        </Field>
+        <Field Name="Processamento_Caption">
+          <DataField>Processamento_Caption</DataField>
+        </Field>
+        <Field Name="FCT_FGCTCaption">
+          <DataField>FCT_FGCTCaption</DataField>
+        </Field>
+        <Field Name="TOTAIS_Caption">
+          <DataField>TOTAIS_Caption</DataField>
+        </Field>
+        <Field Name="Cod_Processamento">
+          <DataField>Cod_Processamento</DataField>
+        </Field>
+        <Field Name="VarEncSS">
+          <DataField>VarEncSS</DataField>
+        </Field>
+        <Field Name="VarEncSSFormat">
+          <DataField>VarEncSSFormat</DataField>
+        </Field>
+        <Field Name="ABS_VarOutrosDesc_">
+          <DataField>ABS_VarOutrosDesc_</DataField>
+        </Field>
+        <Field Name="ABS_VarOutrosDesc_Format">
+          <DataField>ABS_VarOutrosDesc_Format</DataField>
+        </Field>
+        <Field Name="ABS_VarSS_">
+          <DataField>ABS_VarSS_</DataField>
+        </Field>
+        <Field Name="ABS_VarSS_Format">
+          <DataField>ABS_VarSS_Format</DataField>
+        </Field>
+        <Field Name="ABS_VarIRS_">
+          <DataField>ABS_VarIRS_</DataField>
+        </Field>
+        <Field Name="ABS_VarIRS_Format">
+          <DataField>ABS_VarIRS_Format</DataField>
+        </Field>
+        <Field Name="ABS_VarCGA">
+          <DataField>ABS_VarCGA</DataField>
+        </Field>
+        <Field Name="ABS_VarCGAFormat">
+          <DataField>ABS_VarCGAFormat</DataField>
+        </Field>
+        <Field Name="VarOutrosRendim">
+          <DataField>VarOutrosRendim</DataField>
+        </Field>
+        <Field Name="VarOutrosRendimFormat">
+          <DataField>VarOutrosRendimFormat</DataField>
+        </Field>
+        <Field Name="VarSubNatal">
+          <DataField>VarSubNatal</DataField>
+        </Field>
+        <Field Name="VarSubNatalFormat">
+          <DataField>VarSubNatalFormat</DataField>
+        </Field>
+        <Field Name="VarSubFerias">
+          <DataField>VarSubFerias</DataField>
+        </Field>
+        <Field Name="VarSubFeriasFormat">
+          <DataField>VarSubFeriasFormat</DataField>
+        </Field>
+        <Field Name="VarSubAlimentacao">
+          <DataField>VarSubAlimentacao</DataField>
+        </Field>
+        <Field Name="VarSubAlimentacaoFormat">
+          <DataField>VarSubAlimentacaoFormat</DataField>
+        </Field>
+        <Field Name="VarVencimentoBase">
+          <DataField>VarVencimentoBase</DataField>
+        </Field>
+        <Field Name="VarVencimentoBaseFormat">
+          <DataField>VarVencimentoBaseFormat</DataField>
+        </Field>
+        <Field Name="VarLiquido">
+          <DataField>VarLiquido</DataField>
+        </Field>
+        <Field Name="VarLiquidoFormat">
+          <DataField>VarLiquidoFormat</DataField>
+        </Field>
+        <Field Name="VarTotAbonos">
+          <DataField>VarTotAbonos</DataField>
+        </Field>
+        <Field Name="VarTotAbonosFormat">
+          <DataField>VarTotAbonosFormat</DataField>
+        </Field>
+        <Field Name="VarFCT">
+          <DataField>VarFCT</DataField>
+        </Field>
+        <Field Name="VarFCTFormat">
+          <DataField>VarFCTFormat</DataField>
+        </Field>
+        <Field Name="Empregado_No_">
+          <DataField>Empregado_No_</DataField>
+        </Field>
+        <Field Name="Processado_por_ComputadorCaption">
+          <DataField>Processado_por_ComputadorCaption</DataField>
+        </Field>
+        <Field Name="VarEncSS_Control1101490085">
+          <DataField>VarEncSS_Control1101490085</DataField>
+        </Field>
+        <Field Name="VarEncSS_Control1101490085Format">
+          <DataField>VarEncSS_Control1101490085Format</DataField>
+        </Field>
+        <Field Name="VarEncCGA_Control1101490086">
+          <DataField>VarEncCGA_Control1101490086</DataField>
+        </Field>
+        <Field Name="VarEncCGA_Control1101490086Format">
+          <DataField>VarEncCGA_Control1101490086Format</DataField>
+        </Field>
+        <Field Name="ABS_VarOutrosDesc__Control1101490081">
+          <DataField>ABS_VarOutrosDesc__Control1101490081</DataField>
+        </Field>
+        <Field Name="ABS_VarOutrosDesc__Control1101490081Format">
+          <DataField>ABS_VarOutrosDesc__Control1101490081Format</DataField>
+        </Field>
+        <Field Name="ABS_VarSS__Control1101490078">
+          <DataField>ABS_VarSS__Control1101490078</DataField>
+        </Field>
+        <Field Name="ABS_VarSS__Control1101490078Format">
+          <DataField>ABS_VarSS__Control1101490078Format</DataField>
+        </Field>
+        <Field Name="ABS_VarCGA__Control1101490077">
+          <DataField>ABS_VarCGA__Control1101490077</DataField>
+        </Field>
+        <Field Name="ABS_VarCGA__Control1101490077Format">
+          <DataField>ABS_VarCGA__Control1101490077Format</DataField>
+        </Field>
+        <Field Name="ABS_VarIRS__Control1101490076">
+          <DataField>ABS_VarIRS__Control1101490076</DataField>
+        </Field>
+        <Field Name="ABS_VarIRS__Control1101490076Format">
+          <DataField>ABS_VarIRS__Control1101490076Format</DataField>
+        </Field>
+        <Field Name="VarOutrosRendim_Control1101490071">
+          <DataField>VarOutrosRendim_Control1101490071</DataField>
+        </Field>
+        <Field Name="VarOutrosRendim_Control1101490071Format">
+          <DataField>VarOutrosRendim_Control1101490071Format</DataField>
+        </Field>
+        <Field Name="VarSubNatal_Control1101490036">
+          <DataField>VarSubNatal_Control1101490036</DataField>
+        </Field>
+        <Field Name="VarSubNatal_Control1101490036Format">
+          <DataField>VarSubNatal_Control1101490036Format</DataField>
+        </Field>
+        <Field Name="VarSubFerias_Control1101490035">
+          <DataField>VarSubFerias_Control1101490035</DataField>
+        </Field>
+        <Field Name="VarSubFerias_Control1101490035Format">
+          <DataField>VarSubFerias_Control1101490035Format</DataField>
+        </Field>
+        <Field Name="VarSubAlimentacao_Control1101490034">
+          <DataField>VarSubAlimentacao_Control1101490034</DataField>
+        </Field>
+        <Field Name="VarSubAlimentacao_Control1101490034Format">
+          <DataField>VarSubAlimentacao_Control1101490034Format</DataField>
+        </Field>
+        <Field Name="VarVencimentoBase_Control1101490033">
+          <DataField>VarVencimentoBase_Control1101490033</DataField>
+        </Field>
+        <Field Name="VarVencimentoBase_Control1101490033Format">
+          <DataField>VarVencimentoBase_Control1101490033Format</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_Cat_Prof_QP_">
+          <DataField>Empregado__Descrição_Cat_Prof_QP_</DataField>
+        </Field>
+        <Field Name="Empregado_Name">
+          <DataField>Empregado_Name</DataField>
+        </Field>
+        <Field Name="Empregado__No__">
+          <DataField>Empregado__No__</DataField>
+        </Field>
+        <Field Name="VarLiquido_Control1101490090">
+          <DataField>VarLiquido_Control1101490090</DataField>
+        </Field>
+        <Field Name="VarLiquido_Control1101490090Format">
+          <DataField>VarLiquido_Control1101490090Format</DataField>
+        </Field>
+        <Field Name="VarTotAbonos_Control1102056008">
+          <DataField>VarTotAbonos_Control1102056008</DataField>
+        </Field>
+        <Field Name="VarTotAbonos_Control1102056008Format">
+          <DataField>VarTotAbonos_Control1102056008Format</DataField>
+        </Field>
+        <Field Name="VarFCT_Control1101490100">
+          <DataField>VarFCT_Control1101490100</DataField>
+        </Field>
+        <Field Name="VarFCT_Control1101490100Format">
+          <DataField>VarFCT_Control1101490100Format</DataField>
+        </Field>
+        <Field Name="Integer_Number">
+          <DataField>Integer_Number</DataField>
+        </Field>
+        <Field Name="Rodape_Number">
+          <DataField>Rodape_Number</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

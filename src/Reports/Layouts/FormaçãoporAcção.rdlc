@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="TabConfEmpresa_Picture">
+          <DataField>TabConfEmpresa_Picture</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code_">
+          <DataField>TabConfEmpresa__Post_Code_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address">
+          <DataField>TabConfEmpresa_Address</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Código____________Acções_Formação__Descrição">
+          <DataField>Acções_Formação__Código____________Acções_Formação__Descrição</DataField>
+        </Field>
+        <Field Name="Acções_Formação__No__Horas_Acção_">
+          <DataField>Acções_Formação__No__Horas_Acção_</DataField>
+        </Field>
+        <Field Name="Acções_Formação__No__Horas_Acção_Format">
+          <DataField>Acções_Formação__No__Horas_Acção_Format</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Data_Fim_">
+          <DataField>Acções_Formação__Data_Fim_</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Data_Início_">
+          <DataField>Acções_Formação__Data_Início_</DataField>
+        </Field>
+        <Field Name="Acções_Formação_Tipo">
+          <DataField>Acções_Formação_Tipo</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Local_">
+          <DataField>Acções_Formação__Local_</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Nome_Entidade_Prestadora_">
+          <DataField>Acções_Formação__Nome_Entidade_Prestadora_</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Nome_Formador_">
+          <DataField>Acções_Formação__Nome_Formador_</DataField>
+        </Field>
+        <Field Name="FORMAÇÃO_POR_ACÇÃOCaption">
+          <DataField>FORMAÇÃO_POR_ACÇÃOCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="AcçãoCaption">
+          <DataField>AcçãoCaption</DataField>
+        </Field>
+        <Field Name="N__HorasCaption">
+          <DataField>N__HorasCaption</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Data_Fim_Caption">
+          <DataField>Acções_Formação__Data_Fim_Caption</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Data_Início_Caption">
+          <DataField>Acções_Formação__Data_Início_Caption</DataField>
+        </Field>
+        <Field Name="Acções_Formação_TipoCaption">
+          <DataField>Acções_Formação_TipoCaption</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Local_Caption">
+          <DataField>Acções_Formação__Local_Caption</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Nome_Entidade_Prestadora_Caption">
+          <DataField>Acções_Formação__Nome_Entidade_Prestadora_Caption</DataField>
+        </Field>
+        <Field Name="Acções_Formação__Nome_Formador_Caption">
+          <DataField>Acções_Formação__Nome_Formador_Caption</DataField>
+        </Field>
+        <Field Name="Acções_Formação_Código">
+          <DataField>Acções_Formação_Código</DataField>
+        </Field>
+        <Field Name="Formação_Empregado_Observações">
+          <DataField>Formação_Empregado_Observações</DataField>
+        </Field>
+        <Field Name="Formação_Empregado_Avaliação">
+          <DataField>Formação_Empregado_Avaliação</DataField>
+        </Field>
+        <Field Name="Formação_Empregado__No__Empregado_">
+          <DataField>Formação_Empregado__No__Empregado_</DataField>
+        </Field>
+        <Field Name="Nome">
+          <DataField>Nome</DataField>
+        </Field>
+        <Field Name="TotalFormandos">
+          <DataField>TotalFormandos</DataField>
+        </Field>
+        <Field Name="EmpregadoCaption">
+          <DataField>EmpregadoCaption</DataField>
+        </Field>
+        <Field Name="Formação_Empregado_AvaliaçãoCaption">
+          <DataField>Formação_Empregado_AvaliaçãoCaption</DataField>
+        </Field>
+        <Field Name="Formação_Empregado_ObservaçõesCaption">
+          <DataField>Formação_Empregado_ObservaçõesCaption</DataField>
+        </Field>
+        <Field Name="TOTALCaption">
+          <DataField>TOTALCaption</DataField>
+        </Field>
+        <Field Name="Formação_Empregado_Cód__Acção">
+          <DataField>Formação_Empregado_Cód__Acção</DataField>
+        </Field>
+        <Field Name="Formação_Empregado_Data_Início">
+          <DataField>Formação_Empregado_Data_Início</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

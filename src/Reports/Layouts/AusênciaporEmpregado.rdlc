@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address">
+          <DataField>TabConfEmpresa_Address</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code_">
+          <DataField>TabConfEmpresa__Post_Code_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Picture">
+          <DataField>TabConfEmpresa_Picture</DataField>
+        </Field>
+        <Field Name="Empregado_FullName">
+          <DataField>Empregado_FullName</DataField>
+        </Field>
+        <Field Name="Empregado_Empregado__No__">
+          <DataField>Empregado_Empregado__No__</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="AUSÊNCIAS_POR_EMPREGADOCaption">
+          <DataField>AUSÊNCIAS_POR_EMPREGADOCaption</DataField>
+        </Field>
+        <Field Name="Com_Perca_de_RemuneraçãoCaption">
+          <DataField>Com_Perca_de_RemuneraçãoCaption</DataField>
+        </Field>
+        <Field Name="JustificadaCaption">
+          <DataField>JustificadaCaption</DataField>
+        </Field>
+        <Field Name="Cód__Unid__MedidaCaption">
+          <DataField>Cód__Unid__MedidaCaption</DataField>
+        </Field>
+        <Field Name="QuantidadeCaption">
+          <DataField>QuantidadeCaption</DataField>
+        </Field>
+        <Field Name="DescriçãoCaption">
+          <DataField>DescriçãoCaption</DataField>
+        </Field>
+        <Field Name="Cód__motivo_ausênciaCaption">
+          <DataField>Cód__motivo_ausênciaCaption</DataField>
+        </Field>
+        <Field Name="À_dataCaption">
+          <DataField>À_dataCaption</DataField>
+        </Field>
+        <Field Name="A_partir_da_dataCaption">
+          <DataField>A_partir_da_dataCaption</DataField>
+        </Field>
+        <Field Name="Total_Dias_Caption">
+          <DataField>Total_Dias_Caption</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado__Com_Perca_de_Remuneração_">
+          <DataField>Ausência_Empregado__Com_Perca_de_Remuneração_</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado_Justificada">
+          <DataField>Ausência_Empregado_Justificada</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado__Unit_of_Measure_Code_">
+          <DataField>Ausência_Empregado__Unit_of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado_Quantity">
+          <DataField>Ausência_Empregado_Quantity</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado_QuantityFormat">
+          <DataField>Ausência_Empregado_QuantityFormat</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado_Description">
+          <DataField>Ausência_Empregado_Description</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado__Cause_of_Absence_Code_">
+          <DataField>Ausência_Empregado__Cause_of_Absence_Code_</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado__To_Date_">
+          <DataField>Ausência_Empregado__To_Date_</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado__From_Date_">
+          <DataField>Ausência_Empregado__From_Date_</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado__Ausência_Empregado___Quantity__Base__">
+          <DataField>Ausência_Empregado__Ausência_Empregado___Quantity__Base__</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado__Ausência_Empregado___Quantity__Base__Format">
+          <DataField>Ausência_Empregado__Ausência_Empregado___Quantity__Base__Format</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado_Entry_No_">
+          <DataField>Ausência_Empregado_Entry_No_</DataField>
+        </Field>
+        <Field Name="Ausência_Empregado_Employee_No_">
+          <DataField>Ausência_Empregado_Employee_No_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__Com_Perca_de_Remuneração_">
+          <DataField>Histórico_Ausências__Com_Perca_de_Remuneração_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_Justificada">
+          <DataField>Histórico_Ausências_Justificada</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__Unit_of_Measure_Code_">
+          <DataField>Histórico_Ausências__Unit_of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_Quantity">
+          <DataField>Histórico_Ausências_Quantity</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_QuantityFormat">
+          <DataField>Histórico_Ausências_QuantityFormat</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_Description">
+          <DataField>Histórico_Ausências_Description</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__Cause_of_Absence_Code_">
+          <DataField>Histórico_Ausências__Cause_of_Absence_Code_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__To_Date_">
+          <DataField>Histórico_Ausências__To_Date_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__From_Date_">
+          <DataField>Histórico_Ausências__From_Date_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__Histórico_Ausências___Quantity__Base__">
+          <DataField>Histórico_Ausências__Histórico_Ausências___Quantity__Base__</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__Histórico_Ausências___Quantity__Base__Format">
+          <DataField>Histórico_Ausências__Histórico_Ausências___Quantity__Base__Format</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_Entry_No_">
+          <DataField>Histórico_Ausências_Entry_No_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_Employee_No_">
+          <DataField>Histórico_Ausências_Employee_No_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

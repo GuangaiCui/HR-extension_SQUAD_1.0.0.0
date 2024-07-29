@@ -93,17 +93,22 @@ page 53131 "Importação Templates"
 
                     trigger OnAction()
                     var
-                        path1: Text[100];
                         file1: Text[30];
                     //environment: DotNet BCTestEnvironment;
                     begin
+
+                        //NOTES: This export function was changed due to no longer being supported in BC. Now it download the Attachment to the download folder.
                         //29.05.2008 - usar o environ em vez do c:
                         //path1 := ENVIRON('userprofile')+'\';
+                        /*
                         file1 := Rec."No." + '.' + Rec."File Extension";
                         path1 := FileMgt.BrowseForFolderDialog('', 'Navision', true);
                         path1 := path1 + '\';
                         Rec.ExportAttachment(path1 + file1);
                         Message('Exportado com sucesso para: %1%2', path1, file1);
+                        */
+                        file1 := Rec."No." + '.' + Rec."File Extension";
+                        Rec.ExportAttachment(file1);
                     end;
                 }
             }
@@ -123,7 +128,6 @@ page 53131 "Importação Templates"
         tamanho2: Integer;
         "extensão": Code[20];
         Path: Text[250];
-
 
     procedure OpenFile(WindowTitle: Text[50]; DefaultFileName: Text[250]; DefaultFileType: Option " ",Text,Excel,Word,Custom; FilterString: Text[250]; "Action": Option Open,Save): Text[260]
     begin
@@ -146,10 +150,11 @@ page 53131 "Importação Templates"
                 FilterString := Text005;
         end;
 
-        if Action = Action::Open then
-            FileNameImport := FileMgt.OpenFileDialog(WindowTitle, DefaultFileName, FilterString)
-        else
-            FileNameImport := FileMgt.SaveFileDialog(WindowTitle, DefaultFileName, FilterString);
+        //TODO: COMMENdED TO CREATE APP
+        // if Action = Action::Open then
+        //     FileNameImport := FileMgt.OpenFileDialog(WindowTitle, DefaultFileName, FilterString)
+        // else
+        //     FileNameImport := FileMgt.SaveFileDialog(WindowTitle, DefaultFileName, FilterString);
 
         //LCF
 

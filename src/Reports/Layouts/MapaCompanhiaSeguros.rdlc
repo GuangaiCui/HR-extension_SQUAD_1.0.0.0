@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="lblVenBase">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblVenBase</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblVenBase</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblProcComp">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblProcComp</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblProcComp</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="PeriodosProcessamento_Estado">
+          <DataField>PeriodosProcessamento_Estado</DataField>
+        </Field>
+        <Field Name="PeriodosProcessamento_CodProcessamento">
+          <DataField>PeriodosProcessamento_CodProcessamento</DataField>
+        </Field>
+        <Field Name="TotaisCaption_Control1102059061">
+          <DataField>TotaisCaption_Control1102059061</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Picture">
+          <DataField>TabConfEmpresa_Picture</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address">
+          <DataField>TabConfEmpresa_Address</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code_">
+          <DataField>TabConfEmpresa__Post_Code_</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="varProvisorio">
+          <DataField>varProvisorio</DataField>
+        </Field>
+        <Field Name="Movs__Empregado_Seguradora">
+          <DataField>Movs__Empregado_Seguradora</DataField>
+        </Field>
+        <Field Name="Movs__Empregado__N__Apólice_">
+          <DataField>Movs__Empregado__N__Apólice_</DataField>
+        </Field>
+        <Field Name="FORMAT_Mensal___________FORMAT_Ano_">
+          <DataField>FORMAT_Mensal___________FORMAT_Ano_</DataField>
+        </Field>
+        <Field Name="Movs__Empregado__N__Empregado_">
+          <DataField>Movs__Empregado__N__Empregado_</DataField>
+        </Field>
+        <Field Name="Movs__Empregado__Designação_Empregado_">
+          <DataField>Movs__Empregado__Designação_Empregado_</DataField>
+        </Field>
+        <Field Name="valorvencimento">
+          <DataField>valorvencimento</DataField>
+        </Field>
+        <Field Name="valorvencimentoFormat">
+          <DataField>valorvencimentoFormat</DataField>
+        </Field>
+        <Field Name="valorDiuturnidades">
+          <DataField>valorDiuturnidades</DataField>
+        </Field>
+        <Field Name="valorDiuturnidadesFormat">
+          <DataField>valorDiuturnidadesFormat</DataField>
+        </Field>
+        <Field Name="valorSubsAlmoco">
+          <DataField>valorSubsAlmoco</DataField>
+        </Field>
+        <Field Name="valorSubsAlmocoFormat">
+          <DataField>valorSubsAlmocoFormat</DataField>
+        </Field>
+        <Field Name="valorSubsNatalFerias">
+          <DataField>valorSubsNatalFerias</DataField>
+        </Field>
+        <Field Name="valorSubsNatalFeriasFormat">
+          <DataField>valorSubsNatalFeriasFormat</DataField>
+        </Field>
+        <Field Name="valorOutros">
+          <DataField>valorOutros</DataField>
+        </Field>
+        <Field Name="valorOutrosFormat">
+          <DataField>valorOutrosFormat</DataField>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+        </Field>
+        <Field Name="TotalFormat">
+          <DataField>TotalFormat</DataField>
+        </Field>
+        <Field Name="Movs__Empregado__Movs__Empregado___Descrição_Cat_Prof_">
+          <DataField>Movs__Empregado__Movs__Empregado___Descrição_Cat_Prof_</DataField>
+        </Field>
+        <Field Name="NDias">
+          <DataField>NDias</DataField>
+        </Field>
+        <Field Name="NDiasFormat">
+          <DataField>NDiasFormat</DataField>
+        </Field>
+        <Field Name="TotalGlobal">
+          <DataField>TotalGlobal</DataField>
+        </Field>
+        <Field Name="TotalGlobalFormat">
+          <DataField>TotalGlobalFormat</DataField>
+        </Field>
+        <Field Name="TabConfContab__Currency_Text_">
+          <DataField>TabConfContab__Currency_Text_</DataField>
+        </Field>
+        <Field Name="N__EmpregadoCaption">
+          <DataField>N__EmpregadoCaption</DataField>
+        </Field>
+        <Field Name="NomeCaption">
+          <DataField>NomeCaption</DataField>
+        </Field>
+        <Field Name="VencimentoCaption">
+          <DataField>VencimentoCaption</DataField>
+        </Field>
+        <Field Name="DiuturnidadesCaption">
+          <DataField>DiuturnidadesCaption</DataField>
+        </Field>
+        <Field Name="Subsídio_AlmoçoCaption">
+          <DataField>Subsídio_AlmoçoCaption</DataField>
+        </Field>
+        <Field Name="Subsídios_Natal_FériasCaption">
+          <DataField>Subsídios_Natal_FériasCaption</DataField>
+        </Field>
+        <Field Name="Outros_AbonosCaption">
+          <DataField>Outros_AbonosCaption</DataField>
+        </Field>
+        <Field Name="TotalCaption">
+          <DataField>TotalCaption</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="MAPA_COMPANHIA_DE_SEGUROSCaption">
+          <DataField>MAPA_COMPANHIA_DE_SEGUROSCaption</DataField>
+        </Field>
+        <Field Name="DiasCaption">
+          <DataField>DiasCaption</DataField>
+        </Field>
+        <Field Name="Companhia_de_Seguros_Caption">
+          <DataField>Companhia_de_Seguros_Caption</DataField>
+        </Field>
+        <Field Name="N__Apólice_Caption">
+          <DataField>N__Apólice_Caption</DataField>
+        </Field>
+        <Field Name="Periodo_de_Processamento_Caption">
+          <DataField>Periodo_de_Processamento_Caption</DataField>
+        </Field>
+        <Field Name="TotalCaption_Control1102059074">
+          <DataField>TotalCaption_Control1102059074</DataField>
+        </Field>
+        <Field Name="Outros_AbonosCaption_Control1102059075">
+          <DataField>Outros_AbonosCaption_Control1102059075</DataField>
+        </Field>
+        <Field Name="Subsídios_Natal_FériasCaption_Control1102059076">
+          <DataField>Subsídios_Natal_FériasCaption_Control1102059076</DataField>
+        </Field>
+        <Field Name="Subsídio_AlmoçoCaption_Control1102059079">
+          <DataField>Subsídio_AlmoçoCaption_Control1102059079</DataField>
+        </Field>
+        <Field Name="DiuturnidadesCaption_Control1102059080">
+          <DataField>DiuturnidadesCaption_Control1102059080</DataField>
+        </Field>
+        <Field Name="VencimentoCaption_Control1102059081">
+          <DataField>VencimentoCaption_Control1102059081</DataField>
+        </Field>
+        <Field Name="NomeCaption_Control1102059082">
+          <DataField>NomeCaption_Control1102059082</DataField>
+        </Field>
+        <Field Name="N__EmpregadoCaption_Control1102059083">
+          <DataField>N__EmpregadoCaption_Control1102059083</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO_Control1102059116Caption">
+          <DataField>CurrReport_PAGENO_Control1102059116Caption</DataField>
+        </Field>
+        <Field Name="MAPA_COMPANHIA_DE_SEGUROSCaption_Control1102059124">
+          <DataField>MAPA_COMPANHIA_DE_SEGUROSCaption_Control1102059124</DataField>
+        </Field>
+        <Field Name="DiasCaption_Control1102065005">
+          <DataField>DiasCaption_Control1102065005</DataField>
+        </Field>
+        <Field Name="TotaisCaption">
+          <DataField>TotaisCaption</DataField>
+        </Field>
+        <Field Name="Processado_por_ComputadorCaption">
+          <DataField>Processado_por_ComputadorCaption</DataField>
+        </Field>
+        <Field Name="Movs__Empregado_Cód__Processamento">
+          <DataField>Movs__Empregado_Cód__Processamento</DataField>
+        </Field>
+        <Field Name="Movs__Empregado_Tipo_Processamento">
+          <DataField>Movs__Empregado_Tipo_Processamento</DataField>
+        </Field>
+        <Field Name="Movs_Emp_VB">
+          <DataField>Movs_Emp_VB</DataField>
+        </Field>
+        <Field Name="Movs_Emp_VBFormat">
+          <DataField>Movs_Emp_VBFormat</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Picture_Control1102059078">
+          <DataField>TabConfEmpresa_Picture_Control1102059078</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4__Control1102059085">
+          <DataField>FORMAT_TODAY_0_4__Control1102059085</DataField>
+        </Field>
+        <Field Name="USERID_Control1102059086">
+          <DataField>USERID_Control1102059086</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2__Control1102059089">
+          <DataField>TabConfEmpresa__Name_2__Control1102059089</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name_Control1102059090">
+          <DataField>TabConfEmpresa_Name_Control1102059090</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address_Control1102059091">
+          <DataField>TabConfEmpresa_Address_Control1102059091</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City_Control1102059092">
+          <DataField>TabConfEmpresa_City_Control1102059092</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code__Control1102059093">
+          <DataField>TabConfEmpresa__Post_Code__Control1102059093</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No___Control1102059094">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No___Control1102059094</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No___Control1102059095">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No___Control1102059095</DataField>
+        </Field>
+        <Field Name="varProvisorio_Control1102059097">
+          <DataField>varProvisorio_Control1102059097</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Empregado_Seguradora">
+          <DataField>Hist__Movs__Empregado_Seguradora</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Empregado__N__Apólice_">
+          <DataField>Hist__Movs__Empregado__N__Apólice_</DataField>
+        </Field>
+        <Field Name="FORMAT_Mensal___________FORMAT_Ano__Control1102059041">
+          <DataField>FORMAT_Mensal___________FORMAT_Ano__Control1102059041</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Picture_Control1102059098">
+          <DataField>TabConfEmpresa_Picture_Control1102059098</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4__Control1102059099">
+          <DataField>FORMAT_TODAY_0_4__Control1102059099</DataField>
+        </Field>
+        <Field Name="USERID_Control1102059100">
+          <DataField>USERID_Control1102059100</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Empregado__N__Empregado_">
+          <DataField>Hist__Movs__Empregado__N__Empregado_</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Empregado__Designação_Empregado_">
+          <DataField>Hist__Movs__Empregado__Designação_Empregado_</DataField>
+        </Field>
+        <Field Name="valorvencimento_hist">
+          <DataField>valorvencimento_hist</DataField>
+        </Field>
+        <Field Name="valorvencimento_histFormat">
+          <DataField>valorvencimento_histFormat</DataField>
+        </Field>
+        <Field Name="valorDiuturnidades_hist">
+          <DataField>valorDiuturnidades_hist</DataField>
+        </Field>
+        <Field Name="valorDiuturnidades_histFormat">
+          <DataField>valorDiuturnidades_histFormat</DataField>
+        </Field>
+        <Field Name="valorSubsAlmoco_hist">
+          <DataField>valorSubsAlmoco_hist</DataField>
+        </Field>
+        <Field Name="valorSubsAlmoco_histFormat">
+          <DataField>valorSubsAlmoco_histFormat</DataField>
+        </Field>
+        <Field Name="valorSubsNatalFerias_hist">
+          <DataField>valorSubsNatalFerias_hist</DataField>
+        </Field>
+        <Field Name="valorSubsNatalFerias_histFormat">
+          <DataField>valorSubsNatalFerias_histFormat</DataField>
+        </Field>
+        <Field Name="valorOutros_hist">
+          <DataField>valorOutros_hist</DataField>
+        </Field>
+        <Field Name="valorOutros_histFormat">
+          <DataField>valorOutros_histFormat</DataField>
+        </Field>
+        <Field Name="Total_hist">
+          <DataField>Total_hist</DataField>
+        </Field>
+        <Field Name="Total_histFormat">
+          <DataField>Total_histFormat</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Empregado__Hist__Movs__Empregado___Descrição_Cat_Prof_">
+          <DataField>Hist__Movs__Empregado__Hist__Movs__Empregado___Descrição_Cat_Prof_</DataField>
+        </Field>
+        <Field Name="NDias_Control1102065002">
+          <DataField>NDias_Control1102065002</DataField>
+        </Field>
+        <Field Name="NDias_Control1102065002Format">
+          <DataField>NDias_Control1102065002Format</DataField>
+        </Field>
+        <Field Name="TotalGlobal_Control1102059060">
+          <DataField>TotalGlobal_Control1102059060</DataField>
+        </Field>
+        <Field Name="TotalGlobal_Control1102059060Format">
+          <DataField>TotalGlobal_Control1102059060Format</DataField>
+        </Field>
+        <Field Name="TabConfContab__Currency_Text__Control1102059062">
+          <DataField>TabConfContab__Currency_Text__Control1102059062</DataField>
+        </Field>
+        <Field Name="N__EmpregadoCaption_Control1102059028">
+          <DataField>N__EmpregadoCaption_Control1102059028</DataField>
+        </Field>
+        <Field Name="NomeCaption_Control1102059029">
+          <DataField>NomeCaption_Control1102059029</DataField>
+        </Field>
+        <Field Name="VencimentoCaption_Control1102059030">
+          <DataField>VencimentoCaption_Control1102059030</DataField>
+        </Field>
+        <Field Name="DiuturnidadesCaption_Control1102059031">
+          <DataField>DiuturnidadesCaption_Control1102059031</DataField>
+        </Field>
+        <Field Name="Subsídio_AlmoçoCaption_Control1102059032">
+          <DataField>Subsídio_AlmoçoCaption_Control1102059032</DataField>
+        </Field>
+        <Field Name="Subsídios_Natal_FériasCaption_Control1102059033">
+          <DataField>Subsídios_Natal_FériasCaption_Control1102059033</DataField>
+        </Field>
+        <Field Name="Outros_AbonosCaption_Control1102059034">
+          <DataField>Outros_AbonosCaption_Control1102059034</DataField>
+        </Field>
+        <Field Name="TotalCaption_Control1102059035">
+          <DataField>TotalCaption_Control1102059035</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENO_Control1102059088Caption">
+          <DataField>CurrReport_PAGENO_Control1102059088Caption</DataField>
+        </Field>
+        <Field Name="MAPA_COMPANHIA_DE_SEGUROSCaption_Control1102059096">
+          <DataField>MAPA_COMPANHIA_DE_SEGUROSCaption_Control1102059096</DataField>
+        </Field>
+        <Field Name="DiasCaption_Control1102065006">
+          <DataField>DiasCaption_Control1102065006</DataField>
+        </Field>
+        <Field Name="Companhia_de_Seguros_Caption_Control1102059038">
+          <DataField>Companhia_de_Seguros_Caption_Control1102059038</DataField>
+        </Field>
+        <Field Name="N__Apólice_Caption_Control1102059040">
+          <DataField>N__Apólice_Caption_Control1102059040</DataField>
+        </Field>
+        <Field Name="Periodo_de_Processamento_Caption_Control1102059042">
+          <DataField>Periodo_de_Processamento_Caption_Control1102059042</DataField>
+        </Field>
+        <Field Name="TotalCaption_Control1102059044">
+          <DataField>TotalCaption_Control1102059044</DataField>
+        </Field>
+        <Field Name="Outros_AbonosCaption_Control1102059045">
+          <DataField>Outros_AbonosCaption_Control1102059045</DataField>
+        </Field>
+        <Field Name="Subsídios_Natal_FériasCaption_Control1102059046">
+          <DataField>Subsídios_Natal_FériasCaption_Control1102059046</DataField>
+        </Field>
+        <Field Name="Subsídio_AlmoçoCaption_Control1102059047">
+          <DataField>Subsídio_AlmoçoCaption_Control1102059047</DataField>
+        </Field>
+        <Field Name="DiuturnidadesCaption_Control1102059048">
+          <DataField>DiuturnidadesCaption_Control1102059048</DataField>
+        </Field>
+        <Field Name="VencimentoCaption_Control1102059049">
+          <DataField>VencimentoCaption_Control1102059049</DataField>
+        </Field>
+        <Field Name="NomeCaption_Control1102059050">
+          <DataField>NomeCaption_Control1102059050</DataField>
+        </Field>
+        <Field Name="Processado_por_ComputadorCaption_Control1102059072">
+          <DataField>Processado_por_ComputadorCaption_Control1102059072</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Empregado_Cód__Processamento">
+          <DataField>Hist__Movs__Empregado_Cód__Processamento</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Empregado_Tipo_Processamento">
+          <DataField>Hist__Movs__Empregado_Tipo_Processamento</DataField>
+        </Field>
+        <Field Name="HistMovs_Emp_VB">
+          <DataField>HistMovs_Emp_VB</DataField>
+        </Field>
+        <Field Name="HistMovs_Emp_VBFormat">
+          <DataField>HistMovs_Emp_VBFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

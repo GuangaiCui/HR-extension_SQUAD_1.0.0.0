@@ -2,6 +2,25 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Publish: Microsoft cloud sandbox",
+            "type": "al",
+            "request": "launch",
+            "environmentType": "Sandbox",
+            "environmentName": "SQUAD_SNDBX_RH",
+            "startupObjectId": 50549,
+            "startupObjectType": "Page",
+            "schemaUpdateMode":"ForceSync",
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "launchBrowser": true,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "tenant": "91abd816-8e10-4bec-b57d-d65c9ba17f07"
+        }
+        ,
+        {
             "name": "Publish: Your own server",
             "type": "al",
             "request": "launch",

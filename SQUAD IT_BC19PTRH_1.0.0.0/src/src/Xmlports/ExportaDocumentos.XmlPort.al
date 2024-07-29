@@ -56,10 +56,10 @@ xmlport 53050 "Exporta Documentos"
                         ReciboVenc: Report "Recibo Vencimentos A4";
                         FilePathAndName: Text;
                         FileManagement: Codeunit "File Management";
-                        dnetByte: DotNet BCTestArray;
+                        // dnetByte: DotNet BCTestArray;
                         //dnetByte1: DotNet BCTestArray;
-                        dnetConvert: DotNet BCTestConvert;
-                        dnetMemoryStream: DotNet BCTestMemoryStream;
+                        // dnetConvert: DotNet BCTestConvert;
+                        //dnetMemoryStream: DotNet BCTestMemoryStream;
                         objInstream: InStream;
                         txtBase64Code: Text;
                         IFile: File;
@@ -67,6 +67,8 @@ xmlport 53050 "Exporta Documentos"
                         HistCabMovEmp: Record "Hist. Cab. Movs. Empregado";
                     begin
 
+                        //TODOS: commented to create app, will be reworced
+                        /*
                         FilePathAndName := FileManagement.ServerTempFileName('pdf');
                         //insert a type and get a name
                         Flag := false;
@@ -117,6 +119,7 @@ xmlport 53050 "Exporta Documentos"
 
                             Document := txtBase64Code
                         end;
+                        */
                     end;
                 }
             }

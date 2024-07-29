@@ -1,0 +1,739 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="No_Professor_lbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_Professor_lbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_Professor_lbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Swift">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Swift</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Swift</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="IBAN">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>IBAN</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>IBAN</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ADSE_lbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ADSE_lbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ADSE_lbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CGA_lbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CGA_lbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CGA_lbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Data_Admissao_lbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Data_Admissao_lbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Data_Admissao_lbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="N_Horas_Docencia">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>N_Horas_Docencia</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>N_Horas_Docencia</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CGA_Prof_Acum">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CGA_Prof_Acum</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CGA_Prof_Acum</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="N_Horas_Sem_totais">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>N_Horas_Sem_totais</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>N_Horas_Sem_totais</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address">
+          <DataField>TabConfEmpresa_Address</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code_">
+          <DataField>TabConfEmpresa__Post_Code_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Picture">
+          <DataField>TabConfEmpresa_Picture</DataField>
+        </Field>
+        <Field Name="Empregado_Picture">
+          <DataField>Empregado_Picture</DataField>
+        </Field>
+        <Field Name="Empregado__No__">
+          <DataField>Empregado__No__</DataField>
+        </Field>
+        <Field Name="Empregado_Name">
+          <DataField>Empregado_Name</DataField>
+        </Field>
+        <Field Name="Address__________Address_2_">
+          <DataField>Address__________Address_2_</DataField>
+        </Field>
+        <Field Name="Empregado__Tipo_Empregado_">
+          <DataField>Empregado__Tipo_Empregado_</DataField>
+        </Field>
+        <Field Name="Empregado__Job_Title_">
+          <DataField>Empregado__Job_Title_</DataField>
+        </Field>
+        <Field Name="Empregado_No_Professor">
+          <DataField>Empregado_No_Professor</DataField>
+        </Field>
+        <Field Name="Empregado_Extension">
+          <DataField>Empregado_Extension</DataField>
+        </Field>
+        <Field Name="Empregado_Pager">
+          <DataField>Empregado_Pager</DataField>
+        </Field>
+        <Field Name="Empregado__Company_E_Mail_">
+          <DataField>Empregado__Company_E_Mail_</DataField>
+        </Field>
+        <Field Name="Empregado__Phone_No__">
+          <DataField>Empregado__Phone_No__</DataField>
+        </Field>
+        <Field Name="Empregado__Mobile_Phone_No__">
+          <DataField>Empregado__Mobile_Phone_No__</DataField>
+        </Field>
+        <Field Name="Empregado__E_Mail_">
+          <DataField>Empregado__E_Mail_</DataField>
+        </Field>
+        <Field Name="Empregado_Status">
+          <DataField>Empregado_Status</DataField>
+        </Field>
+        <Field Name="Empregado__Statistics_Group_Code_">
+          <DataField>Empregado__Statistics_Group_Code_</DataField>
+        </Field>
+        <Field Name="Empregado_Estabelecimento">
+          <DataField>Empregado_Estabelecimento</DataField>
+        </Field>
+        <Field Name="Empregado__No__NIB_">
+          <DataField>Empregado__No__NIB_</DataField>
+        </Field>
+        <Field Name="Empregado_Swift">
+          <DataField>Empregado_Swift</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__Banco_Transf__">
+          <DataField>Empregado__Cód__Banco_Transf__</DataField>
+        </Field>
+        <Field Name="Empregado__Birth_Date_">
+          <DataField>Empregado__Birth_Date_</DataField>
+        </Field>
+        <Field Name="varPais">
+          <DataField>varPais</DataField>
+        </Field>
+        <Field Name="Empregado__Documento_Identificação_">
+          <DataField>Empregado__Documento_Identificação_</DataField>
+        </Field>
+        <Field Name="Empregado__No__Doc__Identificação_">
+          <DataField>Empregado__No__Doc__Identificação_</DataField>
+        </Field>
+        <Field Name="Empregado__Local_Emissão_Doc__Ident__">
+          <DataField>Empregado__Local_Emissão_Doc__Ident__</DataField>
+        </Field>
+        <Field Name="Empregado__Data_Doc__Ident__">
+          <DataField>Empregado__Data_Doc__Ident__</DataField>
+        </Field>
+        <Field Name="Empregado__Data_Validade_Doc__Ident__">
+          <DataField>Empregado__Data_Validade_Doc__Ident__</DataField>
+        </Field>
+        <Field Name="Empregado___IVA_">
+          <DataField>Empregado___IVA_</DataField>
+        </Field>
+        <Field Name="Empregado___IVA_Format">
+          <DataField>Empregado___IVA_Format</DataField>
+        </Field>
+        <Field Name="Empregado__No__Contribuinte_">
+          <DataField>Empregado__No__Contribuinte_</DataField>
+        </Field>
+        <Field Name="Empregado__Tipo_Contribuinte_">
+          <DataField>Empregado__Tipo_Contribuinte_</DataField>
+        </Field>
+        <Field Name="Empregado__Cod__Repartição_Finanças_">
+          <DataField>Empregado__Cod__Repartição_Finanças_</DataField>
+        </Field>
+        <Field Name="Empregado__Repartição_Finanças_">
+          <DataField>Empregado__Repartição_Finanças_</DataField>
+        </Field>
+        <Field Name="Empregado__Data_Emissão_NIF_">
+          <DataField>Empregado__Data_Emissão_NIF_</DataField>
+        </Field>
+        <Field Name="Empregado__Tipo_Rendimento_">
+          <DataField>Empregado__Tipo_Rendimento_</DataField>
+        </Field>
+        <Field Name="Empregado__Local_Obtenção_Rendimento_">
+          <DataField>Empregado__Local_Obtenção_Rendimento_</DataField>
+        </Field>
+        <Field Name="Empregado_Deficiente">
+          <DataField>Empregado_Deficiente</DataField>
+        </Field>
+        <Field Name="Empregado__Estado_Civil_">
+          <DataField>Empregado__Estado_Civil_</DataField>
+        </Field>
+        <Field Name="Empregado__Titular_Rendimentos_">
+          <DataField>Empregado__Titular_Rendimentos_</DataField>
+        </Field>
+        <Field Name="Empregado__Conjuge_Deficiente_">
+          <DataField>Empregado__Conjuge_Deficiente_</DataField>
+        </Field>
+        <Field Name="Empregado__No__Dependentes_">
+          <DataField>Empregado__No__Dependentes_</DataField>
+        </Field>
+        <Field Name="Empregado__No__Dependentes_Deficientes_">
+          <DataField>Empregado__No__Dependentes_Deficientes_</DataField>
+        </Field>
+        <Field Name="IRS">
+          <DataField>IRS</DataField>
+        </Field>
+        <Field Name="IRSFormat">
+          <DataField>IRSFormat</DataField>
+        </Field>
+        <Field Name="Empregado__No__Segurança_Social_">
+          <DataField>Empregado__No__Segurança_Social_</DataField>
+        </Field>
+        <Field Name="Empregado__Data_da_Admissão_SS_">
+          <DataField>Empregado__Data_da_Admissão_SS_</DataField>
+        </Field>
+        <Field Name="Empregado__Data_Emissão_SS_">
+          <DataField>Empregado__Data_Emissão_SS_</DataField>
+        </Field>
+        <Field Name="varInstSegSocial">
+          <DataField>varInstSegSocial</DataField>
+        </Field>
+        <Field Name="varRegimeSegSocial">
+          <DataField>varRegimeSegSocial</DataField>
+        </Field>
+        <Field Name="ADSE">
+          <DataField>ADSE</DataField>
+        </Field>
+        <Field Name="ADSE_Data_Admissao">
+          <DataField>ADSE_Data_Admissao</DataField>
+        </Field>
+        <Field Name="CGA">
+          <DataField>CGA</DataField>
+        </Field>
+        <Field Name="CGA_Data_Admissao">
+          <DataField>CGA_Data_Admissao</DataField>
+        </Field>
+        <Field Name="CGA_N_Horas_Docencia">
+          <DataField>CGA_N_Horas_Docencia</DataField>
+        </Field>
+        <Field Name="CGA_Prof_Acumulacao">
+          <DataField>CGA_Prof_Acumulacao</DataField>
+        </Field>
+        <Field Name="Empregado__Valor_Vencimento_Base_">
+          <DataField>Empregado__Valor_Vencimento_Base_</DataField>
+        </Field>
+        <Field Name="Empregado__Valor_Vencimento_Base_Format">
+          <DataField>Empregado__Valor_Vencimento_Base_Format</DataField>
+        </Field>
+        <Field Name="Empregado__Valor_Dia_">
+          <DataField>Empregado__Valor_Dia_</DataField>
+        </Field>
+        <Field Name="Empregado__Valor_Dia_Format">
+          <DataField>Empregado__Valor_Dia_Format</DataField>
+        </Field>
+        <Field Name="Empregado__Valor_Hora_">
+          <DataField>Empregado__Valor_Hora_</DataField>
+        </Field>
+        <Field Name="Empregado__Valor_Hora_Format">
+          <DataField>Empregado__Valor_Hora_Format</DataField>
+        </Field>
+        <Field Name="Empregado__No__Horas_Semanais_">
+          <DataField>Empregado__No__Horas_Semanais_</DataField>
+        </Field>
+        <Field Name="Empregado__No__Horas_Semanais_Format">
+          <DataField>Empregado__No__Horas_Semanais_Format</DataField>
+        </Field>
+        <Field Name="Empregado__No__Horas_Semanais_Totais">
+          <DataField>Empregado__No__Horas_Semanais_Totais</DataField>
+        </Field>
+        <Field Name="Empregado__No__Horas_Semanais_TotaisFormat">
+          <DataField>Empregado__No__Horas_Semanais_TotaisFormat</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__IRCT_">
+          <DataField>Empregado__Cód__IRCT_</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_IRCT_">
+          <DataField>Empregado__Descrição_IRCT_</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__Cat__Profissional_">
+          <DataField>Empregado__Cód__Cat__Profissional_</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_Cat_Prof_">
+          <DataField>Empregado__Descrição_Cat_Prof_</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__Cat__Prof_QP_">
+          <DataField>Empregado__Cód__Cat__Prof_QP_</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_Cat_Prof_QP_">
+          <DataField>Empregado__Descrição_Cat_Prof_QP_</DataField>
+        </Field>
+        <Field Name="Empregado__Class__Nac__Profi__">
+          <DataField>Empregado__Class__Nac__Profi__</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_Class__Nac__">
+          <DataField>Empregado__Descrição_Class__Nac__</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__Habilitações_">
+          <DataField>Empregado__Cód__Habilitações_</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_Habilitações_">
+          <DataField>Empregado__Descrição_Habilitações_</DataField>
+        </Field>
+        <Field Name="Empregado__Situação_Profissional_">
+          <DataField>Empregado__Situação_Profissional_</DataField>
+        </Field>
+        <Field Name="Empregado__Grau_Função_">
+          <DataField>Empregado__Grau_Função_</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_Grau_Função_">
+          <DataField>Empregado__Descrição_Grau_Função_</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__Horário_">
+          <DataField>Empregado__Cód__Horário_</DataField>
+        </Field>
+        <Field Name="varEstabelecimento">
+          <DataField>varEstabelecimento</DataField>
+        </Field>
+        <Field Name="Empregado__Employment_Date_">
+          <DataField>Empregado__Employment_Date_</DataField>
+        </Field>
+        <Field Name="Empregado__Post_Code__________Empregado_City">
+          <DataField>Empregado__Post_Code__________Empregado_City</DataField>
+        </Field>
+        <Field Name="Empregado__No__Apólice_________Empregado_Seguradora">
+          <DataField>Empregado__No__Apólice_________Empregado_Seguradora</DataField>
+        </Field>
+        <Field Name="Empregado__No__dias_de_Trabalho_Semanal_">
+          <DataField>Empregado__No__dias_de_Trabalho_Semanal_</DataField>
+        </Field>
+        <Field Name="Empregado__No__dias_de_Trabalho_Semanal_Format">
+          <DataField>Empregado__No__dias_de_Trabalho_Semanal_Format</DataField>
+        </Field>
+        <Field Name="Empregado_Profissionalização">
+          <DataField>Empregado_Profissionalização</DataField>
+        </Field>
+        <Field Name="Empregado_Empregado__Regime_Duração_Trabalho_">
+          <DataField>Empregado_Empregado__Regime_Duração_Trabalho_</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="FICHA_DE_EMPREGADOCaption">
+          <DataField>FICHA_DE_EMPREGADOCaption</DataField>
+        </Field>
+        <Field Name="Empregado__No__Caption">
+          <DataField>Empregado__No__Caption</DataField>
+        </Field>
+        <Field Name="NomeCaption">
+          <DataField>NomeCaption</DataField>
+        </Field>
+        <Field Name="MoradaCaption">
+          <DataField>MoradaCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Tipo_Empregado_Caption">
+          <DataField>Empregado__Tipo_Empregado_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Job_Title_Caption">
+          <DataField>Empregado__Job_Title_Caption</DataField>
+        </Field>
+        <Field Name="Empregado_ExtensionCaption">
+          <DataField>Empregado_ExtensionCaption</DataField>
+        </Field>
+        <Field Name="Empregado_PagerCaption">
+          <DataField>Empregado_PagerCaption</DataField>
+        </Field>
+        <Field Name="E_Mail_da_EmpresaCaption">
+          <DataField>E_Mail_da_EmpresaCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Phone_No__Caption">
+          <DataField>Empregado__Phone_No__Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Mobile_Phone_No__Caption">
+          <DataField>Empregado__Mobile_Phone_No__Caption</DataField>
+        </Field>
+        <Field Name="Empregado__E_Mail_Caption">
+          <DataField>Empregado__E_Mail_Caption</DataField>
+        </Field>
+        <Field Name="Empregado_StatusCaption">
+          <DataField>Empregado_StatusCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Statistics_Group_Code_Caption">
+          <DataField>Empregado__Statistics_Group_Code_Caption</DataField>
+        </Field>
+        <Field Name="Empregado_EstabelecimentoCaption">
+          <DataField>Empregado_EstabelecimentoCaption</DataField>
+        </Field>
+        <Field Name="Empregado__No__NIB_Caption">
+          <DataField>Empregado__No__NIB_Caption</DataField>
+        </Field>
+        <Field Name="N___Conta_BancáriaCaption">
+          <DataField>N___Conta_BancáriaCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__Banco_Transf__Caption">
+          <DataField>Empregado__Cód__Banco_Transf__Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Birth_Date_Caption">
+          <DataField>Empregado__Birth_Date_Caption</DataField>
+        </Field>
+        <Field Name="NacionalidadeCaption">
+          <DataField>NacionalidadeCaption</DataField>
+        </Field>
+        <Field Name="Doc__IdentificaçãoCaption">
+          <DataField>Doc__IdentificaçãoCaption</DataField>
+        </Field>
+        <Field Name="Empregado__No__Doc__Identificação_Caption">
+          <DataField>Empregado__No__Doc__Identificação_Caption</DataField>
+        </Field>
+        <Field Name="Local_EmissãoCaption">
+          <DataField>Local_EmissãoCaption</DataField>
+        </Field>
+        <Field Name="Data_EmissãoCaption">
+          <DataField>Data_EmissãoCaption</DataField>
+        </Field>
+        <Field Name="Data_ValidadeCaption">
+          <DataField>Data_ValidadeCaption</DataField>
+        </Field>
+        <Field Name="GeralCaption">
+          <DataField>GeralCaption</DataField>
+        </Field>
+        <Field Name="ComunicaçãoCaption">
+          <DataField>ComunicaçãoCaption</DataField>
+        </Field>
+        <Field Name="AdministraçãoCaption">
+          <DataField>AdministraçãoCaption</DataField>
+        </Field>
+        <Field Name="PessoalCaption">
+          <DataField>PessoalCaption</DataField>
+        </Field>
+        <Field Name="Dados_LegaisCaption">
+          <DataField>Dados_LegaisCaption</DataField>
+        </Field>
+        <Field Name="Empregado___IVA_Caption">
+          <DataField>Empregado___IVA_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__No__Contribuinte_Caption">
+          <DataField>Empregado__No__Contribuinte_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Tipo_Contribuinte_Caption">
+          <DataField>Empregado__Tipo_Contribuinte_Caption</DataField>
+        </Field>
+        <Field Name="Repartição_FinançasCaption">
+          <DataField>Repartição_FinançasCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Data_Emissão_NIF_Caption">
+          <DataField>Empregado__Data_Emissão_NIF_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Tipo_Rendimento_Caption">
+          <DataField>Empregado__Tipo_Rendimento_Caption</DataField>
+        </Field>
+        <Field Name="Local_Obtenção_Rend_Caption">
+          <DataField>Local_Obtenção_Rend_Caption</DataField>
+        </Field>
+        <Field Name="Empregado_DeficienteCaption">
+          <DataField>Empregado_DeficienteCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Estado_Civil_Caption">
+          <DataField>Empregado__Estado_Civil_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Titular_Rendimentos_Caption">
+          <DataField>Empregado__Titular_Rendimentos_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Conjuge_Deficiente_Caption">
+          <DataField>Empregado__Conjuge_Deficiente_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__No__Dependentes_Caption">
+          <DataField>Empregado__No__Dependentes_Caption</DataField>
+        </Field>
+        <Field Name="N__Dep__DeficientesCaption">
+          <DataField>N__Dep__DeficientesCaption</DataField>
+        </Field>
+        <Field Name="IRSCaption">
+          <DataField>IRSCaption</DataField>
+        </Field>
+        <Field Name="Empregado__No__Segurança_Social_Caption">
+          <DataField>Empregado__No__Segurança_Social_Caption</DataField>
+        </Field>
+        <Field Name="Data_da_AdmissãoCaption">
+          <DataField>Data_da_AdmissãoCaption</DataField>
+        </Field>
+        <Field Name="Data_EmissãoCaption_Control1101490102">
+          <DataField>Data_EmissãoCaption_Control1101490102</DataField>
+        </Field>
+        <Field Name="Instituição_Seg__SocialCaption">
+          <DataField>Instituição_Seg__SocialCaption</DataField>
+        </Field>
+        <Field Name="Regime_Seg__SocialCaption">
+          <DataField>Regime_Seg__SocialCaption</DataField>
+        </Field>
+        <Field Name="ProcessamentoCaption">
+          <DataField>ProcessamentoCaption</DataField>
+        </Field>
+        <Field Name="CategoriaCaption">
+          <DataField>CategoriaCaption</DataField>
+        </Field>
+        <Field Name="Valor_Vencimento_BaseCaption">
+          <DataField>Valor_Vencimento_BaseCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Valor_Dia_Caption">
+          <DataField>Empregado__Valor_Dia_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Valor_Hora_Caption">
+          <DataField>Empregado__Valor_Hora_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__No__Horas_Semanais_Caption">
+          <DataField>Empregado__No__Horas_Semanais_Caption</DataField>
+        </Field>
+        <Field Name="IRCTCaption">
+          <DataField>IRCTCaption</DataField>
+        </Field>
+        <Field Name="Cat__ProfissionalCaption">
+          <DataField>Cat__ProfissionalCaption</DataField>
+        </Field>
+        <Field Name="Cat__Prof_Quadros_Pes_Caption">
+          <DataField>Cat__Prof_Quadros_Pes_Caption</DataField>
+        </Field>
+        <Field Name="Class__Nac__ProfissõesCaption">
+          <DataField>Class__Nac__ProfissõesCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__Habilitações_Caption">
+          <DataField>Empregado__Cód__Habilitações_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Situação_Profissional_Caption">
+          <DataField>Empregado__Situação_Profissional_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Grau_Função_Caption">
+          <DataField>Empregado__Grau_Função_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__Cód__Horário_Caption">
+          <DataField>Empregado__Cód__Horário_Caption</DataField>
+        </Field>
+        <Field Name="Data_AdmissãoCaption">
+          <DataField>Data_AdmissãoCaption</DataField>
+        </Field>
+        <Field Name="SeguradoraCaption">
+          <DataField>SeguradoraCaption</DataField>
+        </Field>
+        <Field Name="Empregado__No__dias_de_Trabalho_Semanal_Caption">
+          <DataField>Empregado__No__dias_de_Trabalho_Semanal_Caption</DataField>
+        </Field>
+        <Field Name="Empregado_ProfissionalizaçãoCaption">
+          <DataField>Empregado_ProfissionalizaçãoCaption</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Cód__Contrato_">
+          <DataField>Contrato_Empregado__Cód__Contrato_</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado_Descrição">
+          <DataField>Contrato_Empregado_Descrição</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Tipo_Contrato_">
+          <DataField>Contrato_Empregado__Tipo_Contrato_</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Duração_Contrato_">
+          <DataField>Contrato_Empregado__Duração_Contrato_</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Data_Inicio_Contrato_">
+          <DataField>Contrato_Empregado__Data_Inicio_Contrato_</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Data_Fim_Contrato_">
+          <DataField>Contrato_Empregado__Data_Fim_Contrato_</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Cód__Motivo_Terminação_">
+          <DataField>Contrato_Empregado__Cód__Motivo_Terminação_</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Cód__Contrato_Caption">
+          <DataField>Contrato_Empregado__Cód__Contrato_Caption</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado_DescriçãoCaption">
+          <DataField>Contrato_Empregado_DescriçãoCaption</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Tipo_Contrato_Caption">
+          <DataField>Contrato_Empregado__Tipo_Contrato_Caption</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado__Duração_Contrato_Caption">
+          <DataField>Contrato_Empregado__Duração_Contrato_Caption</DataField>
+        </Field>
+        <Field Name="Data_InicioCaption">
+          <DataField>Data_InicioCaption</DataField>
+        </Field>
+        <Field Name="Data_FimCaption">
+          <DataField>Data_FimCaption</DataField>
+        </Field>
+        <Field Name="Mot__TerminoCaption">
+          <DataField>Mot__TerminoCaption</DataField>
+        </Field>
+        <Field Name="Contratos_de_TrabalhoCaption">
+          <DataField>Contratos_de_TrabalhoCaption</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado_Cód__Empregado">
+          <DataField>Contrato_Empregado_Cód__Empregado</DataField>
+        </Field>
+        <Field Name="Contrato_Empregado_No__Linha">
+          <DataField>Contrato_Empregado_No__Linha</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado__From_Date_">
+          <DataField>Qualificação_Empregado__From_Date_</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado__To_Date_">
+          <DataField>Qualificação_Empregado__To_Date_</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado_Type">
+          <DataField>Qualificação_Empregado_Type</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado_Description">
+          <DataField>Qualificação_Empregado_Description</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado__Institution_Company_">
+          <DataField>Qualificação_Empregado__Institution_Company_</DataField>
+        </Field>
+        <Field Name="A_partir_deCaption">
+          <DataField>A_partir_deCaption</DataField>
+        </Field>
+        <Field Name="Até_à_DataCaption">
+          <DataField>Até_à_DataCaption</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado_TypeCaption">
+          <DataField>Qualificação_Empregado_TypeCaption</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado_DescriptionCaption">
+          <DataField>Qualificação_Empregado_DescriptionCaption</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado__Institution_Company_Caption">
+          <DataField>Qualificação_Empregado__Institution_Company_Caption</DataField>
+        </Field>
+        <Field Name="QualificaçõesCaption">
+          <DataField>QualificaçõesCaption</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado_Employee_No_">
+          <DataField>Qualificação_Empregado_Employee_No_</DataField>
+        </Field>
+        <Field Name="Qualificação_Empregado_Line_No_">
+          <DataField>Qualificação_Empregado_Line_No_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

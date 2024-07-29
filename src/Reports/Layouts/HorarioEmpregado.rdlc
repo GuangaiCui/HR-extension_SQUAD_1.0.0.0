@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address">
+          <DataField>TabConfEmpresa_Address</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code_">
+          <DataField>TabConfEmpresa__Post_Code_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Picture">
+          <DataField>TabConfEmpresa_Picture</DataField>
+        </Field>
+        <Field Name="Horário_Empregado_">
+          <DataField>Horário_Empregado_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="DataFim">
+          <DataField>DataFim</DataField>
+        </Field>
+        <Field Name="DataInicio">
+          <DataField>DataInicio</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="a__Caption">
+          <DataField>a__Caption</DataField>
+        </Field>
+        <Field Name="Período_de___Caption">
+          <DataField>Período_de___Caption</DataField>
+        </Field>
+        <Field Name="Horário_Empregado___No__Empregado_Caption">
+          <DataField>Horário_Empregado___No__Empregado_Caption</DataField>
+        </Field>
+        <Field Name="NomeCaption">
+          <DataField>NomeCaption</DataField>
+        </Field>
+        <Field Name="Horário_Empregado___Cód__Horário_Caption">
+          <DataField>Horário_Empregado___Cód__Horário_Caption</DataField>
+        </Field>
+        <Field Name="Horário_RH__Hora_Entrada_Caption">
+          <DataField>Horário_RH__Hora_Entrada_Caption</DataField>
+        </Field>
+        <Field Name="Horário_RH__Hora_Saída_Caption">
+          <DataField>Horário_RH__Hora_Saída_Caption</DataField>
+        </Field>
+        <Field Name="Horário_RH__Hora_Início_Almoço_Caption">
+          <DataField>Horário_RH__Hora_Início_Almoço_Caption</DataField>
+        </Field>
+        <Field Name="Horário_RH__Hora_Fim_Almoço_Caption">
+          <DataField>Horário_RH__Hora_Fim_Almoço_Caption</DataField>
+        </Field>
+        <Field Name="Horário_RH__No__Horas_Diárias_Caption">
+          <DataField>Horário_RH__No__Horas_Diárias_Caption</DataField>
+        </Field>
+        <Field Name="MêsCaption">
+          <DataField>MêsCaption</DataField>
+        </Field>
+        <Field Name="Dia_da_SemanaCaption">
+          <DataField>Dia_da_SemanaCaption</DataField>
+        </Field>
+        <Field Name="Horário_Empregado_No__Empregado">
+          <DataField>Horário_Empregado_No__Empregado</DataField>
+        </Field>
+        <Field Name="Horário_Empregado_Cód__Horário">
+          <DataField>Horário_Empregado_Cód__Horário</DataField>
+        </Field>
+        <Field Name="Horário_Empregado_No__Linha">
+          <DataField>Horário_Empregado_No__Linha</DataField>
+        </Field>
+        <Field Name="Horário_Empregado_Data_Inicio_Horario">
+          <DataField>Horário_Empregado_Data_Inicio_Horario</DataField>
+        </Field>
+        <Field Name="Horário_Empregado_Dia_da_Semana">
+          <DataField>Horário_Empregado_Dia_da_Semana</DataField>
+        </Field>
+        <Field Name="Horário_Empregado___No__Empregado_">
+          <DataField>Horário_Empregado___No__Empregado_</DataField>
+        </Field>
+        <Field Name="NomeEmpregado">
+          <DataField>NomeEmpregado</DataField>
+        </Field>
+        <Field Name="Horário_Empregado___Cód__Horário_">
+          <DataField>Horário_Empregado___Cód__Horário_</DataField>
+        </Field>
+        <Field Name="Horário_RH__Hora_Entrada_">
+          <DataField>Horário_RH__Hora_Entrada_</DataField>
+        </Field>
+        <Field Name="Horário_RH__Hora_Saída_">
+          <DataField>Horário_RH__Hora_Saída_</DataField>
+        </Field>
+        <Field Name="Horário_RH__Hora_Início_Almoço_">
+          <DataField>Horário_RH__Hora_Início_Almoço_</DataField>
+        </Field>
+        <Field Name="Horário_RH__Hora_Fim_Almoço_">
+          <DataField>Horário_RH__Hora_Fim_Almoço_</DataField>
+        </Field>
+        <Field Name="Horário_RH__No__Horas_Diárias_">
+          <DataField>Horário_RH__No__Horas_Diárias_</DataField>
+        </Field>
+        <Field Name="Horário_RH__No__Horas_Diárias_Format">
+          <DataField>Horário_RH__No__Horas_Diárias_Format</DataField>
+        </Field>
+        <Field Name="Horário_Empregado___Dia_da_Semana_">
+          <DataField>Horário_Empregado___Dia_da_Semana_</DataField>
+        </Field>
+        <Field Name="Horário_Empregado__Mês">
+          <DataField>Horário_Empregado__Mês</DataField>
+        </Field>
+        <Field Name="Horário_RH_Código">
+          <DataField>Horário_RH_Código</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="HideList">
+          <DataField>HideList</DataField>
+        </Field>
+        <Field Name="Processado_por_ComputadorCaption">
+          <DataField>Processado_por_ComputadorCaption</DataField>
+        </Field>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Picture">
+          <DataField>TabConfEmpresa_Picture</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address">
+          <DataField>TabConfEmpresa_Address</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code_">
+          <DataField>TabConfEmpresa__Post_Code_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
+        </Field>
+        <Field Name="Filtro">
+          <DataField>Filtro</DataField>
+        </Field>
+        <Field Name="Empregado__No__">
+          <DataField>Empregado__No__</DataField>
+        </Field>
+        <Field Name="Empregado_Name">
+          <DataField>Empregado_Name</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_Cat_Prof_">
+          <DataField>Empregado__Descrição_Cat_Prof_</DataField>
+        </Field>
+        <Field Name="Empregado__No__Contribuinte_">
+          <DataField>Empregado__No__Contribuinte_</DataField>
+        </Field>
+        <Field Name="Empregado__No__Segurança_Social_">
+          <DataField>Empregado__No__Segurança_Social_</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="FOLHA_DE_REMUNERAÇÕESCaption">
+          <DataField>FOLHA_DE_REMUNERAÇÕESCaption</DataField>
+        </Field>
+        <Field Name="Período_de_Processamento_Caption">
+          <DataField>Período_de_Processamento_Caption</DataField>
+        </Field>
+        <Field Name="N__EmpregadoCaption">
+          <DataField>N__EmpregadoCaption</DataField>
+        </Field>
+        <Field Name="Empregado_NameCaption">
+          <DataField>Empregado_NameCaption</DataField>
+        </Field>
+        <Field Name="Empregado__Descrição_Cat_Prof_Caption">
+          <DataField>Empregado__Descrição_Cat_Prof_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__No__Contribuinte_Caption">
+          <DataField>Empregado__No__Contribuinte_Caption</DataField>
+        </Field>
+        <Field Name="Empregado__No__Segurança_Social_Caption">
+          <DataField>Empregado__No__Segurança_Social_Caption</DataField>
+        </Field>
+        <Field Name="REMUNERAÇÕESCaption">
+          <DataField>REMUNERAÇÕESCaption</DataField>
+        </Field>
+        <Field Name="Ilíquido_Caption">
+          <DataField>Ilíquido_Caption</DataField>
+        </Field>
+        <Field Name="DESCONTOSCaption">
+          <DataField>DESCONTOSCaption</DataField>
+        </Field>
+        <Field Name="Descontos_Caption">
+          <DataField>Descontos_Caption</DataField>
+        </Field>
+        <Field Name="Líquido_Caption">
+          <DataField>Líquido_Caption</DataField>
+        </Field>
+        <Field Name="REMUNERAÇÕESCaption_Control1102056028">
+          <DataField>REMUNERAÇÕESCaption_Control1102056028</DataField>
+        </Field>
+        <Field Name="Ilíquido_Caption_Control1102056033">
+          <DataField>Ilíquido_Caption_Control1102056033</DataField>
+        </Field>
+        <Field Name="DESCONTOSCaption_Control1102056034">
+          <DataField>DESCONTOSCaption_Control1102056034</DataField>
+        </Field>
+        <Field Name="Descontos_Caption_Control1102056039">
+          <DataField>Descontos_Caption_Control1102056039</DataField>
+        </Field>
+        <Field Name="Líquido_Caption_Control1102056043">
+          <DataField>Líquido_Caption_Control1102056043</DataField>
+        </Field>
+        <Field Name="Movs__Abonos__Cód__Rubrica_">
+          <DataField>Movs__Abonos__Cód__Rubrica_</DataField>
+        </Field>
+        <Field Name="Movs__Abonos__Descrição_Rubrica_">
+          <DataField>Movs__Abonos__Descrição_Rubrica_</DataField>
+        </Field>
+        <Field Name="Movs__Abonos_Quantidade">
+          <DataField>Movs__Abonos_Quantidade</DataField>
+        </Field>
+        <Field Name="Movs__Abonos_QuantidadeFormat">
+          <DataField>Movs__Abonos_QuantidadeFormat</DataField>
+        </Field>
+        <Field Name="Movs__Abonos_Valor">
+          <DataField>Movs__Abonos_Valor</DataField>
+        </Field>
+        <Field Name="Movs__Abonos_ValorFormat">
+          <DataField>Movs__Abonos_ValorFormat</DataField>
+        </Field>
+        <Field Name="Movs__Abonos_Cód__Processamento">
+          <DataField>Movs__Abonos_Cód__Processamento</DataField>
+        </Field>
+        <Field Name="Movs__Abonos_Tipo_Processamento">
+          <DataField>Movs__Abonos_Tipo_Processamento</DataField>
+        </Field>
+        <Field Name="Movs__Abonos_N__Empregado">
+          <DataField>Movs__Abonos_N__Empregado</DataField>
+        </Field>
+        <Field Name="Movs__Abonos_N__Linha">
+          <DataField>Movs__Abonos_N__Linha</DataField>
+        </Field>
+        <Field Name="Movs__Descontos_Valor">
+          <DataField>Movs__Descontos_Valor</DataField>
+        </Field>
+        <Field Name="Movs__Descontos_ValorFormat">
+          <DataField>Movs__Descontos_ValorFormat</DataField>
+        </Field>
+        <Field Name="varqtd">
+          <DataField>varqtd</DataField>
+        </Field>
+        <Field Name="varqtdFormat">
+          <DataField>varqtdFormat</DataField>
+        </Field>
+        <Field Name="Movs__Descontos__Descrição_Rubrica_">
+          <DataField>Movs__Descontos__Descrição_Rubrica_</DataField>
+        </Field>
+        <Field Name="Movs__Descontos__Cód__Rubrica_">
+          <DataField>Movs__Descontos__Cód__Rubrica_</DataField>
+        </Field>
+        <Field Name="ABS__Movs__Abonos__Valor____ABS__Movs__Descontos__Valor_">
+          <DataField>ABS__Movs__Abonos__Valor____ABS__Movs__Descontos__Valor_</DataField>
+        </Field>
+        <Field Name="ABS__Movs__Abonos__Valor____ABS__Movs__Descontos__Valor_Format">
+          <DataField>ABS__Movs__Abonos__Valor____ABS__Movs__Descontos__Valor_Format</DataField>
+        </Field>
+        <Field Name="Movs__Descontos_Cód__Processamento">
+          <DataField>Movs__Descontos_Cód__Processamento</DataField>
+        </Field>
+        <Field Name="Movs__Descontos_Tipo_Processamento">
+          <DataField>Movs__Descontos_Tipo_Processamento</DataField>
+        </Field>
+        <Field Name="Movs__Descontos_N__Empregado">
+          <DataField>Movs__Descontos_N__Empregado</DataField>
+        </Field>
+        <Field Name="Movs__Descontos_N__Linha">
+          <DataField>Movs__Descontos_N__Linha</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos_Valor">
+          <DataField>Hist__Movs__Abonos_Valor</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos_ValorFormat">
+          <DataField>Hist__Movs__Abonos_ValorFormat</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos_Quantidade">
+          <DataField>Hist__Movs__Abonos_Quantidade</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos_QuantidadeFormat">
+          <DataField>Hist__Movs__Abonos_QuantidadeFormat</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos__Descrição_Rubrica_">
+          <DataField>Hist__Movs__Abonos__Descrição_Rubrica_</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos__Cód__Rubrica_">
+          <DataField>Hist__Movs__Abonos__Cód__Rubrica_</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos_Cód__Processamento">
+          <DataField>Hist__Movs__Abonos_Cód__Processamento</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos_Tipo_Processamento">
+          <DataField>Hist__Movs__Abonos_Tipo_Processamento</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos_N__Empregado">
+          <DataField>Hist__Movs__Abonos_N__Empregado</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Abonos_N__Linha">
+          <DataField>Hist__Movs__Abonos_N__Linha</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Descontos_Valor">
+          <DataField>Hist__Movs__Descontos_Valor</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Descontos_ValorFormat">
+          <DataField>Hist__Movs__Descontos_ValorFormat</DataField>
+        </Field>
+        <Field Name="varqtd_Control1102056036">
+          <DataField>varqtd_Control1102056036</DataField>
+        </Field>
+        <Field Name="varqtd_Control1102056036Format">
+          <DataField>varqtd_Control1102056036Format</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Descontos__Descrição_Rubrica_">
+          <DataField>Hist__Movs__Descontos__Descrição_Rubrica_</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Descontos__Cód__Rubrica_">
+          <DataField>Hist__Movs__Descontos__Cód__Rubrica_</DataField>
+        </Field>
+        <Field Name="ABS__Hist__Movs__Abonos__Valor____ABS__Hist__Movs__Descontos__Valor_">
+          <DataField>ABS__Hist__Movs__Abonos__Valor____ABS__Hist__Movs__Descontos__Valor_</DataField>
+        </Field>
+        <Field Name="ABS__Hist__Movs__Abonos__Valor____ABS__Hist__Movs__Descontos__Valor_Format">
+          <DataField>ABS__Hist__Movs__Abonos__Valor____ABS__Hist__Movs__Descontos__Valor_Format</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Descontos_Cód__Processamento">
+          <DataField>Hist__Movs__Descontos_Cód__Processamento</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Descontos_Tipo_Processamento">
+          <DataField>Hist__Movs__Descontos_Tipo_Processamento</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Descontos_N__Empregado">
+          <DataField>Hist__Movs__Descontos_N__Empregado</DataField>
+        </Field>
+        <Field Name="Hist__Movs__Descontos_N__Linha">
+          <DataField>Hist__Movs__Descontos_N__Linha</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

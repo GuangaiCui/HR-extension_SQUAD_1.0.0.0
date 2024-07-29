@@ -157,12 +157,12 @@ table 53056 "Contrato Empregado"
         Text007: Label 'Não pode alterar o contrato de trabalho porque já foi gerado.';
         FileMgt: Codeunit "File Management";
 
-        DirectoryHelper: DotNet BCTestDirectory;
+        //DirectoryHelper: DotNet BCTestDirectory;
         MyOutStream: OutStream;
         MyFile: File;
-        //wdRange: DotNet WordRange;
-        wdDoc: DotNet WordDocument;
-        wdApp: DotNet WordApplicationClass;
+    //wdRange: DotNet WordRange;
+    //wdDoc: DotNet WordDocument;
+    //wdApp: DotNet WordApplicationClass;
 
 
     procedure CriarContratoConformeTemplate()
@@ -181,6 +181,9 @@ table 53056 "Contrato Empregado"
         _Emp2: Record Employee;
     begin
         //FIXME: Template layout needed to be created diferently
+        //TODO: Commented to create app, will be reworked
+        Message('WIP');
+        /*
         if "No. Contrato Trabalho" <> '' then
             Error(Text006);
 
@@ -486,6 +489,7 @@ table 53056 "Contrato Empregado"
             Clear(wdApp);
 
         end;
+        */
     end;
 
 

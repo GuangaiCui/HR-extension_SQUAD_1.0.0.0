@@ -635,14 +635,37 @@ table 53053 "Config. Recursos Humanos"
         AFSFileClientGbl.Initialize(StorageAccount, FileShare, StorageServiceAuthorizationLcl.UseReadySAS(SasToken));
     end;
 
-    procedure CreateFileFromInStream(FilePathPar: Text; InStreamPar: InStream)
+    procedure GetFileAsStream(FilePathPar: Text; FileName: Text): Boolean
+    var
+        AFSOperationResponseLcl: Codeunit "AFS Operation Response";
+        InStreamPar: InStream;
+        fullPath: Text;
+    begin
+        Initialize();
+        clear(fullPath);
+        fullPath := FilePathPar + '\' + FileName;
+        AFSOperationResponseLcl := AFSFileClientGbl.GetFileAsStream(fullPath, InStreamPar);
+        if AFSOperationResponseLcl.IsSuccessful() then begin
+            DownloadFromStream(InStreamPar, 'Export', '', 'AllFiles (*.*)|*.*', FileName);
+            exit(true);
+        end else
+            exit(false);
+
+        //Error(AFSOperationResponseLcl.GetError());
+
+    end;
+
+    procedure CreateFileFromInStream(FilePathPar: Text; InStreamPar: InStream): Boolean
     var
         AFSOperationResponseLcl: Codeunit "AFS Operation Response";
     begin
         Initialize();
         AFSOperationResponseLcl := AFSFileClientGbl.CreateFile(FilePathPar, InStreamPar);
-        if not AFSOperationResponseLcl.IsSuccessful() then
-            Error(AFSOperationResponseLcl.GetError());
+        if AFSOperationResponseLcl.IsSuccessful() then
+            exit(true)
+        else
+            exit(false);
+        //Error(AFSOperationResponseLcl.GetError());
     end;
 
 

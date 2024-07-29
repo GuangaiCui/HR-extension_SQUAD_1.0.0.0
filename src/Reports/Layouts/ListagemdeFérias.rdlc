@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="FORMAT_TODAY_0_4_">
+          <DataField>FORMAT_TODAY_0_4_</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Address">
+          <DataField>TabConfEmpresa_Address</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Post_Code_">
+          <DataField>TabConfEmpresa__Post_Code_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa_Picture">
+          <DataField>TabConfEmpresa_Picture</DataField>
+        </Field>
+        <Field Name="LISTAGEM_DE_FÉRIAS_DE_____FORMAT_varAno_">
+          <DataField>LISTAGEM_DE_FÉRIAS_DE_____FORMAT_varAno_</DataField>
+        </Field>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="Empregado_Empregado__No__">
+          <DataField>Empregado_Empregado__No__</DataField>
+        </Field>
+        <Field Name="Empregado_Empregado_Name">
+          <DataField>Empregado_Empregado_Name</DataField>
+        </Field>
+        <Field Name="AnoCorrenteMarcadas">
+          <DataField>AnoCorrenteMarcadas</DataField>
+        </Field>
+        <Field Name="AnoCorrenteGozadas">
+          <DataField>AnoCorrenteGozadas</DataField>
+        </Field>
+        <Field Name="AnoAnteriorDireito">
+          <DataField>AnoAnteriorDireito</DataField>
+        </Field>
+        <Field Name="AnoCorrenteDireito">
+          <DataField>AnoCorrenteDireito</DataField>
+        </Field>
+        <Field Name="TotalaMarcar">
+          <DataField>TotalaMarcar</DataField>
+        </Field>
+        <Field Name="DiasExtra">
+          <DataField>DiasExtra</DataField>
+        </Field>
+        <Field Name="CurrReport_PAGENOCaption">
+          <DataField>CurrReport_PAGENOCaption</DataField>
+        </Field>
+        <Field Name="EmpregadoCaption">
+          <DataField>EmpregadoCaption</DataField>
+        </Field>
+        <Field Name="Ano_CorrenteCaption">
+          <DataField>Ano_CorrenteCaption</DataField>
+        </Field>
+        <Field Name="MarcadasCaption">
+          <DataField>MarcadasCaption</DataField>
+        </Field>
+        <Field Name="GozadasCaption">
+          <DataField>GozadasCaption</DataField>
+        </Field>
+        <Field Name="Total_Dias_FériasCaption">
+          <DataField>Total_Dias_FériasCaption</DataField>
+        </Field>
+        <Field Name="Presente_AnoCaption">
+          <DataField>Presente_AnoCaption</DataField>
+        </Field>
+        <Field Name="Ano_AnteriorCaption">
+          <DataField>Ano_AnteriorCaption</DataField>
+        </Field>
+        <Field Name="Total_a_MarcarCaption">
+          <DataField>Total_a_MarcarCaption</DataField>
+        </Field>
+        <Field Name="Dias_ExtraCaption">
+          <DataField>Dias_ExtraCaption</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

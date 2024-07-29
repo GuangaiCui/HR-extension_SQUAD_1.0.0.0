@@ -1141,7 +1141,9 @@ tableextension 53040 "Employee Ext" extends Employee
         if "No." = '' then begin
             HumanResSetup.Get;
             HumanResSetup.TestField("Employee Nos.");
-            NoSeriesMgt.InitSeries(HumanResSetup."Employee Nos.", xRec."No. Series", 0D, "No.", "No. Series");
+            if NoSeriesMgt.AreRelated(HumanResSetup."Employee Nos.", xRec."No. Series") then
+                "No. Series" := xRec."No. Series";
+            "No." := NoSeriesMgt.GetNextNo("No. Series");
         end;
 
         DimMgt.UpdateDefaultDim(
@@ -1181,7 +1183,7 @@ tableextension 53040 "Employee Ext" extends Employee
         ConfidentialInformation: Record "Informação Confidencial";
         HumanResComment: Record "Linha Coment. Recurso Humano";
         SalespersonPurchaser: Record "Salesperson/Purchaser";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit "No. Series";
         EmployeeResUpdate: Codeunit "Empregado/Actual. Recurso";
         EmployeeSalespersonUpdate: Codeunit "Empregado/Actual. Vendedor";
         DimMgt: Codeunit DimensionManagement;
@@ -1232,28 +1234,16 @@ tableextension 53040 "Employee Ext" extends Employee
         Employee := Rec;
         HumanResSetup.Get;
         HumanResSetup.TestField("Employee Nos.");
-        if NoSeriesMgt.SelectSeries(HumanResSetup."Employee Nos.", OldEmployee."No. Series", Employee."No. Series") then begin
+
+
+        if NoSeriesMgt.LookupRelatedNoSeries(HumanResSetup."Employee Nos.", OldEmployee."No. Series", Employee."No. Series") then begin
             HumanResSetup.Get;
             HumanResSetup.TestField("Employee Nos.");
-            NoSeriesMgt.SetSeries(Employee."No.");
+            NoSeriesMgt.GetNextNo(Employee."No.");
             Rec := Employee;
             exit(true);
         end;
     end;
-
-
-    procedure FullName(): Text[100]
-    begin
-        exit(Name);
-    end;
-
-    procedure ValidateShortcutDimCode(FieldNumber: Integer; var ShortcutDimCode: Code[20])
-    begin
-        DimMgt.ValidateDimValueCode(FieldNumber, ShortcutDimCode);
-        DimMgt.SaveDefaultDim(DATABASE::Employee, "No.", FieldNumber, ShortcutDimCode);
-        Modify;
-    end;
-
 
     procedure PrePadString(InString: Text[250]; Maxlen: Integer): Text[250]
     begin
@@ -1398,9 +1388,12 @@ tableextension 53040 "Employee Ext" extends Employee
         MyFile: File;
         MyOutStream: OutStream;
         NumberOfChars: Integer;
-        wdApp2: DotNet WordApplicationClass;
+    // wdApp2: DotNet WordApplicationClass;
     begin
+        Message('WIP');
         //FIXME: Template layout needed to be created diferently
+        //TODO: FIX LATER
+        /*
         path := Format('C:\Temp') + 'Contrato' + Empregado."No." + '.Doc';
         rTemplates.Get('RH-CONTRAC');
         rTemplates.ExportAttachment(path);
@@ -1436,15 +1429,22 @@ tableextension 53040 "Employee Ext" extends Employee
             EscreveWord2('«Descrição código habilitação»', '', wdApp2);
 
         EscreveWord2('«data de trabalho»', Format(Today, 0, '<day> de <month text> de <year4>'), wdApp2);
+
+        */
     end;
 
-    procedure EscreveWord2(pText1: Text[1024]; pText2: Text[1024]; wdApp2: DotNet WordApplicationClass)
+    //TODO: Commented to create app, will be reworked
+
+    //procedure EscreveWord2(pText1: Text[1024]; pText2: Text[1024]; wdApp2: DotNet WordApplicationClass)
+    procedure EscreveWord2(pText1: Text[1024]; pText2: Text[1024]; wdApp2: text)
     var
         wdfindas: Integer;
         wdreplaceon: Integer;
         fals: Boolean;
         tru: Boolean;
     begin
+        Message('WIP');
+        /*
         fals := false;
         tru := true;
 
@@ -1453,5 +1453,6 @@ tableextension 53040 "Employee Ext" extends Employee
         wdreplaceon := 2;
         wdApp2.Width := 7;
         wdApp2.Selection.Find.Execute(pText1, fals, fals, fals, fals, fals, tru, wdfindas, fals, pText2, wdreplaceon);
+        */
     end;
 }
