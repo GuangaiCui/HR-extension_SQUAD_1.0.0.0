@@ -10,7 +10,7 @@ report 53063 "Empregado - Aniversários"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/EmpregadoAniversários.rdlc';
+    RDLCLayout = 'Layouts\EmpregadoAniversários.rdlc';
 
     Caption = 'Employee - Birthdays';
     PreviewMode = PrintLayout;

@@ -11,7 +11,7 @@ report 53067 "Retenção Mensal de IRS"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/RetençãoMensaldeIRS.rdlc';
+    RDLCLayout = 'Layouts\RetençãoMensaldeIRS.rdlc';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

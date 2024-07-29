@@ -4,7 +4,7 @@ report 53099 "Empregado - Contratos"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/EmpregadoContratos.rdlc';
+    RDLCLayout = 'Layouts\EmpregadoContratos.rdlc';
     Caption = 'Employee - Contracts';
     PreviewMode = PrintLayout;
 

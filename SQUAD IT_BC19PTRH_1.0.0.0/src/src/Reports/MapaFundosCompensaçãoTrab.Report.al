@@ -6,7 +6,7 @@ report 53071 "Mapa Fundos Compensação Trab."
     //   Este Report está disponível a partir de Mapas.
     // //-------------------------------------------------------
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaFundosCompensaçãoTrab.rdlc';
+    RDLCLayout = 'Layouts\MapaFundosCompensaçãoTrab.rdlc';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

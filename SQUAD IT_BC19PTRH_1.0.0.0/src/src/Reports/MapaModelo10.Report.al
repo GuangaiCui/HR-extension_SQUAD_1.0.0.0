@@ -29,7 +29,7 @@ report 53049 "Mapa Modelo 10"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaModelo10.rdlc';
+    RDLCLayout = 'Layouts\MapaModelo10.rdlc';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;

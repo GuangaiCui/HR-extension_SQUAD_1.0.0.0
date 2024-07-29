@@ -16543,6 +16543,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Retenção Mensal de IRS - Control DataInicio - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 3970579139 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>RH-CONTRAC</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report RH-CONTRAC - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3744167750 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sobretaxa em Sede IRS 2013</source>
           <note from="Developer" annotates="general" priority="2"></note>

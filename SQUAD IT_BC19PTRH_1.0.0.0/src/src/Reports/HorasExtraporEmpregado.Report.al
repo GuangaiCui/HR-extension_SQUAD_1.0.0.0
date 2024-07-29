@@ -11,7 +11,7 @@ report 53064 "Horas Extra por Empregado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/HorasExtraporEmpregado.rdlc';
+    RDLCLayout = 'Layouts\HorasExtraporEmpregado.rdlc';
 
     Caption = 'Horas Extra por Empregado';
     PreviewMode = PrintLayout;

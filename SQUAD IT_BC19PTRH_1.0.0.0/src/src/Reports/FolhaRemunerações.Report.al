@@ -13,7 +13,7 @@ report 53075 "Folha Remunerações"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/FolhaRemunerações.rdlc';
+    RDLCLayout = 'Layouts\FolhaRemunerações.rdlc';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

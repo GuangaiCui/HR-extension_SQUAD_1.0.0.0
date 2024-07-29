@@ -8,8 +8,8 @@ report 53095 "Declarações RH BC"
 
     //DefaultLayout = Word;
     DefaultLayout = RDLC;
-    //WordLayout = './src/Reports/Layouts/DeclaraçõesRHBC19.docx';
-    RDLCLayout = './src/Reports/Layouts/DeclaraçõesRHBC19.rdl';
+    //WordLayout = 'Layouts\DeclaraçõesRHBC19.docx';
+    RDLCLayout = 'Layouts\DeclaraçõesRHBC19.rdl';
     PreviewMode = PrintLayout;
 
     dataset

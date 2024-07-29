@@ -4,7 +4,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
     //               Imposto Extra
     // //-------------------------------------------------------
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaImpExtraordinário2011.rdlc';
+    RDLCLayout = 'Layouts\MapaImpExtraordinário2011.rdlc';
 
     PreviewMode = PrintLayout;
 

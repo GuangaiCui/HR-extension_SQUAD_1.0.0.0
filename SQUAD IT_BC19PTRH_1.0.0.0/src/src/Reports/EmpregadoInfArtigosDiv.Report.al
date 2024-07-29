@@ -11,7 +11,7 @@ report 53059 "Empregado - Inf. Artigos Div"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/EmpregadoInfArtigosDiv.rdlc';
+    RDLCLayout = 'Layouts\EmpregadoInfArtigosDiv.rdlc';
 
     Caption = 'Employee - Misc. Article Info.';
     PreviewMode = PrintLayout;

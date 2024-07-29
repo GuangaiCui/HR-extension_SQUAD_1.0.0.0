@@ -11,7 +11,7 @@ report 53058 "Empregado - Etiquetas"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/EmpregadoEtiquetas.rdlc';
+    RDLCLayout = 'Layouts\EmpregadoEtiquetas.rdlc';
 
     Caption = 'Employee - Labels';
     PreviewMode = PrintLayout;

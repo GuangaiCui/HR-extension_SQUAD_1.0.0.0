@@ -11,7 +11,7 @@ report 53085 "Listagem de Férias"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/ListagemdeFérias.rdlc';
+    RDLCLayout = 'Layouts\ListagemdeFérias.rdlc';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

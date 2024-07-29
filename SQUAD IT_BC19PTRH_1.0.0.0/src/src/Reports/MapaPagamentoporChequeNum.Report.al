@@ -11,7 +11,7 @@ report 53083 "Mapa Pagamento por Cheque/Num"
     //   do Histórico.
     // //-------------------------------------------------------
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaPagamentoporChequeNum.rdlc';
+    RDLCLayout = 'Layouts\MapaPagamentoporChequeNum.rdlc';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;

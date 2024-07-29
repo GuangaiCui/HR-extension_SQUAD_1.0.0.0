@@ -24,7 +24,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaeFicheiroSeguros.rdlc';
+    RDLCLayout = 'Layouts\MapaeFicheiroSeguros.rdlc';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;

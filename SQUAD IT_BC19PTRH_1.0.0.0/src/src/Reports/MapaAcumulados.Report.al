@@ -2,7 +2,7 @@ report 53076 "Mapa Acumulados"
 {
     // IT001 - CPA:Aparecer a Desc. Cat. profissional interna em vez da QP -   2010.03.18
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaAcumulados.rdlc';
+    RDLCLayout = 'Layouts\MapaAcumulados.rdlc';
 
     Permissions = TableData "Tabela Temporária Relatórios" = rimd;
     PreviewMode = PrintLayout;

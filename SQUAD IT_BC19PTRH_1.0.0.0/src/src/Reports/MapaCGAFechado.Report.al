@@ -15,7 +15,7 @@ report 53053 "Mapa CGA - Fechado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaCGAFechado.rdlc';
+    RDLCLayout = 'Layouts\MapaCGAFechado.rdlc';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;

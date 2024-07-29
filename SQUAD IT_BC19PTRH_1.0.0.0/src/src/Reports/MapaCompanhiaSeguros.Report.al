@@ -15,7 +15,7 @@ report 53093 "Mapa Companhia Seguros"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaCompanhiaSeguros.rdlc';
+    RDLCLayout = 'Layouts\MapaCompanhiaSeguros.rdlc';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

@@ -13,7 +13,7 @@ report 53098 "Mapa Resumo Processamento B"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaResumoProcessamentoB.rdlc';
+    RDLCLayout = 'Layouts\MapaResumoProcessamentoB.rdlc';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

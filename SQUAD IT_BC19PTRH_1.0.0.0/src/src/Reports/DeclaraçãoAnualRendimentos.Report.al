@@ -10,7 +10,7 @@ report 53054 "Declaração Anual Rendimentos"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/DeclaraçãoAnualRendimentos.rdlc';
+    RDLCLayout = 'Layouts\DeclaraçãoAnualRendimentos.rdlc';
 
     PreviewMode = PrintLayout;
 

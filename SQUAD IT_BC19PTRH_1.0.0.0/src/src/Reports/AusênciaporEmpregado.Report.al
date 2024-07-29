@@ -4,7 +4,7 @@ report 53060 "Ausência por Empregado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/AusênciaporEmpregado.rdlc';
+    RDLCLayout = 'Layouts\AusênciaporEmpregado.rdlc';
     PreviewMode = PrintLayout;
 
     dataset

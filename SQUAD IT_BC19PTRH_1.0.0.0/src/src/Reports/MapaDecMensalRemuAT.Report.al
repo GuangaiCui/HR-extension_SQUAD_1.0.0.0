@@ -31,7 +31,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = './src/Reports/Layouts/MapaDecMensalRemuAT.rdlc';
+    RDLCLayout = 'Layouts\MapaDecMensalRemuAT.rdlc';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;
