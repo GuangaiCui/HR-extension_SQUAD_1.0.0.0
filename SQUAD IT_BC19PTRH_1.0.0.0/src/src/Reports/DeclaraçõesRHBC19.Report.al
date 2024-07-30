@@ -114,7 +114,7 @@ report 53095 "Declarações RH BC"
                     ExpirationDate := Format(Empregado."Data Validade Doc. Ident.");
 
 
-                Empregado.CalcFields(Empregado."Emplymt. Contract Code");
+                //Empregado.CalcFields(Empregado."Emplymt. Contract Code");
 
                 Contratos.Reset;
                 if Contratos.Get(Empregado."Emplymt. Contract Code") then

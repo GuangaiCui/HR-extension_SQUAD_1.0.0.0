@@ -37,7 +37,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>DECLARAÇÃO</Value>
+                                      <Value />
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -69,7 +69,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>Para os devidos efeitos declaramos que «</Value>
+                                      <Value>Para os devidos efeitos declaramos que </Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -79,17 +79,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>nome</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value>» portador(a) do «</Value>
+                                      <Value>=Fields!nome.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -99,17 +89,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>tipo doc</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value>», nº «</Value>
+                                      <Value> portador(a) do </Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -119,17 +99,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>nº doc. Identificação</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value>» emitido em «</Value>
+                                      <Value>=Fields!tipodoc.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -139,17 +109,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>local emissão</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value>» com data de validade «</Value>
+                                      <Value>, nº </Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -159,17 +119,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>data validade</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value>» é funcionário(a) do(a) «</Value>
+                                      <Value>=Fields!nDocIdentificação.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -179,17 +129,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>nome empresa</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value>» desde «</Value>
+                                      <Value> emitido em </Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -199,17 +139,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>data</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value xml:space="preserve"> </Value>
+                                      <Value>=Fields!localEmissão.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -219,17 +149,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>admissão</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value>» com um contrato «</Value>
+                                      <Value> com data de validade </Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -239,17 +159,7 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>tipo contrato</Value>
-                                      <Style>
-                                        <FontStyle>Italic</FontStyle>
-                                        <FontSize>11pt</FontSize>
-                                        <FontWeight>Normal</FontWeight>
-                                        <TextDecoration>None</TextDecoration>
-                                        <Color>#000000</Color>
-                                      </Style>
-                                    </TextRun>
-                                    <TextRun>
-                                      <Value>», auferindo um salário mensal ilíquido de «</Value>
+                                      <Value>=Fields!dataValidade.Value</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -259,9 +169,9 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>vencimento base</Value>
+                                      <Value> é funcionário(a) do(a) </Value>
                                       <Style>
-                                        <FontStyle>Italic</FontStyle>
+                                        <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
                                         <FontWeight>Normal</FontWeight>
                                         <TextDecoration>None</TextDecoration>
@@ -269,7 +179,77 @@
                                       </Style>
                                     </TextRun>
                                     <TextRun>
-                                      <Value>»€.</Value>
+                                      <Value>=Fields!nomeempresa1.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value> desde </Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!dataAdmissão.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value> com um contrato </Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!tipoContrato.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>, auferindo um salário mensal ilíquido de </Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>=Fields!vencimentoBase.Value</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>€.</Value>
                                       <Style>
                                         <FontStyle>Normal</FontStyle>
                                         <FontSize>11pt</FontSize>
@@ -299,42 +279,6 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <Textbox Name="HeaderSetData2">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value EvaluationMode="Constant" />
-                                      <Style />
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <Top>0.84139cm</Top>
-                              <Left>1.7057cm</Left>
-                              <Height>0.17639cm</Height>
-                              <Width>0.83954cm</Width>
-                              <ZIndex>1</ZIndex>
-                              <Visibility>
-                                <Hidden>=Code.SetData(Cstr(Fields!CustomerNoLbl.Value)   + Chr(177) +
-Cstr(Fields!SelltoCustNoSalesInvHdr.Value) + Chr(177) +
-Cstr(Fields!RegimeTribCompl.Value)
-, 2)</Hidden>
-                              </Visibility>
-                              <Style>
-                                <Border>
-                                  <Color>Red</Color>
-                                  <Style>Dashed</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
                             <Textbox Name="HeaderSetData">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
@@ -353,86 +297,58 @@ Cstr(Fields!RegimeTribCompl.Value)
                               <Left>2.65107cm</Left>
                               <Height>0.17639cm</Height>
                               <Width>0.88429cm</Width>
-                              <ZIndex>2</ZIndex>
+                              <ZIndex>1</ZIndex>
                               <Visibility>
-                                <Hidden>=Code.SetData(Cstr(Fields!InvNoText.Value) + Chr(177) + 
-Cstr(Fields!SAFTDocumentNo.Value) + Chr(177) +
-Cstr(Fields!PostingDate.Value) + Chr(177) + 
-Cstr(Fields!PostingDateSalesInvHdr.Value) + Chr(177) + 
-Cstr(Fields!TextOrig2Via.Value) + Chr(177) +  
-Cstr(Fields!CompanyAddr1.Value) + Chr(177) + 
-Cstr(Fields!CompanyAddr2.Value) + Chr(177) + 
-Cstr(Fields!CompanyAddr3.Value) + Chr(177) + 
-Cstr(Fields!CompanyAddr4.Value) + Chr(177) + 
-Cstr(Fields!CompanyAddr5.Value) + Chr(177) +
-Cstr(Fields!CompanyAddr6.Value) + Chr(177) + 
-Cstr(Fields!CustAddr1.Value) + Chr(177) +  
-Cstr(Fields!CustAddr2.Value) + Chr(177) +
-Cstr(Fields!CustAddr3.Value) + Chr(177) +
-Cstr(Fields!CustAddr4.Value) + Chr(177) +
-Cstr(Fields!CustAddr5.Value) + Chr(177) +
-Cstr(Fields!CustAddr6.Value) + Chr(177) +
-Cstr(Fields!CustAddr7.Value) + Chr(177) +
-Cstr(Fields!CustAddr8.Value) + Chr(177) +
-Cstr(Fields!CompanyInfoPhone.Value) + Chr(177) +
-Cstr(Fields!CompanyInfoPhoneNo.Value) + Chr(177) +
-Cstr(Fields!CompanyEmail.Value) + Chr(177) +
-Cstr(Fields!EMail.Value) + Chr(177) +
-Cstr(Fields!VATRegNo.Value) + Chr(177) +
-Cstr(Fields!CompanyInfoVATRegNo.Value) + Chr(177) +
-Cstr(Fields!ShipmentDate.Value) + Chr(177) +
-Cstr(Fields!SalesInvHdrShipmentStartDate.Value) + Chr(177) +
-Cstr(Fields!ShipmentTime.Value) + Chr(177) +
-Cstr(Fields!SalesInvHdrShipmentStartTime.Value) + Chr(177) +
-Cstr(Fields!BilltoCustNoSalesInvHdrCaption.Value) + Chr(177) +
-Cstr(Fields!BilltoCustNoSalesInvHdr.Value) + Chr(177) +
-Cstr(Fields!VATNoText.Value) + Chr(177) +
-Cstr(Fields!VATRegNoSalesInvHdr.Value) + Chr(177) +
-Cstr(Fields!SalesInvDueDate.Value) + Chr(177) +
-Cstr(Fields!DueDateSalesInvHdr.Value) + Chr(177) +
-Cstr(Fields!PaymentTermsDescription.Value) + Chr(177) +
-Cstr(Fields!PaymentTermsDesc.Value) + Chr(177) +
-Cstr(Fields!ShptMethodDesc.Value) + Chr(177) +
-Cstr(Fields!ShipmentMethodDesc.Value) + Chr(177) +
-Cstr(Fields!TransHeader.Value) + Chr(177) +
-Cstr(Fields!TransFooter.Value) + Chr(177) +
- Cstr(Fields!ProductsMadeAvail.Value) + Chr(177) +
-Cstr(Fields!Signature.Value) + Chr(177) +
-Cstr(Fields!ShipmentDate.Value) + Chr(177) +
-Cstr(Fields!SalesInvHdrShipmentStartDate.Value) + Chr(177) +
-Cstr(Fields!ShipmentTime.Value) + Chr(177) +
-Cstr(Fields!SalesInvHdrShipmentStartTime.Value) + Chr(177) +
-Cstr(Fields!TotallyPaid.Value) + Chr(177) +
-Cstr(Fields!RegistrationAT.Value) + Chr(177) + 
-Cstr(Fields!RegistrationAuthority.Value) + Chr(177) + 
-Cstr(Fields!Signature.Value) + Chr(177) +
-Cstr(Fields!ShareCapitalCaption.Value) + Chr(177) + 
-Cstr(Fields!ShareCapital.Value) + Chr(177) +
-Cstr(Fields!PTSSATCUD.Value) + Chr(177) +
-Cstr(Fields!PTSSQRCodeStringBase64.Value) + Chr(177) +
-Cstr(Fields!ShipToAddr1.Value) + Chr(177) +
-Cstr(Fields!ShipToAddr2.Value) + Chr(177) +
-Cstr(Fields!ShipToAddr3.Value) + Chr(177) +
-Cstr(Fields!ShipToAddr4.Value) + Chr(177) +
-Cstr(Fields!ShipToAddr5.Value) + Chr(177) +
-Cstr(Fields!ShipToAddr6.Value) + Chr(177) +
-Cstr(Fields!ShipToAddr7.Value) + Chr(177) +
-Cstr(Fields!ShipToAddr8.Value) + Chr(177) +
-Cstr(Fields!ShipFromAddr1.Value) + Chr(177) +
-Cstr(Fields!ShipFromAddr2.Value) + Chr(177) +
-Cstr(Fields!ShipFromAddr3.Value) + Chr(177) +
-Cstr(Fields!ShipFromAddr4.Value) + Chr(177) +
-Cstr(Fields!ShipFromAddr5.Value) + Chr(177) +
-Cstr(Fields!ShipFromAddr6.Value) + Chr(177) +
-Cstr(Fields!ShipFromAddr7.Value) + Chr(177) +
-Cstr(Fields!ShipFromAddr8.Value) + Chr(177) + 
-Cstr(Fields!External_Document_No_.Value)
-, 1)</Hidden>
+                                <Hidden>=Code.SetData(Cstr(Fields!nomeempresa1.Value) + Chr(177) + 
+Cstr(Fields!nomeempresa2.Value) + Chr(177) +
+Cstr(Fields!endereço1.Value) + Chr(177) + 
+Cstr(Fields!endereço1.Value) + Chr(177) + 
+Cstr(Fields!codpostal.Value) + Chr(177) +  
+Cstr(Fields!cidade.Value) + Chr(177) + 
+Cstr(Fields!telefone.Value) + Chr(177) + 
+Cstr(Fields!fax.Value) + Chr(177) + 
+Cstr(Fields!NIF.Value), 1)</Hidden>
                               </Visibility>
                               <Style>
                                 <Border>
                                   <Color>Red</Color>
                                   <Style>Dashed</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox2">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>DECLARAÇÃO</Value>
+                                      <Style>
+                                        <FontStyle>Normal</FontStyle>
+                                        <FontSize>11pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                        <TextDecoration>None</TextDecoration>
+                                        <Color>#000000</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox2</rd:DefaultName>
+                              <Top>2.26609cm</Top>
+                              <Left>6.34153cm</Left>
+                              <Height>0.97367cm</Height>
+                              <Width>7.78933cm</Width>
+                              <ZIndex>2</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
@@ -485,33 +401,18 @@ Cstr(Fields!External_Document_No_.Value)
       <Width>19.04347cm</Width>
       <Page>
         <PageHeader>
-          <Height>8.9914cm</Height>
+          <Height>7.57323cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Rectangle Name="Rectangle2">
               <ReportItems>
-                <Image Name="CompanyPicture">
-                  <Source>Database</Source>
-                  <Value>=Convert.ToBase64String(First(Fields!Picture.Value, "DataSet_Result"))</Value>
-                  <MIMEType>image/jpeg</MIMEType>
-                  <Sizing>FitProportional</Sizing>
-                  <Top>1.39863cm</Top>
-                  <Left>12.4769cm</Left>
-                  <Height>2.5cm</Height>
-                  <Width>5.5cm</Width>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Image>
                 <Textbox Name="Textbox370">
                   <Paragraphs>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(20,1)</Value>
+                          <Value>NIF:</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -522,11 +423,10 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox369</rd:DefaultName>
-                  <Top>7.52199cm</Top>
+                  <Top>5.29949cm</Top>
                   <Left>12.46705cm</Left>
                   <Height>0.423cm</Height>
                   <Width>2.45084cm</Width>
-                  <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -538,7 +438,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(21,1)</Value>
+                          <Value>=Fields!NIF.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -551,11 +451,11 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox236</rd:DefaultName>
-                  <Top>7.52199cm</Top>
+                  <Top>5.29949cm</Top>
                   <Left>14.91789cm</Left>
                   <Height>0.423cm</Height>
                   <Width>3.52304cm</Width>
-                  <ZIndex>2</ZIndex>
+                  <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -567,7 +467,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(22,1)</Value>
+                          <Value>Fax:</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -578,11 +478,11 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox61</rd:DefaultName>
-                  <Top>7.05599cm</Top>
+                  <Top>4.83349cm</Top>
                   <Left>12.46705cm</Left>
                   <Height>0.423cm</Height>
                   <Width>2.45084cm</Width>
-                  <ZIndex>3</ZIndex>
+                  <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -594,7 +494,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(23,1)</Value>
+                          <Value>=Fields!fax.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -607,67 +507,11 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox309</rd:DefaultName>
-                  <Top>7.05599cm</Top>
+                  <Top>4.83349cm</Top>
                   <Left>14.91791cm</Left>
                   <Height>0.423cm</Height>
                   <Width>3.52302cm</Width>
-                  <ZIndex>4</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox320">
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Code.GetData(24,1)</Value>
-                          <Style>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox319</rd:DefaultName>
-                  <Top>5.701cm</Top>
-                  <Left>12.46705cm</Left>
-                  <Height>0.423cm</Height>
-                  <Width>2.45084cm</Width>
-                  <ZIndex>5</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox322">
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Code.GetData(25,1)</Value>
-                          <Style>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox321</rd:DefaultName>
-                  <Top>5.701cm</Top>
-                  <Left>14.91789cm</Left>
-                  <Height>0.423cm</Height>
-                  <Width>3.52304cm</Width>
-                  <ZIndex>6</ZIndex>
+                  <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -681,7 +525,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(8,1) + " " + Code.GetData(9,1)</Value>
+                          <Value>=Fields!endereço1.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -692,11 +536,11 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox9</rd:DefaultName>
-                  <Top>5.17746cm</Top>
+                  <Top>2.95496cm</Top>
                   <Left>12.4769cm</Left>
                   <Height>0.423cm</Height>
                   <Width>5.97388cm</Width>
-                  <ZIndex>7</ZIndex>
+                  <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -710,7 +554,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(6,1)</Value>
+                          <Value>=Fields!nomeempresa1.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -721,11 +565,11 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox9</rd:DefaultName>
-                  <Top>4.33145cm</Top>
+                  <Top>2.10895cm</Top>
                   <Left>12.4769cm</Left>
                   <Height>0.423cm</Height>
                   <Width>5.97388cm</Width>
-                  <ZIndex>8</ZIndex>
+                  <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -739,7 +583,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(7,1)</Value>
+                          <Value>=Fields!nomeempresa2.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -750,11 +594,11 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox9</rd:DefaultName>
-                  <Top>4.75446cm</Top>
+                  <Top>2.53196cm</Top>
                   <Left>12.4769cm</Left>
                   <Height>0.423cm</Height>
                   <Width>5.97388cm</Width>
-                  <ZIndex>9</ZIndex>
+                  <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -768,7 +612,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(49,1)</Value>
+                          <Value>Tel:</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -779,11 +623,11 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox31</rd:DefaultName>
-                  <Top>6.58226cm</Top>
+                  <Top>4.35976cm</Top>
                   <Left>12.4769cm</Left>
                   <Height>0.423cm</Height>
                   <Width>2.45084cm</Width>
-                  <ZIndex>10</ZIndex>
+                  <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -797,7 +641,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(52,1)</Value>
+                          <Value>=Fields!codpostal.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -807,11 +651,11 @@ Cstr(Fields!External_Document_No_.Value)
                       <Style />
                     </Paragraph>
                   </Paragraphs>
-                  <Top>6.15926cm</Top>
+                  <Top>3.93676cm</Top>
                   <Left>12.46707cm</Left>
                   <Height>0.423cm</Height>
                   <Width>2.45084cm</Width>
-                  <ZIndex>11</ZIndex>
+                  <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -825,7 +669,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(50,1)</Value>
+                          <Value>=Fields!telefone.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -838,11 +682,11 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox31</rd:DefaultName>
-                  <Top>6.58226cm</Top>
+                  <Top>4.35976cm</Top>
                   <Left>14.92776cm</Left>
                   <Height>0.423cm</Height>
                   <Width>3.5126cm</Width>
-                  <ZIndex>12</ZIndex>
+                  <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -856,7 +700,7 @@ Cstr(Fields!External_Document_No_.Value)
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData(53,1)</Value>
+                          <Value>=Fields!cidade.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -869,11 +713,40 @@ Cstr(Fields!External_Document_No_.Value)
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox31</rd:DefaultName>
-                  <Top>6.15926cm</Top>
+                  <Top>3.93676cm</Top>
                   <Left>14.95319cm</Left>
                   <Height>0.423cm</Height>
                   <Width>3.48717cm</Width>
-                  <ZIndex>13</ZIndex>
+                  <ZIndex>10</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox13">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Fields!endereço2.Value</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox9</rd:DefaultName>
+                  <Top>3.41324cm</Top>
+                  <Left>12.4769cm</Left>
+                  <Height>0.423cm</Height>
+                  <Width>5.97388cm</Width>
+                  <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -882,7 +755,7 @@ Cstr(Fields!External_Document_No_.Value)
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Height>8.9914cm</Height>
+              <Height>7.57323cm</Height>
               <Width>19.04347cm</Width>
               <Style>
                 <Border>
@@ -905,7 +778,27 @@ Cstr(Fields!External_Document_No_.Value)
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>«Localidade», «Data»</Value>
+                      <Value>=Fields!localidade.Value</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>, </Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Fields!data.Value</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>11pt</FontSize>
@@ -952,7 +845,22 @@ Cstr(Fields!External_Document_No_.Value)
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>«nome da pessoa assina»</Value>
+                      <Value>=Fields!nomePessoaAssina.Value</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                        <Color>#000000</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!cargo.Value</Value>
                       <Style>
                         <FontStyle>Normal</FontStyle>
                         <FontSize>11pt</FontSize>
