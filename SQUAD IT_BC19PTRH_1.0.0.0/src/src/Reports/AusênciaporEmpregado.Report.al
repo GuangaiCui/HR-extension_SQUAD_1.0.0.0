@@ -7,6 +7,7 @@ report 53060 "Ausência por Empregado"
     RDLCLayout = 'Layouts\AusênciaporEmpregado.rdlc';
     PreviewMode = PrintLayout;
 
+
     dataset
     {
         dataitem(Empregado; Employee)
