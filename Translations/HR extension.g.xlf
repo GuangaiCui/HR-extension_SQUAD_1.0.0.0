@@ -10828,6 +10828,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Ausências por Motivo - Control FiltroDataIni - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2249152835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract Templates</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Contract Templates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2249152835 - RequestPage 2516438534 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Teaching tip title</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Contract Templates - RequestPage RequestOptionsPage - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Report 2249152835 - RequestPage 2516438534 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Teaching tip content</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Contract Templates - RequestPage RequestOptionsPage - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Report 2249152835 - Action 1452384823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LayoutName</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Contract Templates - Action LayoutName - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3957827539 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Copiar Ficha Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>

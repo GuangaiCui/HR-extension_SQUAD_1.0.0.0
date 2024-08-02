@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="PageLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PageLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PageLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="MapName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>MapName</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>MapName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ServiceLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ServiceLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ServiceLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CodeLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CodeLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CodeLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CGANoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CGANoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CGANoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NameLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>NameLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>NameLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="SitCodeLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SitCodeLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SitCodeLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="MoveCodeLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>MoveCodeLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>MoveCodeLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EfectDateLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>EfectDateLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EfectDateLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DaysNoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>DaysNoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>DaysNoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ParcialHrLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ParcialHrLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ParcialHrLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompHrLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CompHrLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CompHrLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CategoryLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CategoryLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CategoryLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="LevelLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>LevelLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>LevelLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TotaisDescontoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>TotaisDescontoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>TotaisDescontoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EmpLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>EmpLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EmpLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EmployerLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>EmployerLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EmployerLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProcByPCLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ProcByPCLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ProcByPCLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RemunLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>RemunLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>RemunLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PhoneLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>PhoneLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>PhoneLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VatRegNoLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>VatRegNoLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VatRegNoLbl</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TotalLbl">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>TotalLbl</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>TotalLbl</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Name_Cinfo">
+          <DataField>Name_Cinfo</DataField>
+        </Field>
+        <Field Name="Name2_Cinfo">
+          <DataField>Name2_Cinfo</DataField>
+        </Field>
+        <Field Name="Address_Cinfo">
+          <DataField>Address_Cinfo</DataField>
+        </Field>
+        <Field Name="Post_Code_Cinfo">
+          <DataField>Post_Code_Cinfo</DataField>
+        </Field>
+        <Field Name="City_Cinfo">
+          <DataField>City_Cinfo</DataField>
+        </Field>
+        <Field Name="Phone_No_Cinfo">
+          <DataField>Phone_No_Cinfo</DataField>
+        </Field>
+        <Field Name="VATRegistrationNo_Cinfo">
+          <DataField>VATRegistrationNo_Cinfo</DataField>
+        </Field>
+        <Field Name="Date_Formated">
+          <DataField>Date_Formated</DataField>
+        </Field>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
+        </Field>
+        <Field Name="Nome_Servico_ConfRH">
+          <DataField>Nome_Servico_ConfRH</DataField>
+        </Field>
+        <Field Name="Num_Servico_ConfRH">
+          <DataField>Num_Servico_ConfRH</DataField>
+        </Field>
+        <Field Name="Picture_Cinfo">
+          <DataField>Picture_Cinfo</DataField>
+        </Field>
+        <Field Name="EconomicYear">
+          <DataField>EconomicYear</DataField>
+        </Field>
+        <Field Name="NCGA">
+          <DataField>NCGA</DataField>
+        </Field>
+        <Field Name="Nome">
+          <DataField>Nome</DataField>
+        </Field>
+        <Field Name="CodSit">
+          <DataField>CodSit</DataField>
+        </Field>
+        <Field Name="CodMov">
+          <DataField>CodMov</DataField>
+        </Field>
+        <Field Name="DataEfeito">
+          <DataField>DataEfeito</DataField>
+        </Field>
+        <Field Name="Remuner">
+          <DataField>Remuner</DataField>
+        </Field>
+        <Field Name="RemunerFormat">
+          <DataField>RemunerFormat</DataField>
+        </Field>
+        <Field Name="NDias">
+          <DataField>NDias</DataField>
+        </Field>
+        <Field Name="NDiasFormat">
+          <DataField>NDiasFormat</DataField>
+        </Field>
+        <Field Name="HorParcial">
+          <DataField>HorParcial</DataField>
+        </Field>
+        <Field Name="HorParcialFormat">
+          <DataField>HorParcialFormat</DataField>
+        </Field>
+        <Field Name="HorComp">
+          <DataField>HorComp</DataField>
+        </Field>
+        <Field Name="HorCompFormat">
+          <DataField>HorCompFormat</DataField>
+        </Field>
+        <Field Name="Categoria">
+          <DataField>Categoria</DataField>
+        </Field>
+        <Field Name="Nivel">
+          <DataField>Nivel</DataField>
+        </Field>
+        <Field Name="NLinha">
+          <DataField>NLinha</DataField>
+        </Field>
+        <Field Name="DescEmp">
+          <DataField>DescEmp</DataField>
+        </Field>
+        <Field Name="DescEmpFormat">
+          <DataField>DescEmpFormat</DataField>
+        </Field>
+        <Field Name="DescEntPat">
+          <DataField>DescEntPat</DataField>
+        </Field>
+        <Field Name="DescEntPatFormat">
+          <DataField>DescEntPatFormat</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

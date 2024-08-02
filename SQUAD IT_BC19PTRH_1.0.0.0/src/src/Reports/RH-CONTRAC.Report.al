@@ -8,26 +8,52 @@ report 53096 "RH-CONTRAC"
     {
         dataitem(Employee; Employee)
         {
-            column(EmployeeName; Employee.Name)
+            column(nome; Employee.Name)
             { }
-            column(EmployeeDocumentType; Employee."Documento Identificação")
+            column(tipodoc; Tipodoc)
             { }
-            column(EmployeeDocumentNo; Employee."No. Doc. Identificação")
+            column(nºdocIdentificação; Employee."No. Doc. Identificação")
             { }
-            column(IssueDate; Format(Employee."Data Doc. Ident."))
+            column(dataemissão; Format(Employee."Data Doc. Ident."))
             { }
-            column(IssueLoc; Employee."Local Emissão Doc. Ident.")
+            column(localemissão; Employee."Local Emissão Doc. Ident.")
             { }
             column(NIF; Employee."No. Contribuinte")
             { }
-            column(Address; Employee.Address)
+            column(morada; Employee.Address)
             { }
-            column(Address2; Employee."Address 2")
+            column(morada2; Employee."Address 2")
             { }
-            column(City; Employee.City)
+            column(cidade; Employee.City)
             { }
-            column(PostCode; Employee."Post Code")
+            column(codpostal; Employee."Post Code")
             { }
+            column(DatadeTrabalho; DatadeTrabalho)
+            { }
+            trigger OnAfterGetRecord()
+            begin
+
+
+                if Employee."Documento Identificação" = Employee."Documento Identificação"::BI then
+                    Tipodoc := 'Bilhete de Identidade'
+                else
+                    Tipodoc := Format(Employee."Documento Identificação");
+
+
+                Employee.CalcFields(Employee.Profissionalização);
+                if Employee.Profissionalização = true then
+                    Profissionalizado := 'Profissionalizado'
+                else
+                    Profissionalizado := 'não Profissionalizado';
+
+                TabQualificacoes.Reset;
+                TabQualificacoes.SetRange(TabQualificacoes."Employee No.", Employee."No.");
+                TabQualificacoes.SetRange(TabQualificacoes.Type, TabQualificacoes.Type::"Habilitações Académicas");
+                if TabQualificacoes.Find('+') then
+                    DescriçãoCódigoHabilitação := '';
+
+                DatadeTrabalho := Format(Today, 0, '<day> de <month text> de <year4>');
+            end;
 
 
         }
@@ -46,30 +72,20 @@ report 53096 "RH-CONTRAC"
         myInt: Integer;
 
     trigger OnPreReport()
-    var
-        RecEmployee: Record Employee;
     begin
 
-        // if Empregado."Documento Identificação" = RecEmployee."Documento Identificação"::BI then
-        //     EscreveWord2('«tipo doc»', 'Bilhete de Identidade', wdApp2)
-        // else
-        //     EscreveWord2('«tipo doc»', Format(Empregado."Documento Identificação"), wdApp2);
 
 
-        // Empregado.CalcFields(Empregado.Profissionalização);
-        // if Empregado.Profissionalização = true then
-        //     EscreveWord2('«profissionalizado»', 'Profissionalizado', wdApp2)
-        // else
-        //     EscreveWord2('«profissionalizado»', 'não Profissionalizado', wdApp2);
 
-        // TabQualificacoes.Reset;
-        // TabQualificacoes.SetRange(TabQualificacoes."Employee No.", Empregado."No.");
-        // TabQualificacoes.SetRange(TabQualificacoes.Type, TabQualificacoes.Type::"Habilitações Académicas");
-        // if TabQualificacoes.Find('+') then
-        //     EscreveWord2('«Descrição código habilitação»', '', wdApp2);
 
-        // EscreveWord2('«data de trabalho»', Format(Today, 0, '<day> de <month text> de <year4>'), wdApp2);
     end;
+
+    var
+        Profissionalizado: Text;
+        Tipodoc: Text;
+        TabQualificacoes: Record "Qualificação Empregado";
+        DescriçãoCódigoHabilitação: Text;
+        DatadeTrabalho: Text;
 
 
 }
