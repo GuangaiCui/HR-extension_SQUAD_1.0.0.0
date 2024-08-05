@@ -20,8 +20,6 @@ codeunit 53039 "Gerar Relatório Único"
             //IF i = 1 THEN FilePath := ConfRH."Caminho Exportação Rel. Único" + '\ru.xml';
 
             //JTP - Temoprário para testar os outros XMLPORTS
-            //Suitable for testing other XMLPORTS 适合测试其他 XMLPORTS
-            //TODO:delete comments
             if i = 1 then begin
                 FileName := 'Zero.xml';
                 //TempFilePath := ConfRH."Caminho Exportação Rel. Único" + '\Zero_tmp.xml';

@@ -180,8 +180,12 @@ table 53056 "Contrato Empregado"
         _PostCode: Record "Post Code";
         _Emp2: Record Employee;
     begin
-        //FIXME: Template layout needed to be created diferently
-        //TODO: Commented to create app, will be reworked
+        Report.Run(53097);
+        //NOTES: below is replaced.
+        //TODO: to test
+        //TODO: if I can jsut replace the action in page ListaContratoEmpregado.
+
+
         Message('WIP');
         /*
         if "No. Contrato Trabalho" <> '' then

@@ -1390,9 +1390,9 @@ tableextension 53040 "Employee Ext" extends Employee
         NumberOfChars: Integer;
     // wdApp2: DotNet WordApplicationClass;
     begin
-        Message('WIP');
-        //FIXME: Template layout needed to be created diferently
-        //TODO: FIX LATER
+        report.RunModal(53096);
+        //run "RH-CONTRAC" report
+        //NOTES: commented because it is replaced.
         /*
         path := Format('C:\Temp') + 'Contrato' + Empregado."No." + '.Doc';
         rTemplates.Get('RH-CONTRAC');
@@ -1433,7 +1433,7 @@ tableextension 53040 "Employee Ext" extends Employee
         */
     end;
 
-    //TODO: Commented to create app, will be reworked
+    //NOTES:can be removed
 
     //procedure EscreveWord2(pText1: Text[1024]; pText2: Text[1024]; wdApp2: DotNet WordApplicationClass)
     procedure EscreveWord2(pText1: Text[1024]; pText2: Text[1024]; wdApp2: text)

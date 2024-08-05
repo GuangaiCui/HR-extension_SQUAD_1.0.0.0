@@ -11138,21 +11138,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Declaração Mensal Remu. AT - Control Tipodeclaracao - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Report 2351902798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Declarações RH</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2351902798 - Control 775071396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cargo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH - Control cargo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2351902798 - Control 1389891023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Nome da Pessoa que assina</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH - Control NomePessoaAssina - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Report 1251433277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Declarações RH BC</source>
           <note from="Developer" annotates="general" priority="2"></note>
