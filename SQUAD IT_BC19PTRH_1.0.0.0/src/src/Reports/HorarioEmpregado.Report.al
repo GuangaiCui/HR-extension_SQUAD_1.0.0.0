@@ -4,7 +4,7 @@ report 53086 "Horario Empregado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\HorarioEmpregado.rdlc';
+    RDLCLayout = 'Layouts\HorarioEmpregado.rdl';
     PreviewMode = PrintLayout;
 
     dataset

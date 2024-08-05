@@ -33,7 +33,7 @@ report 53044 "Mapa Seg. Social - Fechado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaSegSocialFechado.rdlc';
+    RDLCLayout = 'Layouts\MapaSegSocialFechado.rdl';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;

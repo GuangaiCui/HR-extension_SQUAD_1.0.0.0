@@ -11,7 +11,7 @@ report 53057 "Mapa Férias Empregado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaFériasEmpregado.rdlc';
+    RDLCLayout = 'Layouts\MapaFériasEmpregado.rdl';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

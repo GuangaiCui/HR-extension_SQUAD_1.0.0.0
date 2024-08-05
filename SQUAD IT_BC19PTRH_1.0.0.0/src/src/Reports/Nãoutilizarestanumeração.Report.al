@@ -1,7 +1,7 @@
 report 53074 "Não utilizar esta numeração"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\Nãoutilizarestanumeração.rdlc';
+    RDLCLayout = 'Layouts\Nãoutilizarestanumeração.rdl';
 
     dataset
     {

@@ -10,7 +10,7 @@ report 53062 "Empregado - Qualificações"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\EmpregadoQualificações.rdlc';
+    RDLCLayout = 'Layouts\EmpregadoQualificações.rdl';
 
     Caption = 'Employee - Qualifications';
     PreviewMode = PrintLayout;

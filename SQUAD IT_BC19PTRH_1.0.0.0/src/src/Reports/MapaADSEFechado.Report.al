@@ -10,7 +10,7 @@ report 53103 "Mapa ADSE - Fechado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaADSEFechado.rdlc';
+    RDLCLayout = 'Layouts\MapaADSEFechado.rdl';
 
     PreviewMode = PrintLayout;
     ProcessingOnly = false;

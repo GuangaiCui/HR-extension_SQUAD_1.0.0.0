@@ -1,7 +1,7 @@
 report 53104 "Reabrir Processamento"
 {
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\ReabrirProcessamento.rdlc';
+    RDLCLayout = 'Layouts\ReabrirProcessamento.rdl';
     Permissions = TableData "Histórico Ausências" = rimd,
                   TableData "Histórico Horas Extra" = rimd,
                   TableData "Histórico Abonos - Desc. Extra" = rimd,

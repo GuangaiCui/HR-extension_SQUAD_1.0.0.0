@@ -10,7 +10,7 @@ report 53084 "Mapa Sindicato"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaSindicato.rdlc';
+    RDLCLayout = 'Layouts\MapaSindicato.rdl';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

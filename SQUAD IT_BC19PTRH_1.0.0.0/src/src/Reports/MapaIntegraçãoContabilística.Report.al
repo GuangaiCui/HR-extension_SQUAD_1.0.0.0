@@ -10,7 +10,7 @@ report 53070 "Mapa Integração Contabilística"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaIntegraçãoContabilística.rdlc';
+    RDLCLayout = 'Layouts\MapaIntegraçãoContabilística.rdl';
 
     Caption = 'Mapa Integração Contabilística';
     Permissions = TableData "Integração Contabilistica" = rimd;

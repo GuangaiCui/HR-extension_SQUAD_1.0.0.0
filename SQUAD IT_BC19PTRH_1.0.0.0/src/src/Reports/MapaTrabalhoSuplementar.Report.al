@@ -11,7 +11,7 @@ report 53069 "Mapa Trabalho Suplementar"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaTrabalhoSuplementar.rdlc';
+    RDLCLayout = 'Layouts\MapaTrabalhoSuplementar.rdl';
 
     Caption = 'Mapa Trabalho Suplementar';
     PreviewMode = PrintLayout;

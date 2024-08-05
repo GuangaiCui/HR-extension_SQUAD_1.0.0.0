@@ -11,7 +11,7 @@ report 53061 "Ausências por Motivo"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\AusênciasporMotivo.rdlc';
+    RDLCLayout = 'Layouts\AusênciasporMotivo.rdl';
 
     Caption = 'Absences by Causes';
     PreviewMode = PrintLayout;
