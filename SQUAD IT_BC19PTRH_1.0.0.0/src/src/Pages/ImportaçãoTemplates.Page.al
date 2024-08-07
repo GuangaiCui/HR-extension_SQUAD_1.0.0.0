@@ -4,8 +4,6 @@ page 53131 "Importação Templates"
     // //C+  -LCF- Fiz uma reestruturação no form de modo a que se pode-se escolher os ficheiros
     // //a importar e deixar de se usar o HARDcode para ir buscar os nomes do ficheiros
 
-    InsertAllowed = false;
-    ModifyAllowed = false;
     PageType = List;
     Permissions = TableData "Importação Templates" = rimd;
     SourceTable = "Importação Templates";
@@ -23,19 +21,33 @@ page 53131 "Importação Templates"
                 {
                     ApplicationArea = All;
 
-                    Editable = false;
+
                 }
+
+                field("Report ID"; Rec."Report ID")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Report Layout"; Rec."Report Layout")
+                {
+                    ApplicationArea = All;
+
+                }
+
+                /*
                 field(Attachment; Rec.Attachment)
                 {
                     ApplicationArea = All;
 
                     Editable = false;
                 }
+                */
                 field("File Extension"; Rec."File Extension")
                 {
                     ApplicationArea = All;
 
-                    Editable = false;
+                    //Editable = false;
                 }
                 field("Last Date Modified"; Rec."Last Date Modified")
                 {
@@ -57,33 +69,38 @@ page 53131 "Importação Templates"
     {
         area(navigation)
         {
-            group(Documento)
+            group(Creation)
             {
                 Caption = 'Documento';
-                action("&Importar")
-                {
-                    ApplicationArea = All;
+                /*
 
-                    Caption = '&Importar';
-                    Image = Import;
+                                action("&Importar")
+                                {
+                                    ApplicationArea = All;
 
-                    trigger OnAction()
-                    var
-                        Attachment: Record "Importação Templates";
-                    begin
-                        //Corre a funcao que permite selecionar o ficheiro
-                        OpenFile('Importar Ficheiro Movimentos', '', 2, '', 0);
+                                    Caption = '&Importar';
+                                    Image = Import;
 
-                        if FileNameImport <> '' then begin
-                            Attachment.Init;
-                            Attachment."No." := FileNameImport;
-                            Attachment."File Extension" := extensão;
-                            Attachment.ImportAttachment(Path, false);
-                            if not Attachment.Insert then Attachment.Modify;
-                            Message('Importado com sucesso');
-                        end;
-                    end;
-                }
+                                    trigger OnAction()
+                                    var
+                                        Attachment: Record "Importação Templates";
+                                    begin
+                                        //Corre a funcao que permite selecionar o ficheiro
+                                        OpenFile('Importar Ficheiro Movimentos', '', 2, '', 0);
+
+                                        if FileNameImport <> '' then begin
+                                            Attachment.Init;
+                                            Attachment."No." := FileNameImport;
+                                            Attachment."File Extension" := extensão;
+                                            Attachment.ImportAttachment(Path, false);
+                                            if not Attachment.Insert then Attachment.Modify;
+                                            Message('Importado com sucesso');
+                                        end;
+                                    end;
+                                }
+
+                                */
+                /*
                 action("<Action1101490029>")
                 {
                     ApplicationArea = All;
@@ -100,17 +117,21 @@ page 53131 "Importação Templates"
                         //NOTES: This export function was changed due to no longer being supported in BC. Now it download the Attachment to the download folder.
                         //29.05.2008 - usar o environ em vez do c:
                         //path1 := ENVIRON('userprofile')+'\';
-                        /*
-                        file1 := Rec."No." + '.' + Rec."File Extension";
-                        path1 := FileMgt.BrowseForFolderDialog('', 'Navision', true);
-                        path1 := path1 + '\';
-                        Rec.ExportAttachment(path1 + file1);
-                        Message('Exportado com sucesso para: %1%2', path1, file1);
+
                         */
-                        file1 := Rec."No." + '.' + Rec."File Extension";
-                        Rec.ExportAttachment(file1);
+                /*
+                file1 := Rec."No." + '.' + Rec."File Extension";
+                path1 := FileMgt.BrowseForFolderDialog('', 'Navision', true);
+                path1 := path1 + '\';
+                Rec.ExportAttachment(path1 + file1);
+                Message('Exportado com sucesso para: %1%2', path1, file1);
+                */
+                /*
+                file1 := Rec."No." + '.' + Rec."File Extension";
+                Rec.ExportAttachment(file1);
                     end;
                 }
+*/
             }
         }
     }

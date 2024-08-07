@@ -635,10 +635,9 @@ table 53053 "Config. Recursos Humanos"
         AFSFileClientGbl.Initialize(StorageAccount, FileShare, StorageServiceAuthorizationLcl.UseReadySAS(SasToken));
     end;
 
-    procedure GetFileAsStream(FilePathPar: Text; FileName: Text): Boolean
+    procedure GetFileAsStream(FilePathPar: Text; FileName: Text; var inStreamPar: InStream): Boolean
     var
         AFSOperationResponseLcl: Codeunit "AFS Operation Response";
-        InStreamPar: InStream;
         fullPath: Text;
     begin
         Initialize();

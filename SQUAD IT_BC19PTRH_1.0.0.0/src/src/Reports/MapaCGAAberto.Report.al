@@ -15,7 +15,7 @@ report 53052 "Mapa CGA - Aberto"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\rdlc';
+    RDLCLayout = 'Layouts\MapaCGAAberto.rdl';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;
