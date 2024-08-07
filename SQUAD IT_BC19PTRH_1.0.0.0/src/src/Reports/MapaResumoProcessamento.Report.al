@@ -11,7 +11,7 @@ report 53056 "Mapa Resumo Processamento"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaResumoProcessamento.rdlc';
+    RDLCLayout = 'Layouts\MapaResumoProcessamento.rdl';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

@@ -10818,6 +10818,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Ausências por Motivo - Control FiltroDataIni - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 2249152835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contract Templates</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Contract Templates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 2249152835 - RequestPage 2516438534 - Property 1064389655" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Teaching tip title</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Contract Templates - RequestPage RequestOptionsPage - Property AboutTitle</note>
+        </trans-unit>
+        <trans-unit id="Report 2249152835 - RequestPage 2516438534 - Property 247559172" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Teaching tip content</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Contract Templates - RequestPage RequestOptionsPage - Property AboutText</note>
+        </trans-unit>
+        <trans-unit id="Report 2249152835 - Action 1452384823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LayoutName</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Contract Templates - Action LayoutName - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3957827539 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Copiar Ficha Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -11107,21 +11127,6 @@
           <source>Tipo Declaração</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Declaração Mensal Remu. AT - Control Tipodeclaracao - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2351902798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Declarações RH</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2351902798 - Control 775071396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cargo</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH - Control cargo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Report 2351902798 - Control 1389891023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Nome da Pessoa que assina</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH - Control NomePessoaAssina - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1251433277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Declarações RH BC</source>

@@ -12,7 +12,7 @@ report 53043 "Recibo Vencimentos A5"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\ReciboVencimentosA5.rdlc';
+    RDLCLayout = 'Layouts\ReciboVencimentosA5.rdl';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

@@ -11,7 +11,7 @@ report 53078 "Mapa ADSE - Aberto"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaADSEAberto.rdlc';
+    RDLCLayout = 'Layouts\MapaADSEAberto.rdl';
 
     PreviewMode = PrintLayout;
     ProcessingOnly = false;

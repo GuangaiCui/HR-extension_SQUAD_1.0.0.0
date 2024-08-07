@@ -13,7 +13,7 @@ report 53082 "Recibo Vencimentos A4"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\ReciboVencimentosA4.rdlc';
+    RDLCLayout = 'Layouts\ReciboVencimentosA4.rdl';
 
     PreviewMode = PrintLayout;
 

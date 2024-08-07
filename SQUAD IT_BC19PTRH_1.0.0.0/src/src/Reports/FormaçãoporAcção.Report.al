@@ -4,7 +4,7 @@ report 53091 "Formação por Acção"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\FormaçãoporAcção.rdlc';
+    RDLCLayout = 'Layouts\FormaçãoporAcção.rdl';
     PreviewMode = PrintLayout;
 
     dataset

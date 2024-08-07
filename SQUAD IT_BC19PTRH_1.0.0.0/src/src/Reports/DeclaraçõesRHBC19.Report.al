@@ -1,6 +1,5 @@
 report 53095 "Declarações RH BC"
 {
-    //FIXME: Template layout needed to be organized
     //ProcessingOnly = true;
     //UsageCategory = Tasks;
     ApplicationArea = HumanResourcesAppArea;

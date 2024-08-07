@@ -11,7 +11,7 @@ report 53065 "Horas Extra por Tipo"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\HorasExtraporTipo.rdlc';
+    RDLCLayout = 'Layouts\HorasExtraporTipo.rdl';
 
     Caption = 'Horas Extra por Tipo';
     PreviewMode = PrintLayout;

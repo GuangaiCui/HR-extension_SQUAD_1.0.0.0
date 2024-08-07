@@ -11,7 +11,7 @@ report 53072 "Mapa Férias Global"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaFériasGlobal.rdlc';
+    RDLCLayout = 'Layouts\MapaFériasGlobal.rdl';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;

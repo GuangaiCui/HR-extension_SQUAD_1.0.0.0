@@ -13,7 +13,7 @@ report 53046 "Mapa Transferência Bancária"
     //   do Histórico.
     // //-------------------------------------------------------
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaTransferênciaBancária.rdlc';
+    RDLCLayout = 'Layouts\MapaTransferênciaBancária.rdl';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;

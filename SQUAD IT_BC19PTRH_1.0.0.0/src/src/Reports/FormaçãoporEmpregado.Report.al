@@ -11,7 +11,7 @@ report 53089 "Formação por Empregado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\FormaçãoporEmpregado.rdlc';
+    RDLCLayout = 'Layouts\FormaçãoporEmpregado.rdl';
 
     Caption = 'Formação por Empregado';
     PreviewMode = PrintLayout;

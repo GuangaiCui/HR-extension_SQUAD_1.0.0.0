@@ -15,7 +15,7 @@ report 53093 "Mapa Companhia Seguros"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaCompanhiaSeguros.rdlc';
+    RDLCLayout = 'Layouts\MapaCompanhiaSeguros.rdl';
 
     PreviewMode = PrintLayout;
     UseRequestPage = true;
@@ -272,7 +272,7 @@ report 53093 "Mapa Companhia Seguros"
 
                     if ((CodSeg <> '') and (UpperCase(CodSeg) <> UpperCase(Seguradora))) or
                        ((CodApo <> '') and (UpperCase(CodApo) <> UpperCase("No. Apólice"))) then begin
-                        //NOTES:Test this report
+                        //TODO:Test this report
                         //CurrReport.NewPage;
                         //CurrReport.PageNo := 1;
                         TotalVencimento := 0;
@@ -621,7 +621,7 @@ report 53093 "Mapa Companhia Seguros"
 
                     if ((CodSeg <> '') and (UpperCase(CodSeg) <> UpperCase(Seguradora))) or
                        ((CodApo <> '') and (UpperCase(CodApo) <> UpperCase("No. Apólice"))) then begin
-                        //NOTES: Check this report
+                        //TODO: Check this report
                         //CurrReport.NewPage;
                         //CurrReport.PageNo := 1;
                         TotalVencimento := 0;
