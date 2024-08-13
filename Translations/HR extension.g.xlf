@@ -4963,11 +4963,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - NamedType Text014</note>
         </trans-unit>
-        <trans-unit id="Table 2531571152 - Field 1159403147 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Attachment</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - Field Attachment - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 2531571152 - Field 3414364457 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>File Extension</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4993,15 +4988,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - Field Read Only - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2531571152 - Field 1393361878 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Storage Pointer</source>
+        <trans-unit id="Table 2531571152 - Field 1272245069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nº Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - Field Storage Pointer - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - Field Report ID - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 2531571152 - Field 613473307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Storage Type</source>
+        <trans-unit id="Table 2531571152 - Field 1063313816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Layout Report</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - Field Storage Type - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - Field Report Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2531571152 - Field 1197701381 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - Field ReportCode - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1616768363 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inactividade Empregado</source>
@@ -8898,20 +8898,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Importação Templates - NamedType Text005</note>
         </trans-unit>
-        <trans-unit id="Page 2531571152 - Action 4000416260 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 2531571152 - Action 32276907 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Documento</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Importação Templates - Action Documento - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2531571152 - Action 3196039348 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Importar</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Importação Templates - Action &amp;Importar - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2531571152 - Action 1540977237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Exportar</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Importação Templates - Action &lt;Action1101490029&gt; - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Importação Templates - Action Creation - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 252929349 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Misc. Article Information</source>

@@ -17,3 +17,13 @@ enum 50001 RetentionIncomeLocal
     value(3; RM) { }
 }
 
+
+enum 50002 fileExtension
+{
+    Extensible = true;
+
+    value(0; " ") { }
+    value(1; word) { }
+    value(2; excel) { }
+}
+
