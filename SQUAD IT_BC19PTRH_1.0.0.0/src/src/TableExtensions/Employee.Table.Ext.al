@@ -65,10 +65,9 @@ tableextension 53040 "Employee Ext" extends Employee
             Caption = 'Company Mobile Phone No.';
             ExtendedDatatype = PhoneNo;
         }
-        field(53037; "Company Phone No."; Text[30])
-        {
-            Caption = 'Company Phone No.';
-        }
+        //CGA SQD 
+        //Company Phone No. already exist in Employee, 
+        //NOTES: Phone No. field in Employee is Company Phone No. 
         field(53038; "Tipo Empregado"; Code[20])
         {
             Caption = 'Employee Type';
@@ -1390,7 +1389,8 @@ tableextension 53040 "Employee Ext" extends Employee
         NumberOfChars: Integer;
     // wdApp2: DotNet WordApplicationClass;
     begin
-        report.RunModal(53096);
+        Report.RunModal(Report::"RH-CONTRAC", true, false, Rec);
+        //CGA SQD
         //run "RH-CONTRAC" report
         //NOTES: commented because it is replaced.
         /*

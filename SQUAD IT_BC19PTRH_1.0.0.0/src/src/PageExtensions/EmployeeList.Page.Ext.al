@@ -13,7 +13,7 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
                 StyleExpr = TRUE;
             }
         }
-        addafter("Search Name")
+        addafter("Job Title")
         {
             field(Address; Rec.Address)
             {
@@ -36,7 +36,7 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
 
             }
         }
-        addafter("E-Mail")
+        addafter("Comment")
         {
             field("Alt. Address Code"; Rec."Alt. Address Code")
             {
@@ -64,11 +64,6 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
 
             }
             field("Union Membership No."; Rec."Union Membership No.")
-            {
-                ApplicationArea = All;
-
-            }
-            field("Country Code"; Rec."Country/Region Code")
             {
                 ApplicationArea = All;
 
@@ -113,12 +108,10 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
                 ApplicationArea = All;
 
             }
+        }
+        addafter(Extension)
+        {
             field(CompanyMobilePhoneNo; Rec.CompanyMobilePhoneNo)
-            {
-                ApplicationArea = All;
-
-            }
-            field("Company Phone No."; Rec."Company Phone No.")
             {
                 ApplicationArea = All;
 

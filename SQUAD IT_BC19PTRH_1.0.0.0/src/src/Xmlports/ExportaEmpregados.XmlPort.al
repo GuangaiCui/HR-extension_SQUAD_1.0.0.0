@@ -193,7 +193,8 @@ xmlport 53047 "Exporta Empregados"
                 {
                     MinOccurs = Zero;
                 }
-                fieldelement(Internal_Telephone; Empregado."Company Phone No.")
+                fieldelement(Internal_Telephone; Empregado."Phone No.")
+                //CGA SQD Company Phone No. field deleted, changed to Phone No.
                 {
                     MinOccurs = Zero;
                 }

@@ -22,17 +22,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParameters>
-    <ReportParameter Name="PorDebito">
-      <DataType>String</DataType>
-      <DefaultValue>
-        <Values>
-          <Value>PorDebito</Value>
-        </Values>
-      </DefaultValue>
-      <Prompt>PorDebito</Prompt>
-    </ReportParameter>
-  </ReportParameters>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -75,20 +64,14 @@ End Function
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
-        <Field Name="FORMAT_TODAY_0_4_">
-          <DataField>FORMAT_TODAY_0_4_</DataField>
-        </Field>
-        <Field Name="TabConfEmpresa_Name">
-          <DataField>TabConfEmpresa_Name</DataField>
-        </Field>
-        <Field Name="USERID">
-          <DataField>USERID</DataField>
+        <Field Name="TabConfEmpresa_City">
+          <DataField>TabConfEmpresa_City</DataField>
         </Field>
         <Field Name="TabConfEmpresa_Address">
           <DataField>TabConfEmpresa_Address</DataField>
         </Field>
-        <Field Name="TabConfEmpresa_City">
-          <DataField>TabConfEmpresa_City</DataField>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
         </Field>
         <Field Name="TabConfEmpresa__Post_Code_">
           <DataField>TabConfEmpresa__Post_Code_</DataField>
@@ -96,83 +79,107 @@ End Function
         <Field Name="TabConfEmpresa_Picture">
           <DataField>TabConfEmpresa_Picture</DataField>
         </Field>
+        <Field Name="MAPA_DE_FÉRIAS_DE_____FORMAT_VarAno_">
+          <DataField>MAPA_DE_FÉRIAS_DE_____FORMAT_VarAno_</DataField>
+        </Field>
         <Field Name="TabConfEmpresa__Name_2_">
           <DataField>TabConfEmpresa__Name_2_</DataField>
-        </Field>
-        <Field Name="varProvisorio">
-          <DataField>varProvisorio</DataField>
-        </Field>
-        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
-          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
         </Field>
         <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
           <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
         </Field>
-        <Field Name="TextFiltro2">
-          <DataField>TextFiltro2</DataField>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
         </Field>
-        <Field Name="DataReg">
-          <DataField>DataReg</DataField>
+        <Field Name="FORMAT__WORKDATE_0___Day__de__Month_Text__de__Year4___">
+          <DataField>FORMAT__WORKDATE_0___Day__de__Month_Text__de__Year4___</DataField>
         </Field>
-        <Field Name="TextFiltro1____">
-          <DataField>TextFiltro1____</DataField>
+        <Field Name="DezembroCaption">
+          <DataField>DezembroCaption</DataField>
         </Field>
-        <Field Name="ValorTotal">
-          <DataField>ValorTotal</DataField>
+        <Field Name="NovembroCaption">
+          <DataField>NovembroCaption</DataField>
         </Field>
-        <Field Name="ValorTotalFormat">
-          <DataField>ValorTotalFormat</DataField>
+        <Field Name="OutubroCaption">
+          <DataField>OutubroCaption</DataField>
         </Field>
-        <Field Name="ContaBancoName">
-          <DataField>ContaBancoName</DataField>
+        <Field Name="SetembroCaption">
+          <DataField>SetembroCaption</DataField>
         </Field>
-        <Field Name="ContaBancoIBAN">
-          <DataField>ContaBancoIBAN</DataField>
+        <Field Name="AgostoCaption">
+          <DataField>AgostoCaption</DataField>
         </Field>
-        <Field Name="CurrReport_PAGENOCaption">
-          <DataField>CurrReport_PAGENOCaption</DataField>
+        <Field Name="JulhoCaption">
+          <DataField>JulhoCaption</DataField>
         </Field>
-        <Field Name="MAPA_TRANSF_BANC_Caption">
-          <DataField>MAPA_TRANSF_BANC_Caption</DataField>
+        <Field Name="JunhoCaption">
+          <DataField>JunhoCaption</DataField>
         </Field>
-        <Field Name="ValorCaption">
-          <DataField>ValorCaption</DataField>
+        <Field Name="MaioCaption">
+          <DataField>MaioCaption</DataField>
         </Field>
-        <Field Name="N__Emp_Caption">
-          <DataField>N__Emp_Caption</DataField>
+        <Field Name="AbrilCaption">
+          <DataField>AbrilCaption</DataField>
         </Field>
-        <Field Name="IBAN_Caption">
-          <DataField>IBAN_Caption</DataField>
+        <Field Name="MarçoCaption">
+          <DataField>MarçoCaption</DataField>
         </Field>
-        <Field Name="NomeCaption">
-          <DataField>NomeCaption</DataField>
+        <Field Name="FevereiroCaption">
+          <DataField>FevereiroCaption</DataField>
         </Field>
-        <Field Name="Data_Registo_Caption">
-          <DataField>Data_Registo_Caption</DataField>
+        <Field Name="JaneiroCaption">
+          <DataField>JaneiroCaption</DataField>
         </Field>
-        <Field Name="Total_Caption">
-          <DataField>Total_Caption</DataField>
+        <Field Name="EmpregadoCaption">
+          <DataField>EmpregadoCaption</DataField>
         </Field>
-        <Field Name="Processado_por_ComputadorCaption">
-          <DataField>Processado_por_ComputadorCaption</DataField>
+        <Field Name="A_GerênciaCaption">
+          <DataField>A_GerênciaCaption</DataField>
         </Field>
         <Field Name="Empregado_No_">
           <DataField>Empregado_No_</DataField>
         </Field>
-        <Field Name="vIBAN">
-          <DataField>vIBAN</DataField>
+        <Field Name="Processado_por_ComputadorCaption">
+          <DataField>Processado_por_ComputadorCaption</DataField>
         </Field>
-        <Field Name="ValorTotalEmpregado">
-          <DataField>ValorTotalEmpregado</DataField>
+        <Field Name="Jan">
+          <DataField>Jan</DataField>
         </Field>
-        <Field Name="ValorTotalEmpregadoFormat">
-          <DataField>ValorTotalEmpregadoFormat</DataField>
+        <Field Name="Fev">
+          <DataField>Fev</DataField>
+        </Field>
+        <Field Name="Mar">
+          <DataField>Mar</DataField>
+        </Field>
+        <Field Name="Abr">
+          <DataField>Abr</DataField>
+        </Field>
+        <Field Name="Jul">
+          <DataField>Jul</DataField>
+        </Field>
+        <Field Name="Jun">
+          <DataField>Jun</DataField>
+        </Field>
+        <Field Name="Mai">
+          <DataField>Mai</DataField>
+        </Field>
+        <Field Name="Dez">
+          <DataField>Dez</DataField>
+        </Field>
+        <Field Name="Nov">
+          <DataField>Nov</DataField>
+        </Field>
+        <Field Name="Out">
+          <DataField>Out</DataField>
+        </Field>
+        <Field Name="Set">
+          <DataField>Set</DataField>
+        </Field>
+        <Field Name="Ago">
+          <DataField>Ago</DataField>
         </Field>
         <Field Name="Empregado_Name">
           <DataField>Empregado_Name</DataField>
-        </Field>
-        <Field Name="Empregado__No__">
-          <DataField>Empregado__No__</DataField>
         </Field>
         <Field Name="Integer_Number">
           <DataField>Integer_Number</DataField>

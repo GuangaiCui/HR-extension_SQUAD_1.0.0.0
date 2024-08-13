@@ -180,7 +180,8 @@ table 53056 "Contrato Empregado"
         _PostCode: Record "Post Code";
         _Emp2: Record Employee;
     begin
-        Report.Run(53097);
+        Report.RunModal(Report::"Contract Templates", true, false, Rec);
+        //CGA SQD
         //NOTES: below is replaced.
         //TODO: to test
         //TODO: if I can jsut replace the action in page ListaContratoEmpregado.

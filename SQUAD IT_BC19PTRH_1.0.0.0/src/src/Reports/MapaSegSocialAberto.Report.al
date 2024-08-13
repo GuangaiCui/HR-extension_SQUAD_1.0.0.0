@@ -30,7 +30,7 @@ report 53045 "Mapa Seg. Social - Aberto"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaSegSocialAberto.rdl;
+    RDLCLayout = 'Layouts\MapaSegSocialAberto.rdl';
 
     Permissions = TableData "Tabela Temp Ficheiros Texto" = rimd;
     PreviewMode = PrintLayout;

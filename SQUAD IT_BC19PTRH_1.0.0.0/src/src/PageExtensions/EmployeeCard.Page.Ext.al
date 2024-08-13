@@ -70,10 +70,6 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
             group("Comunicação")
             {
                 Caption = 'Communication';
-                field("Company Phone No."; Rec."Company Phone No.")
-                {
-                    ApplicationArea = All;
-                }
                 field(CompanyMobilePhoneNo; Rec.CompanyMobilePhoneNo)
                 {
                     Importance = Promoted;

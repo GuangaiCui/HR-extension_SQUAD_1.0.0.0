@@ -1368,9 +1368,6 @@ End Function
         <Field Name="TabConfEmpresa_Address">
           <DataField>TabConfEmpresa_Address</DataField>
         </Field>
-        <Field Name="CurrReport_PAGENO">
-          <DataField>CurrReport_PAGENO</DataField>
-        </Field>
         <Field Name="TabConfEmpresa_City">
           <DataField>TabConfEmpresa_City</DataField>
         </Field>

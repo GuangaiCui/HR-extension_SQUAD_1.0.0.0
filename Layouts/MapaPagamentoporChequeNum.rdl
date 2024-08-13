@@ -67,83 +67,92 @@ End Function
         <Field Name="FORMAT_TODAY_0_4_">
           <DataField>FORMAT_TODAY_0_4_</DataField>
         </Field>
+        <Field Name="TabConfEmpresa_Name">
+          <DataField>TabConfEmpresa_Name</DataField>
+        </Field>
         <Field Name="USERID">
           <DataField>USERID</DataField>
         </Field>
         <Field Name="TabConfEmpresa_Address">
           <DataField>TabConfEmpresa_Address</DataField>
         </Field>
-        <Field Name="TabConfEmpresa__Name_2_">
-          <DataField>TabConfEmpresa__Name_2_</DataField>
-        </Field>
-        <Field Name="TabConfEmpresa_Name">
-          <DataField>TabConfEmpresa_Name</DataField>
-        </Field>
         <Field Name="TabConfEmpresa_City">
           <DataField>TabConfEmpresa_City</DataField>
-        </Field>
-        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
-          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
         </Field>
         <Field Name="TabConfEmpresa__Post_Code_">
           <DataField>TabConfEmpresa__Post_Code_</DataField>
         </Field>
-        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
-          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
-        </Field>
         <Field Name="TabConfEmpresa_Picture">
           <DataField>TabConfEmpresa_Picture</DataField>
         </Field>
-        <Field Name="Contrato_Trabalho__Contrato_Trabalho__Description">
-          <DataField>Contrato_Trabalho__Contrato_Trabalho__Description</DataField>
+        <Field Name="TabConfEmpresa__Name_2_">
+          <DataField>TabConfEmpresa__Name_2_</DataField>
         </Field>
-        <Field Name="Contrato_Trabalho__Contrato_Trabalho__Code">
-          <DataField>Contrato_Trabalho__Contrato_Trabalho__Code</DataField>
+        <Field Name="varProvisorio">
+          <DataField>varProvisorio</DataField>
         </Field>
-        <Field Name="Contrato_Trabalho__Tipo_Contrato_">
-          <DataField>Contrato_Trabalho__Tipo_Contrato_</DataField>
+        <Field Name="N__Contribuinte______TabConfEmpresa__VAT_Registration_No__">
+          <DataField>N__Contribuinte______TabConfEmpresa__VAT_Registration_No__</DataField>
+        </Field>
+        <Field Name="N__Telefone______TabConfEmpresa__Phone_No__">
+          <DataField>N__Telefone______TabConfEmpresa__Phone_No__</DataField>
+        </Field>
+        <Field Name="TextFiltro2">
+          <DataField>TextFiltro2</DataField>
+        </Field>
+        <Field Name="DataReg">
+          <DataField>DataReg</DataField>
+        </Field>
+        <Field Name="TextFiltro1____">
+          <DataField>TextFiltro1____</DataField>
+        </Field>
+        <Field Name="ValorTotal">
+          <DataField>ValorTotal</DataField>
+        </Field>
+        <Field Name="ValorTotalFormat">
+          <DataField>ValorTotalFormat</DataField>
         </Field>
         <Field Name="CurrReport_PAGENOCaption">
           <DataField>CurrReport_PAGENOCaption</DataField>
         </Field>
-        <Field Name="CONTRATOS_DOS_EMPREGADOSCaption">
-          <DataField>CONTRATOS_DOS_EMPREGADOSCaption</DataField>
+        <Field Name="MAPA_DE_PAGAMENTOS_POR_CHEQUE_NUMERÁRIOCaption">
+          <DataField>MAPA_DE_PAGAMENTOS_POR_CHEQUE_NUMERÁRIOCaption</DataField>
         </Field>
-        <Field Name="Código_Caption">
-          <DataField>Código_Caption</DataField>
+        <Field Name="ValorCaption">
+          <DataField>ValorCaption</DataField>
         </Field>
-        <Field Name="Tipo_Contrato_Caption">
-          <DataField>Tipo_Contrato_Caption</DataField>
-        </Field>
-        <Field Name="Contrato_Empregado__Cód__Empregado_">
-          <DataField>Contrato_Empregado__Cód__Empregado_</DataField>
-        </Field>
-        <Field Name="Contrato_Empregado__Data_Inicio_Contrato_">
-          <DataField>Contrato_Empregado__Data_Inicio_Contrato_</DataField>
-        </Field>
-        <Field Name="Contrato_Empregado__Data_Fim_Contrato_">
-          <DataField>Contrato_Empregado__Data_Fim_Contrato_</DataField>
-        </Field>
-        <Field Name="Nome">
-          <DataField>Nome</DataField>
-        </Field>
-        <Field Name="Contrato_Empregado__Cód__Empregado_Caption">
-          <DataField>Contrato_Empregado__Cód__Empregado_Caption</DataField>
-        </Field>
-        <Field Name="Data_InicioCaption">
-          <DataField>Data_InicioCaption</DataField>
-        </Field>
-        <Field Name="Data_FimCaption">
-          <DataField>Data_FimCaption</DataField>
+        <Field Name="N__Emp_Caption">
+          <DataField>N__Emp_Caption</DataField>
         </Field>
         <Field Name="NomeCaption">
           <DataField>NomeCaption</DataField>
         </Field>
-        <Field Name="Contrato_Empregado_Cód__Contrato">
-          <DataField>Contrato_Empregado_Cód__Contrato</DataField>
+        <Field Name="Data_Registo_Caption">
+          <DataField>Data_Registo_Caption</DataField>
         </Field>
-        <Field Name="Contrato_Empregado_No__Linha">
-          <DataField>Contrato_Empregado_No__Linha</DataField>
+        <Field Name="Total_Caption">
+          <DataField>Total_Caption</DataField>
+        </Field>
+        <Field Name="Empregado_No_">
+          <DataField>Empregado_No_</DataField>
+        </Field>
+        <Field Name="Processado_por_ComputadorCaption">
+          <DataField>Processado_por_ComputadorCaption</DataField>
+        </Field>
+        <Field Name="ValorTotalEmpregado">
+          <DataField>ValorTotalEmpregado</DataField>
+        </Field>
+        <Field Name="ValorTotalEmpregadoFormat">
+          <DataField>ValorTotalEmpregadoFormat</DataField>
+        </Field>
+        <Field Name="Empregado_Name">
+          <DataField>Empregado_Name</DataField>
+        </Field>
+        <Field Name="Empregado__No__">
+          <DataField>Empregado__No__</DataField>
+        </Field>
+        <Field Name="Integer_Number">
+          <DataField>Integer_Number</DataField>
         </Field>
       </Fields>
       <Query>

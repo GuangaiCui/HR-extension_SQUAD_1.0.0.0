@@ -99,7 +99,7 @@ report 53100 "Enviar Recibo via EMail"
 
                     //#001 START SQD RTV 20200429
 
-                    //OPCAO 1 -  ENVIO DO EMAIL POR SMTP
+                    //OPCAO 1 -  ENVIO DO EMAIL POR 
                     //********************************
 
                     //#001 START SQD RTV 20200429
