@@ -1,6 +1,7 @@
 pageextension 53041 "Employee List Ext" extends "Employee List"
 {
-    //TODO: Check the order of fields
+    //Adjusted the order of fields and actions
+    //TODO: Check again with consultants and clients - if set some fields invisible
     layout
     {
         addafter("No.")
@@ -109,7 +110,7 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
 
             }
         }
-        addafter(Extension)
+        addbefore(Extension)
         {
             field(CompanyMobilePhoneNo; Rec.CompanyMobilePhoneNo)
             {
@@ -121,6 +122,9 @@ pageextension 53041 "Employee List Ext" extends "Employee List"
                 ApplicationArea = All;
 
             }
+        }
+        addafter("E-Mail")
+        {
             field(Title; Rec.Title)
             {
                 ApplicationArea = All;

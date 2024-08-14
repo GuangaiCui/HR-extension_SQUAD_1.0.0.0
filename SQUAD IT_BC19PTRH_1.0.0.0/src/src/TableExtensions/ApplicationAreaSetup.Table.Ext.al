@@ -4,10 +4,10 @@ tableextension 53035 "ApplicationAreaSetupRH" extends "Application Area Setup"
     {
         // Spaces in field name are omitted in the ApplicationArea attribute
         // e.g. ApplicationArea = ExampleAppArea;
-        field(50000; "Human Resources App Area"; Boolean)
+        field(50000; HumanResource; Boolean)
 
         {
-            Caption = 'App Área Recursos Humanos';
+            Caption = 'Human Resource Extension Area';
         }
     }
 }

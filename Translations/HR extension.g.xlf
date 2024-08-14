@@ -16708,10 +16708,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CompanyInfoRH - Control Single Report - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 735251833 - Control 2232853307 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
-          <source>Administration</source>
+        <trans-unit id="PageExtension 735251833 - Control 2397924302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Company Phone No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Control Administração - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Control CompanyPhoneNo - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 735251833 - Control 1676683101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
           <source>ADSE</source>
@@ -16727,11 +16727,6 @@
           <source>CGA</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Control CGA - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 735251833 - Control 371330510 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
-          <source>Communication</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Control Comunicação - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 735251833 - Control 311200057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
           <source>Tabela IRS</source>
@@ -16762,11 +16757,6 @@
           <source>Substituição Temporária</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Control Substituição Temporária - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 735251833 - Control 3260580345 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
-          <source>Personal</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Control Pessoal - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 735251833 - Control 2721316792 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
           <source>Processing</source>
@@ -17012,11 +17002,6 @@
           <source>Finance Allocation Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension Employee Ext - Field Cod. Repartição Finanças - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1028528413 - Field 3700809000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1498446062">
-          <source>Company Phone No.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension Employee Ext - Field Company Phone No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1028528413 - Field 2887767366 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1498446062">
           <source>Company Mobile Phone No.</source>

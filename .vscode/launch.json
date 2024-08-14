@@ -38,7 +38,8 @@
             "numberOfSqlStatements": 10,
             "tenant": "default",
             "port": 7049,
-            "usePublicURLFromServer": true
+            "usePublicURLFromServer": true,
+            "schemaUpdateMode":"ForceSync"
         }
         // Use Ctrl+Space to trigger IntelliSense and get assistance on the supported configurations for AL development.
     ]
