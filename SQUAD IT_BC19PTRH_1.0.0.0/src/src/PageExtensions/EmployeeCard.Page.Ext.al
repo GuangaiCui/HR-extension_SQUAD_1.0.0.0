@@ -10,7 +10,7 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
         {
             field(Name; Rec.Name)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
                 Style = Strong;
                 StyleExpr = TRUE;
             }
@@ -19,56 +19,57 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
         {
             field(Locality; Rec.Locality)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
+                //CGA SQD
             }
         }
         addafter(City)
         {
             field("Cod. Freguesia"; Rec."Cod. Freguesia")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field(Freguesia; Rec.Freguesia)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
         }
         addafter("Job Title")
         {
             field("Tipo Empregado"; Rec."Tipo Empregado")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
         }
         addafter("Last Date Modified")
         {
             field("No. antigo do Empregado"; Rec."No. antigo do Empregado")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("NAV User Id"; Rec."NAV User Id")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field(Docente; Rec.Docente)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Nº Professor"; Rec."Nº Professor")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Exportar para o MISI"; Rec."Exportar para o MISI")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field(Intern; Rec.Intern)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Orgão Social"; Rec."Orgão Social")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
         }
         addafter("Alt. Address End Date")
@@ -76,141 +77,132 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
             field(CompanyMobilePhoneNo; Rec.CompanyMobilePhoneNo)
             {
                 Importance = Promoted;
-                ApplicationArea = All;
-            }
-            field(CompanyPhoneNo; Rec."Phone No.")
-            {
-                ApplicationArea = All;
-                Caption = 'Company Phone No.';
+                ApplicationArea = BasicHR;
             }
             field("Envio Recibo via E-Mail"; Rec."Envio Recibo via E-Mail")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Endereço de Envio"; Rec."Endereço de Envio")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
         }
         addafter("Salespers./Purch. Code")
         {
             field(Estabelecimento; Rec.Estabelecimento)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field(Seguradora; Rec.Seguradora)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("No. Apólice"; Rec."No. Apólice")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Data de Antiguidade"; Rec."Data de Antiguidade")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("End Date"; Rec."End Date")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Motivo de Terminação"; Rec."Motivo de Terminação")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Cod. Regime Reforma Aplicado"; Rec."Cod. Regime Reforma Aplicado")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Regime Reforma Aplicado"; Rec."Regime Reforma Aplicado")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
         }
         addafter("Bank Account No.")
         {
             field("Usa Transf. Bancária"; Rec."Usa Transf. Bancária")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Cód. Banco Transf."; Rec."Cód. Banco Transf.")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field(Pagamento; Rec.Pagamento)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Nome Livro Diario Pag."; Rec."Nome Livro Diario Pag.")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
             }
             field("Secção Diario Pag."; Rec."Secção Diario Pag.")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
             field("Conta Pag."; Rec."Conta Pag.")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
             field("NIB Cartao Ref"; Rec."NIB Cartao Ref")
             {
+                ApplicationArea = BasicHR;
             }
         }
         addafter("Union Membership No.")
         {
-            field(Naturalidade; Rec."Birth Date")
-            {
-                ApplicationArea = All;
-
-            }
             field("Naturalidade - Concelho"; Rec."Naturalidade - Concelho")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
             field(Nacionalidade; Rec.Nacionalidade)
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
             field("Nacionalidade Descrição"; Rec."Nacionalidade Descrição")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
             field("Documento Identificação"; Rec."Documento Identificação")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
                 Importance = Promoted;
             }
             field("No. Doc. Identificação"; Rec."No. Doc. Identificação")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
                 Importance = Promoted;
             }
             field("Local Emissão Doc. Ident."; Rec."Local Emissão Doc. Ident.")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
             field("Data Doc. Ident."; Rec."Data Doc. Ident.")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
             field("Data Validade Doc. Ident."; Rec."Data Validade Doc. Ident.")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
             field("Vitalício"; Rec."Vitalício")
             {
-                ApplicationArea = All;
+                ApplicationArea = BasicHR;
 
             }
         }
@@ -221,103 +213,103 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
 
                 field("No. Contribuinte"; Rec."No. Contribuinte")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Importance = Promoted;
                 }
                 field("Tipo Contribuinte"; Rec."Tipo Contribuinte")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Importance = Promoted;
                 }
                 field("Cod. Repartição Finanças"; Rec."Cod. Repartição Finanças")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Repartição Finanças"; Rec."Repartição Finanças")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Data Emissão NIF"; Rec."Data Emissão NIF")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Tipo Rendimento"; Rec."Tipo Rendimento")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Local Obtenção Rendimento"; Rec."Local Obtenção Rendimento")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Estado Civil"; Rec."Estado Civil")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Civil State Date"; Rec."Civil State Date")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Titular Rendimentos"; Rec."Titular Rendimentos")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field(Deficiente; Rec.Deficiente)
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Conjuge Deficiente"; Rec."Conjuge Deficiente")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("No. Dependentes"; Rec."No. Dependentes")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("No. Dependentes Deficientes"; Rec."No. Dependentes Deficientes")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Tabela IRS"; Rec."Tabela IRS")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Caption = 'Tabela IRS';
                     Editable = false;
                 }
                 field("Descrição Tabela IRS"; Rec."Descrição Tabela IRS")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                 }
                 field("IRS %"; Rec."IRS %")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                 }
                 field("IRS % Fixa"; Rec."IRS % Fixa")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("IVA %"; Rec."IVA %")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
             }
@@ -326,38 +318,38 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
 
                 field("Subscritor SS"; Rec."Subscritor SS")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("No. Segurança Social"; Rec."No. Segurança Social")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Importance = Promoted;
                 }
                 field("Data da Admissão SS"; Rec."Data da Admissão SS")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Data Emissão SS"; Rec."Data Emissão SS")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Cod. Instituição SS"; Rec."Cod. Instituição SS")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Cod. Regime SS"; Rec."Cod. Regime SS")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Cód. Rúbrica Enc. Seg. Social"; Rec."Cód. Rúbrica Enc. Seg. Social")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
             }
@@ -366,42 +358,42 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
                 Caption = 'CGA';
                 field("Subsccritor CGA"; Rec."Subsccritor CGA")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Nº CGA"; Rec."Nº CGA")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Data da Admissão CGA"; Rec."Data da Admissão CGA")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Data de Emissão CGA"; Rec."Data de Emissão CGA")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Nº Horas Docência Calc. Desct."; Rec."Nº Horas Docência Calc. Desct.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Professor Acumulação"; Rec."Professor Acumulação")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("CGA - Requisição"; Rec."CGA - Requisição")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Cód. Rúbrica Enc. CGA"; Rec."Cód. Rúbrica Enc. CGA")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
             }
@@ -410,27 +402,27 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
                 Caption = 'ADSE';
                 field("Subscritor ADSE"; Rec."Subscritor ADSE")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Nº ADSE"; Rec."Nº ADSE")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Data da Admissão ADSE"; Rec."Data da Admissão ADSE")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Data de Emissão ADSE"; Rec."Data de Emissão ADSE")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Cód. Rúbrica Enc. ADSE"; Rec."Cód. Rúbrica Enc. ADSE")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
             }
@@ -439,57 +431,57 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
                 Caption = 'Processing';
                 field("Valor Vencimento Base"; Rec."Valor Vencimento Base")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                     Importance = Promoted;
                 }
                 field("Valor Dia"; Rec."Valor Dia")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                 }
                 field("Valor Hora"; Rec."Valor Hora")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                 }
                 field("No. Horas Semanais"; Rec."No. Horas Semanais")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Caption = 'Week Hours No.';
                 }
                 field("No. Horas Semanais Totais"; Rec."No. Horas Semanais Totais")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("No. dias de Trabalho Semanal"; Rec."No. dias de Trabalho Semanal")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("No. Dias Trabalho Mensal"; Rec."No. Dias Trabalho Mensal")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Mês Proc. Sub. Férias"; Rec."Mês Proc. Sub. Férias")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Última data Proc. Sub. Férias"; Rec."Última data Proc. Sub. Férias")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Vacation Balance"; Rec."Vacation Balance")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
             }
@@ -498,149 +490,149 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
                 Caption = 'Category';
                 field("Cód. IRCT"; Rec."Cód. IRCT")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Acordo Colectivo"; Rec."Acordo Colectivo")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Descrição IRCT"; Rec."Descrição IRCT")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Aplicabilidade do IRCT"; Rec."Aplicabilidade do IRCT")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Cód. Cat. Profissional"; Rec."Cód. Cat. Profissional")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                     Enabled = false;
                 }
                 field("Descrição Cat Prof"; Rec."Descrição Cat Prof")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                     Enabled = false;
                 }
                 field("Cód. Cat. Prof QP"; Rec."Cód. Cat. Prof QP")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                     Enabled = false;
                 }
                 field("Descrição Cat Prof QP"; Rec."Descrição Cat Prof QP")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                     Enabled = false;
                 }
                 field("Class. Nac. Profi."; Rec."Class. Nac. Profi.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Descrição Class. Nac."; Rec."Descrição Class. Nac.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Cód. Habilitações"; Rec."Cód. Habilitações")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Descrição Habilitações"; Rec."Descrição Habilitações")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Qualificação"; Rec."Qualificação")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Formação-Situação face à freq."; Rec."Formação-Situação face à freq.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Situação Profissional"; Rec."Situação Profissional")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Regime Duração Trabalho"; Rec."Regime Duração Trabalho")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Duração do Tempo de Trabalho"; Rec."Duração do Tempo de Trabalho")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Desc. Duração Tempo Trabalho"; Rec."Desc. Duração Tempo Trabalho")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Cód. Horário"; Rec."Cód. Horário")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                     Enabled = false;
                 }
                 field(Control1000000048; Rec."Grau Função")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Descrição Grau Função"; Rec."Descrição Grau Função")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Grau Função-Efeitos Progres."; Rec."Grau Função-Efeitos Progres.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Descrição Grau Função Progr."; Rec."Descrição Grau Função Progr.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field(Control1000000056; Rec."Profissionalização")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                     Editable = false;
                     Enabled = false;
                 }
                 field("Habilitação Docência"; Rec."Habilitação Docência")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Grupo Docência"; Rec."Grupo Docência")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Acumulação"; Rec."Acumulação")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
             }
@@ -653,22 +645,22 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
                     Caption = 'Horas Semanais Letivas';
                     field("Nº Horas Sem. Lect Diurno Cont"; Rec."Nº Horas Sem. Lect Diurno Cont")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                     field("Nº Horas Sem. Lect Diurno Tota"; Rec."Nº Horas Sem. Lect Diurno Tota")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                     field("Nº Horas Sem. Lect Noct Cont"; Rec."Nº Horas Sem. Lect Noct Cont")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                     field("Nº Horas Sem. Lect Noct Tota"; Rec."Nº Horas Sem. Lect Noct Tota")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                 }
@@ -677,12 +669,12 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
                     Caption = 'Horas Semanais Desporto Escolar';
                     field("Nº Horas Sem.-Desp Escolar Con"; Rec."Nº Horas Sem.-Desp Escolar Con")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                     field("Nº Horas Sem.-Desp Escolar Tot"; Rec."Nº Horas Sem.-Desp Escolar Tot")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                 }
@@ -692,12 +684,12 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
                     Caption = 'Horas Semanais Direção Pedagógica';
                     field("Nº Horas Sem.-Dir.Pedag Cont"; Rec."Nº Horas Sem.-Dir.Pedag Cont")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                     field("Nº Horas Sem.-Dir.Pedag Tot"; Rec."Nº Horas Sem.-Dir.Pedag Tot")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                 }
@@ -706,68 +698,68 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
                     Caption = 'Substituição Temporária';
                     field(Control1000000070; Rec."Substituição Temporária")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                     field("NIF do Docente Substituido"; Rec."NIF do Docente Substituido")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                     field("Data Inicio Substituição"; Rec."Data Inicio Substituição")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                     field("Data Fim Substituição"; Rec."Data Fim Substituição")
                     {
-                        ApplicationArea = All;
+                        ApplicationArea = BasicHR;
 
                     }
                 }
                 field(ContratoME; Rec.ContratoME)
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Direcção Pedagógica"; Rec."Direcção Pedagógica")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Valor Desc. Conf. Religiosa"; Rec."Valor Desc. Conf. Religiosa")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Valor Desc. Seguro"; Rec."Valor Desc. Seguro")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Nº Dias Tempo Serviço"; Rec."Nº Dias Tempo Serviço")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Dias de Serviço - Estabelecim."; Rec."Dias de Serviço - Estabelecim.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Situação"; Rec."Situação")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Descrição Situação"; Rec."Descrição Situação")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
                 field("Afecto à Cantina"; Rec."Afecto à Cantina")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = BasicHR;
 
                 }
             }
@@ -1215,7 +1207,6 @@ pageextension 53040 "Employee Card Ext" extends "Employee Card"
 
 
     var
-        [InDataSet]
         MapPointVisible: Boolean;
         TabEmpregado: Record Employee;
         Text0001: Label 'Não existe em vigor nenhuma Rúbrica do tipo Vencimento Base para o empregado %1.';

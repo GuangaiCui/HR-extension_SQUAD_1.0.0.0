@@ -11,13 +11,13 @@ pageextension 53039 SourceCodeSetupRH extends "Source Code Setup"
 
                 field("Integração Vencimentos"; Rec."Integração Vencimentos")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Pagamento Vencimentos"; Rec."Pagamento Vencimentos")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
             }

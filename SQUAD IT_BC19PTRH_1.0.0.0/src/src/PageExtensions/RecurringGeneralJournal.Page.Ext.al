@@ -11,7 +11,7 @@ pageextension 53038 RecurringGeneralJournalRH extends "Recurring General Journal
 
             {
 
-                ApplicationArea = ALL;
+                ApplicationArea = Suite;
 
             }
         }

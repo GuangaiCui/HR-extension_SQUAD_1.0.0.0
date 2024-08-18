@@ -12,7 +12,7 @@ pageextension 53036 GenJournalRH extends "General Journal"
 
             {
 
-                ApplicationArea = ALL;
+                ApplicationArea = Basic, Suite;
 
             }
         }

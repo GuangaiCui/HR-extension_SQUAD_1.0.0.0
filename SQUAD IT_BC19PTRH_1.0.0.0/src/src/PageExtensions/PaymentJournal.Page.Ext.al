@@ -11,7 +11,7 @@ pageextension 53037 PaymentJournalRH extends "Payment Journal"
 
             {
 
-                ApplicationArea = ALL;
+                ApplicationArea = Basic, Suite;
 
             }
         }

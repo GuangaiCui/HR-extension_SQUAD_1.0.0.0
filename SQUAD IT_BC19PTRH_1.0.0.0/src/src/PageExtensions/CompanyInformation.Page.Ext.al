@@ -11,61 +11,61 @@ pageextension 53035 CompanyInfoRH extends "Company Information"
 
                 field("Social Security No."; Rec."Social Security No.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Legal Nature Code"; Rec."Legal Nature Code")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Legal Nature"; Rec."Legal Nature")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Constitution Date"; Rec."Constitution Date")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Business Volume"; Rec."Business Volume")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("National Private Percentage"; Rec."National Private Percentage")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Foreign Percentage"; Rec."Foreign Percentage")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Public Percentage"; Rec."Public Percentage")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Cód. Distrito/Concelho/Freg."; Rec."Cód. Distrito/Concelho/Freg.")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
 
                 field("Local"; Rec."Local")
                 {
-                    ApplicationArea = All;
+                    ApplicationArea = Basic, Suite;
 
                 }
             }
