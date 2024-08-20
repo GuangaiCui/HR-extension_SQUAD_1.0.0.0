@@ -1,5 +1,6 @@
 // codeunit 53038 "WordManagement HR"
 // {
+//TODO: to delete
 
 //     trigger OnRun()
 //     begin

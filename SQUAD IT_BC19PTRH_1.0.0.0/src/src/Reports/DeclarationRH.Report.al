@@ -1,5 +1,6 @@
 // report 59886 "Declaration RH"
 // {
+//TODO:To delete, already replaced by DeclaraçõesRHBC19
 //CGA SQD to delete
 //     UsageCategory = ReportsAndAnalysis;
 //     ApplicationArea = All;

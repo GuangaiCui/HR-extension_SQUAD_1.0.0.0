@@ -16708,10 +16708,265 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension CompanyInfoRH - Control Single Report - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 735251833 - Control 2397924302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
-          <source>Company Phone No.</source>
+        <trans-unit id="PageExtension 735251833 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 735251833">
+          <source>Não existe em vigor nenhuma Rúbrica do tipo Vencimento Base para o empregado %1.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Control CompanyPhoneNo - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - NamedType Text0001</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 735251833">
+          <source>Por favor preencha a data de admissão do novo empregado %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - NamedType Text0002</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - NamedType 3619932554" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 735251833">
+          <source>Por favor preencha a data de fim do empregado %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - NamedType Text0003</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - NamedType 4257629171" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 735251833">
+          <source>Por favor preencha o motivo de terminação do empregado %1.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - NamedType Text0004</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - NamedType 600358492" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 735251833">
+          <source>Não pode apagar um empregado com processamentos já fechados.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - NamedType Text0005</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - NamedType 1238055109" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 735251833">
+          <source>Funcionalidade indisponível.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - NamedType Text0006</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - NamedType 1875751726" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 735251833">
+          <source>Deseja calcular o Valor Dia e Hora de todos os Empregados?</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - NamedType Text0007</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - NamedType 2513448343" size-unit="char" translate="yes" xml:space="preserve" al-object-target="PageExtension 735251833">
+          <source>Não pode apagar este empregado, enquanto existir ligação aos Professores.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - NamedType Text0008</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2726446081 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Action177</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Action177 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2403101461 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Hist. Abonos/Descontos Extra</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Hist. Abonos/Descontos Extra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2994665301 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Hist. Ausências</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Hist. Ausências - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3099170519 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Hist. Horas Extra</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Hist. Horas Extra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3521600740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Hist. Mov. Empregado</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Hist. Mov. Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3566298431 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>&amp;Cadastro</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Cadastro - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1337661104 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Cat. Profissional Interna</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Cat. Profissional Interna - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2872607978 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Cat. Profissional QP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Cat. Profissional QP - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1927850794 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Consultas Médicas</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Consultas Médicas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 803248288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Contratos &amp;Trabalho</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Contratos &amp;Trabalho - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 720289981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Destacamentos</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Destacamentos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2070180216 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Formação</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Formação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 632934209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Grau Função</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Grau Função - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2915145732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Horário</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Horário - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3533871597 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Inactividade</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Inactividade - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3815134799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Mi&amp;sc. Article Information</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Informação Artigo&amp;s Div. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1784698553 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Perdas e Anomalias</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Perdas e Anomalias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 4100501642 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Profissionalização</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Profissionalização - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 903194370 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Qualificações RU</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Qualificações RU - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 466453980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Qualificações/Habilitações</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Qualificações/Habilitações - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2256062718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Seguros</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Seguros - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1450784810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Férias</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1008561564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Marcação de Férias</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Marcação de Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3248259637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Calcular Taxa IRS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Calcular Taxa IRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3135662496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Calcular Valor Dia e Hora</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Calcular Valor Dia e Hora - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 23046240 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Copiar Empregado</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Copiar Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 748002418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Distribuição de Custos - Dimensões</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Distribuição de Custos - Dimensões - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1227672072 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Penhoras</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Penhoras - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2955646804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Rubricas Salariais</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Rubricas Salariais - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3797651617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>&amp;Processamento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Processamento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 542896093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Movs. empregado</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Movs. empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1943893005 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Processar Sub. Férias</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Processamento Sub. Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1864569589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Processar Sub. Natal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Processamento Sub. Natal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3996515127 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Processar Vencimento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Processamento Vencimento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 3601834899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>&amp;Registo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Registo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2694251379 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Abono-Desconto Extra</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Abono-Desconto Extra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1012156869 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Ausências</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Ausências - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1159889799 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Horas Extra</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Horas Extra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2176459415 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Reports</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Reports - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 108043093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Ficha Empregado</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action &lt;Report Ficha Empregado&gt; - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1767108198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Ausência Empregado</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Ausência Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 1721491496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Férias Empregado</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Férias Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2239434165 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Horas Extra Emp.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Horas Extra Emp. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 735251833 - Action 2787046543 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
+          <source>Recibo Vencimento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension Employee Card Ext - Action Recibo Vencimentos A5 - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 735251833 - Control 1676683101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 866835530">
           <source>ADSE</source>
@@ -16798,10 +17053,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension SourceCodeSetupRH - Control Human Resources - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3609618620 - Field 3385370228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
-          <source>App Área Recursos Humanos</source>
+        <trans-unit id="TableExtension 3609618620 - Field 242892295 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 627389406">
+          <source>Human Resource Extension Area</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ApplicationAreaSetupRH - Field Human Resources App Area - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension ApplicationAreaSetupRH - Field HumanResource - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1477364837 - Method 1911013417 - NamedType 1179777039" size-unit="char" translate="yes" xml:space="preserve" al-object-target="TableExtension 1477364837">
           <source>O Nº de Contribuinte não é válido.</source>

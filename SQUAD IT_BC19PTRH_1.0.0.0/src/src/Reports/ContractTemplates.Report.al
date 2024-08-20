@@ -118,7 +118,7 @@ report 53097 "Contract Templates"
         layout(LayoutName)
         {
             Type = RDLC;
-            LayoutFile = 'ContractTemplates.rdl';
+            LayoutFile = 'Layouts\ContractTemplates.rdl';
         }
     }
 
