@@ -16,42 +16,42 @@ page 53038 "Ficha Endç. Alternativo"
                 Caption = 'General';
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Name; Rec.Name)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Address; Rec.Address)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Address 2"; Rec."Address 2")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Post Code"; Rec."Post Code")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(City; Rec.City)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(County; Rec.County)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Phone No."; Rec."Phone No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -60,17 +60,17 @@ page 53038 "Ficha Endç. Alternativo"
                 Caption = 'Communication';
                 field("Phone No.2"; Rec."Phone No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Fax No."; Rec."Fax No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("E-Mail"; Rec."E-Mail")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -79,13 +79,13 @@ page 53038 "Ficha Endç. Alternativo"
         {
             systempart(Control1900383207; Links)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = true;
             }
@@ -102,14 +102,14 @@ page 53038 "Ficha Endç. Alternativo"
                 Image = Addresses;
                 action("&Lista")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '&Lista';
                     RunObject = Page "Lista Endereços Alternativos";
                 }
                 action("Co&mments")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '&Comentários';
                     Image = ViewComments;

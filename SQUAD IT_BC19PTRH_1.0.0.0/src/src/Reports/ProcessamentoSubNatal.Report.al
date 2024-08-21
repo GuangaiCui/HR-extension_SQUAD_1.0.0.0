@@ -776,7 +776,7 @@ report 53040 "Processamento Sub. Natal"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
@@ -786,13 +786,13 @@ report 53040 "Processamento Sub. Natal"
                     Caption = 'Apagar Processamento de Empregado';
                     field(ApagaEmp; ApagaEmp)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Nº Empregado a apagar';
                         TableRelation = Employee;
                     }
                     field(apagaTodosEmp; apagaTodosEmp)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Apagar Todos os Empregados';
                     }
                 }

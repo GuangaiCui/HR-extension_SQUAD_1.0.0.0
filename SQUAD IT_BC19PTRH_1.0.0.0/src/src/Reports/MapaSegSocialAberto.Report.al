@@ -651,18 +651,18 @@ report 53045 "Mapa Seg. Social - Aberto"
                     Caption = 'Mapa Seg. Social';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Fim';
                     }
                 }

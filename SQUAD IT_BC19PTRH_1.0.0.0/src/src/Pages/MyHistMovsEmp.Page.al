@@ -13,47 +13,47 @@ page 53173 MyHistMovsEmp
             {
                 field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Designação Empregado"; Rec."Designação Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Data Registo"; Rec."Data Registo")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Pendente; Rec.Pendente)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Valor Vencimento Base"; Rec."Valor Vencimento Base")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Valor Hora"; Rec."Valor Hora")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -67,7 +67,7 @@ page 53173 MyHistMovsEmp
 
             action(Abrir)
             {
-                ApplicationArea = All;
+                ;
 
 
                 trigger OnAction()

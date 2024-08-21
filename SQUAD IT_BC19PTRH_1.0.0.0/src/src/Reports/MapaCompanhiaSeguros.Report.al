@@ -779,23 +779,23 @@ report 53093 "Mapa Companhia Seguros"
                     Caption = 'Companhia Seguros';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Fim';
                     }
                     field(Venc; varVencimento)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Vencimento';
                         TableRelation = "Rubrica Salarial";
 
@@ -815,7 +815,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(Diu; varDiuturnidades)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Diuturnidades';
                         TableRelation = "Rubrica Salarial";
 
@@ -835,7 +835,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(SA; varSubsAlmoco)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Subsídio Almoço';
                         TableRelation = "Rubrica Salarial";
 
@@ -855,7 +855,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(SF; varSubsNatalFerias)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Subsídio Natal/Férias';
                         TableRelation = "Rubrica Salarial";
 

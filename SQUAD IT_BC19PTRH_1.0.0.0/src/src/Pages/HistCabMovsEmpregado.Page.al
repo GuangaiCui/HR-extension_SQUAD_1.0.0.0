@@ -19,50 +19,50 @@ page 53106 "Hist. Cab. Movs. Empregado"
                 Caption = 'Geral';
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Designação Empregado"; Rec."Designação Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Data Registo"; Rec."Data Registo")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Pendente; Rec.Pendente)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Editable = false;
                 }
                 field("Pago por No. Documento"; Rec."Pago por No. Documento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Editable = false;
                 }
             }
             part(Abono; "Hist. Linhas Movs. Empregado")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Abonos';
                 SubPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),
@@ -72,7 +72,7 @@ page 53106 "Hist. Cab. Movs. Empregado"
             }
             part(Desconto; "Hist. Linhas Movs. Empregado")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Descontos';
                 SubPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),

@@ -332,7 +332,7 @@ report 53057 "Mapa Férias Empregado"
                     Caption = 'Mapa Férias Empregado';
                     field(VarAno; VarAno)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Year';
                     }
                 }

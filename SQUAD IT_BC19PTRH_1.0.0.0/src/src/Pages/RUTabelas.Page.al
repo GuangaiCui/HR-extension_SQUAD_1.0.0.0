@@ -15,12 +15,12 @@ page 53156 "RU - Tabelas"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }

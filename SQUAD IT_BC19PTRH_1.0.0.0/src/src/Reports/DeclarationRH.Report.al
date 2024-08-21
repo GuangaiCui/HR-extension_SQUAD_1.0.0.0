@@ -3,7 +3,7 @@
 //TODO:To delete, already replaced by DeclaraçõesRHBC19
 //CGA SQD to delete
 //     UsageCategory = ReportsAndAnalysis;
-//     ApplicationArea = All;
+//      ;
 //     DefaultRenderingLayout = LayoutName;
 
 //     dataset
@@ -84,7 +84,7 @@
 //                 {
 //                     field(Name; SourceExpression)
 //                     {
-//                         ApplicationArea = All;
+//                          ;
 
 //                     }
 //                 }
@@ -97,7 +97,7 @@
 //             {
 //                 action(LayoutName)
 //                 {
-//                     ApplicationArea = All;
+//                      ;
 
 //                 }
 //             }

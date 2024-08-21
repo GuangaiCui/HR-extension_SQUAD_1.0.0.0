@@ -17,23 +17,23 @@ page 53114 "Feriados RH"
                 ShowCaption = false;
                 field(Data; Rec.Data)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Descritivo feriado"; Rec."Descritivo feriado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Descritivo do feriado';
                 }
                 field(Nacional; Rec.Nacional)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Estabelecimento; Rec.Estabelecimento)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }

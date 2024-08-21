@@ -19,7 +19,7 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameEmpVisible;
                 field(txtEmpregado; Empregado)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Empregado';
                     TableRelation = Employee;
@@ -40,20 +40,20 @@ page 53112 "Preparação Fecho Contas"
                 }
                 field(NomeEmp; NomeEmp)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Editable = false;
                     ShowCaption = false;
                 }
                 field(txtDataTerminacao; DataTerminacao)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Data Terminação';
                 }
                 field(txtMotivoTerm; CodTerminacao)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Motivo Terminação';
                     TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSai));
@@ -65,14 +65,14 @@ page 53112 "Preparação Fecho Contas"
                 }
                 field(PeriodoExp; PeriodoExperimental)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Encontra-se dentro do período experimental';
                     Visible = PeriodoExpVisible;
                 }
                 field(DescTerminacao; DescTerminacao)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Editable = false;
                     ShowCaption = false;
@@ -84,14 +84,14 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameAvisosVisible;
                 field(TxtNDiasAvisoEmp; NDiasAvisoEmp)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Nº Dias Pré-Aviso não Cumprido pelo Empregado';
                     Visible = TxtNDiasAvisoEmpVisible;
                 }
                 field(TxtNDiasAvisoEmpresa; NDiasAvisoEmpresa)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Nº Dias Pré-Aviso não Cumprido pela Empresa';
                     Visible = TxtNDiasAvisoEmpresaVisible;
@@ -103,13 +103,13 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameFeriasVisible;
                 field(TxtferiasAA; FeriasAnoAnterior)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Nº dias férias não gozadas ano anterior';
                 }
                 field(TxtferiasAC; FeriasAnoCorrente)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Nº dias férias não gozadas ano corrente';
                 }
@@ -120,7 +120,7 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameFormacaoVisible;
                 field(TxtNHorasFormacao; NHorasFormacao)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Crédito Horas Formação';
                 }
@@ -131,70 +131,70 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameRubVisible;
                 field(Rubrica1; CodRubIndemAcordo)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Idemnização Acordo Mutuo ou Desp.';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica2; CodRubIndemFaltaAvisoEmpregado)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Idemnização Falta Aviso Prévio do Empregado';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica3; CodRubIndemFaltaAvisoEmpresa)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Idemnização Falta Aviso Prévio do Empresa';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica4; CodRubCompenFimContrato)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Compensação Fim Contrato';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica5; CodRubFeriasNaoGozadas)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Férias Não Gozadas';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica6; CodRubPropSubFerias)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Proporcionais Sub. Férias';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica7; CodRubPropFerias)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Proporcionais Férias';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica8; CodRubPropSubNatal)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Proporcionais Sub. Natal';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica9; CodRubSubFeriasAnoAnterior)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Sub. Férias (ano anterior)';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica10; CodRubHorasFormacao)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Rub. Crédito Horas Formação';
                     TableRelation = "Rubrica Salarial";
@@ -209,7 +209,7 @@ page 53112 "Preparação Fecho Contas"
         {
             action(Anterior)
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Anterior';
                 Image = PreviousRecord;
@@ -270,7 +270,7 @@ page 53112 "Preparação Fecho Contas"
             }
             action(Seguinte)
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Seguinte';
                 Image = NextRecord;
@@ -333,7 +333,7 @@ page 53112 "Preparação Fecho Contas"
             }
             action(Concluir1)
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Concluir';
                 Image = Save;

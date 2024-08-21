@@ -15,32 +15,32 @@ page 53084 "Regime Seg. Social"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Tipo Dedução SS"; Rec."Tipo Dedução SS")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Taxa Contributiva Empregado"; Rec."Taxa Contributiva Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Taxa Contributiva Ent Patronal"; Rec."Taxa Contributiva Ent Patronal")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Majorante; Rec.Majorante)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }

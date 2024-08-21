@@ -1938,28 +1938,28 @@ report 53037 "Processamento Vencimentos"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(FiltroDataInicioFalta; FiltroDataInicioFalta)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Início de Falta';
                     }
                     field(FiltroDataFimFalta; FiltroDataFimFalta)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Fim de Falta';
                     }
                     field(varCriarRetroactivo; varCriarRetroactivo)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Processar Retroactivos IRS';
                     }
                     field(ProcessarSobretaxa; ProcessarSobretaxa)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Processar Sobretaxa';
                         Visible = false;
                     }
@@ -1969,7 +1969,7 @@ report 53037 "Processamento Vencimentos"
                     Caption = 'Apagar Processamento de Empregado';
                     field(ApagaEmp; ApagaEmp)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Nº Empregado a apagar';
                         TableRelation = Employee;
 
@@ -1995,7 +1995,7 @@ report 53037 "Processamento Vencimentos"
                     }
                     field(ApagaTodosEmp; ApagaTodosEmp)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Apagar Todos os Empregados';
                     }
                 }

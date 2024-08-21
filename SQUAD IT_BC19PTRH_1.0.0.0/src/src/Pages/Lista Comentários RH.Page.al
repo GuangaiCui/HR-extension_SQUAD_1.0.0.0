@@ -17,22 +17,22 @@ page 53058 "Lista Comentários RH"
                 ShowCaption = false;
                 field("No."; Rec."No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Date; Rec.Date)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }

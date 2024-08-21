@@ -20,58 +20,58 @@ page 53108 "Lista Hist. Cab. Movs. Emp"
                 ShowCaption = false;
                 field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Designação Empregado"; Rec."Designação Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Data Registo"; Rec."Data Registo")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Pendente; Rec.Pendente)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Pago por No. Documento"; Rec."Pago por No. Documento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Recibo enviado via E-Mail"; Rec."Recibo enviado via E-Mail")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Vacation Days Received"; Rec."Vacation Days Received")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field("Vacation Days Spent"; Rec."Vacation Days Spent")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
@@ -88,7 +88,7 @@ page 53108 "Lista Hist. Cab. Movs. Emp"
                 Caption = 'Movs. Empregado';
                 action("Fi&cha Movs. Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '&Card';
                     Image = EditLines;

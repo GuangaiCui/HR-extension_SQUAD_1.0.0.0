@@ -16,17 +16,17 @@ page 53040 "Qualificações"
                 ShowCaption = false;
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Qualified Employees"; Rec."Qualified Employees")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -35,13 +35,13 @@ page 53040 "Qualificações"
         {
             systempart(Control1900383207; Links)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = false;
             }
@@ -58,7 +58,7 @@ page 53040 "Qualificações"
                 Image = Certificate;
                 action("Análise Qualificação")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Q&ualification Overview';
                     Image = QualificationOverview;

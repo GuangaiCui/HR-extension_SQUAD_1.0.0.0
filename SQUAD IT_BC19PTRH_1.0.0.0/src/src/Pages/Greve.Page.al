@@ -15,7 +15,7 @@ page 53160 Greve
                 Caption = 'Greve';
                 field(Year; Rec.Year)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Importance = Promoted;
                     Style = Strong;
@@ -23,12 +23,12 @@ page 53160 Greve
                 }
                 field("Strike Code"; Rec."Strike Code")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Strike Description"; Rec."Strike Description")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Editable = false;
                     Importance = Promoted;
@@ -38,7 +38,7 @@ page 53160 Greve
             }
             part(Control1102065000; "Reivindicações")
             {
-                ApplicationArea = All;
+                ;
 
                 SubPageLink = Type = CONST(Linha1),
                               Year = FIELD(Year),
@@ -46,7 +46,7 @@ page 53160 Greve
             }
             part("Registo Greve"; "Greve Subform")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Registo Greve';
                 SubPageLink = Type = CONST(Linha2),

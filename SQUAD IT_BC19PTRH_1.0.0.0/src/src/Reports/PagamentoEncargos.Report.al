@@ -202,18 +202,18 @@ report 53077 "Pagamento Encargos"
                     Caption = 'Pagamento Encargos';
                     field(TipoPagamento; TipoPagamento)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Payment Type';
                         OptionCaption = 'Seg. Social Empregado,Seg. Social Entidade Patronal,CGA Empregado,CGA Entidade Patronal, IRS,ADSE,ADSE Ent. Patronal,Fundo de Compensação do Trabalho/FGCT';
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Inicio Processamento';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Fim Processamento';
                     }
                 }

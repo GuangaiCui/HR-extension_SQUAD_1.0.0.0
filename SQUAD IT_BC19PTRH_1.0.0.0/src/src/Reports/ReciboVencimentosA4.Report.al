@@ -829,7 +829,7 @@ report 53082 "Recibo Vencimentos A4"
                     Caption = 'Recibo Vecimentos';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }

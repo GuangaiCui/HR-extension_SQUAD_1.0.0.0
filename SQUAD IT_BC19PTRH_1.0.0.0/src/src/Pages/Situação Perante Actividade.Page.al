@@ -14,32 +14,32 @@ page 53157 "Situação Perante Actividade"
                 ShowCaption = false;
                 field("Situação"; Rec."Situação")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Desc. Situação"; Rec."Desc. Situação")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Motivo; Rec.Motivo)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Desc. Motivo"; Rec."Desc. Motivo")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Data Início"; Rec."Data Início")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Data Fim"; Rec."Data Fim")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }

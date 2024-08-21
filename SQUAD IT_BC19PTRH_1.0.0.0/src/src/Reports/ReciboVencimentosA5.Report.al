@@ -963,7 +963,7 @@ report 53043 "Recibo Vencimentos A5"
                     Caption = 'Periodos Processamento';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }

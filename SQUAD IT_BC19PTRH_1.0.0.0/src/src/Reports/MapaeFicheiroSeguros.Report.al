@@ -653,7 +653,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                     Caption = 'Options';
                     field(PrintFile; PrintFile)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Print File';
                     }
                 }
@@ -662,28 +662,28 @@ report 53101 "Mapa e Ficheiro - Seguros"
                     Caption = 'Ficheiro Seguros';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Fim';
                     }
                     field(txtApolice; txtApolice)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Nº Apólice';
                     }
                     field(txtCodSeguradora; txtCodSeguradora)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Seguradora';
                     }
                 }

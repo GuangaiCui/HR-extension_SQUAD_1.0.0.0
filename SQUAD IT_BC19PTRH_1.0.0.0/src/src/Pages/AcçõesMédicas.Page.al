@@ -15,13 +15,13 @@ page 53146 "Acções Médicas"
                 Caption = 'Geral';
                 field("Entry No."; Rec."Entry No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Editable = false;
                 }
                 field("Exam Type"; Rec."Exam Type")
                 {
-                    ApplicationArea = All;
+                    ;
 
 
                     trigger OnValidate()
@@ -31,26 +31,26 @@ page 53146 "Acções Médicas"
                 }
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Enabled = CodigoEnable;
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Enabled = CodigoEnable;
                 }
                 field(Reason; Rec.Reason)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Enabled = MotivoEnable;
                 }
             }
             part(Control1000000000; "Linhas Acções Médicas")
             {
-                ApplicationArea = All;
+                ;
 
                 SubPageLink = "Entry No." = FIELD("Entry No.");
             }
@@ -69,7 +69,7 @@ page 53146 "Acções Médicas"
                 }
                 action("Ex. Complementares - Factor Risco")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Ex. Complementares - Factor Risco';
                     Image = Warning;

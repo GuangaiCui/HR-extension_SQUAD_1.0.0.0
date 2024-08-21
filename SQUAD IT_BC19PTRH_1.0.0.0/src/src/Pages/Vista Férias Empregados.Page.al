@@ -21,7 +21,7 @@ page 53118 "Vista Férias Empregados"
                 Caption = 'Matrix Options';
                 field(PeriodType; PeriodType)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'View by';
 
@@ -32,14 +32,14 @@ page 53118 "Vista Férias Empregados"
                 }
                 field(QtyType; QtyType)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'View as';
                     OptionCaption = 'Net Change,Balance at Date';
                 }
                 field(ColumnSet; ColumnSet)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Column Set';
                     Editable = false;
@@ -54,7 +54,7 @@ page 53118 "Vista Férias Empregados"
         {
             action(ShowMatrix)
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = '&Show Matrix';
                 Image = ShowMatrix;
@@ -72,7 +72,7 @@ page 53118 "Vista Férias Empregados"
             }
             action("Conjunto Anterior")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Previous Set';
                 Image = PreviousSet;
@@ -88,7 +88,7 @@ page 53118 "Vista Férias Empregados"
             }
             action("Conjunto Seguinte")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Next Set';
                 Image = NextSet;

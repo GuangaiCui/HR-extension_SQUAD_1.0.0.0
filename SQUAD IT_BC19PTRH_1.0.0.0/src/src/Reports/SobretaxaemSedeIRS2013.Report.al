@@ -245,13 +245,13 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                     Caption = 'Periodo Processamento';
                     field(CodProc; CodProc)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Código Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(CodRub; CodRub)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Rúbrica Imposto Extraordinário';
                         TableRelation = "Rubrica Salarial";
                     }

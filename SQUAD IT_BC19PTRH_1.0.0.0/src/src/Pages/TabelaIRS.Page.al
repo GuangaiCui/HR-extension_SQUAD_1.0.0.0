@@ -16,75 +16,75 @@ page 53085 "Tabela IRS"
                 ShowCaption = false;
                 field(Ano; Rec.Ano)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Tabela; Rec.Tabela)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("TD 0 Dependentes"; Rec."TD 0 Dependentes")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '0';
                 }
                 field("TD 1 Dependentes"; Rec."TD 1 Dependentes")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '1';
                 }
                 field("TD 2 Dependentes"; Rec."TD 2 Dependentes")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '2';
                 }
                 field("TD 3 Dependentes"; Rec."TD 3 Dependentes")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '3';
                 }
                 field("TD 4 Dependentes"; Rec."TD 4 Dependentes")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '4';
                 }
                 field("TD 5ou Mais Dependentes"; Rec."TD 5ou Mais Dependentes")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = '5 ou Mais';
                 }
                 field(PenCas2Tit; Rec.PenCas2Tit)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Pensões Casado 2 Titulares';
                 }
                 field(PenNCas; Rec.PenNCas)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Pensões Não Casado';
                 }
                 field(PenCas1Tit; Rec.PenCas1Tit)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Pensões Casado 1Titular';
                 }
@@ -98,7 +98,7 @@ page 53085 "Tabela IRS"
         {
             action(ImportarTabelasIRS)
             {
-                ApplicationArea = All;
+                ;
 
                 Image = Import;
                 Promoted = true;

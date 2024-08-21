@@ -16,12 +16,12 @@ page 53056 "Informação Confidencial"
                 ShowCaption = false;
                 field("Confidential Code"; Rec."Confidential Code")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }

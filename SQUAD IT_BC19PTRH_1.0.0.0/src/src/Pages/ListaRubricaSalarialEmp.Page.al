@@ -17,62 +17,62 @@ page 53101 "Lista Rubrica Salarial Emp."
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Cód. Rúbrica Salarial"; Rec."Cód. Rúbrica Salarial")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Descrição Rubrica"; Rec."Descrição Rubrica")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Valor Total"; Rec."Valor Total")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Data Início"; Rec."Data Início")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Data Fim"; Rec."Data Fim")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Ordenação"; Rec."Ordenação")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }

@@ -17,63 +17,63 @@ page 53039 "Lista Endereços Alternativos"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Address; Rec.Address)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Address 2"; Rec."Address 2")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field(City; Rec.City)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field("Post Code"; Rec."Post Code")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field(County; Rec.County)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field("Phone No."; Rec."Phone No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Fax No."; Rec."Fax No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field("E-Mail"; Rec."E-Mail")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -82,13 +82,13 @@ page 53039 "Lista Endereços Alternativos"
         {
             systempart(Control1900383207; Links)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = true;
             }
@@ -105,7 +105,7 @@ page 53039 "Lista Endereços Alternativos"
                 Image = Addresses;
                 action("Co&mments")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

@@ -13,17 +13,17 @@ page 53074 "Categoria Profissional Interna"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Empregados"; Rec."No. Empregados")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }

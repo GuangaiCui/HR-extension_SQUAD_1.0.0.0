@@ -16,49 +16,49 @@ page 53042 "Empregados Qualificados"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("From Date"; Rec."From Date")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Type; Rec.Type)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Institution/Company"; Rec."Institution/Company")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Cost; Rec.Cost)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field("Course Grade"; Rec."Course Grade")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -67,13 +67,13 @@ page 53042 "Empregados Qualificados"
         {
             systempart(Control1900383207; Links)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = true;
             }
@@ -90,7 +90,7 @@ page 53042 "Empregados Qualificados"
                 Image = Certificate;
                 action("Comentários")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

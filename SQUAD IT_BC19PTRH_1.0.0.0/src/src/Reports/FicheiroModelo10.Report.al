@@ -548,72 +548,72 @@ report 53048 "Ficheiro Modelo 10"
                     Caption = 'Options';
                     field(DataIni; DataIni)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Periodo de:';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'a:';
                     }
                     field(CodRepFinancas; CodRepFinancas)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Rep.Finanças';
                     }
                     field(PercVolNegocios; PercVolNegocios)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = '% Vol. Negócios';
                     }
                     field(CodActividade; CodActividade)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Cód. Actividade';
                     }
                     field(Tipodeclaracao; Tipodeclaracao)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Tipo Declaração';
                     }
                     field(NIFRepLegal; NIFRepLegal)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'NIF Representante Legal';
                     }
                     field(NIFTecOficialContas; NIFTecOficialContas)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'NIF Tec. Oficial Contas';
                     }
                     field(ImpedimentoLegal; ImpedimentoLegal)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Impedimento Legal TOC';
                     }
                     field(DataImpedimentoLegal; DataImpedimentoLegal)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Impedimento Legal TOC';
                     }
                     field(RetencoesIRC; RetencoesIRC)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Retenções IRC';
                     }
                     field(RetencoesA; RetencoesA)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Retenções A';
                     }
                     field(Compensacoes; Compensacoes)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Compensações IRS/IRC';
                     }
                     field("Declaraçao"; Declaraçao)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Declaração';
 
                         trigger OnValidate()
@@ -627,7 +627,7 @@ report 53048 "Ficheiro Modelo 10"
                     }
                     field(campoData; DataAlteração)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data de alteração';
                         Editable = campoDataEditable;
                     }

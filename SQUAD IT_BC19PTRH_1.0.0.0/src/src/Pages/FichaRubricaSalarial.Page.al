@@ -17,42 +17,42 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Geral';
                 field("Código"; Rec."Código")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Periodicidade; Rec.Periodicidade)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Mês Início Periocidade"; Rec."Mês Início Periocidade")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ApplicationArea = All;
+                    ;
 
 
                     trigger OnValidate()
@@ -62,7 +62,7 @@ page 53098 "Ficha Rubrica Salarial"
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ApplicationArea = All;
+                    ;
 
 
                     trigger OnValidate()
@@ -72,7 +72,7 @@ page 53098 "Ficha Rubrica Salarial"
                 }
                 field("Valor Total"; Rec."Valor Total")
                 {
-                    ApplicationArea = All;
+                    ;
 
 
                     trigger OnValidate()
@@ -82,19 +82,19 @@ page 53098 "Ficha Rubrica Salarial"
                 }
                 field("Tipo Rendimento Cat.A"; Rec."Tipo Rendimento Cat.A")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Vencimento Base"; Rec."Vencimento Base")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Vencimento Base do Recibo';
                 }
             }
             part(RubricaSalarialLinhas; "Subform Rubrica Salarial")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Rubrica Salarial Fillhas';
                 Editable = RubricaSalarialLinhasEditable;
@@ -106,7 +106,7 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Dados Seg. Social';
                 field(NATREM; Rec.NATREM)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'NATREM';
                 }
@@ -116,7 +116,7 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Relatório Único';
                 field("Tipo de Remuneração"; Rec."Tipo de Remuneração")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -125,17 +125,17 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'CGA';
                 field("Cód. Situação"; Rec."Cód. Situação")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Cód. Movimento"; Rec."Cód. Movimento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Acertos; Rec.Acertos)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -144,28 +144,28 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Características';
                 field(Genero; Rec.Genero)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     //OptionCaption = ' ,Rúbrica de Vencimento Base,Rúbrica de IRS,Rúbrica de Seg. Social,Rúbrica Sub. Alimentação,Rúbrica IRS Sub. Férias,Rúbrica IRS Sub. Natal,Rúbrica Enc. Seg. Social,Rúbrica IVA,Rúbrica CGA,Rúbrica Falta,Rúbrica Hora Extra,Rúbrica Enc. CGA,Sindicato,ADSE,Admissão-Demissão,Enc. ADSE,Duo. Sub. Férias,Duo. Sub. Natal,Fundo Compensação Trabalho / FGCT';
                 }
                 field("Actualização Vencimento"; Rec."Actualização Vencimento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Sobretaxa em Sede de IRS"; Rec."Sobretaxa em Sede de IRS")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Imposto Extraordinário"; Rec."Imposto Extraordinário")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Rubrica Acerto Duo"; Rec."Rubrica Acerto Duo")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -174,7 +174,7 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Ausências';
                 field(Faults; Rec.Faults)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -183,12 +183,12 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Rubrica de Fecho';
                 field("Genero Rubrica Fecho"; Rec."Genero Rubrica Fecho")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Usado no cálculo indemnização"; Rec."Usado no cálculo indemnização")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }

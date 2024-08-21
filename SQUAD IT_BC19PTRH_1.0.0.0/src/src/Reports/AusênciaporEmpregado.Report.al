@@ -192,17 +192,17 @@ report 53060 "Ausência por Empregado"
                     Caption = 'Options';
                     field(AbertoFechado; AbertoFechado)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Processamento';
                     }
                     field(FiltroDataIni; FiltroDataIni)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Início';
                     }
                     field(FiltroDataFim; FiltroDataFim)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Fim';
                     }
                 }

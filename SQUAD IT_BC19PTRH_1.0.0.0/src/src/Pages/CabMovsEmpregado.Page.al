@@ -17,39 +17,39 @@ page 53102 "Cab. Movs. Empregado"
                 Caption = 'Geral';
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Lookup = true;
                 }
                 field("Designação Empregado"; Rec."Designação Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Data Registo"; Rec."Data Registo")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
             part(Abonos; "Linhas Movs. Empregado")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Abonos';
                 SubPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),
@@ -59,7 +59,7 @@ page 53102 "Cab. Movs. Empregado"
             }
             part(Descontos; "Linhas Movs. Empregado")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Descontos';
                 SubPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),

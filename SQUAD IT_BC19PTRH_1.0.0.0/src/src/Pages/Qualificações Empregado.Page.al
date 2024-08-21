@@ -18,80 +18,80 @@ page 53041 "Qualificações Empregado"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("From Date"; Rec."From Date")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Type; Rec.Type)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     OptionCaption = '';
                 }
                 field("Qualification Code"; Rec."Qualification Code")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Academic Degree"; Rec."Academic Degree")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("University Code"; Rec."University Code")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Institution/Company"; Rec."Institution/Company")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Course Code"; Rec."Course Code")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Course Description"; Rec."Course Description")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Final Course Classification"; Rec."Final Course Classification")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Cost; Rec.Cost)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field("Expiration Date"; Rec."Expiration Date")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -100,13 +100,13 @@ page 53041 "Qualificações Empregado"
         {
             systempart(Control1900383207; Links)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ApplicationArea = All;
+                ;
 
                 Visible = true;
             }
@@ -125,7 +125,7 @@ page 53041 "Qualificações Empregado"
                 Image = Certificate;
                 action("Comentários")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

@@ -15,32 +15,32 @@ page 53119 "Lista Férias Empregado"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Data; Rec.Data)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Tipo; Rec.Tipo)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Ano a que se refere"; Rec."Ano a que se refere")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Qtd."; Rec."Qtd.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Gozada; Rec.Gozada)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -53,7 +53,7 @@ page 53119 "Lista Férias Empregado"
         {
             action("Marcação por períodos")
             {
-                ApplicationArea = All;
+                ;
 
                 Caption = 'Marcação por períodos';
                 Image = Holiday;

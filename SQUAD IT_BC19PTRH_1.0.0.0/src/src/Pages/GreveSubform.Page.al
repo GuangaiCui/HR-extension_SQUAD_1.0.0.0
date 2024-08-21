@@ -13,27 +13,27 @@ page 53162 "Greve Subform"
                 ShowCaption = false;
                 field("Strike Date"; Rec."Strike Date")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Normal Working Period"; Rec."Normal Working Period")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Strike Number of Workers"; Rec."Strike Number of Workers")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Stop Time (Hours)"; Rec."Stop Time (Hours)")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Stop Time (Minutes)"; Rec."Stop Time (Minutes)")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }

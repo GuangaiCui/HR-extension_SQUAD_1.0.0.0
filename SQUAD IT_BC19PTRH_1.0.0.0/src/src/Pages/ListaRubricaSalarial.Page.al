@@ -18,67 +18,67 @@ page 53100 "Lista Rubrica Salarial"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Periodicidade; Rec.Periodicidade)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Mês Início Periocidade"; Rec."Mês Início Periocidade")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Valor Total"; Rec."Valor Total")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Genero; Rec.Genero)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Genero Rubrica Fecho"; Rec."Genero Rubrica Fecho")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(NATREM; Rec.NATREM)
                 {
-                    ApplicationArea = All;
+                    ;
                 }
             }
         }

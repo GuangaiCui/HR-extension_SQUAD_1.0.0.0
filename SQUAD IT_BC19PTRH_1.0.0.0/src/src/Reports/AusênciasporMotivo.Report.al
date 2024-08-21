@@ -239,17 +239,17 @@ report 53061 "Ausências por Motivo"
                     Caption = 'Options';
                     field(AbertoFechado; AbertoFechado)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Processamento';
                     }
                     field(FiltroDataIni; FiltroDataIni)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Início';
                     }
                     field(FiltroDataFim; FiltroDataFim)
                     {
-                        ApplicationArea = All;
+                        ;
                         Caption = 'Data Fim';
                     }
                 }

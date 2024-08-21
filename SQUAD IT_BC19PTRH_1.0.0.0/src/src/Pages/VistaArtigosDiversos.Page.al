@@ -21,50 +21,50 @@ page 53063 "Vista Artigos Diversos"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Visible = boolVisible;
                 }
                 field("recEmpregado.FullName"; recEmpregado.FullName)
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Name';
                     Visible = boolVisible;
                 }
                 field("Misc. Article Code"; Rec."Misc. Article Code")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("Serial No."; Rec."Serial No.")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("From Date"; Rec."From Date")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field("In Use"; Rec."In Use")
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+                    ;
 
                 }
             }
@@ -80,7 +80,7 @@ page 53063 "Vista Artigos Diversos"
                 Caption = 'Mi&sc. Article';
                 action("Co&mentários")
                 {
-                    ApplicationArea = All;
+                    ;
 
                     Caption = 'Co&mments';
                     Image = ViewComments;
