@@ -843,13 +843,13 @@ report 53047 "Integração Contabilística"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-                        ;
+
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(AgruparContasBalanco; AgruparContasBalanco)
                     {
-                        ;
+
                         Caption = 'Agrupar contas de balanço';
                     }
                 }

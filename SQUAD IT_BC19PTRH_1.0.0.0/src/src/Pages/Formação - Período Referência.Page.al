@@ -17,12 +17,12 @@ page 53164 "Formação - Período Referência"
                 ShowCaption = false;
                 field("Período Ref. Formação"; Rec."Período Ref. Formação")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
             }

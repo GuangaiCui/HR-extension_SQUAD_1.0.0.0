@@ -20,17 +20,17 @@ page 53163 "Greve Lista"
                 ShowCaption = false;
                 field(Year; Rec.Year)
                 {
-                    ;
+
 
                 }
                 field("Strike Code"; Rec."Strike Code")
                 {
-                    ;
+
 
                 }
                 field("Strike Description"; Rec."Strike Description")
                 {
-                    ;
+
 
                 }
             }
@@ -46,7 +46,7 @@ page 53163 "Greve Lista"
                 Caption = 'Greve';
                 action(Ficha)
                 {
-                    ;
+
 
                     Caption = 'Card';
                     Image = EditLines;

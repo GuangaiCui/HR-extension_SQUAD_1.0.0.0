@@ -13,57 +13,57 @@ page 53167 "Seg Saude Empregado"
             {
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Nome Empregado"; Rec."Nome Empregado")
                 {
-                    ;
+
 
                 }
                 field("No. Seguro"; Rec."No. Seguro")
                 {
-                    ;
+
 
                 }
                 field(Parentesco; Rec.Parentesco)
                 {
-                    ;
+
 
                 }
                 field("Nome Beneficiário"; Rec."Nome Beneficiário")
                 {
-                    ;
+
 
                 }
                 field("Data Inclusão"; Rec."Data Inclusão")
                 {
-                    ;
+
 
                 }
                 field("Data Exclusão"; Rec."Data Exclusão")
                 {
-                    ;
+
 
                 }
                 field(Tipo; Rec.Tipo)
                 {
-                    ;
+
 
                 }
                 field("Valor Anual"; Rec."Valor Anual")
                 {
-                    ;
+
 
                 }
                 field("Valor Suportado pela Empresa"; Rec."Valor Suportado pela Empresa")
                 {
-                    ;
+
 
                 }
                 field("Valor Suportado pelo Colab."; Rec."Valor Suportado pelo Colab.")
                 {
-                    ;
+
 
                 }
             }

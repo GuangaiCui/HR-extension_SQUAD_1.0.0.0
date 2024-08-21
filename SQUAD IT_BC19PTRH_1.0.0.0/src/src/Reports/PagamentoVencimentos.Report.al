@@ -201,7 +201,7 @@ report 53055 "Pagamento Vencimentos"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-                        ;
+
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
@@ -211,18 +211,18 @@ report 53055 "Pagamento Vencimentos"
                     Caption = 'Opções';
                     field(UsaTransfBancaria; UsaTransfBancaria)
                     {
-                        ;
+
                         Caption = 'Usa Tranfs. Bancária';
                     }
                     field(BankAccount; BankAccount)
                     {
-                        ;
+
                         Caption = 'Banco';
                         TableRelation = "Bank Account";
                     }
                     field(DataTransfSEPA; DataTransfSEPA)
                     {
-                        ;
+
                         Caption = 'Data Transferência';
                     }
                 }

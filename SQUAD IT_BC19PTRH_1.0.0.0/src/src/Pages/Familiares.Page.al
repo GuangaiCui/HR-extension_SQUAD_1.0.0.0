@@ -16,12 +16,12 @@ page 53043 Familiares
                 ShowCaption = false;
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
             }
@@ -30,13 +30,13 @@ page 53043 Familiares
         {
             systempart(Control1900383207; Links)
             {
-                ;
+
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ;
+
 
                 Visible = false;
             }

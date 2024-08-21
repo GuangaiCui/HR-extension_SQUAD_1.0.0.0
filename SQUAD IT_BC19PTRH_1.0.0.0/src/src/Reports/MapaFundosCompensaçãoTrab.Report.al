@@ -196,18 +196,18 @@ report 53071 "Mapa Fundos Compensação Trab."
                     Caption = 'Fundos Compensação Trab.';
                     field(CodProcess; CodProcess)
                     {
-                        ;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFin; DataFin)
                     {
-                        ;
+
                         Caption = 'Data Fim';
                     }
                 }

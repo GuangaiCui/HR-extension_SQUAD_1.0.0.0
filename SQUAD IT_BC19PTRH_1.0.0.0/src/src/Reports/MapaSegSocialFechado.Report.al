@@ -636,18 +636,18 @@ report 53044 "Mapa Seg. Social - Fechado"
                     Caption = 'Mapa Seg. Social';
                     field(CodProcess; CodProcess)
                     {
-                        ;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ;
+
                         Caption = 'Data Fim';
                     }
                 }

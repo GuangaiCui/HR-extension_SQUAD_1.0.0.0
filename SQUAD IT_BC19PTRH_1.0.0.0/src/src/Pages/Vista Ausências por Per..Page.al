@@ -21,7 +21,7 @@ page 53061 "Vista Ausências por Per."
                 Caption = 'Options';
                 field("Cause Of Absence Filter"; CauseOfAbsenceFilter)
                 {
-                    ;
+
 
                     Caption = 'Cause of Absence Filter';
                     TableRelation = "Cause of Absence";
@@ -32,7 +32,7 @@ page 53061 "Vista Ausências por Per."
                 Caption = 'Matrix Options';
                 field(PeriodType; PeriodType)
                 {
-                    ;
+
 
                     Caption = 'View by';
 
@@ -43,14 +43,14 @@ page 53061 "Vista Ausências por Per."
                 }
                 field(QtyType; QtyType)
                 {
-                    ;
+
 
                     Caption = 'View as';
                     OptionCaption = 'Net Change,Balance at Date';
                 }
                 field(ColumnSet; ColumnSet)
                 {
-                    ;
+
 
                     Caption = 'Column Set';
                     Editable = false;
@@ -65,7 +65,7 @@ page 53061 "Vista Ausências por Per."
         {
             action(ShowMatrix)
             {
-                ;
+
 
                 Caption = '&Show Matrix';
                 Image = ShowMatrix;
@@ -83,7 +83,7 @@ page 53061 "Vista Ausências por Per."
             }
             action("Conjunto Anterior")
             {
-                ;
+
 
                 Caption = 'Previous Set';
                 Image = PreviousSet;
@@ -99,7 +99,7 @@ page 53061 "Vista Ausências por Per."
             }
             action("Conjunto Seguinte")
             {
-                ;
+
 
                 Caption = 'Next Set';
                 Image = NextSet;

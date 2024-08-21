@@ -16,75 +16,75 @@ page 53085 "Tabela IRS"
                 ShowCaption = false;
                 field(Ano; Rec.Ano)
                 {
-                    ;
+
 
                 }
                 field(Tabela; Rec.Tabela)
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ;
+
 
                 }
                 field("TD 0 Dependentes"; Rec."TD 0 Dependentes")
                 {
-                    ;
+
 
                     Caption = '0';
                 }
                 field("TD 1 Dependentes"; Rec."TD 1 Dependentes")
                 {
-                    ;
+
 
                     Caption = '1';
                 }
                 field("TD 2 Dependentes"; Rec."TD 2 Dependentes")
                 {
-                    ;
+
 
                     Caption = '2';
                 }
                 field("TD 3 Dependentes"; Rec."TD 3 Dependentes")
                 {
-                    ;
+
 
                     Caption = '3';
                 }
                 field("TD 4 Dependentes"; Rec."TD 4 Dependentes")
                 {
-                    ;
+
 
                     Caption = '4';
                 }
                 field("TD 5ou Mais Dependentes"; Rec."TD 5ou Mais Dependentes")
                 {
-                    ;
+
 
                     Caption = '5 ou Mais';
                 }
                 field(PenCas2Tit; Rec.PenCas2Tit)
                 {
-                    ;
+
 
                     Caption = 'Pensões Casado 2 Titulares';
                 }
                 field(PenNCas; Rec.PenNCas)
                 {
-                    ;
+
 
                     Caption = 'Pensões Não Casado';
                 }
                 field(PenCas1Tit; Rec.PenCas1Tit)
                 {
-                    ;
+
 
                     Caption = 'Pensões Casado 1Titular';
                 }
@@ -98,7 +98,7 @@ page 53085 "Tabela IRS"
         {
             action(ImportarTabelasIRS)
             {
-                ;
+
 
                 Image = Import;
                 Promoted = true;

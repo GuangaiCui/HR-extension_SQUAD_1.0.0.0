@@ -17,62 +17,62 @@ page 53091 "Lista Histórico Horas Extra"
                 ShowCaption = false;
                 field("No. Mov."; Rec."No. Mov.")
                 {
-                    ;
+
 
                 }
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field(Data; Rec.Data)
                 {
-                    ;
+
 
                 }
                 field("Cód. Hora Extra"; Rec."Cód. Hora Extra")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
-                    ;
+
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ;
+
 
                 }
                 field(Factor; Rec.Factor)
                 {
-                    ;
+
 
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ;
+
 
                 }
                 field("Comentário"; Rec."Comentário")
                 {
-                    ;
+
 
                 }
                 field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
-                    ;
+
 
                 }
                 field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
-                    ;
+
 
                 }
             }
@@ -88,7 +88,7 @@ page 53091 "Lista Histórico Horas Extra"
                 Caption = 'Ex. Hour';
                 action("Co&mentários")
                 {
-                    ;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;
@@ -101,7 +101,7 @@ page 53091 "Lista Histórico Horas Extra"
                 }
                 action("Vista p/ &Categorias")
                 {
-                    ;
+
 
                     Caption = 'Vista p/ &Categorias';
                     Image = ServiceHours;

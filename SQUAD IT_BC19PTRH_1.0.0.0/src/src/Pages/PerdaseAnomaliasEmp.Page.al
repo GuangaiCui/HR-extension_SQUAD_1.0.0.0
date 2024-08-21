@@ -16,17 +16,17 @@ page 53155 "Perdas e Anomalias Emp."
                 ShowCaption = false;
                 field("Grau de Incapacidade"; Rec."Grau de Incapacidade")
                 {
-                    ;
+
 
                 }
                 field("Data Grau de Incapacidade"; Rec."Data Grau de Incapacidade")
                 {
-                    ;
+
 
                 }
                 field("Observações"; Rec."Observações")
                 {
-                    ;
+
 
                 }
             }

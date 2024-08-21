@@ -1,7 +1,7 @@
 report 53097 "Contract Templates"
 {
     UsageCategory = ReportsAndAnalysis;
-    ;
+
     DefaultRenderingLayout = LayoutName;
 
     dataset
@@ -106,7 +106,7 @@ report 53097 "Contract Templates"
             {
                 action(LayoutName)
                 {
-                    ;
+
 
                 }
             }

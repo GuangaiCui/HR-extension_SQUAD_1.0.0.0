@@ -14,27 +14,27 @@ page 53166 "Tabelas Sobretaxa"
             {
                 field("Echelon Code"; Rec."Echelon Code")
                 {
-                    ;
+
 
                 }
                 field("Table"; Rec.Table)
                 {
-                    ;
+
 
                 }
                 field("Minimum Value"; Rec."Minimum Value")
                 {
-                    ;
+
 
                 }
                 field("Maximum Value"; Rec."Maximum Value")
                 {
-                    ;
+
 
                 }
                 field("Tax %"; Rec."Tax %")
                 {
-                    ;
+
 
                 }
             }

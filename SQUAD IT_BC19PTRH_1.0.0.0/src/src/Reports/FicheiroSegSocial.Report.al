@@ -510,18 +510,18 @@ report 53042 "Ficheiro Seg. Social"
                     Caption = 'Ficheiro Seg. Social';
                     field(CodProcess; CodProcess)
                     {
-                        ;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ;
+
                         Caption = 'Data Fim';
                     }
                 }

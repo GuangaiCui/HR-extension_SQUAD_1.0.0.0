@@ -1642,7 +1642,7 @@ report 53037 "Processamento Vencimentos"
                                 rLinhaMovEmp."No. Linha" := NLinha;
                                 rLinhaMovEmp."Data Registo" := "Periodos Processamento"."Data Registo";
                                 rLinhaMovEmp.Validate("Cód. Rubrica", rPenhora."Garnishment Rubric");
-                                ;
+
                                 rLinhaMovEmp.Quantidade := 1;
                                 rLinhaMovEmp.Valor := Round(ValorAPenhorar, 0.01) * -1;
                                 rLinhaMovEmp."Garnishmen No." := rPenhora."Garnishmen No.";
@@ -1938,28 +1938,28 @@ report 53037 "Processamento Vencimentos"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-                        ;
+
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(FiltroDataInicioFalta; FiltroDataInicioFalta)
                     {
-                        ;
+
                         Caption = 'Data Início de Falta';
                     }
                     field(FiltroDataFimFalta; FiltroDataFimFalta)
                     {
-                        ;
+
                         Caption = 'Data Fim de Falta';
                     }
                     field(varCriarRetroactivo; varCriarRetroactivo)
                     {
-                        ;
+
                         Caption = 'Processar Retroactivos IRS';
                     }
                     field(ProcessarSobretaxa; ProcessarSobretaxa)
                     {
-                        ;
+
                         Caption = 'Processar Sobretaxa';
                         Visible = false;
                     }
@@ -1969,7 +1969,7 @@ report 53037 "Processamento Vencimentos"
                     Caption = 'Apagar Processamento de Empregado';
                     field(ApagaEmp; ApagaEmp)
                     {
-                        ;
+
                         Caption = 'Nº Empregado a apagar';
                         TableRelation = Employee;
 
@@ -1995,7 +1995,7 @@ report 53037 "Processamento Vencimentos"
                     }
                     field(ApagaTodosEmp; ApagaTodosEmp)
                     {
-                        ;
+
                         Caption = 'Apagar Todos os Empregados';
                     }
                 }

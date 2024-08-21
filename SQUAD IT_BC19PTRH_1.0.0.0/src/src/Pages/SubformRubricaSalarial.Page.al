@@ -16,27 +16,27 @@ page 53099 "Subform Rubrica Salarial"
                 ShowCaption = false;
                 field("Cód. Rubrica Filha"; Rec."Cód. Rubrica Filha")
                 {
-                    ;
+
 
                 }
                 field("Descrição Rubrica Filha"; Rec."Descrição Rubrica Filha")
                 {
-                    ;
+
 
                 }
                 field("Tipo Rubrica Filha"; Rec."Tipo Rubrica Filha")
                 {
-                    ;
+
 
                 }
                 field(Percentagem; Rec.Percentagem)
                 {
-                    ;
+
 
                 }
                 field("Valor Limite Máximo"; Rec."Valor Limite Máximo")
                 {
-                    ;
+
 
                 }
             }

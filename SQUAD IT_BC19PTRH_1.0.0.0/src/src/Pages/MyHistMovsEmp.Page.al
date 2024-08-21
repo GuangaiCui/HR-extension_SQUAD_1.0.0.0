@@ -13,47 +13,47 @@ page 53173 MyHistMovsEmp
             {
                 field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
-                    ;
+
 
                 }
                 field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
-                    ;
+
 
                 }
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Designação Empregado"; Rec."Designação Empregado")
                 {
-                    ;
+
 
                 }
                 field("Data Registo"; Rec."Data Registo")
                 {
-                    ;
+
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ;
+
 
                 }
                 field(Pendente; Rec.Pendente)
                 {
-                    ;
+
 
                 }
                 field("Valor Vencimento Base"; Rec."Valor Vencimento Base")
                 {
-                    ;
+
 
                 }
                 field("Valor Hora"; Rec."Valor Hora")
                 {
-                    ;
+
 
                 }
             }
@@ -67,7 +67,7 @@ page 53173 MyHistMovsEmp
 
             action(Abrir)
             {
-                ;
+
 
 
                 trigger OnAction()

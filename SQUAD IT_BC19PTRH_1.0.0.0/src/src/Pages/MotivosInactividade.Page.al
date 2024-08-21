@@ -16,12 +16,12 @@ page 53049 "Motivos Inactividade"
                 ShowCaption = false;
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
             }
@@ -30,13 +30,13 @@ page 53049 "Motivos Inactividade"
         {
             systempart(Control1900383207; Links)
             {
-                ;
+
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ;
+
 
                 Visible = false;
             }

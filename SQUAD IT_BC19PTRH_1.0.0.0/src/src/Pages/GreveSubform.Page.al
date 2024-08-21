@@ -13,27 +13,27 @@ page 53162 "Greve Subform"
                 ShowCaption = false;
                 field("Strike Date"; Rec."Strike Date")
                 {
-                    ;
+
 
                 }
                 field("Normal Working Period"; Rec."Normal Working Period")
                 {
-                    ;
+
 
                 }
                 field("Strike Number of Workers"; Rec."Strike Number of Workers")
                 {
-                    ;
+
 
                 }
                 field("Stop Time (Hours)"; Rec."Stop Time (Hours)")
                 {
-                    ;
+
 
                 }
                 field("Stop Time (Minutes)"; Rec."Stop Time (Minutes)")
                 {
-                    ;
+
 
                 }
             }

@@ -17,42 +17,42 @@ page 53083 "Instituição Seg. Social"
                 ShowCaption = false;
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
                 field(Address; Rec.Address)
                 {
-                    ;
+
 
                 }
                 field("Post Code"; Rec."Post Code")
                 {
-                    ;
+
 
                 }
                 field(City; Rec.City)
                 {
-                    ;
+
 
                 }
                 field("Phone No."; Rec."Phone No.")
                 {
-                    ;
+
 
                 }
                 field(Fax; Rec.Fax)
                 {
-                    ;
+
 
                 }
                 field(NIPC; Rec.NIPC)
                 {
-                    ;
+
 
                 }
             }

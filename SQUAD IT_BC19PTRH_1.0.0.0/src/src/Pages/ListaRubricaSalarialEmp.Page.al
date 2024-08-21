@@ -17,62 +17,62 @@ page 53101 "Lista Rubrica Salarial Emp."
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Cód. Rúbrica Salarial"; Rec."Cód. Rúbrica Salarial")
                 {
-                    ;
+
 
                 }
                 field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
-                    ;
+
 
                 }
                 field("Descrição Rubrica"; Rec."Descrição Rubrica")
                 {
-                    ;
+
 
                 }
                 field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
-                    ;
+
 
                 }
                 field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
-                    ;
+
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ;
+
 
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ;
+
 
                 }
                 field("Valor Total"; Rec."Valor Total")
                 {
-                    ;
+
 
                 }
                 field("Data Início"; Rec."Data Início")
                 {
-                    ;
+
 
                 }
                 field("Data Fim"; Rec."Data Fim")
                 {
-                    ;
+
 
                 }
                 field("Ordenação"; Rec."Ordenação")
                 {
-                    ;
+
 
                 }
             }

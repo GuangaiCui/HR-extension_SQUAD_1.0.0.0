@@ -18,32 +18,32 @@ page 53075 "Lista Cat. Prof. Int. Emp."
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Cód. Cat. Prof."; Rec."Cód. Cat. Prof.")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Data Inicio Cat. Prof."; Rec."Data Inicio Cat. Prof.")
                 {
-                    ;
+
 
                 }
                 field("Data Fim Cat. Prof."; Rec."Data Fim Cat. Prof.")
                 {
-                    ;
+
 
                 }
                 field("Comentário"; Rec."Comentário")
                 {
-                    ;
+
 
                 }
             }
@@ -58,7 +58,7 @@ page 53075 "Lista Cat. Prof. Int. Emp."
             {
                 action("Comentários")
                 {
-                    ;
+
 
                     Caption = 'Comentários';
                     Image = ViewComments;

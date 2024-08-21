@@ -15,31 +15,31 @@ page 53141 "Pessoal dos Serviços Ext"
                 ShowCaption = false;
                 field("Tipo Serviço"; Rec."Tipo Serviço")
                 {
-                    ;
+
 
                     Style = StandardAccent;
                     StyleExpr = TRUE;
                 }
                 field("Denominação Serv. Externo"; Rec."Denominação Serv. Externo")
                 {
-                    ;
+
 
                     Style = StandardAccent;
                     StyleExpr = TRUE;
                 }
                 field(NIF; Rec.NIF)
                 {
-                    ;
+
 
                 }
                 field("Tipo de Empresa"; Rec."Tipo de Empresa")
                 {
-                    ;
+
 
                 }
                 field("Desc. do Tipo de Empresa"; Rec."Desc. do Tipo de Empresa")
                 {
-                    ;
+
 
                 }
             }

@@ -15,32 +15,32 @@ page 53119 "Lista Férias Empregado"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field(Data; Rec.Data)
                 {
-                    ;
+
 
                 }
                 field(Tipo; Rec.Tipo)
                 {
-                    ;
+
 
                 }
                 field("Ano a que se refere"; Rec."Ano a que se refere")
                 {
-                    ;
+
 
                 }
                 field("Qtd."; Rec."Qtd.")
                 {
-                    ;
+
 
                 }
                 field(Gozada; Rec.Gozada)
                 {
-                    ;
+
 
                 }
             }
@@ -53,7 +53,7 @@ page 53119 "Lista Férias Empregado"
         {
             action("Marcação por períodos")
             {
-                ;
+
 
                 Caption = 'Marcação por períodos';
                 Image = Holiday;

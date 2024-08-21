@@ -402,23 +402,23 @@ report 53046 "Mapa Transferência Bancária"
                     Caption = 'Mapa Transferência Bancária';
                     field(CodProcess; CodProcess)
                     {
-                        ;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ;
+
                         Caption = 'Data Fim';
                     }
                     field("BankAccount.""No."""; BankAccount."No.")
                     {
-                        ;
+
                         Caption = 'Banco';
                         TableRelation = "Bank Account";
                     }

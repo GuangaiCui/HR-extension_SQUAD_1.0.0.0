@@ -149,12 +149,12 @@ report 53095 "Declarações RH BC"
             {
                 field(NomePessoaAssina; NomePessoaAssina)
                 {
-                    ;
+
                     Caption = 'Nome da Pessoa que assina';
                 }
                 field(cargo; cargo)
                 {
-                    ;
+
                     Caption = 'Cargo';
                 }
             }

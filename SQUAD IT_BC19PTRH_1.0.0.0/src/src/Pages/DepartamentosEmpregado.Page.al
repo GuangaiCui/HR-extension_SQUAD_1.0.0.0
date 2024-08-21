@@ -15,12 +15,12 @@ page 53051 "Departamentos Empregado"
             {
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
             }

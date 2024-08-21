@@ -14,32 +14,32 @@ page 53128 "Profissionalização"
                 ShowCaption = false;
                 field("Cod Empregado"; Rec."Cod Empregado")
                 {
-                    ;
+
 
                 }
                 field("Data Início"; Rec."Data Início")
                 {
-                    ;
+
 
                 }
                 field("Data Fim"; Rec."Data Fim")
                 {
-                    ;
+
 
                 }
                 field("No. Horas Profissionalização"; Rec."No. Horas Profissionalização")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Classificação"; Rec."Classificação")
                 {
-                    ;
+
 
                 }
             }

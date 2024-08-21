@@ -18,35 +18,35 @@ page 53103 "Linhas Movs. Empregado"
                 ShowCaption = false;
                 field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
-                    ;
+
                 }
                 field("Descrição Rubrica"; Rec."Descrição Rubrica")
                 {
-                    ;
+
                 }
                 field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
-                    ;
+
                 }
                 field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
-                    ;
+
                 }
                 field(UnidadeMedida; Rec.UnidadeMedida)
                 {
-                    ;
+
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ;
+
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ;
+
                 }
                 field(ValorSemSinal; ValorSemSinal)
                 {
-                    ;
+
                     Caption = 'Valor';
                 }
             }

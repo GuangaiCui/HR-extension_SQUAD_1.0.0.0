@@ -16,17 +16,17 @@ page 53071 "Unid. Medida Recursos Humanos"
                 ShowCaption = false;
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                 }
                 field("Qty. per Unit of Measure"; Rec."Qty. per Unit of Measure")
                 {
-                    ;
+
 
                 }
                 field("Designação Interna"; Rec."Designação Interna")
                 {
-                    ;
+
 
                 }
             }

@@ -12,22 +12,22 @@ page 53137 "Dispensa Situações Empregado"
             {
                 field("Cód. Dispensa"; Rec."Cód. Dispensa")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Nº Horas Sem. Contrato"; Rec."Nº Horas Sem. Contrato")
                 {
-                    ;
+
 
                 }
                 field("Nº Horas Sem. Totais"; Rec."Nº Horas Sem. Totais")
                 {
-                    ;
+
 
                 }
             }

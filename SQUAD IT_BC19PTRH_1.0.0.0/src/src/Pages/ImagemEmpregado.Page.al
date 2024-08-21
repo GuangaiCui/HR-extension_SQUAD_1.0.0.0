@@ -14,7 +14,7 @@ page 53037 "Imagem Empregado"
         {
             field(Picture; Rec.Image)
             {
-                ;
+
 
             }
         }

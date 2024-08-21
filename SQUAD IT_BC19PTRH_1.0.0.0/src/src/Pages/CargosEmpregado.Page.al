@@ -12,12 +12,12 @@ page 53115 "Cargos Empregado"
             {
                 field("Designação Cargo"; Rec."Designação Cargo")
                 {
-                    ;
+
 
                 }
                 field("Horas Totais do Cargo"; Rec."Horas Totais do Cargo")
                 {
-                    ;
+
 
                 }
             }

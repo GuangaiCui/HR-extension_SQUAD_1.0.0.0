@@ -15,12 +15,12 @@ page 53156 "RU - Tabelas"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
             }

@@ -14,17 +14,17 @@ page 53159 Destacamentos
                 ShowCaption = false;
                 field("Local de Destacamento"; Rec."Local de Destacamento")
                 {
-                    ;
+
 
                 }
                 field("Data Início Destacamento"; Rec."Data Início Destacamento")
                 {
-                    ;
+
 
                 }
                 field("Data Fim Destacamento"; Rec."Data Fim Destacamento")
                 {
-                    ;
+
 
                 }
             }

@@ -629,7 +629,7 @@ report 53040 "Processamento Sub. Natal"
                                 rLinhaMovEmp."No. Linha" := NLinha;
                                 rLinhaMovEmp."Data Registo" := "Periodos Processamento"."Data Registo";
                                 rLinhaMovEmp.Validate("Cód. Rubrica", rPenhora."Garnishment Rubric");
-                                ;
+
                                 rLinhaMovEmp.Quantidade := 1;
                                 rLinhaMovEmp.Valor := Round(ValorAPenhorar, 0.01) * -1;
                                 rLinhaMovEmp."Garnishmen No." := rPenhora."Garnishmen No.";
@@ -776,7 +776,7 @@ report 53040 "Processamento Sub. Natal"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-                        ;
+
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
@@ -786,13 +786,13 @@ report 53040 "Processamento Sub. Natal"
                     Caption = 'Apagar Processamento de Empregado';
                     field(ApagaEmp; ApagaEmp)
                     {
-                        ;
+
                         Caption = 'Nº Empregado a apagar';
                         TableRelation = Employee;
                     }
                     field(apagaTodosEmp; apagaTodosEmp)
                     {
-                        ;
+
                         Caption = 'Apagar Todos os Empregados';
                     }
                 }

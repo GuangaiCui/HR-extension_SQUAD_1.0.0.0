@@ -15,32 +15,32 @@ page 53079 "Lista Grau Função Empregado"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Cód. Grau Função"; Rec."Cód. Grau Função")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Data Inicio Grau Função"; Rec."Data Inicio Grau Função")
                 {
-                    ;
+
 
                 }
                 field("Data Fim Grau Função"; Rec."Data Fim Grau Função")
                 {
-                    ;
+
 
                 }
                 field("Comentário"; Rec."Comentário")
                 {
-                    ;
+
 
                 }
             }
@@ -56,7 +56,7 @@ page 53079 "Lista Grau Função Empregado"
 
                 action("Comentários")
                 {
-                    ;
+
 
                     Caption = 'Comentários';
                     Image = ViewComments;

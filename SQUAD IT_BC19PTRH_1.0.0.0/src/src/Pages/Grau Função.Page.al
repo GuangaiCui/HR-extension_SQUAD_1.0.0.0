@@ -15,55 +15,55 @@ page 53078 "Grau Função"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field("Level 1"; Rec."Level 1")
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field("Level 2"; Rec."Level 2")
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field("Level 3"; Rec."Level 3")
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
                 field("Min Value"; Rec."Min Value")
                 {
-                    ;
+
 
                 }
                 field("Max Value"; Rec."Max Value")
                 {
-                    ;
+
 
                 }
                 field("Valor Hora Semanal"; Rec."Valor Hora Semanal")
                 {
-                    ;
+
 
                 }
                 field("Cod. Índice"; Rec."Cod. Índice")
                 {
-                    ;
+
 
                 }
                 field("Employees No."; Rec."Employees No.")
                 {
-                    ;
+
 
                 }
             }

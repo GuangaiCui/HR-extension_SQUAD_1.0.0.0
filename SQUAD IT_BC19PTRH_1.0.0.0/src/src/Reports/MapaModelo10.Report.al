@@ -591,62 +591,62 @@ report 53049 "Mapa Modelo 10"
                     Caption = 'Options';
                     field(DataIni; DataIni)
                     {
-                        ;
+
                         Caption = 'Periodo de:';
                     }
                     field(DataFim; DataFim)
                     {
-                        ;
+
                         Caption = 'a:';
                     }
                     field(CodRepFinancas; CodRepFinancas)
                     {
-                        ;
+
                         Caption = 'Cód. Rep.Finanças';
                     }
                     field(PercVolNegocios; PercVolNegocios)
                     {
-                        ;
+
                         Caption = '% Vol. Negócios';
                     }
                     field(CodActividade; CodActividade)
                     {
-                        ;
+
                         Caption = 'Cód. Actividade';
                     }
                     field(Tipodeclaracao; Tipodeclaracao)
                     {
-                        ;
+
                         Caption = 'Tipo Declaração';
                     }
                     field(NIFRepLegal; NIFRepLegal)
                     {
-                        ;
+
                         Caption = 'NIF Representante Legal';
                     }
                     field(NIFTecOficialContas; NIFTecOficialContas)
                     {
-                        ;
+
                         Caption = 'NIF Tec. Oficial Contas';
                     }
                     field(RetencoesIRC; RetencoesIRC)
                     {
-                        ;
+
                         Caption = 'Retenções IRC';
                     }
                     field(RetencoesA; RetencoesA)
                     {
-                        ;
+
                         Caption = 'Retenções A';
                     }
                     field(Compensacoes; Compensacoes)
                     {
-                        ;
+
                         Caption = 'Compensações IRS/IRC';
                     }
                     field("Declaraçao"; Declaraçao)
                     {
-                        ;
+
                         Caption = 'Declaração';
 
                         trigger OnValidate()
@@ -660,7 +660,7 @@ report 53049 "Mapa Modelo 10"
                     }
                     field(campoData; DataAlteração)
                     {
-                        ;
+
                         Caption = 'Data de alteração';
                         Editable = campoDataEditable;
                     }

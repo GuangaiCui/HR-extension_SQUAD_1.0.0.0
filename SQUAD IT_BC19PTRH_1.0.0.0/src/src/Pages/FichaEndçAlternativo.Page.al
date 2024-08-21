@@ -16,42 +16,42 @@ page 53038 "Ficha Endç. Alternativo"
                 Caption = 'General';
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                 }
                 field(Name; Rec.Name)
                 {
-                    ;
+
 
                 }
                 field(Address; Rec.Address)
                 {
-                    ;
+
 
                 }
                 field("Address 2"; Rec."Address 2")
                 {
-                    ;
+
 
                 }
                 field("Post Code"; Rec."Post Code")
                 {
-                    ;
+
 
                 }
                 field(City; Rec.City)
                 {
-                    ;
+
 
                 }
                 field(County; Rec.County)
                 {
-                    ;
+
 
                 }
                 field("Phone No."; Rec."Phone No.")
                 {
-                    ;
+
 
                 }
             }
@@ -60,17 +60,17 @@ page 53038 "Ficha Endç. Alternativo"
                 Caption = 'Communication';
                 field("Phone No.2"; Rec."Phone No.")
                 {
-                    ;
+
 
                 }
                 field("Fax No."; Rec."Fax No.")
                 {
-                    ;
+
 
                 }
                 field("E-Mail"; Rec."E-Mail")
                 {
-                    ;
+
 
                 }
             }
@@ -79,13 +79,13 @@ page 53038 "Ficha Endç. Alternativo"
         {
             systempart(Control1900383207; Links)
             {
-                ;
+
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ;
+
 
                 Visible = true;
             }
@@ -102,14 +102,14 @@ page 53038 "Ficha Endç. Alternativo"
                 Image = Addresses;
                 action("&Lista")
                 {
-                    ;
+
 
                     Caption = '&Lista';
                     RunObject = Page "Lista Endereços Alternativos";
                 }
                 action("Co&mments")
                 {
-                    ;
+
 
                     Caption = '&Comentários';
                     Image = ViewComments;

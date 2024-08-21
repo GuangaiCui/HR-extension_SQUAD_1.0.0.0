@@ -569,7 +569,7 @@ report 53054 "Declaração Anual Rendimentos"
             {
                 field(varAno; varAno)
                 {
-                    ;
+
                     Caption = 'Year';
                 }
             }

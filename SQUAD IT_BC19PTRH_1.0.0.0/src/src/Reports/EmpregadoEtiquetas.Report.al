@@ -147,12 +147,12 @@ report 53058 "Empregado - Etiquetas"
             {
                 field(AddrFormat; AddrFormat)
                 {
-                    ;
+
                     ShowCaption = false;
                 }
                 field(LabelFormat; LabelFormat)
                 {
-                    ;
+
                     ShowCaption = false;
                 }
             }

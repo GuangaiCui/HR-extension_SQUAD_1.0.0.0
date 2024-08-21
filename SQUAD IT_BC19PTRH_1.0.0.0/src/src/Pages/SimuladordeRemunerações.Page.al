@@ -26,7 +26,7 @@ page 53117 "Simulador de Remunerações"
                 Caption = 'Dados Contribuinte';
                 field(TipoContribuinte; TipoContribuinte)
                 {
-                    ;
+
 
                     Caption = 'Tipo Contribuinte';
                     OptionCaption = ' ,Conta de Outrém,,Pensionista';
@@ -40,7 +40,7 @@ page 53117 "Simulador de Remunerações"
                 }
                 field(LocalObtenRend; LocalObtenRend)
                 {
-                    ;
+
 
                     Caption = 'Local Obtenção Rendimento';
                     OptionCaption = ' ,Continente,Região da Madeira,Região dos Açores';
@@ -54,47 +54,47 @@ page 53117 "Simulador de Remunerações"
                 }
                 field(EstadoCivil; EstadoCivil)
                 {
-                    ;
+
 
                     Caption = 'Estado Civil';
                     ShowMandatory = true;
                 }
                 field(TitularRendimentos; TitularRendimentos)
                 {
-                    ;
+
 
                     Caption = 'Titular Rendimentos';
                     ShowMandatory = true;
                 }
                 field(Deficiente; Rec.Deficiente)
                 {
-                    ;
+
 
                     Caption = 'Deficiente';
                 }
                 field(ConjDeficiente; ConjDeficiente)
                 {
-                    ;
+
 
                     Caption = 'Cônjuge deficiente';
                 }
                 field(NDependentes; NDependentes)
                 {
-                    ;
+
 
                     Caption = 'Nº Dependentes';
                     ShowMandatory = true;
                 }
                 field(l_TaxaIRS; l_TaxaIRS)
                 {
-                    ;
+
 
                     Caption = 'Taxa IRS';
                     Editable = false;
                 }
                 field(RegSS; RegSS)
                 {
-                    ;
+
 
                     Caption = 'Regime Seg. Social';
                     ShowMandatory = true;
@@ -110,14 +110,14 @@ page 53117 "Simulador de Remunerações"
                 }
                 field(TaxaSS; TaxaSS)
                 {
-                    ;
+
 
                     Caption = 'Taxa Seg. Social';
                     Editable = false;
                 }
                 field(TaxaCGA; TaxaCGA)
                 {
-                    ;
+
 
                     Caption = 'Taxa CGA';
                 }
@@ -130,7 +130,7 @@ page 53117 "Simulador de Remunerações"
                     Caption = 'Remuneração Bruta';
                     field(L_RemuneracaoBruta1; L_RemuneracaoBruta1)
                     {
-                        ;
+
 
                         Caption = 'Valor';
                         ShowMandatory = true;
@@ -139,19 +139,19 @@ page 53117 "Simulador de Remunerações"
                     }
                     field("usaIRS[1]"; usaIRS[1])
                     {
-                        ;
+
 
                         Caption = 'Incide IRS';
                     }
                     field("usaSS[1]"; usaSS[1])
                     {
-                        ;
+
 
                         Caption = 'Incide Seg. Social';
                     }
                     field("usaCGA[1]"; usaCGA[1])
                     {
-                        ;
+
 
                         Caption = 'Incide CGA';
                     }
@@ -161,25 +161,25 @@ page 53117 "Simulador de Remunerações"
                     Caption = 'Outra Remuneração';
                     field(L_RemuneracaoBruta2; L_RemuneracaoBruta2)
                     {
-                        ;
+
 
                         Caption = 'Valor';
                     }
                     field("usaIRS[2]"; usaIRS[2])
                     {
-                        ;
+
 
                         Caption = 'Incide IRS';
                     }
                     field("usaSS[2]"; usaSS[2])
                     {
-                        ;
+
 
                         Caption = 'Incide Seg. Social';
                     }
                     field("usaCGA[2]"; usaCGA[2])
                     {
-                        ;
+
 
                         Caption = 'Incide CGA';
                     }
@@ -189,25 +189,25 @@ page 53117 "Simulador de Remunerações"
                     Caption = 'Outra Remuneração';
                     field(L_RemuneracaoBruta3; L_RemuneracaoBruta3)
                     {
-                        ;
+
 
                         Caption = 'Valor';
                     }
                     field("usaIRS[3]"; usaIRS[3])
                     {
-                        ;
+
 
                         Caption = 'Incide IRS';
                     }
                     field("usaSS[3]"; usaSS[3])
                     {
-                        ;
+
 
                         Caption = 'Incide Seg. Social';
                     }
                     field("usaCGA[3]"; usaCGA[3])
                     {
-                        ;
+
 
                         Caption = 'Incide CGA';
                     }
@@ -223,7 +223,7 @@ page 53117 "Simulador de Remunerações"
                         ShowCaption = false;
                         field("L_RemuneracaoBruta1 + L_RemuneracaoBruta2 + L_RemuneracaoBruta3"; L_RemuneracaoBruta1 + L_RemuneracaoBruta2 + L_RemuneracaoBruta3)
                         {
-                            ;
+
 
                             Caption = 'Total Remunerações';
 
@@ -235,7 +235,7 @@ page 53117 "Simulador de Remunerações"
                         }
                         field(DescontoIRS; DescontoIRS)
                         {
-                            ;
+
 
                             Caption = 'Desconto IRS';
                             Editable = false;
@@ -244,7 +244,7 @@ page 53117 "Simulador de Remunerações"
                         }
                         field(DescontoSS; DescontoSS)
                         {
-                            ;
+
 
                             Caption = 'Desconto Seg. Social';
                             Editable = false;
@@ -253,7 +253,7 @@ page 53117 "Simulador de Remunerações"
                         }
                         field(DEscontoCGA; DEscontoCGA)
                         {
-                            ;
+
 
                             Caption = 'Desconto CGA';
                             Editable = false;
@@ -262,7 +262,7 @@ page 53117 "Simulador de Remunerações"
                         }
                         field(L_VencimentoLiquido; L_VencimentoLiquido)
                         {
-                            ;
+
 
                             Caption = 'Vencimento Líquido';
                             Editable = false;
@@ -281,7 +281,7 @@ page 53117 "Simulador de Remunerações"
                     ShowCaption = false;
                     field(B_VencimentoLiquido; B_VencimentoLiquido)
                     {
-                        ;
+
 
                         Caption = 'Vencimento Líquido';
                         ShowMandatory = true;
@@ -290,7 +290,7 @@ page 53117 "Simulador de Remunerações"
                     }
                     field("usaIRS[4]"; usaIRS[4])
                     {
-                        ;
+
 
                         Caption = 'Incide IRS';
                         Style = Unfavorable;
@@ -298,7 +298,7 @@ page 53117 "Simulador de Remunerações"
                     }
                     field("usaSS[4]"; usaSS[4])
                     {
-                        ;
+
 
                         Caption = 'Incide Seg. Social';
                         Style = Unfavorable;
@@ -306,7 +306,7 @@ page 53117 "Simulador de Remunerações"
                     }
                     field("usaCGA[4]"; usaCGA[4])
                     {
-                        ;
+
 
                         Caption = 'Incide CGA';
                         Style = Unfavorable;
@@ -323,7 +323,7 @@ page 53117 "Simulador de Remunerações"
                         ShowCaption = false;
                         field(B_RemuneracaoBruta1; B_RemuneracaoBruta1)
                         {
-                            ;
+
 
                             Caption = 'Remuneração Bruta';
                             Editable = false;
@@ -332,7 +332,7 @@ page 53117 "Simulador de Remunerações"
                         }
                         field(TaxIRS1; TaxIRS1)
                         {
-                            ;
+
 
                             BlankZero = true;
                             Caption = 'Incidência IRS';
@@ -342,7 +342,7 @@ page 53117 "Simulador de Remunerações"
                         }
                         field(B_RemuneracaoBruta2; B_RemuneracaoBruta2)
                         {
-                            ;
+
 
                             Caption = 'Outra Remuneração';
                             Editable = false;
@@ -351,7 +351,7 @@ page 53117 "Simulador de Remunerações"
                         }
                         field(TaxIRS2; TaxIRS2)
                         {
-                            ;
+
 
                             BlankZero = true;
                             Caption = 'Incidência IRS';
@@ -374,7 +374,7 @@ page 53117 "Simulador de Remunerações"
                 Caption = 'Calcular';
                 action("Calcular Líquido")
                 {
-                    ;
+
 
                     Caption = 'Calcular Líquido';
                     Image = CalculateCost;
@@ -390,7 +390,7 @@ page 53117 "Simulador de Remunerações"
                 }
                 action("Calcular Bruto")
                 {
-                    ;
+
 
                     Caption = 'Calcular Bruto';
                     Image = CalculateBalanceAccount;

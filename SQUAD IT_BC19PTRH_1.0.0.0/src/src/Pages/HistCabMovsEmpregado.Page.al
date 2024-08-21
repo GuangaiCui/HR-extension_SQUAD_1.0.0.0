@@ -19,50 +19,50 @@ page 53106 "Hist. Cab. Movs. Empregado"
                 Caption = 'Geral';
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Designação Empregado"; Rec."Designação Empregado")
                 {
-                    ;
+
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ;
+
 
                 }
                 field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
-                    ;
+
 
                 }
                 field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
-                    ;
+
 
                 }
                 field("Data Registo"; Rec."Data Registo")
                 {
-                    ;
+
 
                 }
                 field(Pendente; Rec.Pendente)
                 {
-                    ;
+
 
                     Editable = false;
                 }
                 field("Pago por No. Documento"; Rec."Pago por No. Documento")
                 {
-                    ;
+
 
                     Editable = false;
                 }
             }
             part(Abono; "Hist. Linhas Movs. Empregado")
             {
-                ;
+
 
                 Caption = 'Abonos';
                 SubPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),
@@ -72,7 +72,7 @@ page 53106 "Hist. Cab. Movs. Empregado"
             }
             part(Desconto; "Hist. Linhas Movs. Empregado")
             {
-                ;
+
 
                 Caption = 'Descontos';
                 SubPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),

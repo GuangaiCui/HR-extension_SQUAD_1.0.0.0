@@ -18,80 +18,80 @@ page 53041 "Qualificações Empregado"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ;
+
 
                 }
                 field("From Date"; Rec."From Date")
                 {
-                    ;
+
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ;
+
 
                 }
                 field(Type; Rec.Type)
                 {
-                    ;
+
 
                     OptionCaption = '';
                 }
                 field("Qualification Code"; Rec."Qualification Code")
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
                 field("Academic Degree"; Rec."Academic Degree")
                 {
-                    ;
+
 
                 }
                 field("University Code"; Rec."University Code")
                 {
-                    ;
+
 
                 }
                 field("Institution/Company"; Rec."Institution/Company")
                 {
-                    ;
+
 
                 }
                 field("Course Code"; Rec."Course Code")
                 {
-                    ;
+
 
                 }
                 field("Course Description"; Rec."Course Description")
                 {
-                    ;
+
 
                 }
                 field("Final Course Classification"; Rec."Final Course Classification")
                 {
-                    ;
+
 
                 }
                 field(Cost; Rec.Cost)
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field("Expiration Date"; Rec."Expiration Date")
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ;
+
 
                 }
             }
@@ -100,13 +100,13 @@ page 53041 "Qualificações Empregado"
         {
             systempart(Control1900383207; Links)
             {
-                ;
+
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ;
+
 
                 Visible = true;
             }
@@ -125,7 +125,7 @@ page 53041 "Qualificações Empregado"
                 Image = Certificate;
                 action("Comentários")
                 {
-                    ;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

@@ -21,32 +21,32 @@ page 53104 "Lista Cab. Movs. Empregado"
                 ShowCaption = false;
                 field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
-                    ;
+
 
                 }
                 field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
-                    ;
+
 
                 }
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Designação Empregado"; Rec."Designação Empregado")
                 {
-                    ;
+
 
                 }
                 field("Data Registo"; Rec."Data Registo")
                 {
-                    ;
+
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ;
+
 
                 }
             }
@@ -62,7 +62,7 @@ page 53104 "Lista Cab. Movs. Empregado"
                 Caption = 'Movs. Empregado';
                 action("Fi&cha")
                 {
-                    ;
+
 
                     Caption = '&Card';
                     Image = EditLines;

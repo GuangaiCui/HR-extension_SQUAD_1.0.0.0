@@ -776,7 +776,7 @@ report 53068 "Provisão Duodécimos"
             {
                 field(PercAcrescimo; PercAcrescimo)
                 {
-                    ;
+
                     Caption = 'Percentagem de Acrescimo';
                 }
             }

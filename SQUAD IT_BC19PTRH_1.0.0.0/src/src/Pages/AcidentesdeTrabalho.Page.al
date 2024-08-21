@@ -16,57 +16,57 @@ page 53151 "Acidentes de Trabalho"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field(Nome; Rec.Nome)
                 {
-                    ;
+
 
                 }
                 field("Data Acidente"; Rec."Data Acidente")
                 {
-                    ;
+
 
                 }
                 field("Hora Acidente"; Rec."Hora Acidente")
                 {
-                    ;
+
 
                 }
                 field("Local Acidente"; Rec."Local Acidente")
                 {
-                    ;
+
 
                 }
                 field("Cód. Localização"; Rec."Cód. Localização")
                 {
-                    ;
+
 
                 }
                 field("Localização"; Rec."Localização")
                 {
-                    ;
+
 
                 }
                 field("Descrição Acidente"; Rec."Descrição Acidente")
                 {
-                    ;
+
 
                 }
                 field("Dias de trabalho perdidos"; Rec."Dias de trabalho perdidos")
                 {
-                    ;
+
 
                 }
                 field("Data ínicio da interrupção"; Rec."Data ínicio da interrupção")
                 {
-                    ;
+
 
                 }
                 field("Data fim da interrupção"; Rec."Data fim da interrupção")
                 {
-                    ;
+
 
                 }
             }

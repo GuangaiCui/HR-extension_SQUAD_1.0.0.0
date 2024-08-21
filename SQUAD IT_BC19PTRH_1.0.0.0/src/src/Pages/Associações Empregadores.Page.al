@@ -16,17 +16,17 @@ page 53158 "Associações Empregadores"
                 ShowCaption = false;
                 field("Associação de Empregadores"; Rec."Associação de Empregadores")
                 {
-                    ;
+
 
                 }
                 field("Desc. Associação"; Rec."Desc. Associação")
                 {
-                    ;
+
 
                 }
                 field("Data de Adesão"; Rec."Data de Adesão")
                 {
-                    ;
+
 
                 }
             }

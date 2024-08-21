@@ -180,7 +180,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
             {
                 field(codRubSalarial; codRubSalarial)
                 {
-                    ;
+
                     Caption = 'Rubrica do Imposto';
                     TableRelation = "Rubrica Salarial";
                 }

@@ -18,17 +18,17 @@ page 53057 "Folha Comentários RH"
                 ShowCaption = false;
                 field(Date; Rec.Date)
                 {
-                    ;
+
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ;
+
 
                 }
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                     Visible = false;
                 }

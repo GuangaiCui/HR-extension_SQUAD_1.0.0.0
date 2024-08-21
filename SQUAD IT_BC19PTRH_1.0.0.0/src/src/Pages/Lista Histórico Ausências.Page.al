@@ -20,102 +20,102 @@ page 53088 "Lista Histórico Ausências"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ;
+
 
                 }
                 field("Entry No."; Rec."Entry No.")
                 {
-                    ;
+
 
                 }
                 field("From Date"; Rec."From Date")
                 {
-                    ;
+
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ;
+
 
                 }
                 field("Cause of Absence Code"; Rec."Cause of Absence Code")
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
                 field(Quantity; Rec.Quantity)
                 {
-                    ;
+
 
                 }
                 field("Unit of Measure Code"; Rec."Unit of Measure Code")
                 {
-                    ;
+
 
                 }
                 field("Quantity (Base)"; Rec."Quantity (Base)")
                 {
-                    ;
+
 
                 }
                 field("Qty. per Unit of Measure"; Rec."Qty. per Unit of Measure")
                 {
-                    ;
+
 
                 }
                 field(Justificada; Rec.Justificada)
                 {
-                    ;
+
 
                 }
                 field("Com Perca de Remuneração"; Rec."Com Perca de Remuneração")
                 {
-                    ;
+
 
                 }
                 field("Com Perca Sub. Alimentação"; Rec."Com Perca Sub. Alimentação")
                 {
-                    ;
+
 
                 }
                 field("Qtd. Perca Sub. Alimentação"; Rec."Qtd. Perca Sub. Alimentação")
                 {
-                    ;
+
 
                 }
                 field("Influência No. dias férias"; Rec."Influência No. dias férias")
                 {
-                    ;
+
 
                 }
                 field("Hora Inicio"; Rec."Hora Inicio")
                 {
-                    ;
+
 
                 }
                 field("Hora Fim"; Rec."Hora Fim")
                 {
-                    ;
+
 
                 }
                 field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
-                    ;
+
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ;
+
 
                 }
                 field("Processamento Referencia"; Rec."Processamento Referencia")
                 {
-                    ;
+
 
                 }
             }
@@ -131,7 +131,7 @@ page 53088 "Lista Histórico Ausências"
                 Caption = 'A&bsence';
                 action("Co&mentários")
                 {
-                    ;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;
@@ -144,7 +144,7 @@ page 53088 "Lista Histórico Ausências"
                 }
                 action("Vista p/ &Categorias")
                 {
-                    ;
+
 
                     Caption = 'Overview by &Categories';
                     Image = AbsenceCategory;
@@ -153,7 +153,7 @@ page 53088 "Lista Histórico Ausências"
                 }
                 action("Vista p/ &Períodos")
                 {
-                    ;
+
 
                     Caption = 'Overview by &Periods';
                     Image = AbsenceCalendar;

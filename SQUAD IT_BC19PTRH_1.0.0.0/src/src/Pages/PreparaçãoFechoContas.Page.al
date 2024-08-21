@@ -19,7 +19,7 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameEmpVisible;
                 field(txtEmpregado; Empregado)
                 {
-                    ;
+
 
                     Caption = 'Empregado';
                     TableRelation = Employee;
@@ -40,20 +40,20 @@ page 53112 "Preparação Fecho Contas"
                 }
                 field(NomeEmp; NomeEmp)
                 {
-                    ;
+
 
                     Editable = false;
                     ShowCaption = false;
                 }
                 field(txtDataTerminacao; DataTerminacao)
                 {
-                    ;
+
 
                     Caption = 'Data Terminação';
                 }
                 field(txtMotivoTerm; CodTerminacao)
                 {
-                    ;
+
 
                     Caption = 'Motivo Terminação';
                     TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSai));
@@ -65,14 +65,14 @@ page 53112 "Preparação Fecho Contas"
                 }
                 field(PeriodoExp; PeriodoExperimental)
                 {
-                    ;
+
 
                     Caption = 'Encontra-se dentro do período experimental';
                     Visible = PeriodoExpVisible;
                 }
                 field(DescTerminacao; DescTerminacao)
                 {
-                    ;
+
 
                     Editable = false;
                     ShowCaption = false;
@@ -84,14 +84,14 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameAvisosVisible;
                 field(TxtNDiasAvisoEmp; NDiasAvisoEmp)
                 {
-                    ;
+
 
                     Caption = 'Nº Dias Pré-Aviso não Cumprido pelo Empregado';
                     Visible = TxtNDiasAvisoEmpVisible;
                 }
                 field(TxtNDiasAvisoEmpresa; NDiasAvisoEmpresa)
                 {
-                    ;
+
 
                     Caption = 'Nº Dias Pré-Aviso não Cumprido pela Empresa';
                     Visible = TxtNDiasAvisoEmpresaVisible;
@@ -103,13 +103,13 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameFeriasVisible;
                 field(TxtferiasAA; FeriasAnoAnterior)
                 {
-                    ;
+
 
                     Caption = 'Nº dias férias não gozadas ano anterior';
                 }
                 field(TxtferiasAC; FeriasAnoCorrente)
                 {
-                    ;
+
 
                     Caption = 'Nº dias férias não gozadas ano corrente';
                 }
@@ -120,7 +120,7 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameFormacaoVisible;
                 field(TxtNHorasFormacao; NHorasFormacao)
                 {
-                    ;
+
 
                     Caption = 'Crédito Horas Formação';
                 }
@@ -131,70 +131,70 @@ page 53112 "Preparação Fecho Contas"
                 Visible = FrameRubVisible;
                 field(Rubrica1; CodRubIndemAcordo)
                 {
-                    ;
+
 
                     Caption = 'Rub. Idemnização Acordo Mutuo ou Desp.';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica2; CodRubIndemFaltaAvisoEmpregado)
                 {
-                    ;
+
 
                     Caption = 'Rub. Idemnização Falta Aviso Prévio do Empregado';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica3; CodRubIndemFaltaAvisoEmpresa)
                 {
-                    ;
+
 
                     Caption = 'Rub. Idemnização Falta Aviso Prévio do Empresa';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica4; CodRubCompenFimContrato)
                 {
-                    ;
+
 
                     Caption = 'Rub. Compensação Fim Contrato';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica5; CodRubFeriasNaoGozadas)
                 {
-                    ;
+
 
                     Caption = 'Rub. Férias Não Gozadas';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica6; CodRubPropSubFerias)
                 {
-                    ;
+
 
                     Caption = 'Rub. Proporcionais Sub. Férias';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica7; CodRubPropFerias)
                 {
-                    ;
+
 
                     Caption = 'Rub. Proporcionais Férias';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica8; CodRubPropSubNatal)
                 {
-                    ;
+
 
                     Caption = 'Rub. Proporcionais Sub. Natal';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica9; CodRubSubFeriasAnoAnterior)
                 {
-                    ;
+
 
                     Caption = 'Rub. Sub. Férias (ano anterior)';
                     TableRelation = "Rubrica Salarial";
                 }
                 field(Rubrica10; CodRubHorasFormacao)
                 {
-                    ;
+
 
                     Caption = 'Rub. Crédito Horas Formação';
                     TableRelation = "Rubrica Salarial";
@@ -209,7 +209,7 @@ page 53112 "Preparação Fecho Contas"
         {
             action(Anterior)
             {
-                ;
+
 
                 Caption = 'Anterior';
                 Image = PreviousRecord;
@@ -270,7 +270,7 @@ page 53112 "Preparação Fecho Contas"
             }
             action(Seguinte)
             {
-                ;
+
 
                 Caption = 'Seguinte';
                 Image = NextRecord;
@@ -333,7 +333,7 @@ page 53112 "Preparação Fecho Contas"
             }
             action(Concluir1)
             {
-                ;
+
 
                 Caption = 'Concluir';
                 Image = Save;

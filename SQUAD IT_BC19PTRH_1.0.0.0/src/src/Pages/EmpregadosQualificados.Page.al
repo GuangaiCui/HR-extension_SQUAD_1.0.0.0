@@ -16,49 +16,49 @@ page 53042 "Empregados Qualificados"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ;
+
 
                 }
                 field("From Date"; Rec."From Date")
                 {
-                    ;
+
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ;
+
 
                 }
                 field(Type; Rec.Type)
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
                 field("Institution/Company"; Rec."Institution/Company")
                 {
-                    ;
+
 
                 }
                 field(Cost; Rec.Cost)
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field("Course Grade"; Rec."Course Grade")
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ;
+
 
                 }
             }
@@ -67,13 +67,13 @@ page 53042 "Empregados Qualificados"
         {
             systempart(Control1900383207; Links)
             {
-                ;
+
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ;
+
 
                 Visible = true;
             }
@@ -90,7 +90,7 @@ page 53042 "Empregados Qualificados"
                 Image = Certificate;
                 action("Comentários")
                 {
-                    ;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

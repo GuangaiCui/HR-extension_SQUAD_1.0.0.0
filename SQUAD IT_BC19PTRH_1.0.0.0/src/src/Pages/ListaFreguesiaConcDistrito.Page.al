@@ -15,22 +15,22 @@ page 53095 "Lista Freguesia/Conc/Distrito"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field(Freguesia; Rec.Freguesia)
                 {
-                    ;
+
 
                 }
                 field(Concelho; Rec.Concelho)
                 {
-                    ;
+
 
                 }
                 field(Distrito; Rec.Distrito)
                 {
-                    ;
+
 
                 }
             }

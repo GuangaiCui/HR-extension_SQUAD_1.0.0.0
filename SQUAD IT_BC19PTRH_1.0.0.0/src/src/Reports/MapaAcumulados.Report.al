@@ -608,18 +608,18 @@ report 53076 "Mapa Acumulados"
                     Caption = 'Acumulados';
                     field(CodProcess; CodProcess)
                     {
-                        ;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ;
+
                         Caption = 'Data Fim';
                     }
                 }

@@ -15,12 +15,12 @@ page 53053 "Artigos Diversos"
             {
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
             }

@@ -18,67 +18,67 @@ page 53100 "Lista Rubrica Salarial"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field(Periodicidade; Rec.Periodicidade)
                 {
-                    ;
+
 
                 }
                 field("Mês Início Periocidade"; Rec."Mês Início Periocidade")
                 {
-                    ;
+
 
                 }
                 field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
-                    ;
+
 
                 }
                 field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
-                    ;
+
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ;
+
 
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ;
+
 
                 }
                 field("Valor Total"; Rec."Valor Total")
                 {
-                    ;
+
 
                 }
                 field(Genero; Rec.Genero)
                 {
-                    ;
+
 
                 }
                 field("Genero Rubrica Fecho"; Rec."Genero Rubrica Fecho")
                 {
-                    ;
+
 
                 }
                 field(NATREM; Rec.NATREM)
                 {
-                    ;
+
                 }
             }
         }

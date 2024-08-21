@@ -17,19 +17,19 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 ShowCaption = false;
                 field("Period Start"; Rec."Period Start")
                 {
-                    ;
+
 
                     Caption = 'Period Start';
                 }
                 field("Period Name"; Rec."Period Name")
                 {
-                    ;
+
 
                     Caption = 'Period Name';
                 }
                 field(Field1; MATRIX_CellData[1])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[1];
@@ -43,7 +43,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field2; MATRIX_CellData[2])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[2];
@@ -57,7 +57,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field3; MATRIX_CellData[3])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[3];
@@ -71,7 +71,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field4; MATRIX_CellData[4])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[4];
@@ -85,7 +85,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field5; MATRIX_CellData[5])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[5];
@@ -99,7 +99,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field6; MATRIX_CellData[6])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[6];
@@ -113,7 +113,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field7; MATRIX_CellData[7])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[7];
@@ -127,7 +127,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field8; MATRIX_CellData[8])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[8];
@@ -141,7 +141,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field9; MATRIX_CellData[9])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[9];
@@ -155,7 +155,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field10; MATRIX_CellData[10])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[10];
@@ -169,7 +169,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field11; MATRIX_CellData[11])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[11];
@@ -182,7 +182,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field12; MATRIX_CellData[12])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[12];
@@ -195,7 +195,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field13; MATRIX_CellData[13])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[13];
@@ -208,7 +208,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field14; MATRIX_CellData[14])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[14];
@@ -221,7 +221,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field15; MATRIX_CellData[15])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[15];
@@ -234,7 +234,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field16; MATRIX_CellData[16])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[16];
@@ -247,7 +247,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field17; MATRIX_CellData[17])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[17];
@@ -260,7 +260,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field18; MATRIX_CellData[18])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[18];
@@ -273,7 +273,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field19; MATRIX_CellData[19])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[19];
@@ -286,7 +286,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field20; MATRIX_CellData[20])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[20];
@@ -299,7 +299,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field21; MATRIX_CellData[21])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[21];
@@ -312,7 +312,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field22; MATRIX_CellData[22])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[22];
@@ -325,7 +325,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field23; MATRIX_CellData[23])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[23];
@@ -338,7 +338,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field24; MATRIX_CellData[24])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[24];
@@ -351,7 +351,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field25; MATRIX_CellData[25])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[25];
@@ -364,7 +364,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field26; MATRIX_CellData[26])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[26];
@@ -377,7 +377,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field27; MATRIX_CellData[27])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[27];
@@ -390,7 +390,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field28; MATRIX_CellData[28])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[28];
@@ -403,7 +403,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field29; MATRIX_CellData[29])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[29];
@@ -416,7 +416,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field30; MATRIX_CellData[30])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[30];
@@ -429,7 +429,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field31; MATRIX_CellData[31])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[31];
@@ -442,7 +442,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
                 }
                 field(Field32; MATRIX_CellData[32])
                 {
-                    ;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[32];

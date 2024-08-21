@@ -19,37 +19,37 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Cód. Cat. Prof. QP"; Rec."Cód. Cat. Prof. QP")
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
                 field("Data Inicio Cat. Prof."; Rec."Data Inicio Cat. Prof.")
                 {
-                    ;
+
 
                 }
                 field("Data Fim Cat. Prof."; Rec."Data Fim Cat. Prof.")
                 {
-                    ;
+
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ;
+
 
                 }
                 field(Reconversion; Rec.Reconversion)
                 {
-                    ;
+
 
                     Editable = ReconversaoEditable;
 
@@ -60,7 +60,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                 }
                 field("Promotion Reason"; Rec."Promotion Reason")
                 {
-                    ;
+
 
                     Editable = "Motivo promoçãoEditable";
 
@@ -71,13 +71,13 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                 }
                 field("Reconversion Date"; Rec."Reconversion Date")
                 {
-                    ;
+
 
                     Editable = "Data reconversãoEditable";
                 }
                 field("Reconversion Reason"; Rec."Reconversion Reason")
                 {
-                    ;
+
 
                     Editable = "Motivo reconversãoEditable";
                 }
@@ -93,7 +93,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
             {
                 action("Comentários")
                 {
-                    ;
+
 
                     Caption = 'Comentários';
                     Image = ViewComments;

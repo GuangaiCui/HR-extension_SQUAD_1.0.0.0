@@ -16,32 +16,32 @@ page 53059 "Lista Tabela IRS"
                 ShowCaption = false;
                 field(Ano; Rec.Ano)
                 {
-                    ;
+
 
                 }
                 field("Região"; Rec."Região")
                 {
-                    ;
+
 
                 }
                 field("Até"; Rec."Até")
                 {
-                    ;
+
 
                 }
                 field(Tabela; Rec.Tabela)
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field(Valor; Rec.Valor)
                 {
-                    ;
+
 
                 }
             }

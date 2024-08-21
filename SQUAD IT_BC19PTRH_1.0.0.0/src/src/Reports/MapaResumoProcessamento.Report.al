@@ -524,18 +524,18 @@ report 53056 "Mapa Resumo Processamento"
                     Caption = 'Resumo Processamento';
                     field(CodProcess; CodProcess)
                     {
-                        ;
+
                         Caption = 'Cod. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ;
+
                         Caption = 'Data Fim';
                     }
                 }

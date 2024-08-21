@@ -16,48 +16,48 @@ page 53044 "Familiares Empregado"
                 ShowCaption = false;
                 field("Relative Code"; Rec."Relative Code")
                 {
-                    ;
+
 
                 }
                 field(Name; Rec.Name)
                 {
-                    ;
+
 
                 }
                 field("Birth Date"; Rec."Birth Date")
                 {
-                    ;
+
 
                 }
                 field("Phone No."; Rec."Phone No.")
                 {
-                    ;
+
 
                 }
                 field(Gender; Rec.Gender)
                 {
-                    ;
+
 
                 }
                 field("Vat Number"; Rec."Vat Number")
                 {
-                    ;
+
 
                 }
                 field("Emergency Contact"; Rec."Emergency Contact")
                 {
-                    ;
+
 
                 }
                 field("Employee Relative No."; Rec."Employee Relative No.")
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ;
+
 
                 }
             }
@@ -66,13 +66,13 @@ page 53044 "Familiares Empregado"
         {
             systempart(Control1900383207; Links)
             {
-                ;
+
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ;
+
 
                 Visible = true;
             }
@@ -89,7 +89,7 @@ page 53044 "Familiares Empregado"
                 Image = Relatives;
                 action("Comentário")
                 {
-                    ;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

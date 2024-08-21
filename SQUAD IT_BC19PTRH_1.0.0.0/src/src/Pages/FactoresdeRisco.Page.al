@@ -13,52 +13,52 @@ page 53144 "Factores de Risco"
                 ShowCaption = false;
                 field(Data; Rec.Data)
                 {
-                    ;
+
 
                 }
                 field("Tipo de Risco"; Rec."Tipo de Risco")
                 {
-                    ;
+
 
                 }
                 field(Agente; Rec.Agente)
                 {
-                    ;
+
 
                 }
                 field("No. Trab. Expostos H"; Rec."No. Trab. Expostos H")
                 {
-                    ;
+
 
                 }
                 field("No. Trab. Expostos M"; Rec."No. Trab. Expostos M")
                 {
-                    ;
+
 
                 }
                 field("No. Avaliações Efectuadas"; Rec."No. Avaliações Efectuadas")
                 {
-                    ;
+
 
                 }
                 field("No. Ordem - Código"; Rec."No. Ordem - Código")
                 {
-                    ;
+
 
                 }
                 field("Identificação do Agente"; Rec."Identificação do Agente")
                 {
-                    ;
+
 
                 }
                 field("Menção ou Frase de Risco"; Rec."Menção ou Frase de Risco")
                 {
-                    ;
+
 
                 }
                 field("Classificação do Agente"; Rec."Classificação do Agente")
                 {
-                    ;
+
 
                     Editable = false;
                 }
@@ -72,7 +72,7 @@ page 53144 "Factores de Risco"
         {
             action("Medidas Adoptadas")
             {
-                ;
+
 
                 Caption = 'Medidas Adoptadas';
                 Image = CheckList;

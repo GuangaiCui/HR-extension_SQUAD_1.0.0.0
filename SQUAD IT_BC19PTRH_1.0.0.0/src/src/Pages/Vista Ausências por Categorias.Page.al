@@ -20,7 +20,7 @@ page 53066 "Vista Ausências por Categorias"
                 Caption = 'Options';
                 field(EmployeeNoFilter; EmployeeNoFilter)
                 {
-                    ;
+
 
                     Caption = 'Employee No. Filter';
                     TableRelation = Employee;
@@ -32,7 +32,7 @@ page 53066 "Vista Ausências por Categorias"
                 Caption = 'Matrix Options';
                 field(PeriodType; PeriodType)
                 {
-                    ;
+
 
                     Caption = 'View by';
                     // OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
@@ -44,14 +44,14 @@ page 53066 "Vista Ausências por Categorias"
                 }
                 field(AbsenceAmountType; AbsenceAmountType)
                 {
-                    ;
+
 
                     Caption = 'Amount Type';
                     OptionCaption = 'Net Change,Balance at Date';
                 }
                 field(MATRIX_CaptionRange; MATRIX_CaptionRange)
                 {
-                    ;
+
 
                     Caption = 'Column Set';
                     Editable = false;
@@ -66,7 +66,7 @@ page 53066 "Vista Ausências por Categorias"
         {
             action(ShowMatrix)
             {
-                ;
+
 
                 Caption = '&Show Matrix';
                 Image = ShowMatrix;
@@ -84,7 +84,7 @@ page 53066 "Vista Ausências por Categorias"
             }
             action("Conjunto Anterior")
             {
-                ;
+
 
                 Caption = 'Previous Set';
                 Image = PreviousSet;
@@ -100,7 +100,7 @@ page 53066 "Vista Ausências por Categorias"
             }
             action("Conjunto Seguinte")
             {
-                ;
+
 
                 Caption = 'Next Set';
                 Image = NextSet;

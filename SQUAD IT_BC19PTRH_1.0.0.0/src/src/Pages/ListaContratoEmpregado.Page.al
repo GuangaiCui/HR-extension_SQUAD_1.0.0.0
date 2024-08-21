@@ -16,52 +16,52 @@ page 53072 "Lista Contrato Empregado"
                 ShowCaption = false;
                 field("Cód. Empregado"; Rec."Cód. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Cód. Contrato"; Rec."Cód. Contrato")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Tipo Contrato"; Rec."Tipo Contrato")
                 {
-                    ;
+
 
                 }
                 field("Duração Contrato"; Rec."Duração Contrato")
                 {
-                    ;
+
 
                 }
                 field("Data Inicio Contrato"; Rec."Data Inicio Contrato")
                 {
-                    ;
+
 
                 }
                 field("Data Fim Contrato"; Rec."Data Fim Contrato")
                 {
-                    ;
+
 
                 }
                 field("Motivo Entrada"; Rec."Motivo Entrada")
                 {
-                    ;
+
 
                 }
                 field("Comentário"; Rec."Comentário")
                 {
-                    ;
+
 
                 }
                 field("Ficheiro Contrato Trabalho"; Rec."Ficheiro Contrato Trabalho")
                 {
-                    ;
+
 
                 }
             }
@@ -77,7 +77,7 @@ page 53072 "Lista Contrato Empregado"
                 Caption = '&Relative';
                 action("Co&mentários")
                 {
-                    ;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;
@@ -88,7 +88,7 @@ page 53072 "Lista Contrato Empregado"
                 }
                 action("Criar Contrato Conforme Template")
                 {
-                    ;
+
 
                     Caption = 'Criar Contrato Conforme Template';
                     Image = ContractPayment;
@@ -102,7 +102,7 @@ page 53072 "Lista Contrato Empregado"
                 }
                 action("Importar Contratos Digitalizados")
                 {
-                    ;
+
 
                     Caption = 'Importar Contratos Digitalizados';
                     Image = Import;
@@ -120,7 +120,7 @@ page 53072 "Lista Contrato Empregado"
                 /*NOTES: deleted because is not longer supported oon this version
                 action(Visualizar)
                 {
-                     ;
+                  
 
                     Caption = 'Visualizar';
                     Image = View;
@@ -134,7 +134,7 @@ page 53072 "Lista Contrato Empregado"
                 //VC_MIG
                 action(Exportar)
                 {
-                    ;
+
 
                     Caption = 'Exportar';
                     Image = Export;

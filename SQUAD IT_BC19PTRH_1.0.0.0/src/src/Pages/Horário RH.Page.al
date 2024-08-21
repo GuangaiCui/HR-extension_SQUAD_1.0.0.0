@@ -15,47 +15,47 @@ page 53081 "Horário RH"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Hora Entrada"; Rec."Hora Entrada")
                 {
-                    ;
+
 
                 }
                 field("Hora Saída"; Rec."Hora Saída")
                 {
-                    ;
+
 
                 }
                 field("Hora Início Almoço"; Rec."Hora Início Almoço")
                 {
-                    ;
+
 
                 }
                 field("Hora Fim Almoço"; Rec."Hora Fim Almoço")
                 {
-                    ;
+
 
                 }
                 field("No. Horas Diárias"; Rec."No. Horas Diárias")
                 {
-                    ;
+
 
                 }
                 field("No. Horas Semanais"; Rec."No. Horas Semanais")
                 {
-                    ;
+
 
                 }
                 field("No. Horas Mensais"; Rec."No. Horas Mensais")
                 {
-                    ;
+
 
                 }
             }

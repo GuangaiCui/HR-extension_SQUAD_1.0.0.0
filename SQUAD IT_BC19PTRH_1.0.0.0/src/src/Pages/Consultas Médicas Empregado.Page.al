@@ -14,32 +14,32 @@ page 53122 "Consultas Médicas Empregado"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Data Consulta"; Rec."Data Consulta")
                 {
-                    ;
+
 
                 }
                 field("Data Próxima Consulta"; Rec."Data Próxima Consulta")
                 {
-                    ;
+
 
                 }
                 field(Resultado; Rec.Resultado)
                 {
-                    ;
+
 
                 }
                 field("No. de Diagnóstico"; Rec."No. de Diagnóstico")
                 {
-                    ;
+
 
                 }
                 field("Observações"; Rec."Observações")
                 {
-                    ;
+
 
                 }
             }

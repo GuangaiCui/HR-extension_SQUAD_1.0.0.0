@@ -13,37 +13,37 @@ page 53152 "Doenças Profissionais"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Data Participação"; Rec."Data Participação")
                 {
-                    ;
+
 
                 }
                 field("Factor Risco"; Rec."Factor Risco")
                 {
-                    ;
+
 
                 }
                 field("Designação Factor Risco"; Rec."Designação Factor Risco")
                 {
-                    ;
+
 
                 }
                 field("Doença Profissional"; Rec."Doença Profissional")
                 {
-                    ;
+
 
                 }
                 field("Designação Doença Profissional"; Rec."Designação Doença Profissional")
                 {
-                    ;
+
 
                 }
                 field("Data Confirmação"; Rec."Data Confirmação")
                 {
-                    ;
+
 
                 }
             }

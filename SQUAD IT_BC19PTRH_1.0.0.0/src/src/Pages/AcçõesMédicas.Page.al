@@ -15,13 +15,13 @@ page 53146 "Acções Médicas"
                 Caption = 'Geral';
                 field("Entry No."; Rec."Entry No.")
                 {
-                    ;
+
 
                     Editable = false;
                 }
                 field("Exam Type"; Rec."Exam Type")
                 {
-                    ;
+
 
 
                     trigger OnValidate()
@@ -31,26 +31,26 @@ page 53146 "Acções Médicas"
                 }
                 field("Code"; Rec.Code)
                 {
-                    ;
+
 
                     Enabled = CodigoEnable;
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                     Enabled = CodigoEnable;
                 }
                 field(Reason; Rec.Reason)
                 {
-                    ;
+
 
                     Enabled = MotivoEnable;
                 }
             }
             part(Control1000000000; "Linhas Acções Médicas")
             {
-                ;
+
 
                 SubPageLink = "Entry No." = FIELD("Entry No.");
             }
@@ -69,7 +69,7 @@ page 53146 "Acções Médicas"
                 }
                 action("Ex. Complementares - Factor Risco")
                 {
-                    ;
+
 
                     Caption = 'Ex. Complementares - Factor Risco';
                     Image = Warning;

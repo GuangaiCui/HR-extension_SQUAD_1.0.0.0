@@ -15,12 +15,12 @@ page 53126 "Lista Tipo Empregado"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
             }

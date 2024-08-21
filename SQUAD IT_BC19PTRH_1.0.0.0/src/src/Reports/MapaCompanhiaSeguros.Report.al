@@ -779,23 +779,23 @@ report 53093 "Mapa Companhia Seguros"
                     Caption = 'Companhia Seguros';
                     field(CodProcess; CodProcess)
                     {
-                        ;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ;
+
                         Caption = 'Data Fim';
                     }
                     field(Venc; varVencimento)
                     {
-                        ;
+
                         Caption = 'Vencimento';
                         TableRelation = "Rubrica Salarial";
 
@@ -815,7 +815,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(Diu; varDiuturnidades)
                     {
-                        ;
+
                         Caption = 'Diuturnidades';
                         TableRelation = "Rubrica Salarial";
 
@@ -835,7 +835,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(SA; varSubsAlmoco)
                     {
-                        ;
+
                         Caption = 'Subsídio Almoço';
                         TableRelation = "Rubrica Salarial";
 
@@ -855,7 +855,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(SF; varSubsNatalFerias)
                     {
-                        ;
+
                         Caption = 'Subsídio Natal/Férias';
                         TableRelation = "Rubrica Salarial";
 

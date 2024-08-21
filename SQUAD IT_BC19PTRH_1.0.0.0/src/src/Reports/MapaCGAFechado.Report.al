@@ -734,27 +734,27 @@ report 53053 "Mapa CGA - Fechado"
             {
                 field(DataIni; DataIni)
                 {
-                    ;
+
                     Caption = 'Start Date';
                 }
                 field(DataFim; DataFim)
                 {
-                    ;
+
                     Caption = 'End Date';
                 }
                 field("Observações Tipo1"; "Observações Tipo1")
                 {
-                    ;
+
                     Caption = 'Observações Tipo 1';
                 }
                 field("Observações Tipo2"; "Observações Tipo2")
                 {
-                    ;
+
                     Caption = 'Observações Tipo 2';
                 }
                 field("Observações Tipo3"; "Observações Tipo3")
                 {
-                    ;
+
                     Caption = 'Observações Tipo 3';
                 }
             }

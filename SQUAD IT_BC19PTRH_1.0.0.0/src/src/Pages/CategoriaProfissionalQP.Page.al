@@ -13,17 +13,17 @@ page 53076 "Categoria Profissional QP"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("No. Empregados"; Rec."No. Empregados")
                 {
-                    ;
+
 
                 }
             }

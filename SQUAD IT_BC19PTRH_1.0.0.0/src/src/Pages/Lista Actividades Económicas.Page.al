@@ -15,12 +15,12 @@ page 53123 "Lista Actividades Económicas"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
             }

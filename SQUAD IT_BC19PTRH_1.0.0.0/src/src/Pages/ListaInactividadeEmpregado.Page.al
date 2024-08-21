@@ -16,27 +16,27 @@ page 53073 "Lista Inactividade Empregado"
                 ShowCaption = false;
                 field("Cód. Inactividade"; Rec."Cód. Inactividade")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Data Inicio Inactividade"; Rec."Data Inicio Inactividade")
                 {
-                    ;
+
 
                 }
                 field("Data Fim Inactividade"; Rec."Data Fim Inactividade")
                 {
-                    ;
+
 
                 }
                 field("Comentário"; Rec."Comentário")
                 {
-                    ;
+
 
                 }
             }
@@ -51,7 +51,7 @@ page 53073 "Lista Inactividade Empregado"
             {
                 action("Comentários")
                 {
-                    ;
+
 
                     Caption = 'Comentários';
                     Image = ViewComments;

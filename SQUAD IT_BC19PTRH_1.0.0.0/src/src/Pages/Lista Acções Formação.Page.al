@@ -17,19 +17,19 @@ page 53120 "Lista Acções Formação"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ;
+
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
                 }
                 field(Tipo; Rec.Tipo)
                 {
-                    ;
+
                 }
                 field("Data Início"; Rec."Data Início")
                 {
-                    ;
+
                 }
             }
         }

@@ -15,22 +15,22 @@ page 53116 "Lista Códigos Situação"
                 ShowCaption = false;
                 field("Cód. Situação"; Rec."Cód. Situação")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field("Perdas Efectivas"; Rec."Perdas Efectivas")
                 {
-                    ;
+
 
                 }
                 field(Diuturnidades; Rec.Diuturnidades)
                 {
-                    ;
+
 
                 }
             }

@@ -17,42 +17,42 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Geral';
                 field("Código"; Rec."Código")
                 {
-                    ;
+
 
                 }
                 field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field(Periodicidade; Rec.Periodicidade)
                 {
-                    ;
+
 
                 }
                 field("Mês Início Periocidade"; Rec."Mês Início Periocidade")
                 {
-                    ;
+
 
                 }
                 field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
-                    ;
+
 
                 }
                 field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
-                    ;
+
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ;
+
 
 
                     trigger OnValidate()
@@ -62,7 +62,7 @@ page 53098 "Ficha Rubrica Salarial"
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ;
+
 
 
                     trigger OnValidate()
@@ -72,7 +72,7 @@ page 53098 "Ficha Rubrica Salarial"
                 }
                 field("Valor Total"; Rec."Valor Total")
                 {
-                    ;
+
 
 
                     trigger OnValidate()
@@ -82,19 +82,19 @@ page 53098 "Ficha Rubrica Salarial"
                 }
                 field("Tipo Rendimento Cat.A"; Rec."Tipo Rendimento Cat.A")
                 {
-                    ;
+
 
                 }
                 field("Vencimento Base"; Rec."Vencimento Base")
                 {
-                    ;
+
 
                     Caption = 'Vencimento Base do Recibo';
                 }
             }
             part(RubricaSalarialLinhas; "Subform Rubrica Salarial")
             {
-                ;
+
 
                 Caption = 'Rubrica Salarial Fillhas';
                 Editable = RubricaSalarialLinhasEditable;
@@ -106,7 +106,7 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Dados Seg. Social';
                 field(NATREM; Rec.NATREM)
                 {
-                    ;
+
 
                     Caption = 'NATREM';
                 }
@@ -116,7 +116,7 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Relatório Único';
                 field("Tipo de Remuneração"; Rec."Tipo de Remuneração")
                 {
-                    ;
+
 
                 }
             }
@@ -125,17 +125,17 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'CGA';
                 field("Cód. Situação"; Rec."Cód. Situação")
                 {
-                    ;
+
 
                 }
                 field("Cód. Movimento"; Rec."Cód. Movimento")
                 {
-                    ;
+
 
                 }
                 field(Acertos; Rec.Acertos)
                 {
-                    ;
+
 
                 }
             }
@@ -144,28 +144,28 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Características';
                 field(Genero; Rec.Genero)
                 {
-                    ;
+
 
                     //OptionCaption = ' ,Rúbrica de Vencimento Base,Rúbrica de IRS,Rúbrica de Seg. Social,Rúbrica Sub. Alimentação,Rúbrica IRS Sub. Férias,Rúbrica IRS Sub. Natal,Rúbrica Enc. Seg. Social,Rúbrica IVA,Rúbrica CGA,Rúbrica Falta,Rúbrica Hora Extra,Rúbrica Enc. CGA,Sindicato,ADSE,Admissão-Demissão,Enc. ADSE,Duo. Sub. Férias,Duo. Sub. Natal,Fundo Compensação Trabalho / FGCT';
                 }
                 field("Actualização Vencimento"; Rec."Actualização Vencimento")
                 {
-                    ;
+
 
                 }
                 field("Sobretaxa em Sede de IRS"; Rec."Sobretaxa em Sede de IRS")
                 {
-                    ;
+
 
                 }
                 field("Imposto Extraordinário"; Rec."Imposto Extraordinário")
                 {
-                    ;
+
 
                 }
                 field("Rubrica Acerto Duo"; Rec."Rubrica Acerto Duo")
                 {
-                    ;
+
 
                 }
             }
@@ -174,7 +174,7 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Ausências';
                 field(Faults; Rec.Faults)
                 {
-                    ;
+
 
                 }
             }
@@ -183,12 +183,12 @@ page 53098 "Ficha Rubrica Salarial"
                 Caption = 'Rubrica de Fecho';
                 field("Genero Rubrica Fecho"; Rec."Genero Rubrica Fecho")
                 {
-                    ;
+
 
                 }
                 field("Usado no cálculo indemnização"; Rec."Usado no cálculo indemnização")
                 {
-                    ;
+
 
                 }
             }

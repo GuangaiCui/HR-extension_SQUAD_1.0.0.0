@@ -1,7 +1,7 @@
 report 53096 "RH-CONTRAC"
 {
     UsageCategory = ReportsAndAnalysis;
-    ;
+
     DefaultRenderingLayout = LayoutName;
 
     dataset

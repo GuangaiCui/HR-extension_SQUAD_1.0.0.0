@@ -16,87 +16,87 @@ page 53096 "Registo Abonos-Descontos Extra"
                 ShowCaption = false;
                 field("No. Mov."; Rec."No. Mov.")
                 {
-                    ;
+
 
                 }
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field(Data; Rec.Data)
                 {
-                    ;
+
 
                 }
                 field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
-                    ;
+
 
                 }
                 field("Tipo Rubrica"; Rec."Tipo Rubrica")
                 {
-                    ;
+
 
                 }
                 field("Descrição Rubrica"; Rec."Descrição Rubrica")
                 {
-                    ;
+
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ;
+
 
                 }
                 field(UnidadeMedida; Rec.UnidadeMedida)
                 {
-                    ;
+
 
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ;
+
 
                 }
                 field("Valor Total"; Rec."Valor Total")
                 {
-                    ;
+
 
                 }
                 field("Anular Falta"; Rec."Anular Falta")
                 {
-                    ;
+
 
                 }
                 field("Data a que se refere o Mov."; Rec."Data a que se refere o Mov.")
                 {
-                    ;
+
 
                 }
                 field("Qtd. Perca Sub. Alimentação"; Rec."Qtd. Perca Sub. Alimentação")
                 {
-                    ;
+
 
                 }
                 field("Abono - Desconto Bloqueado"; Rec."Abono - Desconto Bloqueado")
                 {
-                    ;
+
 
                 }
                 field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
-                    ;
+
 
                 }
                 field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
-                    ;
+
 
                 }
                 field("Garnishmen No."; Rec."Garnishmen No.")
                 {
-                    ;
+
 
                     Visible = false;
                 }

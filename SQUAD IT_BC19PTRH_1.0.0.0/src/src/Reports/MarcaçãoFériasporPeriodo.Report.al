@@ -65,17 +65,17 @@ report 53092 "Marcação Férias por Periodo"
                     Caption = 'Marcação Férias por Periodo ';
                     field(VarAPartirData; VarAPartirData)
                     {
-                        ;
+
                         Caption = 'A Partir da Data';
                     }
                     field(VarAData; VarAData)
                     {
-                        ;
+
                         Caption = 'À Data';
                     }
                     field(Tipo; Tipo)
                     {
-                        ;
+
                         Caption = 'Type';
                         OptionCaption = 'Férias,Compensação';
                     }

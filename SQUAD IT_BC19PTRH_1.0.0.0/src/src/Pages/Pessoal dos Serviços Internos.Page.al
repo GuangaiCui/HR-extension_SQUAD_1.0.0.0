@@ -15,31 +15,31 @@ page 53140 "Pessoal dos Serviços Internos"
                 ShowCaption = false;
                 field("Tipo de Técnico"; Rec."Tipo de Técnico")
                 {
-                    ;
+
 
                     Style = Strong;
                     StyleExpr = TRUE;
                 }
                 field(Nome; Rec.Nome)
                 {
-                    ;
+
 
                     Style = Strong;
                     StyleExpr = TRUE;
                 }
                 field("No. de Horas Mensais Afectação"; Rec."No. de Horas Mensais Afectação")
                 {
-                    ;
+
 
                 }
                 field("No. da Cédula Profissional"; Rec."No. da Cédula Profissional")
                 {
-                    ;
+
 
                 }
                 field("No. Certificado Aptidão Prof."; Rec."No. Certificado Aptidão Prof.")
                 {
-                    ;
+
 
                 }
             }

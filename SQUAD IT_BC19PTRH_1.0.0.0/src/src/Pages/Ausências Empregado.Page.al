@@ -19,43 +19,43 @@ page 53046 "Ausências Empregado"
                 ShowCaption = false;
                 field("From Date"; Rec."From Date")
                 {
-                    ;
+
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ;
+
 
                 }
                 field("Cause of Absence Code"; Rec."Cause of Absence Code")
                 {
-                    ;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ;
+
 
                 }
                 field(Quantity; Rec.Quantity)
                 {
-                    ;
+
 
                 }
                 field("Unit of Measure Code"; Rec."Unit of Measure Code")
                 {
-                    ;
+
 
                 }
                 field("Quantity (Base)"; Rec."Quantity (Base)")
                 {
-                    ;
+
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ;
+
 
                 }
             }
@@ -64,13 +64,13 @@ page 53046 "Ausências Empregado"
         {
             systempart(Control1900383207; Links)
             {
-                ;
+
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ;
+
 
                 Visible = true;
             }
@@ -87,7 +87,7 @@ page 53046 "Ausências Empregado"
                 Image = Absence;
                 action("Comentários")
                 {
-                    ;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

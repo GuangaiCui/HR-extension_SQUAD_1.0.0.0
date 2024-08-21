@@ -16,77 +16,77 @@ page 53121 "Registo Formação"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ;
+
 
                 }
                 field("Cód. Acção"; Rec."Cód. Acção")
                 {
-                    ;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ;
+
 
                 }
                 field(Tipo; Rec.Tipo)
                 {
-                    ;
+
 
                 }
                 field("No. Horas Acção"; Rec."No. Horas Acção")
                 {
-                    ;
+
 
                 }
                 field("Data Início"; Rec."Data Início")
                 {
-                    ;
+
 
                 }
                 field("Data Fim"; Rec."Data Fim")
                 {
-                    ;
+
 
                 }
                 field("Local"; Rec."Local")
                 {
-                    ;
+
 
                 }
                 field("Entidade Prestadora"; Rec."Entidade Prestadora")
                 {
-                    ;
+
 
                 }
                 field("Custo Acção"; Rec."Custo Acção")
                 {
-                    ;
+
 
                 }
                 field("Iniciativa da Formação"; Rec."Iniciativa da Formação")
                 {
-                    ;
+
 
                 }
                 field("Horário Formação"; Rec."Horário Formação")
                 {
-                    ;
+
 
                 }
                 field("Tipo Certificado/Diploma"; Rec."Tipo Certificado/Diploma")
                 {
-                    ;
+
 
                 }
                 field("Avaliação"; Rec."Avaliação")
                 {
-                    ;
+
 
                 }
                 field("Observações"; Rec."Observações")
                 {
-                    ;
+
 
                 }
             }
@@ -102,7 +102,7 @@ page 53121 "Registo Formação"
                 Caption = 'F&ormação';
                 action("Formação Colectiva")
                 {
-                    ;
+
 
                     Caption = 'Formação Colectiva';
                     Image = Campaign;
@@ -114,7 +114,7 @@ page 53121 "Registo Formação"
                 }
                 action("Situação Face à Frequência")
                 {
-                    ;
+
 
                     Caption = 'Situação Face à Frequência';
                     Image = Form;

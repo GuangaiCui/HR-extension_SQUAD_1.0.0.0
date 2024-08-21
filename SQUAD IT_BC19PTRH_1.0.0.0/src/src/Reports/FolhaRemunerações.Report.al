@@ -331,18 +331,18 @@ report 53075 "Folha Remunerações"
                     Caption = 'Folha Remunerações';
                     field(CodProcess; CodProcess)
                     {
-                        ;
+
                         Caption = 'Cod. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ;
+
                         Caption = 'Data Fim';
                     }
                 }
