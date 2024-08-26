@@ -1387,9 +1387,15 @@ tableextension 53040 "Employee Ext" extends Employee
         MyFile: File;
         MyOutStream: OutStream;
         NumberOfChars: Integer;
+        "g_recImportaçãoTemplates": Record "Importação Templates";
     // wdApp2: DotNet WordApplicationClass;
     begin
-        Report.RunModal(Report::"RH-CONTRAC", true, false, Rec);
+        //TODO:NEEDS TESTING
+        g_recImportaçãoTemplates.Reset;
+        g_recImportaçãoTemplates.SetRange("No.", 'RH-CONTRAC');
+        if g_recImportaçãoTemplates.Find() then begin
+            Report.RunModal(g_recImportaçãoTemplates."Report ID", true, false, Rec);
+        end;
         //CGA SQD
         //run "RH-CONTRAC" report
         //NOTES: commented because it is replaced.
@@ -1433,26 +1439,4 @@ tableextension 53040 "Employee Ext" extends Employee
         */
     end;
 
-    //NOTES:can be removed
-
-    //procedure EscreveWord2(pText1: Text[1024]; pText2: Text[1024]; wdApp2: DotNet WordApplicationClass)
-    procedure EscreveWord2(pText1: Text[1024]; pText2: Text[1024]; wdApp2: text)
-    var
-        wdfindas: Integer;
-        wdreplaceon: Integer;
-        fals: Boolean;
-        tru: Boolean;
-    begin
-        Message('WIP');
-        /*
-        fals := false;
-        tru := true;
-
-
-        wdfindas := 0;
-        wdreplaceon := 2;
-        wdApp2.Width := 7;
-        wdApp2.Selection.Find.Execute(pText1, fals, fals, fals, fals, fals, tru, wdfindas, fals, pText2, wdreplaceon);
-        */
-    end;
 }

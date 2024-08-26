@@ -179,8 +179,17 @@ table 53056 "Contrato Empregado"
         _DataText: Text[1024];
         _PostCode: Record "Post Code";
         _Emp2: Record Employee;
+        g_recImportaçãoTemplates: Record "Importação Templates";
     begin
-        Report.RunModal(Report::"Contract Templates", true, false, Rec);
+        //TODO:NEEDS TESTING
+        g_recImportaçãoTemplates.Reset;
+        g_recImportaçãoTemplates.SetRange("No.", 'Contract Templates');
+        if g_recImportaçãoTemplates.Find() then begin
+            Report.RunModal(g_recImportaçãoTemplates."Report ID", true, false, Rec);
+        end;
+
+
+        //Report.RunModal(Report::"Contract Templates", true, false, Rec);
         //CGA SQD
         //NOTES: below is replaced.
         //TODO: to test

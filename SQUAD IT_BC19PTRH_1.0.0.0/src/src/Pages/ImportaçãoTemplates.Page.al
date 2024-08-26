@@ -69,7 +69,7 @@ page 53131 "Importação Templates"
     {
         area(navigation)
         {
-            group(Creation)
+            group(Squad)
             {
                 Caption = 'Documento';
                 /*
@@ -132,6 +132,51 @@ page 53131 "Importação Templates"
                     end;
                 }
 */
+
+                action(ImportLayout)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Import Layout';
+                    Image = Import;
+                    ToolTip = 'Import a Word file.';
+
+                    trigger OnAction()
+                    begin
+                        if g_CustomReportLayout.GET(rec.ReportCode) then
+                            g_CustomReportLayout.ImportReportLayout('');
+                    end;
+                }
+                action(ExportLayout)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Export Layout';
+                    Image = Export;
+                    ToolTip = 'Export a Word file.';
+
+                    trigger OnAction()
+                    begin
+                        if g_CustomReportLayout.GET(rec.ReportCode) then
+                            g_CustomReportLayout.ExportReportLayout('', true);
+                    end;
+                }
+                action(UpdateWordLayout)
+                {
+                    ApplicationArea = Basic, Suite;
+                    Caption = 'Update Layout';
+                    Image = UpdateXML;
+                    ToolTip = 'Update specific report layouts or all custom report layouts that might be affected by dataset changes.';
+
+                    trigger OnAction()
+                    begin
+                        if g_CustomReportLayout.GET(rec.ReportCode) then begin
+                            if g_CustomReportLayout.UpdateReportLayout(false, false) then
+                                Message(UpdateSuccesMsg, Format(g_CustomReportLayout.Type))
+                            else
+                                Message(UpdateNotRequiredMsg, Format(g_CustomReportLayout.Type));
+                        end;
+                    end;
+                }
+
             }
         }
     }
@@ -149,6 +194,9 @@ page 53131 "Importação Templates"
         tamanho2: Integer;
         "extensão": Code[20];
         Path: Text[250];
+        UpdateSuccesMsg: Label 'The %1 layout has been updated to use the current report design.', Comment = '%1 will be replaced by the layout name.';
+        UpdateNotRequiredMsg: Label 'The %1 layout is up-to-date. No further updates are required.', Comment = '%1 will be replaced by the layout name.';
+        g_CustomReportLayout: Record "Custom Report Layout";
 
     procedure OpenFile(WindowTitle: Text[50]; DefaultFileName: Text[250]; DefaultFileType: Option " ",Text,Excel,Word,Custom; FilterString: Text[250]; "Action": Option Open,Save): Text[260]
     begin
