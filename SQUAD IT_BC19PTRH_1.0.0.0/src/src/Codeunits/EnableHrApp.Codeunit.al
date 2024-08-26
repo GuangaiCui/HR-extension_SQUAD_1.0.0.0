@@ -4,7 +4,7 @@ codeunit 53042 "Enable HR Extension"
     [EventSubscriber(ObjectType::Codeunit, Codeunit::"Application Area Mgmt.", 'OnGetEssentialExperienceAppAreas', '', false, false)]
     local procedure RegisterHrExtensionOnGetEssentialExperienceAppAreas(var TempApplicationAreaSetup: Record "Application Area Setup" temporary)
     begin
-        TempApplicationAreaSetup.HumanResource := true;
+        TempApplicationAreaSetup."Human Resources App Area" := true;
         // Modify other application areas here
     end;
 
@@ -13,7 +13,7 @@ codeunit 53042 "Enable HR Extension"
     local procedure VerifyApplicationAreasOnValidateApplicationAreas(ExperienceTierSetup: Record "Experience Tier Setup"; TempApplicationAreaSetup: Record "Application Area Setup" temporary)
     begin
         if ExperienceTierSetup.Essential then
-            if not TempApplicationAreaSetup.HumanResource then
+            if not TempApplicationAreaSetup."Human Resources App Area" then
                 Error('App Recursos Humanos deve fazer parte da Essential para que a extensão funcione.');
     end;
 
@@ -24,7 +24,7 @@ codeunit 53042 "Enable HR Extension"
         ApplicationAreaMgmtFacade: Codeunit "Application Area Mgmt. Facade";
     begin
         if ApplicationAreaMgmtFacade.GetApplicationAreaSetupRecFromCompany(ApplicationAreaSetup, CompanyName()) then
-            exit(ApplicationAreaSetup.HumanResource);
+            exit(ApplicationAreaSetup."Human Resources App Area");
     end;
 
     procedure EnableHrExtension()

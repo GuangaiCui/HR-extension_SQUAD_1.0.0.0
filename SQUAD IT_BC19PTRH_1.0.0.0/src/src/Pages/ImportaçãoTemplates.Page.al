@@ -19,46 +19,35 @@ page 53131 "Importação Templates"
                 ShowCaption = false;
                 field("No."; Rec."No.")
                 {
-                    ApplicationArea = All;
-
 
                 }
 
                 field("Report ID"; Rec."Report ID")
                 {
-                    ApplicationArea = All;
+
                 }
 
                 field("Report Layout"; Rec."Report Layout")
                 {
-                    ApplicationArea = All;
 
                 }
 
                 /*
                 field(Attachment; Rec.Attachment)
                 {
-                    ApplicationArea = All;
-
                     Editable = false;
                 }
                 */
                 field("File Extension"; Rec."File Extension")
                 {
-                    ApplicationArea = All;
-
                     //Editable = false;
                 }
                 field("Last Date Modified"; Rec."Last Date Modified")
                 {
-                    ApplicationArea = All;
-
                     Editable = false;
                 }
                 field("Last Time Modified"; Rec."Last Time Modified")
                 {
-                    ApplicationArea = All;
-
                     Editable = false;
                 }
             }
@@ -76,7 +65,7 @@ page 53131 "Importação Templates"
 
                                 action("&Importar")
                                 {
-                                    ApplicationArea = All;
+                                  
 
                                     Caption = '&Importar';
                                     Image = Import;
@@ -103,7 +92,7 @@ page 53131 "Importação Templates"
                 /*
                 action("<Action1101490029>")
                 {
-                    ApplicationArea = All;
+                  
 
                     Caption = '&Exportar';
                     Image = Export;

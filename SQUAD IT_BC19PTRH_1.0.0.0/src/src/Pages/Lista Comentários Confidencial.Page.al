@@ -15,22 +15,22 @@ page 53070 "Lista Comentários Confidencial"
                 ShowCaption = false;
                 field("No."; Rec."No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Date; Rec.Date)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+
 
                     Visible = false;
                 }

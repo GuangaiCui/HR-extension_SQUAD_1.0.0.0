@@ -15,17 +15,17 @@ page 53080 "Habilitação"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Nível"; Rec."Nível")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

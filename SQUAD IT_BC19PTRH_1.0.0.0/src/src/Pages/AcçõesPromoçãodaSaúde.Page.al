@@ -15,27 +15,27 @@ page 53150 "Acções Promoção da Saúde"
                 ShowCaption = false;
                 field(Data; Rec.Data)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Actividade Desenvolvida"; Rec."Actividade Desenvolvida")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("No. Acções Realizadas"; Rec."No. Acções Realizadas")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("No. Trabalhadores Abrangidos H"; Rec."No. Trabalhadores Abrangidos H")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("No. Trabalhadores Abrangidos M"; Rec."No. Trabalhadores Abrangidos M")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

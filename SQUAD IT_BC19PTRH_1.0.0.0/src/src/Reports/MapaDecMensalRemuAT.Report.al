@@ -819,42 +819,42 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                     Caption = 'Options';
                     field(DataIni; DataIni)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Periodo de:';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'a:';
                     }
                     field(CodRepFinancas; CodRepFinancas)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cód. Rep.Finanças';
                     }
                     field(NIFRepLegal; NIFRepLegal)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'NIF Representante Legal';
                     }
                     field(NIFTecOficialContas; NIFTecOficialContas)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'NIF Tec. Oficial Contas';
                     }
                     field(Tipodeclaracao; Tipodeclaracao)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Tipo Declaração';
                     }
                     field(campoData; DataAlteração)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data de alteração';
                     }
                     field("Declaraçao"; Declaraçao)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Declaração apresentada nos termos da al. d), nº1, art.º 119 do CIRS';
                     }
                 }

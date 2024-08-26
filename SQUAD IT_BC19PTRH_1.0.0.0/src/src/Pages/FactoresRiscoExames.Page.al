@@ -16,17 +16,17 @@ page 53148 "Factores Risco - Exames"
                 ShowCaption = false;
                 field("Risk Factor"; Rec."Risk Factor")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Risk Factor Description"; Rec."Risk Factor Description")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Observations; Rec.Observations)
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

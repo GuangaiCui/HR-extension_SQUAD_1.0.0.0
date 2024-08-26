@@ -16,77 +16,77 @@ page 53121 "Registo Formação"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Cód. Acção"; Rec."Cód. Acção")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Tipo; Rec.Tipo)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("No. Horas Acção"; Rec."No. Horas Acção")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Data Início"; Rec."Data Início")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Data Fim"; Rec."Data Fim")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Local"; Rec."Local")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Entidade Prestadora"; Rec."Entidade Prestadora")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Custo Acção"; Rec."Custo Acção")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Iniciativa da Formação"; Rec."Iniciativa da Formação")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Horário Formação"; Rec."Horário Formação")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Tipo Certificado/Diploma"; Rec."Tipo Certificado/Diploma")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Avaliação"; Rec."Avaliação")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Observações"; Rec."Observações")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }
@@ -102,7 +102,7 @@ page 53121 "Registo Formação"
                 Caption = 'F&ormação';
                 action("Formação Colectiva")
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Formação Colectiva';
                     Image = Campaign;
@@ -114,7 +114,7 @@ page 53121 "Registo Formação"
                 }
                 action("Situação Face à Frequência")
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Situação Face à Frequência';
                     Image = Form;

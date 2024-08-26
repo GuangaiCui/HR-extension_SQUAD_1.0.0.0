@@ -17,18 +17,18 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 ShowCaption = false;
                 field("No."; Rec."No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Full Name"; Rec.FullName)
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Full Name';
                 }
                 field(Field1; MATRIX_CellData[1])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[1];
@@ -41,7 +41,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field2; MATRIX_CellData[2])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[2];
@@ -54,7 +54,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field3; MATRIX_CellData[3])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[3];
@@ -67,7 +67,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field4; MATRIX_CellData[4])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[4];
@@ -80,7 +80,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field5; MATRIX_CellData[5])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[5];
@@ -93,7 +93,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field6; MATRIX_CellData[6])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[6];
@@ -106,7 +106,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field7; MATRIX_CellData[7])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[7];
@@ -119,7 +119,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field8; MATRIX_CellData[8])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[8];
@@ -132,7 +132,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field9; MATRIX_CellData[9])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[9];
@@ -145,7 +145,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field10; MATRIX_CellData[10])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[10];
@@ -158,7 +158,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field11; MATRIX_CellData[11])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[11];
@@ -171,7 +171,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field12; MATRIX_CellData[12])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[12];
@@ -184,7 +184,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field13; MATRIX_CellData[13])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[13];
@@ -197,7 +197,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field14; MATRIX_CellData[14])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[14];
@@ -210,7 +210,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field15; MATRIX_CellData[15])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[15];
@@ -223,7 +223,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field16; MATRIX_CellData[16])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[16];
@@ -236,7 +236,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field17; MATRIX_CellData[17])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[17];
@@ -249,7 +249,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field18; MATRIX_CellData[18])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[18];
@@ -262,7 +262,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field19; MATRIX_CellData[19])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[19];
@@ -275,7 +275,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field20; MATRIX_CellData[20])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[20];
@@ -288,7 +288,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field21; MATRIX_CellData[21])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[21];
@@ -301,7 +301,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field22; MATRIX_CellData[22])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[22];
@@ -314,7 +314,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field23; MATRIX_CellData[23])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[23];
@@ -327,7 +327,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field24; MATRIX_CellData[24])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[24];
@@ -340,7 +340,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field25; MATRIX_CellData[25])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[25];
@@ -353,7 +353,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field26; MATRIX_CellData[26])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[26];
@@ -366,7 +366,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field27; MATRIX_CellData[27])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[27];
@@ -379,7 +379,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field28; MATRIX_CellData[28])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[28];
@@ -392,7 +392,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field29; MATRIX_CellData[29])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[29];
@@ -405,7 +405,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field30; MATRIX_CellData[30])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[30];
@@ -418,7 +418,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field31; MATRIX_CellData[31])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[31];
@@ -431,7 +431,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
                 }
                 field(Field32; MATRIX_CellData[32])
                 {
-                    ApplicationArea = All;
+
 
                     BlankZero = true;
                     CaptionClass = '3,' + MATRIX_ColumnCaption[32];

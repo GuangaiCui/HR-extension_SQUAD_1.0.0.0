@@ -15,17 +15,17 @@ page 53142 "Actividades dos Serviços"
                 ShowCaption = false;
                 field("Data Actividade"; Rec."Data Actividade")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Actividade; Rec.Actividade)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Descrição Actividade"; Rec."Descrição Actividade")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

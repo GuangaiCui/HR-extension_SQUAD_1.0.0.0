@@ -54,28 +54,28 @@ report 53035 "Ausência Colectiva"
                     Caption = 'Ausência Colectiva';
                     field(VarCodMotivo; VarCodMotivo)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cód. Mot. Ausência';
                         TableRelation = "Absence Reason";
                     }
                     field(VarAPartirData; VarAPartirData)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'A Partir da Data';
                     }
                     field(VarAData; VarAData)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'À Data';
                     }
                     field(VarQuantidade; VarQuantidade)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Quantidade';
                     }
                     field(VarUnidadeMedida; VarUnidadeMedida)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Unidade Medida';
                         TableRelation = "Unid. Medida Recursos Humanos";
                     }

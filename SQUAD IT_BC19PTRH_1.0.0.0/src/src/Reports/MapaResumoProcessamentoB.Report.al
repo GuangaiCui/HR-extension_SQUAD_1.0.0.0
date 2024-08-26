@@ -353,18 +353,18 @@ report 53098 "Mapa Resumo Processamento B"
                     Caption = 'Resumo Processamento B';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cod. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Fim';
                     }
                 }

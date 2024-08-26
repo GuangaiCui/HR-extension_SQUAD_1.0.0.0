@@ -16,58 +16,58 @@ page 53105 "Periodos Processamento"
                 ShowCaption = false;
                 field("Cód. Processamento"; Rec."Cód. Processamento")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = boolEnable;
                 }
                 field("Tipo Processamento"; Rec."Tipo Processamento")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = boolEnable;
                 }
                 field("Data Registo"; Rec."Data Registo")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = boolEnable;
                 }
                 field(Estado; Rec.Estado)
                 {
-                    ApplicationArea = All;
+
 
                     Editable = false;
                 }
                 field("Data Inicio Processamento"; Rec."Data Inicio Processamento")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = boolEnable;
                     Enabled = boolEnable;
                 }
                 field("Data Fim Processamento"; Rec."Data Fim Processamento")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = boolEnable;
                     Enabled = boolEnable;
                 }
                 field("Integrado na Contabilidade"; Rec."Integrado na Contabilidade")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = false;
                     Enabled = boolEnable;
                 }
                 field("Data Inicio Proces. Faltas"; Rec."Data Inicio Proces. Faltas")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = false;
                 }
                 field("Data Fim Proces. Faltas"; Rec."Data Fim Proces. Faltas")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = false;
                 }
@@ -81,7 +81,7 @@ page 53105 "Periodos Processamento"
         {
             action("Processamento Vencimentos")
             {
-                ApplicationArea = All;
+
 
                 Caption = 'fsf';
                 Image = PaymentDays;
@@ -89,7 +89,7 @@ page 53105 "Periodos Processamento"
             }
             action("Fecho Mês")
             {
-                ApplicationArea = All;
+
 
                 Caption = 'Fecho Mês';
                 Image = StopPayment;

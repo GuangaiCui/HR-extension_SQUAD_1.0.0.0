@@ -429,18 +429,18 @@ report 53067 "Retenção Mensal de IRS"
                     Caption = 'Retenção Mensal de IRS';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Fim';
                     }
                 }

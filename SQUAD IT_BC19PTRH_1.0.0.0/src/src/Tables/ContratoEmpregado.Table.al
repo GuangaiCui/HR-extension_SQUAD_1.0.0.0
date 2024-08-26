@@ -193,7 +193,7 @@ table 53056 "Contrato Empregado"
         //CGA SQD
         //NOTES: below is replaced.
         //TODO: to test
-        //TODO: if I can jsut replace the action in page ListaContratoEmpregado.
+        //if I can jsut replace the action in page ListaContratoEmpregado.
 
 
         Message('WIP');

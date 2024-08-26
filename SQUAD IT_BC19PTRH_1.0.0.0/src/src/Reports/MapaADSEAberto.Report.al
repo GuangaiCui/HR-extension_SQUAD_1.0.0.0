@@ -122,18 +122,18 @@ report 53078 "Mapa ADSE - Aberto"
                     Caption = 'Mapa ADSE';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cod. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataIni; DataIni)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Fim';
                     }
                 }

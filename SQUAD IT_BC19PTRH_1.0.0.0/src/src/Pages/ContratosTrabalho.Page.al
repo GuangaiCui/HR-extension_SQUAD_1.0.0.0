@@ -15,32 +15,32 @@ page 53052 "Contratos Trabalho"
             {
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Tipo Contrato"; Rec."Tipo Contrato")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Cód. Tipo Contrato"; Rec."Cód. Tipo Contrato")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("No. of Contracts"; Rec."No. of Contracts")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Template Contrato"; Rec."Template Contrato")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }
@@ -55,7 +55,7 @@ page 53052 "Contratos Trabalho"
             /*
             action("&Visualizar")
             {
-                ApplicationArea = All;
+              
 
                 Caption = '&View';
                 Image = View;
@@ -68,7 +68,7 @@ page 53052 "Contratos Trabalho"
             //VC.MIG.E
             action("&Importar")
             {
-                ApplicationArea = All;
+
 
                 Caption = '&Importar';
                 Image = Import;
@@ -80,7 +80,7 @@ page 53052 "Contratos Trabalho"
             }
             action("&Exportar")
             {
-                ApplicationArea = All;
+
 
                 Caption = '&Exportar';
                 Image = Export;

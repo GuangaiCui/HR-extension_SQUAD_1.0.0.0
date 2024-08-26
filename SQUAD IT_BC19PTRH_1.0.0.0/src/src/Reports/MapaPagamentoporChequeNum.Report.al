@@ -347,18 +347,18 @@ report 53083 "Mapa Pagamento por Cheque/Num"
                     Caption = 'Pagamento por Cheque/Numerário';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Fim';
                     }
                 }

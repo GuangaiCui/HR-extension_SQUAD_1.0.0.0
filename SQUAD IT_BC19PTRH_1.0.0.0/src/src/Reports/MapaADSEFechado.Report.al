@@ -123,18 +123,18 @@ report 53103 "Mapa ADSE - Fechado"
                     Caption = 'Mapa ADSE';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cod. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataIni; DataIni)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Fim';
                     }
                 }

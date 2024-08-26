@@ -601,7 +601,7 @@ report 53041 "Processamento Sub. Férias"
                                 rLinhaMovEmp."No. Linha" := NLinha;
                                 rLinhaMovEmp."Data Registo" := "Periodos Processamento"."Data Registo";
                                 rLinhaMovEmp.Validate("Cód. Rubrica", rPenhora."Garnishment Rubric");
-                                ;
+
                                 rLinhaMovEmp.Quantidade := 1;
                                 rLinhaMovEmp.Valor := Round(ValorAPenhorar, 0.01) * -1;
                                 rLinhaMovEmp."Garnishmen No." := rPenhora."Garnishmen No.";
@@ -743,7 +743,7 @@ report 53041 "Processamento Sub. Férias"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
@@ -753,13 +753,13 @@ report 53041 "Processamento Sub. Férias"
                     Caption = 'Apagar Processamento de Empregado';
                     field(ApagaEmp; ApagaEmp)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Nº Empregado a apagar';
                         TableRelation = Employee;
                     }
                     field(apagaTodosEmp; apagaTodosEmp)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Apagar Todos os Empregados';
                     }
                 }

@@ -15,12 +15,12 @@ page 53124 "Lista Natureza Jurídica"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

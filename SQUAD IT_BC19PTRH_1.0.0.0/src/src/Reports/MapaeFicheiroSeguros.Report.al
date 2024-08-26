@@ -624,7 +624,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                 DataNasc := DMY2Date(DataNascDayAux, DataNascMonthAux, DataNascYearAux);
                 MovData := CopyStr("Tabela Temp Ficheiros Texto".Texto1, 97, 4) + '/' + CopyStr("Tabela Temp Ficheiros Texto".Texto1, 101, 2);
                 DaysNo := CopyStr("Tabela Temp Ficheiros Texto".Texto1, 103, 2) + '.' + CopyStr("Tabela Temp Ficheiros Texto".Texto1, 105, 1);
-                ;
+
                 Natrem := CopyStr("Tabela Temp Ficheiros Texto".Texto1, 107, 2);
                 vValor := CopyStr("Tabela Temp Ficheiros Texto".Texto1, 112, 4) + ',' + CopyStr("Tabela Temp Ficheiros Texto".Texto1, 116, 2);
                 Evaluate(decValor, vValor);
@@ -653,7 +653,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                     Caption = 'Options';
                     field(PrintFile; PrintFile)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Print File';
                     }
                 }
@@ -662,28 +662,28 @@ report 53101 "Mapa e Ficheiro - Seguros"
                     Caption = 'Ficheiro Seguros';
                     field(CodProcess; CodProcess)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Data Fim';
                     }
                     field(txtApolice; txtApolice)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Nº Apólice';
                     }
                     field(txtCodSeguradora; txtCodSeguradora)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Cód. Seguradora';
                     }
                 }

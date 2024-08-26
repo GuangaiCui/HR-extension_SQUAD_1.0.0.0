@@ -17,50 +17,50 @@ page 53130 "Qualificações Empregado RU"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("From Date"; Rec."From Date")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Internal Qualification"; Rec."Internal Qualification")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Expiration Date"; Rec."Expiration Date")
                 {
-                    ApplicationArea = All;
+
 
                     Visible = false;
                 }
                 field(Cost; Rec.Cost)
                 {
-                    ApplicationArea = All;
+
 
                     Visible = false;
                 }
                 field("Course Grade"; Rec."Course Grade")
                 {
-                    ApplicationArea = All;
+
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+
 
                 }
             }
@@ -76,7 +76,7 @@ page 53130 "Qualificações Empregado RU"
                 Caption = 'Q&ualification';
                 action("Co&mentários")
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

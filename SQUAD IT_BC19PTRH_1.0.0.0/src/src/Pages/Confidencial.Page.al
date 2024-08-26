@@ -16,12 +16,12 @@ page 53055 Confidencial
                 ShowCaption = false;
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

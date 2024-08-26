@@ -64,7 +64,7 @@ report 53079 "Actualização Escalões Venc."
                     Caption = 'Options';
                     field(DataInicio; DataInicio)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Introduza a Data em que entrará em vigor os novos vencimentos e pressione a tecla Enter.';
                     }
                 }

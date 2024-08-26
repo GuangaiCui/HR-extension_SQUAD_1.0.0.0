@@ -16,12 +16,11 @@ page 53145 "Medidas Adoptadas"
                 ShowCaption = false;
                 field("Medida de Prevenção Adoptada"; Rec."Medida de Prevenção Adoptada")
                 {
-                    ApplicationArea = All;
 
                 }
                 field("Desc. Medida de Prev. Adoptada"; Rec."Desc. Medida de Prev. Adoptada")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

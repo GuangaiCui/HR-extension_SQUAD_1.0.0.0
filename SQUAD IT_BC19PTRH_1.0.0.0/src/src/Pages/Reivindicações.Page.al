@@ -15,19 +15,19 @@ page 53161 "Reivindicações"
                 ShowCaption = false;
                 field(Claim; Rec.Claim)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Claim Description"; Rec."Claim Description")
                 {
-                    ApplicationArea = All;
+
 
                     Style = Strong;
                     StyleExpr = TRUE;
                 }
                 field(Result; Rec.Result)
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

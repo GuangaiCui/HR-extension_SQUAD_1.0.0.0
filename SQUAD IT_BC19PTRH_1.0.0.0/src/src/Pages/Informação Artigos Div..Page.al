@@ -18,43 +18,43 @@ page 53054 "Informação Artigos Div."
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ApplicationArea = All;
+
 
                     Visible = false;
                 }
                 field("Misc. Article Code"; Rec."Misc. Article Code")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Serial No."; Rec."Serial No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("From Date"; Rec."From Date")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("To Date"; Rec."To Date")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("In Use"; Rec."In Use")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+
 
                 }
             }
@@ -70,7 +70,7 @@ page 53054 "Informação Artigos Div."
                 Caption = 'Mi&sc. Article';
                 action("Co&mentários")
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;
@@ -86,7 +86,7 @@ page 53054 "Informação Artigos Div."
                 }
                 action("Vista Artigos Div.")
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Vista Artigos Div.';
                     Image = Filed;

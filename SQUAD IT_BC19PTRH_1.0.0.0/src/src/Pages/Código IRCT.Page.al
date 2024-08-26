@@ -15,32 +15,32 @@ page 53086 "Código IRCT"
                 ShowCaption = false;
                 field("Código IRCT"; Rec."Código IRCT")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Acordo Colectivo"; Rec."Acordo Colectivo")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("No. Boletim do Trabalho"; Rec."No. Boletim do Trabalho")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Data Publicação"; Rec."Data Publicação")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Data da última Tabela Salarial"; Rec."Data da última Tabela Salarial")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

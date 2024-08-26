@@ -14,32 +14,32 @@ page 53147 "Linhas Acções Médicas"
                 ShowCaption = false;
                 field("Employee No."; Rec."Employee No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Name; Rec.Name)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Date; Rec.Date)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Hour; Rec.Hour)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Status; Rec.Status)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Observations; Rec.Observations)
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

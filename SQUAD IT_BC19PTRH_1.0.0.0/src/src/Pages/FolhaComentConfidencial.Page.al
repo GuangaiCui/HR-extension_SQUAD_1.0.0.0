@@ -18,17 +18,17 @@ page 53069 "Folha Coment. Confidencial"
                 ShowCaption = false;
                 field(Date; Rec.Date)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Code"; Rec.Code)
                 {
-                    ApplicationArea = All;
+
 
                     Visible = false;
                 }

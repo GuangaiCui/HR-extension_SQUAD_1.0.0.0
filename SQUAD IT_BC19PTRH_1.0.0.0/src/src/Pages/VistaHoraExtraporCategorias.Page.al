@@ -20,7 +20,7 @@ page 53092 "Vista HoraExtra por Categorias"
                 Caption = 'Options';
                 field(EmployeeNoFilter; EmployeeNoFilter)
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Employee No. Filter';
                     TableRelation = Employee;
@@ -31,7 +31,7 @@ page 53092 "Vista HoraExtra por Categorias"
                 Caption = 'Matrix Options';
                 field(PeriodType; PeriodType)
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'View by';
                     //  OptionCaption = 'Day,Week,Month,Quarter,Year,Accounting Period';
@@ -43,14 +43,14 @@ page 53092 "Vista HoraExtra por Categorias"
                 }
                 field(ExtraHourAmountType; ExtraHourAmountType)
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Amount Type';
                     OptionCaption = 'Net Change,Balance at Date';
                 }
                 field(MATRIX_CaptionRange; MATRIX_CaptionRange)
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Column Set';
                     Editable = false;
@@ -65,7 +65,7 @@ page 53092 "Vista HoraExtra por Categorias"
         {
             action(ShowMatrix)
             {
-                ApplicationArea = All;
+
 
                 Caption = '&Show Matrix';
                 Image = ShowMatrix;
@@ -83,7 +83,7 @@ page 53092 "Vista HoraExtra por Categorias"
             }
             action("Conjunto Anterior")
             {
-                ApplicationArea = All;
+
 
                 Caption = 'Previous Set';
                 Image = PreviousSet;
@@ -99,7 +99,7 @@ page 53092 "Vista HoraExtra por Categorias"
             }
             action("Conjunto Seguinte")
             {
-                ApplicationArea = All;
+
 
                 Caption = 'Next Set';
                 Image = NextSet;

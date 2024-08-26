@@ -19,37 +19,37 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                 ShowCaption = false;
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Cód. Cat. Prof. QP"; Rec."Cód. Cat. Prof. QP")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Description; Rec.Description)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Data Inicio Cat. Prof."; Rec."Data Inicio Cat. Prof.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Data Fim Cat. Prof."; Rec."Data Fim Cat. Prof.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Reconversion; Rec.Reconversion)
                 {
-                    ApplicationArea = All;
+
 
                     Editable = ReconversaoEditable;
 
@@ -60,7 +60,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                 }
                 field("Promotion Reason"; Rec."Promotion Reason")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = "Motivo promoçãoEditable";
 
@@ -71,13 +71,13 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                 }
                 field("Reconversion Date"; Rec."Reconversion Date")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = "Data reconversãoEditable";
                 }
                 field("Reconversion Reason"; Rec."Reconversion Reason")
                 {
-                    ApplicationArea = All;
+
 
                     Editable = "Motivo reconversãoEditable";
                 }
@@ -93,7 +93,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
             {
                 action("Comentários")
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Comentários';
                     Image = ViewComments;

@@ -16,48 +16,48 @@ page 53044 "Familiares Empregado"
                 ShowCaption = false;
                 field("Relative Code"; Rec."Relative Code")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Name; Rec.Name)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Birth Date"; Rec."Birth Date")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Phone No."; Rec."Phone No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Gender; Rec.Gender)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Vat Number"; Rec."Vat Number")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Emergency Contact"; Rec."Emergency Contact")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Employee Relative No."; Rec."Employee Relative No.")
                 {
-                    ApplicationArea = All;
+
 
                     Visible = false;
                 }
                 field(Comment; Rec.Comment)
                 {
-                    ApplicationArea = All;
+
 
                 }
             }
@@ -66,13 +66,13 @@ page 53044 "Familiares Empregado"
         {
             systempart(Control1900383207; Links)
             {
-                ApplicationArea = All;
+
 
                 Visible = false;
             }
             systempart(Control1905767507; Notes)
             {
-                ApplicationArea = All;
+
 
                 Visible = true;
             }
@@ -89,7 +89,7 @@ page 53044 "Familiares Empregado"
                 Image = Relatives;
                 action("Comentário")
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Co&mments';
                     Image = ViewComments;

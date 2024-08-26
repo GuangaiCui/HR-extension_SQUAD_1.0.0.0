@@ -14,51 +14,51 @@ page 53090 "Registo Horas Extra"
                 ShowCaption = false;
                 field("No. Mov."; Rec."No. Mov.")
                 {
-                    ApplicationArea = All;
+
                 }
                 field("No. Empregado"; Rec."No. Empregado")
                 {
-                    ApplicationArea = All;
+
                 }
                 field(Data; Rec.Data)
                 {
-                    ApplicationArea = All;
+
                 }
                 field("Cód. Hora Extra"; Rec."Cód. Hora Extra")
                 {
-                    ApplicationArea = All;
+
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+
                 }
                 field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
-                    ApplicationArea = All;
+
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ApplicationArea = All;
+
                 }
                 field(Factor; Rec.Factor)
                 {
-                    ApplicationArea = All;
+
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ApplicationArea = All;
+
                 }
                 field("Comentário"; Rec."Comentário")
                 {
-                    ApplicationArea = All;
+
                 }
                 field("Global Dimension 1 Code"; Rec."Global Dimension 1 Code")
                 {
-                    ApplicationArea = All;
+
                 }
                 field("Global Dimension 2 Code"; Rec."Global Dimension 2 Code")
                 {
-                    ApplicationArea = All;
+
                 }
             }
         }

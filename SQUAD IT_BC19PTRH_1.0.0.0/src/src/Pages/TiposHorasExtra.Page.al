@@ -15,32 +15,32 @@ page 53089 "Tipos Horas Extra"
                 ShowCaption = false;
                 field("Código"; Rec."Código")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Descrição"; Rec."Descrição")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Factor; Rec.Factor)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Lei n. 7/2009 de 12 Fevereiro"; Rec."Lei n. 7/2009 de 12 Fevereiro")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Dia semanal"; Rec."Dia semanal")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }

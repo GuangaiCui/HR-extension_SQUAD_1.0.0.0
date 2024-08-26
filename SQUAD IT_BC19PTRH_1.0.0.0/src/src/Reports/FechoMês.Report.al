@@ -299,7 +299,7 @@ report 53038 "Fecho Mês"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }

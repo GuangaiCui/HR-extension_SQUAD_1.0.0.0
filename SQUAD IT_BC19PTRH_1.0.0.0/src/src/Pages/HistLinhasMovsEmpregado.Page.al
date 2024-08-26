@@ -18,42 +18,42 @@ page 53107 "Hist. Linhas Movs. Empregado"
                 ShowCaption = false;
                 field("Cód. Rubrica"; Rec."Cód. Rubrica")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Descrição Rubrica"; Rec."Descrição Rubrica")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(UnidadeMedida; Rec.UnidadeMedida)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Quantidade; Rec.Quantidade)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Valor Unitário"; Rec."Valor Unitário")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(ValorSemSinal; ValorSemSinal)
                 {
-                    ApplicationArea = All;
+
 
                     Caption = 'Valor';
                 }

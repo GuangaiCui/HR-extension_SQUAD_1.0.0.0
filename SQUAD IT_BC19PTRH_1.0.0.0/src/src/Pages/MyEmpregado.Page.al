@@ -12,52 +12,52 @@ page 53171 MyEmpregado
             {
                 field("No."; Rec."No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Name; Rec.Name)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Address; Rec.Address)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(City; Rec.City)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Phone No."; Rec."Phone No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Mobile Phone No."; Rec."Mobile Phone No.")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("E-Mail"; Rec."E-Mail")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Birth Date"; Rec."Birth Date")
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field(Sex; Rec.Gender)
                 {
-                    ApplicationArea = All;
+
 
                 }
                 field("Employment Date"; Rec."Employment Date")
                 {
-                    ApplicationArea = All;
+
 
                 }
             }
@@ -70,7 +70,7 @@ page 53171 MyEmpregado
         {
             action(Abrir)
             {
-                ApplicationArea = All;
+
 
 
                 trigger OnAction()

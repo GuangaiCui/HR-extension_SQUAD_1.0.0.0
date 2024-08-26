@@ -301,7 +301,7 @@ report 53085 "Listagem de Férias"
                     Caption = 'Listagem de Férias';
                     field(VarData; VarData)
                     {
-                        ApplicationArea = All;
+
                         Caption = 'Date';
                     }
                 }
