@@ -1,7 +1,7 @@
 permissionset 50000 HRExtPermissionSet
 {
     Assignable = true;
-    IncludedPermissionSets = "D365 HR, EDIT", "D365 HR, SETUP", "D365 HR, VIEW", "Human Resources - Admin";
+    //IncludedPermissionSets = "D365 HR, EDIT", "D365 HR, SETUP", "D365 HR, VIEW", "Human Resources - Admin";
     Permissions =
 
         tabledata "Abonos - Descontos Extra" = RIMD,
