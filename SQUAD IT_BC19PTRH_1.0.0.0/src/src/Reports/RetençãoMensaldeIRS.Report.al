@@ -165,7 +165,7 @@ report 53067 "Retenção Mensal de IRS"
                     Error(Text0003);
             end;
         }
-        dataitem(EmpregadoA; Employee)
+        dataitem(EmpregadoA; Empregado)
         {
             DataItemTableView = SORTING("No.") WHERE("Tipo Contribuinte" = FILTER("Conta de Outrem" | Pensionista));
             PrintOnlyIfDetail = true;
@@ -285,7 +285,7 @@ report 53067 "Retenção Mensal de IRS"
                 Clear(VarIRSExtra);
             end;
         }
-        dataitem(EmpregadoB; Employee)
+        dataitem(EmpregadoB; Empregado)
         {
             DataItemTableView = SORTING("No.") WHERE("Tipo Contribuinte" = CONST("Trabalhador Independente"));
             column(EmpregadoB_No_; "No.")
@@ -479,7 +479,7 @@ report 53067 "Retenção Mensal de IRS"
         Ano: Integer;
         Mensal: Text[30];
         Empregado: Code[20];
-        recEmpregado: Record Employee;
+        recEmpregado: Record Empregado;
         mostra: Boolean;
         Text0001: Label 'Escolha um processamento já fechado.';
         FiltroDataInicProc: Text[1024];

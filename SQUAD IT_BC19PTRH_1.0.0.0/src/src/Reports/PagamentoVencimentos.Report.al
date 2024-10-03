@@ -24,7 +24,7 @@ report 53055 "Pagamento Vencimentos"
                 SetFilter("Cód. Processamento", PeriodoCode);
             end;
         }
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             RequestFilterFields = "No.", "Tipo Contribuinte";
             dataitem("Hist. Cab. Movs. Empregado"; "Hist. Cab. Movs. Empregado")
@@ -162,7 +162,7 @@ report 53055 "Pagamento Vencimentos"
 
             trigger OnPreDataItem()
             var
-                l_Empregado: Record Employee;
+                l_Empregado: Record Empregado;
             begin
                 if ConfRH.Get then; //IT004,n
 
@@ -248,7 +248,7 @@ report 53055 "Pagamento Vencimentos"
         GenJnl: Record "Gen. Journal Line";
         LastMov: Integer;
         NDocumento: Code[20];
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit "No. Series";
         TabSeccaoDiarioGeral: Record "Gen. Journal Batch";
         TabRubricaSalarial: Record "Rubrica Salarial";
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";

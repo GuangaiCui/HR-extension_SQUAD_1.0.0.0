@@ -145,7 +145,7 @@ report 53099 "Empregado - Contratos"
         EmploymentContractFilter: Text[250];
         TabConfEmpresa: Record "Company Information";
         Nome: Text[250];
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         CurrReport_PAGENOCaptionLbl: Label 'Page';
         CONTRATOS_DOS_EMPREGADOSCaptionLbl: Label 'CONTRATOS DOS EMPREGADOS';
         "Código_CaptionLbl": Label 'Código:';

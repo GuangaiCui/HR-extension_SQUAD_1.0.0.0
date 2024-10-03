@@ -142,7 +142,7 @@ table 53099 "Distribuição Custos"
     }
 
     var
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         rConfigRecursosHumanos: Record "Config. Recursos Humanos";
         DimMgt: Codeunit DimensionManagement;
 

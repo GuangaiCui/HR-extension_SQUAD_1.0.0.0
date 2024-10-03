@@ -18,7 +18,7 @@ report 53066 "Ficha Empregado"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             RequestFilterFields = "No.", Status;
             column(FORMAT_TODAY_0_4_; Format(Today, 0, 4))
@@ -51,7 +51,7 @@ report 53066 "Ficha Empregado"
             column(TabConfEmpresa_Picture; TabConfEmpresa.Picture)
             {
             }
-            column(Empregado_Picture; Image)
+            column(Empregado_Picture; Picture)
             {
             }
             column(Empregado__No__; "No.")
@@ -616,7 +616,7 @@ report 53066 "Ficha Empregado"
                 Empregado.CalcFields(Empregado."Grau Função", Empregado."Descrição Grau Função", Empregado."Cód. Cat. Profissional");
                 Empregado.CalcFields(Empregado."Descrição Cat Prof", Empregado."Cód. Cat. Prof QP", Empregado."Descrição Cat Prof QP");
                 Empregado.CalcFields(Empregado."Cód. Horário");
-                Empregado.CalcFields(Empregado.Image);
+                Empregado.CalcFields(Empregado.Picture);
             end;
 
             trigger OnPreDataItem()

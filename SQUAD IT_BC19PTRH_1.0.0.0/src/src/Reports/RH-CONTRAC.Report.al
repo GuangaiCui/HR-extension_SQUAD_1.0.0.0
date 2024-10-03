@@ -6,7 +6,7 @@ report 53096 "RH-CONTRAC"
 
     dataset
     {
-        dataitem(Employee; Employee)
+        dataitem(Employee; Empregado)
         {
             column(nome; Employee.Name)
             { }

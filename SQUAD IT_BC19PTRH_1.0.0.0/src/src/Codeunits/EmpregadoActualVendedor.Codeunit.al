@@ -1,6 +1,5 @@
 codeunit 53036 "Empregado/Actual. Vendedor"
 {
-    ////CGA SQD - changed record empregado to record employee in functions
     Permissions = TableData "Salesperson/Purchaser" = rimd;
 
     trigger OnRun()
@@ -11,7 +10,7 @@ codeunit 53036 "Empregado/Actual. Vendedor"
         SalespersonPurchaser: Record "Salesperson/Purchaser";
 
 
-    procedure HumanResToSalesPerson(OldEmployee: Record Employee; Employee: Record Employee)
+    procedure HumanResToSalesPerson(OldEmployee: Record Empregado; Employee: Record Empregado)
     begin
         if (Employee."Salespers./Purch. Code" <> '') and
            ((OldEmployee."Salespers./Purch. Code" <> Employee."Salespers./Purch. Code") or
@@ -25,7 +24,7 @@ codeunit 53036 "Empregado/Actual. Vendedor"
     end;
 
 
-    procedure SalesPersonUpdate(Employee: Record Employee)
+    procedure SalesPersonUpdate(Employee: Record Empregado)
     begin
         SalespersonPurchaser.Get(Employee."Salespers./Purch. Code");
         SalespersonPurchaser.Name := CopyStr(Employee.FullName, 1, 50);

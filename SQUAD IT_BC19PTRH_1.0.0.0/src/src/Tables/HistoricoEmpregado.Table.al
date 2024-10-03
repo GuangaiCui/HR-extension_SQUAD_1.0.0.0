@@ -1130,7 +1130,7 @@ table 53111 "Historico Empregado"
 
     var
         HumanResSetup: Record "Config. Recursos Humanos";
-        Employee: Record Employee;
+        Employee: Record Empregado;
         Res: Record Resource;
         PostCode: Record "Post Code";
         AlternativeAddr: Record "Endereço Alternativo";
@@ -1141,7 +1141,6 @@ table 53111 "Historico Empregado"
         ConfidentialInformation: Record "Informação Confidencial";
         HumanResComment: Record "Linha Coment. Recurso Humano";
         SalespersonPurchaser: Record "Salesperson/Purchaser";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
         EmployeeResUpdate: Codeunit "Empregado/Actual. Recurso";
         EmployeeSalespersonUpdate: Codeunit "Empregado/Actual. Vendedor";
         DimMgt: Codeunit DimensionManagement;

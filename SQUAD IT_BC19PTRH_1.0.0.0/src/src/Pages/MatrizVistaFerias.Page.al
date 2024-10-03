@@ -6,7 +6,7 @@ page 53087 "Matriz Vista Ferias"
     Editable = false;
     LinksAllowed = false;
     PageType = List;
-    SourceTable = Employee;
+    SourceTable = Empregado;
 
     layout
     {

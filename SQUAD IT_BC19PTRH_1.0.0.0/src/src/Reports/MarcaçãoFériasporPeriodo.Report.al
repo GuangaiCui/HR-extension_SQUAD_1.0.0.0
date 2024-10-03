@@ -12,7 +12,7 @@ report 53092 "Marcação Férias por Periodo"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             RequestFilterFields = "No.";
 

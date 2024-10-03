@@ -111,7 +111,7 @@ page 53063 "Vista Artigos Diversos"
     end;
 
     var
-        recEmpregado: Record Employee;
+        recEmpregado: Record Empregado;
         boolShow: Boolean;
         boolVisible: Boolean;
 }

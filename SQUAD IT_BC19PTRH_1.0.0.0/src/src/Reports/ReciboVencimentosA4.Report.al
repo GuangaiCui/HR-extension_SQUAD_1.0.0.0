@@ -49,7 +49,7 @@ report 53082 "Recibo Vencimentos A4"
                         SetFilter("Cód. Processamento", CodProcess);
                 end;
             }
-            dataitem(Empregado; Employee)
+            dataitem(Empregado; Empregado)
             {
                 PrintOnlyIfDetail = true;
                 RequestFilterFields = "No.";

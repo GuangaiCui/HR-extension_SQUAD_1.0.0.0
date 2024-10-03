@@ -203,7 +203,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
     end;
 
     var
-        rEmpregado: Record Employee;
+        rEmpregado: Record Empregado;
         TabConfEmpresa: Record "Company Information";
         Text0001: Label 'Não pode usar um período de processamento aberto.';
         Text0002: Label 'O processamento tem de estar Fechado.';

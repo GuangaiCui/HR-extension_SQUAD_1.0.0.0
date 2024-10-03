@@ -10,7 +10,7 @@ xmlport 53047 "Exporta Empregados"
         {
             MaxOccurs = Once;
             MinOccurs = Once;
-            tableelement(Empregado; Employee)
+            tableelement(Empregado; Empregado)
             {
                 MinOccurs = Zero;
                 XmlName = 'EmployeeInformation';
@@ -44,7 +44,7 @@ xmlport 53047 "Exporta Empregados"
 
                     trigger OnBeforePassVariable()
                     begin
-                        vGender := Empregado.Gender;
+                        vGender := Empregado.Sex;
                         Gender := Format(vGender);
                     end;
                 }

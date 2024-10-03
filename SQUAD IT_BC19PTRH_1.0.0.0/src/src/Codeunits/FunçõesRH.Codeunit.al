@@ -4,7 +4,6 @@ codeunit 53037 "Funções RH"
     //       - A pedido do cliente para que não seja transportado da ficha do Empregado para a Ficha do Professor o campo "NAV User ID"
     // 
     // IT002 - 2016.07.28 - porque o addon de RH usa uma tabela diferente para as freguesias
-    //CGA SQD changed record empregado to record employee in functions 
 
 
     trigger OnRun()
@@ -20,7 +19,7 @@ codeunit 53037 "Funções RH"
         FormatAddress: Codeunit "Format Address";
 
 
-    procedure CalcularTaxaIRS(ValorVencimento: Decimal; Empregado: Record Employee; Ano: Integer) TaxaIRS: Decimal
+    procedure CalcularTaxaIRS(ValorVencimento: Decimal; Empregado: Record Empregado; Ano: Integer) TaxaIRS: Decimal
     var
         TabelaIRS: Record "Tabela IRS";
         Passou: Boolean;
@@ -358,7 +357,7 @@ codeunit 53037 "Funções RH"
     end;
 
 
-    procedure CalcularVencimentoBase(Data: Date; Empregado: Record Employee) VencimentoBase: Decimal
+    procedure CalcularVencimentoBase(Data: Date; Empregado: Record Empregado) VencimentoBase: Decimal
     var
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
         TabRubrica: Record "Rubrica Salarial";
@@ -404,7 +403,7 @@ codeunit 53037 "Funções RH"
     end;
 
 
-    procedure CalcularVencimentoBaseFaltas(Data: Date; Empregado: Record Employee) VencimentoBase: Decimal
+    procedure CalcularVencimentoBaseFaltas(Data: Date; Empregado: Record Empregado) VencimentoBase: Decimal
     var
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
         TabRubrica: Record "Rubrica Salarial";
@@ -481,7 +480,7 @@ codeunit 53037 "Funções RH"
     end;
 
 
-    procedure CalcularValorDia(VencimentoBase: Decimal; Empregado: Record Employee) ValorDia: Decimal
+    procedure CalcularValorDia(VencimentoBase: Decimal; Empregado: Record Empregado) ValorDia: Decimal
     begin
         //HG - Obter o Valor Dia Empregado dado um Vencimento Base
         //FBC - RH-013
@@ -498,7 +497,7 @@ codeunit 53037 "Funções RH"
     end;
 
 
-    procedure CalcularValorHora(VencimentoBase: Decimal; Empregado: Record Employee) ValorHora: Decimal
+    procedure CalcularValorHora(VencimentoBase: Decimal; Empregado: Record Empregado) ValorHora: Decimal
     var
         ConfRH: Record "Config. Recursos Humanos";
     begin
@@ -551,7 +550,7 @@ codeunit 53037 "Funções RH"
     end;
 
 
-    procedure CriarClienteContratoEmpregado(InrecEmpregado: Record Employee): Code[20]
+    procedure CriarClienteContratoEmpregado(InrecEmpregado: Record Empregado): Code[20]
     var
         recCustomer: Record Customer;
         recRHSetup: Record "Config. Recursos Humanos";
@@ -575,7 +574,7 @@ codeunit 53037 "Funções RH"
 
         recCustomer.City := InrecEmpregado.City;
         recCustomer."Phone No." := InrecEmpregado."Phone No.";
-        recCustomer."Country/Region Code" := InrecEmpregado."Country/Region Code";
+        recCustomer."Country/Region Code" := InrecEmpregado."Country Code";
         recCustomer."Fax No." := InrecEmpregado."Phone No.";
         recCustomer."Post Code" := InrecEmpregado."Post Code";
         recCustomer."E-Mail" := InrecEmpregado."E-Mail";
@@ -679,7 +678,7 @@ codeunit 53037 "Funções RH"
     end;
 
 
-    procedure CalcularDiasMes(pEmpregado: Record Employee) Numdia: Decimal
+    procedure CalcularDiasMes(pEmpregado: Record Empregado) Numdia: Decimal
     var
         rConfRH: Record "Config. Recursos Humanos";
         NHorasTotaisMensais: Decimal;
@@ -733,15 +732,15 @@ codeunit 53037 "Funções RH"
         exit(ConvertStr(_Text, AsciiNormal, Ascii7Bits));
     end;
 
-    procedure FormatAddressEmpregado(var AddrArray: array[8] of Text[75]; var Empregado: Record Employee)
+    procedure FormatAddressEmpregado(var AddrArray: array[8] of Text[75]; var Empregado: Record Empregado)
     begin
         //HR10.0 Nova função Empregado usada nos mapas dos Recursos Humanos
         FormatAddress.FormatAddr(
               AddrArray, CopyStr(Empregado.FullName, 1, 50), '', '', Empregado.Address, Empregado."Address 2",
-              Empregado.City, Empregado."Post Code", Empregado.County, Empregado."Country/Region Code");
+              Empregado.City, Empregado."Post Code", Empregado.County, Empregado."Country Code");
     end;
 
-    procedure FormatAddressEmpregadoAltAddr(var AddrArray: array[8] of Text[75]; var Empregado: Record Employee)
+    procedure FormatAddressEmpregadoAltAddr(var AddrArray: array[8] of Text[75]; var Empregado: Record Empregado)
     var
         AlternativeAddr: Record "Endereço Alternativo";
     begin

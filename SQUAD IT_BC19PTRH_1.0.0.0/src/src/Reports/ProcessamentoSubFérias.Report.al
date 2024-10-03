@@ -37,7 +37,7 @@ report 53041 "Processamento Sub. Férias"
                 SetFilter("Cód. Processamento", PeriodoCode);
             end;
         }
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = WHERE(Status = CONST(Active), "Tipo Contribuinte" = FILTER(<> "Trabalhador Independente"));
             RequestFilterFields = "No.", "Tipo Contribuinte";
@@ -432,7 +432,7 @@ report 53041 "Processamento Sub. Férias"
                         until TempRubricaEmpregado.Next = 0;
                 end;
             }
-            dataitem(Empregado2; Employee)
+            dataitem(Empregado2; Empregado)
             {
                 DataItemLink = "No." = FIELD("No.");
                 DataItemTableView = SORTING("No.");

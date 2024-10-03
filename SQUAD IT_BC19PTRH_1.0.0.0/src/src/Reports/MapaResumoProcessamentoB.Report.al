@@ -48,7 +48,7 @@ report 53098 "Mapa Resumo Processamento B"
                     Error(Text0004);
             end;
         }
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = WHERE("Tipo Contribuinte" = CONST("Trabalhador Independente"));
             PrintOnlyIfDetail = true;

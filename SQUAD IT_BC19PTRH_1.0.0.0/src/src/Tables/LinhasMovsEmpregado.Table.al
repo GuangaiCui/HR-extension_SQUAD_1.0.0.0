@@ -220,7 +220,7 @@ table 53080 "Linhas Movs. Empregado"
     }
 
     var
-        TabEmp: Record Employee;
+        TabEmp: Record Empregado;
         TabRubrica: Record "Rubrica Salarial";
         TabConta: Record "G/L Account";
         TabMovEmp: Record "Cab. Movs. Empregado";

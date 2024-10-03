@@ -108,6 +108,6 @@ table 53036 "Endereço Alternativo"
 
     var
         PostCode: Record "Post Code";
-        Employee: Record Employee;
+        Employee: Record Empregado;
 }
 

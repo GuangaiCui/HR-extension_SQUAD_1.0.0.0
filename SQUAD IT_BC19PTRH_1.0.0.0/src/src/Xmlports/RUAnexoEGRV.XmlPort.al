@@ -438,7 +438,7 @@ xmlport 53040 "RU - Anexo E - GRV"
     end;
 
     var
-        rEmpregado: Record Employee;
+        rEmpregado: Record Empregado;
         rCompInf: Record "Company Information";
         rGreves: Record Greves;
         rConfRH: Record "Config. Recursos Humanos";

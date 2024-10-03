@@ -22,7 +22,7 @@ report 53051 "Ficheiro CGA Nova Versão"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = SORTING("No.") WHERE("Subsccritor CGA" = CONST(true));
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
@@ -705,7 +705,7 @@ report 53051 "Ficheiro CGA Nova Versão"
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         TabRubricaEmpregado: Record "Rubrica Salarial Empregado";
         TabHistMovEmp: Record "Hist. Linhas Movs. Empregado";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         TabDisCC: Record "Distribuição Custos";
         NhorasSem: Decimal;
         TabHistCabMovEmp: Record "Hist. Cab. Movs. Empregado";

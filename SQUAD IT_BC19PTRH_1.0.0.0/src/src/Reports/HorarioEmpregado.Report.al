@@ -191,7 +191,7 @@ report 53086 "Horario Empregado"
         FooterPrinted: Boolean;
         TabConfEmpresa: Record "Company Information";
         VarAno: Integer;
-        rEmpregado: Record Employee;
+        rEmpregado: Record Empregado;
         NomeEmpregado: Text[250];
         DataInicio: Text[30];
         DataFim: Text[30];

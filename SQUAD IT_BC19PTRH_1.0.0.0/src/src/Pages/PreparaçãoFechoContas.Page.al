@@ -399,7 +399,7 @@ page 53112 "Preparação Fecho Contas"
         FeriasTotal: Integer;
         TabContratoEmp: Record "Contrato Empregado";
         TabFeriasEmp: Record "Férias Empregados";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         AbonosDescExtra: Record "Abonos - Descontos Extra";
         TabRubricaEmp: Record "Rubrica Salarial Empregado";
         TabRubSal: Record "Rubrica Salarial";

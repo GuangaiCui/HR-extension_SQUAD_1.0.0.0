@@ -12,7 +12,7 @@ report 53077 "Pagamento Encargos"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             RequestFilterFields = "No.", "Tipo Contribuinte";
 
@@ -244,7 +244,7 @@ report 53077 "Pagamento Encargos"
         GenJnl: Record "Gen. Journal Line";
         LastMov: Integer;
         NDocumento: Code[20];
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit "No. Series";
         TabSeccaoDiarioGeral: Record "Gen. Journal Batch";
         TabRubricaSalarial: Record "Rubrica Salarial";
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";

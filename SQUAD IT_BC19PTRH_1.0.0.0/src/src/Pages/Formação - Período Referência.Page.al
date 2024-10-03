@@ -34,7 +34,7 @@ page 53164 "Formação - Período Referência"
     }
 
     var
-        Employee: Record Employee;
+        Employee: Record Empregado;
 }
 
 #pragma implicitwith restore

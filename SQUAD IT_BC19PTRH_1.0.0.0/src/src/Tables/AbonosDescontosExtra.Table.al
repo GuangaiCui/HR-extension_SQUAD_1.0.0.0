@@ -157,10 +157,10 @@ table 53074 "Abonos - Descontos Extra"
 
     var
         TabAbonosDescExtra: Record "Abonos - Descontos Extra";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         TabRubrica: Record "Rubrica Salarial";
         ConfRH: Record "Config. Recursos Humanos";
         HumanResComment: Record "Linha Coment. Recurso Humano";
-        Employee: Record Employee;
+        Employee: Record Empregado;
 }
 

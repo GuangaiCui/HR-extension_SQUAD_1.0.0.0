@@ -157,7 +157,7 @@ report 53062 "Empregado - Qualificações"
     end;
 
     var
-        Employee: Record Employee;
+        Employee: Record Empregado;
         LastFieldNo: Integer;
         FooterPrinted: Boolean;
         EmployeeQualificationFilter: Text[250];

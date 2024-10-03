@@ -60,7 +60,7 @@ report 53078 "Mapa ADSE - Aberto"
             {
             }
         }
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = SORTING("No.");
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")

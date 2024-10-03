@@ -173,7 +173,7 @@ xmlport 53037 "RU - Anexo B - FEST"
                             }
                             textelement(trabalhadores)
                             {
-                                tableelement(empregado; Employee)
+                                tableelement(empregado; Empregado)
                                 {
                                     XmlName = 'trabalhador';
                                     MinOccurs = Zero;
@@ -334,8 +334,8 @@ xmlport 53037 "RU - Anexo B - FEST"
 
                                         trigger OnBeforePassVariable()
                                         begin
-                                            if Empregado.Gender = Empregado.Gender::Male then sexo := Format(1);
-                                            if Empregado.Gender = Empregado.Gender::Female then sexo := Format(2);
+                                            if Empregado.Sex = Empregado.Sex::Male then sexo := Format(1);
+                                            if Empregado.Sex = Empregado.Sex::Female then sexo := Format(2);
                                         end;
                                     }
                                     textelement(data_nasc)
@@ -495,13 +495,13 @@ xmlport 53037 "RU - Anexo B - FEST"
     end;
 
     var
-        rEmpregado: Record Employee;
+        rEmpregado: Record Empregado;
         rCompInf: Record "Company Information";
         rContratoEmpregado: Record "Contrato Empregado";
         rContrato: Record "Contrato Trabalho";
         rHistHorasExtra: Record "Histórico Horas Extra";
         rHorasExtra: Record "Tipos Horas Extra";
-        TempEmpregado: Record Employee temporary;
+        TempEmpregado: Record Empregado temporary;
         rConfRH: Record "Config. Recursos Humanos";
         optSit_prof: Option ,"1","2","3","4","8";
         vAno: Integer;

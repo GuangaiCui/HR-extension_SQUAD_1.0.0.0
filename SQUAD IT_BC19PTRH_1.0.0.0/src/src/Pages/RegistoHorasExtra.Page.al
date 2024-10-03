@@ -124,7 +124,7 @@ page 53090 "Registo Horas Extra"
 
     var
         Text0001: Label 'Esta Hora Extra já foi processada, será necessário refazer o processamento para este empregado.';
-        Employee: Record Employee;
+        Employee: Record Empregado;
         recPeriodosProcessamento: Record "Periodos Processamento";
         Text0002: Label 'Não pode apagar o registo de Hora Extra %1, porque o mês já se encontra fechado.';
 }

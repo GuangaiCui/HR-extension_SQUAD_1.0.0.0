@@ -75,7 +75,7 @@ report 53042 "Ficheiro Seg. Social"
             dataitem("Regime Seg. Social"; "Regime Seg. Social")
             {
                 DataItemTableView = SORTING("Código");
-                dataitem(Empregado; Employee)
+                dataitem(Empregado; Empregado)
                 {
                     DataItemLink = "Cod. Regime SS" = FIELD("Código");
                     DataItemTableView = SORTING(Estabelecimento, "Cod. Regime SS", "No.") WHERE("Subscritor SS" = CONST(true));

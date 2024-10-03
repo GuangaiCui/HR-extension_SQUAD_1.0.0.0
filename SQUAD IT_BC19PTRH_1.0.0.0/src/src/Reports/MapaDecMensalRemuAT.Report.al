@@ -976,11 +976,11 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
         ImportanciasRetidas: Decimal;
         TotalImpRetidas: Decimal;
         AuxEmp: Code[20];
-        Empregado: Record Employee;
+        Empregado: Record Empregado;
         TotalRegistos: Integer;
         AuxTipoRend: Integer;
         varLimite: Decimal;
-        TabTempEmpregado: Record Employee temporary;
+        TabTempEmpregado: Record Empregado temporary;
         Desconto: Decimal;
         TotalDescontos: Decimal;
         ValorSindicato: Decimal;

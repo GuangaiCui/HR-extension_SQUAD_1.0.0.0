@@ -4,7 +4,7 @@ report 53068 "Provisão Duodécimos"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = SORTING("No.") WHERE(Status = CONST(Active));
             RequestFilterFields = "No.";
@@ -804,7 +804,7 @@ report 53068 "Provisão Duodécimos"
         RubSal: Record "Rubrica Salarial";
         RubSal2: Record "Rubrica Salarial";
         RubSalLinhas: Record "Rubrica Salarial Linhas";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit "No. Series";
         nDocumento: Code[20];
         PercAcrescimo: Decimal;
         SF: Decimal;

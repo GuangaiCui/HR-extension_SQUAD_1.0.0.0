@@ -117,8 +117,8 @@ table 53073 "Horas Extra Empregado"
     var
         TabHora: Record "Tipos Horas Extra";
         TabHoraExtraEmpregado: Record "Horas Extra Empregado";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         HumanResComment: Record "Linha Coment. Recurso Humano";
-        Employee: Record Employee;
+        Employee: Record Empregado;
 }
 

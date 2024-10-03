@@ -83,7 +83,7 @@ table 53079 "Cab. Movs. Empregado"
                 num: BigInteger;
                 X: Integer;
                 txtnum: Text[30];
-                rEmpregado: Record Employee;
+                rEmpregado: Record Empregado;
                 OK: Boolean;
                 text01: Label 'Está a inserir um NIB já existente!\Empregado: %1\NIB: %2\Continuar?';
                 text02: Label 'Introduza de novo o NIB.';
@@ -181,6 +181,6 @@ table 53079 "Cab. Movs. Empregado"
     }
 
     var
-        TabEmp: Record Employee;
+        TabEmp: Record Empregado;
 }
 

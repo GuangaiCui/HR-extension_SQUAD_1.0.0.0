@@ -143,7 +143,7 @@ report 53065 "Horas Extra por Tipo"
     end;
 
     var
-        Employee: Record Employee;
+        Employee: Record Empregado;
         LastFieldNo: Integer;
         FooterPrinted: Boolean;
         EmpregadoHoraExtraFiltro: Text[250];

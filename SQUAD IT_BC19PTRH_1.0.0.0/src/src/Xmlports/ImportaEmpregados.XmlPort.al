@@ -7,7 +7,7 @@ xmlport 53049 "Importa Empregados"
     {
         textelement(ArrayOfEmployeeInformation)
         {
-            tableelement(Empregado; Employee)
+            tableelement(Empregado; Empregado)
             {
                 AutoSave = true;
                 AutoUpdate = true;
@@ -30,7 +30,7 @@ xmlport 53049 "Importa Empregados"
                     FieldValidate = yes;
                     MinOccurs = Zero;
                 }
-                fieldelement(Gender; Empregado.Gender)
+                fieldelement(Gender; Empregado.Sex)
                 {
                     FieldValidate = yes;
                     MinOccurs = Zero;

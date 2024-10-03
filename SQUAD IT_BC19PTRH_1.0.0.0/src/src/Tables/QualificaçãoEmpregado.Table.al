@@ -147,6 +147,6 @@ table 53038 "Qualificação Empregado"
     var
         Text000: Label 'You cannot delete employee qualification information if there are comments associated with it.';
         Qualification: Record "Qualificação";
-        Employee: Record Employee;
+        Employee: Record Empregado;
 }
 

@@ -138,7 +138,7 @@ page 53121 "Registo Formação"
     end;
 
     var
-        Employee: Record Employee;
+        Employee: Record Empregado;
 }
 
 #pragma implicitwith restore

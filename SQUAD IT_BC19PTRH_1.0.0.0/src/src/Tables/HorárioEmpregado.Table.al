@@ -115,7 +115,7 @@ table 53066 "Horário Empregado"
 
     var
         "TabHorário": Record "Horário RH";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         Pergunta: Text[200];
 }
 

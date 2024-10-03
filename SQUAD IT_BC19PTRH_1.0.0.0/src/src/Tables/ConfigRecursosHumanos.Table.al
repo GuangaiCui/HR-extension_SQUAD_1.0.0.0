@@ -734,7 +734,7 @@ table 53053 "Config. Recursos Humanos"
 
     procedure ValidaApolice(Opcao: Option Seguradora,"Nº Apolice")
     var
-        rEmpregado: Record Employee;
+        rEmpregado: Record Empregado;
         text0001: Label 'Deseja actualizar o empregado %1  %2 que tem o nº de apólice  %3 da seguradora %4.';
         text0002: Label 'Deseja actualizar o empregado %1  %2 que não tem nº de apólice.';
     begin
@@ -794,7 +794,7 @@ table 53053 "Config. Recursos Humanos"
 
     procedure ValidaIVA(varIVA: Decimal)
     var
-        rEmpregado: Record Employee;
+        rEmpregado: Record Empregado;
     begin
         //IT001 - CPA - sn
         rEmpregado.Reset;

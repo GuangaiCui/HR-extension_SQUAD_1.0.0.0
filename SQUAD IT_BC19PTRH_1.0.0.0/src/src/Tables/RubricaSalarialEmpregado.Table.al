@@ -243,7 +243,7 @@ table 53078 "Rubrica Salarial Empregado"
         Text0002: Label 'A rúbrica %1 está depende de outras e como tal não se deve definir um valor.';
         TabGLAccount: Record "G/L Account";
         Text0003: Label 'A Conta %1 é uma conta maior. Escolha uma conta auxiliar.';
-        Employee: Record Employee;
+        Employee: Record Empregado;
         TabConta: Record "G/L Account";
 }
 

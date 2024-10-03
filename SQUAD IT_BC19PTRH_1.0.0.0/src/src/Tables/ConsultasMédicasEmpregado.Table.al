@@ -63,7 +63,7 @@ table 53094 "Consultas Médicas Empregado"
     }
 
     var
-        rEmpregado: Record Employee;
+        rEmpregado: Record Empregado;
         I: Integer;
         NovaData: Date;
 }

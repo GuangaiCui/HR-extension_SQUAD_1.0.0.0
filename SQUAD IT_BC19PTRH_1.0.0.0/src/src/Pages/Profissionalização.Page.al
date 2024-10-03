@@ -62,7 +62,7 @@ page 53128 "Profissionalização"
     end;
 
     var
-        Employee: Record Employee;
+        Employee: Record Empregado;
 }
 
 #pragma implicitwith restore

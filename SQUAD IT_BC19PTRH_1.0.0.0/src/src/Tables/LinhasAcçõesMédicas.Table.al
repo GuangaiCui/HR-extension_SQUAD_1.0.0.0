@@ -66,6 +66,6 @@ table 53124 "Linhas Acções Médicas"
 
     var
         RUTabelas: Record "RU - Tabelas";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
 }
 

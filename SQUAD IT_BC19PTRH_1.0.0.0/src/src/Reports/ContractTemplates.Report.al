@@ -124,7 +124,7 @@ report 53097 "Contract Templates"
 
     var
         CompanyInformation: Record "Company Information";
-        Employee: Record Employee;
+        Employee: Record Empregado;
         IDTYpe: Text;
         Estab_Emp: Record "Estabelecimentos da Empresa";
 }

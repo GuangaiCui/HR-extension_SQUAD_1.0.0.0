@@ -7,7 +7,7 @@ page 53066 "Vista Ausências por Categorias"
     InsertAllowed = false;
     LinksAllowed = false;
     PageType = Card;
-    SourceTable = Employee;
+    SourceTable = Empregado;
     UsageCategory = Lists;
     ApplicationArea = HumanResourcesAppArea;
 

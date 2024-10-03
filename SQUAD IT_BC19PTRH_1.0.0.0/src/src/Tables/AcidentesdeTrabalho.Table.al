@@ -90,7 +90,7 @@ table 53083 "Acidentes de Trabalho"
     }
 
     var
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         TabLocalidades: Record "Cód. Freguesia/Conc/Distrito";
 }
 

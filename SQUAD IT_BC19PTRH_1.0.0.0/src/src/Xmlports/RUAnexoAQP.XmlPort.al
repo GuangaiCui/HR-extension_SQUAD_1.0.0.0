@@ -292,7 +292,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                 }
                                 textelement(trabalhadores)
                                 {
-                                    tableelement(empregado; Employee)
+                                    tableelement(empregado; Empregado)
                                     {
                                         XmlName = 'trabalhador';
                                         fieldelement(nome; Empregado.Name)
@@ -334,8 +334,8 @@ xmlport 53036 "RU - Anexo A - QP"
 
                                             trigger OnBeforePassVariable()
                                             begin
-                                                if Empregado.Gender = Empregado.Gender::Male then sexo := Format(1);
-                                                if Empregado.Gender = Empregado.Gender::Female then sexo := Format(2);
+                                                if Empregado.Sex = Empregado.Sex::Male then sexo := Format(1);
+                                                if Empregado.Sex = Empregado.Sex::Female then sexo := Format(2);
                                             end;
                                         }
                                         textelement(data_nasc)
@@ -1070,7 +1070,7 @@ xmlport 53036 "RU - Anexo A - QP"
         rHistHorasExtra: Record "Histórico Horas Extra";
         rCatProfQP: Record "Cat. Prof. QP Empregado";
         rQualificacaoEmp: Record "Qualificação Empregado";
-        rEmpregado: Record Employee;
+        rEmpregado: Record Empregado;
         rHistAusencia: Record "Histórico Ausências";
         rMotAusencia: Record "Absence Reason";
         rRubricaSal: Record "Rubrica Salarial";

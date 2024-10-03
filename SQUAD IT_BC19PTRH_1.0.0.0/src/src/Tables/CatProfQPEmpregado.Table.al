@@ -85,7 +85,7 @@ table 53061 "Cat. Prof. QP Empregado"
 
     var
         TabCatProfQPEmp: Record "Categoria Profissional QP";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         Pergunta: Text[200];
 }
 

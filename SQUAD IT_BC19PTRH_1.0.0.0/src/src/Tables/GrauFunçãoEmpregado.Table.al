@@ -81,7 +81,7 @@ table 53063 "Grau Função Empregado"
 
     var
         TabGrauFuncao: Record "Grau Função";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         Pergunta: Text[200];
 }
 

@@ -178,7 +178,7 @@ report 53048 "Ficheiro Modelo 10"
 
             trigger OnAfterGetRecord()
             var
-                rAuxEmp: Record Employee;
+                rAuxEmp: Record Empregado;
             begin
                 //Novo codigo versão 2013 que estava no Group Section
                 if "Hist. Linhas Movs. Empregado2"."No. Empregado" <> CodEmp then begin
@@ -369,7 +369,7 @@ report 53048 "Ficheiro Modelo 10"
 
             trigger OnPostDataItem()
             var
-                rAuxEmp: Record Employee;
+                rAuxEmp: Record Empregado;
             begin
                 //Novo codigo versão 2013 que estava no Group Section
                 if rAuxEmp.Get("Hist. Linhas Movs. Empregado2"."No. Empregado") then begin
@@ -835,11 +835,11 @@ report 53048 "Ficheiro Modelo 10"
         ImportanciasRetidas: Decimal;
         TotalImpRetidas: Decimal;
         AuxEmp: Code[20];
-        Empregado: Record Employee;
+        Empregado: Record Empregado;
         TotalRegistosJ99: Integer;
         AuxTipoRend: Integer;
         varLimite: Decimal;
-        TabTempEmpregado: Record Employee temporary;
+        TabTempEmpregado: Record Empregado temporary;
         Desconto: Decimal;
         TotalDescontos: Decimal;
         ValorSindicato: Decimal;

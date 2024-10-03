@@ -13,7 +13,7 @@ report 53036 "Hora Extra Colectiva"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             RequestFilterFields = "No.";
 

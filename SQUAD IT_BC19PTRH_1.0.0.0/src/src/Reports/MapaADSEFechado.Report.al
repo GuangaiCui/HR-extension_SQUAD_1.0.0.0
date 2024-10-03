@@ -59,7 +59,7 @@ report 53103 "Mapa ADSE - Fechado"
             {
             }
         }
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = SORTING("No.");
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")

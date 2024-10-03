@@ -7,7 +7,7 @@ page 53092 "Vista HoraExtra por Categorias"
     InsertAllowed = false;
     LinksAllowed = false;
     PageType = Card;
-    sourcetable = Employee;
+    SourceTable = Empregado;
     UsageCategory = Lists;
     ApplicationArea = HumanResourcesAppArea;
 

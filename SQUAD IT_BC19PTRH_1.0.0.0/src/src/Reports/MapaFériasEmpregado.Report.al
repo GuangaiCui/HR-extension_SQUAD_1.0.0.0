@@ -18,7 +18,7 @@ report 53057 "Mapa Férias Empregado"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             PrintOnlyIfDetail = true;
             RequestFilterFields = "No.";

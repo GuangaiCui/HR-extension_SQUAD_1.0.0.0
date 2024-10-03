@@ -80,7 +80,7 @@ table 53059 "Cat. Prof. Int. Empregado"
 
     var
         TabCatProf: Record "Categoria Profissional Interna";
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         Pergunta: Text[200];
 }
 

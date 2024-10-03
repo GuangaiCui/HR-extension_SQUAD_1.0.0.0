@@ -18,7 +18,7 @@ report 53072 "Mapa Férias Global"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = WHERE(Status = FILTER(<> Terminated));
             PrintOnlyIfDetail = true;

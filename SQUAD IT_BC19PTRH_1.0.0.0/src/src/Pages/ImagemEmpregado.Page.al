@@ -6,13 +6,13 @@ page 53037 "Imagem Empregado"
     InsertAllowed = false;
     LinksAllowed = false;
     PageType = Card;
-    SourceTable = Employee;
+    SourceTable = Empregado;
 
     layout
     {
         area(content)
         {
-            field(Picture; Rec.Image)
+            field(Picture; Rec.Picture)
             {
 
 

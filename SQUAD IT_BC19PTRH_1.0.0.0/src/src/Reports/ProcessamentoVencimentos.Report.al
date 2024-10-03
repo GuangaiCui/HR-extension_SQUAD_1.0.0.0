@@ -42,7 +42,7 @@ report 53037 "Processamento Vencimentos"
                 SetFilter("Cód. Processamento", PeriodoCode);
             end;
         }
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = WHERE(Status = CONST(Active));
             RequestFilterFields = "No.", "Tipo Contribuinte";
@@ -1438,7 +1438,7 @@ report 53037 "Processamento Vencimentos"
                     TempRubricaEmpregado2.SetRange(TempRubricaEmpregado2."Cód. Rúbrica Salarial");
                 end;
             }
-            dataitem(Empregado2; Employee)
+            dataitem(Empregado2; Empregado)
             {
                 DataItemLink = "No." = FIELD("No.");
                 DataItemTableView = SORTING("No.");
@@ -1975,7 +1975,7 @@ report 53037 "Processamento Vencimentos"
 
                         trigger OnLookup(var Text: Text): Boolean
                         var
-                            recEmpregado: Record Employee;
+                            recEmpregado: Record Empregado;
                         begin
 
                             //C+ - RSC - RH-009 - 11.01.2007
@@ -2078,7 +2078,7 @@ report 53037 "Processamento Vencimentos"
         TabInactiviEmpregado: Record "Inactividade Empregado";
         Text0004: Label 'Processamento terminado.';
         Text0005: Label 'Barra de Progresso @1@@@@@@@@@';
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         counts: Integer;
         i: Integer;
         window: Dialog;
@@ -2141,7 +2141,7 @@ report 53037 "Processamento Vencimentos"
         PeriodoCode: Code[10];
         ProcessarSobretaxa: Boolean;
         Sobretaxa: Report "Sobretaxa em Sede IRS 2013";
-        FiltroEmpregado: Record Employee;
+        FiltroEmpregado: Record Empregado;
         TabContratoEmp: Record "Contrato Empregado";
         Text0029: Label 'O Empregado %1 encontra-se activo, mas não tem um contrato de trabalho em vigor e como tal não será processado.';
         ValorEscalaoSobretaxa: Decimal;

@@ -121,7 +121,7 @@ page 53101 "Lista Rubrica Salarial Emp."
     end;
 
     var
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         TabRubricaSalarial: Record "Rubrica Salarial";
         Text0001: Label 'Não pode parametrizar uma Rúbrica do tipo Seg. Social, pois este empregado não é Subscritor.';
         Text0002: Label 'Não pode parametrizar uma Rúbrica do tipo CGA, pois este empregado não é Subscritor.';

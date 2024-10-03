@@ -5,7 +5,7 @@ report 53105 "Copiar Ficha Empregado"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             dataitem("Endereço Alternativo"; "Endereço Alternativo")
             {
@@ -147,7 +147,7 @@ report 53105 "Copiar Ficha Empregado"
     end;
 
     var
-        NovoEmpregado: Record Employee;
+        NovoEmpregado: Record Empregado;
         HumanResSetup: Record "Config. Recursos Humanos";
         NovoEnderecoAlt: Record "Endereço Alternativo";
         NovoContratoEmp: Record "Contrato Empregado";
@@ -157,7 +157,7 @@ report 53105 "Copiar Ficha Empregado"
         NovoHorEmp: Record "Horário Empregado";
         NovoRubSalEmp: Record "Rubrica Salarial Empregado";
         NovoDistCustos: Record "Distribuição Custos";
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit "No. Series";
         Text0001: Label 'Foi criado o empregado %1.';
 }
 

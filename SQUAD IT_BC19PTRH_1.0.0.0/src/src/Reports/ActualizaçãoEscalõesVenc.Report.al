@@ -6,7 +6,7 @@ report 53079 "Actualização Escalões Venc."
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = SORTING("No.") WHERE(Status = CONST(Active));
 

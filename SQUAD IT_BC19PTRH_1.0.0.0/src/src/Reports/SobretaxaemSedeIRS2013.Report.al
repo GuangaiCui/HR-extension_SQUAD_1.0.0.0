@@ -4,7 +4,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = SORTING("No.") WHERE(Status = FILTER(<> Terminated), "Tipo Contribuinte" = FILTER("Conta de Outrem" | Pensionista));
             RequestFilterFields = "No.";
@@ -330,14 +330,14 @@ report 53081 "Sobretaxa em Sede IRS 2013"
         OrdenadoMinimo: Decimal;
         ValorSubFerias: Decimal;
         ValorSubNatal: Decimal;
-        AuxEmpregado: Record Employee;
+        AuxEmpregado: Record Empregado;
         FlagVemdoProcessamento: Boolean;
         ValorEscalaoSobretaxa: Decimal;
         PerSobretaxa: Decimal;
         rEscaloesSobretaxa: Record "Tabelas Sobretaxa";
 
 
-    procedure SetFiltros(pCodProcessamento: Code[10]; var pEmpregado: Record Employee)
+    procedure SetFiltros(pCodProcessamento: Code[10]; var pEmpregado: Record Empregado)
     begin
         //2015.04.17 -  sobretaxa ser calculada no momento do processamento
         FlagVemdoProcessamento := true;

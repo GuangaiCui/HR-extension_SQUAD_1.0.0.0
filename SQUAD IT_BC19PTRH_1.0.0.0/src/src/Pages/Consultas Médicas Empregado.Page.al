@@ -57,7 +57,7 @@ page 53122 "Consultas Médicas Empregado"
     end;
 
     var
-        Employee: Record Employee;
+        Employee: Record Empregado;
 }
 
 #pragma implicitwith restore

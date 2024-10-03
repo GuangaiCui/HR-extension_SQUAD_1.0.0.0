@@ -1018,7 +1018,7 @@ report 53073 "Mapa Validação Contabilística"
         NLinha: Integer;
         Text0002: Label 'Este periodo já foi integrado.';
         NDocumento: Code[20];
-        NoSeriesMgt: Codeunit NoSeriesManagement;
+        NoSeriesMgt: Codeunit "No. Series";
         TabSeccaoDiarioGeral: Record "Gen. Journal Batch";
         TabCodSerie: Record "Source Code Setup";
         Text0003: Label 'O processamento tem de estar aberto.';
@@ -1032,7 +1032,7 @@ report 53073 "Mapa Validação Contabilística"
         Text0012: Label 'Não pode agrupar as contas balanço por centro de custo se não está a usar a Distribuição p/ Centros Custo.';
         TabTempIntegracaoContab2: Record "Integração Contabilistica" temporary;
         AgruparContasPGCC: Boolean;
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         LastFieldNo: Integer;
         FooterPrinted: Boolean;
         NumDocDif: Boolean;

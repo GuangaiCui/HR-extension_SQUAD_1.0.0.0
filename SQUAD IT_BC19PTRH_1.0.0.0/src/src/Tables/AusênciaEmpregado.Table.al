@@ -225,7 +225,7 @@ table 53042 "Ausência Empregado"
 
     var
         CauseOfAbsence: Record "Absence Reason";
-        Employee: Record Employee;
+        Employee: Record Empregado;
         EmployeeAbsence: Record "Ausência Empregado";
         HumanResUnitOfMeasure: Record "Unid. Medida Recursos Humanos";
         Text0001: Label 'tem que ser maior ou igual ';

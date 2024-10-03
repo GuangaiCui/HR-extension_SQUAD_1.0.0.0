@@ -18,7 +18,7 @@ report 53085 "Listagem de Férias"
 
     dataset
     {
-        dataitem(Empregado; Employee)
+        dataitem(Empregado; Empregado)
         {
             DataItemTableView = SORTING("No.") WHERE(Status = FILTER(<> Terminated), "Tipo Contribuinte" = CONST("Conta de Outrem"));
             RequestFilterFields = "No.";

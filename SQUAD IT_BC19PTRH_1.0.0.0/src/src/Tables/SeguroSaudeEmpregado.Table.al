@@ -96,7 +96,7 @@ table 53128 "Seguro Saude Empregado"
     end;
 
     var
-        Empregado: Record Employee;
+        Empregado: Record Empregado;
         FamiliarEmp: Record "Familiar Empregado";
 }
 

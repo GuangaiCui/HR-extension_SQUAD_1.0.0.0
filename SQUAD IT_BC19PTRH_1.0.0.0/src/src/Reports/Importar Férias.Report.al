@@ -103,7 +103,7 @@ report 53106 "Importar Férias"
         SheetsFound: Boolean;
         FicheiroFerias: Text[250];
         Ficheiro: File;
-        TabEmpregado: Record Employee;
+        TabEmpregado: Record Empregado;
         TabFeriasEmpregado: Record "Férias Empregados";
         TabHistAusencias: Record "Histórico Ausências";
         I: Integer;
