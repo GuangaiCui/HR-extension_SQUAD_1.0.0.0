@@ -22,7 +22,7 @@ page 53112 "Preparação Fecho Contas"
 
 
                     Caption = 'Empregado';
-                    TableRelation = Employee;
+                    TableRelation = Empregado;
 
                     trigger OnValidate()
                     begin

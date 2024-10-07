@@ -279,7 +279,7 @@ report 53077 "Pagamento Encargos"
             Empregado.TestField(Empregado."Secção Diario Pag.");
             repeat
                 if (TabRubricaSalarial.Get(TabHistLinhaMovEmp."Cód. Rubrica")) and
-                  (TabRubricaSalarial.Genero = genero) then begin
+                  (TabRubricaSalarial.Genero.AsInteger() = genero) then begin
                     Valor := TabHistLinhaMovEmp.Valor;
                     // Ir buscar o ultimo nº linha usado
                     GenJnl.Reset;

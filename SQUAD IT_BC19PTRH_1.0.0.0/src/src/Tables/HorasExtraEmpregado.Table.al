@@ -13,7 +13,7 @@ table 53073 "Horas Extra Empregado"
         field(2; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(3; Data; Date)
         {

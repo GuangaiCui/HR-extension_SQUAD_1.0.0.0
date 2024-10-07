@@ -33,7 +33,7 @@ table 53100 "Profissionalização"
         field(6; "Cod Empregado"; Code[20])
         {
             Caption = 'Employee Code';
-            TableRelation = Employee."No.";
+            TableRelation = Empregado."No.";
         }
         field(7; "Classificação"; Decimal)
         {

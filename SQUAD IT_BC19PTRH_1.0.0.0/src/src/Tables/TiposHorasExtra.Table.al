@@ -26,7 +26,7 @@ table 53072 "Tipos Horas Extra"
         {
             Caption = 'Employee No. Filter';
             FieldClass = FlowFilter;
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(16; "Date Filter"; Date)
         {

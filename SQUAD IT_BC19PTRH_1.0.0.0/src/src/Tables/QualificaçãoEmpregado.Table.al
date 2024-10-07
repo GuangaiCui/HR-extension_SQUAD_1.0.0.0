@@ -11,7 +11,7 @@ table 53038 "Qualificação Empregado"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(2; "Line No."; Integer)
         {
@@ -63,8 +63,6 @@ table 53038 "Qualificação Empregado"
         {
             Caption = 'Employee Status';
             Editable = false;
-            //OptionCaption = 'Active,Inactive,Terminated';
-            // OptionMembers = Active,Inactive,Terminated;
         }
         field(12; Comment; Boolean)
         {

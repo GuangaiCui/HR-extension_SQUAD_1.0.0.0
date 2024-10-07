@@ -209,11 +209,9 @@ table 53035 "Empregado"
         {
             Caption = 'Employment Date';
         }
-        field(31; Status; Option)
+        field(31; Status; Enum "Employee Status")
         {
             Caption = 'Status';
-            OptionCaption = 'Active,Inactive,Terminated';
-            OptionMembers = Active,Inactive,Terminated;
 
             trigger OnValidate()
             begin
@@ -1396,7 +1394,7 @@ table 53035 "Empregado"
     begin
         AlternativeAddr.SetRange("Employee No.", "No.");
         AlternativeAddr.DeleteAll;
-        DimMgt.DeleteDefaultDim(DATABASE::Employee, "No.");
+        DimMgt.DeleteDefaultDim(DATABASE::Empregado, "No.");
         TabHistLinhasMovEmpregado.Reset;
         TabHistLinhasMovEmpregado.SetRange(TabHistLinhasMovEmpregado."No. Empregado", "No.");
         if not TabHistLinhasMovEmpregado.FindFirst then begin
@@ -1482,7 +1480,7 @@ table 53035 "Empregado"
         end;
 
         DimMgt.UpdateDefaultDim(
-          DATABASE::Employee, "No.",
+          DATABASE::Empregado, "No.",
           "Global Dimension 1 Code", "Global Dimension 2 Code");
 
         //Preenche o campo Seguradora e Nº Apolice com os dados vindos da Conf. RH

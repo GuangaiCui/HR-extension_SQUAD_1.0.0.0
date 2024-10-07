@@ -11,7 +11,7 @@ table 53040 "Familiar Empregado"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(2; "Line No."; Integer)
         {
@@ -37,7 +37,7 @@ table 53040 "Familiar Empregado"
         field(9; "Employee Relative No."; Code[20])
         {
             Caption = 'Relative''s Employee No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(10; Comment; Boolean)
         {

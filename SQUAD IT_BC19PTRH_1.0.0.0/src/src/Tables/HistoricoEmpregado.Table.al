@@ -2,8 +2,8 @@ table 53111 "Historico Empregado"
 {
     Caption = 'Employee';
     DataCaptionFields = "No.", "First Name", "Last Name";
-    DrillDownPageID = "Employee List";
-    LookupPageID = "Employee List";
+    DrillDownPageID = "Lista Empregado";
+    LookupPageID = "Lista Empregado";
 
     fields
     {
@@ -124,7 +124,7 @@ table 53111 "Historico Empregado"
         field(26; "Manager No."; Code[20])
         {
             Caption = 'Manager No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(27; "Emplymt. Contract Code"; Code[10])
         {
@@ -241,7 +241,7 @@ table 53111 "Historico Empregado"
         {
             Caption = 'Employee No. Filter';
             FieldClass = FlowFilter;
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(48; CompanyMobilePhoneNo; Text[30])
         {

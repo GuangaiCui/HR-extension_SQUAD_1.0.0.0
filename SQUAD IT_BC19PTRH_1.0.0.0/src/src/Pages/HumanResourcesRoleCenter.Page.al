@@ -2,8 +2,9 @@ page 53170 "Human Resources Role Center"
 {
     Caption = 'Human Resources Role Center';
     PageType = RoleCenter;
-    UsageCategory = Tasks;
-    ApplicationArea = HumanResourcesAppArea;
+    UsageCategory = Administration;
+    ApplicationArea = All;
+
 
     layout
     {
@@ -101,7 +102,7 @@ page 53170 "Human Resources Role Center"
 
                     Caption = 'Employee';
                     Image = HumanResources;
-                    RunObject = Page "Employee List";
+                    RunObject = Page "Lista Empregado";
                 }
                 group(Tarefas)
                 {

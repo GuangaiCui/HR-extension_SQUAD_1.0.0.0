@@ -36,7 +36,7 @@ report 53049 "Mapa Modelo 10"
 
     dataset
     {
-        dataitem(EmpregadoFiltro; Employee)
+        dataitem(EmpregadoFiltro; Empregado)
         {
             DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.";

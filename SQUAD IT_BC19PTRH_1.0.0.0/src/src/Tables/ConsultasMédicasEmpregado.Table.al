@@ -7,7 +7,7 @@ table 53094 "Consultas Médicas Empregado"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee."No.";
+            TableRelation = Empregado."No.";
         }
         field(3; "Data Consulta"; Date)
         {

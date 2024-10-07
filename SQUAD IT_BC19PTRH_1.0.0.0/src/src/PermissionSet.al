@@ -1,4 +1,4 @@
-permissionset 50000 HRExtPermissionSet
+permissionset 50000 "HR Ext PermissionSet"
 {
     Assignable = true;
     //IncludedPermissionSets = "D365 HR, EDIT", "D365 HR, SETUP", "D365 HR, VIEW", "Human Resources - Admin";

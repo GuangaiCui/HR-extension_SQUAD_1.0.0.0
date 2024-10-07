@@ -11,7 +11,7 @@ table 53083 "Acidentes de Trabalho"
         field(4; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
 
             trigger OnValidate()
             begin

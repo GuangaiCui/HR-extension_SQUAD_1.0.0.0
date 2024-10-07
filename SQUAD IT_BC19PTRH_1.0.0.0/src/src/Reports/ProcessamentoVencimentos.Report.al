@@ -1971,7 +1971,7 @@ report 53037 "Processamento Vencimentos"
                     {
 
                         Caption = 'Nº Empregado a apagar';
-                        TableRelation = Employee;
+                        TableRelation = Empregado;
 
                         trigger OnLookup(var Text: Text): Boolean
                         var

@@ -665,7 +665,7 @@ page 53036 "Lista Empregado"
                     ApplicationArea = All;
 
                     Caption = 'Hist. Ausências';
-                    Image = absence;
+                    Image = Absence;
                     RunObject = Page "Ausências Empregado";
                     RunPageLink = "Employee No." = FIELD("No.");
                 }

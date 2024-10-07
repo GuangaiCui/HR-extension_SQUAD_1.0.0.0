@@ -23,7 +23,7 @@ page 53066 "Vista Ausências por Categorias"
 
 
                     Caption = 'Employee No. Filter';
-                    TableRelation = Employee;
+                    TableRelation = Empregado;
                 }
             }
             group("Opções de Matriz")

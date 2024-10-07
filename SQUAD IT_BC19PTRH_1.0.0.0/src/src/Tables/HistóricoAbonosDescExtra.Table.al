@@ -12,7 +12,7 @@ table 53107 "Histórico Abonos - Desc. Extra"
         field(2; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(3; Data; Date)
         {

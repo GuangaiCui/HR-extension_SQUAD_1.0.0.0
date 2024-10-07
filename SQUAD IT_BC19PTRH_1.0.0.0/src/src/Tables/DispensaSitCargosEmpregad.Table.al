@@ -7,7 +7,7 @@ table 53087 "Dispensa Sit - Cargos Empregad"
         field(1; "Nº Empregado"; Code[20])
         {
             Caption = 'Nº Empregado';
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(2; "N.º Linha"; Integer)
         {

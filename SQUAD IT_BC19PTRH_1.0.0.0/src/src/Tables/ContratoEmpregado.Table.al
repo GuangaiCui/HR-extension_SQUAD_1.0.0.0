@@ -9,7 +9,7 @@ table 53056 "Contrato Empregado"
         field(1; "Cód. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee."No.";
+            TableRelation = Empregado."No.";
         }
         field(2; "No. Linha"; Integer)
         {

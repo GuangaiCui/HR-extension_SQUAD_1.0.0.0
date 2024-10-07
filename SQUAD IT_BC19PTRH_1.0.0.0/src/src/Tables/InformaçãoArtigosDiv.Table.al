@@ -11,7 +11,7 @@ table 53049 "Informação Artigos Div."
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(2; "Misc. Article Code"; Code[10])
         {

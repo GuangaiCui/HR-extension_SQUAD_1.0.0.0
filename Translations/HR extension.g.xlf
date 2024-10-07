@@ -2164,7 +2164,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Doenças Profissionais - Field No. Mov. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee</source>
+          <source>Employee SQUAD</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Property Caption</note>
         </trans-unit>
@@ -3182,11 +3182,6 @@
           <source>Status</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field Status - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3078557310 - Field 513339096 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Active,Inactive,Terminated</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field Status - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 3386414140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Subsccritor CGA</source>
@@ -9129,7 +9124,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Acção Formação - Control Geral - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3234697897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ficha Empregado</source>
+          <source>Ficha Empregado SQUAD</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Empregado - Property Caption</note>
         </trans-unit>
@@ -10664,7 +10659,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Códigos Situação - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2615267451 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Lista Empregado</source>
+          <source>Lista Empregado SQUAD</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Empregado - Property Caption</note>
         </trans-unit>
@@ -11302,11 +11297,6 @@
           <source>Employee Qualifications</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Qualificações Empregado - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 2948742941 - Control 1878130204 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source></source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Qualificações Empregado - Control Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 2948742941 - Action 1284810555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Q&amp;ualification</source>
@@ -18477,6 +18467,11 @@
           <source>Local retenção Rendimento</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension VendorRH - Field Retention Income Local - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Profile 964632715 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>HR Manager</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Profile HR Manager - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2051802306 - EnumValue 1090351696 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Active</source>

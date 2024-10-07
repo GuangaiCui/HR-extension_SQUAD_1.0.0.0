@@ -15,7 +15,7 @@ table 53124 "Linhas Acções Médicas"
         field(3; "Employee No."; Code[20])
         {
             Caption = 'Nº Empregado';
-            TableRelation = Employee;
+            TableRelation = Empregado;
 
             trigger OnValidate()
             begin

@@ -10,7 +10,7 @@ table 53093 "Formação Empregado"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee."No.";
+            TableRelation = Empregado."No.";
         }
         field(2; "Cód. Acção"; Code[10])
         {

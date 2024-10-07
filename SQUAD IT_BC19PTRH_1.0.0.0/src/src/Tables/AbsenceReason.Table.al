@@ -48,7 +48,7 @@ table 53041 "Absence Reason"
         {
             Caption = 'Employee No. Filter';
             FieldClass = FlowFilter;
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(8; "Date Filter"; Date)
         {

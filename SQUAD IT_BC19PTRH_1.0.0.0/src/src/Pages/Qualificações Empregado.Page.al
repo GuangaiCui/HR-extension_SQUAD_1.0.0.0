@@ -35,7 +35,6 @@ page 53041 "Qualificações Empregado"
                 {
 
 
-                    OptionCaption = '';
                 }
                 field("Qualification Code"; Rec."Qualification Code")
                 {

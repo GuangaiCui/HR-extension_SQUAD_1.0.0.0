@@ -6,7 +6,7 @@ table 53099 "Distribuição Custos"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee."No.";
+            TableRelation = Empregado."No.";
 
             trigger OnValidate()
             begin

@@ -45,7 +45,7 @@ report 53048 "Ficheiro Modelo 10"
 
     dataset
     {
-        dataitem(EmpregadoFiltro; Employee)
+        dataitem(EmpregadoFiltro; Empregado)
         {
             DataItemTableView = SORTING("No.");
             RequestFilterFields = "No.";

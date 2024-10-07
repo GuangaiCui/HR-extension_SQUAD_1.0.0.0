@@ -755,7 +755,7 @@ report 53041 "Processamento Sub. Férias"
                     {
 
                         Caption = 'Nº Empregado a apagar';
-                        TableRelation = Employee;
+                        TableRelation = Empregado;
                     }
                     field(apagaTodosEmp; apagaTodosEmp)
                     {

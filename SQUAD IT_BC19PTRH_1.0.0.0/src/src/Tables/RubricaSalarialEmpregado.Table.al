@@ -9,7 +9,7 @@ table 53078 "Rubrica Salarial Empregado"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(2; "Cód. Rúbrica Salarial"; Code[20])
         {

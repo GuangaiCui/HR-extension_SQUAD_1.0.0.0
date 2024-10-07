@@ -11,7 +11,7 @@ table 53036 "Endereço Alternativo"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Employee;
+            TableRelation = Empregado;
 
             trigger OnValidate()
             begin

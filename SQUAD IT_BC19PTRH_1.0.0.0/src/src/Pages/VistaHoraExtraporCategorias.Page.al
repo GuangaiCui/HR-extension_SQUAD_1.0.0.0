@@ -23,7 +23,7 @@ page 53092 "Vista HoraExtra por Categorias"
 
 
                     Caption = 'Employee No. Filter';
-                    TableRelation = Employee;
+                    TableRelation = Empregado;
                 }
             }
             group("Opções de Matriz")

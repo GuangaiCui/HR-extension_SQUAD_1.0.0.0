@@ -18,7 +18,7 @@ table 53079 "Cab. Movs. Empregado"
         field(3; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
 
             trigger OnValidate()
             begin

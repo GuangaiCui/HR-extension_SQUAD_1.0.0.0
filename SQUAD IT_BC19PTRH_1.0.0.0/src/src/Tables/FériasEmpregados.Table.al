@@ -8,7 +8,7 @@ table 53090 "Férias Empregados"
         field(1; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(2; Data; Date)
         {

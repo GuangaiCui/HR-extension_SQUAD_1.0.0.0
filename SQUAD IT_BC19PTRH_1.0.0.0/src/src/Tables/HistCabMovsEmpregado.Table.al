@@ -20,7 +20,7 @@ table 53108 "Hist. Cab. Movs. Empregado"
         field(3; "No. Empregado"; Code[20])
         {
             Caption = 'Employee No.';
-            TableRelation = Employee;
+            TableRelation = Empregado;
         }
         field(5; "Designação Empregado"; Text[75])
         {

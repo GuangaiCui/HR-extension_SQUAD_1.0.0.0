@@ -13,7 +13,7 @@ table 53042 "Ausência Empregado"
         {
             Caption = 'Employee No.';
             NotBlank = true;
-            TableRelation = Employee;
+            TableRelation = Empregado;
 
             trigger OnValidate()
             begin
