@@ -1,10 +1,12 @@
-#pragma implicitwith disable
+
 page 53098 "Ficha Rubrica Salarial"
 {
     //  IT001 - CPA:Novo campo para a funcionalidade de acertos de Duodécimos
     // 
     // IT003 - CPA - 207.07.03 -  No campo VB não quer que apareça o valor dos complementos
 
+    ApplicationArea = All;
+    Caption = 'Ficha Rubrica Salarial';
     PageType = Card;
     SourceTable = "Rubrica Salarial";
 
@@ -92,8 +94,9 @@ page 53098 "Ficha Rubrica Salarial"
                     Caption = 'Vencimento Base do Recibo';
                 }
             }
-            part(RubricaSalarialLinhas; "Subform Rubrica Salarial")
+            part("RubricaSalarialLinhas"; "Subform Rubrica Salarial")
             {
+                // Filter on the sales orders that relate to the customer in the card page.
 
 
                 Caption = 'Rubrica Salarial Fillhas';
@@ -288,6 +291,4 @@ page 53098 "Ficha Rubrica Salarial"
             Message(Text0001, Rec."Código");
     end;
 }
-
-#pragma implicitwith restore
 

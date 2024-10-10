@@ -7999,12 +7999,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial Linhas - NamedType Text001</note>
         </trans-unit>
         <trans-unit id="Table 3591825832 - Field 12365450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Salary Iten Code</source>
+          <source>Cód. Rubrica</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial Linhas - Field Cód. Rubrica - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3591825832 - Field 2642180456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Second Salary Iten Code</source>
+          <source>Cód. Rubrica Filha</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial Linhas - Field Cód. Rubrica Filha - Property Caption</note>
         </trans-unit>
@@ -11854,7 +11854,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Situação Perante Actividade - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1240475025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Subform Rubrica Salarial</source>
+          <source>teste_vc</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Subform Rubrica Salarial - Property Caption</note>
         </trans-unit>
@@ -11922,6 +11922,11 @@
           <source>Tabelas Sobretaxa</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Tabelas Sobretaxa - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2883967315 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>teste_vc</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page teste_vc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3602875088 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipos Horas Extra</source>
