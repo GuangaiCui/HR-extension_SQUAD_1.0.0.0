@@ -119,7 +119,7 @@ report 53079 "Actualização Escalões Venc."
 
     var
         TabGrauFuncao: Record "Grau Função";
-        TabRubricaSal: Record "Rubrica Salarial";
+        TabRubricaSal: Record "Payroll Item";
         TabRubricaSalEmp: Record "Rubrica Salarial Empregado";
         Text0001: Label 'O Empregado %1 não tem horas semanais preenchidas.';
         Text0002: Label 'Processo concluído.';

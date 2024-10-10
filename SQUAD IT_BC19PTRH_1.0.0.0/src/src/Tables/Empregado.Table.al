@@ -942,17 +942,17 @@ table 53035 "Empregado"
         field(148; "Cód. Rúbrica Enc. Seg. Social"; Code[20])
         {
             Caption = 'Social Security Charges Rubric Code';
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
         }
         field(149; "Cód. Rúbrica Enc. CGA"; Code[20])
         {
             Caption = 'Cód. Rúbrica Enc. CGA';
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
         }
         field(150; "Cód. Rúbrica Enc. ADSE"; Code[20])
         {
             Caption = 'Cód. Rúbrica Enc. ADSE';
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
         }
         field(151; "Professor Acumulação"; Boolean)
         {

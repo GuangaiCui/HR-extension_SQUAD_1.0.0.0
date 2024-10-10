@@ -84,7 +84,7 @@ report 53103 "Mapa ADSE - Fechado"
                     encontrou: Boolean;
                 begin
                     TabRubrica.Reset;
-                    if TabRubrica.Get("Hist. Linhas Movs. Empregado"."Cód. Rubrica") then begin
+                    if TabRubrica.Get("Hist. Linhas Movs. Empregado"."Payroll Item Code") then begin
                         if not (TabRubrica.Genero = TabRubrica.Genero::ADSE) then begin
                             CurrReport.Skip
                         end;
@@ -176,7 +176,7 @@ report 53103 "Mapa ADSE - Fechado"
         DataIni: Date;
         DataFim: Date;
         InfEmpresa: Record "Company Information";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         CodProcess: Code[10];
         Filtro: Text[30];
 }

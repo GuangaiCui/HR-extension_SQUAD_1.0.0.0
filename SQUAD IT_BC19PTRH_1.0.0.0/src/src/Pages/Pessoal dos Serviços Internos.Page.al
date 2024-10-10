@@ -20,7 +20,7 @@ page 53140 "Pessoal dos Serviços Internos"
                     Style = Strong;
                     StyleExpr = TRUE;
                 }
-                field(Nome; Rec.Nome)
+                field(Name; Rec.Name)
                 {
 
 

@@ -343,7 +343,7 @@ xmlport 53035 "RU - Anexo 0"
                                 if rRubricaSalarial.FindFirst then begin
                                     rHistLinhasMovEmp.Reset;
                                     rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
-                                    rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Cód. Rubrica", rRubricaSalarial.Código);
+                                    rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Payroll Item Code", rRubricaSalarial.Código);
                                     if rHistLinhasMovEmp.FindLast then
                                         n_trab_sindic_31Out := Format(rHistLinhasMovEmp.Count);
 
@@ -3545,7 +3545,7 @@ xmlport 53035 "RU - Anexo 0"
         rSST: Record "Segurança e Saúde no Trabalho";
         tempDestacamentos: Record Destacamentos temporary;
         rHistLinhasMovEmp: Record "Hist. Linhas Movs. Empregado";
-        rRubricaSalarial: Record "Rubrica Salarial";
+        rRubricaSalarial: Record "Payroll Item";
         rHistCabMovEmp: Record "Hist. Cab. Movs. Empregado";
         rHistHorasExtra: Record "Histórico Horas Extra";
         rGLEntry: Record "G/L Entry";

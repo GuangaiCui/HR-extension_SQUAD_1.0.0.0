@@ -91,7 +91,7 @@ report 53048 "Ficheiro Modelo 10"
                 //Fim
 
                 if TabRubrica.Find('-') then
-                    ImpostoExtraSobretaxa.SetRange(ImpostoExtraSobretaxa."Cód. Rubrica", TabRubrica.Código);
+                    ImpostoExtraSobretaxa.SetRange(ImpostoExtraSobretaxa."Payroll Item Code", TabRubrica.Código);
 
                 ImpostoExtraSobretaxa.SetRange(ImpostoExtraSobretaxa."Data Registo", DataIni, DataFim);
             end;
@@ -105,7 +105,7 @@ report 53048 "Ficheiro Modelo 10"
                 //Para apanhar só os registos que são do Genero IRS ou IRS Sub. Férias  ou IRS Sub. NAtal
 
                 TabRubrica.Reset;
-                TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado"."Cód. Rubrica");
+                TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado"."Payroll Item Code");
                 if TabRubrica.Find('-') then begin
                     if (TabRubrica.Genero <> TabRubrica.Genero::IRS) and
                        (TabRubrica.Genero <> TabRubrica.Genero::"IRS Sub. Férias") and
@@ -266,10 +266,10 @@ report 53048 "Ficheiro Modelo 10"
                     if TabRubrica.Find('-') then begin
                         repeat
                             TabRubricaLinhas.Reset;
-                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubrica.Código);
+                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubrica.Código);
                             if TabRubricaLinhas.Find('-') then begin
                                 repeat
-                                    if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                                    if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
                                             varLimite := "Hist. Linhas Movs. Empregado2".Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
@@ -298,7 +298,7 @@ report 53048 "Ficheiro Modelo 10"
                     TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", false);//2014.01.06
                     if TabRubrica.Find('-') then begin
                         repeat
-                            if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                            if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                                 ImportanciasRetidas := ImportanciasRetidas + "Hist. Linhas Movs. Empregado2".Valor;
                                 TotalImpRetidas := TotalImpRetidas + "Hist. Linhas Movs. Empregado2".Valor;
                             end;
@@ -316,7 +316,7 @@ report 53048 "Ficheiro Modelo 10"
                                        TabRubrica.Genero::ADSE, TabRubrica.Genero::SS);
                     if TabRubrica.Find('-') then begin
                         repeat
-                            if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                            if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                                 Desconto := Desconto + "Hist. Linhas Movs. Empregado2".Valor;
                                 TotalDescontos := TotalDescontos + "Hist. Linhas Movs. Empregado2".Valor;
                             end;
@@ -331,7 +331,7 @@ report 53048 "Ficheiro Modelo 10"
                                        TabRubrica.Genero::Sindicato);
                     if TabRubrica.Find('-') then begin
                         repeat
-                            if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                            if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                                 ValorSindicato := ValorSindicato + "Hist. Linhas Movs. Empregado2".Valor;
                                 TotalSindicato := TotalSindicato + "Hist. Linhas Movs. Empregado2".Valor;
                             end;
@@ -356,7 +356,7 @@ report 53048 "Ficheiro Modelo 10"
 
                     if TabRubrica.Find('-') then begin
                         repeat
-                            if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                            if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                                 SobreTaxa := SobreTaxa + Round("Hist. Linhas Movs. Empregado2".Valor, 0.01);
                                 TotSobreTaxa := TotSobreTaxa + Round("Hist. Linhas Movs. Empregado2".Valor, 0.01);
                             end;
@@ -805,7 +805,7 @@ report 53048 "Ficheiro Modelo 10"
 
     var
         TotalFor: Label 'Total de ';
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         DataIni: Date;
         DataFim: Date;

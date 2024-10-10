@@ -40,22 +40,22 @@ report 53047 "Integração Contabilística"
                     //-----------------------------------------------------------------
                     /*
                     IF "Movs. Empregado"."Debit Acc. No." = '' THEN
-                       MESSAGE(Text0005,"Movs. Empregado"."Descrição Rubrica","Movs. Empregado"."Employee No.");
+                       MESSAGE(Text0005,"Movs. Empregado"."Payroll Item Description","Movs. Empregado"."Employee No.");
                     
                     IF "Movs. Empregado"."Credit Acc. No." = '' THEN
-                       MESSAGE(Text0005,"Movs. Empregado"."Descrição Rubrica","Movs. Empregado"."Employee No.");
+                       MESSAGE(Text0005,"Movs. Empregado"."Payroll Item Description","Movs. Empregado"."Employee No.");
                     
                     IF TabContaAux.GET("Movs. Empregado"."Debit Acc. No.") THEN BEGIN
                        IF TabContaAux."Account Type" = TabContaAux."Account Type"::Heading THEN
                           MESSAGE(Text0006,"Movs. Empregado"."Employee No.","Movs. Empregado"."Debit Acc. No."
-                                  ,"Movs. Empregado"."Descrição Rubrica");
+                                  ,"Movs. Empregado"."Payroll Item Description");
                     END ELSE
                       MESSAGE(Text0007,"Movs. Empregado"."Debit Acc. No.");
                     
                     IF TabContaAux.GET("Movs. Empregado"."Credit Acc. No.") THEN BEGIN
                        IF TabContaAux."Account Type" = TabContaAux."Account Type"::Heading THEN
                           MESSAGE(Text0006,"Movs. Empregado"."Employee No.","Movs. Empregado"."Credit Acc. No."
-                                  ,"Movs. Empregado"."Descrição Rubrica");
+                                  ,"Movs. Empregado"."Payroll Item Description");
                     END ELSE
                       MESSAGE(Text0007,"Movs. Empregado"."Credit Acc. No.");
                     */
@@ -66,18 +66,18 @@ report 53047 "Integração Contabilística"
 
                     Clear(TotAbonos);
                     TabRubSal.Reset;
-                    if TabRubSal.Get("Movs. Empregado"."Cód. Rubrica") then begin
+                    if TabRubSal.Get("Movs. Empregado"."Payroll Item Code") then begin
                         if TabRubSal.Genero = TabRubSal.Genero::Falta then begin
                             //Percorrer todos os abonos deste empregado e soma o valor daqueles
                             //que são do tipo vencimento base e/ou tem o pisco no campo faltas
                             AuxLinhasMovEmp.Reset;
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Cód. Processamento", "Movs. Empregado"."Cód. Processamento");
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Employee No.", "Movs. Empregado"."Employee No.");
-                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Tipo Rubrica", AuxLinhasMovEmp."Tipo Rubrica"::Abono);
+                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Payroll Item Type", AuxLinhasMovEmp."Payroll Item Type"::Abono);
                             if AuxLinhasMovEmp.FindSet then begin
                                 repeat
                                     TabRubSal2.Reset;
-                                    if TabRubSal2.Get(AuxLinhasMovEmp."Cód. Rubrica") then
+                                    if TabRubSal2.Get(AuxLinhasMovEmp."Payroll Item Code") then
                                         if (TabRubSal2.Faults = true) or (TabRubSal2.Genero = TabRubSal2.Genero::"Vencimento Base") then
                                             TotAbonos := TotAbonos + AuxLinhasMovEmp.Valor;
                                 until AuxLinhasMovEmp.Next = 0;
@@ -90,11 +90,11 @@ report 53047 "Integração Contabilística"
                             AuxLinhasMovEmp.Reset;
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Cód. Processamento", "Movs. Empregado"."Cód. Processamento");
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Employee No.", "Movs. Empregado"."Employee No.");
-                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Tipo Rubrica", AuxLinhasMovEmp."Tipo Rubrica"::Abono);
+                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Payroll Item Type", AuxLinhasMovEmp."Payroll Item Type"::Abono);
                             if AuxLinhasMovEmp.FindSet then begin
                                 repeat
                                     TabRubSal2.Reset;
-                                    if TabRubSal2.Get(AuxLinhasMovEmp."Cód. Rubrica") then
+                                    if TabRubSal2.Get(AuxLinhasMovEmp."Payroll Item Code") then
                                         if (TabRubSal2.Faults) or (TabRubSal2.Genero = TabRubSal2.Genero::"Vencimento Base") then begin
                                             NLinha2 := NLinha2 + 10000;
                                             TempLinhasMovEmp.Init;
@@ -127,7 +127,7 @@ report 53047 "Integração Contabilística"
             dataitem(DimDistribuir; "Integração Contabilistica")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("Employee No.", "Cód. Rubrica") WHERE("No. Conta" = FILTER('6*'));
+                DataItemTableView = SORTING("Employee No.", "Payroll Item Code") WHERE("No. Conta" = FILTER('6*'));
 
                 trigger OnAfterGetRecord()
                 var
@@ -923,8 +923,8 @@ report 53047 "Integração Contabilística"
         FooterPrinted: Boolean;
         NumDocDif: Boolean;
         NEmp: Code[20];
-        TabRubSal: Record "Rubrica Salarial";
-        TabRubSal2: Record "Rubrica Salarial";
+        TabRubSal: Record "Payroll Item";
+        TabRubSal2: Record "Payroll Item";
         AuxLinhasMovEmp: Record "Hist. Linhas Movs. Empregado";
         TempLinhasMovEmp: Record "Hist. Linhas Movs. Empregado" temporary;
         TotAbonos: Decimal;
@@ -958,20 +958,20 @@ report 53047 "Integração Contabilística"
         TabIntegracaoContab."No. Linha" := NLinha;
         TabIntegracaoContab."Data Registo" := WorkDate;
         TabIntegracaoContab."Designação Empregado" := MovsEmp."Designação Empregado";
-        TabIntegracaoContab."Cód. Rubrica" := MovsEmp."Cód. Rubrica";
-        TabIntegracaoContab."Descrição Rubrica" := MovsEmp."Descrição Rubrica";
-        TabIntegracaoContab."Tipo Rubrica" := MovsEmp."Tipo Rubrica";
+        TabIntegracaoContab."Payroll Item Code" := MovsEmp."Payroll Item Code";
+        TabIntegracaoContab."Payroll Item Description" := MovsEmp."Payroll Item Description";
+        TabIntegracaoContab."Payroll Item Type" := MovsEmp."Payroll Item Type";
         TabIntegracaoContab."No. Conta" := MovsEmp."Debit Acc. No.";
         //Se for Abono Negativo troca a coluna e o sinal
         //***************************************************************************************
-        if (MovsEmp."Tipo Rubrica" = MovsEmp."Tipo Rubrica"::Abono) and
+        if (MovsEmp."Payroll Item Type" = MovsEmp."Payroll Item Type"::Abono) and
           (MovsEmp.Valor < 0) then begin
             TabIntegracaoContab."Valor Débito" := 0;
             TabIntegracaoContab."Valor Crédito" := Abs(MovsEmp.Valor);
         end else begin
             //Se for Desconto Negativo troca o sinal
             //***************************************************************************************
-            if MovsEmp."Tipo Rubrica" = MovsEmp."Tipo Rubrica"::Desconto then
+            if MovsEmp."Payroll Item Type" = MovsEmp."Payroll Item Type"::Desconto then
                 TabIntegracaoContab."Valor Débito" := Abs(MovsEmp.Valor)
             else
                 TabIntegracaoContab."Valor Débito" := MovsEmp.Valor;
@@ -993,14 +993,14 @@ report 53047 "Integração Contabilística"
         TabIntegracaoContab."No. Linha" := NLinha;
         TabIntegracaoContab."Data Registo" := WorkDate;
         TabIntegracaoContab."Designação Empregado" := MovsEmp."Designação Empregado";
-        TabIntegracaoContab."Cód. Rubrica" := MovsEmp."Cód. Rubrica";
-        TabIntegracaoContab."Descrição Rubrica" := MovsEmp."Descrição Rubrica";
-        TabIntegracaoContab."Tipo Rubrica" := MovsEmp."Tipo Rubrica";
+        TabIntegracaoContab."Payroll Item Code" := MovsEmp."Payroll Item Code";
+        TabIntegracaoContab."Payroll Item Description" := MovsEmp."Payroll Item Description";
+        TabIntegracaoContab."Payroll Item Type" := MovsEmp."Payroll Item Type";
         TabIntegracaoContab."No. Conta" := MovsEmp."Credit Acc. No.";
 
         //Se for Abono Negativo troca a coluna e o sinal
         //***************************************************************************************
-        if (MovsEmp."Tipo Rubrica" = MovsEmp."Tipo Rubrica"::Abono) and
+        if (MovsEmp."Payroll Item Type" = MovsEmp."Payroll Item Type"::Abono) and
           (MovsEmp.Valor < 0) then begin
             TabIntegracaoContab."Valor Débito" := Abs(MovsEmp.Valor);
             TabIntegracaoContab."Valor Crédito" := 0;
@@ -1008,7 +1008,7 @@ report 53047 "Integração Contabilística"
             TabIntegracaoContab."Valor Débito" := 0;
             //Se for Desconto Negativo troca o sinal
             //***************************************************************************************
-            if MovsEmp."Tipo Rubrica" = MovsEmp."Tipo Rubrica"::Desconto then
+            if MovsEmp."Payroll Item Type" = MovsEmp."Payroll Item Type"::Desconto then
                 TabIntegracaoContab."Valor Crédito" := Abs(MovsEmp.Valor)
             else
                 TabIntegracaoContab."Valor Crédito" := MovsEmp.Valor;

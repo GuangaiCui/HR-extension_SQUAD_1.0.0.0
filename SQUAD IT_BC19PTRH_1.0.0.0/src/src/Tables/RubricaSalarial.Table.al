@@ -1,5 +1,6 @@
-table 53076 "Rubrica Salarial"
+table 53076 "Payroll Item"
 {
+    Caption = 'Rubrica Salarial';
     // IT001 - CPA:Novo campo para a funcionalidade de certos de Duodécimos
     // 
     // IT003 - CPA - 207.07.03 -  Novo campo "Vencimento Base" para ser usado nos recibos de vencimento
@@ -13,9 +14,9 @@ table 53076 "Rubrica Salarial"
         {
             Caption = 'Code';
         }
-        field(6; "Tipo Rubrica"; Option)
+        field(6; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Iten Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
@@ -100,7 +101,7 @@ table 53076 "Rubrica Salarial"
 
             trigger OnValidate()
             var
-                lRubricaSal: Record "Rubrica Salarial";
+                lRubricaSal: Record "Payroll Item";
                 lRubricaSalLinhas: Record "Rubrica Salarial Linhas";
             begin
                 if NATREM <> NATREM::" " then begin
@@ -108,7 +109,7 @@ table 53076 "Rubrica Salarial"
                     lRubricaSal.SetRange(lRubricaSal.Genero, lRubricaSal.Genero::SS);
                     if lRubricaSal.Find('-') then begin
                         lRubricaSalLinhas.Reset;
-                        lRubricaSalLinhas.SetRange(lRubricaSalLinhas."Cód. Rubrica", lRubricaSal.Código);
+                        lRubricaSalLinhas.SetRange(lRubricaSalLinhas."Payroll Item Code", lRubricaSal.Código);
                         lRubricaSalLinhas.SetRange(lRubricaSalLinhas."Cód. Rubrica Filha", Código);
                         if not lRubricaSalLinhas.Find('-') then
                             Message(Text0004, Código);
@@ -204,7 +205,7 @@ table 53076 "Rubrica Salarial"
         {
             Clustered = true;
         }
-        key(Key2; "Tipo Rubrica", "Mês Início Periocidade", Quantity)
+        key(Key2; "Payroll Item Type", "Mês Início Periocidade", Quantity)
         {
         }
     }
@@ -224,7 +225,7 @@ table 53076 "Rubrica Salarial"
 
 
         TabRubricaSalLinhas.Reset;
-        TabRubricaSalLinhas.SetRange(TabRubricaSalLinhas."Cód. Rubrica", Código);
+        TabRubricaSalLinhas.SetRange(TabRubricaSalLinhas."Payroll Item Code", Código);
         if TabRubricaSalLinhas.Find('-') then TabRubricaSalLinhas.DeleteAll;
 
         TabRubricaSalLinhas.Reset;
@@ -247,14 +248,14 @@ table 53076 "Rubrica Salarial"
         if TabRubricaSalEmp.Find('-') then begin
             if Confirm(Text0001, true, Código) then begin
                 repeat
-                    if xRec."Tipo Rubrica" <> "Tipo Rubrica" then begin
-                        if TabRubricaSalEmp."Tipo Rubrica" = xRec."Tipo Rubrica" then
-                            TabRubricaSalEmp."Tipo Rubrica" := "Tipo Rubrica";
+                    if xRec."Payroll Item Type" <> "Payroll Item Type" then begin
+                        if TabRubricaSalEmp."Payroll Item Type" = xRec."Payroll Item Type" then
+                            TabRubricaSalEmp."Payroll Item Type" := "Payroll Item Type";
                     end;
 
                     if xRec.Descrição <> Descrição then begin
-                        if TabRubricaSalEmp."Descrição Rubrica" = xRec.Descrição then
-                            TabRubricaSalEmp."Descrição Rubrica" := Descrição;
+                        if TabRubricaSalEmp."Payroll Item Description" = xRec.Descrição then
+                            TabRubricaSalEmp."Payroll Item Description" := Descrição;
                     end;
 
                     if xRec."Debit Acc. No." <> "Debit Acc. No." then begin
@@ -297,11 +298,11 @@ table 53076 "Rubrica Salarial"
         if TabRubricaSalEmp.Find('-') then begin
             if Confirm(Text0002, true, Código) then begin
                 repeat
-                    if xRec."Tipo Rubrica" <> "Tipo Rubrica" then
-                        TabRubricaSalEmp."Tipo Rubrica" := "Tipo Rubrica";
+                    if xRec."Payroll Item Type" <> "Payroll Item Type" then
+                        TabRubricaSalEmp."Payroll Item Type" := "Payroll Item Type";
 
                     if xRec.Descrição <> Descrição then
-                        TabRubricaSalEmp."Descrição Rubrica" := Descrição;
+                        TabRubricaSalEmp."Payroll Item Description" := Descrição;
 
                     if xRec."Debit Acc. No." <> "Debit Acc. No." then
                         TabRubricaSalEmp."Debit Acc. No." := "Debit Acc. No.";

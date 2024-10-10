@@ -29,7 +29,7 @@ table 53073 "Horas Extra Empregado"
                 //HG
                 TabHora.Get("Cód. Hora Extra");
                 Descrição := TabHora.Descrição;
-                "Cód. Rubrica" := TabHora."Cód. Rubrica";
+                "Payroll Item Code" := TabHora."Payroll Item Code";
                 Factor := TabHora.Factor;
             end;
         }
@@ -37,10 +37,10 @@ table 53073 "Horas Extra Empregado"
         {
             Caption = 'Description';
         }
-        field(12; "Cód. Rubrica"; Code[20])
+        field(12; "Payroll Item Code"; Code[20])
         {
             Caption = 'Salary Item code';
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
         }
         field(17; Quantity; Decimal)
         {

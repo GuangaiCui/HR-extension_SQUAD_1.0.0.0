@@ -85,7 +85,7 @@ report 53078 "Mapa ADSE - Aberto"
                     encontrou: Boolean;
                 begin
                     TabRubrica.Reset;
-                    if TabRubrica.Get("Linhas Movs. Empregado"."Cód. Rubrica") then
+                    if TabRubrica.Get("Linhas Movs. Empregado"."Payroll Item Code") then
                         if not (TabRubrica.Genero = TabRubrica.Genero::ADSE) then
                             CurrReport.Skip
                 end;
@@ -177,7 +177,7 @@ report 53078 "Mapa ADSE - Aberto"
         DataIni: Date;
         DataFim: Date;
         InfEmpresa: Record "Company Information";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         CodProcess: Code[10];
         Filtro: Text[30];
 }

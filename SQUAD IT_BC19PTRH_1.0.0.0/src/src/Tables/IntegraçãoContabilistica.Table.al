@@ -33,15 +33,17 @@ table 53113 "Integração Contabilistica"
         field(13; "Designação Empregado"; Text[75])
         {
         }
-        field(19; "Cód. Rubrica"; Code[20])
+        field(19; "Payroll Item Code"; Code[20])
         {
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
         }
-        field(20; "Descrição Rubrica"; Text[100])
+        field(20; "Payroll Item Description"; Text[100])
         {
+            Caption = 'Descrição Rubrica';
         }
-        field(21; "Tipo Rubrica"; Option)
+        field(21; "Payroll Item Type"; Option)
         {
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
@@ -110,7 +112,7 @@ table 53113 "Integração Contabilistica"
         key(Key3; "No. Conta")
         {
         }
-        key(Key4; "Employee No.", "Cód. Rubrica")
+        key(Key4; "Employee No.", "Payroll Item Code")
         {
         }
     }

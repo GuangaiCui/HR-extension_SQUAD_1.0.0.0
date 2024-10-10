@@ -40,7 +40,7 @@ page 53154 "Pess. dos Serviços Lista"
 
 
                 }
-                field("Nome Empregador"; Rec."Nome Empregador")
+                field("Employer Name"; Rec."Employer Name")
                 {
 
 

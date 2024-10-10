@@ -157,11 +157,11 @@ report 53075 "Folha Remunerações"
             dataitem("Movs. Abonos"; "Linhas Movs. Empregado")
             {
                 DataItemLink = "Employee No." = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Rubrica" = CONST(Abono), "Tipo Processamento" = FILTER(<> Encargos));
-                column("Movs__Abonos__Cód__Rubrica_"; "Cód. Rubrica")
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Payroll Item Type" = CONST(Abono), "Tipo Processamento" = FILTER(<> Encargos));
+                column("Movs__Abonos__Cód__Rubrica_"; "Payroll Item Code")
                 {
                 }
-                column("Movs__Abonos__Descrição_Rubrica_"; "Descrição Rubrica")
+                column("Movs__Abonos__Descrição_Rubrica_"; "Payroll Item Description")
                 {
                 }
                 column(Movs__Abonos_Quantidade; Quantity)
@@ -192,17 +192,17 @@ report 53075 "Folha Remunerações"
             dataitem("Movs. Descontos"; "Linhas Movs. Empregado")
             {
                 DataItemLink = "Employee No." = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Rubrica" = CONST(Desconto), "Tipo Processamento" = FILTER(<> Encargos));
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Payroll Item Type" = CONST(Desconto), "Tipo Processamento" = FILTER(<> Encargos));
                 column(Movs__Descontos_Valor; Valor)
                 {
                 }
                 column(varqtd; varqtd)
                 {
                 }
-                column("Movs__Descontos__Descrição_Rubrica_"; "Descrição Rubrica")
+                column("Movs__Descontos__Descrição_Rubrica_"; "Payroll Item Description")
                 {
                 }
-                column("Movs__Descontos__Cód__Rubrica_"; "Cód. Rubrica")
+                column("Movs__Descontos__Cód__Rubrica_"; "Payroll Item Code")
                 {
                 }
                 column(ABS__Movs__Abonos__Valor____ABS__Movs__Descontos__Valor_; Abs("Movs. Abonos".Valor) - Abs("Movs. Descontos".Valor))
@@ -238,17 +238,17 @@ report 53075 "Folha Remunerações"
             dataitem("Hist. Movs. Abonos"; "Hist. Linhas Movs. Empregado")
             {
                 DataItemLink = "Employee No." = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Rubrica" = CONST(Abono), "Tipo Processamento" = FILTER(<> Encargos));
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Payroll Item Type" = CONST(Abono), "Tipo Processamento" = FILTER(<> Encargos));
                 column(Hist__Movs__Abonos_Valor; Valor)
                 {
                 }
                 column(Hist__Movs__Abonos_Quantidade; Quantity)
                 {
                 }
-                column("Hist__Movs__Abonos__Descrição_Rubrica_"; "Descrição Rubrica")
+                column("Hist__Movs__Abonos__Descrição_Rubrica_"; "Payroll Item Description")
                 {
                 }
-                column("Hist__Movs__Abonos__Cód__Rubrica_"; "Cód. Rubrica")
+                column("Hist__Movs__Abonos__Cód__Rubrica_"; "Payroll Item Code")
                 {
                 }
                 column("Hist__Movs__Abonos_Cód__Processamento"; "Cód. Processamento")
@@ -273,17 +273,17 @@ report 53075 "Folha Remunerações"
             dataitem("Hist. Movs. Descontos"; "Hist. Linhas Movs. Empregado")
             {
                 DataItemLink = "Employee No." = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Rubrica" = CONST(Desconto), "Tipo Processamento" = FILTER(<> Encargos));
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Payroll Item Type" = CONST(Desconto), "Tipo Processamento" = FILTER(<> Encargos));
                 column(Hist__Movs__Descontos_Valor; Valor)
                 {
                 }
                 column(varqtd_Control1102056036; varqtd)
                 {
                 }
-                column("Hist__Movs__Descontos__Descrição_Rubrica_"; "Descrição Rubrica")
+                column("Hist__Movs__Descontos__Descrição_Rubrica_"; "Payroll Item Description")
                 {
                 }
-                column("Hist__Movs__Descontos__Cód__Rubrica_"; "Cód. Rubrica")
+                column("Hist__Movs__Descontos__Cód__Rubrica_"; "Payroll Item Code")
                 {
                 }
                 column(ABS__Hist__Movs__Abonos__Valor____ABS__Hist__Movs__Descontos__Valor_; Abs("Hist. Movs. Abonos".Valor) - Abs("Hist. Movs. Descontos".Valor))

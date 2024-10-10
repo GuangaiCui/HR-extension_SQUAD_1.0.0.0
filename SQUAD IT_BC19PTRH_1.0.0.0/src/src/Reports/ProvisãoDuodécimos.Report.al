@@ -332,7 +332,7 @@ report 53068 "Provisão Duodécimos"
                             RubSal.SetRange(RubSal.Genero, RubSal.Genero::CGA);
                             if RubSal.FindFirst then begin
                                 RubSalLinhas.Reset;
-                                RubSalLinhas.SetRange(RubSalLinhas."Cód. Rubrica", RubSal.Código);
+                                RubSalLinhas.SetRange(RubSalLinhas."Payroll Item Code", RubSal.Código);
                                 if RubSalLinhas.FindSet then begin
                                     repeat
                                         RubSal2.Reset;
@@ -801,8 +801,8 @@ report 53068 "Provisão Duodécimos"
         RegSS: Record "Regime Seg. Social";
         RubSalEmp: Record "Rubrica Salarial Empregado";
         RubSalEmp2: Record "Rubrica Salarial Empregado";
-        RubSal: Record "Rubrica Salarial";
-        RubSal2: Record "Rubrica Salarial";
+        RubSal: Record "Payroll Item";
+        RubSal2: Record "Payroll Item";
         RubSalLinhas: Record "Rubrica Salarial Linhas";
         NoSeriesMgt: Codeunit "No. Series";
         nDocumento: Code[20];

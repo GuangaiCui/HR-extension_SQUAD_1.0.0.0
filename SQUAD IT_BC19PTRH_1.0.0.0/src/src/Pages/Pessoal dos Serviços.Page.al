@@ -66,7 +66,7 @@ page 53139 "Pessoal dos Serviços"
 
 
                 }
-                field("Nome Empregador"; Rec."Nome Empregador")
+                field("Employer Name"; Rec."Employer Name")
                 {
 
 

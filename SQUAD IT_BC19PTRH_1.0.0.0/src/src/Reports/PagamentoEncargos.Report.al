@@ -49,7 +49,7 @@ report 53077 "Pagamento Encargos"
                                 end else
                                     Error(Text0002, Empregado."Nome Livro Diario Pag.", Empregado."Secção Diario Pag.");
                                 repeat
-                                    if (TabRubricaSalarial.Get(TabHistLinhaMovEmp."Cód. Rubrica")) and
+                                    if (TabRubricaSalarial.Get(TabHistLinhaMovEmp."Payroll Item Code")) and
                                       ((TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::IRS) or
                                       (TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::"IRS Sub. Férias") or
                                       (TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::"IRS Sub. Natal")) then begin
@@ -126,7 +126,7 @@ report 53077 "Pagamento Encargos"
                                     TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Employee No.", Empregado."No.");
                                     TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp.Pendente, true);
                                     TabHistLinhaMovEmp.SetFilter(TabHistLinhaMovEmp.Valor, '<>%1', 0.0);
-                                    TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Cód. Rubrica", TabRubricaSalarial.Código);
+                                    TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Payroll Item Code", TabRubricaSalarial.Código);
                                     if TabHistLinhaMovEmp.FindSet then begin
                                         Valor := TabHistLinhaMovEmp.Valor;
                                         // Ir buscar o ultimo nº linha usado
@@ -246,7 +246,7 @@ report 53077 "Pagamento Encargos"
         NDocumento: Code[20];
         NoSeriesMgt: Codeunit "No. Series";
         TabSeccaoDiarioGeral: Record "Gen. Journal Batch";
-        TabRubricaSalarial: Record "Rubrica Salarial";
+        TabRubricaSalarial: Record "Payroll Item";
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
         TabCodSerie: Record "Source Code Setup";
         TipoPagamento: Option SSEmp,SSPat,CGAEmp,CGAPat,IRS,ADSE,ADSEPat,FCT;
@@ -257,7 +257,7 @@ report 53077 "Pagamento Encargos"
         Valor: Decimal;
         DataInicio: Date;
         DataFim: Date;
-        TabRubricaSalarialAux: Record "Rubrica Salarial";
+        TabRubricaSalarialAux: Record "Payroll Item";
         TabDistriCC: Record "Distribuição Custos";
         Text0004: Label 'Configure a Distribuição p/ Centro de Custo para o Empregado %1.';
         TabDistriDim: Record "Distribuição Custos";
@@ -278,7 +278,7 @@ report 53077 "Pagamento Encargos"
             Empregado.TestField(Empregado."Nome Livro Diario Pag.");
             Empregado.TestField(Empregado."Secção Diario Pag.");
             repeat
-                if (TabRubricaSalarial.Get(TabHistLinhaMovEmp."Cód. Rubrica")) and
+                if (TabRubricaSalarial.Get(TabHistLinhaMovEmp."Payroll Item Code")) and
                   (TabRubricaSalarial.Genero.AsInteger() = genero) then begin
                     Valor := TabHistLinhaMovEmp.Valor;
                     // Ir buscar o ultimo nº linha usado

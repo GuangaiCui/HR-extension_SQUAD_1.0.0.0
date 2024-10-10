@@ -64,13 +64,13 @@ report 53055 "Pagamento Vencimentos"
                     TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Cód. Processamento", "Hist. Cab. Movs. Empregado"."Cód. Processamento");
                     TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Tipo Processamento", "Hist. Cab. Movs. Empregado"."Tipo Processamento");
                     TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Employee No.", "Hist. Cab. Movs. Empregado"."Employee No.");
-                    TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Tipo Rubrica", TabHistLinhasMovEmp."Tipo Rubrica"::Abono);//2009.06.18
+                    TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Payroll Item Type", TabHistLinhasMovEmp."Payroll Item Type"::Abono);//2009.06.18
                     if TabHistLinhasMovEmp.FindSet then begin
                         //2009.06.18
                         NConta := TabHistLinhasMovEmp."Credit Acc. No.";
                         repeat
                             TabRubricaSalarial.Reset;
-                            TabRubricaSalarial.SetRange(TabRubricaSalarial.Código, TabHistLinhasMovEmp."Cód. Rubrica");
+                            TabRubricaSalarial.SetRange(TabRubricaSalarial.Código, TabHistLinhasMovEmp."Payroll Item Code");
                             TabRubricaSalarial.SetRange(TabRubricaSalarial.Genero, TabRubricaSalarial.Genero::"Vencimento Base");
                             if TabRubricaSalarial.Find('-') then begin
                                 NConta := TabHistLinhasMovEmp."Credit Acc. No.";
@@ -250,7 +250,7 @@ report 53055 "Pagamento Vencimentos"
         NDocumento: Code[20];
         NoSeriesMgt: Codeunit "No. Series";
         TabSeccaoDiarioGeral: Record "Gen. Journal Batch";
-        TabRubricaSalarial: Record "Rubrica Salarial";
+        TabRubricaSalarial: Record "Payroll Item";
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
         NConta: Code[20];
         TabCodSerie: Record "Source Code Setup";

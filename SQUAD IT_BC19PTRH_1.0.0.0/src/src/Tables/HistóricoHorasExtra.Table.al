@@ -28,10 +28,10 @@ table 53106 "Histórico Horas Extra"
         {
             Caption = 'Description';
         }
-        field(12; "Cód. Rubrica"; Code[20])
+        field(12; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Item code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
         }
         field(17; Quantity; Decimal)
         {

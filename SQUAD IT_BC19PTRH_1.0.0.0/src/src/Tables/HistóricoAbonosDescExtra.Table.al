@@ -18,20 +18,20 @@ table 53107 "Histórico Abonos - Desc. Extra"
         {
             Caption = 'Date';
         }
-        field(8; "Cód. Rubrica"; Code[20])
+        field(8; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Item Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rúbrica';
+            TableRelation = "Payroll Item";
         }
-        field(9; "Tipo Rubrica"; Option)
+        field(9; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Item Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
-        field(10; "Descrição Rubrica"; Text[100])
+        field(10; "Payroll Item Description"; Text[100])
         {
-            Caption = 'Salary Item Description';
+            Caption = 'Descrição Rubrica';
         }
         field(14; Quantity; Decimal)
         {
@@ -45,7 +45,7 @@ table 53107 "Histórico Abonos - Desc. Extra"
         {
             Caption = 'Total Amount';
         }
-        field(17; UnidadeMedida; Code[20])
+        field(17; "Unit of Measure"; Code[20])
         {
             Caption = 'Unit Code';
             TableRelation = "Unid. Medida Recursos Humanos";
@@ -67,9 +67,9 @@ table 53107 "Histórico Abonos - Desc. Extra"
             Caption = 'Cancel Absence';
             Description = 'Para anular uma falta debitada por engano, no Fich SS';
         }
-        field(36; "Data a que se refere o Mov."; Date)
+        field(36; "Reference Date"; Date)
         {
-            Caption = 'Reference Date';
+            Caption = 'Data a que se refere o Mov.';
             Description = 'Para aparecer no Fic. Seg. Social com a data do mês a que se refere a falta ou acerto de venc, etc...';
         }
         field(50; "Processamento Referencia"; Code[10])
@@ -84,7 +84,7 @@ table 53107 "Histórico Abonos - Desc. Extra"
         {
             Clustered = true;
         }
-        key(Key2; "Employee No.", "Data a que se refere o Mov.")
+        key(Key2; "Employee No.", "Reference Date")
         {
         }
     }

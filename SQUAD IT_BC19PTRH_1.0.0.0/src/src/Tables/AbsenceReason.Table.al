@@ -55,10 +55,10 @@ table 53041 "Absence Reason"
             Caption = 'Date Filter';
             FieldClass = FlowFilter;
         }
-        field(12; "Rubric Code"; Code[20])
+        field(12; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Item Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rúbrica';
+            TableRelation = "Payroll Item";
         }
         field(15; Justified; Boolean)
         {

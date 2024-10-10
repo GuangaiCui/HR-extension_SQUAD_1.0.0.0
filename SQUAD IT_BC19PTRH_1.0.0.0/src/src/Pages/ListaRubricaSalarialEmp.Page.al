@@ -25,12 +25,12 @@ page 53101 "Lista Rubrica Salarial Emp."
 
 
                 }
-                field("Tipo Rubrica"; Rec."Tipo Rubrica")
+                field("Payroll Item Type"; Rec."Payroll Item Type")
                 {
 
 
                 }
-                field("Descrição Rubrica"; Rec."Descrição Rubrica")
+                field("Payroll Item Description"; Rec."Payroll Item Description")
                 {
 
 
@@ -122,7 +122,7 @@ page 53101 "Lista Rubrica Salarial Emp."
 
     var
         TabEmpregado: Record Empregado;
-        TabRubricaSalarial: Record "Rubrica Salarial";
+        TabRubricaSalarial: Record "Payroll Item";
         Text0001: Label 'Não pode parametrizar uma Rúbrica do tipo Seg. Social, pois este empregado não é Subscritor.';
         Text0002: Label 'Não pode parametrizar uma Rúbrica do tipo CGA, pois este empregado não é Subscritor.';
         Text0003: Label 'Não pode parametrizar uma Rúbrica do tipo IVA, pois este empregado é da Cat. A.';

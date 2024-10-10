@@ -16,12 +16,12 @@ page 53107 "Hist. Linhas Movs. Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 
                 }
-                field("Descrição Rubrica"; Rec."Descrição Rubrica")
+                field("Payroll Item Description"; Rec."Payroll Item Description")
                 {
 
 
@@ -36,7 +36,7 @@ page 53107 "Hist. Linhas Movs. Empregado"
 
 
                 }
-                field(UnidadeMedida; Rec.UnidadeMedida)
+                field("Unit of Measure"; Rec."Unit of Measure")
                 {
 
 
@@ -71,7 +71,7 @@ page 53107 "Hist. Linhas Movs. Empregado"
         // usamos uma variável que vai buscar o Abs(valor) para que os descontos não
         //apareçam a negativo, o que faz confusão ao utilizador.
 
-        if Rec."Tipo Rubrica" = Rec."Tipo Rubrica"::Desconto then
+        if Rec."Payroll Item Type" = Rec."Payroll Item Type"::Desconto then
             ValorSemSinal := Abs(Rec.Valor)
         else
             ValorSemSinal := Rec.Valor;

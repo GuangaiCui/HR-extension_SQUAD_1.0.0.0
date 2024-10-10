@@ -40,7 +40,7 @@ page 53091 "Lista Histórico Horas Extra"
 
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 

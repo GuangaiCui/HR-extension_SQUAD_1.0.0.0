@@ -62,7 +62,7 @@ report 53039 "Fecho Sub. Férias/Natal"
                     //quando fecho 1 mes com Sub. Férias processados tenho de actualizar a ficha do  empregado com a Ultima data Acerto SF
                     if ConfRH.Get() then;
                     RubricSalarial.Reset;
-                    if (RubricSalarial.Get("Linhas Movs. Empregado"."Cód. Rubrica")) and
+                    if (RubricSalarial.Get("Linhas Movs. Empregado"."Payroll Item Code")) and
                        (RubricSalarial.NATREM = RubricSalarial.NATREM::"Cód. Sub. Férias") then begin
                         if TabEmp.Get("Linhas Movs. Empregado"."Employee No.") then begin
                             ContratoEmp.Reset;
@@ -123,8 +123,8 @@ report 53039 "Fecho Sub. Férias/Natal"
                 begin
                     //Passar para Histórico as Abonos/Descontos deste processamento
                     //------------------------------------------------------
-                    if ("Abonos - Descontos Extra".Data >= "Periodos Processamento"."Data Inicio Processamento") and
-                      ("Abonos - Descontos Extra".Data <= "Periodos Processamento"."Data Fim Processamento") then begin
+                    if ("Abonos - Descontos Extra".Date >= "Periodos Processamento"."Data Inicio Processamento") and
+                      ("Abonos - Descontos Extra".Date <= "Periodos Processamento"."Data Fim Processamento") then begin
                         HistAboDesExtra.Reset;
                         if HistAboDesExtra.FindLast then
                             VarNMov := HistAboDesExtra."Entry No." + 1
@@ -214,7 +214,7 @@ report 53039 "Fecho Sub. Férias/Natal"
         HistAboDesExtra: Record "Histórico Abonos - Desc. Extra";
         VarNMov: Integer;
         ConfRH: Record "Config. Recursos Humanos";
-        RubricSalarial: Record "Rubrica Salarial";
+        RubricSalarial: Record "Payroll Item";
         TabEmp: Record Empregado;
         ContratoEmp: Record "Contrato Empregado";
         PeriodoCode: Code[10];

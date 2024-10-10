@@ -38,27 +38,27 @@ table 53080 "Linhas Movs. Empregado"
         {
             Caption = 'Employee Name';
         }
-        field(19; "Cód. Rubrica"; Code[20])
+        field(19; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
 
             trigger OnValidate()
             begin
-                if TabRubrica.Get("Cód. Rubrica") then begin
-                    "Descrição Rubrica" := TabRubrica.Descrição;
+                if TabRubrica.Get("Payroll Item Code") then begin
+                    "Payroll Item Description" := TabRubrica.Descrição;
                     "Debit Acc. No." := TabRubrica."Debit Acc. No.";
                     "Credit Acc. No." := TabRubrica."Credit Acc. No.";
-                    "Tipo Rubrica" := TabRubrica."Tipo Rubrica";
+                    "Payroll Item Type" := TabRubrica."Payroll Item Type";
                     NATREM := TabRubrica.NATREM;
                 end;
             end;
         }
-        field(20; "Descrição Rubrica"; Text[100])
+        field(20; "Payroll Item Description"; Text[100])
         {
             Caption = 'Salary Iten Description';
         }
-        field(21; "Tipo Rubrica"; Option)
+        field(21; "Payroll Item Type"; Option)
         {
             Caption = 'Salary Iten Type';
             OptionCaption = 'Abono,Desconto';
@@ -147,7 +147,7 @@ table 53080 "Linhas Movs. Empregado"
             Caption = 'Qtd. in Salary Slip';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
-        field(91; UnidadeMedida; Code[20])
+        field(91; "Unit of Measure"; Code[20])
         {
             Caption = 'Unit Code';
             Description = 'HG - por causa das ausencias em dias e em horas';
@@ -201,10 +201,10 @@ table 53080 "Linhas Movs. Empregado"
         key(Key4; "Employee No.", "Data Registo", "Cód. Situação", "Cód. Movimento")
         {
         }
-        key(Key5; "Cód. Rubrica")
+        key(Key5; "Payroll Item Code")
         {
         }
-        key(Key6; "Tipo Rubrica")
+        key(Key6; "Payroll Item Type")
         {
         }
         key(Key7; "Cód. Processamento", "Employee No.", "No. Linha")
@@ -221,7 +221,7 @@ table 53080 "Linhas Movs. Empregado"
 
     var
         TabEmp: Record Empregado;
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabConta: Record "G/L Account";
         TabMovEmp: Record "Cab. Movs. Empregado";
 }

@@ -172,18 +172,18 @@ report 53084 "Mapa Sindicato"
                     _PerProcessamento: Record "Periodos Processamento";
                 begin
                     TabRubrica.Reset;
-                    if TabRubrica.Get("Hist. Linhas Movs. Empregado"."Cód. Rubrica") then begin
+                    if TabRubrica.Get("Hist. Linhas Movs. Empregado"."Payroll Item Code") then begin
                         Quota := Quota + "Hist. Linhas Movs. Empregado".Valor;
                         TotalQuota := TotalQuota + "Hist. Linhas Movs. Empregado".Valor;
                         TabRubricaLinhas.Reset;
-                        TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubrica.Código);
+                        TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubrica.Código);
                         if TabRubricaLinhas.FindSet then begin
                             repeat
                                 TabHistLinhasMov.Reset;
                                 TabHistLinhasMov.SetRange(TabHistLinhasMov."Cód. Processamento", "Hist. Linhas Movs. Empregado"."Cód. Processamento");
                                 TabHistLinhasMov.SetRange(TabHistLinhasMov."Tipo Processamento", "Hist. Linhas Movs. Empregado"."Tipo Processamento");
                                 TabHistLinhasMov.SetRange(TabHistLinhasMov."Employee No.", "Hist. Linhas Movs. Empregado"."Employee No.");
-                                TabHistLinhasMov.SetRange(TabHistLinhasMov."Cód. Rubrica", TabRubricaLinhas."Cód. Rubrica Filha");
+                                TabHistLinhasMov.SetRange(TabHistLinhasMov."Payroll Item Code", TabRubricaLinhas."Cód. Rubrica Filha");
                                 if TabHistLinhasMov.FindFirst then begin
                                     Incidencia := Incidencia + TabHistLinhasMov.Valor;
                                     TotalIncidencia := TotalIncidencia + Incidencia;
@@ -222,7 +222,7 @@ report 53084 "Mapa Sindicato"
                     end else
                         SetFilter("Cód. Processamento", FiltroCodProc);
 
-                    "Hist. Linhas Movs. Empregado".SetFilter("Cód. Rubrica", CodRubricas);
+                    "Hist. Linhas Movs. Empregado".SetFilter("Payroll Item Code", CodRubricas);
                 end;
             }
 
@@ -287,7 +287,7 @@ report 53084 "Mapa Sindicato"
                     {
 
                         Caption = 'Rubrica Salarial';
-                        TableRelation = "Rubrica Salarial";
+                        TableRelation = "Payroll Item";
                     }
                 }
             }
@@ -335,7 +335,7 @@ report 53084 "Mapa Sindicato"
         TabEmpregado: Record Empregado;
         TabConfEmpresa: Record "Company Information";
         TabHistLinhasMov: Record "Hist. Linhas Movs. Empregado";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         FiltroDataInicProc: Text[1024];
         FiltroDataFimProc: Text[1024];
@@ -378,7 +378,7 @@ report 53084 "Mapa Sindicato"
     begin
         Clear(CodRubricas);
         TabRubrica.Reset;
-        TabRubrica.SetRange("Tipo Rubrica", TabRubrica."Tipo Rubrica"::Desconto);
+        TabRubrica.SetRange("Payroll Item Type", TabRubrica."Payroll Item Type"::Desconto);
         TabRubrica.SetRange(Genero, TabRubrica.Genero::Sindicato);
         if TabRubrica.FindSet then begin
             first := true;

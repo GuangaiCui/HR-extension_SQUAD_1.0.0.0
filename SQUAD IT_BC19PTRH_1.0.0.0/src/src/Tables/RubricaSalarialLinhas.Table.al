@@ -3,22 +3,22 @@ table 53077 "Rubrica Salarial Linhas"
 
     fields
     {
-        field(1; "Cód. Rubrica"; Code[20])
+        field(1; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
         }
         field(2; "Cód. Rubrica Filha"; Code[20])
         {
             Caption = 'Second Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
 
             trigger OnValidate()
             begin
                 if TabRubrica.Get("Cód. Rubrica Filha") then begin
                     "Descrição Rubrica Filha" := TabRubrica.Descrição;
-                    "Tipo Rubrica Filha" := TabRubrica."Tipo Rubrica";
-                    if rRubrica.Get("Cód. Rubrica") then begin
+                    "Tipo Rubrica Filha" := TabRubrica."Payroll Item Type";
+                    if rRubrica.Get("Payroll Item Code") then begin
                         if rRubrica.Genero = rRubrica.Genero::SS then
                             if TabRubrica.NATREM = TabRubrica.NATREM::" " then
                                 Error(Text001, "Cód. Rubrica Filha");
@@ -58,7 +58,7 @@ table 53077 "Rubrica Salarial Linhas"
 
     keys
     {
-        key(Key1; "Cód. Rubrica", "Cód. Rubrica Filha", "No. Linha")
+        key(Key1; "Payroll Item Code", "Cód. Rubrica Filha", "No. Linha")
         {
             Clustered = true;
         }
@@ -69,8 +69,8 @@ table 53077 "Rubrica Salarial Linhas"
     }
 
     var
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         Text001: Label 'A rubrica %1 não tem o campo NATREN preenchido.';
-        rRubrica: Record "Rubrica Salarial";
+        rRubrica: Record "Payroll Item";
 }
 

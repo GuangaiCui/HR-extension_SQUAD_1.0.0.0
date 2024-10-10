@@ -66,10 +66,10 @@ report 53040 "Processamento Sub. Natal"
                 begin
                     //No Sub. Natal também tem de ser possivel lançar abonos ou descontos extra, para poder por exemplo
                     //abater um desconto judicial.
-                    if ("Abonos - Descontos Extra".Data >= "Periodos Processamento"."Data Inicio Processamento") and
-                       ("Abonos - Descontos Extra".Data <= "Periodos Processamento"."Data Fim Processamento") then begin
+                    if ("Abonos - Descontos Extra".Date >= "Periodos Processamento"."Data Inicio Processamento") and
+                       ("Abonos - Descontos Extra".Date <= "Periodos Processamento"."Data Fim Processamento") then begin
 
-                        if TabRubricaSalarial.Get("Abonos - Descontos Extra"."Cód. Rubrica") then begin
+                        if TabRubricaSalarial.Get("Abonos - Descontos Extra"."Payroll Item Code") then begin
                             //Actualizar a tabela Hora Extra
                             "Abonos - Descontos Extra"."Earning - Blocked Deduction" := true;
                             "Abonos - Descontos Extra".Modify;
@@ -79,15 +79,15 @@ report 53040 "Processamento Sub. Natal"
                             TempRubricaEmpregado."Employee No." := Empregado."No.";
                             NLinha := NLinha + 10000;
                             TempRubricaEmpregado."Line No." := NLinha;
-                            TempRubricaEmpregado."Cód. Rúbrica Salarial" := "Abonos - Descontos Extra"."Cód. Rubrica";
-                            TempRubricaEmpregado."Tipo Rubrica" := "Abonos - Descontos Extra"."Tipo Rubrica";
-                            TempRubricaEmpregado."Descrição Rubrica" := "Abonos - Descontos Extra"."Descrição Rubrica";
+                            TempRubricaEmpregado."Cód. Rúbrica Salarial" := "Abonos - Descontos Extra"."Payroll Item Code";
+                            TempRubricaEmpregado."Payroll Item Type" := "Abonos - Descontos Extra"."Payroll Item Type";
+                            TempRubricaEmpregado."Payroll Item Description" := "Abonos - Descontos Extra"."Payroll Item Description";
                             TempRubricaEmpregado."Debit Acc. No." := TabRubricaSalarial."Debit Acc. No.";
                             TempRubricaEmpregado."Credit Acc. No." := TabRubricaSalarial."Credit Acc. No.";
                             TempRubricaEmpregado.Quantity := "Abonos - Descontos Extra".Quantity;
-                            TempRubricaEmpregado.UnidadeMedida := "Abonos - Descontos Extra".UnidadeMedida;//2008.10.30
+                            TempRubricaEmpregado."Unit of Measure" := "Abonos - Descontos Extra"."Unit of Measure";//2008.10.30
                             TempRubricaEmpregado."Unit Value" := "Abonos - Descontos Extra"."Unit Value";
-                            if "Abonos - Descontos Extra"."Tipo Rubrica" = "Abonos - Descontos Extra"."Tipo Rubrica"::Abono then
+                            if "Abonos - Descontos Extra"."Payroll Item Type" = "Abonos - Descontos Extra"."Payroll Item Type"::Abono then
                                 TempRubricaEmpregado."Valor Total" := Abs("Abonos - Descontos Extra"."Valor Total")
                             else
                                 TempRubricaEmpregado."Valor Total" := -"Abonos - Descontos Extra"."Valor Total";
@@ -108,7 +108,7 @@ report 53040 "Processamento Sub. Natal"
             dataitem(Abonos; "Rubrica Salarial Empregado")
             {
                 DataItemLink = "Employee No." = FIELD("No."), "Data Início" = FIELD("Data Filtro Inicio"), "Data Fim" = FIELD("Data Filtro Fim");
-                DataItemTableView = SORTING("Employee No.", sort, "Cód. Rúbrica Salarial") WHERE("Tipo Rubrica" = CONST(Abono));
+                DataItemTableView = SORTING("Employee No.", sort, "Cód. Rúbrica Salarial") WHERE("Payroll Item Type" = CONST(Abono));
 
                 trigger OnAfterGetRecord()
                 var
@@ -147,7 +147,7 @@ report 53040 "Processamento Sub. Natal"
                             AuxTabRubricaEmpregado.SetRange(AuxTabRubricaEmpregado."Cód. Rúbrica Salarial", AuxTabRubricaSalarial.Código);
                             if AuxTabRubricaEmpregado.Find('-') then begin
                                 AuxTabRubricaSalLinhas.Reset;
-                                AuxTabRubricaSalLinhas.SetRange(AuxTabRubricaSalLinhas."Cód. Rubrica", AuxTabRubricaSalarial.Código);
+                                AuxTabRubricaSalLinhas.SetRange(AuxTabRubricaSalLinhas."Payroll Item Code", AuxTabRubricaSalarial.Código);
                                 AuxTabRubricaSalLinhas.SetRange(AuxTabRubricaSalLinhas."Cód. Rubrica Filha", Abonos."Cód. Rúbrica Salarial");
                                 if AuxTabRubricaSalLinhas.Find('-') then begin
                                     TempRubricaEmpregado."Cód. Situação" := Abonos."Cód. Situação";
@@ -159,7 +159,7 @@ report 53040 "Processamento Sub. Natal"
                         //CGA - Fim
                         //Ver se há rubricas salariais que dependam desta
                         RubricaSalariaLinhas.Reset;
-                        RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Cód. Rubrica", Abonos."Cód. Rúbrica Salarial");
+                        RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Payroll Item Code", Abonos."Cód. Rúbrica Salarial");
                         if RubricaSalariaLinhas.Find('-') then begin
                             repeat
                                 RubricaSalaEmpregado.Reset;
@@ -171,7 +171,7 @@ report 53040 "Processamento Sub. Natal"
                                                                "Periodos Processamento"."Data Inicio Processamento", 0D);
                                 if RubricaSalaEmpregado.Find('-') then begin
                                     RubricaSalariaLinhas2.Reset;
-                                    RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Cód. Rubrica", RubricaSalariaLinhas."Cód. Rubrica Filha");
+                                    RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Payroll Item Code", RubricaSalariaLinhas."Cód. Rubrica Filha");
                                     if RubricaSalariaLinhas2.Find('-') then begin
                                         repeat
                                             RubricaSalaEmpregado2.Reset;
@@ -262,11 +262,11 @@ report 53040 "Processamento Sub. Natal"
             dataitem(Descontos; "Rubrica Salarial Empregado")
             {
                 DataItemLink = "Employee No." = FIELD("No."), "Data Início" = FIELD("Data Filtro Inicio"), "Data Fim" = FIELD("Data Filtro Fim");
-                DataItemTableView = SORTING("Employee No.", sort, "Cód. Rúbrica Salarial") WHERE("Tipo Rubrica" = CONST(Desconto));
+                DataItemTableView = SORTING("Employee No.", sort, "Cód. Rúbrica Salarial") WHERE("Payroll Item Type" = CONST(Desconto));
 
                 trigger OnAfterGetRecord()
                 var
-                    l_RubricaSalarial: Record "Rubrica Salarial";
+                    l_RubricaSalarial: Record "Payroll Item";
                     l_RubricaSalarialEmp: Record "Rubrica Salarial Empregado";
                     AuxValorVencBaseparaCGA: Decimal;
                     Aux_RubricaSalarialEmp: Record "Rubrica Salarial Empregado";
@@ -297,7 +297,7 @@ report 53040 "Processamento Sub. Natal"
 
                             //Ver se há rubricas salariais que dependam desta
                             RubricaSalariaLinhas.Reset;
-                            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Cód. Rubrica", Descontos."Cód. Rúbrica Salarial");
+                            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Payroll Item Code", Descontos."Cód. Rúbrica Salarial");
                             if RubricaSalariaLinhas.FindSet then begin
                                 repeat
                                     TempRubricaEmpregado.Reset;
@@ -464,7 +464,7 @@ report 53040 "Processamento Sub. Natal"
                 var
                     CatProfQPEmpregado: Record "Cat. Prof. QP Empregado";
                     GrauFuncaoEmpregado: Record "Grau Função Empregado";
-                    l_RubSal: Record "Rubrica Salarial";
+                    l_RubSal: Record "Payroll Item";
                 begin
                     //***************************************************************************************
                     //Envia para as tabelas Cab. Mov e Linhas Mov. empregado este processamento que está
@@ -530,9 +530,9 @@ report 53040 "Processamento Sub. Natal"
                                     LinhaMovEmpregado."No. Linha" := NLinha;
                                     LinhaMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
                                     LinhaMovEmpregado."Designação Empregado" := Empregado2.Name;
-                                    LinhaMovEmpregado."Cód. Rubrica" := TempRubricaEmpregado2."Cód. Rúbrica Salarial";
-                                    LinhaMovEmpregado."Descrição Rubrica" := TempRubricaEmpregado2."Descrição Rubrica";
-                                    LinhaMovEmpregado."Tipo Rubrica" := TempRubricaEmpregado2."Tipo Rubrica";
+                                    LinhaMovEmpregado."Payroll Item Code" := TempRubricaEmpregado2."Cód. Rúbrica Salarial";
+                                    LinhaMovEmpregado."Payroll Item Description" := TempRubricaEmpregado2."Payroll Item Description";
+                                    LinhaMovEmpregado."Payroll Item Type" := TempRubricaEmpregado2."Payroll Item Type";
                                     LinhaMovEmpregado."Debit Acc. No." := TempRubricaEmpregado2."Debit Acc. No.";
                                     LinhaMovEmpregado."Credit Acc. No." := TempRubricaEmpregado2."Credit Acc. No.";
                                     LinhaMovEmpregado.Quantity := TempRubricaEmpregado2.Quantity;
@@ -628,7 +628,7 @@ report 53040 "Processamento Sub. Natal"
                                 rLinhaMovEmp.Validate("Employee No.", Empregado."No.");
                                 rLinhaMovEmp."No. Linha" := NLinha;
                                 rLinhaMovEmp."Data Registo" := "Periodos Processamento"."Data Registo";
-                                rLinhaMovEmp.Validate("Cód. Rubrica", rPenhora."Garnishment Rubric");
+                                rLinhaMovEmp.Validate("Payroll Item Code", rPenhora."Garnishment Rubric");
 
                                 rLinhaMovEmp.Quantity := 1;
                                 rLinhaMovEmp.Valor := Round(ValorAPenhorar, 0.01) * -1;
@@ -826,7 +826,7 @@ report 53040 "Processamento Sub. Natal"
         Text0003: Label 'Já existe um processamento para o Empregado %1 para este periodo. Deseja substituí-lo?';
         NLinha2: Integer;
         FuncoesRH: Codeunit "Funções RH";
-        TabRubricaSalarial: Record "Rubrica Salarial";
+        TabRubricaSalarial: Record "Payroll Item";
         TabRegimeSS: Record "Regime Seg. Social";
         TabConfRH: Record "Config. Recursos Humanos";
         QtdAProcessar: Decimal;
@@ -845,9 +845,9 @@ report 53040 "Processamento Sub. Natal"
         ApagaEmp: Text[250];
         Text0006: Label 'Já existe processamentos dos empregados para este período, deseja substituí-los?';
         Text0007: Label 'Tem a certeza que deseja apagar o processamento para os seguintes Empregados: %1 para este período?';
-        TabRubSal: Record "Rubrica Salarial";
+        TabRubSal: Record "Payroll Item";
         first: Boolean;
-        AuxTabRubricaSalarial: Record "Rubrica Salarial";
+        AuxTabRubricaSalarial: Record "Payroll Item";
         AuxTabRubricaSalLinhas: Record "Rubrica Salarial Linhas";
         AuxTabRubricaEmpregado: Record "Rubrica Salarial Empregado";
         RubricaSalariaLinhas2: Record "Rubrica Salarial Linhas";
@@ -871,9 +871,9 @@ report 53040 "Processamento Sub. Natal"
     var
         TabCabMovEmpregado: Record "Cab. Movs. Empregado";
         TabLinhaMovEmpregado: Record "Linhas Movs. Empregado";
-        TabRubSalarial: Record "Rubrica Salarial";
+        TabRubSalarial: Record "Payroll Item";
         recRubSalarialEmp: Record "Rubrica Salarial Empregado";
-        recRubSalarial: Record "Rubrica Salarial";
+        recRubSalarial: Record "Payroll Item";
         Flag: Boolean;
     begin
         //****************************************************
@@ -903,9 +903,9 @@ report 53040 "Processamento Sub. Natal"
             TabLinhaMovEmpregado."No. Linha" := NLinha; //NLinha2; 2009.03.03
             TabLinhaMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
             TabLinhaMovEmpregado."Designação Empregado" := Empregado.Name;
-            TabLinhaMovEmpregado."Cód. Rubrica" := TabRubSalarial.Código;
-            TabLinhaMovEmpregado."Descrição Rubrica" := TabRubSalarial.Descrição;
-            TabLinhaMovEmpregado."Tipo Rubrica" := TabRubSalarial."Tipo Rubrica";
+            TabLinhaMovEmpregado."Payroll Item Code" := TabRubSalarial.Código;
+            TabLinhaMovEmpregado."Payroll Item Description" := TabRubSalarial.Descrição;
+            TabLinhaMovEmpregado."Payroll Item Type" := TabRubSalarial."Payroll Item Type";
             TabLinhaMovEmpregado."Debit Acc. No." := TabRubSalarial."Debit Acc. No.";
             TabLinhaMovEmpregado."Credit Acc. No." := TabRubSalarial."Credit Acc. No.";
             TabLinhaMovEmpregado.Quantity := VarTaxa;

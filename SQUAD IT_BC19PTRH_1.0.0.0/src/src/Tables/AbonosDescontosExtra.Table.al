@@ -7,41 +7,41 @@ table 53074 "Abonos - Descontos Extra"
     {
         field(1; "Entry No."; Integer)
         {
-            Caption = 'No. Mov.';
+            Caption = 'No. Mov';
         }
         field(2; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
-        field(3; Data; Date)
+        field(3; Date; Date)
         {
             Caption = 'Data';
         }
-        field(8; "Cód. Rubrica"; Code[20])
+        field(8; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Item Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
 
             trigger OnValidate()
             begin
-                TabRubrica.Get("Cód. Rubrica");
-                "Tipo Rubrica" := TabRubrica."Tipo Rubrica";
-                "Descrição Rubrica" := TabRubrica.Descrição;
+                TabRubrica.Get("Payroll Item Code");
+                "Payroll Item Type" := TabRubrica."Payroll Item Type";
+                "Payroll Item Description" := TabRubrica.Descrição;
                 Quantity := TabRubrica.Quantity;
                 "Unit Value" := TabRubrica."Unit Value";
                 "Valor Total" := TabRubrica."Valor Total";
             end;
         }
-        field(9; "Tipo Rubrica"; Option)
+        field(9; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Item Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
-        field(10; "Descrição Rubrica"; Text[100])
+        field(10; "Payroll Item Description"; Text[100])
         {
-            Caption = 'Salary Item Description';
+            Caption = 'Descrição Rubrica';
         }
         field(14; Quantity; Decimal)
         {
@@ -65,9 +65,9 @@ table 53074 "Abonos - Descontos Extra"
         {
             Caption = 'Total Amount';
         }
-        field(17; UnidadeMedida; Code[20])
+        field(17; "Unit of Measure"; Code[20])
         {
-            Caption = 'Unit code';
+            Caption = 'Unidade Medida';
             TableRelation = "Unid. Medida Recursos Humanos";
         }
         field(21; "Earning - Blocked Deduction"; Boolean)
@@ -87,14 +87,14 @@ table 53074 "Abonos - Descontos Extra"
             Caption = 'Global Dimension 2 Code';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
-        field(35; "Anular Falta"; Boolean)
+        field(35; "Cancel Absence"; Boolean)
         {
-            Caption = 'Cancel Absence';
+            Caption = 'Anular Falta';
             Description = 'Para anular uma falta debitada por engano, no Fich SS e CGA';
         }
-        field(36; "Data a que se refere o Mov."; Date)
+        field(36; "Reference Date"; Date)
         {
-            Caption = 'Reference Date';
+            Caption = 'Data a que se refere o Mov.';
             Description = 'Para aparecer no Fic. Seg. Social e CGA com a data do mês a que se refere a falta ou acerto venc, etc...';
         }
         field(40; "Qtd. Perca Sub. Alimentação"; Integer)
@@ -115,7 +115,7 @@ table 53074 "Abonos - Descontos Extra"
         {
             Clustered = true;
         }
-        key(Key2; "Employee No.", "Data a que se refere o Mov.")
+        key(Key2; "Employee No.", "Reference Date")
         {
         }
     }
@@ -152,13 +152,13 @@ table 53074 "Abonos - Descontos Extra"
 
         //2008.10.30
         if ConfRH.Get() then
-            UnidadeMedida := ConfRH."Base Unit of Measure";
+            "Unit of Measure" := ConfRH."Base Unit of Measure";
     end;
 
     var
         TabAbonosDescExtra: Record "Abonos - Descontos Extra";
         TabEmpregado: Record Empregado;
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         ConfRH: Record "Config. Recursos Humanos";
         HumanResComment: Record "Linha Coment. Recurso Humano";
         Employee: Record Empregado;

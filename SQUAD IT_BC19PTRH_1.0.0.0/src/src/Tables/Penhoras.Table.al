@@ -43,7 +43,7 @@ table 53103 Penhoras
         {
             Caption = 'Garnishment Rubric';
             DataClassification = ToBeClassified;
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
         }
         field(16; Status; Option)
         {

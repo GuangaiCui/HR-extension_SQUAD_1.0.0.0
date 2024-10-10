@@ -35,18 +35,18 @@ table 53109 "Hist. Linhas Movs. Empregado"
         {
             Caption = 'Employee Name';
         }
-        field(19; "Cód. Rubrica"; Code[20])
+        field(19; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
         }
-        field(20; "Descrição Rubrica"; Text[100])
+        field(20; "Payroll Item Description"; Text[100])
         {
-            Caption = 'Salary Iten Description';
+            Caption = 'Descrição Rubrica';
         }
-        field(21; "Tipo Rubrica"; Option)
+        field(21; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Iten Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
@@ -133,7 +133,7 @@ table 53109 "Hist. Linhas Movs. Empregado"
             Caption = 'Qtd. in Salary Slip';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
-        field(91; UnidadeMedida; Code[20])
+        field(91; "Unit of Measure"; Code[20])
         {
             Caption = 'Unit Code';
             Description = 'HG - por causa das ausencias em dias e em horas';
@@ -205,7 +205,7 @@ table 53109 "Hist. Linhas Movs. Empregado"
         key(Key10; "Employee No.", "Data Registo", "Cód. Situação", "Cód. Movimento")
         {
         }
-        key(Key11; "Cód. Rubrica")
+        key(Key11; "Payroll Item Code")
         {
         }
         key(Key12; "Employee No.", "Tipo Rendimento Cat.A")

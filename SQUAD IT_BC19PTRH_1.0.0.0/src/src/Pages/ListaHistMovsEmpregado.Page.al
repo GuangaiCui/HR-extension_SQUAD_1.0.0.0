@@ -48,17 +48,17 @@ page 53110 "Lista Hist. Movs. Empregado"
 
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 
                 }
-                field("Descrição Rubrica"; Rec."Descrição Rubrica")
+                field("Payroll Item Description"; Rec."Payroll Item Description")
                 {
 
 
                 }
-                field("Tipo Rubrica"; Rec."Tipo Rubrica")
+                field("Payroll Item Type"; Rec."Payroll Item Type")
                 {
 
 

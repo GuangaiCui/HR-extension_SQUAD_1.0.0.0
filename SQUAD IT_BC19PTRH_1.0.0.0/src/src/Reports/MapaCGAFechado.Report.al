@@ -108,7 +108,7 @@ report 53053 "Mapa CGA - Fechado"
                             repeat
                                 recHistLinMovEmp.Reset;
                                 recHistLinMovEmp.SetRange(recHistLinMovEmp."Data Registo", DataIni, DataFim);
-                                recHistLinMovEmp.SetRange("Cód. Rubrica", recRubricaSalarial.Código);
+                                recHistLinMovEmp.SetRange("Payroll Item Code", recRubricaSalarial.Código);
                                 recHistLinMovEmp.SetRange(recHistLinMovEmp."Employee No.", "Hist. Linhas Movs. Empregado"."Employee No.");
                                 if recHistLinMovEmp.FindSet then begin
                                     repeat
@@ -123,7 +123,7 @@ report 53053 "Mapa CGA - Fechado"
                             repeat
                                 recHistLinMovEmp.Reset;
                                 recHistLinMovEmp.SetRange(recHistLinMovEmp."Data Registo", DataIni, DataFim);
-                                recHistLinMovEmp.SetRange("Cód. Rubrica", recRubricaSalarial.Código);
+                                recHistLinMovEmp.SetRange("Payroll Item Code", recRubricaSalarial.Código);
                                 recHistLinMovEmp.SetRange(recHistLinMovEmp."Employee No.", "Hist. Linhas Movs. Empregado"."Employee No.");
                                 if recHistLinMovEmp.FindSet then begin
                                     repeat
@@ -263,7 +263,7 @@ report 53053 "Mapa CGA - Fechado"
 
                             //ver se a falta está em dias ou horas
                             TabConfUnidadeMedida.Reset;
-                            if TabConfUnidadeMedida.Get("Hist. Linhas Movs. Empregado".UnidadeMedida) then begin
+                            if TabConfUnidadeMedida.Get("Hist. Linhas Movs. Empregado"."Unit of Measure") then begin
                                 if TabConfUnidadeMedida."Designação Interna" = TabConfUnidadeMedida."Designação Interna"::Dia then begin
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"1" then
                                         DecNumDias := Abs("Hist. Linhas Movs. Empregado".Quantity);
@@ -397,7 +397,7 @@ report 53053 "Mapa CGA - Fechado"
                         if "Hist. Linhas Movs. Empregado"."Cód. Movimento" > 0 then begin
                             TabHistAbonDescExtra.Reset;
                             TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra.Data, DataIni, DataFim);
-                            TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra."Cód. Rubrica", "Hist. Linhas Movs. Empregado"."Cód. Rubrica");
+                            TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra."Payroll Item Code", "Hist. Linhas Movs. Empregado"."Payroll Item Code");
                             TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra."Employee No.", Empregado."No.");//2008.12.11
                             if TabHistAbonDescExtra.FindSet then begin
                                 repeat
@@ -414,10 +414,10 @@ report 53053 "Mapa CGA - Fechado"
                                         ValorRemuneracao := 0;
 
                                     if "Hist. Linhas Movs. Empregado"."Cód. Movimento" = 1 then
-                                        varDataEfeito := DMY2Date(1, Date2DMY(TabHistAbonDescExtra."Data a que se refere o Mov.", 2),
-                                                          Date2DMY(TabHistAbonDescExtra."Data a que se refere o Mov.", 3))
+                                        varDataEfeito := DMY2Date(1, Date2DMY(TabHistAbonDescExtra."Reference Date", 2),
+                                                          Date2DMY(TabHistAbonDescExtra."Reference Date", 3))
                                     else
-                                        varDataEfeito := TabHistAbonDescExtra."Data a que se refere o Mov.";
+                                        varDataEfeito := TabHistAbonDescExtra."Reference Date";
 
                                     //>>>>>>  LINHA TIPO2 - Registo Movimento da RD >>>>>>>>>>>>>>>>>>>>>>>>>>
                                     TabTempFichTexto.Init;
@@ -869,7 +869,7 @@ report 53053 "Mapa CGA - Fechado"
         TotalRegistos: Integer;
         TotalDesconto: Decimal;
         Conv: Codeunit "Funções RH";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         TabRubricaEmpregado: Record "Rubrica Salarial Empregado";
         TabHistMovEmp: Record "Hist. Linhas Movs. Empregado";
@@ -902,7 +902,7 @@ report 53053 "Mapa CGA - Fechado"
         TabHistAbonDescExtra: Record "Histórico Abonos - Desc. Extra";
         Text0001: Label 'Empregado %1: o Nº CGA não pode ter mais de 7 caracteres.';
         remuneracao: Decimal;
-        recRubricaSalarial: Record "Rubrica Salarial";
+        recRubricaSalarial: Record "Payroll Item";
         recHistLinMovEmp: Record "Hist. Linhas Movs. Empregado";
         DescEmp: Decimal;
         DescEntPat: Decimal;

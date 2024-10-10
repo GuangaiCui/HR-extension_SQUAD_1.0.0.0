@@ -661,7 +661,7 @@ report 53076 "Mapa Acumulados"
         TabLinhasMovsEmpregado: Record "Hist. Linhas Movs. Empregado";
         TabTemp: Record "Tabela Temporária Relatórios";
         recLinhasMovsEmpregado: Record "Hist. Linhas Movs. Empregado";
-        recRubricaSalarial: Record "Rubrica Salarial";
+        recRubricaSalarial: Record "Payroll Item";
         LastEmpNo: Code[20];
         LastEmpTotal: Code[20];
         First: Boolean;
@@ -752,7 +752,7 @@ report 53076 "Mapa Acumulados"
         TabTemp: Record "Tabela Temporária Relatórios";
         TabTemp2: Record "Tabela Temporária Relatórios";
         recHistLinhasMovsEmpregado: Record "Hist. Linhas Movs. Empregado";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaLinha2: Record "Rubrica Salarial Linhas";
         ValorAbonosIRS: Decimal;
         ValorAbonosSS: Decimal;
@@ -773,13 +773,13 @@ report 53076 "Mapa Acumulados"
         TabTemp.Reset;
         TabTemp.SetRange(Code1, pHistLinhasMovsEmpregado."Employee No.");
         //2008.01.15 - não se pode fazer filtro pela descrição pois pode mudar
-        TabTemp.SetRange(Code3, pHistLinhasMovsEmpregado."Cód. Rubrica");
+        TabTemp.SetRange(Code3, pHistLinhasMovsEmpregado."Payroll Item Code");
         if not TabTemp.FindFirst then begin
             TabTemp.Init;
             TabTemp.Code1 := pHistLinhasMovsEmpregado."Employee No.";
-            TabTemp.Code2 := pHistLinhasMovsEmpregado."Descrição Rubrica";
+            TabTemp.Code2 := pHistLinhasMovsEmpregado."Payroll Item Description";
             //2008.01.15 - preencher o campo code 3 para depois servir de filtro
-            TabTemp.Code3 := pHistLinhasMovsEmpregado."Cód. Rubrica";
+            TabTemp.Code3 := pHistLinhasMovsEmpregado."Payroll Item Code";
 
             if LineNo = 0 then
                 TabTemp."Line No" := 10000

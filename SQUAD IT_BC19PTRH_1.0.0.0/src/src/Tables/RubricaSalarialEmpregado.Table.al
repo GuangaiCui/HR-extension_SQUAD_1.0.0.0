@@ -14,14 +14,14 @@ table 53078 "Rubrica Salarial Empregado"
         field(2; "Cód. Rúbrica Salarial"; Code[20])
         {
             Caption = 'Salary Item Code';
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
 
             trigger OnValidate()
             begin
                 //HG
                 TabRubrica.Get("Cód. Rúbrica Salarial");
-                "Tipo Rubrica" := TabRubrica."Tipo Rubrica";
-                "Descrição Rubrica" := TabRubrica.Descrição;
+                "Payroll Item Type" := TabRubrica."Payroll Item Type";
+                "Payroll Item Description" := TabRubrica.Descrição;
                 "Debit Acc. No." := TabRubrica."Debit Acc. No.";
                 "Credit Acc. No." := TabRubrica."Credit Acc. No.";
                 Quantity := TabRubrica.Quantity;
@@ -35,13 +35,13 @@ table 53078 "Rubrica Salarial Empregado"
         {
             Caption = 'No. Linha';
         }
-        field(8; "Tipo Rubrica"; Option)
+        field(8; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Iten Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
-        field(9; "Descrição Rubrica"; Text[100])
+        field(9; "Payroll Item Description"; Text[100])
         {
             Caption = 'Salary Iten Descrption';
         }
@@ -104,7 +104,7 @@ table 53078 "Rubrica Salarial Empregado"
             begin
                 //HG - Não deixar colocar valor na rubrica se esta tiver filhas, pois neste caso o valor é o somatório das filhas
                 TabRubricaSalLinhas.Reset;
-                TabRubricaSalLinhas.SetRange(TabRubricaSalLinhas."Cód. Rubrica", "Cód. Rúbrica Salarial");
+                TabRubricaSalLinhas.SetRange(TabRubricaSalLinhas."Payroll Item Code", "Cód. Rúbrica Salarial");
                 if TabRubricaSalLinhas.Find('-') then
                     Error(Text0002, "Cód. Rúbrica Salarial");
             end;
@@ -159,7 +159,7 @@ table 53078 "Rubrica Salarial Empregado"
             Caption = 'Salary Slip Qtd.';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
-        field(91; UnidadeMedida; Code[20])
+        field(91; "Unit of Measure"; Code[20])
         {
             Caption = 'Unit of Measure';
             Description = 'HG - por causa das ausencias em dias e em horas';
@@ -217,7 +217,7 @@ table 53078 "Rubrica Salarial Empregado"
         key(Key3; "Employee No.", Sort, "Cód. Rúbrica Salarial", "Data Início")
         {
         }
-        key(Key4; "Employee No.", Sort, "Cód. Rúbrica Salarial", "Data a que se refere o mov", UnidadeMedida)
+        key(Key4; "Employee No.", Sort, "Cód. Rúbrica Salarial", "Data a que se refere o mov", "Unit of Measure")
         {
         }
     }
@@ -236,7 +236,7 @@ table 53078 "Rubrica Salarial Empregado"
     end;
 
     var
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaSalLinhas: Record "Rubrica Salarial Linhas";
         TabRubricaSalEmp: Record "Rubrica Salarial Empregado";
         Text0002: Label 'A rúbrica %1 está depende de outras e como tal não se deve definir um valor.';

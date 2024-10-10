@@ -5,7 +5,7 @@ page 53100 "Lista Rubrica Salarial"
     DelayedInsert = true;
     Editable = false;
     PageType = List;
-    SourceTable = "Rubrica Salarial";
+    SourceTable = "Payroll Item";
     UsageCategory = Administration;
     ApplicationArea = HumanResourcesAppArea;
 
@@ -21,7 +21,7 @@ page 53100 "Lista Rubrica Salarial"
 
 
                 }
-                field("Tipo Rubrica"; Rec."Tipo Rubrica")
+                field("Payroll Item Type"; Rec."Payroll Item Type")
                 {
 
 
@@ -91,7 +91,7 @@ page 53100 "Lista Rubrica Salarial"
 
     procedure GetSelectionFilter(): Code[80]
     var
-        recRubrica: Record "Rubrica Salarial";
+        recRubrica: Record "Payroll Item";
         FirstRubr: Code[30];
         LastRubr: Code[30];
         SelectionFilter: Code[250];
@@ -138,7 +138,7 @@ page 53100 "Lista Rubrica Salarial"
     end;
 
 
-    procedure SetSelection(var pRubrica: Record "Rubrica Salarial")
+    procedure SetSelection(var pRubrica: Record "Payroll Item")
     begin
         //RFV 25.01.2008
         CurrPage.SetSelectionFilter(pRubrica);

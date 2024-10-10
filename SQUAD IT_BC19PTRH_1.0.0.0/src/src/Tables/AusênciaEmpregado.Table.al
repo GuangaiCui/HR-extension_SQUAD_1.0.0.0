@@ -63,7 +63,7 @@ table 53042 "Ausência Empregado"
                 Justificada := CauseOfAbsence.Justified;
                 "Com Perda de Remuneração" := CauseOfAbsence."Remuneration Loss";
                 "Com Perda Sub. Alimentação" := CauseOfAbsence."Food Subsidy Loss";
-                "Cód. Rubrica" := CauseOfAbsence."Rubric Code";
+                "Payroll Item Code" := CauseOfAbsence."Payroll Item Code";
                 "Influência Nº dias férias" := CauseOfAbsence."Vacation Days Influence";
             end;
         }
@@ -148,10 +148,10 @@ table 53042 "Ausência Empregado"
         {
             Caption = 'End Time';
         }
-        field(32; "Cód. Rubrica"; Code[20])
+        field(32; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Item Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
         }
         field(36; "Quantidade Pendente"; Decimal)
         {

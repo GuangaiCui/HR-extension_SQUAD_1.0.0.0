@@ -18,7 +18,7 @@ table 53117 "Pessoal dos Serviços Int"
             OptionCaption = 'Médico do Trabalho,Técnico de SHT,Técnico Sup. de SHT';
             OptionMembers = "Médico do Trabalho","Técnico de SHT","Técnico Sup. de SHT";
         }
-        field(5; Nome; Text[70])
+        field(5; Name; Text[70])
         {
             Caption = 'Nome';
         }

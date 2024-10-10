@@ -6,7 +6,7 @@ page 53098 "Ficha Rubrica Salarial"
     // IT003 - CPA - 207.07.03 -  No campo VB não quer que apareça o valor dos complementos
 
     PageType = Card;
-    SourceTable = "Rubrica Salarial";
+    SourceTable = "Payroll Item";
 
     layout
     {
@@ -20,7 +20,7 @@ page 53098 "Ficha Rubrica Salarial"
 
 
                 }
-                field("Tipo Rubrica"; Rec."Tipo Rubrica")
+                field("Payroll Item Type"; Rec."Payroll Item Type")
                 {
 
 
@@ -98,7 +98,7 @@ page 53098 "Ficha Rubrica Salarial"
 
                 Caption = 'Rubrica Salarial Fillhas';
                 Editable = RubricaSalarialLinhasEditable;
-                SubPageLink = "Cód. Rubrica" = FIELD("Código");
+                SubPageLink = "Payroll Item Code" = FIELD("Código");
             }
             group("Dados Seg. Social")
             {
@@ -208,7 +208,7 @@ page 53098 "Ficha Rubrica Salarial"
     begin
         //HG - 10.05.07 não deixar apagar uma rubrical se esta já tiver sido usada num processamento fechado
         TabHisLinhasMovEmp.Reset;
-        TabHisLinhasMovEmp.SetRange(TabHisLinhasMovEmp."Cód. Rubrica", Rec."Código");
+        TabHisLinhasMovEmp.SetRange(TabHisLinhasMovEmp."Payroll Item Code", Rec."Código");
         if TabHisLinhasMovEmp.Find('-') then begin
             Error(Text0005);
             exit(false);
@@ -226,7 +226,7 @@ page 53098 "Ficha Rubrica Salarial"
                 exit(false);
         end else begin
             TabRubricaLinhas.Reset;
-            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", Rec."Código");
+            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", Rec."Código");
             if TabRubricaLinhas.Find('-') then
                 if not Confirm(Text0003, false, Rec."Código") then
                     exit(false);
@@ -244,7 +244,7 @@ page 53098 "Ficha Rubrica Salarial"
 
         //Alertar que vai alterar uma rubrica salarial que já foi usada num processamento fechado
         TabHisLinhasMovEmp.Reset;
-        TabHisLinhasMovEmp.SetRange(TabHisLinhasMovEmp."Cód. Rubrica", Rec."Código");
+        TabHisLinhasMovEmp.SetRange(TabHisLinhasMovEmp."Payroll Item Code", Rec."Código");
         if TabHisLinhasMovEmp.Find('-') then begin
             if not Confirm(Text0004) then
                 exit(false);
@@ -273,7 +273,7 @@ page 53098 "Ficha Rubrica Salarial"
             RubricaSalarialLinhasEditable := false;
 
         TabRubricaLinhas.Reset;
-        TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", Rec."Código");
+        TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", Rec."Código");
         if TabRubricaLinhas.Find('-') then begin
             Rec.Quantity := 0;
             Rec."Unit Value" := 0;

@@ -113,8 +113,8 @@ report 53101 "Mapa e Ficheiro - Seguros"
                             LValorLancar: Decimal;
                             l_HistLinhaMov: Record "Hist. Linhas Movs. Empregado";
                             l_HistLinhaMov2: Record "Hist. Linhas Movs. Empregado";
-                            l_RubricaFalta: Record "Rubrica Salarial";
-                            l_Rubrica: Record "Rubrica Salarial";
+                            l_RubricaFalta: Record "Payroll Item";
+                            l_Rubrica: Record "Payroll Item";
                         begin
                             if CodEmpregado <> "Hist. Linhas Movs. Empregado"."Employee No." then begin
                                 TabControlar.DeleteAll;
@@ -129,7 +129,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                             if l_HistLinhaMov.FindSet then begin
                                 repeat
                                     l_RubricaFalta.Reset;
-                                    l_RubricaFalta.SetRange(Código, l_HistLinhaMov."Cód. Rubrica");
+                                    l_RubricaFalta.SetRange(Código, l_HistLinhaMov."Payroll Item Code");
                                     l_RubricaFalta.SetFilter(Genero, '%1|%2', l_RubricaFalta.Genero::"Admissão-Demissão", l_RubricaFalta.Genero::Falta);
                                     if not l_RubricaFalta.FindFirst then begin
                                         TempHistLinhasMovs.Init;
@@ -137,7 +137,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                         TempHistLinhasMovs.Insert;
                                     end;
 
-                                    if (l_Rubrica.Get(l_HistLinhaMov."Cód. Rubrica")) and
+                                    if (l_Rubrica.Get(l_HistLinhaMov."Payroll Item Code")) and
                                        ((l_Rubrica.Faults = true) or (l_Rubrica.Genero = l_Rubrica.Genero::"Vencimento Base")) then begin
                                         l_RubricaFalta.Reset;
                                         l_RubricaFalta.SetFilter(Genero, '%1|%2', l_RubricaFalta.Genero::"Admissão-Demissão", l_RubricaFalta.Genero::Falta);
@@ -146,7 +146,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                                 l_HistLinhaMov2.Reset;
                                                 l_HistLinhaMov2.SetRange("Cód. Processamento", "Hist. Linhas Movs. Empregado"."Cód. Processamento");
                                                 l_HistLinhaMov2.SetRange("Employee No.", "Hist. Linhas Movs. Empregado"."Employee No.");
-                                                l_HistLinhaMov2.SetRange("Cód. Rubrica", l_RubricaFalta.Código);
+                                                l_HistLinhaMov2.SetRange("Payroll Item Code", l_RubricaFalta.Código);
                                                 if l_HistLinhaMov2.FindSet then begin
                                                     repeat
                                                         TempHistLinhasMovs.Init;
@@ -166,7 +166,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
 
 
 
-                            TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado"."Cód. Rubrica");
+                            TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado"."Payroll Item Code");
                             if TabRubrica.FindFirst then begin
                                 TabControlar.Init;
                                 TabControlar."No." := CopyStr(Format("Hist. Linhas Movs. Empregado".NATREM), 1, 20);
@@ -454,7 +454,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                 TabHistLinhasMovs.Reset;
                                 TabHistLinhasMovs.SetRange(TabHistLinhasMovs."Employee No.", Empregado."No.");
                                 TabHistLinhasMovs.SetRange(TabHistLinhasMovs."Cód. Processamento", "Periodos Processamento"."Cód. Processamento");
-                                TabHistLinhasMovs.SetRange(TabHistLinhasMovs."Cód. Rubrica", TabRubricaSal2.Código);
+                                TabHistLinhasMovs.SetRange(TabHistLinhasMovs."Payroll Item Code", TabRubricaSal2.Código);
                                 if TabHistLinhasMovs.FindSet then begin
                                     repeat
                                         TotalContribuicoes2 := TotalContribuicoes2 + Abs(TabHistLinhasMovs.Valor);
@@ -746,7 +746,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
         TabInfEmpresa: Record "Company Information";
         TabTempFichTexto: Record "Tabela Temp Ficheiros Texto";
         TabHistLinhasMovs: Record "Hist. Linhas Movs. Empregado";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabControlar: Record Customer temporary;
         TabHistMovsAux: Record "Hist. Linhas Movs. Empregado";
         DiasTrabalho: Text[3];
@@ -762,7 +762,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
         AuxValorFaltas: Decimal;
         AuxDiasFaltas: Decimal;
         AuxDiasFaltas2: Text[30];
-        TabRubrica2: Record "Rubrica Salarial";
+        TabRubrica2: Record "Payroll Item";
         TabHorario: Record "Horário RH";
         Text0002: Label 'O Empregado %1 não tem horário definido.';
         TabConfRH: Record "Config. Recursos Humanos";
@@ -771,7 +771,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
         AuxDiasNTrabalhados: Integer;
         TabHistLinhaEmpregado: Record "Hist. Linhas Movs. Empregado";
         TotalContribuicoes2: Decimal;
-        TabRubricaSal2: Record "Rubrica Salarial";
+        TabRubricaSal2: Record "Payroll Item";
         CodRubrica: Code[20];
         DataFalta: Date;
         CodProcessamento: Code[20];
@@ -786,7 +786,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
         TabHistAboDesExtra: Record "Histórico Abonos - Desc. Extra";
         TempTabHistAboDesExtra: Record "Histórico Abonos - Desc. Extra" temporary;
         AuxDiasFaltas3: Text[30];
-        TabRubSal: Record "Rubrica Salarial";
+        TabRubSal: Record "Payroll Item";
         TabHistCabMovEmp: Record "Hist. Cab. Movs. Empregado";
         FlagValor: Boolean;
         SinalDiasTrabalho: Text[1];
@@ -847,7 +847,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
         LValorLancar: Decimal;
         LHistAbonDescExtra: Record "Histórico Abonos - Desc. Extra";
         LDataMov: Date;
-        LRubricaSal: Record "Rubrica Salarial";
+        LRubricaSal: Record "Payroll Item";
         TempHistMovEmp: Record "Hist. Linhas Movs. Empregado" temporary;
     begin
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -896,7 +896,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                 TabHistMovsAux.SetFilter(TabHistMovsAux.Valor, '<0');//Faltas
                 if TabHistMovsAux.FindSet then begin
                     repeat
-                        if (TabRubSal.Get(TabHistMovsAux."Cód. Rubrica")) then begin
+                        if (TabRubSal.Get(TabHistMovsAux."Payroll Item Code")) then begin
                             TemHistMov.Reset;
                             TemHistMov.SetRange(TemHistMov."Cód. Processamento", TabHistMovsAux."Cód. Processamento");
                             TemHistMov.SetRange(TemHistMov."Tipo Processamento", TabHistMovsAux."Tipo Processamento");
@@ -904,7 +904,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                             if TemHistMov.FindSet then begin
                                 Encontrou := false;
                                 repeat
-                                    if (TabRubrica2.Get(TabHistMovsAux."Cód. Rubrica") and (TabRubrica2.Genero = TabRubrica2.Genero::Falta)) then begin
+                                    if (TabRubrica2.Get(TabHistMovsAux."Payroll Item Code") and (TabRubrica2.Genero = TabRubrica2.Genero::Falta)) then begin
                                         if (Date2DMY(TemHistMov."Data a que se refere o mov", 2) = Date2DMY(TabHistMovsAux."Data a que se refere o mov", 2)) then begin
                                             TemHistMov.Quantity := TemHistMov.Quantity + TabHistMovsAux.Quantity;
                                             TemHistMov.Valor := TemHistMov.Valor + TabHistMovsAux.Valor;
@@ -945,18 +945,18 @@ report 53101 "Mapa e Ficheiro - Seguros"
                     Clear(boolAdmission);
                     repeat
                         //2008.03.12 - estava a apanhar as admissões a negativo e n pode
-                        if (TabRubSal.Get(TemHistMov."Cód. Rubrica")) and (TabRubSal.Genero <> TabRubSal.Genero::"Admissão-Demissão") then begin
+                        if (TabRubSal.Get(TemHistMov."Payroll Item Code")) and (TabRubSal.Genero <> TabRubSal.Genero::"Admissão-Demissão") then begin
                             if (DataFalta <> TemHistMov."Data a que se refere o mov") then begin
                                 AuxValorFaltas := 0;
                                 AuxDiasFaltas := 0;
                             end;
-                            if (TabRubrica2.Get(TemHistMov."Cód. Rubrica")) then begin
+                            if (TabRubrica2.Get(TemHistMov."Payroll Item Code")) then begin
                                 if (TabRubrica2.Genero = TabRubrica2.Genero::Falta) then begin
                                     AuxValorFaltas := AuxValorFaltas + Round(TemHistMov.Valor, 0.01);
                                     AuxDiasFaltas := AuxDiasFaltas + Abs(TemHistMov.Quantity);
                                     FlagFalta := true;
 
-                                    if (CodRubrica <> TemHistMov."Cód. Rubrica") or (DataFalta <> 0D) and
+                                    if (CodRubrica <> TemHistMov."Payroll Item Code") or (DataFalta <> 0D) and
                                       (DataFalta <> TemHistMov."Data a que se refere o mov") then begin
 
                                         TabTempFichTexto.Init;
@@ -997,7 +997,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                         Valorlancar := Valorlancar + Abs(AuxValorFaltas);
                                     end;
                                 end;
-                                CodRubrica := TemHistMov."Cód. Rubrica";
+                                CodRubrica := TemHistMov."Payroll Item Code";
                                 DataFalta := TemHistMov."Data a que se refere o mov";
                             end;
                         end else begin //2008.01.09 - este codigo passou para aqui porque tem o if lá em cima e nunca entrava
@@ -1061,7 +1061,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
             //NO ficheiro só pode colocar uma linha por cada mês
 
             TabHistAboDesExtra.Reset;
-            TabHistAboDesExtra.SetCurrentKey(TabHistAboDesExtra."Employee No.", TabHistAboDesExtra."Data a que se refere o Mov.");
+            TabHistAboDesExtra.SetCurrentKey(TabHistAboDesExtra."Employee No.", TabHistAboDesExtra."Reference Date");
             TabHistAboDesExtra.SetRange(TabHistAboDesExtra."Employee No.", Empregado."No.");
             TabHistAboDesExtra.SetRange(TabHistAboDesExtra.Data, "Periodos Processamento"."Data Inicio Processamento",
               "Periodos Processamento"."Data Fim Processamento");
@@ -1074,10 +1074,10 @@ report 53101 "Mapa e Ficheiro - Seguros"
                     if TempTabHistAboDesExtra.FindSet then begin
                         Encontrou := false;
                         repeat
-                            if (Date2DMY(TempTabHistAboDesExtra."Data a que se refere o Mov.", 2) =
-                              Date2DMY(TabHistAboDesExtra."Data a que se refere o Mov.", 2))
-                            and (Date2DMY(TempTabHistAboDesExtra."Data a que se refere o Mov.", 3) =
-                            Date2DMY(TabHistAboDesExtra."Data a que se refere o Mov.", 3)) then begin
+                            if (Date2DMY(TempTabHistAboDesExtra."Reference Date", 2) =
+                              Date2DMY(TabHistAboDesExtra."Reference Date", 2))
+                            and (Date2DMY(TempTabHistAboDesExtra."Reference Date", 3) =
+                            Date2DMY(TabHistAboDesExtra."Reference Date", 3)) then begin
                                 Encontrou := true;
                                 TempTabHistAboDesExtra.Quantity := TempTabHistAboDesExtra.Quantity + TabHistAboDesExtra.Quantity;
                                 TempTabHistAboDesExtra."Valor Total" := TempTabHistAboDesExtra."Valor Total" + TabHistAboDesExtra."Valor Total";
@@ -1106,7 +1106,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                      + PadStr(Empregado."No. Segurança Social", 11, ' ')                                          //Nº Seg. Social do Empregado
                      + PadStr(UpperCase(CopyStr(Empregado.Name, 1, 60)), 60, ' ')                                     //Nome do empregado
                      + Format(Empregado."Birth Date", 0, '<Year4><Month,2><Day,2>')                              //Data Nascimento
-                     + Format(TempTabHistAboDesExtra."Data a que se refere o Mov.", 0, '<Year4><Month,2>');    //Data Mov
+                     + Format(TempTabHistAboDesExtra."Reference Date", 0, '<Year4><Month,2>');    //Data Mov
                     if StrPos(Format(TempTabHistAboDesExtra.Quantity), ',') = 0 then
                         AuxDiasFaltas3 := Format(TempTabHistAboDesExtra.Quantity) + '0'
                     else
@@ -1162,9 +1162,9 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                        (Date2DMY(TempHistMovEmp."Data a que se refere o mov", 3) = Date2DMY(LHistMovEmp."Data a que se refere o mov", 3)) then begin
                                         Encontrou := true;
                                         TempHistMovEmp.Quantity := TempHistMovEmp.Quantity + LHistMovEmp.Quantity;
-                                        if LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Abono then
+                                        if LHistMovEmp."Payroll Item Type" = LHistMovEmp."Payroll Item Type"::Abono then
                                             TempHistMovEmp.Valor := TempHistMovEmp.Valor + LHistMovEmp.Valor;
-                                        if LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Desconto then
+                                        if LHistMovEmp."Payroll Item Type" = LHistMovEmp."Payroll Item Type"::Desconto then
                                             TempHistMovEmp.Valor := TempHistMovEmp.Valor - LHistMovEmp.Valor;
                                         TempHistMovEmp.Modify;
                                     end;
@@ -1173,9 +1173,9 @@ report 53101 "Mapa e Ficheiro - Seguros"
                             if Encontrou = false then begin
                                 TempHistMovEmp.Init;
                                 TempHistMovEmp.TransferFields(LHistMovEmp);
-                                if LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Abono then
+                                if LHistMovEmp."Payroll Item Type" = LHistMovEmp."Payroll Item Type"::Abono then
                                     TempHistMovEmp.Valor := LHistMovEmp.Valor;
-                                if LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Desconto then
+                                if LHistMovEmp."Payroll Item Type" = LHistMovEmp."Payroll Item Type"::Desconto then
                                     TempHistMovEmp.Valor := -LHistMovEmp.Valor;
                                 TempHistMovEmp.Insert;
                             end;
@@ -1249,9 +1249,9 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                        (Date2DMY(TempHistMovEmp."Data a que se refere o mov", 3) = Date2DMY(LHistMovEmp."Data a que se refere o mov", 3)) then begin
                                         Encontrou := true;
                                         TempHistMovEmp.Quantity := TempHistMovEmp.Quantity + LHistMovEmp.Quantity;
-                                        if LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Abono then
+                                        if LHistMovEmp."Payroll Item Type" = LHistMovEmp."Payroll Item Type"::Abono then
                                             TempHistMovEmp.Valor := TempHistMovEmp.Valor + LHistMovEmp.Valor;
-                                        if LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Desconto then
+                                        if LHistMovEmp."Payroll Item Type" = LHistMovEmp."Payroll Item Type"::Desconto then
                                             TempHistMovEmp.Valor := TempHistMovEmp.Valor - LHistMovEmp.Valor;
                                         TempHistMovEmp.Modify;
                                     end;
@@ -1260,9 +1260,9 @@ report 53101 "Mapa e Ficheiro - Seguros"
                             if Encontrou = false then begin
                                 TempHistMovEmp.Init;
                                 TempHistMovEmp.TransferFields(LHistMovEmp);
-                                if LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Abono then
+                                if LHistMovEmp."Payroll Item Type" = LHistMovEmp."Payroll Item Type"::Abono then
                                     TempHistMovEmp.Valor := LHistMovEmp.Valor;
-                                if LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Desconto then
+                                if LHistMovEmp."Payroll Item Type" = LHistMovEmp."Payroll Item Type"::Desconto then
                                     TempHistMovEmp.Valor := -LHistMovEmp.Valor;
                                 TempHistMovEmp.Insert;
                             end;
@@ -1328,11 +1328,11 @@ report 53101 "Mapa e Ficheiro - Seguros"
                     if LHistMovEmp.FindSet then begin
                         repeat
                             LHistAbonDescExtra.Reset;
-                            LHistAbonDescExtra.SetCurrentKey(LHistAbonDescExtra."Employee No.", LHistAbonDescExtra."Data a que se refere o Mov.");
+                            LHistAbonDescExtra.SetCurrentKey(LHistAbonDescExtra."Employee No.", LHistAbonDescExtra."Reference Date");
                             LHistAbonDescExtra.SetRange(LHistAbonDescExtra."Employee No.", Empregado."No.");
                             LHistAbonDescExtra.SetRange(LHistAbonDescExtra.Data, "Periodos Processamento"."Data Inicio Processamento",
                               "Periodos Processamento"."Data Fim Processamento");
-                            LHistAbonDescExtra.SetRange(LHistAbonDescExtra."Cód. Rubrica", LHistMovEmp."Cód. Rubrica");
+                            LHistAbonDescExtra.SetRange(LHistAbonDescExtra."Payroll Item Code", LHistMovEmp."Payroll Item Code");
                             if LHistAbonDescExtra.FindSet then begin
                                 TempTabHistAboDesExtra.Reset;
                                 TempTabHistAboDesExtra.DeleteAll;
@@ -1341,15 +1341,15 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                     if TempTabHistAboDesExtra.FindSet then begin
                                         Encontrou := false;
                                         repeat
-                                            if (Date2DMY(TempTabHistAboDesExtra."Data a que se refere o Mov.", 2) =
-                                                Date2DMY(LHistAbonDescExtra."Data a que se refere o Mov.", 2))
-                                                and (Date2DMY(TempTabHistAboDesExtra."Data a que se refere o Mov.", 3) =
-                                                Date2DMY(LHistAbonDescExtra."Data a que se refere o Mov.", 3)) then begin
+                                            if (Date2DMY(TempTabHistAboDesExtra."Reference Date", 2) =
+                                                Date2DMY(LHistAbonDescExtra."Reference Date", 2))
+                                                and (Date2DMY(TempTabHistAboDesExtra."Reference Date", 3) =
+                                                Date2DMY(LHistAbonDescExtra."Reference Date", 3)) then begin
                                                 Encontrou := true;
                                                 TempTabHistAboDesExtra.Quantity := TempTabHistAboDesExtra.Quantity + LHistAbonDescExtra.Quantity;
-                                                if LHistAbonDescExtra."Tipo Rubrica" = LHistAbonDescExtra."Tipo Rubrica"::Abono then
+                                                if LHistAbonDescExtra."Payroll Item Type" = LHistAbonDescExtra."Payroll Item Type"::Abono then
                                                     TempTabHistAboDesExtra."Valor Total" := TempTabHistAboDesExtra."Valor Total" + LHistAbonDescExtra."Valor Total";
-                                                if LHistAbonDescExtra."Tipo Rubrica" = LHistAbonDescExtra."Tipo Rubrica"::Desconto then
+                                                if LHistAbonDescExtra."Payroll Item Type" = LHistAbonDescExtra."Payroll Item Type"::Desconto then
                                                     TempTabHistAboDesExtra."Valor Total" := TempTabHistAboDesExtra."Valor Total" - LHistAbonDescExtra."Valor Total";
                                                 TempTabHistAboDesExtra.Modify;
                                             end;
@@ -1358,9 +1358,9 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                     if Encontrou = false then begin
                                         TempTabHistAboDesExtra.Init;
                                         TempTabHistAboDesExtra.TransferFields(LHistAbonDescExtra);
-                                        if LHistAbonDescExtra."Tipo Rubrica" = LHistAbonDescExtra."Tipo Rubrica"::Abono then
+                                        if LHistAbonDescExtra."Payroll Item Type" = LHistAbonDescExtra."Payroll Item Type"::Abono then
                                             TempTabHistAboDesExtra."Valor Total" := LHistAbonDescExtra."Valor Total";
-                                        if LHistAbonDescExtra."Tipo Rubrica" = LHistAbonDescExtra."Tipo Rubrica"::Desconto then
+                                        if LHistAbonDescExtra."Payroll Item Type" = LHistAbonDescExtra."Payroll Item Type"::Desconto then
                                             TempTabHistAboDesExtra."Valor Total" := -LHistAbonDescExtra."Valor Total";
                                         TempTabHistAboDesExtra.Insert;
                                     end;
@@ -1392,7 +1392,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                      + PadStr(Empregado."No. Segurança Social", 11, ' ')                                   //Nº Seg. Social do Empregado
                                      + PadStr(UpperCase(CopyStr(Empregado.Name, 1, 60)), 60, ' ')                                    //Nome do empregado
                                      + Format(Empregado."Birth Date", 0, '<Year4><Month,2><Day,2>')                              //Data Nascimento
-                                     + Format(TempTabHistAboDesExtra."Data a que se refere o Mov.", 0, '<Year4><Month,2>');    //Data Mov
+                                     + Format(TempTabHistAboDesExtra."Reference Date", 0, '<Year4><Month,2>');    //Data Mov
                                     TabTempFichTexto.Texto1 := TabTempFichTexto.Texto1 + '000';                                //Dias de trabalho
                                     TabTempFichTexto.Texto1 := TabTempFichTexto.Texto1
                                      + SinalDiasTrabalho

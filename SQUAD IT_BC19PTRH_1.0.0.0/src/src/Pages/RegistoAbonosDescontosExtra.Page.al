@@ -24,22 +24,22 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field(Data; Rec.Data)
+                field(Data; Rec.Date)
                 {
 
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 
                 }
-                field("Tipo Rubrica"; Rec."Tipo Rubrica")
+                field("Payroll Item Type"; Rec."Payroll Item Type")
                 {
 
 
                 }
-                field("Descrição Rubrica"; Rec."Descrição Rubrica")
+                field("Payroll Item Description"; Rec."Payroll Item Description")
                 {
 
 
@@ -49,7 +49,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field(UnidadeMedida; Rec.UnidadeMedida)
+                field("Unit of Measure"; Rec."Unit of Measure")
                 {
 
 
@@ -64,12 +64,12 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field("Anular Falta"; Rec."Anular Falta")
+                field("Anular Falta"; Rec."Cancel Absence")
                 {
 
 
                 }
-                field("Data a que se refere o Mov."; Rec."Data a que se refere o Mov.")
+                field("Reference Date"; Rec."Reference Date")
                 {
 
 

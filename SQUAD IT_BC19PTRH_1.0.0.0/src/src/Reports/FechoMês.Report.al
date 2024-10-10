@@ -57,7 +57,7 @@ report 53038 "Fecho Mês"
                     HistLinhasMovEmp.Insert;
                     //2008.01.15 - Retroactivos
                     //quando fecho 1 mes com retroactivos processados tenho de actualizar a configRH que para aquele ano os retroactivos já foram feitos
-                    if CopyStr("Linhas Movs. Empregado"."Descrição Rubrica", 1, 19) = 'Retroactivos de IRS' then begin
+                    if CopyStr("Linhas Movs. Empregado"."Payroll Item Description", 1, 19) = 'Retroactivos de IRS' then begin
                         if ConfRH.Get() then
                             ConfRH."Retroactivos Processados" := true;
                         ConfRH.Modify;
@@ -68,7 +68,7 @@ report 53038 "Fecho Mês"
                     //quando fecho 1 mes com Sub. Férias processados tenho de actualizar a ficha do  empregado com a Ultima data Acerto SF
                     if ConfRH.Get() then;
                     RubricSalarial.Reset;
-                    if (RubricSalarial.Get("Linhas Movs. Empregado"."Cód. Rubrica")) and
+                    if (RubricSalarial.Get("Linhas Movs. Empregado"."Payroll Item Code")) and
                        (RubricSalarial.NATREM = RubricSalarial.NATREM::"Cód. Sub. Férias") and
                        (RubricSalarial.Genero <> RubricSalarial.Genero::DuoSF) then begin //Normatica 2014.07.14 acrescentei esta linha
                         if TabEmp.Get("Linhas Movs. Empregado"."Employee No.") then begin
@@ -228,8 +228,8 @@ report 53038 "Fecho Mês"
                 begin
                     //Passar para Histórico as Abonos/Descontos deste processamento
                     //------------------------------------------------------
-                    if ("Abonos - Descontos Extra".Data >= "Periodos Processamento"."Data Inicio Processamento") and
-                      ("Abonos - Descontos Extra".Data <= "Periodos Processamento"."Data Fim Processamento") then begin
+                    if ("Abonos - Descontos Extra".Date >= "Periodos Processamento"."Data Inicio Processamento") and
+                      ("Abonos - Descontos Extra".Date <= "Periodos Processamento"."Data Fim Processamento") then begin
                         HistAboDesExtra.Reset;
                         if HistAboDesExtra.FindLast then
                             VarNMov := HistAboDesExtra."Entry No." + 1
@@ -344,7 +344,7 @@ report 53038 "Fecho Mês"
         VarNMov: Integer;
         Text0002: Label 'Escolha um Processamento do tipo Vencimentos.';
         ConfRH: Record "Config. Recursos Humanos";
-        RubricSalarial: Record "Rubrica Salarial";
+        RubricSalarial: Record "Payroll Item";
         TabEmp: Record Empregado;
         ContratoEmp: Record "Contrato Empregado";
         varTotalEmpregado: Integer;

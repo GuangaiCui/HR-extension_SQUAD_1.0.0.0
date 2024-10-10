@@ -118,7 +118,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
 
                 trigger OnPreDataItem()
                 begin
-                    "Linhas Movs. Empregado".SetRange("Linhas Movs. Empregado"."Cód. Rubrica", codRubSalarial);
+                    "Linhas Movs. Empregado".SetRange("Linhas Movs. Empregado"."Payroll Item Code", codRubSalarial);
                 end;
             }
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
@@ -158,7 +158,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
 
                 trigger OnPreDataItem()
                 begin
-                    "Hist. Linhas Movs. Empregado".SetRange("Hist. Linhas Movs. Empregado"."Cód. Rubrica", codRubSalarial);
+                    "Hist. Linhas Movs. Empregado".SetRange("Hist. Linhas Movs. Empregado"."Payroll Item Code", codRubSalarial);
                 end;
             }
         }
@@ -182,7 +182,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
                 {
 
                     Caption = 'Rubrica do Imposto';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
             }
         }

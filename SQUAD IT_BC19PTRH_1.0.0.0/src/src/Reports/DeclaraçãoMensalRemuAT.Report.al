@@ -75,10 +75,10 @@ report 53087 "Declaração Mensal Remu. AT"
                     if TabRubrica.FindSet then begin
                         repeat
                             TabRubricaLinhas.Reset;
-                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubrica.Código);
+                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubrica.Código);
                             if TabRubricaLinhas.FindSet then begin
                                 repeat
-                                    if TabRubricaLinhas."Cód. Rubrica Filha" = Totais."Cód. Rubrica" then begin
+                                    if TabRubricaLinhas."Cód. Rubrica Filha" = Totais."Payroll Item Code" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
                                             varLimite := Totais.Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
@@ -108,10 +108,10 @@ report 53087 "Declaração Mensal Remu. AT"
                     if TabRubrica.FindSet then begin
                         repeat
                             TabRubricaLinhas.Reset;
-                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubrica.Código);
+                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubrica.Código);
                             if TabRubricaLinhas.FindSet then begin
                                 repeat
-                                    if TabRubricaLinhas."Cód. Rubrica Filha" = Totais."Cód. Rubrica" then begin
+                                    if TabRubricaLinhas."Cód. Rubrica Filha" = Totais."Payroll Item Code" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
                                             varLimite := Totais.Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
@@ -152,10 +152,10 @@ report 53087 "Declaração Mensal Remu. AT"
                     if TabRubrica.Find('-') then begin
                         repeat
                             TabRubricaLinhas.Reset;
-                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubrica.Código);
+                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubrica.Código);
                             if TabRubricaLinhas.FindSet then begin
                                 repeat
-                                    if TabRubricaLinhas."Cód. Rubrica Filha" = Totais."Cód. Rubrica" then
+                                    if TabRubricaLinhas."Cód. Rubrica Filha" = Totais."Payroll Item Code" then
                                         Flag := true;
                                 until (TabRubricaLinhas.Next = 0) or (Flag);
                             end;
@@ -179,7 +179,7 @@ report 53087 "Declaração Mensal Remu. AT"
                 TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", false);
                 if TabRubrica.FindSet then begin
                     repeat
-                        if TabRubrica.Código = Totais."Cód. Rubrica" then begin
+                        if TabRubrica.Código = Totais."Payroll Item Code" then begin
                             ImportanciasRetidas := ImportanciasRetidas + Totais.Valor;
                             TotalRendSujeitosRetencoes := TotalRendSujeitosRetencoes + Totais.Valor;
                         end;
@@ -195,7 +195,7 @@ report 53087 "Declaração Mensal Remu. AT"
                                    TabRubrica.Genero::ADSE, TabRubrica.Genero::SS);
                 if TabRubrica.FindSet then begin
                     repeat
-                        if TabRubrica.Código = Totais."Cód. Rubrica" then begin
+                        if TabRubrica.Código = Totais."Payroll Item Code" then begin
                             Desconto := Desconto + Totais.Valor;
                             TotalRendSujeitosContrib := TotalRendSujeitosContrib + Totais.Valor;
                         end;
@@ -210,7 +210,7 @@ report 53087 "Declaração Mensal Remu. AT"
                                    TabRubrica.Genero::Sindicato);
                 if TabRubrica.FindSet then begin
                     repeat
-                        if TabRubrica.Código = Totais."Cód. Rubrica" then begin
+                        if TabRubrica.Código = Totais."Payroll Item Code" then begin
                             ValorSindicato := ValorSindicato + Totais.Valor;
                             TotalRendSujeitosSindic := TotalRendSujeitosSindic + Totais.Valor;
                         end;
@@ -224,7 +224,7 @@ report 53087 "Declaração Mensal Remu. AT"
                 TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", true);
                 if TabRubrica.Find('-') then begin
                     repeat
-                        if TabRubrica.Código = Totais."Cód. Rubrica" then begin
+                        if TabRubrica.Código = Totais."Payroll Item Code" then begin
                             SobreTaxa := SobreTaxa + Round(Totais.Valor, 0.01);
                             TotalRendSujeitosSobretaxa := TotalRendSujeitosSobretaxa + Round(Totais.Valor, 0.01);
                         end;
@@ -330,10 +330,10 @@ report 53087 "Declaração Mensal Remu. AT"
                     if TabRubrica.FindSet then begin
                         repeat
                             TabRubricaLinhas.Reset;
-                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubrica.Código);
+                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubrica.Código);
                             if TabRubricaLinhas.FindSet then begin
                                 repeat
-                                    if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                                    if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
                                             varLimite := "Hist. Linhas Movs. Empregado2".Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
@@ -373,10 +373,10 @@ report 53087 "Declaração Mensal Remu. AT"
                     if TabRubrica.FindSet then begin
                         repeat
                             TabRubricaLinhas.Reset;
-                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubrica.Código);
+                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubrica.Código);
                             if TabRubricaLinhas.FindSet then begin
                                 repeat
-                                    if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                                    if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
                                             varLimite := "Hist. Linhas Movs. Empregado2".Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
@@ -423,10 +423,10 @@ report 53087 "Declaração Mensal Remu. AT"
                     if TabRubrica.FindSet then begin
                         repeat
                             TabRubricaLinhas.Reset;
-                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubrica.Código);
+                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubrica.Código);
                             if TabRubricaLinhas.FindSet then begin
                                 repeat
-                                    if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                                    if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
                                             varLimite := "Hist. Linhas Movs. Empregado2".Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
@@ -464,7 +464,7 @@ report 53087 "Declaração Mensal Remu. AT"
                 TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", false);
                 if TabRubrica.FindSet then begin
                     repeat
-                        if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                        if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                             ImportanciasRetidas := ImportanciasRetidas + "Hist. Linhas Movs. Empregado2".Valor;
                             TotalImpRetidas := TotalImpRetidas + "Hist. Linhas Movs. Empregado2".Valor;
                             TempTabRelatorios.Decimal2 := TempTabRelatorios.Decimal2 + "Hist. Linhas Movs. Empregado2".Valor;
@@ -480,7 +480,7 @@ report 53087 "Declaração Mensal Remu. AT"
                                    TabRubrica.Genero::ADSE, TabRubrica.Genero::SS);
                 if TabRubrica.FindSet then begin
                     repeat
-                        if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                        if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                             Desconto := Desconto + "Hist. Linhas Movs. Empregado2".Valor;
                             TotalDescontos := TotalDescontos + "Hist. Linhas Movs. Empregado2".Valor;
                             TempTabRelatorios.Decimal3 := TempTabRelatorios.Decimal3 + "Hist. Linhas Movs. Empregado2".Valor;
@@ -495,7 +495,7 @@ report 53087 "Declaração Mensal Remu. AT"
                                    TabRubrica.Genero::Sindicato);
                 if TabRubrica.FindSet then begin
                     repeat
-                        if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                        if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                             ValorSindicato := ValorSindicato + "Hist. Linhas Movs. Empregado2".Valor;
                             TotalSindicato := TotalSindicato + "Hist. Linhas Movs. Empregado2".Valor;
                             TempTabRelatorios.Decimal4 := TempTabRelatorios.Decimal4 + "Hist. Linhas Movs. Empregado2".Valor;
@@ -509,7 +509,7 @@ report 53087 "Declaração Mensal Remu. AT"
                 TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", true);
                 if TabRubrica.FindSet then begin
                     repeat
-                        if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
+                        if TabRubrica.Código = "Hist. Linhas Movs. Empregado2"."Payroll Item Code" then begin
                             SobreTaxa := SobreTaxa + Round("Hist. Linhas Movs. Empregado2".Valor, 0.01);
                             TotSobreTaxa := TotSobreTaxa + Round("Hist. Linhas Movs. Empregado2".Valor, 0.01);
                             TempTabRelatorios.Decimal5 := TempTabRelatorios.Decimal5 + "Hist. Linhas Movs. Empregado2".Valor;
@@ -780,7 +780,7 @@ report 53087 "Declaração Mensal Remu. AT"
 
     var
         TotalFor: Label 'Total de ';
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         DataIni: Date;
         DataFim: Date;

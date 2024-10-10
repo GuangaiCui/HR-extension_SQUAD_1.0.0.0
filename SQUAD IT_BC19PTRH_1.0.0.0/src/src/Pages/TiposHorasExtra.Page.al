@@ -23,7 +23,7 @@ page 53089 "Tipos Horas Extra"
 
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 

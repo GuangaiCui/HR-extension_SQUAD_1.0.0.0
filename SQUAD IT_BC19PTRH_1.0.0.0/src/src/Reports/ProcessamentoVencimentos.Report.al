@@ -84,7 +84,7 @@ report 53037 "Processamento Vencimentos"
                                 VarAbateSubAlimentacao := VarAbateSubAlimentacao + Abs(QtdAProcessar);
                         end;
 
-                        if TabRubricaSalarial.Get("Ausência Empregado"."Cód. Rubrica") then begin
+                        if TabRubricaSalarial.Get("Ausência Empregado"."Payroll Item Code") then begin
                             //Actualizar a tabela ausencias
                             "Ausência Empregado".Modify;
                             //Actualizar o Vencimento Base, Valor Dia e Valor Hora
@@ -99,14 +99,14 @@ report 53037 "Processamento Vencimentos"
                             TempRubricaEmpregado."Employee No." := Empregado."No.";
                             NLinha := NLinha + 10000;
                             TempRubricaEmpregado."Line No." := NLinha;
-                            TempRubricaEmpregado."Cód. Rúbrica Salarial" := "Ausência Empregado"."Cód. Rubrica";
-                            TempRubricaEmpregado."Tipo Rubrica" := TabRubricaSalarial."Tipo Rubrica";
-                            TempRubricaEmpregado."Descrição Rubrica" := TabRubricaSalarial.Descrição;
+                            TempRubricaEmpregado."Cód. Rúbrica Salarial" := "Ausência Empregado"."Payroll Item Code";
+                            TempRubricaEmpregado."Payroll Item Type" := TabRubricaSalarial."Payroll Item Type";
+                            TempRubricaEmpregado."Payroll Item Description" := TabRubricaSalarial.Descrição;
                             TempRubricaEmpregado."Debit Acc. No." := TabRubricaSalarial."Debit Acc. No.";
                             TempRubricaEmpregado."Credit Acc. No." := TabRubricaSalarial."Credit Acc. No.";
                             TempRubricaEmpregado.Validate(TempRubricaEmpregado.Quantity, QtdAProcessar);
                             TempRubricaEmpregado."Quatidade Recibo Vencimentos" := QtdAProcessarRecVen;
-                            TempRubricaEmpregado.UnidadeMedida := "Ausência Empregado"."Unit of Measure Code";
+                            TempRubricaEmpregado."Unit of Measure" := "Ausência Empregado"."Unit of Measure Code";
                             //Ausencias registadas em Dia --> valor unitário da ausência = Valor Dia Empregado da ficha do Empregado
                             //Ausencias registadas em Hora --> valor unitário da ausência = Valor hora Empregado da ficha do Empregado
                             if "Ausência Empregado"."Novo Valor Ausencia" = 0 then begin
@@ -157,7 +157,7 @@ report 53037 "Processamento Vencimentos"
                     if ("Horas Extra Empregado".Data >= "Periodos Processamento"."Data Inicio Processamento") and
                       ("Horas Extra Empregado".Data <= "Periodos Processamento"."Data Fim Processamento") then begin
 
-                        if TabRubricaSalarial.Get("Horas Extra Empregado"."Cód. Rubrica") then begin
+                        if TabRubricaSalarial.Get("Horas Extra Empregado"."Payroll Item Code") then begin
                             //Actualizar a tabela Hora Extra
                             "Horas Extra Empregado"."Hora Extra Bloqueada" := true;
                             "Horas Extra Empregado".Modify;
@@ -171,9 +171,9 @@ report 53037 "Processamento Vencimentos"
                             TempRubricaEmpregado."Employee No." := Empregado."No.";
                             NLinha := NLinha + 10000;
                             TempRubricaEmpregado."Line No." := NLinha;
-                            TempRubricaEmpregado."Cód. Rúbrica Salarial" := "Horas Extra Empregado"."Cód. Rubrica";
-                            TempRubricaEmpregado."Tipo Rubrica" := TabRubricaSalarial."Tipo Rubrica";
-                            TempRubricaEmpregado."Descrição Rubrica" := TabRubricaSalarial.Descrição;
+                            TempRubricaEmpregado."Cód. Rúbrica Salarial" := "Horas Extra Empregado"."Payroll Item Code";
+                            TempRubricaEmpregado."Payroll Item Type" := TabRubricaSalarial."Payroll Item Type";
+                            TempRubricaEmpregado."Payroll Item Description" := TabRubricaSalarial.Descrição;
                             TempRubricaEmpregado."Debit Acc. No." := TabRubricaSalarial."Debit Acc. No.";
                             TempRubricaEmpregado."Credit Acc. No." := TabRubricaSalarial."Credit Acc. No.";
                             TempRubricaEmpregado.Validate(TempRubricaEmpregado.Quantity, "Horas Extra Empregado".Quantity);
@@ -213,13 +213,13 @@ report 53037 "Processamento Vencimentos"
 
                 trigger OnAfterGetRecord()
                 var
-                    l_Rubrica: Record "Rubrica Salarial";
+                    l_Rubrica: Record "Payroll Item";
                     l_ValorVencimentoBase: Decimal;
                 begin
-                    if ("Abonos - Descontos Extra".Data >= "Periodos Processamento"."Data Inicio Processamento") and
-                      ("Abonos - Descontos Extra".Data <= "Periodos Processamento"."Data Fim Processamento") then begin
+                    if ("Abonos - Descontos Extra".Date >= "Periodos Processamento"."Data Inicio Processamento") and
+                      ("Abonos - Descontos Extra".Date <= "Periodos Processamento"."Data Fim Processamento") then begin
 
-                        if TabRubricaSalarial.Get("Abonos - Descontos Extra"."Cód. Rubrica") then begin
+                        if TabRubricaSalarial.Get("Abonos - Descontos Extra"."Payroll Item Code") then begin
                             //Actualizar a tabela Hora Extra
                             "Abonos - Descontos Extra"."Earning - Blocked Deduction" := true;
                             "Abonos - Descontos Extra".Modify;
@@ -244,17 +244,17 @@ report 53037 "Processamento Vencimentos"
                             TempRubricaEmpregado."Employee No." := Empregado."No.";
                             NLinha := NLinha + 10000;
                             TempRubricaEmpregado."Line No." := NLinha;
-                            TempRubricaEmpregado."Cód. Rúbrica Salarial" := "Abonos - Descontos Extra"."Cód. Rubrica";
-                            TempRubricaEmpregado."Tipo Rubrica" := "Abonos - Descontos Extra"."Tipo Rubrica";
-                            TempRubricaEmpregado."Descrição Rubrica" := "Abonos - Descontos Extra"."Descrição Rubrica";
+                            TempRubricaEmpregado."Cód. Rúbrica Salarial" := "Abonos - Descontos Extra"."Payroll Item Code";
+                            TempRubricaEmpregado."Payroll Item Type" := "Abonos - Descontos Extra"."Payroll Item Type";
+                            TempRubricaEmpregado."Payroll Item Description" := "Abonos - Descontos Extra"."Payroll Item Description";
                             TempRubricaEmpregado."Debit Acc. No." := TabRubricaSalarial."Debit Acc. No.";
                             TempRubricaEmpregado."Credit Acc. No." := TabRubricaSalarial."Credit Acc. No.";
                             TempRubricaEmpregado.Quantity := "Abonos - Descontos Extra".Quantity;
-                            TempRubricaEmpregado.UnidadeMedida := "Abonos - Descontos Extra".UnidadeMedida;
+                            TempRubricaEmpregado."Unit of Measure" := "Abonos - Descontos Extra"."Unit of Measure";
                             if ("Abonos - Descontos Extra"."Unit Value" = 0) and ("Abonos - Descontos Extra"."Valor Total" = 0) and
                                  (TabRubricaSalarial."Sobretaxa em Sede de IRS" = false) then begin
-                                if UnidMedidaRH.Get("Abonos - Descontos Extra".UnidadeMedida) then begin
-                                    if (l_Rubrica.Get("Abonos - Descontos Extra"."Cód. Rubrica")) and
+                                if UnidMedidaRH.Get("Abonos - Descontos Extra"."Unit of Measure") then begin
+                                    if (l_Rubrica.Get("Abonos - Descontos Extra"."Payroll Item Code")) and
                                        (l_Rubrica.Genero = l_Rubrica.Genero::"Admissão-Demissão") then begin
                                         l_ValorVencimentoBase := FuncoesRH.CalcularVencimentoBaseFaltas("Periodos Processamento"."Data Inicio Processamento", Empregado);
                                         "Abonos - Descontos Extra".Validate("Abonos - Descontos Extra"."Unit Value", FuncoesRH.CalcularValorDia(l_ValorVencimentoBase, Empregado));
@@ -269,7 +269,7 @@ report 53037 "Processamento Vencimentos"
                             end;
 
                             TempRubricaEmpregado."Unit Value" := "Abonos - Descontos Extra"."Unit Value";
-                            if "Abonos - Descontos Extra"."Tipo Rubrica" = "Abonos - Descontos Extra"."Tipo Rubrica"::Abono then
+                            if "Abonos - Descontos Extra"."Payroll Item Type" = "Abonos - Descontos Extra"."Payroll Item Type"::Abono then
                                 TempRubricaEmpregado."Valor Total" := Abs(Round("Abonos - Descontos Extra"."Valor Total", 0.01))
                             else
                                 TempRubricaEmpregado."Valor Total" := -Round("Abonos - Descontos Extra"."Valor Total", 0.01);
@@ -287,7 +287,7 @@ report 53037 "Processamento Vencimentos"
                             //JTP
                             //IT001 - JTP - 2020.06.08
                             //TempRubricaEmpregado."Data a que se refere o mov" := "Periodos Processamento"."Data Registo";
-                            TempRubricaEmpregado."Data a que se refere o mov" := "Abonos - Descontos Extra"."Data a que se refere o Mov.";
+                            TempRubricaEmpregado."Data a que se refere o mov" := "Abonos - Descontos Extra"."Reference Date";
                             TempRubricaEmpregado.Insert;
                         end;
                     end;
@@ -304,7 +304,7 @@ report 53037 "Processamento Vencimentos"
                 DataItemLink = "Employee No." = FIELD("No."),
                                 "Data Início" = FIELD("Data Filtro Inicio"), "Data Fim" = FIELD("Data Filtro Fim");
                 DataItemTableView = SORTING("Employee No.", sort, "Cód. Rúbrica Salarial")
-                                    WHERE("Tipo Rubrica" = CONST(Abono));
+                                    WHERE("Payroll Item Type" = CONST(Abono));
 
                 trigger OnAfterGetRecord()
                 var
@@ -376,7 +376,7 @@ report 53037 "Processamento Vencimentos"
                                 AuxTabRubricaEmpregado.SetRange(AuxTabRubricaEmpregado."Cód. Rúbrica Salarial", AuxTabRubricaSalarial.Código);
                                 if AuxTabRubricaEmpregado.FindFirst then begin
                                     AuxTabRubricaSalLinhas.Reset;
-                                    AuxTabRubricaSalLinhas.SetRange(AuxTabRubricaSalLinhas."Cód. Rubrica", AuxTabRubricaSalarial.Código);
+                                    AuxTabRubricaSalLinhas.SetRange(AuxTabRubricaSalLinhas."Payroll Item Code", AuxTabRubricaSalarial.Código);
                                     AuxTabRubricaSalLinhas.SetRange(AuxTabRubricaSalLinhas."Cód. Rubrica Filha", Abonos."Cód. Rúbrica Salarial");
                                     if AuxTabRubricaSalLinhas.FindFirst then begin
                                         TempRubricaEmpregado."Cód. Situação" := Abonos."Cód. Situação";
@@ -474,7 +474,7 @@ report 53037 "Processamento Vencimentos"
 
                             //Ver se há rubricas salariais que dependam desta
                             RubricaSalariaLinhas.Reset;
-                            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Cód. Rubrica", Abonos."Cód. Rúbrica Salarial");
+                            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Payroll Item Code", Abonos."Cód. Rúbrica Salarial");
                             if RubricaSalariaLinhas.FindSet then begin
                                 repeat
                                     RubricaSalaEmpregado.Reset;
@@ -486,7 +486,7 @@ report 53037 "Processamento Vencimentos"
                                     if RubricaSalaEmpregado.FindSet then begin
                                         repeat
                                             RubricaSalariaLinhas2.Reset;
-                                            RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Cód. Rubrica", RubricaSalariaLinhas."Cód. Rubrica Filha");
+                                            RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Payroll Item Code", RubricaSalariaLinhas."Cód. Rubrica Filha");
                                             if RubricaSalariaLinhas2.Find('-') then begin
                                                 repeat
                                                     RubricaSalaEmpregado2.Reset;
@@ -500,7 +500,7 @@ report 53037 "Processamento Vencimentos"
                                                     if RubricaSalaEmpregado2.FindFirst then begin
                                                         //se for iva, tem de ir buscar a percentagem à ficha do empregado e não à filha
                                                         TabRubricaSalAux.Reset;
-                                                        if TabRubricaSalAux.Get(RubricaSalariaLinhas2."Cód. Rubrica") then;
+                                                        if TabRubricaSalAux.Get(RubricaSalariaLinhas2."Payroll Item Code") then;
                                                         if TabRubricaSalAux.Genero <> TabRubricaSalAux.Genero::IVA then begin
                                                             TempRubricaEmpregado."Valor Total" := Round(TempRubricaEmpregado."Valor Total" +
                                                                                 ((RubricaSalaEmpregado2."Valor Total" * RubricaSalariaLinhas2.Percentagem / 100)), 0.01);
@@ -515,7 +515,7 @@ report 53037 "Processamento Vencimentos"
                                             end else begin
                                                 //se for iva, tem de ir buscar a percentagem à ficha do empregado e não à filha
                                                 TabRubricaSalAux.Reset;
-                                                if TabRubricaSalAux.Get(RubricaSalariaLinhas."Cód. Rubrica") then;
+                                                if TabRubricaSalAux.Get(RubricaSalariaLinhas."Payroll Item Code") then;
                                                 if TabRubricaSalAux.Genero <> TabRubricaSalAux.Genero::IVA then begin
 
 
@@ -687,7 +687,7 @@ report 53037 "Processamento Vencimentos"
                             //linhas de honorários o IVA só estava a ser calculado sobre a primeira. assim junta as 3 e só depois calcula o IVA
                             Clear(TabRubricaSalAux);
                             TabRubricaSalAux.Reset;
-                            if TabRubricaSalAux.Get(RubricaSalariaLinhas."Cód. Rubrica") then begin
+                            if TabRubricaSalAux.Get(RubricaSalariaLinhas."Payroll Item Code") then begin
                                 if TabRubricaSalAux.Genero = TabRubricaSalAux.Genero::IVA then
                                     TempRubricaEmpregado."Valor Total" := Round((TempRubricaEmpregado."Valor Total" * Empregado."IVA %" / 100), 0.01);
                             end;
@@ -708,17 +708,17 @@ report 53037 "Processamento Vencimentos"
                 DataItemLink = "Employee No." = FIELD("No."), "Data Início" = FIELD("Data Filtro Inicio"),
                                 "Data Fim" = FIELD("Data Filtro Fim");
                 DataItemTableView = SORTING("Employee No.", sort, "Cód. Rúbrica Salarial")
-                                    WHERE("Tipo Rubrica" = CONST(Desconto));
+                                    WHERE("Payroll Item Type" = CONST(Desconto));
 
                 trigger OnAfterGetRecord()
                 var
                     rRubricaSalarialLinhas: Record "Rubrica Salarial Linhas";
-                    rRubricaSalarial: Record "Rubrica Salarial";
+                    rRubricaSalarial: Record "Payroll Item";
                     Text001: Label 'A rubrica %1 nao tem o campo NATREN preenchido.';
                     TabContratoEmp: Record "Contrato Empregado";
                     AnosdeCasa: Integer;
                     MesesdeCasa: Integer;
-                    lRubricaSalarial: Record "Rubrica Salarial";
+                    lRubricaSalarial: Record "Payroll Item";
                 begin
                     //*******************************************************************************
                     //Pega em cada Desconto parametrizado na tabela Rubrica salarial empregado
@@ -778,7 +778,7 @@ report 53037 "Processamento Vencimentos"
 
                             //Ver se há rubricas salariais que dependam desta
                             RubricaSalariaLinhas.Reset;
-                            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Cód. Rubrica", Descontos."Cód. Rúbrica Salarial");
+                            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Payroll Item Code", Descontos."Cód. Rúbrica Salarial");
                             if RubricaSalariaLinhas.FindSet then begin
                                 repeat
                                     TempRubricaEmpregado.Reset;
@@ -973,7 +973,7 @@ report 53037 "Processamento Vencimentos"
                             if TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::SS then begin
                                 //Valida se todas as filhas da Seg. social têm o Natrem preenchido
                                 rRubricaSalarialLinhas.Reset;
-                                rRubricaSalarialLinhas.SetFilter("Cód. Rubrica", TabRubricaSalarial.Código);
+                                rRubricaSalarialLinhas.SetFilter("Payroll Item Code", TabRubricaSalarial.Código);
                                 if rRubricaSalarialLinhas.FindSet then begin
                                     repeat
                                         if rRubricaSalarial.Get(rRubricaSalarialLinhas."Cód. Rubrica Filha") then
@@ -1115,7 +1115,7 @@ report 53037 "Processamento Vencimentos"
                                         TabHistLinhaMovEmp.Reset;
                                         TabHistLinhaMovEmp.SetCurrentKey(TabHistLinhaMovEmp."Employee No.", TabHistLinhaMovEmp."Data Registo");
                                         TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Employee No.", Empregado."No.");
-                                        TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Cód. Rubrica", TabRubSal.Código);
+                                        TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Payroll Item Code", TabRubSal.Código);
                                         TabHistLinhaMovEmp.SetFilter(TabHistLinhaMovEmp."Data Registo", '%1..%2',
                                                                          DMY2Date(1, 1, Date2DMY("Periodos Processamento"."Data Registo", 3)),
                                                                          DMY2Date(31, 12, Date2DMY("Periodos Processamento"."Data Registo", 3)));
@@ -1128,8 +1128,8 @@ report 53037 "Processamento Vencimentos"
                                                 if TabHistLinhaMovEmp2.Find('-') then begin
                                                     repeat
                                                         TabRubSalLinha.Reset;
-                                                        TabRubSalLinha.SetRange(TabRubSalLinha."Cód. Rubrica", TabRubSal.Código);
-                                                        TabRubSalLinha.SetRange(TabRubSalLinha."Cód. Rubrica Filha", TabHistLinhaMovEmp2."Cód. Rubrica");
+                                                        TabRubSalLinha.SetRange(TabRubSalLinha."Payroll Item Code", TabRubSal.Código);
+                                                        TabRubSalLinha.SetRange(TabRubSalLinha."Cód. Rubrica Filha", TabHistLinhaMovEmp2."Payroll Item Code");
                                                         if TabRubSalLinha.Find('-') then begin
 
                                                             if TabRubSalLinha."Valor Limite Máximo" <> 0.0 then
@@ -1158,7 +1158,7 @@ report 53037 "Processamento Vencimentos"
                                                 //Fixo p não ter de criar mais rubricas e a data é para saber o mês do retroactivo
                                                 TempRubricaEmpregado2."Cód. Rúbrica Salarial" := 'IRS Retro' +
                                                                                                  Format(TabHistLinhaMovEmp."Data Registo", 0, '<Month text>');
-                                                TempRubricaEmpregado2."Descrição Rubrica" := TempRubricaEmpregado3."Cód. Rúbrica Salarial";//truque
+                                                TempRubricaEmpregado2."Payroll Item Description" := TempRubricaEmpregado3."Cód. Rúbrica Salarial";//truque
                                                 NLinha := NLinha + 10000;
                                                 TempRubricaEmpregado2."Line No." := NLinha;
                                                 TempRubricaEmpregado2."Valor Total" := VarValorTotal3;
@@ -1167,7 +1167,7 @@ report 53037 "Processamento Vencimentos"
                                                     TempRubricaEmpregado2."Debit Acc. No." := TempRubricaEmpregado3."Credit Acc. No.";
                                                     TempRubricaEmpregado2."Credit Acc. No." := TempRubricaEmpregado3."Debit Acc. No.";
                                                     //Se o empregado receber dinheiro então deve ser abono
-                                                    TempRubricaEmpregado2."Tipo Rubrica" := TempRubricaEmpregado2."Tipo Rubrica"::Abono;
+                                                    TempRubricaEmpregado2."Payroll Item Type" := TempRubricaEmpregado2."Payroll Item Type"::Abono;
                                                     TempRubricaEmpregado2.Sort := 99;
                                                 end;
                                                 TempRubricaEmpregado2.Quantity := IRSTaxa;
@@ -1186,7 +1186,7 @@ report 53037 "Processamento Vencimentos"
 
                 trigger OnPreDataItem()
                 var
-                    l_rubSalarial: Record "Rubrica Salarial";
+                    l_rubSalarial: Record "Payroll Item";
                 begin
                     //************************************************************
                     //Copia as rúbricas da tabela temporária TempRubricaEmpregado para TempRubricaEmpregado2
@@ -1225,7 +1225,7 @@ report 53037 "Processamento Vencimentos"
 
                     RubricaSalaEmpregado.Reset;
                     RubricaSalaEmpregado.SetCurrentKey("Employee No.", "Line No.");
-                    RubricaSalaEmpregado.SetRange("Tipo Rubrica", RubricaSalaEmpregado."Tipo Rubrica"::Desconto);
+                    RubricaSalaEmpregado.SetRange("Payroll Item Type", RubricaSalaEmpregado."Payroll Item Type"::Desconto);
                     RubricaSalaEmpregado.SetRange("Employee No.", Empregado."No.");
                     RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Início", '<=%1',
                                                    "Periodos Processamento"."Data Fim Processamento");
@@ -1294,7 +1294,7 @@ report 53037 "Processamento Vencimentos"
                             TabRubSal.SetRange(Genero, TabRubSal.Genero::IRS);
                             if TabRubSal.Find('-') then begin
                                 RubricaSalariaLinhas.Reset;
-                                RubricaSalariaLinhas.SetRange("Cód. Rubrica", TabRubSal.Código);
+                                RubricaSalariaLinhas.SetRange("Payroll Item Code", TabRubSal.Código);
                                 RubricaSalariaLinhas.SetRange("Cód. Rubrica Filha", RubricaSalaEmpregado."Cód. Rúbrica Salarial");
                                 if RubricaSalariaLinhas.Find('-') then
                                     ValorDesc1 := ValorDesc1 + Abs(RubricaSalaEmpregado."Valor Total");
@@ -1304,7 +1304,7 @@ report 53037 "Processamento Vencimentos"
                             TabRubSal.SetRange(Genero, TabRubSal.Genero::SS);
                             if TabRubSal.FindFirst then begin
                                 RubricaSalariaLinhas.Reset;
-                                RubricaSalariaLinhas.SetRange("Cód. Rubrica", TabRubSal.Código);
+                                RubricaSalariaLinhas.SetRange("Payroll Item Code", TabRubSal.Código);
                                 RubricaSalariaLinhas.SetRange("Cód. Rubrica Filha", RubricaSalaEmpregado."Cód. Rúbrica Salarial");
                                 if RubricaSalariaLinhas.Find('-') then begin
                                     //ValorDescSS := ValorDescSS + ABS(RubricaSalaEmpregado."Valor Total");
@@ -1330,7 +1330,7 @@ report 53037 "Processamento Vencimentos"
                             TabRubSal.SetRange(Genero, TabRubSal.Genero::CGA);
                             if TabRubSal.FindFirst then begin
                                 RubricaSalariaLinhas.Reset;
-                                RubricaSalariaLinhas.SetRange("Cód. Rubrica", TabRubSal.Código);
+                                RubricaSalariaLinhas.SetRange("Payroll Item Code", TabRubSal.Código);
                                 RubricaSalariaLinhas.SetRange("Cód. Rubrica Filha", RubricaSalaEmpregado."Cód. Rúbrica Salarial");
                                 if RubricaSalariaLinhas.Find('-') then
                                     ValorDescCGA := ValorDescCGA + Abs(RubricaSalaEmpregado."Valor Total");
@@ -1340,7 +1340,7 @@ report 53037 "Processamento Vencimentos"
                             TabRubSal.SetRange(Genero, TabRubSal.Genero::ADSE);
                             if TabRubSal.Find('-') then begin
                                 RubricaSalariaLinhas.Reset;
-                                RubricaSalariaLinhas.SetRange("Cód. Rubrica", TabRubSal.Código);
+                                RubricaSalariaLinhas.SetRange("Payroll Item Code", TabRubSal.Código);
                                 RubricaSalariaLinhas.SetRange("Cód. Rubrica Filha", RubricaSalaEmpregado."Cód. Rúbrica Salarial");
                                 if RubricaSalariaLinhas.Find('-') then
                                     ValorDescADSE := ValorDescADSE + Abs(RubricaSalaEmpregado."Valor Total");
@@ -1354,11 +1354,11 @@ report 53037 "Processamento Vencimentos"
 
                 trigger OnAfterGetRecord()
                 var
-                    l_RubricaSalarial: Record "Rubrica Salarial";
+                    l_RubricaSalarial: Record "Payroll Item";
                     l_RubricaSalarialLinhas: Record "Rubrica Salarial Linhas";
                     l_RubricaSalarialEmpregado: Record "Rubrica Salarial Empregado";
                     Valor: Decimal;
-                    l_RubricaSalarial2: Record "Rubrica Salarial";
+                    l_RubricaSalarial2: Record "Payroll Item";
                 begin
                     //Fundo Compensação
                     l_RubricaSalarial.Reset;
@@ -1375,7 +1375,7 @@ report 53037 "Processamento Vencimentos"
                                                                    "Periodos Processamento"."Data Inicio Processamento", 0D);
                             if l_RubricaSalarialEmpregado.FindFirst then begin
                                 l_RubricaSalarialLinhas.Reset;
-                                l_RubricaSalarialLinhas.SetRange(l_RubricaSalarialLinhas."Cód. Rubrica", l_RubricaSalarial.Código);
+                                l_RubricaSalarialLinhas.SetRange(l_RubricaSalarialLinhas."Payroll Item Code", l_RubricaSalarial.Código);
                                 if l_RubricaSalarialLinhas.FindSet then begin
                                     repeat
                                         TempRubricaEmpregado2.Reset;
@@ -1428,7 +1428,7 @@ report 53037 "Processamento Vencimentos"
                                     end;
                                     ProcessarEncSociais(Valor,
                                                               l_RubricaSalarialLinhas.Percentagem,
-                                                              l_RubricaSalarialLinhas."Cód. Rubrica",
+                                                              l_RubricaSalarialLinhas."Payroll Item Code",
                                                               l_RubricaSalarialEmpregado."Debit Acc. No.",
                                                               l_RubricaSalarialEmpregado."Credit Acc. No.");
                                 end;
@@ -1501,7 +1501,7 @@ report 53037 "Processamento Vencimentos"
                     CabMovEmpregado.Insert;
 
                     TempRubricaEmpregado2.SetCurrentKey(TempRubricaEmpregado2."Employee No.", TempRubricaEmpregado2.Sort,
-                    TempRubricaEmpregado2."Cód. Rúbrica Salarial", "Data a que se refere o mov", TempRubricaEmpregado2.UnidadeMedida);
+                    TempRubricaEmpregado2."Cód. Rúbrica Salarial", "Data a que se refere o mov", TempRubricaEmpregado2."Unit of Measure");
                     if TempRubricaEmpregado2.FindSet then begin
                         repeat
                             //Se a rubrica da falta for diferente, ou for de outro mes, ou tiver outra unidade medida, cria uma nova linha
@@ -1520,7 +1520,7 @@ report 53037 "Processamento Vencimentos"
                                          then begin
                                             InserirDadosCabMovEmp;
                                         end else begin
-                                            if TempRubricaEmpregado2.UnidadeMedida <> varUnidadeMedida then begin
+                                            if TempRubricaEmpregado2."Unit of Measure" <> varUnidadeMedida then begin
                                                 InserirDadosCabMovEmp;
                                             end else begin
                                                 LinhaMovEmpregado.Quantity := LinhaMovEmpregado.Quantity + TempRubricaEmpregado2.Quantity;
@@ -1546,7 +1546,7 @@ report 53037 "Processamento Vencimentos"
                                             end;
                                         end;
                                 end else begin
-                                    if TempRubricaEmpregado2.UnidadeMedida <> varUnidadeMedida then begin
+                                    if TempRubricaEmpregado2."Unit of Measure" <> varUnidadeMedida then begin
                                         InserirDadosCabMovEmp;
                                     end else begin
                                         LinhaMovEmpregado.Quantity := LinhaMovEmpregado.Quantity + TempRubricaEmpregado2.Quantity;
@@ -1573,7 +1573,7 @@ report 53037 "Processamento Vencimentos"
                             end;
                             varDataFalta := TempRubricaEmpregado2."Data a que se refere o mov";
                             VarCodRubrica := TempRubricaEmpregado2."Cód. Rúbrica Salarial";
-                            varUnidadeMedida := TempRubricaEmpregado2.UnidadeMedida;
+                            varUnidadeMedida := TempRubricaEmpregado2."Unit of Measure";
                         until TempRubricaEmpregado2.Next = 0;
                     end;
                 end;
@@ -1641,7 +1641,7 @@ report 53037 "Processamento Vencimentos"
                                 rLinhaMovEmp.Validate("Employee No.", Empregado."No.");
                                 rLinhaMovEmp."No. Linha" := NLinha;
                                 rLinhaMovEmp."Data Registo" := "Periodos Processamento"."Data Registo";
-                                rLinhaMovEmp.Validate("Cód. Rubrica", rPenhora."Garnishment Rubric");
+                                rLinhaMovEmp.Validate("Payroll Item Code", rPenhora."Garnishment Rubric");
 
                                 rLinhaMovEmp.Quantity := 1;
                                 rLinhaMovEmp.Valor := Round(ValorAPenhorar, 0.01) * -1;
@@ -1659,7 +1659,7 @@ report 53037 "Processamento Vencimentos"
 
             trigger OnAfterGetRecord()
             var
-                lRubSal: Record "Rubrica Salarial";
+                lRubSal: Record "Payroll Item";
                 lAbonosDesc: Record "Abonos - Descontos Extra";
                 Flag: Boolean;
             begin
@@ -1694,7 +1694,7 @@ report 53037 "Processamento Vencimentos"
                         if lRubSal.FindFirst then begin
                             lAbonosDesc.Reset;
                             lAbonosDesc.SetRange(lAbonosDesc."Employee No.", Empregado."No.");
-                            lAbonosDesc.SetRange(lAbonosDesc."Cód. Rubrica", lRubSal.Código);
+                            lAbonosDesc.SetRange(lAbonosDesc."Payroll Item Code", lRubSal.Código);
                             if lAbonosDesc.FindFirst then begin
                                 if Confirm(StrSubstNo(Text0040, Empregado."No.")) then begin
                                     Flag := true;
@@ -1710,13 +1710,13 @@ report 53037 "Processamento Vencimentos"
                                    (Empregado."Employment Date" <= "Periodos Processamento"."Data Fim Processamento") then begin
                                     lAbonosDesc.Init;
                                     lAbonosDesc.Validate(lAbonosDesc."Employee No.", Empregado."No.");
-                                    lAbonosDesc.Validate(lAbonosDesc.Data, "Periodos Processamento"."Data Registo");
-                                    lAbonosDesc.Validate(lAbonosDesc."Cód. Rubrica", lRubSal.Código);
+                                    lAbonosDesc.Validate(lAbonosDesc.Date, "Periodos Processamento"."Data Registo");
+                                    lAbonosDesc.Validate(lAbonosDesc."Payroll Item Code", lRubSal.Código);
                                     lAbonosDesc.Validate(lAbonosDesc.Quantity, 30 - ("Periodos Processamento"."Data Fim Processamento" - Empregado."Employment Date" + 1));
                                     //Empregados a tempo parcial
                                     if Empregado."Regime Duração Trabalho" = 2 then
                                         lAbonosDesc.Validate(lAbonosDesc.Quantity, Round(lAbonosDesc.Quantity * Empregado."No. Dias Trabalho Mensal" / 30, 1, '='));
-                                    lAbonosDesc.Validate(lAbonosDesc.UnidadeMedida, TabConfRH."Base Unit of Measure");
+                                    lAbonosDesc.Validate(lAbonosDesc."Unit of Measure", TabConfRH."Base Unit of Measure");
                                     //IT002 - JTP - 2020.07.21
                                     lAbonosDesc.Validate("Qtd. Perca Sub. Alimentação", FuncoesRH.CalcularDiasUteisMes(Empregado.Estabelecimento,
                                                                "Periodos Processamento"."Data Inicio Processamento",
@@ -1729,14 +1729,14 @@ report 53037 "Processamento Vencimentos"
                                     if (30 - Date2DMY(Empregado."End Date", 1)) > 0 then begin
                                         lAbonosDesc.Init;
                                         lAbonosDesc.Validate(lAbonosDesc."Employee No.", Empregado."No.");
-                                        lAbonosDesc.Validate(lAbonosDesc.Data, "Periodos Processamento"."Data Registo");
-                                        lAbonosDesc.Validate(lAbonosDesc."Cód. Rubrica", lRubSal.Código);
+                                        lAbonosDesc.Validate(lAbonosDesc.Date, "Periodos Processamento"."Data Registo");
+                                        lAbonosDesc.Validate(lAbonosDesc."Payroll Item Code", lRubSal.Código);
                                         lAbonosDesc.Validate(lAbonosDesc.Quantity, 30 - Date2DMY(Empregado."End Date", 1));
                                         // Empregados a tempo parcial
                                         if Empregado."Regime Duração Trabalho" = 2 then
                                             lAbonosDesc.Validate(lAbonosDesc.Quantity, Round(lAbonosDesc.Quantity * Empregado."No. Dias Trabalho Mensal" / 30, 1, '='));
 
-                                        lAbonosDesc.Validate(lAbonosDesc.UnidadeMedida, TabConfRH."Base Unit of Measure");
+                                        lAbonosDesc.Validate(lAbonosDesc."Unit of Measure", TabConfRH."Base Unit of Measure");
                                         lAbonosDesc.Insert(true);
                                     end;
                                 end;
@@ -2050,7 +2050,7 @@ report 53037 "Processamento Vencimentos"
         Text0003: Label 'Já existe um processamento para o Empregado %1 para este periodo. Deseja substituí-lo?';
         NLinha2: Integer;
         FuncoesRH: Codeunit "Funções RH";
-        TabRubricaSalarial: Record "Rubrica Salarial";
+        TabRubricaSalarial: Record "Payroll Item";
         TabRegimeSS: Record "Regime Seg. Social";
         TabConfRH: Record "Config. Recursos Humanos";
         QtdAProcessar: Decimal;
@@ -2061,7 +2061,7 @@ report 53037 "Processamento Vencimentos"
         VarValorLimite: Decimal;
         VarAbateSubAlimentacao: Integer;
         VarValorTotal: Decimal;
-        AuxTabRubricaSalarial: Record "Rubrica Salarial";
+        AuxTabRubricaSalarial: Record "Payroll Item";
         AuxTabRubricaSalLinhas: Record "Rubrica Salarial Linhas";
         AuxTabRubricaEmpregado: Record "Rubrica Salarial Empregado";
         TabFeriasEmpregado: Record "Férias Empregados";
@@ -2071,7 +2071,7 @@ report 53037 "Processamento Vencimentos"
         TempRubricaEmpregado3: Record "Rubrica Salarial Empregado" temporary;
         varCriarRetroactivo: Boolean;
         TabLinhaMovEmp: Record "Linhas Movs. Empregado";
-        TabRubSal: Record "Rubrica Salarial";
+        TabRubSal: Record "Payroll Item";
         TabRubSalLinha: Record "Rubrica Salarial Linhas";
         VarValorTotal2: Decimal;
         VarValorTotal3: Decimal;
@@ -2104,9 +2104,9 @@ report 53037 "Processamento Vencimentos"
         Text0007: Label 'Tem obrigatoriamente de preencher o campo Data Início do Período Processamento da Falta.';
         Text0008: Label 'Tem obrigatoriamente de preencher o campo Data Fim do Período Processamento da Falta.';
         Text0009: Label 'A Data Início do Período Processamento da Falta não pode ser superior a Data Fim do Período Processamento da Falta.';
-        RubricaSalarial2: Record "Rubrica Salarial";
+        RubricaSalarial2: Record "Payroll Item";
         varDataFalta: Date;
-        TabRubSal2: Record "Rubrica Salarial";
+        TabRubSal2: Record "Payroll Item";
         ApagaEmp: Text[250];
         Text0017: Label 'Tem a certeza que deseja apagar o processamento para os seguintes Empregados: %1 para este período?';
         ApagaTodosEmp: Boolean;
@@ -2119,7 +2119,7 @@ report 53037 "Processamento Vencimentos"
         DataInicoMes: Date;
         DataFimMes: Date;
         HistoricoEmpregado: Record "Historico Empregado";
-        TabRubricaSalAux: Record "Rubrica Salarial";
+        TabRubricaSalAux: Record "Payroll Item";
         GrauFuncaoEmpregado: Record "Grau Função Empregado";
         GrauFuncao: Record "Grau Função";
         Nivel: Code[20];
@@ -2160,9 +2160,9 @@ report 53037 "Processamento Vencimentos"
     var
         TabCabMovEmpregado: Record "Cab. Movs. Empregado";
         TabLinhaMovEmpregado: Record "Linhas Movs. Empregado";
-        TabRubSalarial: Record "Rubrica Salarial";
+        TabRubSalarial: Record "Payroll Item";
         recRubSalarialEmp: Record "Rubrica Salarial Empregado";
-        recRubSalarial: Record "Rubrica Salarial";
+        recRubSalarial: Record "Payroll Item";
         Flag: Boolean;
     begin
         //****************************************************
@@ -2192,9 +2192,9 @@ report 53037 "Processamento Vencimentos"
             TabLinhaMovEmpregado."No. Linha" := NLinha;
             TabLinhaMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
             TabLinhaMovEmpregado."Designação Empregado" := Empregado.Name;
-            TabLinhaMovEmpregado."Cód. Rubrica" := TabRubSalarial.Código;
-            TabLinhaMovEmpregado."Descrição Rubrica" := TabRubSalarial.Descrição;
-            TabLinhaMovEmpregado."Tipo Rubrica" := TabRubSalarial."Tipo Rubrica";
+            TabLinhaMovEmpregado."Payroll Item Code" := TabRubSalarial.Código;
+            TabLinhaMovEmpregado."Payroll Item Description" := TabRubSalarial.Descrição;
+            TabLinhaMovEmpregado."Payroll Item Type" := TabRubSalarial."Payroll Item Type";
             //Novos parametros varcontadeb por causa do FCT
             if VarContaDeb = '' then
                 TabLinhaMovEmpregado."Debit Acc. No." := TabRubSalarial."Debit Acc. No."
@@ -2225,7 +2225,7 @@ report 53037 "Processamento Vencimentos"
 
     procedure InserirDadosCabMovEmp()
     var
-        l_RubSal: Record "Rubrica Salarial";
+        l_RubSal: Record "Payroll Item";
     begin
         NLinha := NLinha + 10000;
         LinhaMovEmpregado.Init;
@@ -2235,26 +2235,26 @@ report 53037 "Processamento Vencimentos"
         LinhaMovEmpregado."No. Linha" := NLinha;
         LinhaMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
         LinhaMovEmpregado."Designação Empregado" := Empregado2.Name;
-        LinhaMovEmpregado."Cód. Rubrica" := TempRubricaEmpregado2."Cód. Rúbrica Salarial";
-        LinhaMovEmpregado."Descrição Rubrica" := TempRubricaEmpregado2."Descrição Rubrica";
+        LinhaMovEmpregado."Payroll Item Code" := TempRubricaEmpregado2."Cód. Rúbrica Salarial";
+        LinhaMovEmpregado."Payroll Item Description" := TempRubricaEmpregado2."Payroll Item Description";
         //Retroactivos de IRS:
         //O Código da Rubrica fica = Código da Rubrica de IRS seja qual for
         //A Descrição da Rubrica fica fixa -->'Retroactivos de IRS de ' + mês
         if CopyStr(TempRubricaEmpregado2."Cód. Rúbrica Salarial", 1, 9) = 'IRS RETRO' then begin
-            LinhaMovEmpregado."Cód. Rubrica" := TempRubricaEmpregado2."Descrição Rubrica";
-            LinhaMovEmpregado."Descrição Rubrica" := 'Retroactivos de IRS de ' +
+            LinhaMovEmpregado."Payroll Item Code" := TempRubricaEmpregado2."Payroll Item Description";
+            LinhaMovEmpregado."Payroll Item Description" := 'Retroactivos de IRS de ' +
                                                       CopyStr(TempRubricaEmpregado2."Cód. Rúbrica Salarial", 10);
         end;
         //Retroactivos de IRS - Fim
 
-        LinhaMovEmpregado."Tipo Rubrica" := TempRubricaEmpregado2."Tipo Rubrica";
+        LinhaMovEmpregado."Payroll Item Type" := TempRubricaEmpregado2."Payroll Item Type";
         LinhaMovEmpregado."Debit Acc. No." := TempRubricaEmpregado2."Debit Acc. No.";
         LinhaMovEmpregado."Credit Acc. No." := TempRubricaEmpregado2."Credit Acc. No.";
         LinhaMovEmpregado.Quantity := TempRubricaEmpregado2.Quantity;
 
         //este código é para faltas aparecerem no recido em dias ou horas consoante o que foi lançado
         LinhaMovEmpregado."Quatidade Recibo Vencimentos" := TempRubricaEmpregado2."Quatidade Recibo Vencimentos";
-        LinhaMovEmpregado.UnidadeMedida := TempRubricaEmpregado2.UnidadeMedida;
+        LinhaMovEmpregado."Unit of Measure" := TempRubricaEmpregado2."Unit of Measure";
 
         LinhaMovEmpregado."Unit Value" := TempRubricaEmpregado2."Unit Value";
         LinhaMovEmpregado.Valor := TempRubricaEmpregado2."Valor Total";

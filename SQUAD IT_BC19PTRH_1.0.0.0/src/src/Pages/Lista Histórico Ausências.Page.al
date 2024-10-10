@@ -103,7 +103,7 @@ page 53088 "Lista Histórico Ausências"
 
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 

@@ -221,8 +221,8 @@ report 53082 "Recibo Vencimentos A4"
                 dataitem("Linhas Movs. Empregado1"; "Linhas Movs. Empregado")
                 {
                     DataItemLink = "Employee No." = FIELD("No.");
-                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Tipo Rubrica" = CONST(Abono));
-                    column("Linhas_Movs__Empregado1__Descrição_Rubrica_"; "Descrição Rubrica")
+                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Payroll Item Type" = CONST(Abono));
+                    column("Linhas_Movs__Empregado1__Descrição_Rubrica_"; "Payroll Item Description")
                     {
                     }
                     column(Linhas_Movs__Empregado1_Valor; Valor)
@@ -231,7 +231,7 @@ report 53082 "Recibo Vencimentos A4"
                     column(Linhas_Movs__Empregado1_Quantidade; Quantity)
                     {
                     }
-                    column(Linhas_Movs__Empregado1_UnidadeMedida; UnidadeMedida)
+                    column(Linhas_Movs__Empregado1_UnidadeMedida; "Unit of Measure")
                     {
                     }
                     column(Linhas_Movs__Empregado1_Valor_Control1000000042; Valor)
@@ -261,17 +261,17 @@ report 53082 "Recibo Vencimentos A4"
                 dataitem("Linhas Movs. Empregado2"; "Linhas Movs. Empregado")
                 {
                     DataItemLink = "Employee No." = FIELD("No.");
-                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Tipo Rubrica" = CONST(Desconto));
+                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Payroll Item Type" = CONST(Desconto));
                     column(Linhas_Movs__Empregado2_Valor; Valor)
                     {
                     }
                     column(VarQuantidade; VarQuantidade)
                     {
                     }
-                    column("Linhas_Movs__Empregado2__Descrição_Rubrica_"; "Descrição Rubrica")
+                    column("Linhas_Movs__Empregado2__Descrição_Rubrica_"; "Payroll Item Description")
                     {
                     }
-                    column(Linhas_Movs__Empregado2_UnidadeMedida; UnidadeMedida)
+                    column(Linhas_Movs__Empregado2_UnidadeMedida; "Unit of Measure")
                     {
                     }
                     column(Linhas_Movs__Empregado2_Valor_Control1101490020; Valor)
@@ -297,7 +297,7 @@ report 53082 "Recibo Vencimentos A4"
                         //Para aparecer % na quantidade quando é irs ou seg. social
                         //----------------------------------------------------------
                         TabRubrica.Reset;
-                        TabRubrica.SetRange(TabRubrica.Código, "Linhas Movs. Empregado2"."Cód. Rubrica");
+                        TabRubrica.SetRange(TabRubrica.Código, "Linhas Movs. Empregado2"."Payroll Item Code");
                         if TabRubrica.FindFirst then begin
                             if (TabRubrica.Genero = TabRubrica.Genero::IRS) or
                                (TabRubrica.Genero = TabRubrica.Genero::SS) or
@@ -373,7 +373,7 @@ report 53082 "Recibo Vencimentos A4"
                         if TabHistLinhasMov2.FindSet then begin
                             repeat
                                 TabRubrica2.Reset;
-                                TabRubrica2.SetRange(TabRubrica2.Código, TabHistLinhasMov2."Cód. Rubrica");
+                                TabRubrica2.SetRange(TabRubrica2.Código, TabHistLinhasMov2."Payroll Item Code");
                                 if TabRubrica2.Find('-') then begin
                                     if (TabRubrica2.Genero = TabRubrica2.Genero::IRS) or
                                         (TabRubrica2.Genero = TabRubrica2.Genero::"IRS Sub. Férias") or
@@ -390,7 +390,7 @@ report 53082 "Recibo Vencimentos A4"
                         if TabLinhasMov2.FindSet then begin
                             repeat
                                 TabRubrica2.Reset;
-                                TabRubrica2.SetRange(TabRubrica2.Código, TabLinhasMov2."Cód. Rubrica");
+                                TabRubrica2.SetRange(TabRubrica2.Código, TabLinhasMov2."Payroll Item Code");
                                 if TabRubrica2.FindFirst then begin
                                     if (TabRubrica2.Genero = TabRubrica2.Genero::IRS) or
                                         (TabRubrica2.Genero = TabRubrica2.Genero::"IRS Sub. Férias") or
@@ -412,8 +412,8 @@ report 53082 "Recibo Vencimentos A4"
                                 if TabRubrica2.FindSet then
                                     repeat
                                         TabRubricaLinha2.Reset;
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica", TabRubrica2.Código);
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Cód. Rubrica");
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Payroll Item Code", TabRubrica2.Código);
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Payroll Item Code");
                                         if TabRubricaLinha2.FindFirst then begin
                                             AcumuladoIRS := AcumuladoIRS +
                                                           ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo")
@@ -436,8 +436,8 @@ report 53082 "Recibo Vencimentos A4"
                                 if TabRubrica2.FindSet then
                                     repeat
                                         TabRubricaLinha2.Reset;
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica", TabRubrica2.Código);
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabLinhasMov2."Cód. Rubrica");
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Payroll Item Code", TabRubrica2.Código);
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabLinhasMov2."Payroll Item Code");
                                         if TabRubricaLinha2.FindFirst then begin
                                             AcumuladoIRS := AcumuladoIRS +
                                                         ((TabLinhasMov2.Valor - TabLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo")
@@ -452,17 +452,17 @@ report 53082 "Recibo Vencimentos A4"
                 dataitem("Hist. Linhas Movs. Empregado1"; "Hist. Linhas Movs. Empregado")
                 {
                     DataItemLink = "Employee No." = FIELD("No.");
-                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Tipo Rubrica" = CONST(Abono));
+                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Payroll Item Type" = CONST(Abono));
                     column(Hist__Linhas_Movs__Empregado1_Valor; Valor)
                     {
                     }
                     column(Hist__Linhas_Movs__Empregado1_Quantidade; Quantity)
                     {
                     }
-                    column("Hist__Linhas_Movs__Empregado1__Descrição_Rubrica_"; "Descrição Rubrica")
+                    column("Hist__Linhas_Movs__Empregado1__Descrição_Rubrica_"; "Payroll Item Description")
                     {
                     }
-                    column(Hist__Linhas_Movs__Empregado1_UnidadeMedida; UnidadeMedida)
+                    column(Hist__Linhas_Movs__Empregado1_UnidadeMedida; "Unit of Measure")
                     {
                     }
                     column(Hist__Linhas_Movs__Empregado1_Valor_Control1101490033; Valor)
@@ -495,17 +495,17 @@ report 53082 "Recibo Vencimentos A4"
                 dataitem("Hist. Linhas Movs. Empregado2"; "Hist. Linhas Movs. Empregado")
                 {
                     DataItemLink = "Employee No." = FIELD("No.");
-                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Tipo Rubrica" = CONST(Desconto));
+                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Payroll Item Type" = CONST(Desconto));
                     column(Hist__Linhas_Movs__Empregado2_Valor; Valor)
                     {
                     }
                     column(VarQuantidade_Control1101490039; VarQuantidade)
                     {
                     }
-                    column("Hist__Linhas_Movs__Empregado2__Descrição_Rubrica_"; "Descrição Rubrica")
+                    column("Hist__Linhas_Movs__Empregado2__Descrição_Rubrica_"; "Payroll Item Description")
                     {
                     }
-                    column(Hist__Linhas_Movs__Empregado2_UnidadeMedida; UnidadeMedida)
+                    column(Hist__Linhas_Movs__Empregado2_UnidadeMedida; "Unit of Measure")
                     {
                     }
                     column(Hist__Linhas_Movs__Empregado2_Valor_Control1101490043; Valor)
@@ -537,7 +537,7 @@ report 53082 "Recibo Vencimentos A4"
                         //Para aparecer % na quantidade quando é irs ou seg. social
                         //----------------------------------------------------------
                         TabRubrica.Reset;
-                        TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado2"."Cód. Rubrica");
+                        TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado2"."Payroll Item Code");
                         if TabRubrica.FindFirst then begin
                             if (TabRubrica.Genero = TabRubrica.Genero::IRS) or
                                 (TabRubrica.Genero = TabRubrica.Genero::SS) or
@@ -615,7 +615,7 @@ report 53082 "Recibo Vencimentos A4"
                         if TabHistLinhasMov2.FindSet then begin
                             repeat
                                 TabRubrica2.Reset;
-                                TabRubrica2.SetRange(TabRubrica2.Código, TabHistLinhasMov2."Cód. Rubrica");
+                                TabRubrica2.SetRange(TabRubrica2.Código, TabHistLinhasMov2."Payroll Item Code");
                                 if TabRubrica2.FindFirst then begin
                                     if (TabRubrica2.Genero = TabRubrica2.Genero::IRS) or
                                         (TabRubrica2.Genero = TabRubrica2.Genero::"IRS Sub. Férias") or
@@ -632,7 +632,7 @@ report 53082 "Recibo Vencimentos A4"
                         if TabLinhasMov2.FindSet then begin
                             repeat
                                 TabRubrica2.Reset;
-                                TabRubrica2.SetRange(TabRubrica2.Código, TabLinhasMov2."Cód. Rubrica");
+                                TabRubrica2.SetRange(TabRubrica2.Código, TabLinhasMov2."Payroll Item Code");
                                 if TabRubrica2.Find('-') then begin
                                     if (TabRubrica2.Genero = TabRubrica2.Genero::IRS) or
                                         (TabRubrica2.Genero = TabRubrica2.Genero::"IRS Sub. Férias") or
@@ -657,8 +657,8 @@ report 53082 "Recibo Vencimentos A4"
                                 if TabRubrica2.FindSet then
                                     repeat
                                         TabRubricaLinha2.Reset;
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica", TabRubrica2.Código);
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Cód. Rubrica");
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Payroll Item Code", TabRubrica2.Código);
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Payroll Item Code");
                                         if TabRubricaLinha2.Find('-') then begin
                                             AcumuladoIRS := AcumuladoIRS +
                                                         ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo")
@@ -681,8 +681,8 @@ report 53082 "Recibo Vencimentos A4"
                                 if TabRubrica2.FindSet then
                                     repeat
                                         TabRubricaLinha2.Reset;
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica", TabRubrica2.Código);
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabLinhasMov2."Cód. Rubrica");
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Payroll Item Code", TabRubrica2.Código);
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabLinhasMov2."Payroll Item Code");
                                         if TabRubricaLinha2.Find('-') then begin
                                             AcumuladoIRS := AcumuladoIRS +
                                                           ((TabLinhasMov2.Valor - TabLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo")
@@ -697,7 +697,7 @@ report 53082 "Recibo Vencimentos A4"
 
                 trigger OnAfterGetRecord()
                 var
-                    RubSal: Record "Rubrica Salarial";
+                    RubSal: Record "Payroll Item";
                     RubSalEmp: Record "Rubrica Salarial Empregado";
                 begin
                     Clear(DescontadoIRS);
@@ -854,7 +854,7 @@ report 53082 "Recibo Vencimentos A4"
     end;
 
     var
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabConfRH: Record "Config. Recursos Humanos";
         VarQuantidade: Text[30];
         VarOrigiDuplicado: Text[30];
@@ -866,7 +866,7 @@ report 53082 "Recibo Vencimentos A4"
         AcumuladoIRS: Decimal;
         TabHistLinhasMov2: Record "Hist. Linhas Movs. Empregado";
         TabLinhasMov2: Record "Linhas Movs. Empregado";
-        TabRubrica2: Record "Rubrica Salarial";
+        TabRubrica2: Record "Payroll Item";
         TabRubricaLinha2: Record "Rubrica Salarial Linhas";
         VarProvisorio: Text[30];
         Flag: Boolean;

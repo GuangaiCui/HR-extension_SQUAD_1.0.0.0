@@ -58,10 +58,10 @@ report 53104 "Reabrir Processamento"
                     column("Hist__Linhas_Movs__Empregado__Designação_Empregado_"; "Designação Empregado")
                     {
                     }
-                    column("Hist__Linhas_Movs__Empregado__Cód__Rubrica_"; "Cód. Rubrica")
+                    column("Hist__Linhas_Movs__Empregado__Cód__Rubrica_"; "Payroll Item Code")
                     {
                     }
-                    column("Hist__Linhas_Movs__Empregado__Descrição_Rubrica_"; "Descrição Rubrica")
+                    column("Hist__Linhas_Movs__Empregado__Descrição_Rubrica_"; "Payroll Item Description")
                     {
                     }
                     column(Hist__Linhas_Movs__Empregado_Valor; Valor)
@@ -79,10 +79,10 @@ report 53104 "Reabrir Processamento"
                     column("Hist__Linhas_Movs__Empregado__Designação_Empregado_Caption"; FieldCaption("Designação Empregado"))
                     {
                     }
-                    column("Hist__Linhas_Movs__Empregado__Cód__Rubrica_Caption"; FieldCaption("Cód. Rubrica"))
+                    column("Hist__Linhas_Movs__Empregado__Cód__Rubrica_Caption"; FieldCaption("Payroll Item Code"))
                     {
                     }
-                    column("Hist__Linhas_Movs__Empregado__Descrição_Rubrica_Caption"; FieldCaption("Descrição Rubrica"))
+                    column("Hist__Linhas_Movs__Empregado__Descrição_Rubrica_Caption"; FieldCaption("Payroll Item Description"))
                     {
                     }
                     column(Hist__Linhas_Movs__Empregado_ValorCaption; FieldCaption(Valor))
@@ -185,7 +185,7 @@ report 53104 "Reabrir Processamento"
             column("Histórico_Horas_Extra_Descrição"; Descrição)
             {
             }
-            column("Histórico_Horas_Extra__Cód__Rubrica_"; "Cód. Rubrica")
+            column("Histórico_Horas_Extra__Cód__Rubrica_"; "Payroll Item Code")
             {
             }
             column("Histórico_Horas_Extra_Quantidade"; Quantity)
@@ -229,17 +229,17 @@ report 53104 "Reabrir Processamento"
         }
         dataitem("Histórico Abonos - Desc. Extra"; "Histórico Abonos - Desc. Extra")
         {
-            DataItemTableView = SORTING("Employee No.", "Data a que se refere o Mov.");
+            DataItemTableView = SORTING("Employee No.", "Reference Date");
             column("Histórico_Abonos___Desc__Extra__N__Empregado_"; "Employee No.")
             {
             }
             column("Histórico_Abonos___Desc__Extra_Data"; Data)
             {
             }
-            column("Histórico_Abonos___Desc__Extra__Cód__Rubrica_"; "Cód. Rubrica")
+            column("Histórico_Abonos___Desc__Extra__Cód__Rubrica_"; "Payroll Item Code")
             {
             }
-            column("Histórico_Abonos___Desc__Extra__Descrição_Rubrica_"; "Descrição Rubrica")
+            column("Histórico_Abonos___Desc__Extra__Descrição_Rubrica_"; "Payroll Item Description")
             {
             }
             column("Histórico_Abonos___Desc__Extra_Quantidade"; Quantity)
@@ -248,7 +248,7 @@ report 53104 "Reabrir Processamento"
             column("Histórico_Abonos___Desc__Extra__Valor_Total_"; "Valor Total")
             {
             }
-            column("Histórico_Abonos___Desc__Extra_UnidadeMedida"; UnidadeMedida)
+            column("Histórico_Abonos___Desc__Extra_UnidadeMedida"; "Unit of Measure")
             {
             }
             column("Histórico_Abonos___Desc__Extra_N__Mov_"; "Entry No.")

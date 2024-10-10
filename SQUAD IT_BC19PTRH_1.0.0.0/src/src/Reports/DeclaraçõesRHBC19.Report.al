@@ -179,7 +179,7 @@ report 53095 "Declarações RH BC"
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
         NomePessoaAssina: Text[75];
         cargo: Text[50];
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         VencimentoBase: Decimal;
         ContractType: Text;
         ExpirationDate: Text;

@@ -1159,7 +1159,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                             tableelement("pessoal dos serviços int"; "Pessoal dos Serviços Int")
                                             {
                                                 XmlName = 'medico';
-                                                fieldelement(nome; "Pessoal dos Serviços Int".Nome)
+                                                fieldelement(nome; "Pessoal dos Serviços Int".Name)
                                                 {
                                                 }
                                                 fieldelement(n_cedula; "Pessoal dos Serviços Int"."No. da Cédula Profissional")
@@ -1187,7 +1187,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                             tableelement("pessoal dos serviços int2"; "Pessoal dos Serviços Int")
                                             {
                                                 XmlName = 'tec_sht';
-                                                fieldelement(nome; "Pessoal dos Serviços Int2".Nome)
+                                                fieldelement(nome; "Pessoal dos Serviços Int2".Name)
                                                 {
                                                 }
                                                 fieldelement(cap; "Pessoal dos Serviços Int2"."No. Certificado Aptidão Prof.")
@@ -1237,7 +1237,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                         tableelement("pessoal dos serviços3"; "Pessoal dos Serviços")
                                         {
                                             XmlName = 'empregador';
-                                            fieldelement(nome; "Pessoal dos Serviços3"."Nome Empregador")
+                                            fieldelement(nome; "Pessoal dos Serviços3"."Employer Name")
                                             {
                                             }
                                             fieldelement(n_autorizacao; "Pessoal dos Serviços3"."Emp. - No. Autorização")
