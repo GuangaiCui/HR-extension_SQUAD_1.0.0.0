@@ -2,10 +2,10 @@
 page 53082 "Lista Horário Empregado"
 {
     AutoSplitKey = true;
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Horário Empregado";
-    SourceTableView = SORTING("No. Empregado", "Data Iníco Horário", "Dia da Semana");
+    SourceTableView = SORTING("Employee No.", "Data Iníco Horário", "Dia da Semana");
 
     layout
     {

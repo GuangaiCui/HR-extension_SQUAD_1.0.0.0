@@ -32,27 +32,27 @@ report 53104 "Reabrir Processamento"
             dataitem("Hist. Cab. Movs. Empregado"; "Hist. Cab. Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                RequestFilterFields = "No. Empregado";
+                RequestFilterFields = "Employee No.";
                 column("Hist__Cab__Movs__Empregado_Cód__Processamento"; "Cód. Processamento")
                 {
                 }
                 column(Hist__Cab__Movs__Empregado_Tipo_Processamento; "Tipo Processamento")
                 {
                 }
-                column(Hist__Cab__Movs__Empregado_N__Empregado; "No. Empregado")
+                column(Hist__Cab__Movs__Empregado_N__Empregado; "Employee No.")
                 {
                 }
                 dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
                 {
-                    DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento"), "Tipo Processamento" = FIELD("Tipo Processamento"), "No. Empregado" = FIELD("No. Empregado");
-                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                    DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento"), "Tipo Processamento" = FIELD("Tipo Processamento"), "Employee No." = FIELD("Employee No.");
+                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
                     column("Hist__Linhas_Movs__Empregado__Cód__Processamento_"; "Cód. Processamento")
                     {
                     }
                     column(Hist__Linhas_Movs__Empregado__Tipo_Processamento_; "Tipo Processamento")
                     {
                     }
-                    column(Hist__Linhas_Movs__Empregado__N__Empregado_; "No. Empregado")
+                    column(Hist__Linhas_Movs__Empregado__N__Empregado_; "Employee No.")
                     {
                     }
                     column("Hist__Linhas_Movs__Empregado__Designação_Empregado_"; "Designação Empregado")
@@ -73,7 +73,7 @@ report 53104 "Reabrir Processamento"
                     column(Hist__Linhas_Movs__Empregado__Tipo_Processamento_Caption; FieldCaption("Tipo Processamento"))
                     {
                     }
-                    column(Hist__Linhas_Movs__Empregado__N__Empregado_Caption; FieldCaption("No. Empregado"))
+                    column(Hist__Linhas_Movs__Empregado__N__Empregado_Caption; FieldCaption("Employee No."))
                     {
                     }
                     column("Hist__Linhas_Movs__Empregado__Designação_Empregado_Caption"; FieldCaption("Designação Empregado"))
@@ -108,10 +108,10 @@ report 53104 "Reabrir Processamento"
 
                 trigger OnPreDataItem()
                 begin
-                    if "Hist. Cab. Movs. Empregado".GetFilter("Hist. Cab. Movs. Empregado"."No. Empregado") = '' then
+                    if "Hist. Cab. Movs. Empregado".GetFilter("Hist. Cab. Movs. Empregado"."Employee No.") = '' then
                         Error(Text0002)
                     else
-                        CodEmpregado := "Hist. Cab. Movs. Empregado".GetFilter("Hist. Cab. Movs. Empregado"."No. Empregado");
+                        CodEmpregado := "Hist. Cab. Movs. Empregado".GetFilter("Hist. Cab. Movs. Empregado"."Employee No.");
                 end;
             }
 
@@ -175,7 +175,7 @@ report 53104 "Reabrir Processamento"
         }
         dataitem("Histórico Horas Extra"; "Histórico Horas Extra")
         {
-            DataItemTableView = SORTING("No. Empregado", Data);
+            DataItemTableView = SORTING("Employee No.", Data);
             column("Histórico_Horas_Extra_Data"; Data)
             {
             }
@@ -188,19 +188,19 @@ report 53104 "Reabrir Processamento"
             column("Histórico_Horas_Extra__Cód__Rubrica_"; "Cód. Rubrica")
             {
             }
-            column("Histórico_Horas_Extra_Quantidade"; Quantidade)
+            column("Histórico_Horas_Extra_Quantidade"; Quantity)
             {
             }
             column("Histórico_Horas_Extra_Factor"; Factor)
             {
             }
-            column("Histórico_Horas_Extra__Valor_Unitário_"; "Valor Unitário")
+            column("Histórico_Horas_Extra__Valor_Unitário_"; "Unit Value")
             {
             }
-            column("Histórico_Horas_Extra__N__Empregado_"; "No. Empregado")
+            column("Histórico_Horas_Extra__N__Empregado_"; "Employee No.")
             {
             }
-            column("Histórico_Horas_Extra_N__Mov_"; "No. Mov.")
+            column("Histórico_Horas_Extra_N__Mov_"; "Entry No.")
             {
             }
 
@@ -208,13 +208,13 @@ report 53104 "Reabrir Processamento"
             begin
                 rHorasExtraEmp.Reset;
                 if rHorasExtraEmp.Find('+') then
-                    VarNMov := rHorasExtraEmp."No. Mov." + 1
+                    VarNMov := rHorasExtraEmp."Entry No." + 1
                 else
                     VarNMov := 1;
 
                 rHorasExtraEmp.Init;
                 rHorasExtraEmp.TransferFields("Histórico Horas Extra");
-                rHorasExtraEmp."No. Mov." := VarNMov;
+                rHorasExtraEmp."Entry No." := VarNMov;
                 rHorasExtraEmp.Insert;
 
 
@@ -223,14 +223,14 @@ report 53104 "Reabrir Processamento"
 
             trigger OnPreDataItem()
             begin
-                "Histórico Horas Extra".SetFilter("Histórico Horas Extra"."No. Empregado", CodEmpregado);
+                "Histórico Horas Extra".SetFilter("Histórico Horas Extra"."Employee No.", CodEmpregado);
                 "Histórico Horas Extra".SetRange("Histórico Horas Extra"."Processamento Referencia", CodProcessamento);
             end;
         }
         dataitem("Histórico Abonos - Desc. Extra"; "Histórico Abonos - Desc. Extra")
         {
-            DataItemTableView = SORTING("No. Empregado", "Data a que se refere o Mov.");
-            column("Histórico_Abonos___Desc__Extra__N__Empregado_"; "No. Empregado")
+            DataItemTableView = SORTING("Employee No.", "Data a que se refere o Mov.");
+            column("Histórico_Abonos___Desc__Extra__N__Empregado_"; "Employee No.")
             {
             }
             column("Histórico_Abonos___Desc__Extra_Data"; Data)
@@ -242,7 +242,7 @@ report 53104 "Reabrir Processamento"
             column("Histórico_Abonos___Desc__Extra__Descrição_Rubrica_"; "Descrição Rubrica")
             {
             }
-            column("Histórico_Abonos___Desc__Extra_Quantidade"; Quantidade)
+            column("Histórico_Abonos___Desc__Extra_Quantidade"; Quantity)
             {
             }
             column("Histórico_Abonos___Desc__Extra__Valor_Total_"; "Valor Total")
@@ -251,7 +251,7 @@ report 53104 "Reabrir Processamento"
             column("Histórico_Abonos___Desc__Extra_UnidadeMedida"; UnidadeMedida)
             {
             }
-            column("Histórico_Abonos___Desc__Extra_N__Mov_"; "No. Mov.")
+            column("Histórico_Abonos___Desc__Extra_N__Mov_"; "Entry No.")
             {
             }
 
@@ -259,13 +259,13 @@ report 53104 "Reabrir Processamento"
             begin
                 rAbonosDescExtraEmp.Reset;
                 if rAbonosDescExtraEmp.Find('+') then
-                    VarNMov := rAbonosDescExtraEmp."No. Mov." + 1
+                    VarNMov := rAbonosDescExtraEmp."Entry No." + 1
                 else
                     VarNMov := 1;
 
                 rAbonosDescExtraEmp.Init;
                 rAbonosDescExtraEmp.TransferFields("Histórico Abonos - Desc. Extra");
-                rAbonosDescExtraEmp."No. Mov." := VarNMov;
+                rAbonosDescExtraEmp."Entry No." := VarNMov;
                 rAbonosDescExtraEmp.Insert;
 
 
@@ -274,13 +274,13 @@ report 53104 "Reabrir Processamento"
 
             trigger OnPreDataItem()
             begin
-                "Histórico Abonos - Desc. Extra".SetFilter("Histórico Abonos - Desc. Extra"."No. Empregado", CodEmpregado);
+                "Histórico Abonos - Desc. Extra".SetFilter("Histórico Abonos - Desc. Extra"."Employee No.", CodEmpregado);
                 "Histórico Abonos - Desc. Extra".SetRange("Histórico Abonos - Desc. Extra"."Processamento Referencia", CodProcessamento);
             end;
         }
         dataitem("Férias Empregados"; "Férias Empregados")
         {
-            DataItemTableView = SORTING("No. Empregado", Data, Tipo);
+            DataItemTableView = SORTING("Employee No.", Data, Tipo);
 
             trigger OnAfterGetRecord()
             begin
@@ -291,7 +291,7 @@ report 53104 "Reabrir Processamento"
 
             trigger OnPreDataItem()
             begin
-                "Férias Empregados".SetFilter("No. Empregado", CodEmpregado);
+                "Férias Empregados".SetFilter("Employee No.", CodEmpregado);
                 "Férias Empregados".SetRange("Férias Empregados"."Processamento Referencia", CodProcessamento);
             end;
         }
@@ -320,13 +320,13 @@ report 53104 "Reabrir Processamento"
         lblDataFim = 'À data';
         lblMotAus = 'Motivo Ausência';
         lblDescrição = 'Descrição';
-        lblQtd = 'Quantidade';
+        lblQtd = 'Quantity';
         lblUniMed = 'Unidade Medida';
         lblData = 'Data';
         lblHoraExtra = 'Hora Extra';
         lblCodRubrica = 'Cód. Rubrica';
         lblFator = 'Factor';
-        lblValorUni = 'Valor Unitário';
+        lblValorUni = 'Unit Value';
         lblValorTotal = 'Valor Total';
     }
 

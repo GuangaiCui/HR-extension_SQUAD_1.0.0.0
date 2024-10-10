@@ -670,7 +670,7 @@ table 53035 "Empregado"
         }
         field(108; "Cód. Cat. Profissional"; Code[20])
         {
-            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Cód. Cat. Prof." WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Cód. Cat. Prof." WHERE("Employee No." = FIELD("No."),
                                                                                       "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                       "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Professional Category Code';
@@ -678,7 +678,7 @@ table 53035 "Empregado"
         }
         field(109; "Descrição Cat Prof"; Text[100])
         {
-            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Descrição" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Descrição" WHERE("Employee No." = FIELD("No."),
                                                                                 "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                 "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. Description';
@@ -686,7 +686,7 @@ table 53035 "Empregado"
         }
         field(110; "Cód. Cat. Prof QP"; Code[20])
         {
-            CalcFormula = Lookup("Cat. Prof. QP Empregado"."Cód. Cat. Prof. QP" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Cat. Prof. QP Empregado"."Cód. Cat. Prof. QP" WHERE("Employee No." = FIELD("No."),
                                                                                        "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                        "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. QP Code';
@@ -694,7 +694,7 @@ table 53035 "Empregado"
         }
         field(111; "Descrição Cat Prof QP"; Text[200])
         {
-            CalcFormula = Lookup("Cat. Prof. QP Empregado".Description WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Cat. Prof. QP Empregado".Description WHERE("Employee No." = FIELD("No."),
                                                                               "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                               "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. QP Description';
@@ -742,7 +742,7 @@ table 53035 "Empregado"
         }
         field(117; "Grau Função"; Code[20])
         {
-            CalcFormula = Lookup("Grau Função Empregado"."Cód. Grau Função" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Grau Função Empregado"."Cód. Grau Função" WHERE("Employee No." = FIELD("No."),
                                                                                    "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                                    "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
             Caption = 'Degree Role';
@@ -750,7 +750,7 @@ table 53035 "Empregado"
         }
         field(118; "Descrição Grau Função"; Text[200])
         {
-            CalcFormula = Lookup("Grau Função Empregado"."Descrição" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Grau Função Empregado"."Descrição" WHERE("Employee No." = FIELD("No."),
                                                                             "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                             "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
             Caption = 'Degree Role Description';
@@ -758,7 +758,7 @@ table 53035 "Empregado"
         }
         field(119; "Cód. Horário"; Code[20])
         {
-            CalcFormula = Lookup("Horário Empregado"."Cód. Horário" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Horário Empregado"."Cód. Horário" WHERE("Employee No." = FIELD("No."),
                                                                            "Data Iníco Horário" = FIELD("Data Filtro Inicio"),
                                                                            "Data Fim Horário" = FIELD("Data Filtro Fim")));
             Caption = 'Schedule Code';
@@ -897,7 +897,7 @@ table 53035 "Empregado"
         }
         field(140; "Total Férias"; Decimal)
         {
-            CalcFormula = Sum("Férias Empregados"."Qtd." WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Sum("Férias Empregados"."Qtd." WHERE("Employee No." = FIELD("No."),
                                                                 Data = FIELD("Date Filter"),
                                                                 Tipo = CONST(ferias)));
             Caption = 'Total Vacations';
@@ -913,7 +913,7 @@ table 53035 "Empregado"
         }
         field(142; "Hora Extra Total (Base)"; Decimal)
         {
-            CalcFormula = Sum("Histórico Horas Extra".Quantidade WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Sum("Histórico Horas Extra".Quantity WHERE("Employee No." = FIELD("No."),
                                                                         "Cód. Hora Extra" = FIELD("Filtro Hora Extra"),
                                                                         Data = FIELD("Date Filter")));
             Caption = 'Extra Hour Total (Base)';
@@ -1315,7 +1315,7 @@ table 53035 "Empregado"
         field(250; "Vacation Balance"; Decimal)
         {
             CalcFormula = Sum("Hist. Cab. Movs. Empregado"."Vacation Days Balance" WHERE("Tipo Processamento" = CONST(Vencimentos),
-                                                                                          "No. Empregado" = FIELD("No.")));
+                                                                                          "Employee No." = FIELD("No.")));
             Caption = 'Saldo Férias';
             FieldClass = FlowField;
         }
@@ -1396,33 +1396,33 @@ table 53035 "Empregado"
         AlternativeAddr.DeleteAll;
         DimMgt.DeleteDefaultDim(DATABASE::Empregado, "No.");
         TabHistLinhasMovEmpregado.Reset;
-        TabHistLinhasMovEmpregado.SetRange(TabHistLinhasMovEmpregado."No. Empregado", "No.");
+        TabHistLinhasMovEmpregado.SetRange(TabHistLinhasMovEmpregado."Employee No.", "No.");
         if not TabHistLinhasMovEmpregado.FindFirst then begin
             TabContratoEmpregado.SetRange(TabContratoEmpregado."Cód. Empregado", "No.");
             TabContratoEmpregado.DeleteAll;
 
-            TabCategoriaProfIntEmp.SetRange(TabCategoriaProfIntEmp."No. Empregado", "No.");
+            TabCategoriaProfIntEmp.SetRange(TabCategoriaProfIntEmp."Employee No.", "No.");
             TabCategoriaProfIntEmp.DeleteAll;
 
-            TabCategoriaProfQPEmp.SetRange(TabCategoriaProfQPEmp."No. Empregado", "No.");
+            TabCategoriaProfQPEmp.SetRange(TabCategoriaProfQPEmp."Employee No.", "No.");
             TabCategoriaProfQPEmp.DeleteAll;
 
-            TabFormacao.SetRange(TabFormacao."No. Empregado", "No.");
+            TabFormacao.SetRange(TabFormacao."Employee No.", "No.");
             TabFormacao.DeleteAll;
 
             EmployeeQualification.SetRange(EmployeeQualification."Employee No.", "No.");
             EmployeeQualification.DeleteAll;
 
-            TabHorario.SetRange(TabHorario."No. Empregado", "No.");
+            TabHorario.SetRange(TabHorario."Employee No.", "No.");
             TabHorario.DeleteAll;
 
-            TabConsultasMedicas.SetRange(TabConsultasMedicas."No. Empregado", "No.");
+            TabConsultasMedicas.SetRange(TabConsultasMedicas."Employee No.", "No.");
             TabConsultasMedicas.DeleteAll;
 
             MiscArticleInformation.SetRange(MiscArticleInformation."Employee No.", "No.");
             MiscArticleInformation.DeleteAll;
 
-            TabInactividade.SetRange(TabInactividade."No. Empregado", "No.");
+            TabInactividade.SetRange(TabInactividade."Employee No.", "No.");
             TabInactividade.DeleteAll;
 
             TabProfissionalizacao.SetRange(TabProfissionalizacao."Cod Empregado", "No.");
@@ -1431,13 +1431,13 @@ table 53035 "Empregado"
             EmployeeAbsence.SetRange(EmployeeAbsence."Employee No.", "No.");
             EmployeeAbsence.DeleteAll;
 
-            TabHorasExtra.SetRange(TabHorasExtra."No. Empregado", "No.");
+            TabHorasExtra.SetRange(TabHorasExtra."Employee No.", "No.");
             TabHorasExtra.DeleteAll;
 
-            TabAbonoDescExtra.SetRange(TabAbonoDescExtra."No. Empregado", "No.");
+            TabAbonoDescExtra.SetRange(TabAbonoDescExtra."Employee No.", "No.");
             TabAbonoDescExtra.DeleteAll;
 
-            TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", "No.");
+            TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", "No.");
             TabFeriasEmpregado.DeleteAll;
 
             HumanResComment.SetRange(HumanResComment."No.", "No.");
@@ -1452,19 +1452,19 @@ table 53035 "Empregado"
             ConfidentialInformation.SetRange(ConfidentialInformation."Employee No.", "No.");
             ConfidentialInformation.DeleteAll;
 
-            TabRubricasEmpregado.SetRange(TabRubricasEmpregado."No. Empregado", "No.");
+            TabRubricasEmpregado.SetRange(TabRubricasEmpregado."Employee No.", "No.");
             TabRubricasEmpregado.DeleteAll;
 
-            TabDistCentroCusto.SetRange(TabDistCentroCusto."No. Empregado", "No.");
+            TabDistCentroCusto.SetRange(TabDistCentroCusto."Employee No.", "No.");
             TabDistCentroCusto.DeleteAll;
 
-            TabLinhasMovsEmpregado.SetRange(TabLinhasMovsEmpregado."No. Empregado", "No.");
+            TabLinhasMovsEmpregado.SetRange(TabLinhasMovsEmpregado."Employee No.", "No.");
             TabLinhasMovsEmpregado.DeleteAll;
 
-            TabCabMovsEmpregado.SetRange(TabCabMovsEmpregado."No. Empregado", "No.");
+            TabCabMovsEmpregado.SetRange(TabCabMovsEmpregado."Employee No.", "No.");
             TabCabMovsEmpregado.DeleteAll;
 
-            TabGrauFuncaoEmpr.SetRange(TabGrauFuncaoEmpr."No. Empregado", "No.");
+            TabGrauFuncaoEmpr.SetRange(TabGrauFuncaoEmpr."Employee No.", "No.");
             TabGrauFuncaoEmpr.DeleteAll;
         end;
     end;
@@ -1485,7 +1485,7 @@ table 53035 "Empregado"
 
         //Preenche o campo Seguradora e Nº Apolice com os dados vindos da Conf. RH
         if HumanResSetup.Get then;
-        Seguradora := HumanResSetup.Seguradora;
+        Seguradora := HumanResSetup."Insurance Company";
         "No. Apólice" := HumanResSetup."No. Apólice";
     end;
 

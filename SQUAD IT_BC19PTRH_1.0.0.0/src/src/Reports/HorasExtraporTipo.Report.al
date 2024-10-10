@@ -21,7 +21,7 @@ report 53065 "Horas Extra por Tipo"
         dataitem("Histórico Horas Extra"; "Histórico Horas Extra")
         {
             DataItemTableView = SORTING("Cód. Hora Extra", Data);
-            RequestFilterFields = "No. Empregado", Data, "Cód. Hora Extra";
+            RequestFilterFields = "Employee No.", Data, "Cód. Hora Extra";
             column(FORMAT_TODAY_0_4_; Format(Today, 0, 4))
             {
             }
@@ -64,10 +64,10 @@ report 53065 "Horas Extra por Tipo"
             column("Histórico_Horas_Extra_Data"; Data)
             {
             }
-            column("Histórico_Horas_Extra_Quantidade"; Quantidade)
+            column("Histórico_Horas_Extra_Quantidade"; Quantity)
             {
             }
-            column("Histórico_Horas_Extra__N__Empregado_"; "No. Empregado")
+            column("Histórico_Horas_Extra__N__Empregado_"; "Employee No.")
             {
             }
             column(Employee_FullName; Employee.FullName)
@@ -89,26 +89,26 @@ report 53065 "Horas Extra por Tipo"
             column("Histórico_Horas_Extra_DataCaption"; FieldCaption(Data))
             {
             }
-            column("Histórico_Horas_Extra__N__Empregado_Caption"; FieldCaption("No. Empregado"))
+            column("Histórico_Horas_Extra__N__Empregado_Caption"; FieldCaption("Employee No."))
             {
             }
             column(Full_NameCaption; Full_NameCaptionLbl)
             {
             }
-            column("Histórico_Horas_Extra_QuantidadeCaption"; FieldCaption(Quantidade))
+            column("Histórico_Horas_Extra_QuantidadeCaption"; FieldCaption(Quantity))
             {
             }
             column(Total_de_Horas_ExtraCaption; Total_de_Horas_ExtraCaptionLbl)
             {
             }
-            column("Histórico_Horas_Extra_N__Mov_"; "No. Mov.")
+            column("Histórico_Horas_Extra_N__Mov_"; "Entry No.")
             {
             }
 
             trigger OnAfterGetRecord()
             begin
-                Employee.Get("No. Empregado");
-                TotalHoraExtra := TotalHoraExtra + Quantidade;
+                Employee.Get("Employee No.");
+                TotalHoraExtra := TotalHoraExtra + Quantity;
             end;
 
             trigger OnPreDataItem()

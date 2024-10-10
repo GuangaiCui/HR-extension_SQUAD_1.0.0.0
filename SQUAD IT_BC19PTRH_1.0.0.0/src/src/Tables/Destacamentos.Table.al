@@ -3,31 +3,31 @@ table 53052 Destacamentos
 
     fields
     {
-        field(1; "No. Emp."; Code[20])
+        field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Emp.';
         }
-        field(2; "No. Linha"; Integer)
+        field(2; "Line No."; Integer)
         {
-            Caption = 'Line No.';
+            Caption = 'No. Linha';
         }
-        field(5; "Local de Destacamento"; Text[50])
+        field(5; "Place of Detachment"; Text[50])
         {
-            Caption = 'Place of Detachment';
+            Caption = 'Local de Destacamento';
         }
-        field(6; "Data Início Destacamento"; Date)
+        field(6; "Detachment Begin Date"; Date)
         {
-            Caption = 'Detachment Begin Date';
+            Caption = 'Data Início Destacamento';
         }
-        field(7; "Data Fim Destacamento"; Date)
+        field(7; "Detachment End Date"; Date)
         {
-            Caption = 'Detachment End Date';
+            Caption = 'Data Fim Destacamento';
         }
     }
 
     keys
     {
-        key(Key1; "No. Emp.", "No. Linha")
+        key(Key1; "Employee No.", "Line No.")
         {
             Clustered = true;
         }

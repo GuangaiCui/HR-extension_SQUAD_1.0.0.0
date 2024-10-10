@@ -67,13 +67,13 @@ report 53106 "Importar Férias"
                     //Resposta=não - não faz nada
                     //----------------------------------------------
                     TabFeriasEmpregado.Init;
-                    TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", TabEmpregado."No.");
+                    TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", TabEmpregado."No.");
                     TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno),
                                                 DMY2Date(31, 12, varAno));
                     if TabFeriasEmpregado.Find('-') then begin
                         if Confirm(Text0002, false, TabEmpregado.Name, varAno) then begin
                             TabFeriasEmpregado2.Init;
-                            TabFeriasEmpregado2.SetRange(TabFeriasEmpregado2."No. Empregado", TabEmpregado."No.");
+                            TabFeriasEmpregado2.SetRange(TabFeriasEmpregado2."Employee No.", TabEmpregado."No.");
                             TabFeriasEmpregado2.SetRange(TabFeriasEmpregado2.Data, DMY2Date(1, 1, varAno),
                                                     DMY2Date(31, 12, varAno));
                             TabFeriasEmpregado2.SetFilter(TabFeriasEmpregado2.Gozada, '%1', false);
@@ -230,7 +230,7 @@ report 53106 "Importar Férias"
                 AnoAnteriorDireito := 2 * (12 - Date2DMY(TabEmpregado."Employment Date", 2));
 
                 TabFeriasEmpregado.Reset;
-                TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", TabEmpregado."No.");
+                TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", TabEmpregado."No.");
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno - 1),
                                             DMY2Date(31, 12, varAno - 1));
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Gozada, true);
@@ -243,7 +243,7 @@ report 53106 "Importar Férias"
             //------------------------------------------------------------------------
             if Date2DMY(TabEmpregado."Employment Date", 3) < varAno - 1 then begin
                 TabFeriasEmpregado.Reset;
-                TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", TabEmpregado."No.");
+                TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", TabEmpregado."No.");
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno - 1),
                                           DMY2Date(31, 12, varAno - 1));
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Gozada, false);
@@ -275,7 +275,7 @@ report 53106 "Importar Férias"
             end;
 
             TabFeriasEmpregado.Reset;
-            TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", TabEmpregado."No.");
+            TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", TabEmpregado."No.");
             TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno - 1),
                                         DMY2Date(31, 12, varAno - 1));
             TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Gozada, true);
@@ -345,7 +345,7 @@ report 53106 "Importar Férias"
                 if (ExcelBuffer."Cell Value as Text" = 'A') or
                     (ExcelBuffer."Cell Value as Text" = 'X') then begin
                     TabFeriasEmpregado.Init;
-                    TabFeriasEmpregado."No. Empregado" := TabEmpregado."No.";
+                    TabFeriasEmpregado."Employee No." := TabEmpregado."No.";
                     TabFeriasEmpregado.Data := DMY2Date(Linha - 2, IColuna, Date2DMY(WorkDate, 3));
                     if (ExcelBuffer."Cell Value as Text" = 'A') then
                         TabFeriasEmpregado."Ano a que se refere" := varAno - 1;

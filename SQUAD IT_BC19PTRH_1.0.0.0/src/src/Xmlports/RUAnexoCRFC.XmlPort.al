@@ -294,7 +294,7 @@ xmlport 53038 "RU - Anexo C - RFC"
                                     {
                                         tableelement("formação empregado"; "Formação Empregado")
                                         {
-                                            LinkFields = "No. Empregado" = FIELD("No.");
+                                            LinkFields = "Employee No." = FIELD("No.");
                                             LinkTable = Empregado;
                                             XmlName = 'registo';
                                             textelement(id_formacao_registo)
@@ -383,7 +383,7 @@ xmlport 53038 "RU - Anexo C - RFC"
                                                     rAccaoFormacaoAux.Reset;
                                                     rAccaoFormacaoAux.SetRange(rAccaoFormacaoAux."Temp No. Accao", rAccaoFormacao."Temp No. Accao");
                                                     if rAccaoFormacaoAux.FindFirst then begin
-                                                        "Formação - Período Referência".SetRange("Formação - Período Referência"."No. Empregado", Empregado."No.");
+                                                        "Formação - Período Referência".SetRange("Formação - Período Referência"."Employee No.", Empregado."No.");
                                                         "Formação - Período Referência".SetRange("Formação - Período Referência"."Cód. Acção", rAccaoFormacaoAux.Código);
                                                     end;
                                                 end;
@@ -420,7 +420,7 @@ xmlport 53038 "RU - Anexo C - RFC"
                                         if rEmpregado.FindSet then begin
                                             repeat
                                                 rFormacaoEmp.Reset;
-                                                rFormacaoEmp.SetRange(rFormacaoEmp."No. Empregado", rEmpregado."No.");
+                                                rFormacaoEmp.SetRange(rFormacaoEmp."Employee No.", rEmpregado."No.");
                                                 rFormacaoEmp.SetFilter(rFormacaoEmp."Data Início", '>=%1&<=%2', DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
                                                 if rFormacaoEmp.FindFirst then begin
                                                     rEmpregado.Marcado := true;

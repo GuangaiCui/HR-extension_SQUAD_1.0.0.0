@@ -7,7 +7,7 @@ pageextension 53037 PaymentJournalRH extends "Payment Journal"
 
         {
 
-            field("No. Empregado"; Rec."No. Empregado")
+            field("Employee No."; Rec."Employee No.")
 
             {
 

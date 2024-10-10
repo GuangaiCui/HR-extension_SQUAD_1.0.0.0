@@ -35,7 +35,7 @@ table 53072 "Tipos Horas Extra"
         }
         field(17; "Total Hora Extra"; Decimal)
         {
-            CalcFormula = Sum("Histórico Horas Extra".Quantidade WHERE("No. Empregado" = FIELD("Employee No. Filter"),
+            CalcFormula = Sum("Histórico Horas Extra".Quantity WHERE("Employee No." = FIELD("Employee No. Filter"),
                                                                         "Cód. Hora Extra" = FIELD("Código"),
                                                                         Data = FIELD("Date Filter")));
             Caption = 'Total Absence (Base)';

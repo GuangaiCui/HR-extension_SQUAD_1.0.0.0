@@ -4,7 +4,7 @@ table 53094 "Consultas Médicas Empregado"
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado."No.";
@@ -17,7 +17,7 @@ table 53094 "Consultas Médicas Empregado"
             begin
                 //Eurotrials
                 rEmpregado.Reset;
-                if (rEmpregado.Get("No. Empregado")) and (rEmpregado."Birth Date" <> 0D) then begin
+                if (rEmpregado.Get("Employee No.")) and (rEmpregado."Birth Date" <> 0D) then begin
                     I := Today - rEmpregado."Birth Date";
                     if (I / 365) > 50 then
                         NovaData := CalcDate('+1A', "Data Consulta")
@@ -52,7 +52,7 @@ table 53094 "Consultas Médicas Empregado"
 
     keys
     {
-        key(Key1; "No. Empregado", "Data Consulta")
+        key(Key1; "Employee No.", "Data Consulta")
         {
             Clustered = true;
         }

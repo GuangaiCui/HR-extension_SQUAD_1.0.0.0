@@ -5,7 +5,7 @@ table 53061 "Cat. Prof. QP Empregado"
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -40,7 +40,7 @@ table 53061 "Cat. Prof. QP Empregado"
         field(10; Comment; Boolean)
         {
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(CatProfQP),
-                                                                      "No." = FIELD("No. Empregado"),
+                                                                      "No." = FIELD("Employee No."),
                                                                       "Table Line No." = FIELD("No. Linha")));
             Caption = 'Comment';
             Editable = false;
@@ -67,14 +67,14 @@ table 53061 "Cat. Prof. QP Empregado"
 
     keys
     {
-        key(Key1; "No. Empregado", "Cód. Cat. Prof. QP", "No. Linha")
+        key(Key1; "Employee No.", "Cód. Cat. Prof. QP", "No. Linha")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado", "Data Inicio Cat. Prof.", "Promotion Reason")
+        key(Key2; "Employee No.", "Data Inicio Cat. Prof.", "Promotion Reason")
         {
         }
-        key(Key3; "No. Empregado", "Reconversion Date")
+        key(Key3; "Employee No.", "Reconversion Date")
         {
         }
     }

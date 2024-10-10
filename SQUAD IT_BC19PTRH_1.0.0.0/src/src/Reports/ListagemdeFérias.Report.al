@@ -175,7 +175,7 @@ report 53085 "Listagem de Férias"
                     if Date2DMY(Empregado."Employment Date", 3) = varAno - 1 then begin
                         AnoAnteriorDireito := 2 * (12 - Date2DMY(Empregado."Employment Date", 2));
                         TabFeriasEmpregado.Reset;
-                        TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", Empregado."No.");
+                        TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", Empregado."No.");
                         TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno - 1),
                                                     DMY2Date(31, 12, varAno - 1));
                         TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Gozada, true);
@@ -188,7 +188,7 @@ report 53085 "Listagem de Férias"
                     //------------------------------------------------------------------------
                     if Date2DMY(Empregado."Employment Date", 3) < varAno - 1 then begin
                         TabFeriasEmpregado.Reset;
-                        TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", Empregado."No.");
+                        TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", Empregado."No.");
                         TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno - 1),
                                                   DMY2Date(31, 12, varAno - 1));
                         TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Gozada, false);
@@ -219,7 +219,7 @@ report 53085 "Listagem de Férias"
                         end;
                     end;
                     TabFeriasEmpregado.Reset;
-                    TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", Empregado."No.");
+                    TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", Empregado."No.");
                     TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno - 1),
                                                 DMY2Date(31, 12, varAno - 1));
                     TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Gozada, true);
@@ -269,7 +269,7 @@ report 53085 "Listagem de Férias"
 
                 //Férias Ano corrente Marcadas
                 TabFeriasEmpregado.Reset;
-                TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", Empregado."No.");
+                TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", Empregado."No.");
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno), DMY2Date(31, 12, varAno));
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Ano a que se refere", varAno);
                 TabFeriasEmpregado.SetRange(Tipo, 0);
@@ -278,7 +278,7 @@ report 53085 "Listagem de Férias"
 
                 //Férias Ano corrente gozadas
                 TabFeriasEmpregado.Reset;
-                TabFeriasEmpregado.SetRange(TabFeriasEmpregado."No. Empregado", Empregado."No.");
+                TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Employee No.", Empregado."No.");
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Data, DMY2Date(1, 1, varAno), DMY2Date(31, 12, varAno));
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado."Ano a que se refere", varAno);
                 TabFeriasEmpregado.SetRange(TabFeriasEmpregado.Gozada, true);

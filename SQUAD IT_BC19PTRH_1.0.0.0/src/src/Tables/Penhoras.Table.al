@@ -33,7 +33,7 @@ table 53103 Penhoras
         }
         field(11; "Amount Already Garnishment"; Decimal)
         {
-            CalcFormula = - Sum("Hist. Linhas Movs. Empregado".Valor WHERE("No. Empregado" = FIELD("Employee No."),
+            CalcFormula = - Sum("Hist. Linhas Movs. Empregado".Valor WHERE("Employee No." = FIELD("Employee No."),
                                                                            "Garnishmen No." = FIELD("Garnishmen No.")));
             Caption = 'Amount Already Garnishment';
             Editable = false;

@@ -502,7 +502,7 @@ page 53087 "Matriz Vista Ferias"
         EmployeeAbsence: Record "Férias Empregados";
     begin
         SetDateFilter(ColumnID);
-        EmployeeAbsence.SetRange("No. Empregado", Rec."No.");
+        EmployeeAbsence.SetRange("Employee No.", Rec."No.");
         EmployeeAbsence.SetRange(Tipo, 0);
         Rec.SetFilter("Cause of Absence Filter", CauseOfVacationFilter);
         EmployeeAbsence.SetFilter(Data, Format(Rec."Date Filter"));

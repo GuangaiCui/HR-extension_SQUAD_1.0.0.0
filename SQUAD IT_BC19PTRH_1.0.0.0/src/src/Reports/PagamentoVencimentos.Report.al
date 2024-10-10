@@ -30,8 +30,8 @@ report 53055 "Pagamento Vencimentos"
             dataitem("Hist. Cab. Movs. Empregado"; "Hist. Cab. Movs. Empregado")
             {
                 CalcFields = Valor;
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado") WHERE("Tipo Processamento" = FILTER(<> Encargos), Pendente = CONST(true));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.") WHERE("Tipo Processamento" = FILTER(<> Encargos), Pendente = CONST(true));
 
                 trigger OnAfterGetRecord()
                 var
@@ -63,17 +63,17 @@ report 53055 "Pagamento Vencimentos"
                     TabHistLinhasMovEmp.Reset;
                     TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Cód. Processamento", "Hist. Cab. Movs. Empregado"."Cód. Processamento");
                     TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Tipo Processamento", "Hist. Cab. Movs. Empregado"."Tipo Processamento");
-                    TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."No. Empregado", "Hist. Cab. Movs. Empregado"."No. Empregado");
+                    TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Employee No.", "Hist. Cab. Movs. Empregado"."Employee No.");
                     TabHistLinhasMovEmp.SetRange(TabHistLinhasMovEmp."Tipo Rubrica", TabHistLinhasMovEmp."Tipo Rubrica"::Abono);//2009.06.18
                     if TabHistLinhasMovEmp.FindSet then begin
                         //2009.06.18
-                        NConta := TabHistLinhasMovEmp."No. Conta a Creditar";
+                        NConta := TabHistLinhasMovEmp."Credit Acc. No.";
                         repeat
                             TabRubricaSalarial.Reset;
                             TabRubricaSalarial.SetRange(TabRubricaSalarial.Código, TabHistLinhasMovEmp."Cód. Rubrica");
                             TabRubricaSalarial.SetRange(TabRubricaSalarial.Genero, TabRubricaSalarial.Genero::"Vencimento Base");
                             if TabRubricaSalarial.Find('-') then begin
-                                NConta := TabHistLinhasMovEmp."No. Conta a Creditar";
+                                NConta := TabHistLinhasMovEmp."Credit Acc. No.";
                                 Flag := true;//2009.06.18
                             end;
                         until (TabHistLinhasMovEmp.Next = 0) or (Flag = true);//2009.06.18
@@ -104,7 +104,7 @@ report 53055 "Pagamento Vencimentos"
                         GenJnl.Validate("Bal. Account Type", GenJnl."Bal. Account Type"::"G/L Account");
 
                     GenJnl.Validate("Bal. Account No.", Empregado."Conta Pag.");
-                    GenJnl.Validate("No. Empregado", "Hist. Cab. Movs. Empregado"."No. Empregado");
+                    GenJnl.Validate("Employee No.", "Hist. Cab. Movs. Empregado"."Employee No.");
                     GenJnl.Validate("Debit Amount", Round("Hist. Cab. Movs. Empregado".Valor, 0.01)); //HG 2006.08.30 -Coloquei o Round
                     GenJnl."Source Code" := TabCodSerie."Pagamento Vencimentos";
                     GenJnl."Não deixa alterar No.Doc" := true;//20.06.2007 - para não deixar alterar o nº doc para não perdermos o rasto
@@ -130,7 +130,7 @@ report 53055 "Pagamento Vencimentos"
                     TabHistCabMovEmp.Reset;
                     TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Cód. Processamento", "Hist. Cab. Movs. Empregado"."Cód. Processamento");
                     TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Tipo Processamento", "Hist. Cab. Movs. Empregado"."Tipo Processamento");
-                    TabHistCabMovEmp.SetRange(TabHistCabMovEmp."No. Empregado", "Hist. Cab. Movs. Empregado"."No. Empregado");
+                    TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Employee No.", "Hist. Cab. Movs. Empregado"."Employee No.");
                     if TabHistCabMovEmp.FindFirst then begin
                         TabHistCabMovEmp."Pago por No. Documento" := NDocumento;
                         TabHistCabMovEmp.Modify;

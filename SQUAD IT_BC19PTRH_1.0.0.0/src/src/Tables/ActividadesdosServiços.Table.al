@@ -3,7 +3,7 @@ table 53119 "Actividades dos Serviços"
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
             AutoIncrement = true;
             Caption = 'No. Mov.';
@@ -26,7 +26,7 @@ table 53119 "Actividades dos Serviços"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }

@@ -28,7 +28,7 @@ report 53038 "Fecho Mês"
             dataitem("Cab. Movs. Empregado"; "Cab. Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -40,7 +40,7 @@ report 53038 "Fecho Mês"
                     "Cab. Movs. Empregado".Delete;
                     //Marca os empregados deste processamento
                     //---------------------------------------
-                    TabEmpregado.SetRange(TabEmpregado."No.", "Cab. Movs. Empregado"."No. Empregado");
+                    TabEmpregado.SetRange(TabEmpregado."No.", "Cab. Movs. Empregado"."Employee No.");
                     if TabEmpregado.Find('-') then
                         TabEmpregado.Mark(true);
                 end;
@@ -48,7 +48,7 @@ report 53038 "Fecho Mês"
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -71,7 +71,7 @@ report 53038 "Fecho Mês"
                     if (RubricSalarial.Get("Linhas Movs. Empregado"."Cód. Rubrica")) and
                        (RubricSalarial.NATREM = RubricSalarial.NATREM::"Cód. Sub. Férias") and
                        (RubricSalarial.Genero <> RubricSalarial.Genero::DuoSF) then begin //Normatica 2014.07.14 acrescentei esta linha
-                        if TabEmp.Get("Linhas Movs. Empregado"."No. Empregado") then begin
+                        if TabEmp.Get("Linhas Movs. Empregado"."Employee No.") then begin
                             ContratoEmp.Reset;
                             ContratoEmp.SetRange(ContratoEmp."Cód. Empregado", TabEmp."No.");
                             ContratoEmp.SetFilter(ContratoEmp."Data Inicio Contrato", '<=%1', "Periodos Processamento"."Data Fim Processamento");
@@ -184,8 +184,8 @@ report 53038 "Fecho Mês"
             }
             dataitem("Horas Extra Empregado"; "Horas Extra Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Mov.");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Entry No.");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -195,13 +195,13 @@ report 53038 "Fecho Mês"
                       ("Horas Extra Empregado".Data <= "Periodos Processamento"."Data Fim Processamento") then begin
                         HistHorasExtra.Reset;
                         if HistHorasExtra.Find('+') then
-                            VarNMov := HistHorasExtra."No. Mov." + 1
+                            VarNMov := HistHorasExtra."Entry No." + 1
                         else
                             VarNMov := 1;
 
                         HistHorasExtra.Init;
                         HistHorasExtra.TransferFields("Horas Extra Empregado");
-                        HistHorasExtra."No. Mov." := VarNMov;
+                        HistHorasExtra."Entry No." := VarNMov;
                         //2015.04.17 - Para poder abrir o processamento
                         HistHorasExtra."Processamento Referencia" := "Periodos Processamento"."Cód. Processamento";
                         HistHorasExtra.Insert;
@@ -209,7 +209,7 @@ report 53038 "Fecho Mês"
                         //Passar os comentários das Horas Extra para Histórico
                         TabLinhaComentRH.Reset;
                         TabLinhaComentRH.SetRange(TabLinhaComentRH."Table Name", TabLinhaComentRH."Table Name"::HorEx);
-                        TabLinhaComentRH.SetRange(TabLinhaComentRH."Table Line No.", "Horas Extra Empregado"."No. Mov.");
+                        TabLinhaComentRH.SetRange(TabLinhaComentRH."Table Line No.", "Horas Extra Empregado"."Entry No.");
                         if TabLinhaComentRH.FindFirst then begin
                             TabLinhaComentRH.Rename(TabLinhaComentRH."Table Name"::HHorEx,
                             TabLinhaComentRH."No.", VarNMov, TabLinhaComentRH."Alternative Address Code",
@@ -221,8 +221,8 @@ report 53038 "Fecho Mês"
             }
             dataitem("Abonos - Descontos Extra"; "Abonos - Descontos Extra")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Mov.");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING();
 
                 trigger OnAfterGetRecord()
                 begin
@@ -232,13 +232,13 @@ report 53038 "Fecho Mês"
                       ("Abonos - Descontos Extra".Data <= "Periodos Processamento"."Data Fim Processamento") then begin
                         HistAboDesExtra.Reset;
                         if HistAboDesExtra.FindLast then
-                            VarNMov := HistAboDesExtra."No. Mov." + 1
+                            VarNMov := HistAboDesExtra."Entry No." + 1
                         else
                             VarNMov := 1;
 
                         HistAboDesExtra.Init;
                         HistAboDesExtra.TransferFields("Abonos - Descontos Extra");
-                        HistAboDesExtra."No. Mov." := VarNMov;
+                        HistAboDesExtra."Entry No." := VarNMov;
                         //2015.04.17 - Para poder abrir o processamento
                         HistAboDesExtra."Processamento Referencia" := "Periodos Processamento"."Cód. Processamento";
                         HistAboDesExtra.Insert;

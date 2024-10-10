@@ -14,12 +14,12 @@ page 53096 "Registo Abonos-Descontos Extra"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Mov."; Rec."No. Mov.")
+                field("Entry No."; Rec."Entry No.")
                 {
 
 
                 }
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -44,7 +44,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
 
@@ -54,7 +54,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
 
@@ -79,7 +79,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field("Abono - Desconto Bloqueado"; Rec."Abono - Desconto Bloqueado")
+                field("Earning - Blocked Deduction"; Rec."Earning - Blocked Deduction")
                 {
 
 
@@ -113,7 +113,7 @@ page 53096 "Registo Abonos-Descontos Extra"
         //Não deixar apagar Abono-Desconto bloqueadas
 
         //2009.03.24 - a mensagem só deve aparecer uma vez por cada delete e não por cada registo
-        if (Rec."Abono - Desconto Bloqueado" = true) and (Flag = false) then begin
+        if (Rec."Earning - Blocked Deduction" = true) and (Flag = false) then begin
             Message(Text0001);
             Flag := true;
         end;
@@ -126,13 +126,13 @@ page 53096 "Registo Abonos-Descontos Extra"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
 
-        exit(Employee.Get(Rec."No. Empregado"));
+        exit(Employee.Get(Rec."Employee No."));
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         //HG
-        Rec."No. Empregado" := Rec.GetFilter("No. Empregado");
+        Rec."Employee No." := Rec.GetFilter("Employee No.");
     end;
 
     var

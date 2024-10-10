@@ -84,7 +84,7 @@ xmlport 53050 "Exporta Documentos"
                             HistCabMovEmp.Reset;
                             HistCabMovEmp.SetRange("Tipo Processamento", HistCabMovEmp."Tipo Processamento"::Vencimentos);
                             HistCabMovEmp.SetRange("Data Registo", DMY2Date(1, vMes, vAno), CalcDate('+1M-1D', DMY2Date(1, vMes, vAno)));
-                            HistCabMovEmp.SetRange(HistCabMovEmp."No. Empregado", Empregado."No.");
+                            HistCabMovEmp.SetRange(HistCabMovEmp."Employee No.", Empregado."No.");
                             if HistCabMovEmp.FindFirst then begin
                                 ReciboVenc.InitData(HistCabMovEmp."Cód. Processamento", Empregado."No.");
                                 ReciboVenc.UseRequestPage(false);

@@ -14,7 +14,7 @@ page 53151 "Acidentes de Trabalho"
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 

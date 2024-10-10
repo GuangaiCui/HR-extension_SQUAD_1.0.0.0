@@ -57,7 +57,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
             column("Período_de_Processamento_Caption"; Período_de_Processamento_CaptionLbl)
             {
             }
-            column(Linhas_Movs__Empregado__N__Empregado_Caption; "Linhas Movs. Empregado".FieldCaption("No. Empregado"))
+            column(Linhas_Movs__Empregado__N__Empregado_Caption; "Linhas Movs. Empregado".FieldCaption("Employee No."))
             {
             }
             column("Linhas_Movs__Empregado__Designação_Empregado_Caption"; "Linhas Movs. Empregado".FieldCaption("Designação Empregado"))
@@ -84,8 +84,8 @@ report 53050 "Mapa Imp. Extraordinário 2011"
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento"), "Tipo Processamento" = FIELD("Tipo Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
-                column(Linhas_Movs__Empregado__N__Empregado_; "No. Empregado")
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
+                column(Linhas_Movs__Empregado__N__Empregado_; "Employee No.")
                 {
                 }
                 column("Linhas_Movs__Empregado__Designação_Empregado_"; "Designação Empregado")
@@ -112,7 +112,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
 
                 trigger OnAfterGetRecord()
                 begin
-                    if rEmpregado.Get("Linhas Movs. Empregado"."No. Empregado") then
+                    if rEmpregado.Get("Linhas Movs. Empregado"."Employee No.") then
                         NContribuinte := rEmpregado."No. Contribuinte"
                 end;
 
@@ -124,14 +124,14 @@ report 53050 "Mapa Imp. Extraordinário 2011"
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento"), "Tipo Processamento" = FIELD("Tipo Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
                 column(Hist__Linhas_Movs__Empregado_Valor; Valor)
                 {
                 }
                 column("Hist__Linhas_Movs__Empregado__Designação_Empregado_"; "Designação Empregado")
                 {
                 }
-                column(Hist__Linhas_Movs__Empregado__N__Empregado_; "No. Empregado")
+                column(Hist__Linhas_Movs__Empregado__N__Empregado_; "Employee No.")
                 {
                 }
                 column(NContribuinte_Control1102065017; NContribuinte)
@@ -152,7 +152,7 @@ report 53050 "Mapa Imp. Extraordinário 2011"
 
                 trigger OnAfterGetRecord()
                 begin
-                    if rEmpregado.Get("Hist. Linhas Movs. Empregado"."No. Empregado") then
+                    if rEmpregado.Get("Hist. Linhas Movs. Empregado"."Employee No.") then
                         NContribuinte := rEmpregado."No. Contribuinte"
                 end;
 

@@ -21,7 +21,7 @@ report 53079 "Actualização Escalões Venc."
                         if TabRubricaSal.FindSet then begin
                             repeat
                                 TabRubricaSalEmp.Reset;
-                                TabRubricaSalEmp.SetRange(TabRubricaSalEmp."No. Empregado", Empregado."No.");
+                                TabRubricaSalEmp.SetRange(TabRubricaSalEmp."Employee No.", Empregado."No.");
                                 TabRubricaSalEmp.SetRange(TabRubricaSalEmp."Cód. Rúbrica Salarial", TabRubricaSal.Código);
                                 TabRubricaSalEmp.SetFilter(TabRubricaSalEmp."Data Início", '<=%1', WorkDate);
                                 TabRubricaSalEmp.SetFilter(TabRubricaSalEmp."Data Fim", '>=%1|=%2', WorkDate, 0D);
@@ -139,12 +139,12 @@ report 53079 "Actualização Escalões Venc."
     procedure ValidaLineNo(pNoEmpregado: Code[20])
     begin
         rRubSalarialEmp.Reset;
-        rRubSalarialEmp.SetRange("No. Empregado", pNoEmpregado);
+        rRubSalarialEmp.SetRange("Employee No.", pNoEmpregado);
         //2009.01.21 - comentei porque o empregado pode ter uma rubrica já criada para o futuro e que ainda não está em vigor
         //rRubSalarialEmp.SETFILTER("Data Início",'<=%1',WORKDATE);
         //rRubSalarialEmp.SETFILTER("Data Fim",'>=%1|=%2',WORKDATE,0D);
         if rRubSalarialEmp.FindLast then begin
-            LineNo := rRubSalarialEmp."No. Linha" + 10000;
+            LineNo := rRubSalarialEmp."Line No." + 10000;
             NewLine := true;
         end else begin
             LineNo := 10000;
@@ -158,9 +158,9 @@ report 53079 "Actualização Escalões Venc."
     begin
         rRubricaSalarialEmp.Init;
         rRubricaSalarialEmp.TransferFields(pRubricaSalarialEmpregado);
-        if pRubricaSalarialEmpregado."Valor Unitário" <> 0 then
-            rRubricaSalarialEmp."Valor Unitário" := pValorTotal;
-        rRubricaSalarialEmp."No. Linha" := LineNo;
+        if pRubricaSalarialEmpregado."Unit Value" <> 0 then
+            rRubricaSalarialEmp."Unit Value" := pValorTotal;
+        rRubricaSalarialEmp."Line No." := LineNo;
         rRubricaSalarialEmp."Data Início" := DataInicio;
         //2009.01.21 - os vencimentos agora são de Janeiro a Dezembro
         rRubricaSalarialEmp."Data Fim" := DMY2Date(31, 12, Date2DMY(DataInicio, 3));

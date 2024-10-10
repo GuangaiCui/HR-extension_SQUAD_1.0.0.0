@@ -21,7 +21,7 @@ page 53173 MyHistMovsEmp
 
 
                 }
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -72,7 +72,7 @@ page 53173 MyHistMovsEmp
 
                 trigger OnAction()
                 begin
-                    if HistCabMovEmp.Get(Rec."Cód. Processamento", Rec."Tipo Processamento", Rec."No. Empregado") then
+                    if HistCabMovEmp.Get(Rec."Cód. Processamento", Rec."Tipo Processamento", Rec."Employee No.") then
                         PAGE.Run(PAGE::"Hist. Cab. Movs. Empregado", HistCabMovEmp)
                 end;
             }

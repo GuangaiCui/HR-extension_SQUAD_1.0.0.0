@@ -130,8 +130,8 @@ report 53084 "Mapa Sindicato"
             }
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = CONST(Vencimentos));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = CONST(Vencimentos));
                 column(ABS_Incidencia_; Abs(Incidencia))
                 {
                 }
@@ -156,7 +156,7 @@ report 53084 "Mapa Sindicato"
                 column(Hist__Linhas_Movs__Empregado_Tipo_Processamento; "Tipo Processamento")
                 {
                 }
-                column(Hist__Linhas_Movs__Empregado_N__Empregado; "No. Empregado")
+                column(Hist__Linhas_Movs__Empregado_N__Empregado; "Employee No.")
                 {
                 }
                 column(Hist__Linhas_Movs__Empregado_N__Linha; "No. Linha")
@@ -182,7 +182,7 @@ report 53084 "Mapa Sindicato"
                                 TabHistLinhasMov.Reset;
                                 TabHistLinhasMov.SetRange(TabHistLinhasMov."Cód. Processamento", "Hist. Linhas Movs. Empregado"."Cód. Processamento");
                                 TabHistLinhasMov.SetRange(TabHistLinhasMov."Tipo Processamento", "Hist. Linhas Movs. Empregado"."Tipo Processamento");
-                                TabHistLinhasMov.SetRange(TabHistLinhasMov."No. Empregado", "Hist. Linhas Movs. Empregado"."No. Empregado");
+                                TabHistLinhasMov.SetRange(TabHistLinhasMov."Employee No.", "Hist. Linhas Movs. Empregado"."Employee No.");
                                 TabHistLinhasMov.SetRange(TabHistLinhasMov."Cód. Rubrica", TabRubricaLinhas."Cód. Rubrica Filha");
                                 if TabHistLinhasMov.FindFirst then begin
                                     Incidencia := Incidencia + TabHistLinhasMov.Valor;

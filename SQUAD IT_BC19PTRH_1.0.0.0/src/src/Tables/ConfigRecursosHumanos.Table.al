@@ -41,38 +41,38 @@ table 53053 "Config. Recursos Humanos"
             Enabled = false;
             OptionMembers = "Valor Hora Lectiva","Valor Hora Total";
         }
-        field(20; "Nome Livro Diario"; Code[10])
+        field(20; "Journal Template Name"; Code[10])
         {
-            Caption = 'Journal Template Name';
+            Caption = 'Nome Livro Diario';
             TableRelation = "Gen. Journal Template".Name;
         }
-        field(21; "Secção Diario"; Code[10])
+        field(21; "Journal Batch Name"; Code[10])
         {
-            Caption = 'Journal Batch Name';
-            TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Nome Livro Diario"));
+            Caption = 'Secção Diario';
+            TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Journal Template Name"));
         }
-        field(25; "Usar Feriados calculo Sub Ali"; Boolean)
+        field(25; "Use Holidays to Calc Lunch Sub"; Boolean)
         {
-            Caption = 'Using Holidays to Calculate Lunch Subsidy';
+            Caption = 'Usar Feriados calculo Sub Ali';
         }
-        field(30; "Nome responsável RH"; Text[60])
+        field(30; "Name of HR Responsable"; Text[60])
         {
-            Caption = 'Name of HR Responsable';
+            Caption = 'Nome responsável RH';
             Description = 'Quadros Pessoal';
         }
-        field(31; "Telefone responsável RH"; Text[9])
+        field(31; "Phone of HR Responsable"; Text[9])
         {
-            Caption = 'Phone of HR Responsable';
+            Caption = 'Telefone responsável RH';
             Description = 'Quadros Pessoal';
         }
-        field(32; "Fax responsável RH"; Text[9])
+        field(32; "Fax of HR Responsable"; Text[9])
         {
-            Caption = 'Fax of HR Responsable';
+            Caption = 'Fax responsável RH';
             Description = 'Quadros Pessoal';
         }
-        field(33; "E-mail responsável RH"; Text[60])
+        field(33; "E-mail of HR Responsable"; Text[60])
         {
-            Caption = 'E-mail of HR Responsable';
+            Caption = 'E-mail responsável RH';
             Description = 'Quadros Pessoal';
         }
         field(40; "%IRS"; Decimal)
@@ -128,9 +128,9 @@ table 53053 "Config. Recursos Humanos"
             Caption = 'NIPC CGA';
             Description = 'DMR';
         }
-        field(65; Seguradora; Text[60])
+        field(65; "Insurance Company"; Text[60])
         {
-            Caption = 'Insurance';
+            Caption = 'Seguradora';
 
             trigger OnValidate()
             begin
@@ -743,12 +743,12 @@ table 53053 "Config. Recursos Humanos"
         if Opcao = Opcao::"Nº Apolice" then
             rEmpregado.SetFilter("No. Apólice", xRec."No. Apólice");
         if Opcao = Opcao::Seguradora then
-            rEmpregado.SetFilter(Seguradora, '%1', xRec.Seguradora);
+            rEmpregado.SetFilter(Seguradora, '%1', xRec."Insurance Company");
 
         if rEmpregado.Find('-') then begin
             repeat
                 rEmpregado."No. Apólice" := "No. Apólice";
-                rEmpregado.Seguradora := Seguradora;
+                rEmpregado.Seguradora := "Insurance Company";
                 rEmpregado.Modify;
             until rEmpregado.Next = 0;
         end;
@@ -764,7 +764,7 @@ table 53053 "Config. Recursos Humanos"
             repeat
                 if Confirm(text0002, true, rEmpregado."No.", rEmpregado.Name) then begin
                     rEmpregado."No. Apólice" := "No. Apólice";
-                    rEmpregado.Seguradora := Seguradora;
+                    rEmpregado.Seguradora := "Insurance Company";
                     rEmpregado.Modify;
                 end;
             until rEmpregado.Next = 0;
@@ -775,7 +775,7 @@ table 53053 "Config. Recursos Humanos"
         if Opcao = Opcao::"Nº Apolice" then
             rEmpregado.SetFilter("No. Apólice", '<>%1', "No. Apólice");
         if Opcao = Opcao::Seguradora then
-            rEmpregado.SetFilter(Seguradora, '<>%1', Seguradora);
+            rEmpregado.SetFilter(Seguradora, '<>%1', "Insurance Company");
 
 
         if rEmpregado.Find('-') then begin
@@ -783,7 +783,7 @@ table 53053 "Config. Recursos Humanos"
             repeat
                 if Confirm(Text001, true, rEmpregado."No.", rEmpregado.Name, rEmpregado."No. Apólice", rEmpregado.Seguradora) then begin
                     rEmpregado."No. Apólice" := "No. Apólice";
-                    rEmpregado.Seguradora := Seguradora;
+                    rEmpregado.Seguradora := "Insurance Company";
                     rEmpregado.Modify;
                 end;
             until rEmpregado.Next = 0;

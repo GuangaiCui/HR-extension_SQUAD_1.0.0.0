@@ -12,17 +12,17 @@ page 53159 Destacamentos
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field("Local de Destacamento"; Rec."Local de Destacamento")
+                field("Local de Destacamento"; Rec."Place of Detachment")
                 {
 
 
                 }
-                field("Data Início Destacamento"; Rec."Data Início Destacamento")
+                field("Data Início Destacamento"; Rec."Detachment Begin Date")
                 {
 
 
                 }
-                field("Data Fim Destacamento"; Rec."Data Fim Destacamento")
+                field("Data Fim Destacamento"; Rec."Detachment End Date")
                 {
 
 

@@ -3,7 +3,7 @@ page 53073 "Lista Inactividade Empregado"
 {
     AutoSplitKey = true;
     Caption = 'Inactividade Empregado ';
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Inactividade Empregado";
 
@@ -57,7 +57,7 @@ page 53073 "Lista Inactividade Empregado"
                     Image = ViewComments;
                     RunObject = Page "Folha Comentários RH";
                     RunPageLink = "Table Name" = CONST(Inac),
-                                  "No." = FIELD("No. Empregado"),
+                                  "No." = FIELD("Employee No."),
                                   "Table Line No." = FIELD("No. Linha");
                 }
             }

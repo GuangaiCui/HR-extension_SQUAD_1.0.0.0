@@ -922,7 +922,7 @@ page 53035 "Ficha Empregado"
             {
                 ApplicationArea = All;
                 Caption = 'Attachments';
-                SubPageLink = "Table ID" = CONST(31003035),
+                SubPageLink = "Table ID" = CONST(53035),
                               "No." = FIELD("No.");
             }
         }
@@ -950,7 +950,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Dimensions';
                     Image = Dimensions;
                     RunObject = Page "Default Dimensions";
-                    RunPageLink = "Table ID" = CONST(31003035),
+                    RunPageLink = "Table ID" = CONST(53035),
                                   "No." = FIELD("No.");
                     ShortCutKey = 'Shift+Ctrl+D';
                 }
@@ -1023,7 +1023,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Hist. Horas Extra';
                     Image = ServiceHours;
                     RunObject = Page "Lista Histórico Horas Extra";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Hist. Abonos/Descontos Extra")
                 {
@@ -1031,7 +1031,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Hist. Abonos/Descontos Extra';
                     Image = ChangePaymentTolerance;
                     RunObject = Page "Lista Hist. Abon. - Des. Extr.";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 separator(Action177)
                 {
@@ -1042,7 +1042,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Hist. Mov. Empregado';
                     Image = PaymentPeriod;
                     RunObject = Page "Lista Hist. Cab. Movs. Emp";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
             }
             group(Cadastro)
@@ -1062,7 +1062,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Cat. Profissional Interna';
                     Image = QualificationOverview;
                     RunObject = Page "Lista Cat. Prof. Int. Emp.";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Cat. Profissional QP")
                 {
@@ -1070,7 +1070,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Cat. Profissional QP';
                     Image = QualificationOverview;
                     RunObject = Page "Lista Cat. Prof. Emp. QP";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Formação")
                 {
@@ -1078,7 +1078,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Formação';
                     Image = Campaign;
                     RunObject = Page "Registo Formação";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Qualificações/Habilitações")
                 {
@@ -1103,7 +1103,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Grau Função';
                     Image = JobResponsibility;
                     RunObject = Page "Lista Grau Função Empregado";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Horário")
                 {
@@ -1111,7 +1111,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Horário';
                     Image = Timesheet;
                     RunObject = Page "Lista Horário Empregado";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Consultas Médicas")
                 {
@@ -1119,7 +1119,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Consultas Médicas';
                     Image = CampaignEntries;
                     RunObject = Page "Consultas Médicas Empregado";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Informação Artigo&s Div.")
                 {
@@ -1135,7 +1135,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Inactividade';
                     Image = InactivityDescription;
                     RunObject = Page "Lista Inactividade Empregado";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Profissionalização")
                 {
@@ -1151,7 +1151,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Perdas e Anomalias';
                     Image = CapableToPromise;
                     RunObject = Page "Perdas e Anomalias Emp.";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action(Destacamentos)
                 {
@@ -1159,7 +1159,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Destacamentos';
                     Image = ChangeCustomer;
                     RunObject = Page Destacamentos;
-                    RunPageLink = "No. Emp." = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action(Seguros)
                 {
@@ -1167,7 +1167,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Seguros';
                     Image = CoupledUsers;
                     RunObject = Page "Seg Saude Empregado";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
             }
             group("Férias")
@@ -1179,7 +1179,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Marcação de Férias';
                     Image = Holiday;
                     RunObject = Page "Lista Férias Empregado";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
             }
         }
@@ -1194,7 +1194,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Rubricas Salariais';
                     Image = SalesTaxStatement;
                     RunObject = Page "Lista Rubrica Salarial Emp.";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Distribuição de Custos - Dimensões")
                 {
@@ -1202,7 +1202,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Distribuição de Custos - Dimensões';
                     Image = MapDimensions;
                     RunObject = Page "Distribuição Custos -Dimensões";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Calcular Taxa IRS")
                 {
@@ -1312,7 +1312,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Horas Extra';
                     Image = ServiceHours;
                     RunObject = Page "Registo Horas Extra";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Abono-Desconto Extra")
                 {
@@ -1320,7 +1320,7 @@ page 53035 "Ficha Empregado"
                     Caption = 'Abono-Desconto Extra';
                     Image = ChangePaymentTolerance;
                     RunObject = Page "Registo Abonos-Descontos Extra";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
             }
             group(Processamento)
@@ -1336,7 +1336,7 @@ page 53035 "Ficha Empregado"
                     begin
 
                         TabEmpregado.SetRange(TabEmpregado."No.", Rec."No.");
-                        REPORT.RunModal(31003037, true, false, TabEmpregado);
+                        REPORT.RunModal(53037, true, false, TabEmpregado);
                     end;
                 }
                 action("Processamento Sub. Férias")
@@ -1349,7 +1349,7 @@ page 53035 "Ficha Empregado"
                     begin
 
                         TabEmpregado.SetRange(TabEmpregado."No.", Rec."No.");
-                        REPORT.RunModal(31003041, true, false, TabEmpregado);
+                        REPORT.RunModal(53041, true, false, TabEmpregado);
                     end;
                 }
                 action("Processamento Sub. Natal")
@@ -1362,7 +1362,7 @@ page 53035 "Ficha Empregado"
                     begin
 
                         TabEmpregado.SetRange(TabEmpregado."No.", Rec."No.");
-                        REPORT.RunModal(31003040, true, false, TabEmpregado);
+                        REPORT.RunModal(53040, true, false, TabEmpregado);
                     end;
                 }
                 action("Movs. empregado")
@@ -1371,8 +1371,8 @@ page 53035 "Ficha Empregado"
                     Caption = 'Movs. empregado';
                     Image = PaymentPeriod;
                     RunObject = Page "Cab. Movs. Empregado";
-                    RunPageLink = "No. Empregado" = FIELD(FILTER("No."));
-                    RunPageView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado");
+                    RunPageLink = "Employee No." = FIELD(FILTER("No."));
+                    RunPageView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.");
                 }
             }
         }
@@ -1389,7 +1389,7 @@ page 53035 "Ficha Empregado"
 
                     TabEmpregado.Reset;
                     TabEmpregado.SetRange(TabEmpregado."No.", Rec."No.");
-                    REPORT.Run(31003082, true, false, TabEmpregado);
+                    REPORT.Run(53082, true, false, TabEmpregado);
                 end;
             }
             action("<Report Ficha Empregado>")
@@ -1427,7 +1427,7 @@ page 53035 "Ficha Empregado"
     begin
 
         TabHistCabMovEmpr.Reset;
-        TabHistCabMovEmpr.SetRange(TabHistCabMovEmpr."No. Empregado", Rec."No.");
+        TabHistCabMovEmpr.SetRange(TabHistCabMovEmpr."Employee No.", Rec."No.");
         if TabHistCabMovEmpr.Find('-') then begin
             Message(Text0005);
             exit(false);

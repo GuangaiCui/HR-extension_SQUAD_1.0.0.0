@@ -12,7 +12,7 @@ page 53113 "Distribuição Custos -Dimensões"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -87,7 +87,7 @@ page 53113 "Distribuição Custos -Dimensões"
         //2009.03.10 - Testa se as linhas prefazem 100% caso contrário dá erro
         TotalPercentagem := 0;
         DistribDim.Reset;
-        DistribDim.SetRange(DistribDim."No. Empregado", Rec."No. Empregado");
+        DistribDim.SetRange(DistribDim."Employee No.", Rec."Employee No.");
         if DistribDim.Find('-') then begin
             repeat
                 TotalPercentagem := TotalPercentagem + DistribDim.Percentagem;

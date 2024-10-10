@@ -250,7 +250,7 @@ report 53060 "Ausência por Empregado"
         "Com_Perca_de_RemuneraçãoCaptionLbl": Label 'Com Perca de Remuneração';
         JustificadaCaptionLbl: Label 'Justificada';
         "Cód__Unid__MedidaCaptionLbl": Label 'Cód. Unid. Medida';
-        QuantidadeCaptionLbl: Label 'Quantidade';
+        QuantidadeCaptionLbl: Label 'Quantity';
         "DescriçãoCaptionLbl": Label 'Descrição';
         "Cód__motivo_ausênciaCaptionLbl": Label 'Cód. motivo ausência';
         "À_dataCaptionLbl": Label 'À data';

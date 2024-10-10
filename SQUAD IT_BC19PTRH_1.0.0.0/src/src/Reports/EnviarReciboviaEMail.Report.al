@@ -19,8 +19,8 @@ report 53100 "Enviar Recibo via EMail"
             dataitem("Hist. Cab. Movs. Empregado"; "Hist. Cab. Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado") WHERE("Tipo Processamento" = FILTER(<> Encargos));
-                RequestFilterFields = "No. Empregado";
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.") WHERE("Tipo Processamento" = FILTER(<> Encargos));
+                RequestFilterFields = "Employee No.";
 
                 trigger OnAfterGetRecord()
 
@@ -43,13 +43,13 @@ report 53100 "Enviar Recibo via EMail"
                     //Testar se já foi enviado o Recibo para este empregado
                     //*******************************************************************
                     if "Hist. Cab. Movs. Empregado"."Recibo enviado via E-Mail" then
-                        if not Confirm(Text0004, false, "Hist. Cab. Movs. Empregado"."Cód. Processamento", "Hist. Cab. Movs. Empregado"."No. Empregado") then
+                        if not Confirm(Text0004, false, "Hist. Cab. Movs. Empregado"."Cód. Processamento", "Hist. Cab. Movs. Empregado"."Employee No.") then
                             CurrReport.Skip;
 
                     //Só apanhar os empregados que têm o pisco no Envio Recibo via E-Mail
                     //*******************************************************************
                     Empregado.Reset;
-                    Empregado.SetRange(Empregado."No.", "Hist. Cab. Movs. Empregado"."No. Empregado");
+                    Empregado.SetRange(Empregado."No.", "Hist. Cab. Movs. Empregado"."Employee No.");
                     if Empregado.FindFirst then
                         if (EnviarTodos) and (not Empregado."Envio Recibo via E-Mail") then
                             CurrReport.Skip;
@@ -67,13 +67,13 @@ report 53100 "Enviar Recibo via EMail"
                         EnderecoEmail := Empregado."E-Mail";
 
                     if EnderecoEmail = '' then begin
-                        Message(Text0005, "Hist. Cab. Movs. Empregado"."Cód. Processamento", "Hist. Cab. Movs. Empregado"."No. Empregado");
+                        Message(Text0005, "Hist. Cab. Movs. Empregado"."Cód. Processamento", "Hist. Cab. Movs. Empregado"."Employee No.");
                         CurrReport.Skip;
                     end else
                         ValidaEmail(EnderecoEmail);
 
                     FileName := Text0009 + ' ' + Format("Hist. Cab. Movs. Empregado"."Cód. Processamento") +
-                                 '_' + Format("Hist. Cab. Movs. Empregado"."No. Empregado") + '.pdf';
+                                 '_' + Format("Hist. Cab. Movs. Empregado"."Employee No.") + '.pdf';
 
 
                     // REPORT A IMPRIMIR, DIRECTORIO E NOME DO FICHEIRO
@@ -87,7 +87,7 @@ report 53100 "Enviar Recibo via EMail"
                     Recipients.Add(EnderecoEmail);
 
                     CU_TempBlob.CreateOutStream(l_OutStream);
-                    RReciboVencimentos.InitData("Periodos Processamento"."Cód. Processamento", "Hist. Cab. Movs. Empregado"."No. Empregado");
+                    RReciboVencimentos.InitData("Periodos Processamento"."Cód. Processamento", "Hist. Cab. Movs. Empregado"."Employee No.");
                     RReciboVencimentos.UseRequestPage(false);
                     CU_TempBlob.CreateInStream(l_inStream);
                     Clear(RReciboVencimentos);
@@ -127,7 +127,7 @@ report 53100 "Enviar Recibo via EMail"
                     
                     TemporaryFolder := FileManagement.CreateClientTempSubDirectory;
                     FileNameNew := TemporaryFolder+'\'+Text0009+' '+ FORMAT("Hist. Cab. Movs. Empregado"."Cód. Processamento") +
-                                 '_' + FORMAT("Hist. Cab. Movs. Empregado"."No. Empregado") + '.pdf';
+                                 '_' + FORMAT("Hist. Cab. Movs. Empregado"."Employee No.") + '.pdf';
                     
                     FileManagement.MoveFile(FileName,FileNameNew);
                     //#001 START SQD RTV 20200428

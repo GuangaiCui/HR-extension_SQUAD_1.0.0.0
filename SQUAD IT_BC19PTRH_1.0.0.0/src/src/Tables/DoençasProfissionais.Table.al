@@ -3,12 +3,12 @@ table 53084 "Doenças Profissionais"
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
             AutoIncrement = true;
             Caption = 'Entry No.';
         }
-        field(5; "No. Empregado"; Code[20])
+        field(5; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -69,7 +69,7 @@ table 53084 "Doenças Profissionais"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }

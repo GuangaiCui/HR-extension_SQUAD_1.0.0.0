@@ -13,14 +13,14 @@ table 53113 "Integração Contabilistica"
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
-        field(3; "No. Empregado"; Code[20])
+        field(3; "Employee No."; Code[20])
         {
             TableRelation = Empregado;
 
             trigger OnValidate()
             begin
                 CreateDim(
-                  DATABASE::Empregado, "No. Empregado",
+                  DATABASE::Empregado, "Employee No.",
                   DATABASE::"Periodos Processamento", "Cód. Processamento");
             end;
         }
@@ -100,17 +100,17 @@ table 53113 "Integração Contabilistica"
 
     keys
     {
-        key(Key1; "Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha")
+        key(Key1; "Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado")
+        key(Key2; "Employee No.")
         {
         }
         key(Key3; "No. Conta")
         {
         }
-        key(Key4; "No. Empregado", "Cód. Rubrica")
+        key(Key4; "Employee No.", "Cód. Rubrica")
         {
         }
     }

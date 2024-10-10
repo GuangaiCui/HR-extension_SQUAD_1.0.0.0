@@ -20,8 +20,8 @@ report 53064 "Horas Extra por Empregado"
     {
         dataitem("Histórico Horas Extra"; "Histórico Horas Extra")
         {
-            DataItemTableView = SORTING("No. Empregado", Data);
-            RequestFilterFields = "No. Empregado", Data, "Cód. Hora Extra";
+            DataItemTableView = SORTING("Employee No.", Data);
+            RequestFilterFields = "Employee No.", Data, "Cód. Hora Extra";
             column(FORMAT_TODAY_0_4_; Format(Today, 0, 4))
             {
             }
@@ -55,7 +55,7 @@ report 53064 "Horas Extra por Empregado"
             column("Histórico_Horas_Extra__TABLECAPTION__________HoraExtraFiltro"; "Histórico Horas Extra".TableCaption + ': ' + HoraExtraFiltro)
             {
             }
-            column("Histórico_Horas_Extra__Histórico_Horas_Extra___N__Empregado_"; "Histórico Horas Extra"."No. Empregado")
+            column("Histórico_Horas_Extra__Histórico_Horas_Extra___N__Empregado_"; "Histórico Horas Extra"."Employee No.")
             {
             }
             column(Employee_FullName; Employee.FullName)
@@ -70,7 +70,7 @@ report 53064 "Horas Extra por Empregado"
             column("Histórico_Horas_Extra__Histórico_Horas_Extra__Descrição"; "Histórico Horas Extra".Descrição)
             {
             }
-            column("Histórico_Horas_Extra_Quantidade"; Quantidade)
+            column("Histórico_Horas_Extra_Quantidade"; Quantity)
             {
             }
             column(CurrReport_PAGENOCaption; CurrReport_PAGENOCaptionLbl)
@@ -88,21 +88,21 @@ report 53064 "Horas Extra por Empregado"
             column("Histórico_Horas_Extra__Histórico_Horas_Extra__DescriçãoCaption"; FieldCaption(Descrição))
             {
             }
-            column("Histórico_Horas_Extra_QuantidadeCaption"; FieldCaption(Quantidade))
+            column("Histórico_Horas_Extra_QuantidadeCaption"; FieldCaption(Quantity))
             {
             }
-            column("Histórico_Horas_Extra_N__Mov_"; "No. Mov.")
+            column("Histórico_Horas_Extra_N__Mov_"; "Entry No.")
             {
             }
 
             trigger OnAfterGetRecord()
             begin
-                Employee.Get("No. Empregado");
+                Employee.Get("Employee No.");
             end;
 
             trigger OnPreDataItem()
             begin
-                LastFieldNo := FieldNo("No. Empregado");
+                LastFieldNo := FieldNo("Employee No.");
             end;
         }
     }

@@ -41,8 +41,8 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
     {
         dataitem(Totais; "Hist. Linhas Movs. Empregado")
         {
-            DataItemTableView = SORTING("No. Empregado", "Tipo Rendimento Cat.A") WHERE("Tipo Rendimento" = CONST(A), "Tipo Processamento" = FILTER(<> Encargos));
-            RequestFilterFields = "No. Empregado";
+            DataItemTableView = SORTING("Employee No.", "Tipo Rendimento Cat.A") WHERE("Tipo Rendimento" = CONST(A), "Tipo Processamento" = FILTER(<> Encargos));
+            RequestFilterFields = "Employee No.";
             column(TotCount; TotCount)
             {
             }
@@ -178,7 +178,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
             column(Totais_Tipo_Processamento; "Tipo Processamento")
             {
             }
-            column(Totais_N__Empregado; "No. Empregado")
+            column(Totais_N__Empregado; "Employee No.")
             {
             }
             column(Totais_N__Linha; "No. Linha")
@@ -215,7 +215,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                 //--------------------------------------------------------
                 //Limpar Variáveis
                 //--------------------------------------------------------
-                if (Totais."No. Empregado" <> AuxEmp) or
+                if (Totais."Employee No." <> AuxEmp) or
                    (Totais."Tipo Rendimento Cat.A" <> AuxTipoRend) then begin
                     RendimentosAno := 0;
                     ImportanciasRetidas := 0;
@@ -224,7 +224,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                     SobreTaxa := 0;
                 end;
 
-                AuxEmp := Totais."No. Empregado";
+                AuxEmp := Totais."Employee No.";
                 AuxTipoRend := Totais."Tipo Rendimento Cat.A";
 
                 //-----------------------------------------------------------------
@@ -247,7 +247,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                                 repeat
                                     if TabRubricaLinhas."Cód. Rubrica Filha" = Totais."Cód. Rubrica" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
-                                            varLimite := Totais.Quantidade * TabRubricaLinhas."Valor Limite Máximo"
+                                            varLimite := Totais.Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
                                             varLimite := 0;
                                         RendimentosAno := RendimentosAno + Round(Totais.Valor, 0.01) - varLimite;
@@ -280,7 +280,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                                 repeat
                                     if TabRubricaLinhas."Cód. Rubrica Filha" = Totais."Cód. Rubrica" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
-                                            varLimite := Totais.Quantidade * TabRubricaLinhas."Valor Limite Máximo"
+                                            varLimite := Totais.Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
                                             varLimite := 0;
                                         RendimentosAno := RendimentosAno + Round(Totais.Valor, 0.01) - varLimite;
@@ -462,7 +462,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
         }
         dataitem("Hist. Linhas Movs. Empregado2"; "Hist. Linhas Movs. Empregado")
         {
-            DataItemTableView = SORTING("No. Empregado", "Tipo Rendimento Cat.A") WHERE("Tipo Rendimento" = CONST(A), "Tipo Processamento" = FILTER(<> Encargos));
+            DataItemTableView = SORTING("Employee No.", "Tipo Rendimento Cat.A") WHERE("Tipo Rendimento" = CONST(A), "Tipo Processamento" = FILTER(<> Encargos));
             column(Empregado__No__Contribuinte_; Empregado."No. Contribuinte")
             {
             }
@@ -496,7 +496,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
             column(Hist__Linhas_Movs__Empregado2_Tipo_Processamento; "Tipo Processamento")
             {
             }
-            column(Hist__Linhas_Movs__Empregado2_N__Empregado; "No. Empregado")
+            column(Hist__Linhas_Movs__Empregado2_N__Empregado; "Employee No.")
             {
             }
             column(Hist__Linhas_Movs__Empregado2_N__Linha; "No. Linha")
@@ -505,7 +505,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
 
             trigger OnAfterGetRecord()
             begin
-                Empregado.Get("Hist. Linhas Movs. Empregado2"."No. Empregado");
+                Empregado.Get("Hist. Linhas Movs. Empregado2"."Employee No.");
                 if "Hist. Linhas Movs. Empregado2"."Tipo Rendimento Cat.A" = 0 then
                     TipoProc := 1
                 else
@@ -515,7 +515,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                 //Limpar Variáveis
                 //--------------------------------------------------------
 
-                if ("Hist. Linhas Movs. Empregado2"."No. Empregado" <> AuxEmp) or
+                if ("Hist. Linhas Movs. Empregado2"."Employee No." <> AuxEmp) or
                    (("Hist. Linhas Movs. Empregado2"."Tipo Rendimento Cat.A" <> AuxTipoRend) and
                      (RendimentosAno <> 0)) then begin //normatica 2014.02.11 se os rendimentos são 0 então os retidos aparecem na linha a seguir
                     RendimentosAno := 0;
@@ -525,7 +525,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                     SobreTaxa := 0;
                 end;
 
-                AuxEmp := "Hist. Linhas Movs. Empregado2"."No. Empregado";
+                AuxEmp := "Hist. Linhas Movs. Empregado2"."Employee No.";
                 AuxTipoRend := "Hist. Linhas Movs. Empregado2"."Tipo Rendimento Cat.A";
                 //-----------------------------------------------------------------
                 //Calcular qual os rendimentos do ano - sobre os quais incide irs
@@ -547,7 +547,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                                 repeat
                                     if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
-                                            varLimite := "Hist. Linhas Movs. Empregado2".Quantidade * TabRubricaLinhas."Valor Limite Máximo"
+                                            varLimite := "Hist. Linhas Movs. Empregado2".Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
                                             varLimite := 0;
                                         RendimentosAno := RendimentosAno + Round("Hist. Linhas Movs. Empregado2".Valor, 0.01) - varLimite;
@@ -583,7 +583,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                                 repeat
                                     if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
-                                            varLimite := "Hist. Linhas Movs. Empregado2".Quantidade * TabRubricaLinhas."Valor Limite Máximo"
+                                            varLimite := "Hist. Linhas Movs. Empregado2".Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
                                             varLimite := 0;
                                         RendimentosAno := RendimentosAno + Round("Hist. Linhas Movs. Empregado2".Valor, 0.01) - varLimite;
@@ -626,7 +626,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                                 repeat
                                     if TabRubricaLinhas."Cód. Rubrica Filha" = "Hist. Linhas Movs. Empregado2"."Cód. Rubrica" then begin
                                         if TabRubricaLinhas."Valor Limite Máximo" <> 0 then
-                                            varLimite := "Hist. Linhas Movs. Empregado2".Quantidade * TabRubricaLinhas."Valor Limite Máximo"
+                                            varLimite := "Hist. Linhas Movs. Empregado2".Quantity * TabRubricaLinhas."Valor Limite Máximo"
                                         else
                                             varLimite := 0;
                                         RendimentosAno := RendimentosAno + varLimite;
@@ -719,7 +719,7 @@ report 53088 "Mapa Dec. Mensal Remu. AT"
                     i := 1;
 
                     Empregado.Reset;
-                    Empregado.SetRange(Empregado."No.", "Hist. Linhas Movs. Empregado2"."No. Empregado");
+                    Empregado.SetRange(Empregado."No.", "Hist. Linhas Movs. Empregado2"."Employee No.");
                     if Empregado.FindFirst then begin
                         if Desconto <> 0 then begin
                             if Empregado."Subscritor SS" then begin

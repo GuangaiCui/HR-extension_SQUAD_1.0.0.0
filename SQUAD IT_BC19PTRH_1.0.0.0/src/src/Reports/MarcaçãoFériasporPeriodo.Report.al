@@ -32,7 +32,7 @@ report 53092 "Marcação Férias por Periodo"
                                     TabFeriasEmpregado.Reset;
                                     if not TabFeriasEmpregado.Get(Empregado."No.", TabData."Period Start") then begin
                                         TabFeriasEmpregado.Init;
-                                        TabFeriasEmpregado."No. Empregado" := Empregado."No.";
+                                        TabFeriasEmpregado."Employee No." := Empregado."No.";
                                         TabFeriasEmpregado.Data := TabData."Period Start";
                                         if Tipo = Tipo::Ferias then
                                             TabFeriasEmpregado.Tipo := 0

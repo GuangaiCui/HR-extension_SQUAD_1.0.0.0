@@ -73,8 +73,8 @@ report 53083 "Mapa Pagamento por Cheque/Num"
             dataitem("Cab. Movs. Empregado"; "Cab. Movs. Empregado")
             {
                 CalcFields = Valor;
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado") ORDER(Ascending) WHERE("Usa Transferência Bancária" = CONST(false));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.") ORDER(Ascending) WHERE("Usa Transferência Bancária" = CONST(false));
 
                 trigger OnAfterGetRecord()
                 begin
@@ -124,8 +124,8 @@ report 53083 "Mapa Pagamento por Cheque/Num"
             }
             dataitem("Hist. Cab. Movs. Empregado"; "Hist. Cab. Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado") WHERE("Usa Transferência Bancária" = CONST(false));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.") WHERE("Usa Transferência Bancária" = CONST(false));
 
                 trigger OnAfterGetRecord()
                 begin
@@ -279,7 +279,7 @@ report 53083 "Mapa Pagamento por Cheque/Num"
                 ValorTotalEmpregado := 0;
 
                 _HistCabEmp.Reset;
-                _HistCabEmp.SetRange("No. Empregado", Empregado."No.");
+                _HistCabEmp.SetRange("Employee No.", Empregado."No.");
 
                 if FiltroCodProc = '' then begin
                     if (FiltroDataInicProc <> '') and (FiltroDataFimProc <> '') then begin
@@ -305,7 +305,7 @@ report 53083 "Mapa Pagamento por Cheque/Num"
                     TemHistMovEmp := true;
 
                 _CabMovEmp.Reset;
-                _CabMovEmp.SetRange("No. Empregado", Empregado."No.");
+                _CabMovEmp.SetRange("Employee No.", Empregado."No.");
 
                 if FiltroCodProc = '' then begin
                     if (FiltroDataInicProc <> '') and (FiltroDataFimProc <> '') then begin

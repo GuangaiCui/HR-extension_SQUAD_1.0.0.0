@@ -22,10 +22,10 @@ report 53036 "Hora Extra Colectiva"
                 //Não apanhar os empregados que não estão Activos
                 if Empregado.Status = Empregado.Status::Active then begin
                     TabHoraExtra.Init;
-                    TabHoraExtra.Validate(TabHoraExtra."No. Empregado", Empregado."No.");
+                    TabHoraExtra.Validate(TabHoraExtra."Employee No.", Empregado."No.");
                     TabHoraExtra.Validate(TabHoraExtra."Cód. Hora Extra", VarTipoHora);
                     TabHoraExtra.Validate(TabHoraExtra.Data, VarData);
-                    TabHoraExtra.Validate(TabHoraExtra.Quantidade, VarQuantidade);
+                    TabHoraExtra.Validate(TabHoraExtra.Quantity, VarQuantidade);
                     TabHoraExtra.Insert(true);
                 end;
             end;

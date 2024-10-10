@@ -28,7 +28,7 @@ page 53110 "Lista Hist. Movs. Empregado"
 
 
                 }
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -63,22 +63,22 @@ page 53110 "Lista Hist. Movs. Empregado"
 
 
                 }
-                field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
+                field("Debit Acc. No."; Rec."Debit Acc. No.")
                 {
 
 
                 }
-                field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
+                field("Credit Acc. No."; Rec."Credit Acc. No.")
                 {
 
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
 
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
 

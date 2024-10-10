@@ -117,8 +117,8 @@ report 53057 "Mapa Férias Empregado"
             }
             dataitem("Férias Empregados"; "Férias Empregados")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Empregado", Data) WHERE(Tipo = CONST(ferias));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", Data) WHERE(Tipo = CONST(ferias));
 
                 trigger OnAfterGetRecord()
                 begin

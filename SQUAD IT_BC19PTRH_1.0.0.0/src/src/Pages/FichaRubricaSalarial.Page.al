@@ -40,17 +40,17 @@ page 53098 "Ficha Rubrica Salarial"
 
 
                 }
-                field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
+                field("Debit Acc. No."; Rec."Debit Acc. No.")
                 {
 
 
                 }
-                field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
+                field("Credit Acc. No."; Rec."Credit Acc. No.")
                 {
 
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
 
@@ -60,7 +60,7 @@ page 53098 "Ficha Rubrica Salarial"
                         Validacao;
                     end;
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
 
@@ -267,7 +267,7 @@ page 53098 "Ficha Rubrica Salarial"
     begin
         //HG 21.10.05 - Não deixar uma Rubrica ter valor e Rubricas Filhas ao mesmo tempo
 
-        if (Rec.Quantidade = 0) and (Rec."Valor Unitário" = 0) and (Rec."Valor Total" = 0) then
+        if (Rec.Quantity = 0) and (Rec."Unit Value" = 0) and (Rec."Valor Total" = 0) then
             RubricaSalarialLinhasEditable := true
         else
             RubricaSalarialLinhasEditable := false;
@@ -275,8 +275,8 @@ page 53098 "Ficha Rubrica Salarial"
         TabRubricaLinhas.Reset;
         TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", Rec."Código");
         if TabRubricaLinhas.Find('-') then begin
-            Rec.Quantidade := 0;
-            Rec."Valor Unitário" := 0;
+            Rec.Quantity := 0;
+            Rec."Unit Value" := 0;
             Rec."Valor Total" := 0;
             Message(Text0002, Rec."Código");
         end;

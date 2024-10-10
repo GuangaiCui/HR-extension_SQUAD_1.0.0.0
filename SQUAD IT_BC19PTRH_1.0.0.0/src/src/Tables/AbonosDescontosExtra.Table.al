@@ -5,11 +5,11 @@ table 53074 "Abonos - Descontos Extra"
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
-            Caption = 'Entry No.';
+            Caption = 'No. Mov.';
         }
-        field(2; "No. Empregado"; Code[20])
+        field(2; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -28,8 +28,8 @@ table 53074 "Abonos - Descontos Extra"
                 TabRubrica.Get("Cód. Rubrica");
                 "Tipo Rubrica" := TabRubrica."Tipo Rubrica";
                 "Descrição Rubrica" := TabRubrica.Descrição;
-                Quantidade := TabRubrica.Quantidade;
-                "Valor Unitário" := TabRubrica."Valor Unitário";
+                Quantity := TabRubrica.Quantity;
+                "Unit Value" := TabRubrica."Unit Value";
                 "Valor Total" := TabRubrica."Valor Total";
             end;
         }
@@ -43,22 +43,22 @@ table 53074 "Abonos - Descontos Extra"
         {
             Caption = 'Salary Item Description';
         }
-        field(14; Quantidade; Decimal)
+        field(14; Quantity; Decimal)
         {
             Caption = 'Quantity';
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantidade * "Valor Unitário";
+                "Valor Total" := Quantity * "Unit Value";
             end;
         }
-        field(15; "Valor Unitário"; Decimal)
+        field(15; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantidade * "Valor Unitário";
+                "Valor Total" := Quantity * "Unit Value";
             end;
         }
         field(16; "Valor Total"; Decimal)
@@ -70,9 +70,9 @@ table 53074 "Abonos - Descontos Extra"
             Caption = 'Unit code';
             TableRelation = "Unid. Medida Recursos Humanos";
         }
-        field(21; "Abono - Desconto Bloqueado"; Boolean)
+        field(21; "Earning - Blocked Deduction"; Boolean)
         {
-            Caption = 'Earning - Deduction Bloqued';
+            Caption = 'Abono - Desconto Bloqueado';
             Editable = false;
         }
         field(30; "Global Dimension 1 Code"; Code[20])
@@ -111,11 +111,11 @@ table 53074 "Abonos - Descontos Extra"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado", "Data a que se refere o Mov.")
+        key(Key2; "Employee No.", "Data a que se refere o Mov.")
         {
         }
     }
@@ -129,7 +129,7 @@ table 53074 "Abonos - Descontos Extra"
         //2009.02.26 - quando se apaga uma ausencia temos de apagar os comentários da mesma
         HumanResComment.Reset;
         HumanResComment.SetRange(HumanResComment."Table Name", DATABASE::"Abonos - Descontos Extra");
-        HumanResComment.SetRange(HumanResComment."Table Line No.", "No. Mov.");
+        HumanResComment.SetRange(HumanResComment."Table Line No.", "Entry No.");
         if HumanResComment.Find('-') then
             HumanResComment.DeleteAll;
 
@@ -138,11 +138,11 @@ table 53074 "Abonos - Descontos Extra"
 
     trigger OnInsert()
     begin
-        TabAbonosDescExtra.SetCurrentKey(TabAbonosDescExtra."No. Mov.");
+        TabAbonosDescExtra.SetCurrentKey(TabAbonosDescExtra."Entry No.");
         if TabAbonosDescExtra.Find('+') then
-            "No. Mov." := TabAbonosDescExtra."No. Mov." + 1
+            "Entry No." := TabAbonosDescExtra."Entry No." + 1
         else
-            "No. Mov." := 1;
+            "Entry No." := 1;
 
 
         //2009.03.11

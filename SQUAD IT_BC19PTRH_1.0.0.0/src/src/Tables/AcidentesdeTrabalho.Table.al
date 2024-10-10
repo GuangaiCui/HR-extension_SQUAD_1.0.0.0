@@ -3,12 +3,12 @@ table 53083 "Acidentes de Trabalho"
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
             AutoIncrement = true;
-            Caption = 'Entry No.';
+            Caption = 'No. Mov.';
         }
-        field(4; "No. Empregado"; Code[20])
+        field(4; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -16,7 +16,7 @@ table 53083 "Acidentes de Trabalho"
             trigger OnValidate()
             begin
                 TabEmpregado.Reset;
-                if TabEmpregado.Get("No. Empregado") then
+                if TabEmpregado.Get("Employee No.") then
                     Nome := TabEmpregado.Name
                 else
                     Nome := '';
@@ -79,7 +79,7 @@ table 53083 "Acidentes de Trabalho"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }

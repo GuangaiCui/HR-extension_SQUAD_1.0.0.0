@@ -1243,10 +1243,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Diário Imposto Selo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4017863741 - Field 866312237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>E-mail of HR Responsable</source>
+        <trans-unit id="Table 4017863741 - Field 4160603890 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>E-mail responsável RH</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field E-mail responsável RH - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field E-mail of HR Responsable - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 3500962882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee Nos.</source>
@@ -1258,10 +1258,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Entidade - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4017863741 - Field 2922293399 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fax of HR Responsable</source>
+        <trans-unit id="Table 4017863741 - Field 2440306900 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fax responsável RH</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Fax responsável RH - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Fax of HR Responsable - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 3695295732 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Customer Posting Group</source>
@@ -1277,6 +1277,21 @@
           <source>VAT Business Posting Group</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Gr. Registo IVA negócio - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4017863741 - Field 4290892503 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Seguradora</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Insurance Company - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4017863741 - Field 2704330142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Secção Diario</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Journal Batch Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4017863741 - Field 3684440170 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nome Livro Diario</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Journal Template Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 31645466 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Number of Absence Days to Cut Vacation/Christmas Salary</source>
@@ -1307,6 +1322,11 @@
           <source>Month of Settlement of Vacation Salary</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Mês Acerto Sub. Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4017863741 - Field 890217556 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nome responsável RH</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Name of HR Responsable - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 4294604833 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>NIPC ADSE</source>
@@ -1463,16 +1483,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Nome Diário Duodécimos - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4017863741 - Field 3167011201 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Journal Template Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Nome Livro Diario - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4017863741 - Field 1804792725 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Name of HR Responsable</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Nome responsável RH - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 4017863741 - Field 3901246465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Journal Batch Twelfhs</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1508,6 +1518,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Pagamento total Sub. Férias - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 4017863741 - Field 1175485989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Telefone responsável RH</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Phone of HR Responsable - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4017863741 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary Key</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1523,20 +1538,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Retroactivos Processados - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4017863741 - Field 167909186 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Journal Batch Name</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Secção Diario - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 4017863741 - Field 1048755548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Journal Batch Stamp Duty</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Secção Imposto Selo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4017863741 - Field 1222216785 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Insurance</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Seguradora - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 568989908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Surcharge %</source>
@@ -1558,15 +1563,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Taxa Contributiva Ent Patronal - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4017863741 - Field 2054034940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Phone of HR Responsable</source>
+        <trans-unit id="Table 4017863741 - Field 3912138436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Usar Feriados calculo Sub Ali</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Telefone responsável RH - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 4017863741 - Field 1732454153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Using Holidays to Calculate Lunch Subsidy</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Usar Feriados calculo Sub Ali - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Use Holidays to Calc Lunch Sub - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 2623231506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Valor Cálculo Ausências</source>
@@ -1958,30 +1958,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 720289981 - Field 4185883070 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Detachment End Date</source>
+        <trans-unit id="Table 720289981 - Field 3555207522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Início Destacamento</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Data Fim Destacamento - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Detachment Begin Date - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 720289981 - Field 2082459369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Detachment Begin Date</source>
+        <trans-unit id="Table 720289981 - Field 1142156954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Fim Destacamento</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Data Início Destacamento - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Detachment End Date - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 720289981 - Field 3430051248 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Place of Detachment</source>
+        <trans-unit id="Table 720289981 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Emp.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Local de Destacamento - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Employee No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 720289981 - Field 2835563947 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee No.</source>
+        <trans-unit id="Table 720289981 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. Linha</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field No. Emp. - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Line No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 720289981 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Line No.</source>
+        <trans-unit id="Table 720289981 - Field 316651457 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Local de Destacamento</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field No. Linha - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Place of Detachment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2154913558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Dispensa Sit - Cargos Empregad</source>

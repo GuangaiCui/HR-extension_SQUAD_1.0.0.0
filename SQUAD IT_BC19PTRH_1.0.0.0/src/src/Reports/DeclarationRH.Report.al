@@ -53,7 +53,7 @@
 //                 if Contratos.Get(Empregado."Emplymt. Contract Code") then
 //                     EscreveWord('«tipo contrato»', Format(Contratos."Tipo Contrato"));
 //                 TabRubricaSalEmpregado.Reset;
-//                 TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."No. Empregado", Empregado."No.");
+//                 TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Employee No.", Empregado."No.");
 //                 TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Início", '<=%1', Today);
 //                 TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Fim", '>%1|=%2', Today, 0D);
 //                 if TabRubricaSalEmpregado.FindSet then begin

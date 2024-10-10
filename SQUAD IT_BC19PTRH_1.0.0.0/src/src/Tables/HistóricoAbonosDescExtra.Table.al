@@ -5,11 +5,11 @@ table 53107 "Histórico Abonos - Desc. Extra"
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
             Caption = 'Entry No.';
         }
-        field(2; "No. Empregado"; Code[20])
+        field(2; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -33,13 +33,13 @@ table 53107 "Histórico Abonos - Desc. Extra"
         {
             Caption = 'Salary Item Description';
         }
-        field(14; Quantidade; Decimal)
+        field(14; Quantity; Decimal)
         {
-            Caption = 'Quantity';
+            Caption = 'Quantidade';
         }
-        field(15; "Valor Unitário"; Decimal)
+        field(15; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
         }
         field(16; "Valor Total"; Decimal)
         {
@@ -80,11 +80,11 @@ table 53107 "Histórico Abonos - Desc. Extra"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado", "Data a que se refere o Mov.")
+        key(Key2; "Employee No.", "Data a que se refere o Mov.")
         {
         }
     }

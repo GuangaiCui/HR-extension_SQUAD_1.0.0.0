@@ -20,8 +20,8 @@ report 53069 "Mapa Trabalho Suplementar"
     {
         dataitem("Histórico Horas Extra"; "Histórico Horas Extra")
         {
-            DataItemTableView = SORTING("No. Empregado", Data);
-            RequestFilterFields = "No. Empregado", "Cód. Hora Extra";
+            DataItemTableView = SORTING("Employee No.", Data);
+            RequestFilterFields = "Employee No.", "Cód. Hora Extra";
             column(FORMAT_TODAY_0_4_; Format(Today, 0, 4))
             {
             }
@@ -80,7 +80,7 @@ report 53069 "Mapa Trabalho Suplementar"
             column(Employee_FullName; Employee.FullName)
             {
             }
-            column("Histórico_Horas_Extra__Histórico_Horas_Extra___N__Empregado_"; "Histórico Horas Extra"."No. Empregado")
+            column("Histórico_Horas_Extra__Histórico_Horas_Extra___N__Empregado_"; "Histórico Horas Extra"."Employee No.")
             {
             }
             column(ValorMes_1_; ValorMes[1])
@@ -146,7 +146,7 @@ report 53069 "Mapa Trabalho Suplementar"
             column(Total_N__HorasCaption; Total_N__HorasCaptionLbl)
             {
             }
-            column("Histórico_Horas_Extra_N__Mov_"; "No. Mov.")
+            column("Histórico_Horas_Extra_N__Mov_"; "Entry No.")
             {
             }
             column(Processado_por_ComputadorCaption; Processado_por_ComputadorCaptionLbl)
@@ -155,16 +155,16 @@ report 53069 "Mapa Trabalho Suplementar"
 
             trigger OnAfterGetRecord()
             begin
-                Employee.Get("Histórico Horas Extra"."No. Empregado");
+                Employee.Get("Histórico Horas Extra"."Employee No.");
                 for i := 1 to 6 do begin
                     if (Date2DMY("Histórico Horas Extra".Data, 2) = i) or (Date2DMY("Histórico Horas Extra".Data, 2) = i + 6) then
-                        ValorMes[i] := ValorMes[i] + "Histórico Horas Extra".Quantidade;
+                        ValorMes[i] := ValorMes[i] + "Histórico Horas Extra".Quantity;
                 end;
             end;
 
             trigger OnPreDataItem()
             begin
-                LastFieldNo := FieldNo("No. Empregado");
+                LastFieldNo := FieldNo("Employee No.");
 
                 if Semestre = Semestre::"1º semestre" then begin
                     NomeMes[1] := 'Jan';

@@ -73,7 +73,7 @@ table 53042 "Ausência Empregado"
         }
         field(7; Quantity; Decimal)
         {
-            Caption = 'Quantity';
+            Caption = 'Quantidade';
             DecimalPlaces = 0 : 5;
 
             trigger OnValidate()

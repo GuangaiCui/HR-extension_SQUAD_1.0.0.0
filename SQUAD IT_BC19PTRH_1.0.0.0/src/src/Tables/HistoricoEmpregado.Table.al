@@ -539,7 +539,7 @@ table 53111 "Historico Empregado"
         }
         field(108; "Cód. Cat. Profissional"; Code[20])
         {
-            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Cód. Cat. Prof." WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Cód. Cat. Prof." WHERE("Employee No." = FIELD("No."),
                                                                                       "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                       "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Professional Category Code';
@@ -547,7 +547,7 @@ table 53111 "Historico Empregado"
         }
         field(109; "Descrição Cat Prof"; Text[100])
         {
-            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Descrição" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Descrição" WHERE("Employee No." = FIELD("No."),
                                                                                 "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                 "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. Description';
@@ -555,7 +555,7 @@ table 53111 "Historico Empregado"
         }
         field(110; "Cód. Cat. Prof QP"; Code[20])
         {
-            CalcFormula = Lookup("Cat. Prof. QP Empregado"."Cód. Cat. Prof. QP" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Cat. Prof. QP Empregado"."Cód. Cat. Prof. QP" WHERE("Employee No." = FIELD("No."),
                                                                                        "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                        "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. QP Code';
@@ -563,7 +563,7 @@ table 53111 "Historico Empregado"
         }
         field(111; "Descrição Cat Prof QP"; Text[200])
         {
-            CalcFormula = Lookup("Cat. Prof. QP Empregado".Description WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Cat. Prof. QP Empregado".Description WHERE("Employee No." = FIELD("No."),
                                                                               "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                               "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
             Caption = 'Prof. Cate. QP Description';
@@ -596,7 +596,7 @@ table 53111 "Historico Empregado"
         }
         field(117; "Grau Função"; Code[20])
         {
-            CalcFormula = Lookup("Grau Função Empregado"."Cód. Grau Função" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Grau Função Empregado"."Cód. Grau Função" WHERE("Employee No." = FIELD("No."),
                                                                                    "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                                    "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
             Caption = 'Degree Role';
@@ -604,7 +604,7 @@ table 53111 "Historico Empregado"
         }
         field(118; "Descrição Grau Função"; Text[200])
         {
-            CalcFormula = Lookup("Grau Função Empregado"."Descrição" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Grau Função Empregado"."Descrição" WHERE("Employee No." = FIELD("No."),
                                                                             "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                             "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
             Caption = 'Degree Role Description';
@@ -612,7 +612,7 @@ table 53111 "Historico Empregado"
         }
         field(119; "Cód. Horário"; Code[20])
         {
-            CalcFormula = Lookup("Horário Empregado"."Cód. Horário" WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Lookup("Horário Empregado"."Cód. Horário" WHERE("Employee No." = FIELD("No."),
                                                                            "Data Iníco Horário" = FIELD("Data Filtro Inicio"),
                                                                            "Data Fim Horário" = FIELD("Data Filtro Fim")));
             Caption = 'Schedule Code';
@@ -730,7 +730,7 @@ table 53111 "Historico Empregado"
         }
         field(140; "Total Férias"; Decimal)
         {
-            CalcFormula = Sum("Férias Empregados"."Qtd." WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Sum("Férias Empregados"."Qtd." WHERE("Employee No." = FIELD("No."),
                                                                 Data = FIELD("Date Filter")));
             Caption = 'Total Vacations';
             DecimalPlaces = 0 : 5;
@@ -745,7 +745,7 @@ table 53111 "Historico Empregado"
         }
         field(142; "Hora Extra Total (Base)"; Decimal)
         {
-            CalcFormula = Sum("Histórico Horas Extra".Quantidade WHERE("No. Empregado" = FIELD("No."),
+            CalcFormula = Sum("Histórico Horas Extra".Quantity WHERE("Employee No." = FIELD("No."),
                                                                         "Cód. Hora Extra" = FIELD("Filtro Hora Extra"),
                                                                         Data = FIELD("Date Filter")));
             Caption = 'Extra Hour Total (Base)';

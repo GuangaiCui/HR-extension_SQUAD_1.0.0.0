@@ -153,8 +153,8 @@ report 53044 "Mapa Seg. Social - Fechado"
                     DataItemTableView = SORTING(Estabelecimento, "Cod. Regime SS", "No.") WHERE("Subscritor SS" = CONST(true));
                     dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
                     {
-                        DataItemLink = "No. Empregado" = FIELD("No.");
-                        DataItemTableView = SORTING("No. Empregado", "Data Registo");
+                        DataItemLink = "Employee No." = FIELD("No.");
+                        DataItemTableView = SORTING("Employee No.", "Data Registo");
 
                         trigger OnAfterGetRecord()
                         var
@@ -163,16 +163,16 @@ report 53044 "Mapa Seg. Social - Fechado"
                             l_RubricaFalta: Record "Rubrica Salarial";
                             l_Rubrica: Record "Rubrica Salarial";
                         begin
-                            if CodEmpregado <> "Hist. Linhas Movs. Empregado"."No. Empregado" then begin
+                            if CodEmpregado <> "Hist. Linhas Movs. Empregado"."Employee No." then begin
                                 TabControlar.DeleteAll;
-                                CodEmpregado := "Hist. Linhas Movs. Empregado"."No. Empregado";
+                                CodEmpregado := "Hist. Linhas Movs. Empregado"."Employee No.";
                             end;
 
                             TempHistLinhasMovs.Reset;
                             TempHistLinhasMovs.DeleteAll;
                             l_HistLinhaMov.Reset;
                             l_HistLinhaMov.SetRange("Cód. Processamento", "Hist. Linhas Movs. Empregado"."Cód. Processamento");
-                            l_HistLinhaMov.SetRange("No. Empregado", "Hist. Linhas Movs. Empregado"."No. Empregado");
+                            l_HistLinhaMov.SetRange("Employee No.", "Hist. Linhas Movs. Empregado"."Employee No.");
                             //IT009 - JTP - 2020.08.05
                             l_HistLinhaMov.SetFilter(Valor, '<>0');
                             if l_HistLinhaMov.FindSet then begin
@@ -197,7 +197,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                                             repeat
                                                 l_HistLinhaMov2.Reset;
                                                 l_HistLinhaMov2.SetRange("Cód. Processamento", "Hist. Linhas Movs. Empregado"."Cód. Processamento");
-                                                l_HistLinhaMov2.SetRange("No. Empregado", "Hist. Linhas Movs. Empregado"."No. Empregado");
+                                                l_HistLinhaMov2.SetRange("Employee No.", "Hist. Linhas Movs. Empregado"."Employee No.");
                                                 l_HistLinhaMov2.SetRange("Cód. Rubrica", l_RubricaFalta.Código);
                                                 if l_HistLinhaMov2.FindSet then begin
                                                     repeat
@@ -206,7 +206,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                                                         TempHistLinhasMovs.NATREM := l_HistLinhaMov.NATREM;
                                                         contalinha := contalinha + 1;
                                                         TempHistLinhasMovs."No. Linha" := TempHistLinhasMovs."No. Linha" + contalinha;
-                                                        TempHistLinhasMovs."Valor Incidência SS" := (l_HistLinhaMov.Valor / 30 * Abs(l_HistLinhaMov2.Quantidade)) * -1;
+                                                        TempHistLinhasMovs."Valor Incidência SS" := (l_HistLinhaMov.Valor / 30 * Abs(l_HistLinhaMov2.Quantity)) * -1;
                                                         TempHistLinhasMovs.Insert;
                                                     until l_HistLinhaMov2.Next = 0;
                                                 end;
@@ -451,7 +451,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                         TabHistCabMovEmp.SetFilter(TabHistCabMovEmp."Tipo Processamento", '%1|%2|%3',
                         TabHistCabMovEmp."Tipo Processamento"::Vencimentos, TabHistCabMovEmp."Tipo Processamento"::SubNatal,
                         TabHistCabMovEmp."Tipo Processamento"::SubFerias);
-                        TabHistCabMovEmp.SetRange(TabHistCabMovEmp."No. Empregado", Empregado."No.");
+                        TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Employee No.", Empregado."No.");
                         if TabHistCabMovEmp.FindSet then begin
                             repeat
                                 TabHistCabMovEmp.CalcFields(TabHistCabMovEmp.Valor);
@@ -467,7 +467,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                             TabHistMovsAux.Reset;
                             TabHistMovsAux.SetRange(TabHistMovsAux."Data Registo", "Periodos Processamento"."Data Inicio Processamento",
                             "Periodos Processamento"."Data Fim Processamento");
-                            TabHistMovsAux.SetRange(TabHistMovsAux."No. Empregado", Empregado."No.");
+                            TabHistMovsAux.SetRange(TabHistMovsAux."Employee No.", Empregado."No.");
                             TabHistMovsAux.SetRange(TabHistMovsAux.NATREM, 4);//P
                             TabHistMovsAux.SetFilter(TabHistMovsAux.Valor, '<0');//Faltas
                             if TabHistMovsAux.Find('-') then begin
@@ -494,7 +494,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                         if TabRubricaSal2.FindSet then begin
                             repeat
                                 TabHistLinhasMovs.Reset;
-                                TabHistLinhasMovs.SetRange(TabHistLinhasMovs."No. Empregado", Empregado."No.");
+                                TabHistLinhasMovs.SetRange(TabHistLinhasMovs."Employee No.", Empregado."No.");
                                 TabHistLinhasMovs.SetRange(TabHistLinhasMovs."Cód. Processamento", "Periodos Processamento"."Cód. Processamento");
                                 TabHistLinhasMovs.SetRange(TabHistLinhasMovs."Cód. Rubrica", TabRubricaSal2.Código);
                                 if TabHistLinhasMovs.FindSet then
@@ -822,10 +822,10 @@ report 53044 "Mapa Seg. Social - Fechado"
                 //calculos que já fazia.
 
                 TabHistMovsAux.Reset;
-                TabHistMovsAux.SetCurrentKey("Tipo Processamento", "Cód. Processamento", "No. Empregado", "No. Linha", "Data a que se refere o mov");
+                TabHistMovsAux.SetCurrentKey("Tipo Processamento", "Cód. Processamento", "Employee No.", "No. Linha", "Data a que se refere o mov");
                 TabHistMovsAux.SetRange(TabHistMovsAux."Data Registo", "Periodos Processamento"."Data Inicio Processamento",
                   "Periodos Processamento"."Data Fim Processamento");
-                TabHistMovsAux.SetRange(TabHistMovsAux."No. Empregado", Empregado."No.");
+                TabHistMovsAux.SetRange(TabHistMovsAux."Employee No.", Empregado."No.");
                 TabHistMovsAux.SetRange(TabHistMovsAux.NATREM, 4);//P
                 TabHistMovsAux.SetFilter(TabHistMovsAux.Valor, '<0');//Faltas
                 if TabHistMovsAux.Find('-') then begin
@@ -834,14 +834,14 @@ report 53044 "Mapa Seg. Social - Fechado"
                             TemHistMov.Reset;
                             TemHistMov.SetRange(TemHistMov."Cód. Processamento", TabHistMovsAux."Cód. Processamento");
                             TemHistMov.SetRange(TemHistMov."Tipo Processamento", TabHistMovsAux."Tipo Processamento");
-                            TemHistMov.SetRange(TemHistMov."No. Empregado", TabHistMovsAux."No. Empregado");
+                            TemHistMov.SetRange(TemHistMov."Employee No.", TabHistMovsAux."Employee No.");
                             if TemHistMov.Find('-') then begin
                                 Encontrou := false;
                                 repeat
                                     //C + 2008.04.03 - separei o if em dois
                                     if (TabRubrica2.Get(TabHistMovsAux."Cód. Rubrica") and (TabRubrica2.Genero = TabRubrica2.Genero::Falta)) then begin
                                         if (Date2DMY(TemHistMov."Data a que se refere o mov", 2) = Date2DMY(TabHistMovsAux."Data a que se refere o mov", 2)) then begin
-                                            TemHistMov.Quantidade := TemHistMov.Quantidade + TabHistMovsAux.Quantidade;
+                                            TemHistMov.Quantity := TemHistMov.Quantity + TabHistMovsAux.Quantity;
                                             TemHistMov.Valor := TemHistMov.Valor + TabHistMovsAux.Valor;
                                             TemHistMov.Modify;
                                             Encontrou := true;
@@ -865,10 +865,10 @@ report 53044 "Mapa Seg. Social - Fechado"
 
                 TemHistMov.Reset;
                 //    TemHistMov.SETCURRENTKEY("Cód. Processamento","Tipo Processamento","Nº Empregado","Nº Linha","Data Inicio");
-                TemHistMov.SetCurrentKey("Tipo Processamento", "Cód. Processamento", "No. Empregado", "No. Linha", "Data a que se refere o mov");
+                TemHistMov.SetCurrentKey("Tipo Processamento", "Cód. Processamento", "Employee No.", "No. Linha", "Data a que se refere o mov");
                 TemHistMov.SetRange(TemHistMov."Data Registo", "Periodos Processamento"."Data Inicio Processamento",
                   "Periodos Processamento"."Data Fim Processamento");
-                TemHistMov.SetRange(TemHistMov."No. Empregado", Empregado."No.");
+                TemHistMov.SetRange(TemHistMov."Employee No.", Empregado."No.");
                 TemHistMov.SetRange(TemHistMov.NATREM, 4);//P
                 TemHistMov.SetFilter(TemHistMov.Valor, '<0');//Faltas
                                                              //2012.02.24 - filtro para não apanhar as faltas do proprio mes
@@ -890,7 +890,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                             if (TabRubrica2.Get(TemHistMov."Cód. Rubrica")) then begin
                                 if (TabRubrica2.Genero = TabRubrica2.Genero::Falta) then begin //HG 30.04.07
                                     AuxValorFaltas := AuxValorFaltas + Round(TemHistMov.Valor, 0.01);
-                                    AuxDiasFaltas := AuxDiasFaltas + Abs(TemHistMov.Quantidade);
+                                    AuxDiasFaltas := AuxDiasFaltas + Abs(TemHistMov.Quantity);
                                     FlagFalta := true;
 
                                     if (CodRubrica <> TemHistMov."Cód. Rubrica") or (DataFalta <> 0D) and
@@ -950,11 +950,11 @@ report 53044 "Mapa Seg. Social - Fechado"
                                        //Esses dias são abatidos aos 30 dias da linha do VB no Ficheiro Seg. Social
                             if (TabRubSal.Genero = TabRubSal.Genero::"Admissão-Demissão") then //HG 30.04.07
                                                                                                //Erro de conversão de variável integer Vs decimal. Empregado com data de admissão do corrente Mês trabalhou um dia incompleto.
-                                if StrPos(Format(TemHistMov.Quantidade), ',') <> 0 then begin
-                                    AuxDiasNTrabalhados := AuxDiasNTrabalhados + Round(Abs(TemHistMov.Quantidade * 10), 1);
+                                if StrPos(Format(TemHistMov.Quantity), ',') <> 0 then begin
+                                    AuxDiasNTrabalhados := AuxDiasNTrabalhados + Round(Abs(TemHistMov.Quantity * 10), 1);
                                     boolAdmission := true;
                                 end else
-                                    AuxDiasNTrabalhados := AuxDiasNTrabalhados + Abs(TemHistMov.Quantidade);
+                                    AuxDiasNTrabalhados := AuxDiasNTrabalhados + Abs(TemHistMov.Quantity);
                             //HG 30.04.07
                         end;
                     until TemHistMov.Next = 0;
@@ -962,16 +962,16 @@ report 53044 "Mapa Seg. Social - Fechado"
                 //2012.02.24 - abater os dias não trabalhados deste mês
                 AuxDiasFaltaMes := 0;
                 TemHistMov.Reset;
-                TemHistMov.SetCurrentKey("Tipo Processamento", "Cód. Processamento", "No. Empregado", "No. Linha", "Data a que se refere o mov");
+                TemHistMov.SetCurrentKey("Tipo Processamento", "Cód. Processamento", "Employee No.", "No. Linha", "Data a que se refere o mov");
                 TemHistMov.SetRange(TemHistMov."Data Registo", "Periodos Processamento"."Data Inicio Processamento",
                   "Periodos Processamento"."Data Fim Processamento");
-                TemHistMov.SetRange(TemHistMov."No. Empregado", Empregado."No.");
+                TemHistMov.SetRange(TemHistMov."Employee No.", Empregado."No.");
                 TemHistMov.SetRange(TemHistMov.NATREM, 4);//P
                 TemHistMov.SetFilter(TemHistMov.Valor, '<0');//Faltas
                 TemHistMov.SetFilter(TemHistMov."Data a que se refere o mov", '>=%1', "Periodos Processamento"."Data Inicio Processamento");
                 if TemHistMov.FindSet then begin
                     repeat
-                        AuxDiasFaltaMes := AuxDiasFaltaMes + Abs(TemHistMov.Quantidade);
+                        AuxDiasFaltaMes := AuxDiasFaltaMes + Abs(TemHistMov.Quantity);
                     until TemHistMov.Next = 0;
                     if StrPos(Format(AuxDiasFaltaMes), ',') = 0 then  //é um valor inteiro
                         AuxDiasNTrabalhados := AuxDiasNTrabalhados + AuxDiasFaltaMes;
@@ -992,10 +992,10 @@ report 53044 "Mapa Seg. Social - Fechado"
 
             //2012.08.21 - CPA reportou que no fecho de contas as linhas de Natrem 2 não vem com o numero de dias certos
             if strNatrem = ' 2' then begin
-                if StrPos(Format("Hist. Linhas Movs. Empregado".Quantidade), ',') <> 0 then //é um numero décimal 2015.04.21
-                    DiasTrabalho := DelChr(Format(Round(Abs("Hist. Linhas Movs. Empregado".Quantidade), 0.1, '=')), '=', ',')
+                if StrPos(Format("Hist. Linhas Movs. Empregado".Quantity), ',') <> 0 then //é um numero décimal 2015.04.21
+                    DiasTrabalho := DelChr(Format(Round(Abs("Hist. Linhas Movs. Empregado".Quantity), 0.1, '=')), '=', ',')
                 else
-                    DiasTrabalho := DelChr(Format(Round(Abs("Hist. Linhas Movs. Empregado".Quantidade * 10), 0.1, '=')), '=', ',');
+                    DiasTrabalho := DelChr(Format(Round(Abs("Hist. Linhas Movs. Empregado".Quantity * 10), 0.1, '=')), '=', ',');
             end;
 
             // ******************************* Repor Faltas**********************************************
@@ -1006,8 +1006,8 @@ report 53044 "Mapa Seg. Social - Fechado"
             //NO ficheiro só pode colocar uma linha por cada mês
 
             TabHistAboDesExtra.Reset;
-            TabHistAboDesExtra.SetCurrentKey(TabHistAboDesExtra."No. Empregado", TabHistAboDesExtra."Data a que se refere o Mov.");
-            TabHistAboDesExtra.SetRange(TabHistAboDesExtra."No. Empregado", Empregado."No.");
+            TabHistAboDesExtra.SetCurrentKey(TabHistAboDesExtra."Employee No.", TabHistAboDesExtra."Data a que se refere o Mov.");
+            TabHistAboDesExtra.SetRange(TabHistAboDesExtra."Employee No.", Empregado."No.");
             TabHistAboDesExtra.SetRange(TabHistAboDesExtra.Data, "Periodos Processamento"."Data Inicio Processamento",
               "Periodos Processamento"."Data Fim Processamento");
             TabHistAboDesExtra.SetRange(TabHistAboDesExtra."Anular Falta", true);
@@ -1024,7 +1024,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                             and (Date2DMY(TempTabHistAboDesExtra."Data a que se refere o Mov.", 3) =
                             Date2DMY(TabHistAboDesExtra."Data a que se refere o Mov.", 3)) then begin
                                 Encontrou := true;
-                                TempTabHistAboDesExtra.Quantidade := TempTabHistAboDesExtra.Quantidade + TabHistAboDesExtra.Quantidade;
+                                TempTabHistAboDesExtra.Quantity := TempTabHistAboDesExtra.Quantity + TabHistAboDesExtra.Quantity;
                                 TempTabHistAboDesExtra."Valor Total" := TempTabHistAboDesExtra."Valor Total" + TabHistAboDesExtra."Valor Total";
                                 TempTabHistAboDesExtra.Modify;
                             end;
@@ -1054,10 +1054,10 @@ report 53044 "Mapa Seg. Social - Fechado"
                      + Format(Empregado."Birth Date", 0, '<Year4><Month,2><Day,2>')                              //Data Nascimento
                      + Format(TempTabHistAboDesExtra."Data a que se refere o Mov.", 0, '<Year4><Month,2>');    //Data Mov
                                                                                                                //2007.03.20 acrescentei este if porque ele limpa as casas decimais (ex: qtd = 26,00 aparece 26)
-                    if StrPos(Format(TempTabHistAboDesExtra.Quantidade), ',') = 0 then
-                        AuxDiasFaltas3 := Format(TempTabHistAboDesExtra.Quantidade) + '0'
+                    if StrPos(Format(TempTabHistAboDesExtra.Quantity), ',') = 0 then
+                        AuxDiasFaltas3 := Format(TempTabHistAboDesExtra.Quantity) + '0'
                     else
-                        AuxDiasFaltas3 := DelChr(Format(Round(Abs(TempTabHistAboDesExtra.Quantidade), 0.1, '=')), '=', ',');
+                        AuxDiasFaltas3 := DelChr(Format(Round(Abs(TempTabHistAboDesExtra.Quantity), 0.1, '=')), '=', ',');
 
                     if StrLen(AuxDiasFaltas3) = 1 then
                         TabTempFichTexto.Texto1 := TabTempFichTexto.Texto1 + '0' + AuxDiasFaltas3 + '0';        //Dias de trabalho
@@ -1092,10 +1092,10 @@ report 53044 "Mapa Seg. Social - Fechado"
                     ////////////////////////////////////Parte 2.1 - Sub. Férias ////////////////////////////
                     Encontrou := false;
                     LHistMovEmp.Reset;
-                    LHistMovEmp.SetCurrentKey(LHistMovEmp."No. Empregado", LHistMovEmp."Data a que se refere o mov");
+                    LHistMovEmp.SetCurrentKey(LHistMovEmp."Employee No.", LHistMovEmp."Data a que se refere o mov");
                     LHistMovEmp.SetRange(LHistMovEmp."Data Registo", "Periodos Processamento"."Data Inicio Processamento",
                       "Periodos Processamento"."Data Fim Processamento");
-                    LHistMovEmp.SetRange(LHistMovEmp."No. Empregado", Empregado."No.");
+                    LHistMovEmp.SetRange(LHistMovEmp."Employee No.", Empregado."No.");
                     LHistMovEmp.SetFilter(LHistMovEmp.NATREM, '%1', LHistMovEmp.NATREM::"Cód. Sub. Férias");
                     //IT001 - JTP - 2020.06.08 - Begin
                     LRubricaSalAux.Get("Hist. Linhas Movs. Empregado"."Cód. Rubrica");
@@ -1113,7 +1113,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                                     if (Date2DMY(TempHistMovEmp."Data a que se refere o mov", 2) = Date2DMY(LHistMovEmp."Data a que se refere o mov", 2)) and
                                        (Date2DMY(TempHistMovEmp."Data a que se refere o mov", 3) = Date2DMY(LHistMovEmp."Data a que se refere o mov", 3)) then begin
                                         Encontrou := true;
-                                        TempHistMovEmp.Quantidade := TempHistMovEmp.Quantidade + LHistMovEmp.Quantidade;
+                                        TempHistMovEmp.Quantity := TempHistMovEmp.Quantity + LHistMovEmp.Quantity;
                                         //2017.03.01 - Correcções por causa dos Acertos a negativo de Sub Natal e Férias
                                         //Se a rubrica for um desconto já vem a negativo, logo não se poe sinal
                                         //IF LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Abono THEN
@@ -1192,10 +1192,10 @@ report 53044 "Mapa Seg. Social - Fechado"
                     ////////////////////////////////////Parte 2.2 - Sub. Natal ////////////////////////////
                     Encontrou := false;
                     LHistMovEmp.Reset;
-                    LHistMovEmp.SetCurrentKey(LHistMovEmp."No. Empregado", LHistMovEmp."Data a que se refere o mov");
+                    LHistMovEmp.SetCurrentKey(LHistMovEmp."Employee No.", LHistMovEmp."Data a que se refere o mov");
                     LHistMovEmp.SetRange(LHistMovEmp."Data Registo", "Periodos Processamento"."Data Inicio Processamento",
                       "Periodos Processamento"."Data Fim Processamento");
-                    LHistMovEmp.SetRange(LHistMovEmp."No. Empregado", Empregado."No.");
+                    LHistMovEmp.SetRange(LHistMovEmp."Employee No.", Empregado."No.");
                     LHistMovEmp.SetFilter(LHistMovEmp.NATREM, '%1', LHistMovEmp.NATREM::"Cód. Sub. Natal");
                     if LHistMovEmp.FindSet then begin
                         TempHistMovEmp.Reset;
@@ -1208,7 +1208,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                                     if (Date2DMY(TempHistMovEmp."Data a que se refere o mov", 2) = Date2DMY(LHistMovEmp."Data a que se refere o mov", 2)) and
                                        (Date2DMY(TempHistMovEmp."Data a que se refere o mov", 3) = Date2DMY(LHistMovEmp."Data a que se refere o mov", 3)) then begin
                                         Encontrou := true;
-                                        TempHistMovEmp.Quantidade := TempHistMovEmp.Quantidade + LHistMovEmp.Quantidade;
+                                        TempHistMovEmp.Quantity := TempHistMovEmp.Quantity + LHistMovEmp.Quantity;
                                         //2017.03.01 - Correcções por causa dos Acertos a negativo de Sub Natal e Férias
                                         //Se a rubrica for um desconto já vem a negativo, logo não se poe sinal
                                         //IF LHistMovEmp."Tipo Rubrica" = LHistMovEmp."Tipo Rubrica"::Abono THEN
@@ -1293,13 +1293,13 @@ report 53044 "Mapa Seg. Social - Fechado"
                     LHistMovEmp.Reset;
                     LHistMovEmp.SetRange(LHistMovEmp."Data Registo", "Periodos Processamento"."Data Inicio Processamento",
                       "Periodos Processamento"."Data Fim Processamento");
-                    LHistMovEmp.SetRange(LHistMovEmp."No. Empregado", Empregado."No.");
+                    LHistMovEmp.SetRange(LHistMovEmp."Employee No.", Empregado."No.");
                     LHistMovEmp.SetFilter(LHistMovEmp.NATREM, '%1', LHistMovEmp.NATREM::"Diferenças de Vencimento");//corresponde a 6
                     if LHistMovEmp.FindSet then begin
                         repeat
                             LHistAbonDescExtra.Reset;
-                            LHistAbonDescExtra.SetCurrentKey(LHistAbonDescExtra."No. Empregado", LHistAbonDescExtra."Data a que se refere o Mov.");
-                            LHistAbonDescExtra.SetRange(LHistAbonDescExtra."No. Empregado", Empregado."No.");
+                            LHistAbonDescExtra.SetCurrentKey(LHistAbonDescExtra."Employee No.", LHistAbonDescExtra."Data a que se refere o Mov.");
+                            LHistAbonDescExtra.SetRange(LHistAbonDescExtra."Employee No.", Empregado."No.");
                             LHistAbonDescExtra.SetRange(LHistAbonDescExtra.Data, "Periodos Processamento"."Data Inicio Processamento",
                               "Periodos Processamento"."Data Fim Processamento");
                             LHistAbonDescExtra.SetRange(LHistAbonDescExtra."Cód. Rubrica", LHistMovEmp."Cód. Rubrica");
@@ -1316,7 +1316,7 @@ report 53044 "Mapa Seg. Social - Fechado"
                                               and (Date2DMY(TempTabHistAboDesExtra."Data a que se refere o Mov.", 3) =
                                               Date2DMY(LHistAbonDescExtra."Data a que se refere o Mov.", 3)) then begin
                                                 Encontrou := true;
-                                                TempTabHistAboDesExtra.Quantidade := TempTabHistAboDesExtra.Quantidade + LHistAbonDescExtra.Quantidade;
+                                                TempTabHistAboDesExtra.Quantity := TempTabHistAboDesExtra.Quantity + LHistAbonDescExtra.Quantity;
 
                                                 if LHistAbonDescExtra."Tipo Rubrica" = LHistAbonDescExtra."Tipo Rubrica"::Abono then
                                                     TempTabHistAboDesExtra."Valor Total" := TempTabHistAboDesExtra."Valor Total" + LHistAbonDescExtra."Valor Total";

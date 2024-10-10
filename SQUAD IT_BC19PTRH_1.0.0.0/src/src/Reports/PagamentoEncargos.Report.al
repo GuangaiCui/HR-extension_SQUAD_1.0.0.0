@@ -33,7 +33,7 @@ report 53077 "Pagamento Encargos"
                             Clear(Valor);
                             TabHistLinhaMovEmp.Reset;
                             TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Data Registo", DataInicio, DataFim);
-                            TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."No. Empregado", Empregado."No.");
+                            TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Employee No.", Empregado."No.");
                             TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp.Pendente, true);
                             TabHistLinhaMovEmp.SetFilter(TabHistLinhaMovEmp.Valor, '<>%1', 0.0);
                             if TabHistLinhaMovEmp.FindFirst then begin
@@ -54,7 +54,7 @@ report 53077 "Pagamento Encargos"
                                       (TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::"IRS Sub. Férias") or
                                       (TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::"IRS Sub. Natal")) then begin
                                         TabRubricaSalEmpregado.Reset;
-                                        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."No. Empregado", Empregado."No.");
+                                        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Employee No.", Empregado."No.");
                                         TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Cód. Rúbrica Salarial", TabRubricaSalarial.Código);
                                         if (TabRubricaSalEmpregado.Find('+')) or (TabRubricaSalarial."Imposto Extraordinário" = true) then begin
                                             Valor := Valor + TabHistLinhaMovEmp.Valor;
@@ -88,7 +88,7 @@ report 53077 "Pagamento Encargos"
                                 GenJnl.Validate("Journal Batch Name", Empregado."Secção Diario Pag.");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
-                                GenJnl.Validate("Account No.", TabRubricaSalEmpregado."No. Conta a Creditar");
+                                GenJnl.Validate("Account No.", TabRubricaSalEmpregado."Credit Acc. No.");
                                 GenJnl.Validate("Posting Date", WorkDate);
                                 GenJnl.Validate("Document Type", GenJnl."Document Type"::Payment);
                                 GenJnl.Validate(GenJnl."Document No.", NDocumento);
@@ -97,7 +97,7 @@ report 53077 "Pagamento Encargos"
                                 GenJnl.Validate("Bal. Account No.", TabConfigRH."No. Conta Pag. IRS");
                                 if GenJnl."Bal. Account No." = '' then
                                     Error(Text0003);
-                                GenJnl.Validate("No. Empregado", Empregado."No.");
+                                GenJnl.Validate("Employee No.", Empregado."No.");
                                 GenJnl.Validate("Debit Amount", Round(Abs(Valor), 0.01));//HG 2007.10.17 - coloquei abs
                                 GenJnl."Source Code" := TabCodSerie."Pagamento Vencimentos";
                                 GenJnl."Não deixa alterar No.Doc" := true; //para não deixar alterar o nº doc para não perdermos o rasto
@@ -123,7 +123,7 @@ report 53077 "Pagamento Encargos"
                                 repeat
                                     TabHistLinhaMovEmp.Reset;
                                     TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Data Registo", DataInicio, DataFim);
-                                    TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."No. Empregado", Empregado."No.");
+                                    TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Employee No.", Empregado."No.");
                                     TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp.Pendente, true);
                                     TabHistLinhaMovEmp.SetFilter(TabHistLinhaMovEmp.Valor, '<>%1', 0.0);
                                     TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Cód. Rubrica", TabRubricaSalarial.Código);
@@ -161,7 +161,7 @@ report 53077 "Pagamento Encargos"
                                         GenJnl.Validate("Journal Batch Name", Empregado."Secção Diario Pag.");
                                         GenJnl.Validate("Line No.", LastMov);
                                         GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
-                                        GenJnl.Validate("Account No.", TabHistLinhaMovEmp."No. Conta a Creditar");
+                                        GenJnl.Validate("Account No.", TabHistLinhaMovEmp."Credit Acc. No.");
                                         GenJnl.Validate("Posting Date", WorkDate);
                                         GenJnl.Validate("Document Type", GenJnl."Document Type"::Payment);
                                         GenJnl.Validate(GenJnl."Document No.", NDocumento);
@@ -170,7 +170,7 @@ report 53077 "Pagamento Encargos"
                                         GenJnl.Validate("Bal. Account No.", TabConfigRH."No. Conta Pag. Enc. FCT-FGCT");
                                         if GenJnl."Bal. Account No." = '' then
                                             Error(Text0003);
-                                        GenJnl.Validate("No. Empregado", Empregado."No.");
+                                        GenJnl.Validate("Employee No.", Empregado."No.");
                                         GenJnl.Validate("Debit Amount", Round(Abs(Valor), 0.01));
                                         GenJnl."Source Code" := TabCodSerie."Pagamento Vencimentos";
                                         GenJnl."Não deixa alterar No.Doc" := true; //para não deixar alterar o nº doc para não perdermos o rasto
@@ -271,7 +271,7 @@ report 53077 "Pagamento Encargos"
     begin
         TabHistLinhaMovEmp.Reset;
         TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Data Registo", DataInicio, DataFim);
-        TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."No. Empregado", Empregado."No.");
+        TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp."Employee No.", Empregado."No.");
         TabHistLinhaMovEmp.SetRange(TabHistLinhaMovEmp.Pendente, true);
         TabHistLinhaMovEmp.SetFilter(TabHistLinhaMovEmp.Valor, '<>%1', 0.0);
         if TabHistLinhaMovEmp.FindSet then begin
@@ -316,28 +316,28 @@ report 53077 "Pagamento Encargos"
                     if genero = 7 then begin
                         TabRubricaSalarialAux.Reset;
                         if TabRubricaSalarialAux.Get(Empregado."Cód. Rúbrica Enc. Seg. Social") then
-                            GenJnl.Validate("Account No.", TabRubricaSalarialAux."No. Conta a Creditar");
+                            GenJnl.Validate("Account No.", TabRubricaSalarialAux."Credit Acc. No.");
                     end;
 
                     if genero = 12 then begin
                         TabRubricaSalarialAux.Reset;
                         if TabRubricaSalarialAux.Get(Empregado."Cód. Rúbrica Enc. CGA") then
-                            GenJnl.Validate("Account No.", TabRubricaSalarialAux."No. Conta a Creditar");
+                            GenJnl.Validate("Account No.", TabRubricaSalarialAux."Credit Acc. No.");
                     end;
 
                     if genero = 16 then begin
                         TabRubricaSalarialAux.Reset;
                         if TabRubricaSalarialAux.Get(Empregado."Cód. Rúbrica Enc. ADSE") then
-                            GenJnl.Validate("Account No.", TabRubricaSalarialAux."No. Conta a Creditar");
+                            GenJnl.Validate("Account No.", TabRubricaSalarialAux."Credit Acc. No.");
                     end;
 
                     if (genero <> 7) and (genero <> 12) and (genero <> 16) then begin
                         TabRubricaSalEmpregado.Reset;
-                        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."No. Empregado", Empregado."No.");
+                        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Employee No.", Empregado."No.");
                         TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Cód. Rúbrica Salarial",
                           TabRubricaSalarial.Código);
                         if TabRubricaSalEmpregado.FindLast then
-                            GenJnl.Validate("Account No.", TabRubricaSalEmpregado."No. Conta a Creditar");
+                            GenJnl.Validate("Account No.", TabRubricaSalEmpregado."Credit Acc. No.");
                     end;
 
                     GenJnl.Validate("Posting Date", WorkDate);
@@ -363,7 +363,7 @@ report 53077 "Pagamento Encargos"
 
                     if GenJnl."Bal. Account No." = '' then
                         Error(Text0003);
-                    GenJnl.Validate("No. Empregado", Empregado."No.");
+                    GenJnl.Validate("Employee No.", Empregado."No.");
                     GenJnl.Validate("Debit Amount", Round(Abs(Valor), 0.01));
                     GenJnl."Source Code" := TabCodSerie."Pagamento Vencimentos";
                     GenJnl."Não deixa alterar No.Doc" := true; //para não deixar alterar o nº doc para não perdermos o rasto

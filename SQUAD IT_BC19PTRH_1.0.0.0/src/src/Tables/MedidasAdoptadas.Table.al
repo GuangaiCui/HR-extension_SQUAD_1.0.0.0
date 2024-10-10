@@ -3,7 +3,7 @@ table 53122 "Medidas Adoptadas"
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
             Caption = 'Nº Movimento';
         }
@@ -68,7 +68,7 @@ table 53122 "Medidas Adoptadas"
 
     keys
     {
-        key(Key1; "No. Mov.", "No. Linha")
+        key(Key1; "Entry No.", "No. Linha")
         {
             Clustered = true;
         }

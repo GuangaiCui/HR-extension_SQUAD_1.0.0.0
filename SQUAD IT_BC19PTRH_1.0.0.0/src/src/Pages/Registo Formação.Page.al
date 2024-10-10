@@ -14,7 +14,7 @@ page 53121 "Registo Formação"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -119,7 +119,7 @@ page 53121 "Registo Formação"
                     Caption = 'Situação Face à Frequência';
                     Image = Form;
                     RunObject = Page "Formação - Período Referência";
-                    RunPageLink = "No. Empregado" = FIELD("No. Empregado"),
+                    RunPageLink = "Employee No." = FIELD("Employee No."),
                                   "Cód. Acção" = FIELD("Cód. Acção");
                 }
             }
@@ -129,12 +129,12 @@ page 53121 "Registo Formação"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
         //HG
-        exit(Employee.Get(Rec."No. Empregado"));
+        exit(Employee.Get(Rec."Employee No."));
     end;
 
     trigger OnOpenPage()
     begin
-        Rec.SetCurrentKey("Data Início", "Cód. Acção", "No. Empregado"); //2008.05.09
+        Rec.SetCurrentKey("Data Início", "Cód. Acção", "Employee No."); //2008.05.09
     end;
 
     var

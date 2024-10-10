@@ -163,7 +163,7 @@ report 53071 "Mapa Fundos Compensação Trab."
                 else
                     HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Data Registo", DataIni, DataFim);
 
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."No. Empregado", Empregado."No.");
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Employee No.", Empregado."No.");
                 HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Cód. Rubrica", varRubrica[1]);
                 if HistLinhaMovEmp.FindFirst then
                     repeat

@@ -3,9 +3,9 @@ table 53104 "Associações Empregadores"
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
-            Caption = 'Entry No.';
+            Caption = 'No. Mov.';
         }
         field(5; "Associação de Empregadores"; Code[20])
         {
@@ -35,7 +35,7 @@ table 53104 "Associações Empregadores"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }

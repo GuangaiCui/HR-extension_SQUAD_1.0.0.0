@@ -30,19 +30,19 @@ table 53043 "Linha Coment. Recurso Humano"
             ELSE
             IF ("Table Name" = CONST(Cont)) "Contrato Empregado"."Cód. Empregado"
             ELSE
-            IF ("Table Name" = CONST(Inac)) "Inactividade Empregado"."No. Empregado"
+            IF ("Table Name" = CONST(Inac)) "Inactividade Empregado"."Employee No."
             ELSE
-            IF ("Table Name" = CONST(CatProfQP)) "Cat. Prof. QP Empregado"."No. Empregado"
+            IF ("Table Name" = CONST(CatProfQP)) "Cat. Prof. QP Empregado"."Employee No."
             ELSE
-            IF ("Table Name" = CONST(CatProf)) "Cat. Prof. Int. Empregado"."No. Empregado"
+            IF ("Table Name" = CONST(CatProf)) "Cat. Prof. Int. Empregado"."Employee No."
             ELSE
-            IF ("Table Name" = CONST(Grau)) "Grau Função Empregado"."No. Empregado"
+            IF ("Table Name" = CONST(Grau)) "Grau Função Empregado"."Employee No."
             ELSE
             IF ("Table Name" = CONST(HAus)) "Histórico Ausências"."Employee No."
             ELSE
-            IF ("Table Name" = CONST(HorEx)) "Horas Extra Empregado"."No. Empregado"
+            IF ("Table Name" = CONST(HorEx)) "Horas Extra Empregado"."Employee No."
             ELSE
-            IF ("Table Name" = CONST(HHorEx)) "Histórico Horas Extra"."No. Empregado";
+            IF ("Table Name" = CONST(HHorEx)) "Histórico Horas Extra"."Employee No.";
         }
         field(3; "Table Line No."; Integer)
         {

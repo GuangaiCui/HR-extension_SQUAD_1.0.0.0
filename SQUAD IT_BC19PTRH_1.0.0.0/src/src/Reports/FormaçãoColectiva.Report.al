@@ -21,7 +21,7 @@ report 53090 "Formação Colectiva"
                 //Não apanhar os empregados que não estão Activos
                 if Empregado.Status = Empregado.Status::Active then begin
                     TabFormaçãoEmpregado.Init;
-                    TabFormaçãoEmpregado.Validate("No. Empregado", Empregado."No.");
+                    TabFormaçãoEmpregado.Validate("Employee No.", Empregado."No.");
                     TabFormaçãoEmpregado.Validate(TabFormaçãoEmpregado."Cód. Acção", CodAccao);
                     TabFormaçãoEmpregado.Insert(true);
                 end;

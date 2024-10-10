@@ -367,7 +367,7 @@ codeunit 53037 "Funções RH"
         //HG - Obter numa precisa Data qual o Vencimento Base de um Empregado
 
         TabRubricaSalEmpregado.Reset;
-        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."No. Empregado", Empregado."No.");
+        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Employee No.", Empregado."No.");
         TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Início", '<=%1', Data);
         TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Fim", '>=%1|=%2', Data, 0D);
         if TabRubricaSalEmpregado.Find('-') then begin
@@ -381,7 +381,7 @@ codeunit 53037 "Funções RH"
                         if TabRubricaLinhas.Find('-') then begin
                             repeat
                                 TabRubricaSalEmpregado2.Reset;
-                                TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."No. Empregado", Empregado."No.");
+                                TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Employee No.", Empregado."No.");
                                 TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Início", '<=%1', Data);
                                 TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Fim", '>=%1|=%2', Data, 0D);
                                 TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Cód. Rúbrica Salarial",
@@ -413,7 +413,7 @@ codeunit 53037 "Funções RH"
         //HG - Obter numa precisa Data qual o Vencimento Base de um Empregado
         VencimentoBase := 0;
         TabRubricaSalEmpregado.Reset;
-        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."No. Empregado", Empregado."No.");
+        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Employee No.", Empregado."No.");
         TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Início", '<=%1', Data);
         TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Fim", '>=%1|=%2', Data, 0D);
         if TabRubricaSalEmpregado.Find('-') then begin
@@ -429,7 +429,7 @@ codeunit 53037 "Funções RH"
                         if TabRubricaLinhas.Find('-') then begin
                             repeat
                                 TabRubricaSalEmpregado2.Reset;
-                                TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."No. Empregado", Empregado."No.");
+                                TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Employee No.", Empregado."No.");
                                 TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Início", '<=%1', Data);
                                 TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Fim", '>=%1|=%2', Data, 0D);
                                 TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Cód. Rúbrica Salarial",
@@ -457,7 +457,7 @@ codeunit 53037 "Funções RH"
                             if TabRubricaLinhas.Find('-') then begin
                                 repeat
                                     TabRubricaSalEmpregado2.Reset;
-                                    TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."No. Empregado", Empregado."No.");
+                                    TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Employee No.", Empregado."No.");
                                     TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Início", '<=%1', Data);
                                     TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Fim", '>=%1|=%2', Data, 0D);
                                     TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Cód. Rúbrica Salarial",

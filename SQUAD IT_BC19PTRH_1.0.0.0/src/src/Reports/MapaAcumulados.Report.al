@@ -243,15 +243,15 @@ report 53076 "Mapa Acumulados"
             }
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
 
                 trigger OnAfterGetRecord()
                 begin
                     FillTabelaTemporáriaRelatórios("Hist. Linhas Movs. Empregado");
 
-                    if CodEmpregado <> "Hist. Linhas Movs. Empregado"."No. Empregado" then begin
-                        CodEmpregado := "Hist. Linhas Movs. Empregado"."No. Empregado";
+                    if CodEmpregado <> "Hist. Linhas Movs. Empregado"."Employee No." then begin
+                        CodEmpregado := "Hist. Linhas Movs. Empregado"."Employee No.";
                         NumeroEmpregado := NumeroEmpregado + 1;
                     end;
                 end;
@@ -479,9 +479,9 @@ report 53076 "Mapa Acumulados"
                 Clear(TotaisPorMes);
 
                 TabLinhasMovsEmpregado.Reset;
-                TabLinhasMovsEmpregado.SetCurrentKey("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                TabLinhasMovsEmpregado.SetCurrentKey("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
                 TabLinhasMovsEmpregado.SetFilter("Tipo Processamento", '<>%1', TabLinhasMovsEmpregado."Tipo Processamento"::Encargos);
-                TabLinhasMovsEmpregado.SetRange("No. Empregado", "No.");
+                TabLinhasMovsEmpregado.SetRange("Employee No.", "No.");
                 if FiltroCodProc = '' then begin
                     if (FiltroDataInicProc <> '') and (FiltroDataFimProc <> '') then begin
                         _PerProcessamento.Reset;
@@ -771,12 +771,12 @@ report 53076 "Mapa Acumulados"
         ValorTotal: Decimal;
     begin
         TabTemp.Reset;
-        TabTemp.SetRange(Code1, pHistLinhasMovsEmpregado."No. Empregado");
+        TabTemp.SetRange(Code1, pHistLinhasMovsEmpregado."Employee No.");
         //2008.01.15 - não se pode fazer filtro pela descrição pois pode mudar
         TabTemp.SetRange(Code3, pHistLinhasMovsEmpregado."Cód. Rubrica");
         if not TabTemp.FindFirst then begin
             TabTemp.Init;
-            TabTemp.Code1 := pHistLinhasMovsEmpregado."No. Empregado";
+            TabTemp.Code1 := pHistLinhasMovsEmpregado."Employee No.";
             TabTemp.Code2 := pHistLinhasMovsEmpregado."Descrição Rubrica";
             //2008.01.15 - preencher o campo code 3 para depois servir de filtro
             TabTemp.Code3 := pHistLinhasMovsEmpregado."Cód. Rubrica";

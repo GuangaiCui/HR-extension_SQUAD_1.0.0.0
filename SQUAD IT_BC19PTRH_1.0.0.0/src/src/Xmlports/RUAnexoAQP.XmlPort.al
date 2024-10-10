@@ -145,7 +145,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                 if rEmpregado.FindSet then begin
                                     repeat
                                         rHistCabMovEmp.Reset;
-                                        rHistCabMovEmp.SetRange(rHistCabMovEmp."No. Empregado", rEmpregado."No.");
+                                        rHistCabMovEmp.SetRange(rHistCabMovEmp."Employee No.", rEmpregado."No.");
                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
                                         if rHistCabMovEmp.FindSet then
@@ -160,13 +160,13 @@ xmlport 53036 "RU - Anexo A - QP"
                                 if rEmpregado.FindSet then begin
                                     repeat
                                         rHistCabMovEmp.Reset;
-                                        rHistCabMovEmp.SetRange(rHistCabMovEmp."No. Empregado", rEmpregado."No.");
+                                        rHistCabMovEmp.SetRange(rHistCabMovEmp."Employee No.", rEmpregado."No.");
                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
                                         rHistCabMovEmp.SetRange(rHistCabMovEmp.Valor, 0);
                                         if rHistCabMovEmp.FindFirst then begin
                                             rHistAusencia.Next;
-                                            rHistAusencia.SetRange(rHistAusencia."Employee No.", rHistCabMovEmp."No. Empregado");
+                                            rHistAusencia.SetRange(rHistAusencia."Employee No.", rHistCabMovEmp."Employee No.");
                                             rHistAusencia.SetRange(rHistAusencia."To Date", DMY2Date(30, 9, vAno));
                                             if rHistAusencia.FindFirst then
                                                 vConta := vConta - 1;
@@ -244,7 +244,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                         if rEmpregado.FindSet then begin
                                             repeat
                                                 rHistCabMovEmp.Reset;
-                                                rHistCabMovEmp.SetRange(rHistCabMovEmp."No. Empregado", rEmpregado."No.");
+                                                rHistCabMovEmp.SetRange(rHistCabMovEmp."Employee No.", rEmpregado."No.");
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
                                                 if rHistCabMovEmp.FindSet then
@@ -260,13 +260,13 @@ xmlport 53036 "RU - Anexo A - QP"
                                         if rEmpregado.FindSet then begin
                                             repeat
                                                 rHistCabMovEmp.Reset;
-                                                rHistCabMovEmp.SetRange(rHistCabMovEmp."No. Empregado", rEmpregado."No.");
+                                                rHistCabMovEmp.SetRange(rHistCabMovEmp."Employee No.", rEmpregado."No.");
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp.Valor, 0);
                                                 if rHistCabMovEmp.FindFirst then begin
                                                     rHistAusencia.Next;
-                                                    rHistAusencia.SetRange(rHistAusencia."Employee No.", rHistCabMovEmp."No. Empregado");
+                                                    rHistAusencia.SetRange(rHistAusencia."Employee No.", rHistCabMovEmp."Employee No.");
                                                     rHistAusencia.SetRange(rHistAusencia."To Date", DMY2Date(30, 9, vAno));
                                                     if rHistAusencia.FindFirst then
                                                         vConta := vConta - 1;
@@ -363,7 +363,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                             begin
                                                 Clear(data_ult_prom);
                                                 rCatProfQP.Reset;
-                                                rCatProfQP.SetRange(rCatProfQP."No. Empregado", Empregado."No.");
+                                                rCatProfQP.SetRange(rCatProfQP."Employee No.", Empregado."No.");
                                                 rCatProfQP.SetRange(rCatProfQP."Data Inicio Cat. Prof.", DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
                                                 rCatProfQP.SetFilter(rCatProfQP."Promotion Reason", '<>0');
                                                 if rCatProfQP.FindLast then
@@ -581,7 +581,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                 Clear(intOrg_temp_trab);
                                                 Clear(org_temp_trab);
                                                 rHorarioEmp.Reset;
-                                                rHorarioEmp.SetRange(rHorarioEmp."No. Empregado", Empregado."No.");
+                                                rHorarioEmp.SetRange(rHorarioEmp."Employee No.", Empregado."No.");
                                                 rHorarioEmp.SetFilter(rHorarioEmp."Data Iníco Horário", '<=%1', DMY2Date(1, 10, vAno));
                                                 rHorarioEmp.SetFilter(rHorarioEmp."Data Fim Horário", '>=%1|%2', DMY2Date(31, 10, vAno), 0D);
                                                 if rHorarioEmp.FindLast then begin
@@ -606,7 +606,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                 rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Processamento", rHistLinhasMovEmp."Tipo Processamento"::Vencimentos);
                                                 rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno),
                                                                           DMY2Date(31, 10, vAno));
-                                                rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."No. Empregado", Empregado."No.");
+                                                rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Employee No.", Empregado."No.");
                                                 rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Rubrica", rHistLinhasMovEmp."Tipo Rubrica"::Abono);
                                                 rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp.NATREM, rHistLinhasMovEmp.NATREM::"Remuneração Permanente");
                                                 if rHistLinhasMovEmp.FindSet then begin
@@ -632,7 +632,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                 rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Processamento", rHistLinhasMovEmp."Tipo Processamento"::Vencimentos);
                                                 rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno),
                                                                           DMY2Date(31, 10, vAno));
-                                                rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."No. Empregado", Empregado."No.");
+                                                rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Employee No.", Empregado."No.");
                                                 rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Rubrica", rHistLinhasMovEmp."Tipo Rubrica"::Abono);
                                                 rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp.NATREM, rHistLinhasMovEmp.NATREM::"Remuneração Permanente");
                                                 if rHistLinhasMovEmp.FindSet then begin
@@ -645,7 +645,7 @@ xmlport 53036 "RU - Anexo A - QP"
 
                                                 //Abater as faltas
                                                 rHistAusencia.Reset;
-                                                rHistAusencia.SetRange(rHistAusencia."Employee No.", rHistLinhasMovEmp."No. Empregado");
+                                                rHistAusencia.SetRange(rHistAusencia."Employee No.", rHistLinhasMovEmp."Employee No.");
                                                 rHistAusencia.SetRange(rHistAusencia."From Date", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
                                                 rHistAusencia.SetRange(rHistAusencia."Com Perca de Remuneração", true);
                                                 if rHistAusencia.FindSet then begin
@@ -671,7 +671,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                             rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Processamento", rHistLinhasMovEmp."Tipo Processamento"::Vencimentos);
                                                             rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno),
                                                                                       DMY2Date(31, 10, vAno));
-                                                            rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."No. Empregado", Empregado."No.");
+                                                            rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Employee No.", Empregado."No.");
                                                             rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Cód. Rubrica", rRubricaSal.Código);
                                                             if rHistLinhasMovEmp.FindSet then begin
                                                                 repeat
@@ -744,7 +744,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                                 cFuncoesRH.CalcularDiasUteisMes(Empregado.Estabelecimento, DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
 
                                                 HistMovEmp.Reset;
-                                                HistMovEmp.SetRange(HistMovEmp."No. Empregado", Empregado."No.");
+                                                HistMovEmp.SetRange(HistMovEmp."Employee No.", Empregado."No.");
                                                 HistMovEmp.SetRange(HistMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
                                                 if HistMovEmp.Find('-') then begin
                                                     repeat
@@ -757,13 +757,13 @@ xmlport 53036 "RU - Anexo A - QP"
                                                                 TabUniMed.SetRange(TabUniMed."Designação Interna", TabUniMed."Designação Interna"::Hora);
                                                                 if TabUniMed.Find('-') then
                                                                     if HistMovEmp.UnidadeMedida = TabUniMed.Code then
-                                                                        FaltasHoras := FaltasHoras + Abs(HistMovEmp.Quantidade);
+                                                                        FaltasHoras := FaltasHoras + Abs(HistMovEmp.Quantity);
 
                                                                 TabUniMed.Reset;
                                                                 TabUniMed.SetRange(TabUniMed."Designação Interna", TabUniMed."Designação Interna"::Dia);
                                                                 if TabUniMed.Find('-') then
                                                                     if HistMovEmp.UnidadeMedida = TabUniMed.Code then
-                                                                        FaltasDias := FaltasDias + Round(Abs(HistMovEmp.Quantidade), 1);
+                                                                        FaltasDias := FaltasDias + Round(Abs(HistMovEmp.Quantity), 1);
 
                                                             end;
                                                         end;
@@ -805,7 +805,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno),
                                                                                   DMY2Date(31, 10, vAno));
-                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."No. Empregado", Empregado."No.");
+                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Employee No.", Empregado."No.");
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Cód. Rubrica", rRubricaSalarial.Código);
                                                         if rHistLinhasMovEmp.FindSet then begin
                                                             repeat
@@ -836,7 +836,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno),
                                                                                   DMY2Date(31, 10, vAno));
-                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."No. Empregado", Empregado."No.");
+                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Employee No.", Empregado."No.");
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Cód. Rubrica", rRubricaSalarial.Código);
                                                         if rHistLinhasMovEmp.FindSet then begin
                                                             repeat
@@ -868,7 +868,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno),
                                                                                   DMY2Date(31, 10, vAno));
-                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."No. Empregado", Empregado."No.");
+                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Employee No.", Empregado."No.");
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Cód. Rubrica", rRubricaSalarial.Código);
                                                         if rHistLinhasMovEmp.FindSet then begin
                                                             repeat
@@ -901,7 +901,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno),
                                                                                   DMY2Date(31, 10, vAno));
-                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."No. Empregado", Empregado."No.");
+                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Employee No.", Empregado."No.");
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Cód. Rubrica", rRubricaSalarial.Código);
                                                         if rHistLinhasMovEmp.FindSet then begin
                                                             repeat
@@ -937,12 +937,12 @@ xmlport 53036 "RU - Anexo A - QP"
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno),
                                                                                   DMY2Date(31, 10, vAno));
-                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."No. Empregado", Empregado."No.");
+                                                        rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Employee No.", Empregado."No.");
                                                         rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Cód. Rubrica", rRubricaSalarial.Código);
                                                         if rHistLinhasMovEmp.FindSet then begin
                                                             repeat
                                                                 decR_supl_Out := decR_supl_Out + Abs(rHistLinhasMovEmp.Valor);
-                                                                decHoras_supl_Out := decHoras_supl_Out + Abs(rHistLinhasMovEmp.Quantidade);
+                                                                decHoras_supl_Out := decHoras_supl_Out + Abs(rHistLinhasMovEmp.Quantity);
                                                             until rHistLinhasMovEmp.Next = 0;
                                                         end;
 
@@ -975,13 +975,13 @@ xmlport 53036 "RU - Anexo A - QP"
 
                                                 rHistHorasExtra.Reset;
                                                 rHistHorasExtra.SetRange(rHistHorasExtra.Data, DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
-                                                rHistHorasExtra.SetRange(rHistHorasExtra."No. Empregado", Empregado."No.");
+                                                rHistHorasExtra.SetRange(rHistHorasExtra."Employee No.", Empregado."No.");
                                                 if rHistHorasExtra.FindSet then begin
                                                     repeat
                                                         rHorasExtra.Reset;
                                                         if (rHorasExtra.Get(rHistHorasExtra."Cód. Hora Extra")) and
                                                            (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 1 do Artigo 227") then
-                                                            decT_horas_1art227 := decT_horas_1art227 + rHistHorasExtra.Quantidade;
+                                                            decT_horas_1art227 := decT_horas_1art227 + rHistHorasExtra.Quantity;
                                                     until rHistHorasExtra.Next = 0;
                                                 end;
 
@@ -1001,13 +1001,13 @@ xmlport 53036 "RU - Anexo A - QP"
 
                                                 rHistHorasExtra.Reset;
                                                 rHistHorasExtra.SetRange(rHistHorasExtra.Data, DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
-                                                rHistHorasExtra.SetRange(rHistHorasExtra."No. Empregado", Empregado."No.");
+                                                rHistHorasExtra.SetRange(rHistHorasExtra."Employee No.", Empregado."No.");
                                                 if rHistHorasExtra.FindSet then begin
                                                     repeat
                                                         rHorasExtra.Reset;
                                                         if (rHorasExtra.Get(rHistHorasExtra."Cód. Hora Extra")) and
                                                            (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 2 do Artigo 227") then
-                                                            decT_horas_2art227 := decT_horas_2art227 + rHistHorasExtra.Quantidade;
+                                                            decT_horas_2art227 := decT_horas_2art227 + rHistHorasExtra.Quantity;
                                                     until rHistHorasExtra.Next = 0;
                                                 end;
 

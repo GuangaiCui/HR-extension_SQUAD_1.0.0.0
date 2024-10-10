@@ -79,7 +79,7 @@ page 53144 "Factores de Risco"
                 Promoted = true;
                 PromotedCategory = Process;
                 RunObject = Page "Medidas Adoptadas";
-                RunPageLink = "No. Mov." = FIELD("No. Mov.");
+                RunPageLink = "Entry No." = FIELD("Entry No.");
             }
         }
     }

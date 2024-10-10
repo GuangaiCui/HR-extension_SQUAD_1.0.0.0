@@ -65,9 +65,9 @@ report 53078 "Mapa ADSE - Aberto"
             DataItemTableView = SORTING("No.");
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(Vencimentos | SubNatal | SubFerias));
-                column(NumEmp; "Linhas Movs. Empregado"."No. Empregado")
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(Vencimentos | SubNatal | SubFerias));
+                column(NumEmp; "Linhas Movs. Empregado"."Employee No.")
                 {
                 }
                 column(NomeEmp; Empregado.Name)

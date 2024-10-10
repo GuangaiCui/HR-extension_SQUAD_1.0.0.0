@@ -24,11 +24,11 @@ report 53073 "Mapa Validação Contabilística"
             dataitem("Movs. Empregado"; "Linhas Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
-                    if ("Movs. Empregado".Valor = 0.0) or (("Movs. Empregado"."No. Conta a Debitar" = '') and ("Movs. Empregado"."No. Conta a Creditar" = '')) then
+                    if ("Movs. Empregado".Valor = 0.0) or (("Movs. Empregado"."Debit Acc. No." = '') and ("Movs. Empregado"."Credit Acc. No." = '')) then
                         CurrReport.Skip; //28.09.07 - não enviar valores a zero
 
                     //-----------------------------------------------------------
@@ -43,25 +43,25 @@ report 53073 "Mapa Validação Contabilística"
                     //Testa se as contas estão preenchidas e se são menores e se existem, caso contrario dá um aviso
                     //-----------------------------------------------------------------
                     /*//IT001,sn
-                    IF "Movs. Empregado"."No. Conta a Debitar" = '' THEN
-                       MESSAGE(Text0005,"Movs. Empregado"."Descrição Rubrica","Movs. Empregado"."No. Empregado");
+                    IF "Movs. Empregado"."Debit Acc. No." = '' THEN
+                       MESSAGE(Text0005,"Movs. Empregado"."Descrição Rubrica","Movs. Empregado"."Employee No.");
                     
-                    IF "Movs. Empregado"."No. Conta a Creditar" ='' THEN
-                       MESSAGE(Text0005,"Movs. Empregado"."Descrição Rubrica","Movs. Empregado"."No. Empregado");
+                    IF "Movs. Empregado"."Credit Acc. No." ='' THEN
+                       MESSAGE(Text0005,"Movs. Empregado"."Descrição Rubrica","Movs. Empregado"."Employee No.");
                     
-                    IF TabContaAux.GET("Movs. Empregado"."No. Conta a Debitar") THEN BEGIN
+                    IF TabContaAux.GET("Movs. Empregado"."Debit Acc. No.") THEN BEGIN
                        IF TabContaAux."Account Type" = TabContaAux."Account Type"::Heading THEN
-                          MESSAGE(Text0006,"Movs. Empregado"."No. Empregado","Movs. Empregado"."No. Conta a Debitar"
+                          MESSAGE(Text0006,"Movs. Empregado"."Employee No.","Movs. Empregado"."Debit Acc. No."
                                   ,"Movs. Empregado"."Descrição Rubrica");
                     END ELSE
-                      MESSAGE(Text0007,"Movs. Empregado"."No. Conta a Debitar");
+                      MESSAGE(Text0007,"Movs. Empregado"."Debit Acc. No.");
                     
-                    IF TabContaAux.GET("Movs. Empregado"."No. Conta a Creditar") THEN BEGIN
+                    IF TabContaAux.GET("Movs. Empregado"."Credit Acc. No.") THEN BEGIN
                        IF TabContaAux."Account Type" = TabContaAux."Account Type"::Heading THEN
-                          MESSAGE(Text0006,"Movs. Empregado"."No. Empregado","Movs. Empregado"."No. Conta a Creditar"
+                          MESSAGE(Text0006,"Movs. Empregado"."Employee No.","Movs. Empregado"."Credit Acc. No."
                                   ,"Movs. Empregado"."Descrição Rubrica");
                     END ELSE
-                      MESSAGE(Text0007,"Movs. Empregado"."No. Conta a Creditar");
+                      MESSAGE(Text0007,"Movs. Empregado"."Credit Acc. No.");
                     */ //IT001,en
 
                     //----2007.09.05-fim---------------------------------------------------
@@ -78,7 +78,7 @@ report 53073 "Mapa Validação Contabilística"
                             //que são do tipo vencimento base e/ou tem o pisco no campo faltas
                             AuxLinhasMovEmp.Reset;
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Cód. Processamento", "Movs. Empregado"."Cód. Processamento");
-                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."No. Empregado", "Movs. Empregado"."No. Empregado");
+                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Employee No.", "Movs. Empregado"."Employee No.");
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Tipo Rubrica", AuxLinhasMovEmp."Tipo Rubrica"::Abono);
                             if AuxLinhasMovEmp.FindSet then begin
                                 repeat
@@ -94,7 +94,7 @@ report 53073 "Mapa Validação Contabilística"
                             Clear(NLinha2);
                             AuxLinhasMovEmp.Reset;
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Cód. Processamento", "Movs. Empregado"."Cód. Processamento");
-                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."No. Empregado", "Movs. Empregado"."No. Empregado");
+                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Employee No.", "Movs. Empregado"."Employee No.");
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Tipo Rubrica", AuxLinhasMovEmp."Tipo Rubrica"::Abono);
                             if AuxLinhasMovEmp.FindSet then begin
                                 repeat
@@ -105,7 +105,7 @@ report 53073 "Mapa Validação Contabilística"
                                             TempLinhasMovEmp.Init;
                                             TempLinhasMovEmp.TransferFields("Movs. Empregado");
                                             TempLinhasMovEmp."No. Linha" := NLinha2;
-                                            TempLinhasMovEmp."No. Conta a Creditar" := AuxLinhasMovEmp."No. Conta a Debitar";
+                                            TempLinhasMovEmp."Credit Acc. No." := AuxLinhasMovEmp."Debit Acc. No.";
                                             TempLinhasMovEmp.Valor := "Movs. Empregado".Valor * AuxLinhasMovEmp.Valor / TotAbonos;
                                             TempLinhasMovEmp.Insert;
                                         end;
@@ -132,7 +132,7 @@ report 53073 "Mapa Validação Contabilística"
             dataitem(DimDistribuir; "Integração Contabilistica")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("No. Empregado", "Cód. Rubrica") WHERE("No. Conta" = FILTER('6*'));
+                DataItemTableView = SORTING("Employee No.", "Cód. Rubrica") WHERE("No. Conta" = FILTER('6*'));
 
                 trigger OnAfterGetRecord()
                 var
@@ -149,8 +149,8 @@ report 53073 "Mapa Validação Contabilística"
 
                     //Ir buscar o último nº de linha usado
                     GenJnl.Reset;
-                    GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Nome Livro Diario");
-                    GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Secção Diario");
+                    GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Journal Template Name");
+                    GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Journal Batch Name");
                     if GenJnl.Find('+') then
                         LastMov := GenJnl."Line No."
                     else
@@ -159,8 +159,8 @@ report 53073 "Mapa Validação Contabilística"
                     // Ir buscar o ultimo Nº do Documento
                     Clear(NoSeriesMgt);
                     TabSeccaoDiarioGeral.Reset;
-                    TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Nome Livro Diario");
-                    TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Secção Diario");
+                    TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Journal Template Name");
+                    TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Journal Batch Name");
                     if TabSeccaoDiarioGeral.Find('-') then
                         NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series", WorkDate, false)
                     else
@@ -172,7 +172,7 @@ report 53073 "Mapa Validação Contabilística"
                     //2011.09.15 - Este If é por causa das horas extra que podem vir com dimensão já definida e então ignora a distribuição
                     if DimDistribuir."Global Dimension 1 Code" = '' then begin
                         TabEmpregadoDistribCustos.Reset;
-                        TabEmpregadoDistribCustos.SetRange(TabEmpregadoDistribCustos."No. Empregado", DimDistribuir."No. Empregado");
+                        TabEmpregadoDistribCustos.SetRange(TabEmpregadoDistribCustos."Employee No.", DimDistribuir."Employee No.");
                         if TabEmpregadoDistribCustos.FindSet then begin
                             repeat
                                 if (TabEmpregadoDistribCustos."Data Inicio" <= "Periodos Processamento"."Data Inicio Processamento") and
@@ -186,8 +186,8 @@ report 53073 "Mapa Validação Contabilística"
                                         TabCodSerie.TestField("Integração Vencimentos");
 
                                     GenJnl.Init;
-                                    GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                    GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                    GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                    GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                     GenJnl.Validate("Line No.", LastMov);
                                     GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                     GenJnl.Validate("Account No.", DimDistribuir."No. Conta");
@@ -232,7 +232,7 @@ report 53073 "Mapa Validação Contabilística"
                                     if TabEmpregadoDistribCustos."Shortcut Dimension 8 Code" <> '' then
                                         DimMgt.ValidateShortcutDimValues(8, TabEmpregadoDistribCustos."Shortcut Dimension 8 Code", GenJnl."Dimension Set ID");
 
-                                    GenJnl."No. Empregado" := DimDistribuir."No. Empregado";
+                                    GenJnl."Employee No." := DimDistribuir."Employee No.";
                                     GenJnl."Source Code" := TabCodSerie."Integração Vencimentos";
                                     //2008.01.05 - para o caso do utilizador apagar as linhas do diario sem registar
                                     //nos sabermos a que processamento corresponde e desta forma tirarmos o pisco
@@ -246,7 +246,7 @@ report 53073 "Mapa Validação Contabilística"
                             //************************************************************************************************
                             EmpDefaultDim.Reset;
                             EmpDefaultDim.SetRange(EmpDefaultDim."Table ID", 53035);
-                            EmpDefaultDim.SetRange(EmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                            EmpDefaultDim.SetRange(EmpDefaultDim."No.", DimDistribuir."Employee No.");
                             EmpDefaultDim.SetFilter(EmpDefaultDim."Dimension Value Code", '<>%1', '');
                             if EmpDefaultDim.FindFirst then begin
                                 LastMov := LastMov + 10000;
@@ -256,8 +256,8 @@ report 53073 "Mapa Validação Contabilística"
                                     TabCodSerie.TestField("Integração Vencimentos");
 
                                 GenJnl.Init;
-                                GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                 GenJnl.Validate("Account No.", DimDistribuir."No. Conta");
@@ -279,7 +279,7 @@ report 53073 "Mapa Validação Contabilística"
                                 if GenLedgerSetup."Global Dimension 1 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Global Dimension 1 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -289,7 +289,7 @@ report 53073 "Mapa Validação Contabilística"
                                 if GenLedgerSetup."Global Dimension 2 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Global Dimension 2 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -299,7 +299,7 @@ report 53073 "Mapa Validação Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 3 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 3 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -309,7 +309,7 @@ report 53073 "Mapa Validação Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 4 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 4 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -319,7 +319,7 @@ report 53073 "Mapa Validação Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 5 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 5 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -329,7 +329,7 @@ report 53073 "Mapa Validação Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 6 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 6 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -339,7 +339,7 @@ report 53073 "Mapa Validação Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 7 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 7 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -349,14 +349,14 @@ report 53073 "Mapa Validação Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 8 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 8 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
                                         DimMgt.ValidateShortcutDimValues(8, AuxEmpDefaultDim."Dimension Value Code", GenJnl."Dimension Set ID");
                                 end;
 
-                                GenJnl."No. Empregado" := DimDistribuir."No. Empregado";
+                                GenJnl."Employee No." := DimDistribuir."Employee No.";
                                 GenJnl."Source Code" := TabCodSerie."Integração Vencimentos";
                                 //2008.01.05 - para o caso do utilizador apagar as linhas do diario sem registar
                                 //nos sabermos a que processamento corresponde e desta forma tirarmos o pisco
@@ -373,8 +373,8 @@ report 53073 "Mapa Validação Contabilística"
                                     TabCodSerie.TestField("Integração Vencimentos");
 
                                 GenJnl.Init;
-                                GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                 GenJnl.Validate("Account No.", DimDistribuir."No. Conta");
@@ -394,7 +394,7 @@ report 53073 "Mapa Validação Contabilística"
                                 if DimDistribuir."Valor Crédito" <> 0 then
                                     GenJnl.Validate("Credit Amount", DimDistribuir."Valor Crédito");
 
-                                GenJnl."No. Empregado" := DimDistribuir."No. Empregado";
+                                GenJnl."Employee No." := DimDistribuir."Employee No.";
                                 GenJnl."Source Code" := TabCodSerie."Integração Vencimentos";
                                 GenJnl."Dimension Set ID" := DimDistribuir."Dimension Set ID";
                                 //2008.01.05 - para o caso do utilizador apagar as linhas do diario sem registar
@@ -409,8 +409,8 @@ report 53073 "Mapa Validação Contabilística"
                         LastMov := LastMov + 10000;
 
                         GenJnl.Init;
-                        GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                        GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                        GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                        GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                         GenJnl.Validate("Line No.", LastMov);
                         GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                         GenJnl.Validate("Account No.", DimDistribuir."No. Conta");
@@ -432,7 +432,7 @@ report 53073 "Mapa Validação Contabilística"
 
                         GenJnl.Validate(GenJnl."Shortcut Dimension 1 Code", DimDistribuir."Global Dimension 1 Code");
                         GenJnl.Validate(GenJnl."Shortcut Dimension 2 Code", DimDistribuir."Global Dimension 2 Code");
-                        GenJnl."No. Empregado" := DimDistribuir."No. Empregado";
+                        GenJnl."Employee No." := DimDistribuir."Employee No.";
                         GenJnl.Insert;
                     end;
                 end;
@@ -473,8 +473,8 @@ report 53073 "Mapa Validação Contabilística"
                             ((not AgruparContasBalanco)) then begin
                             //Ir buscar o último nº de linha usado
                             GenJnl.Reset;
-                            GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Nome Livro Diario");
-                            GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Secção Diario");
+                            GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Journal Template Name");
+                            GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Journal Batch Name");
                             if GenJnl.Find('+') then
                                 LastMov := GenJnl."Line No."
                             else
@@ -483,8 +483,8 @@ report 53073 "Mapa Validação Contabilística"
                             // Ir buscar o ultimo Nº do Documento
                             Clear(NoSeriesMgt);
                             TabSeccaoDiarioGeral.Reset;
-                            TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Nome Livro Diario");
-                            TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Secção Diario");
+                            TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Journal Template Name");
+                            TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Journal Batch Name");
                             if TabSeccaoDiarioGeral.FindFirst then
                                 NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series", WorkDate, false)
                             else
@@ -499,8 +499,8 @@ report 53073 "Mapa Validação Contabilística"
                                 TabCodSerie.TestField("Integração Vencimentos");
 
                             GenJnl.Init;
-                            GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                            GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                            GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                            GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                             GenJnl.Validate("Line No.", LastMov);
                             GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                             GenJnl.Validate("Account No.", DimNDistribuir."No. Conta");
@@ -519,7 +519,7 @@ report 53073 "Mapa Validação Contabilística"
                             if DimNDistribuir."Valor Crédito" <> 0 then
                                 GenJnl.Validate("Credit Amount", DimNDistribuir."Valor Crédito");
 
-                            GenJnl."No. Empregado" := DimNDistribuir."No. Empregado";
+                            GenJnl."Employee No." := DimNDistribuir."Employee No.";
                             GenJnl."Source Code" := TabCodSerie."Integração Vencimentos";
                             //2008.01.05 - para o caso do utilizador apagar as linhas do diario sem registar
                             //nos sabermos a que processamento corresponde e desta forma tirarmos o pisco
@@ -549,8 +549,8 @@ report 53073 "Mapa Validação Contabilística"
                             if (AgruparContasBalanco) and (TabConta."Income/Balance" = TabConta."Income/Balance"::"Balance Sheet") then begin
                                 //Ir buscar o último nº de linha usado
                                 GenJnl.Reset;
-                                GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Journal Batch Name");
                                 if GenJnl.FindLast then
                                     LastMov := GenJnl."Line No."
                                 else
@@ -559,8 +559,8 @@ report 53073 "Mapa Validação Contabilística"
                                 // Ir buscar o ultimo Nº do Documento
                                 Clear(NoSeriesMgt);
                                 TabSeccaoDiarioGeral.Reset;
-                                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Nome Livro Diario");
-                                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Secção Diario");
+                                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Journal Template Name");
+                                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Journal Batch Name");
                                 if TabSeccaoDiarioGeral.Find('-') then
                                     NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series", WorkDate, false)
                                 else
@@ -575,8 +575,8 @@ report 53073 "Mapa Validação Contabilística"
                                     TabCodSerie.TestField("Integração Vencimentos");
 
                                 GenJnl.Init;
-                                GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
 
@@ -628,8 +628,8 @@ report 53073 "Mapa Validação Contabilística"
                             if (AgruparContasBalanco) and (TabConta."Income/Balance" = TabConta."Income/Balance"::"Balance Sheet") then begin
                                 //Ir buscar o último nº de linha usado
                                 GenJnl.Reset;
-                                GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Journal Batch Name");
                                 if GenJnl.FindLast then
                                     LastMov := GenJnl."Line No."
                                 else
@@ -638,8 +638,8 @@ report 53073 "Mapa Validação Contabilística"
                                 // Ir buscar o ultimo Nº do Documento
                                 Clear(NoSeriesMgt);
                                 TabSeccaoDiarioGeral.Reset;
-                                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Nome Livro Diario");
-                                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Secção Diario");
+                                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Journal Template Name");
+                                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Journal Batch Name");
                                 if TabSeccaoDiarioGeral.Find('-') then
                                     NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series", WorkDate, false)
                                 else
@@ -654,8 +654,8 @@ report 53073 "Mapa Validação Contabilística"
                                     TabCodSerie.TestField("Integração Vencimentos");
 
                                 GenJnl.Init;
-                                GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                 GenJnl.Validate("Account No.", NConta);
@@ -703,16 +703,16 @@ report 53073 "Mapa Validação Contabilística"
                     Clear(varEmpregado);
                     Clear(varConta);
                     GenJnl.Reset;
-                    GenJnl.SetCurrentKey(GenJnl."No. Empregado", GenJnl."Account No.");
+                    GenJnl.SetCurrentKey(GenJnl."Employee No.", GenJnl."Account No.");
                     GenJnl.SetFilter(GenJnl."Account No.", '6*');
                     if GenJnl.Find('-') then begin
                         repeat
-                            if (varEmpregado <> '') and ((varEmpregado <> GenJnl."No. Empregado") or (varConta <> GenJnl."Account No.")) then begin
+                            if (varEmpregado <> '') and ((varEmpregado <> GenJnl."Employee No.") or (varConta <> GenJnl."Account No.")) then begin
 
                                 l_HistMovEmp.Reset;
                                 l_HistMovEmp.SetRange(l_HistMovEmp."Cód. Processamento", "Periodos Processamento"."Cód. Processamento");
-                                l_HistMovEmp.SetRange(l_HistMovEmp."No. Empregado", varEmpregado);
-                                l_HistMovEmp.SetRange(l_HistMovEmp."No. Conta a Debitar", varConta);
+                                l_HistMovEmp.SetRange(l_HistMovEmp."Employee No.", varEmpregado);
+                                l_HistMovEmp.SetRange(l_HistMovEmp."Debit Acc. No.", varConta);
                                 if l_HistMovEmp.FindSet then begin
                                     Clear(varTotalHistorico);
                                     repeat
@@ -729,11 +729,11 @@ report 53073 "Mapa Validação Contabilística"
 
                                 Clear(varTotalDiario);
                                 varTotalDiario := GenJnl.Amount;
-                                varEmpregado := GenJnl."No. Empregado";
+                                varEmpregado := GenJnl."Employee No.";
                                 varConta := GenJnl."Account No.";
 
                             end else begin
-                                varEmpregado := GenJnl."No. Empregado";
+                                varEmpregado := GenJnl."Employee No.";
                                 varConta := GenJnl."Account No.";
                                 varTotalDiario := varTotalDiario + GenJnl."Debit Amount";
                             end;
@@ -784,7 +784,7 @@ report 53073 "Mapa Validação Contabilística"
                 column(N__Contribuinte______TabConfEmpresa__VAT_Registration_No__; 'Nº Contribuinte: ' + TabConfEmpresa."VAT Registration No.")
                 {
                 }
-                column(GenJnl__No__Empregado_; GenJnl."No. Empregado")
+                column(GenJnl__No__Empregado_; GenJnl."Employee No.")
                 {
                 }
                 column(GenJnl__Document_No__; GenJnl."Document No.")
@@ -1079,14 +1079,14 @@ report 53073 "Mapa Validação Contabilística"
         TabIntegracaoContab.Init;
         TabIntegracaoContab."Cód. Processamento" := MovsEmp."Cód. Processamento";
         TabIntegracaoContab."Tipo Processamento" := MovsEmp."Tipo Processamento";
-        TabIntegracaoContab."No. Empregado" := MovsEmp."No. Empregado";
+        TabIntegracaoContab."Employee No." := MovsEmp."Employee No.";
         TabIntegracaoContab."No. Linha" := NLinha;
         TabIntegracaoContab."Data Registo" := WorkDate;
         TabIntegracaoContab."Designação Empregado" := MovsEmp."Designação Empregado";
         TabIntegracaoContab."Cód. Rubrica" := MovsEmp."Cód. Rubrica";
         TabIntegracaoContab."Descrição Rubrica" := MovsEmp."Descrição Rubrica";
         TabIntegracaoContab."Tipo Rubrica" := MovsEmp."Tipo Rubrica";
-        TabIntegracaoContab."No. Conta" := MovsEmp."No. Conta a Debitar";
+        TabIntegracaoContab."No. Conta" := MovsEmp."Debit Acc. No.";
 
         //Se for Abono Negativo troca a coluna e o sinal
         //***************************************************************************************
@@ -1117,14 +1117,14 @@ report 53073 "Mapa Validação Contabilística"
         TabIntegracaoContab.Init;
         TabIntegracaoContab."Cód. Processamento" := MovsEmp."Cód. Processamento";
         TabIntegracaoContab."Tipo Processamento" := MovsEmp."Tipo Processamento";
-        TabIntegracaoContab."No. Empregado" := MovsEmp."No. Empregado";
+        TabIntegracaoContab."Employee No." := MovsEmp."Employee No.";
         TabIntegracaoContab."No. Linha" := NLinha;
         TabIntegracaoContab."Data Registo" := WorkDate;
         TabIntegracaoContab."Designação Empregado" := MovsEmp."Designação Empregado";
         TabIntegracaoContab."Cód. Rubrica" := MovsEmp."Cód. Rubrica";
         TabIntegracaoContab."Descrição Rubrica" := MovsEmp."Descrição Rubrica";
         TabIntegracaoContab."Tipo Rubrica" := MovsEmp."Tipo Rubrica";
-        TabIntegracaoContab."No. Conta" := MovsEmp."No. Conta a Creditar";
+        TabIntegracaoContab."No. Conta" := MovsEmp."Credit Acc. No.";
 
         //Se for Abono Negativo troca a coluna e o sinal
         //***************************************************************************************
