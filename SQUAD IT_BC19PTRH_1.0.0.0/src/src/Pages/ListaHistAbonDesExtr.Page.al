@@ -15,12 +15,12 @@ page 53097 "Lista Hist. Abon. - Des. Extr."
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Mov."; Rec."No. Mov.")
+                field("Entry No."; Rec."Entry No.")
                 {
 
 
                 }
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -30,27 +30,27 @@ page 53097 "Lista Hist. Abon. - Des. Extr."
 
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 
                 }
-                field("Tipo Rubrica"; Rec."Tipo Rubrica")
+                field("Payroll Item Type"; Rec."Payroll Item Type")
                 {
 
 
                 }
-                field(UnidadeMedida; Rec.UnidadeMedida)
+                field("Unit of Measure"; Rec."Unit of Measure")
                 {
 
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
 
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
 
@@ -65,7 +65,7 @@ page 53097 "Lista Hist. Abon. - Des. Extr."
 
 
                 }
-                field("Data a que se refere o Mov."; Rec."Data a que se refere o Mov.")
+                field("Reference Date"; Rec."Reference Date")
                 {
 
 

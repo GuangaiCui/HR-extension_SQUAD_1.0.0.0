@@ -17,7 +17,7 @@ table 53108 "Hist. Cab. Movs. Empregado"
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
-        field(3; "No. Empregado"; Code[20])
+        field(3; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -34,7 +34,7 @@ table 53108 "Hist. Cab. Movs. Empregado"
         {
             CalcFormula = Sum("Hist. Linhas Movs. Empregado".Valor WHERE("Cód. Processamento" = FIELD("Cód. Processamento"),
                                                                           "Tipo Processamento" = FIELD("Tipo Processamento"),
-                                                                          "No. Empregado" = FIELD("No. Empregado")));
+                                                                          "Employee No." = FIELD("Employee No.")));
             Caption = 'Amount';
             FieldClass = FlowField;
         }
@@ -161,14 +161,14 @@ table 53108 "Hist. Cab. Movs. Empregado"
 
     keys
     {
-        key(Key1; "Cód. Processamento", "Tipo Processamento", "No. Empregado")
+        key(Key1; "Cód. Processamento", "Tipo Processamento", "Employee No.")
         {
             Clustered = true;
         }
         key(Key2; Seguradora, "No. Apólice")
         {
         }
-        key(Key3; Seguradora, "No. Apólice", "No. Empregado")
+        key(Key3; Seguradora, "No. Apólice", "Employee No.")
         {
         }
     }

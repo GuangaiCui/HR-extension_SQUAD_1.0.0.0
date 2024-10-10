@@ -7,7 +7,7 @@ table 53093 "Formação Empregado"
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado."No.";
@@ -99,17 +99,17 @@ table 53093 "Formação Empregado"
 
     keys
     {
-        key(Key1; "No. Empregado", "Cód. Acção", "Data Início")
+        key(Key1; "Employee No.", "Cód. Acção", "Data Início")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado", "Data Início", Tipo)
+        key(Key2; "Employee No.", "Data Início", Tipo)
         {
         }
-        key(Key3; "Cód. Acção", "No. Empregado", "Data Início")
+        key(Key3; "Cód. Acção", "Employee No.", "Data Início")
         {
         }
-        key(Key4; "Data Início", "Cód. Acção", "No. Empregado")
+        key(Key4; "Data Início", "Cód. Acção", "Employee No.")
         {
         }
     }

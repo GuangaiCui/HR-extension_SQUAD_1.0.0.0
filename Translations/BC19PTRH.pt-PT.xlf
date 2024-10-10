@@ -3770,7 +3770,6 @@
           <target>No. Recurso</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field Resource No. - Property Caption</note>
-          <target>No. Recurso</target>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 2247850105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Responsibility Center</source>
@@ -6501,7 +6500,6 @@
           <target>No. Recurso</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field Resource No. - Property Caption</note>
-          <target>No. Recurso</target>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 3883264070 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Salespers./Purch. Code</source>
@@ -9305,23 +9303,11 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial - Field Genero - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3926812311 - Field 2273344040 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Rúbrica de Vencimento Base,Rúbrica de IRS,Rúbrica de Seg. Social,Rúbrica Sub. Alimentação,Rúbrica IRS Sub. Férias,Rúbrica IRS Sub. Natal,Rúbrica Enc. Seg. Social,Rúbrica IVA,Rúbrica CGA,Rúbrica Falta,Rúbrica Hora Extra,Rúbrica Enc. CGA,Sindicato,ADSE,Admissão-Demissão,Enc. ADSE,Duo. Sub. Férias,Duo. Sub. Natal,Fundo Compensação Trabalho / FGCT</source>
-          <target>Genero</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial - Field Genero - Property OptionCaption</note>
-        </trans-unit>
         <trans-unit id="Table 3926812311 - Field 2760134097 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Genero Rubrica Fecho</source>
+          <source>Rubrica Fecho</source>
           <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial - Field Genero Rubrica Fecho - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3926812311 - Field 2760134097 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Indem. Mútuo Acordo ou Despedimento,Indem. Falta Aviso Prévio do Empregado,Indem. Falta Aviso Prévio da Empresa,Compensação fim contrato,Férias não gozadas,Proporcional Sub. Férias,Proporcional Sub. Natal,Sub. Férias Ano Anterior,Prop. Férias,Crédito Formação</source>
-          <target>Genero</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial - Field Genero Rubrica Fecho - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3926812311 - Field 3656921542 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Extra TAX</source>
@@ -9340,12 +9326,6 @@
           <target>NATREM</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial - Field NATREM - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3926812311 - Field 1781135875 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Comissões - C,Cód. Sub. Férias - F,Cód. Sub. Natal - N,Remuneração Permanente - P,Subsídios Reg. Não Mensal - X,Forças Armadas,Férias Pagas não Gozadas - 2,Diferenças de Vencimento - 6,Ajudas Custo e Trans. - A,Prémios Bonus e outras Prest. Mensais - B,Compensação Cessação Contrato - D,Honorários - H,Subsídios Regulares Mensais - M,Prémios Bonus e outras Prest. Não Mensais - O,Sub. Ref. - R,Trab. Supl. - S,Trab. Noct. - T,Compensação Cont. Intermitente - I</source>
-          <target>NATREM</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial - Field NATREM - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3926812311 - Field 3524596641 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Credit Acc. No.</source>
@@ -10727,11 +10707,11 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Acções Médicas - Action Action1102065019 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1035877882 - Action 254381992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ex. Complemantares - Factor Risco</source>
-          <target>Ex. Complemantares - Factor Risco</target>
+        <trans-unit id="Page 1035877882 - Action 2807748332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ex. Complementares - Factor Risco</source>
+          <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Acções Médicas - Action Ex. Complemantares - Factor Risco - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Acções Médicas - Action Ex. Complementares - Factor Risco - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2345958770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Acções Promoção da Saúde</source>
@@ -11628,7 +11608,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Endç. Alternativo - Control Geral - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 338967234 - Action 3479471516 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>&amp;Address</source>
+          <source>&amp;Endereço</source>
           <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Endç. Alternativo - Action &amp;Address - Property Caption</note>
@@ -11640,7 +11620,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Endç. Alternativo - Action &amp;Lista - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 338967234 - Action 3000180178 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Co&amp;mments</source>
+          <source>&amp;Comentários</source>
           <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Endç. Alternativo - Action Co&amp;mments - Property Caption</note>
@@ -11698,12 +11678,6 @@
           <target>Características</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Rubrica Salarial - Control Características - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 343665396 - Control 2273344040 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Rúbrica de Vencimento Base,Rúbrica de IRS,Rúbrica de Seg. Social,Rúbrica Sub. Alimentação,Rúbrica IRS Sub. Férias,Rúbrica IRS Sub. Natal,Rúbrica Enc. Seg. Social,Rúbrica IVA,Rúbrica CGA,Rúbrica Falta,Rúbrica Hora Extra,Rúbrica Enc. CGA,Sindicato,ADSE,Admissão-Demissão,Enc. ADSE,Duo. Sub. Férias,Duo. Sub. Natal,Fundo Compensação Trabalho / FGCT</source>
-          <target>Características</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Rubrica Salarial - Control Genero - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Page 343665396 - Control 2768150935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>CGA</source>
@@ -11902,217 +11876,810 @@
           <target>Centro Perfil Recursos Humanos</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Property Caption</note>
-          <target>Centro Perfil Recursos Humanos</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Control 901740945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Hist. Movs. Emp.</source>
           <target>Hist. Movs. Emp.</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Hist. Movs. Emp. - Property Caption</note>
-          <target>Hist. Movs. Emp.</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Control 1846148150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Absense Registration</source>
           <target>Registo Ausências</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Control1000000004 - Property Caption</note>
-          <target>Registo Ausências</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Control 1208451533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee</source>
           <target>Empregados</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Control1000000005 - Property Caption</note>
-          <target>Empregados</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3018226411 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee</source>
           <target>Empregados</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Empregados - Property Caption</note>
-          <target>Empregados</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3521600740 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Hist. Mov. Empregado</source>
           <target>Hist. Mov. Empregado</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Hist. Mov. Empregado - Property Caption</note>
-          <target>Hist. Mov. Empregado</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 40045555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Movimentos Empregado</source>
           <target>Movimentos Empregado</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Movimentos Empregado - Property Caption</note>
-          <target>Movimentos Empregado</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3797651617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Processing</source>
           <target>Processamento</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Processamento - Property Caption</note>
-          <target>Processamento</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3220908588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Registo Abonos - Descontos Extra</source>
           <target>Registo Abonos - Descontos Extra</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Registo Abonos - Descontos Extra - Property Caption</note>
-          <target>Registo Abonos - Descontos Extra</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3867069054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Absense Register</source>
           <target>Registo Ausências</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Registo Ausências - Property Caption</note>
-          <target>Registo Ausências</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3205897919 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Empregados</source>
           <target>Empregados</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Action1000000013 - Property Caption</note>
-          <target>Empregados</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3374806942 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee</source>
           <target>Empregados</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Action1000000014 - Property Caption</note>
-          <target>Empregados</target>
         </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 2737110325 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Processamento</source>
-          <target>Processamento</target>
+        <trans-unit id="Page 2269271619 - Action 3324780168 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documentos</source>
+          <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Action1000000015 - Property Caption</note>
-          <target>Processamento</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Documents - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 3550327908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fecho Processamento</source>
-          <target>Fecho Processamento</target>
+        <trans-unit id="Page 2269271619 - Action 3424743160 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recibo Vencimentos A4</source>
+          <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Fecho Processamento - Property Caption</note>
-          <target>Fecho Processamento</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Recibo Vencimentos A4 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 4258678484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Integração Contabilística</source>
-          <target>Integração Contabilística</target>
+        <trans-unit id="Page 2269271619 - Action 2787046543 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Recibo Vencimentos</source>
+          <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Integração Contabilística - Property Caption</note>
-          <target>Integração Contabilística</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Recibo Vencimentos A5 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 2543028478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Períodos Processamento</source>
-          <target>Períodos Processamento</target>
+        <trans-unit id="Page 2269271619 - Action 3016682 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Simulador</source>
+          <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Períodos Processamento - Property Caption</note>
-          <target>Períodos Processamento</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Simulator - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 2256261058 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Processamento Vencimentos</source>
-          <target>Processamento Vencimentos</target>
+        <trans-unit id="Page 2269271619 - Action 11812840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Simulador de Remunerações</source>
+          <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Processamento Vencimentos - Property Caption</note>
-          <target>Processamento Vencimentos</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 1542718546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Mapas</source>
-          <target>Mapas</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapas - Property Caption</note>
-          <target>Mapas</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 462039904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Companhia Seguros</source>
-          <target>Companhia Seguros</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Companhia Seguros - Property Caption</note>
-          <target>Companhia Seguros</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 1741444033 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Folha Remunerações</source>
-          <target>Folha Remunerações</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Folha Remunerações - Property Caption</note>
-          <target>Folha Remunerações</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 2170435472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Resumo Processamento</source>
-          <target>Resumo Processamento</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Resumo Processamento - Property Caption</note>
-          <target>Resumo Processamento</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 3366186448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Segurança Social</source>
-          <target>Segurança Social</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Segurança Social - Property Caption</note>
-          <target>Segurança Social</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 469263443 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Transferência Bancária</source>
-          <target>Transferência Bancária</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Transferência Bancária - Property Caption</note>
-          <target>Transferência Bancária</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 3588819659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Pagamentos</source>
-          <target>Pagamentos</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Pagamentos - Property Caption</note>
-          <target>Pagamentos</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 3067462476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Encargos</source>
-          <target>Encargos</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Encargos - Property Caption</note>
-          <target>Encargos</target>
-        </trans-unit>
-        <trans-unit id="Page 2269271619 - Action 370123227 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Vencimentos</source>
-          <target>Vencimentos</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Vencimentos - Property Caption</note>
-          <target>Vencimentos</target>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Simulador de Remunerações - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 2462935714 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tarefas</source>
           <target>Tarefas</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Tarefas - Property Caption</note>
-          <target>Tarefas</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3506599668 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Enviar Recibo via E-mail</source>
           <target>Enviar Recibo via E-mail</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Enviar Recibo via E-mail - Property Caption</note>
-          <target>Enviar Recibo via E-mail</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 1071485591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Preparação Fecho Contas</source>
           <target>Preparação Fecho Contas</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Preparação Fecho Contas - Property Caption</note>
-          <target>Preparação Fecho Contas</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 844853459 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Registo Ausência</source>
           <target>Registo Ausência</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Registo Ausência - Property Caption</note>
-          <target>Registo Ausência</target>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 895768560 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Registo Horas Extra</source>
           <target>Registo Horas Extra</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Registo Horas Extra - Property Caption</note>
-          <target>Registo Horas Extra</target>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2737110325 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processamento</source>
+          <target>Processamento</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Action1000000015 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 208205456 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processamento Anual</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Anual Processing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3568725457 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fecho Processamento SF/SN</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Fecho Processamento SF/SN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2528957024 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ficheiro Modelo 10</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Ficheiro Modelo 10 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1450784810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2395157670 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Férias Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Férias - Mapa Férias Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 575650188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Importar Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Importar Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1899634509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Listagem de Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Listagem de Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2497741532 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Férias Global</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Férias Global - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2430998190 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Marcar Férias Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Marcar Férias Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3444429522 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vista Férias Empregados</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Vista Férias Empregados - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 4214849189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Gerar Relatório Único</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Gerar Relatório Único - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3243876752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Modelo 10</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Modelo 10 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2299715048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Trabalho Suplementar</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Trabalho Suplementar - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1943893005 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processamento Sub. Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Processamento Sub. Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1864569589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processamento Sub. Natal</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Processamento Sub. Natal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1462962629 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processamento Mensal</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mounthly Processing - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3550327908 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fecho Processamento</source>
+          <target>Fecho Processamento</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Fecho Processamento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 4258678484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Integração Contabilística</source>
+          <target>Integração Contabilística</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Integração Contabilística - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3588819659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pagamentos</source>
+          <target>Pagamentos</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Pagamentos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3067462476 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Encargos</source>
+          <target>Encargos</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Encargos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 370123227 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Vencimentos</source>
+          <target>Vencimentos</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Vencimentos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2543028478 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Períodos Processamento</source>
+          <target>Períodos Processamento</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Períodos Processamento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2256261058 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processamento Vencimentos</source>
+          <target>Processamento Vencimentos</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Processamento Vencimentos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3616543702 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reabrir Processamento</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Reabrir Processamento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1569466922 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Administração</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Administration - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3615277210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actividades Económicas</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Actividades Económicas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 661410114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Artigos Diversos</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Artigos Diversos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2052490215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Categoria Profissional Interna</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Categoria Profissional Interna - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1649552921 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Categoria Profissional QP</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Categoria Profissional QP - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1924883535 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Confidencial</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Confidencial - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 4017863741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Config. Recursos Humanos</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Config. Recursos Humanos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 405747798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Contratos Trabalho</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Contratos Trabalho - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2411810995 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Código IRCT</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Código IRCT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2339999497 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Códigos Situação</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Códigos Situação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 4063298893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Departamentos Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Departamentos Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3665188827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Estabelecimentos da Empresa</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Estabelecimentos da Empresa - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 4231552469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Familiares</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Familiares - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2904513445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Feriados</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Feriados RH - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 632934209 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Grau Função</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Grau Função - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3417189731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Habilitação</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Habilitação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 440422390 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Horário</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Horário RH - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2531571152 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Importação Templates</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Importação Templates - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3997035762 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Instituição Seg. Social</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Instituição Seg. Social - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2409788050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lista Rubrica Salarial</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Lista Rubrica Salarial - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1197706103 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Motivos Ausência</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Motivos Ausência - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 4102171487 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Natureza Jurídica</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Natureza Jurídica - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1284810555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qualificações</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Qualificações - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3210930999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Regime Seg. Social</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Regime Seg. Social - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3265904492 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Relatório Único</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Relatório Único - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 878169277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sindicatos</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Sindicatos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 311200057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tabela IRS</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Tabela IRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1694945659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tabelas Sobretaxa</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Tabelas Sobretaxa - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3757299140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tipo Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Tipo Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3602875088 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tipos Horas Extra</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Tipos Horas Extra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 4116002769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unid. Medida Recursos Humanos</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Unid. Medida Recursos Humanos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2070180216 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Formação</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Formação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 965354356 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Formação por Acção</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Formação por Acção - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1472999861 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Formação por Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Formação por Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1312392235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lista Acções Formação</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Lista Acções Formação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 701632215 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Registo Formação</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Registo Formação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3940654524 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Greves</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Greves - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1600607813 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Greve</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Greve - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1542718546 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapas</source>
+          <target>Mapas</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3610528867 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processamento Fechado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action ClosedProcess - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 462039904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Companhia Seguros</source>
+          <target>Companhia Seguros</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Companhia Seguros - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1258518357 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Declaração Mensal Remu. AT</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Declaração Mensal Remu. AT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1741444033 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Folha Remunerações</source>
+          <target>Folha Remunerações</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Folha Remunerações - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2635454473 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Acumulados</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Acumulados - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3658582674 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa ADSE</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa ADSE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3782116511 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Dec. Mensal Remu. AT</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Dec. Mensal Remu. AT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 343245164 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Fundos Compensação Trab.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Fundos Compensação Trab. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1053887 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Integração Contabilística</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Integração Contabilística - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 27547680 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Pagamento por Cheque/Num</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Pagamento por Cheque/Num - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3571432583 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Sindicato</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Sindicato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2170435472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Resumo Processamento</source>
+          <target>Resumo Processamento</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Resumo Processamento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1980092626 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Resumo Processamento B</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Resumo Processamento B - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 526747054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Retenção Mensal de IRS</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Retenção Mensal de IRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3366186448 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Segurança Social</source>
+          <target>Segurança Social</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Segurança Social - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 469263443 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transferência Bancária</source>
+          <target>Transferência Bancária</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Transferência Bancária - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1498446062 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Empregados</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Employee - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3954061353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ausência por Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Ausência por Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 835473276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ausências por Motivo</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Ausências por Motivo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 4179415929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Declaração</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Declaração - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1195647310 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Declaração Anual Rendimentos</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Declaração Anual Rendimentos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3711852175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Empregado - Aniversários</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Empregado - Aniversários - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2660204566 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Empregado - Contratos</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Empregado - Contratos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3354722804 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Empregado - Etiquetas</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Empregado - Etiquetas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1598123218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Empregado - Inf. Artigos Div</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Empregado - Inf. Artigos Div - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3213797738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Empregado - Qualificações</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Empregado - Qualificações - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3234697897 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ficha Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Ficha Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1476305798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Horário Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Horario Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3183035462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Horas Extra por Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Horas Extra por Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3871289198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Horas Extra por Tipo</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Horas Extra por Tipo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3649206131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa Férias Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa Férias Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3531069417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Processamento Aberto</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action OpenProcess - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1489207325 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Companhia Seguros</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Companhia Seguros Aberto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 362806468 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Folha Remunerações</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Folha Remunerações Aberto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2933331707 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mapa ADSE</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Mapa ADSE Aberto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 695074957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Resumo Processamento</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Resumo Processamento Aberto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3322394317 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Segurança Social</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Segurança Social Aberto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 747923394 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Transferência Bancária</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Transferência Bancária Aberto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1313900583 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Segurança e Saúde no Trabalho</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Segurança e Saúde no Trabalho - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2783977031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Acidentes Trab. e Doenças</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Acidentes Trab. e Doenças - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2448551292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Acidentes de Trabalho</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Acidentes de Trabalho - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3538436384 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Doenças Profissionais</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Doenças Profissionais - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3106317113 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actividades</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Actividades - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3297835521 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Actividades dos Serviços</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Actividades dos Serviços - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1468122472 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Acções de Inf. Cons. Formação</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Acções de Inf. Cons. For - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 1035877882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Acções Médicas</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Acções Médicas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 2345958770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Acções Promoção da Saúde</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Acções Promoção da Saúde - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 3360421077 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Identificação Factores de Risco</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Identificação Factores de Risco - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Action 527285825 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pessoal dos Serviços</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Pessoal dos Serviços - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3723792084 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee Picture</source>
@@ -12373,7 +12940,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Empregado - Control varEmpActivos - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2615267451 - Action 3254300328 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>E&amp;mployee</source>
+          <source>E&amp;mpregado</source>
           <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Empregado - Action E&amp;mployee - Property Caption</note>
@@ -13207,7 +13774,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Registo Ausência - NamedType Text0002</note>
         </trans-unit>
         <trans-unit id="Page 844853459 - Action 1000001101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>A&amp;bsence</source>
+          <source>&amp;Ausência</source>
           <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Registo Ausência - Action A&amp;bsence - Property Caption</note>
@@ -13506,6 +14073,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Simulador de Remunerações - Control Cálculo do vencimento bruto a partir do líquido - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 11812840 - Control 2657111414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Valores Calculados</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Simulador de Remunerações - Control Control14 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 11812840 - Control 2754597242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Remuneração Bruta</source>
           <target>Remuneração Bruta</target>
@@ -13589,6 +14162,12 @@
           <target>Incide Seg. Social</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Simulador de Remunerações - Control usaSS[3] - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 11812840 - Control 2019414797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Valores Calculados</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Simulador de Remunerações - Control Control15 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 11812840 - Control 2169568082 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Desconto CGA</source>
@@ -14286,6 +14865,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report Actualização Escalões Venc. - Control DataInicio - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1239073703 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Atualiza Total Horas Semanais</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Atualiza Total Horas Semanais - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2721624568 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Ausência Colectiva</source>
           <target state="needs-translation"/>
@@ -14903,6 +15488,24 @@
           <target>Nome da Pessoa que assina</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH - Control NomePessoaAssina - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1251433277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Declarações RH BC</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH BC - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1251433277 - Control 775071396 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cargo</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH BC - Control cargo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1251433277 - Control 1389891023 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nome da Pessoa que assina</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Declarações RH BC - Control NomePessoaAssina - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 3711852175 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee - Birthdays</source>
@@ -16145,6 +16748,24 @@
           <target>Total de Horas Extra</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report Horas Extra por Tipo - NamedType Total_de_Horas_ExtraCaptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Report 575650188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Importar Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Importar Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 575650188 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>O empregado %1 tem direito a %2 dias de férias e introduziu %3. \A operação de importação vai ser abortada.</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Importar Férias - NamedType Text0001</note>
+        </trans-unit>
+        <trans-unit id="Report 575650188 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Já existem férias marcadas para o empregado %1, para o ano de %2. Deseja substituí-las?</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Importar Férias - NamedType Text0002</note>
         </trans-unit>
         <trans-unit id="Report 4258678484 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Integração Contabilística</source>
@@ -18775,8 +19396,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Modelo 10 - ReportLabel lblRendAno</note>
         </trans-unit>
         <trans-unit id="Report 3243876752 - ReportLabel 2242749381" size-unit="char" translate="yes" xml:space="preserve">
-          <source>RETNEÇÕES DE IRC (Artº 88º do CIRS)</source>
-          <target>RETNEÇÕES DE IRC (Artº 88º do CIRS)</target>
+          <source>RETENÇÕES DE IRC (Artº 88º do CIRS)</source>
+          <target state="needs-adaptation">RETNEÇÕES DE IRC (Artº 88º do CIRS)</target>
+          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Modelo 10 - ReportLabel lblRenIRC</note>
         </trans-unit>
@@ -19903,8 +20525,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Transferência Bancária - Control DataInicio - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 4277344948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Mapa Integração Contabilística</source>
-          <target>Mapa Integração Contabilística</target>
+          <source>Mapa Validação Contabilística</source>
+          <target state="needs-adaptation">Mapa Integração Contabilística</target>
+          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Validação Contabilística - Property Caption</note>
         </trans-unit>
@@ -21444,24 +22067,6 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort Importa Empregados - Property Caption</note>
         </trans-unit>
-        <trans-unit id="XmlPort 575650188 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Importar Férias</source>
-          <target state="needs-translation"/>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Importar Férias - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="XmlPort 575650188 - NamedType 2344539320" size-unit="char" translate="yes" xml:space="preserve">
-          <source>O empregado %1 tem direito a %2 dias de férias e introduziu %3. \A operação de importação vai ser abortada.</source>
-          <target>O empregado %1 tem direito a %2 dias de férias e introduziu %3. \A operação de importação vai ser abortada.</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Importar Férias - NamedType Text0001</note>
-        </trans-unit>
-        <trans-unit id="XmlPort 575650188 - NamedType 2982235937" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Já existem férias marcadas para o empregado %1, para o ano de %2. Deseja substituí-las?</source>
-          <target>Já existem férias marcadas para o empregado %1, para o ano de %2. Deseja substituí-las?</target>
-          <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">XmlPort Importar Férias - NamedType Text0002</note>
-        </trans-unit>
         <trans-unit id="XmlPort 649732361 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>RU - Anexo 0</source>
           <target state="needs-translation"/>
@@ -21643,10 +22248,310 @@
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CompanyInfoRH - Field Public Percentage - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1477364837 - Field 4159879974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3469146285">
-          <source>Social Security Code</source>
+          <source>No. Seg. Social</source>
           <target state="needs-translation"/>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension CompanyInfoRH - Field Social Security No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 48792811 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Admissão-Demissão</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Admissão-Demissão - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 1676683101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ADSE</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue ADSE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 2768150935 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica CGA</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue CGA - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 290482637 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Duo. Sub. Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue DuoSF - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 3778844293 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Duo. Sub. Natal</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue DuoSN - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 3271178095 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enc. ADSE</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Enc. ADSE - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 1013869829 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica Enc. CGA</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Enc. CGA - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 3284497458 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica Enc. Seg. Social</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Enc. SS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 3156788842 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica Falta</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Falta - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 3703940646 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fundo Compensação Trabalho / FGCT</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue FCT-FGCT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 217271706 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica Hora Extra</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Hora Extra - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 568757764 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica de IRS</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue IRS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 915072584 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica IRS Sub. Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue IRS Sub. Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 3580196648 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica IRS Sub. Natal</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue IRS Sub. Natal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 3440566274 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica IVA</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue IVA - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 2803557244 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sindicato</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Sindicato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 3459917660 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica de Seg. Social</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue SS - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 2147320658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica Sub. Alimentação</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Sub. Alimentação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2619380947 - EnumValue 1154337793 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rúbrica de Vencimento Base</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero - EnumValue Vencimento Base - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 3128434481 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Compensação fim contrato</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Compensação fim contrato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 862728688 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Crédito Formação</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Cred. Formacao - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 4142592531 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Férias não gozadas</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Férias não gozadas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 2527658758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indem. Falta Aviso Prévio da Empresa</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Indem. Falta Aviso Prévio da Empresa - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 1859748957 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indem. Falta Aviso Prévio do Empregado</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Indem. Falta Aviso Prévio do Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 3466166575 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indem. Mútuo Acordo ou Despedimento</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Indem. Mútuo Acordo ou Despedimento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 4106401943 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prop. Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Prop. Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 1683665254 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Proporcional Sub. Férias</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Proporcional Sub. Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 2321844342 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Proporcional Sub. Natal</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Proporcional Sub. Natal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 316501554 - EnumValue 3442603904 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sub. Férias Ano Anterior</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Genero Fecho - EnumValue Sub. Férias Ano Anterior - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source> </source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue   - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 686976601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ajudas Custo e Trans. - A</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Ajudas Custo e Trans. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 3198849069 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Compensação Cessação Contrato - D</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Compensação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 3133086439 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Compensação Cont. Intermitente - I</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Compensação Cont. Intermitente - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 3179641731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Comissões - C</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Cód. Comissões - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 458986426 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cód. Sub. Férias - F</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Cód. Sub. Férias - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 505293866 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cód. Sub. Natal - N</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Cód. Sub. Natal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 2790749331 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Diferenças de Vencimento - 6</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Diferenças de Vencimento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 1809044161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Forças Armadas</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Forças Armadas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 423320751 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Férias Pagas não Gozadas - 2</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Férias Pagas não Gozadas - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 1247199502 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Honorários - H</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Honorários - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 963736013 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prémios Bonus e outras Prest. Mensais - B</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Prémios-Bonus Mensal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 2190265667 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prémios Bonus e outras Prest. Não Mensais - O</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Prémios-bonus Não mensal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 3178758981 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remuneração Permanente - P</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Remuneração Permanente - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 2715073879 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sub. Ref. - R</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Sub. Ref. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 256828145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subsídios Reg. Não Mensal - X</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Subsídios Reg. Não Mensal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 1679785801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Subsídios Regulares Mensais - M</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Subsídios regulares - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 1469960925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Trab. Noct. - T</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Trab. Noct. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 478740224 - EnumValue 2360706785 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Trab. Supl. - S</source>
+          <target state="needs-translation"/>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum Rubrica Salarial Nat. Rem. - EnumValue Trab. Supl. - Property Caption</note>
         </trans-unit>
       </group>
     </body>

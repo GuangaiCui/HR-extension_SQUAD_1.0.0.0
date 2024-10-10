@@ -34,7 +34,7 @@ page 53145 "Medidas Adoptadas"
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         rFactoresRisco.Reset;
-        if rFactoresRisco.Get(Rec."No. Mov.") then
+        if rFactoresRisco.Get(Rec."Entry No.") then
             Rec."Tipo de Risco" := rFactoresRisco."Tipo de Risco";
     end;
 

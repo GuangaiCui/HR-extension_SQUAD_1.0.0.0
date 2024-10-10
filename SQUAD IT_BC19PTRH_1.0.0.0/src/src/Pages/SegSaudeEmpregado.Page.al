@@ -11,7 +11,7 @@ page 53167 "Seg Saude Empregado"
         {
             repeater(Group)
             {
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 

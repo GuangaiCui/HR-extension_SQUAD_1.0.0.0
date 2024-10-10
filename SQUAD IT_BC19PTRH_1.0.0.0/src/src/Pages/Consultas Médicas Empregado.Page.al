@@ -12,7 +12,7 @@ page 53122 "Consultas Médicas Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -53,7 +53,7 @@ page 53122 "Consultas Médicas Empregado"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
         //HG
-        exit(Employee.Get(Rec."No. Empregado"));
+        exit(Employee.Get(Rec."Employee No."));
     end;
 
     var

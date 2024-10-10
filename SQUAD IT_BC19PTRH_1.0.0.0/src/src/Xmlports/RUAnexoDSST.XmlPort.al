@@ -214,7 +214,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", vDate, CalcDate('+1M-1D', vDate));
                                                         if rHistCabMovEmp.FindSet then begin
                                                             repeat
-                                                                if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
+                                                                if (rEmpregado.Get(rHistCabMovEmp."Employee No.")) and
                                                                    (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
 
                                                                     rContratoEmpregado.Reset;
@@ -292,7 +292,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", vDate, CalcDate('+1M-1D', vDate));
                                                         if rHistCabMovEmp.FindSet then begin
                                                             repeat
-                                                                if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
+                                                                if (rEmpregado.Get(rHistCabMovEmp."Employee No.")) and
                                                                    (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                     rContratoEmpregado.Reset;
                                                                     rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -353,7 +353,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", vDate, CalcDate('+1M-1D', vDate));
                                                         if rHistCabMovEmp.FindSet then begin
                                                             repeat
-                                                                if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
+                                                                if (rEmpregado.Get(rHistCabMovEmp."Employee No.")) and
                                                                    (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
 
                                                                     rContratoEmpregado.Reset;
@@ -417,7 +417,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", vDate, CalcDate('+1M-1D', vDate));
                                                         if rHistCabMovEmp.FindSet then begin
                                                             repeat
-                                                                if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
+                                                                if (rEmpregado.Get(rHistCabMovEmp."Employee No.")) and
                                                                    (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
 
                                                                     rContratoEmpregado.Reset;
@@ -480,7 +480,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", vDate, CalcDate('+1M-1D', vDate));
                                                         if rHistCabMovEmp.FindSet then begin
                                                             repeat
-                                                                if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
+                                                                if (rEmpregado.Get(rHistCabMovEmp."Employee No.")) and
                                                                    (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
 
                                                                     rContratoEmpregado.Reset;
@@ -542,7 +542,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", vDate, CalcDate('+1M-1D', vDate));
                                                         if rHistCabMovEmp.FindSet then begin
                                                             repeat
-                                                                if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
+                                                                if (rEmpregado.Get(rHistCabMovEmp."Employee No.")) and
                                                                    (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
 
                                                                     rContratoEmpregado.Reset;
@@ -604,7 +604,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", vDate, CalcDate('+1M-1D', vDate));
                                                         if rHistCabMovEmp.FindSet then begin
                                                             repeat
-                                                                if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
+                                                                if (rEmpregado.Get(rHistCabMovEmp."Employee No.")) and
                                                                    (rEmpregado."Tipo Contribuinte" = rEmpregado."Tipo Contribuinte"::"Trabalhador Independente") and
                                                                    (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                     vTotPessoas := vTotPessoas + 1;
@@ -691,7 +691,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", vDate, CalcDate('+1M-1D', vDate));
                                                         if rHistCabMovEmp.FindSet then begin
                                                             repeat
-                                                                if (rEmpregado.Get(rHistCabMovEmp."No. Empregado")) and
+                                                                if (rEmpregado.Get(rHistCabMovEmp."Employee No.")) and
                                                                    (rEmpregado."Tipo Contribuinte" = rEmpregado."Tipo Contribuinte"::"Trabalhador Independente") then begin
                                                                     vTotPessoas := vTotPessoas + 1;
                                                                     if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
@@ -869,7 +869,7 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                                                 //tirar as férias
                                                                 rFeriasEmpregado.Reset;
-                                                                rFeriasEmpregado.SetRange(rFeriasEmpregado."No. Empregado", rEmpregado."No.");
+                                                                rFeriasEmpregado.SetRange(rFeriasEmpregado."Employee No.", rEmpregado."No.");
                                                                 rFeriasEmpregado.SetRange(rFeriasEmpregado.Data, DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
                                                                 rFeriasEmpregado.SetRange(rFeriasEmpregado.Gozada, true);
                                                                 if rFeriasEmpregado.FindLast then
@@ -890,11 +890,11 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                                                 //Horas extra
                                                                 rHorasExtra.Reset;
-                                                                rHorasExtra.SetRange(rHorasExtra."No. Empregado", rEmpregado."No.");
+                                                                rHorasExtra.SetRange(rHorasExtra."Employee No.", rEmpregado."No.");
                                                                 rHorasExtra.SetRange(rHorasExtra.Data, DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
                                                                 if rHorasExtra.FindSet then begin
                                                                     repeat
-                                                                        HorasExtra := HorasExtra + rHorasExtra.Quantidade;
+                                                                        HorasExtra := HorasExtra + rHorasExtra.Quantity;
                                                                     until rHorasExtra.Next = 0;
                                                                 end;
 
@@ -1159,7 +1159,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                             tableelement("pessoal dos serviços int"; "Pessoal dos Serviços Int")
                                             {
                                                 XmlName = 'medico';
-                                                fieldelement(nome; "Pessoal dos Serviços Int".Nome)
+                                                fieldelement(nome; "Pessoal dos Serviços Int".Name)
                                                 {
                                                 }
                                                 fieldelement(n_cedula; "Pessoal dos Serviços Int"."No. da Cédula Profissional")
@@ -1187,7 +1187,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                             tableelement("pessoal dos serviços int2"; "Pessoal dos Serviços Int")
                                             {
                                                 XmlName = 'tec_sht';
-                                                fieldelement(nome; "Pessoal dos Serviços Int2".Nome)
+                                                fieldelement(nome; "Pessoal dos Serviços Int2".Name)
                                                 {
                                                 }
                                                 fieldelement(cap; "Pessoal dos Serviços Int2"."No. Certificado Aptidão Prof.")
@@ -1237,7 +1237,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                         tableelement("pessoal dos serviços3"; "Pessoal dos Serviços")
                                         {
                                             XmlName = 'empregador';
-                                            fieldelement(nome; "Pessoal dos Serviços3"."Nome Empregador")
+                                            fieldelement(nome; "Pessoal dos Serviços3"."Employer Name")
                                             {
                                             }
                                             fieldelement(n_autorizacao; "Pessoal dos Serviços3"."Emp. - No. Autorização")
@@ -1438,7 +1438,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                             {
                                                 XmlName = 'accao_inf';
                                                 SourceTableView = WHERE("Tipo de Acção" = CONST("Informação"));
-                                                fieldelement(situacao; "Acções de Inf. Cons. For"."Código")
+                                                fieldelement(situacao; "Acções de Inf. Cons. For".Code)
                                                 {
                                                     textattribute(tbl_situacao_accao_inf)
                                                     {
@@ -1491,7 +1491,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                             {
                                                 XmlName = 'accao_consult';
                                                 SourceTableView = WHERE("Tipo de Acção" = CONST(Consulta));
-                                                fieldelement(razao; "Acções de Inf. Cons. For2"."Código")
+                                                fieldelement(razao; "Acções de Inf. Cons. For2".Code)
                                                 {
                                                     textattribute(tbl_razao)
                                                     {
@@ -1544,7 +1544,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                             {
                                                 XmlName = 'accao_form';
                                                 SourceTableView = WHERE("Tipo de Acção" = CONST("Formação"));
-                                                fieldelement(tema; "Acções de Inf. Cons. For3"."Código")
+                                                fieldelement(tema; "Acções de Inf. Cons. For3"."Code")
                                                 {
                                                     textattribute(tbl_tema)
                                                     {
@@ -1651,7 +1651,7 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                                     trigger OnPreXmlItem()
                                                     begin
-                                                        "Medidas Adoptadas".SetRange("Medidas Adoptadas"."No. Mov.", "Factores de Risco"."No. Mov.");
+                                                        "Medidas Adoptadas".SetRange("Medidas Adoptadas"."Entry No.", "Factores de Risco"."Entry No.");
                                                     end;
                                                 }
 
@@ -1737,7 +1737,7 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                                     trigger OnPreXmlItem()
                                                     begin
-                                                        "Medidas Adoptadas2".SetRange("Medidas Adoptadas2"."No. Mov.", "Factores de Risco2"."No. Mov.");
+                                                        "Medidas Adoptadas2".SetRange("Medidas Adoptadas2"."Entry No.", "Factores de Risco2"."Entry No.");
                                                     end;
                                                 }
 
@@ -1811,7 +1811,7 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                                     trigger OnPreXmlItem()
                                                     begin
-                                                        "Medidas Adoptadas3".SetRange("Medidas Adoptadas3"."No. Mov.", "Factores de Risco3"."No. Mov.");
+                                                        "Medidas Adoptadas3".SetRange("Medidas Adoptadas3"."Entry No.", "Factores de Risco3"."Entry No.");
                                                     end;
                                                 }
 
@@ -1885,7 +1885,7 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                                     trigger OnPreXmlItem()
                                                     begin
-                                                        "Medidas Adoptadas4".SetRange("Medidas Adoptadas4"."No. Mov.", "Factores de Risco4"."No. Mov.");
+                                                        "Medidas Adoptadas4".SetRange("Medidas Adoptadas4"."Entry No.", "Factores de Risco4"."Entry No.");
                                                     end;
                                                 }
 
@@ -1959,7 +1959,7 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                                     trigger OnPreXmlItem()
                                                     begin
-                                                        "Medidas Adoptadas5".SetRange("Medidas Adoptadas5"."No. Mov.", "Factores de Risco5"."No. Mov.");
+                                                        "Medidas Adoptadas5".SetRange("Medidas Adoptadas5"."Entry No.", "Factores de Risco5"."Entry No.");
                                                     end;
                                                 }
 
@@ -2033,7 +2033,7 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                                     trigger OnPreXmlItem()
                                                     begin
-                                                        "Medidas Adoptadas6".SetRange("Medidas Adoptadas6"."No. Mov.", "Factores de Risco6"."No. Mov.");
+                                                        "Medidas Adoptadas6".SetRange("Medidas Adoptadas6"."Entry No.", "Factores de Risco6"."Entry No.");
                                                     end;
                                                 }
 
@@ -5255,7 +5255,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                     rAcidentesTrab.SetRange(rAcidentesTrab."Data Acidente", DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
                                                     if rAcidentesTrab.FindSet then begin
                                                         repeat
-                                                            if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                            if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                 rContratoEmpregado.Reset;
                                                                 rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5306,7 +5306,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                             rAcidentesTrab.SetRange(rAcidentesTrab."Data Acidente", DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
                                                             if rAcidentesTrab.FindSet then begin
                                                                 repeat
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5356,7 +5356,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                             rAcidentesTrab.SetRange(rAcidentesTrab."Dias de trabalho perdidos", rAcidentesTrab."Dias de trabalho perdidos"::"1a3");
                                                             if rAcidentesTrab.FindSet then begin
                                                                 repeat
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
 
                                                                         rContratoEmpregado.Reset;
@@ -5406,7 +5406,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                             rAcidentesTrab.SetRange(rAcidentesTrab."Dias de trabalho perdidos", rAcidentesTrab."Dias de trabalho perdidos"::"4a30");
                                                             if rAcidentesTrab.FindSet then begin
                                                                 repeat
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
 
                                                                         rContratoEmpregado.Reset;
@@ -5456,7 +5456,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                             rAcidentesTrab.SetRange(rAcidentesTrab."Dias de trabalho perdidos", rAcidentesTrab."Dias de trabalho perdidos"::Sup30);
                                                             if rAcidentesTrab.FindSet then begin
                                                                 repeat
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5505,7 +5505,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                             rAcidentesTrab.SetRange(rAcidentesTrab."Dias de trabalho perdidos", rAcidentesTrab."Dias de trabalho perdidos"::inf1);
                                                             if rAcidentesTrab.FindSet then begin
                                                                 repeat
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5555,7 +5555,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                             rAcidentesTrab.SetRange(rAcidentesTrab."Dias de trabalho perdidos", rAcidentesTrab."Dias de trabalho perdidos"::Mortal);
                                                             if rAcidentesTrab.FindSet then begin
                                                                 repeat
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5613,7 +5613,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data ínicio da interrupção");
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data fim da interrupção");
                                                                     NDias := rAcidentesTrab."Data fim da interrupção" - rAcidentesTrab."Data ínicio da interrupção" + 1;
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5669,7 +5669,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data ínicio da interrupção");
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data fim da interrupção");
                                                                     NDias := rAcidentesTrab."Data fim da interrupção" - rAcidentesTrab."Data ínicio da interrupção" + 1;
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5723,7 +5723,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data ínicio da interrupção");
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data fim da interrupção");
                                                                     NDias := rAcidentesTrab."Data fim da interrupção" - rAcidentesTrab."Data ínicio da interrupção" + 1;
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5777,7 +5777,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data ínicio da interrupção");
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data fim da interrupção");
                                                                     NDias := rAcidentesTrab."Data fim da interrupção" - rAcidentesTrab."Data ínicio da interrupção" + 1;
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5836,7 +5836,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data ínicio da interrupção");
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data fim da interrupção");
                                                                     NDias := rAcidentesTrab."Data fim da interrupção" - DMY2Date(1, 1, vAno) + 1;
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5891,7 +5891,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data ínicio da interrupção");
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data fim da interrupção");
                                                                     NDias := rAcidentesTrab."Data fim da interrupção" - DMY2Date(1, 1, vAno) + 1;
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -5946,7 +5946,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data ínicio da interrupção");
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data fim da interrupção");
                                                                     NDias := rAcidentesTrab."Data fim da interrupção" - DMY2Date(1, 1, vAno) + 1;
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -6001,7 +6001,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data ínicio da interrupção");
                                                                     rAcidentesTrab.TestField(rAcidentesTrab."Data fim da interrupção");
                                                                     NDias := rAcidentesTrab."Data fim da interrupção" - DMY2Date(1, 1, vAno) + 1;
-                                                                    if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                                    if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                        (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") then begin
                                                                         rContratoEmpregado.Reset;
                                                                         rContratoEmpregado.SetRange(rContratoEmpregado."Cód. Empregado", rEmpregado."No.");
@@ -6056,7 +6056,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                     rAcidentesTrab.SetRange(rAcidentesTrab."Data Acidente", DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
                                                     if rAcidentesTrab.FindSet then begin
                                                         repeat
-                                                            if (rEmpregado.Get(rAcidentesTrab."No. Empregado")) and
+                                                            if (rEmpregado.Get(rAcidentesTrab."Employee No.")) and
                                                                (rEmpregado.Estabelecimento = "Estabelecimentos da Empresa"."Número da Unidade Local") and
                                                                (rEmpregado."Tipo Contribuinte" = rEmpregado."Tipo Contribuinte"::"Trabalhador Independente") then begin
                                                                 ocorreram_aciden_trab_i32 := 'S';
@@ -6166,7 +6166,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rDoencas.SetRange("Doença Profissional", DoencasProf."Doença Profissional");
                                                         if rDoencas.FindSet then begin
                                                             repeat
-                                                                if rEmpregado.Get(rDoencas."No. Empregado") then begin
+                                                                if rEmpregado.Get(rDoencas."Employee No.") then begin
                                                                     if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
                                                                     if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
                                                                 end;
@@ -6271,7 +6271,7 @@ xmlport 53039 "RU - Anexo D - SST"
                                                         rDoencas.SetRange("Doença Profissional", DoencasProfConf."Doença Profissional");
                                                         if rDoencas.FindSet then begin
                                                             repeat
-                                                                if rEmpregado.Get(rDoencas."No. Empregado") then begin
+                                                                if rEmpregado.Get(rDoencas."Employee No.") then begin
                                                                     if rEmpregado.Sex = rEmpregado.Sex::Female then vContM := vContM + 1;
                                                                     if rEmpregado.Sex = rEmpregado.Sex::Male then vContH := vContH + 1;
                                                                 end;

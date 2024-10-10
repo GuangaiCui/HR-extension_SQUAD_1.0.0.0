@@ -5,7 +5,7 @@ table 53090 "Férias Empregados"
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -44,7 +44,7 @@ table 53090 "Férias Empregados"
 
     keys
     {
-        key(Key1; "No. Empregado", Data, Tipo)
+        key(Key1; "Employee No.", Data, Tipo)
         {
             Clustered = true;
             SumIndexFields = "Qtd.";

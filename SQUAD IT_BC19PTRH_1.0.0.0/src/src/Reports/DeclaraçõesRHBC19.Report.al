@@ -119,7 +119,7 @@ report 53095 "Declarações RH BC"
                 if Contratos.Get(Empregado."Emplymt. Contract Code") then
                     ContractType := Format(Contratos."Tipo Contrato");
                 TabRubricaSalEmpregado.Reset;
-                TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."No. Empregado", Empregado."No.");
+                TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Employee No.", Empregado."No.");
                 TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Início", '<=%1', Today);
                 TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Fim", '>%1|=%2', Today, 0D);
                 if TabRubricaSalEmpregado.FindSet then begin
@@ -179,7 +179,7 @@ report 53095 "Declarações RH BC"
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
         NomePessoaAssina: Text[75];
         cargo: Text[50];
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         VencimentoBase: Decimal;
         ContractType: Text;
         ExpirationDate: Text;

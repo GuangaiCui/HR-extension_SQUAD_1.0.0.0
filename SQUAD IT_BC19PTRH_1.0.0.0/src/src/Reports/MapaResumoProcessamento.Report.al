@@ -205,33 +205,33 @@ report 53056 "Mapa Resumo Processamento"
             }
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
                     TabRubrica.Reset;
-                    TabRubrica.SetRange(TabRubrica.Código, "Linhas Movs. Empregado"."Cód. Rubrica");
+                    TabRubrica.SetRange(TabRubrica.Código, "Linhas Movs. Empregado"."Payroll Item Code");
                     if TabRubrica.FindFirst then begin
                         //2011.09.14 acrescentou-se o filtro abono para n descontar a incapacidade pois já desconta na coluna dos outros descontos
                         if (TabRubrica.Genero = TabRubrica.Genero::"Vencimento Base") and
-                           (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) then
+                           (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) then
                             VarVencimentoBase := VarVencimentoBase + "Linhas Movs. Empregado".Valor;
 
                         //2011.09.14 acrescentou-se o filtro abono para n descontar o SA pois já desconta na coluna dos outros descontos
                         if (TabRubrica.Genero = TabRubrica.Genero::"Sub. Alimentação") and
-                           (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) then
+                           (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) then
                             VarSubAlimentacao := VarSubAlimentacao + "Linhas Movs. Empregado".Valor;
 
                         if (TabRubrica.NATREM = TabRubrica.NATREM::"Cód. Sub. Férias") and
-                           (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) then
+                           (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) then
                             VarSubFerias := VarSubFerias + "Linhas Movs. Empregado".Valor;
 
                         if (TabRubrica.NATREM = TabRubrica.NATREM::"Cód. Sub. Natal") and
-                           (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) then
+                           (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) then
                             VarSubNatal := VarSubNatal + "Linhas Movs. Empregado".Valor;
 
-                        if (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) and
+                        if (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) and
                            (TabRubrica.Genero <> TabRubrica.Genero::"Vencimento Base") and
                            (TabRubrica.Genero <> TabRubrica.Genero::"Sub. Alimentação") and
                            (TabRubrica.NATREM <> TabRubrica.NATREM::"Cód. Sub. Férias") and
@@ -249,7 +249,7 @@ report 53056 "Mapa Resumo Processamento"
                         if TabRubrica.Genero = TabRubrica.Genero::CGA then
                             VarCGA := VarCGA + "Linhas Movs. Empregado".Valor;
 
-                        if (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Desconto) and
+                        if (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Desconto) and
                            (TabRubrica.Genero <> TabRubrica.Genero::IRS) and
                            (TabRubrica.Genero <> TabRubrica.Genero::"IRS Sub. Férias") and
                            (TabRubrica.Genero <> TabRubrica.Genero::"IRS Sub. Natal") and
@@ -304,33 +304,33 @@ report 53056 "Mapa Resumo Processamento"
             }
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
                     TabRubrica.Reset;
-                    TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado"."Cód. Rubrica");
+                    TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado"."Payroll Item Code");
                     if TabRubrica.FindFirst then begin
                         //2011.09.14 acrescentou-se o filtro abono para n descontar a incapacidade pois já desconta na coluna dos outros descontos
                         if (TabRubrica.Genero = TabRubrica.Genero::"Vencimento Base") and
-                          (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) then
+                          (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) then
                             VarVencimentoBase := VarVencimentoBase + "Hist. Linhas Movs. Empregado".Valor;
 
                         //2011.09.14 acrescentou-se o filtro abono para n descontar o SA pois já desconta na coluna dos outros descontos
                         if (TabRubrica.Genero = TabRubrica.Genero::"Sub. Alimentação") and
-                          (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) then
+                          (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) then
                             VarSubAlimentacao := VarSubAlimentacao + "Hist. Linhas Movs. Empregado".Valor;
 
                         if (TabRubrica.NATREM = TabRubrica.NATREM::"Cód. Sub. Férias") and
-                           (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) then
+                           (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) then
                             VarSubFerias := VarSubFerias + "Hist. Linhas Movs. Empregado".Valor;
 
                         if (TabRubrica.NATREM = TabRubrica.NATREM::"Cód. Sub. Natal") and
-                           (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) then
+                           (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) then
                             VarSubNatal := VarSubNatal + "Hist. Linhas Movs. Empregado".Valor;
 
-                        if (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) and
+                        if (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) and
                            (TabRubrica.Genero <> TabRubrica.Genero::"Vencimento Base") and
                            (TabRubrica.Genero <> TabRubrica.Genero::"Sub. Alimentação") and
                            (TabRubrica.NATREM <> TabRubrica.NATREM::"Cód. Sub. Férias") and
@@ -348,7 +348,7 @@ report 53056 "Mapa Resumo Processamento"
                         if TabRubrica.Genero = TabRubrica.Genero::CGA then
                             VarCGA := VarCGA + "Hist. Linhas Movs. Empregado".Valor;
 
-                        if (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Desconto) and
+                        if (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Desconto) and
                            (TabRubrica.Genero <> TabRubrica.Genero::IRS) and
                            (TabRubrica.Genero <> TabRubrica.Genero::"IRS Sub. Férias") and
                            (TabRubrica.Genero <> TabRubrica.Genero::"IRS Sub. Natal") and
@@ -562,7 +562,7 @@ report 53056 "Mapa Resumo Processamento"
     end;
 
     var
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabLinhasMov: Record "Linhas Movs. Empregado";
         TabHistLinhasMov: Record "Hist. Linhas Movs. Empregado";
         VarVencimentoBase: Decimal;

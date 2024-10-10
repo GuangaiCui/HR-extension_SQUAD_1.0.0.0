@@ -3,7 +3,7 @@ table 53086 "Perdas e Anomalias Emp."
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -30,7 +30,7 @@ table 53086 "Perdas e Anomalias Emp."
 
     keys
     {
-        key(Key1; "No. Empregado", "No. Linha")
+        key(Key1; "Employee No.", "No. Linha")
         {
             Clustered = true;
         }

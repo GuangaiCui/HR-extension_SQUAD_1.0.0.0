@@ -1,18 +1,18 @@
 table 53128 "Seguro Saude Empregado"
 {
-    DataCaptionFields = "No. Empregado", "Nome Empregado";
+    DataCaptionFields = "Employee No.", "Nome Empregado";
     DrillDownPageID = "Seg Saude Empregado";
     LookupPageID = "Seg Saude Empregado";
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             TableRelation = Empregado;
 
             trigger OnValidate()
             begin
-                if Empregado.Get("No. Empregado") then
+                if Empregado.Get("Employee No.") then
                     "Nome Empregado" := Empregado.Name;
             end;
         }
@@ -34,7 +34,7 @@ table 53128 "Seguro Saude Empregado"
             trigger OnValidate()
             begin
                 FamiliarEmp.Reset;
-                FamiliarEmp.SetRange("Employee No.", "No. Empregado");
+                FamiliarEmp.SetRange("Employee No.", "Employee No.");
                 FamiliarEmp.SetRange("Relative Code", Parentesco);
                 if FamiliarEmp.FindFirst then
                     "Nome Beneficiário" := FamiliarEmp.Name;
@@ -67,7 +67,7 @@ table 53128 "Seguro Saude Empregado"
 
     keys
     {
-        key(Key1; "No. Empregado", "No. Linha")
+        key(Key1; "Employee No.", "No. Linha")
         {
             Clustered = true;
         }
@@ -81,10 +81,10 @@ table 53128 "Seguro Saude Empregado"
     begin
         /*
         rSegSaude.RESET;
-        rSegSaude.setrange(rSegSaude."No. Empregado", "No. Empregado");
+        rSegSaude.setrange(rSegSaude."Employee No.", "Employee No.");
         if not rSegSaude.FINDFIRST then begin
           rSegSaude.INIT;
-          rSegSaude."No. Empregado" := "No. Empregado";
+          rSegSaude."Employee No." := "Employee No.";
           rSegSaude."Nome Empregado"
           rSegSaude."No. Médis"
           rSegSaude."Data Inclusão"

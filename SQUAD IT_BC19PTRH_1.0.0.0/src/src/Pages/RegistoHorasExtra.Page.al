@@ -12,11 +12,11 @@ page 53090 "Registo Horas Extra"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Mov."; Rec."No. Mov.")
+                field("Entry No."; Rec."Entry No.")
                 {
 
                 }
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
                 }
@@ -32,11 +32,11 @@ page 53090 "Registo Horas Extra"
                 {
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
                 }
@@ -44,7 +44,7 @@ page 53090 "Registo Horas Extra"
                 {
 
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
                 }
@@ -87,7 +87,7 @@ page 53090 "Registo Horas Extra"
                     Image = ViewComments;
                     RunObject = Page "Folha Comentários RH";
                     RunPageLink = "Table Name" = CONST(HorEx),
-                                  "Table Line No." = FIELD("No. Mov.");
+                                  "Table Line No." = FIELD("Entry No.");
                 }
                 action("Horas Extra Colectiva")
                 {
@@ -113,13 +113,13 @@ page 53090 "Registo Horas Extra"
     begin
 
 
-        exit(Employee.Get(Rec."No. Empregado"));
+        exit(Employee.Get(Rec."Employee No."));
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         //HG
-        Rec."No. Empregado" := Rec.GetFilter("No. Empregado");
+        Rec."Employee No." := Rec.GetFilter("Employee No.");
     end;
 
     var

@@ -103,14 +103,14 @@ report 53091 "Formação por Acção"
             dataitem("Formação Empregado"; "Formação Empregado")
             {
                 DataItemLink = "Cód. Acção" = FIELD("Código");
-                DataItemTableView = SORTING("Cód. Acção", "No. Empregado", "Data Início");
+                DataItemTableView = SORTING("Cód. Acção", "Employee No.", "Data Início");
                 column("Formação_Empregado_Observações"; Observações)
                 {
                 }
                 column("Formação_Empregado_Avaliação"; Avaliação)
                 {
                 }
-                column("Formação_Empregado__No__Empregado_"; "No. Empregado")
+                column("Formação_Empregado__No__Empregado_"; "Employee No.")
                 {
                 }
                 column(Nome; Nome)
@@ -140,7 +140,7 @@ report 53091 "Formação por Acção"
 
                 trigger OnAfterGetRecord()
                 begin
-                    if TabEmpregado.Get("Formação Empregado"."No. Empregado") then
+                    if TabEmpregado.Get("Formação Empregado"."Employee No.") then
                         Nome := TabEmpregado.Name;
 
                     TotalFormandos := TotalFormandos + 1

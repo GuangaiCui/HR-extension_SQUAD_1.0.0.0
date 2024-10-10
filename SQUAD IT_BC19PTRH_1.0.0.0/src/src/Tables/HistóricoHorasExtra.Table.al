@@ -1,16 +1,16 @@
 table 53106 "Histórico Horas Extra"
 {
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     DrillDownPageID = "Lista Histórico Horas Extra";
     LookupPageID = "Lista Histórico Horas Extra";
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
             Caption = 'Entry No.';
         }
-        field(2; "No. Empregado"; Code[20])
+        field(2; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -28,27 +28,27 @@ table 53106 "Histórico Horas Extra"
         {
             Caption = 'Description';
         }
-        field(12; "Cód. Rubrica"; Code[20])
+        field(12; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Item code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
         }
-        field(17; Quantidade; Decimal)
+        field(17; Quantity; Decimal)
         {
-            Caption = 'Quantity';
+            Caption = 'Quantidade';
         }
         field(18; Factor; Decimal)
         {
             Caption = 'Factor';
         }
-        field(19; "Valor Unitário"; Decimal)
+        field(19; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
         }
         field(25; "Comentário"; Boolean)
         {
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(HHorEx),
-                                                                      "No." = FIELD("No. Empregado")));
+                                                                      "No." = FIELD("Employee No.")));
             Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;
@@ -73,25 +73,25 @@ table 53106 "Histórico Horas Extra"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }
         key(Key2; "Cód. Hora Extra")
         {
-            SumIndexFields = Quantidade;
+            SumIndexFields = Quantity;
         }
         key(Key3; "Cód. Hora Extra", Data)
         {
-            SumIndexFields = Quantidade;
+            SumIndexFields = Quantity;
         }
-        key(Key4; "Cód. Hora Extra", "No. Empregado", Data)
+        key(Key4; "Cód. Hora Extra", "Employee No.", Data)
         {
-            SumIndexFields = Quantidade;
+            SumIndexFields = Quantity;
         }
-        key(Key5; "No. Empregado", Data)
+        key(Key5; "Employee No.", Data)
         {
-            SumIndexFields = Quantidade;
+            SumIndexFields = Quantity;
         }
     }
 

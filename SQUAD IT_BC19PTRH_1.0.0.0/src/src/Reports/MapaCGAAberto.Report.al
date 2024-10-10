@@ -72,8 +72,8 @@ report 53052 "Mapa CGA - Aberto"
             DataItemTableView = SORTING("No.") WHERE("Subsccritor CGA" = CONST(true));
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Empregado", "Data Registo", "Cód. Situação", "Cód. Movimento") WHERE("Tipo Processamento" = FILTER(Vencimentos | SubNatal | SubFerias));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", "Data Registo", "Cód. Situação", "Cód. Movimento") WHERE("Tipo Processamento" = FILTER(Vencimentos | SubNatal | SubFerias));
 
                 trigger OnAfterGetRecord()
                 var
@@ -108,8 +108,8 @@ report 53052 "Mapa CGA - Aberto"
                             repeat
                                 recHistLinMovEmp.Reset;
                                 recHistLinMovEmp.SetRange(recHistLinMovEmp."Data Registo", DataIni, DataFim);
-                                recHistLinMovEmp.SetRange("Cód. Rubrica", recRubricaSalarial.Código);
-                                recHistLinMovEmp.SetRange(recHistLinMovEmp."No. Empregado", "Linhas Movs. Empregado"."No. Empregado");
+                                recHistLinMovEmp.SetRange("Payroll Item Code", recRubricaSalarial.Código);
+                                recHistLinMovEmp.SetRange(recHistLinMovEmp."Employee No.", "Linhas Movs. Empregado"."Employee No.");
                                 if recHistLinMovEmp.FindSet then begin
                                     repeat   //2017.12.18-Correcção aos descontos CGA quando se tira o mapa para mais que 1 proc.
                                         DescEmp := DescEmp + recHistLinMovEmp.Valor;
@@ -123,8 +123,8 @@ report 53052 "Mapa CGA - Aberto"
                             repeat
                                 recHistLinMovEmp.Reset;
                                 recHistLinMovEmp.SetRange(recHistLinMovEmp."Data Registo", DataIni, DataFim);
-                                recHistLinMovEmp.SetRange("Cód. Rubrica", recRubricaSalarial.Código);
-                                recHistLinMovEmp.SetRange(recHistLinMovEmp."No. Empregado", "Linhas Movs. Empregado"."No. Empregado");
+                                recHistLinMovEmp.SetRange("Payroll Item Code", recRubricaSalarial.Código);
+                                recHistLinMovEmp.SetRange(recHistLinMovEmp."Employee No.", "Linhas Movs. Empregado"."Employee No.");
                                 if recHistLinMovEmp.FindSet then begin
                                     repeat    //2017.12.18-Correcção aos descontos CGA quando se tira o mapa para mais que 1 proc.
                                         DescEntPat := DescEntPat + recHistLinMovEmp.Valor;
@@ -145,13 +145,13 @@ report 53052 "Mapa CGA - Aberto"
                         TabHistCabMovEmp.Reset;
                         TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Cód. Processamento", "Linhas Movs. Empregado"."Cód. Processamento");
                         TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Tipo Processamento", "Linhas Movs. Empregado"."Tipo Processamento");
-                        TabHistCabMovEmp.SetRange(TabHistCabMovEmp."No. Empregado", "Linhas Movs. Empregado"."No. Empregado");
+                        TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Employee No.", "Linhas Movs. Empregado"."Employee No.");
                         if TabHistCabMovEmp.FindFirst then begin
                             NhorasSem := TabHistCabMovEmp."No. Horas Semanais";
                             NhorasSemanaisTotais := TabHistCabMovEmp."Nº Horas Semanais Totais";
                             NhorasDocencia := TabHistCabMovEmp."Nº Horas Docência Calc. Desct.";
                             NCGA := TabHistCabMovEmp."Nº CGA";
-                            if StrLen(Format(NCGA)) > 7 then Error(Text0001, TabHistCabMovEmp."No. Empregado");
+                            if StrLen(Format(NCGA)) > 7 then Error(Text0001, TabHistCabMovEmp."Employee No.");
                             Nivel := TabHistCabMovEmp."Grau Função";
                         end;
                         //19.03.07 - Se for cod. situação 01 tem de subtrair o valor das faltas ou seja
@@ -163,7 +163,7 @@ report 53052 "Mapa CGA - Aberto"
                                 repeat
                                     TabHistMovEmp.Reset;
                                     TabHistMovEmp.SetRange(TabHistMovEmp."Data Registo", DataIni, DataFim);
-                                    TabHistMovEmp.SetRange(TabHistMovEmp."No. Empregado", Empregado."No.");
+                                    TabHistMovEmp.SetRange(TabHistMovEmp."Employee No.", Empregado."No.");
                                     TabHistMovEmp.SetRange(TabHistMovEmp."Tipo Processamento", TabHistMovEmp."Tipo Processamento"::Vencimentos);
                                     TabHistMovEmp.SetRange(TabHistMovEmp."Cód. Situação", TabCodigosSituacao."Cód. Situação");
                                     if TabHistMovEmp.FindSet then begin
@@ -218,7 +218,7 @@ report 53052 "Mapa CGA - Aberto"
                         TabHistCabMovEmp.Reset;
                         TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Cód. Processamento", "Linhas Movs. Empregado"."Cód. Processamento");
                         TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Tipo Processamento", "Linhas Movs. Empregado"."Tipo Processamento");
-                        TabHistCabMovEmp.SetRange(TabHistCabMovEmp."No. Empregado", "Linhas Movs. Empregado"."No. Empregado");
+                        TabHistCabMovEmp.SetRange(TabHistCabMovEmp."Employee No.", "Linhas Movs. Empregado"."Employee No.");
                         if TabHistCabMovEmp.FindFirst then begin
                             NhorasSemanaisTotais := TabHistCabMovEmp."Nº Horas Semanais Totais";
                             Nivel := TabHistCabMovEmp."Grau Função";
@@ -238,12 +238,12 @@ report 53052 "Mapa CGA - Aberto"
                                     repeat
                                         TabHistMovEmp.Reset;
                                         TabHistMovEmp.SetRange(TabHistMovEmp."Data Registo", DataIni, DataFim);
-                                        TabHistMovEmp.SetRange(TabHistMovEmp."No. Empregado", Empregado."No.");
+                                        TabHistMovEmp.SetRange(TabHistMovEmp."Employee No.", Empregado."No.");
                                         TabHistMovEmp.SetRange(TabHistMovEmp."Tipo Processamento", TabHistMovEmp."Tipo Processamento"::Vencimentos);
                                         TabHistMovEmp.SetRange(TabHistMovEmp."Cód. Situação", TabCodigosSituacao."Cód. Situação");
                                         if TabHistMovEmp.FindSet then begin
                                             repeat
-                                                DecNumDias := DecNumDias - Abs(TabHistMovEmp.Quantidade);
+                                                DecNumDias := DecNumDias - Abs(TabHistMovEmp.Quantity);
                                             until TabHistMovEmp.Next = 0;
                                         end;
                                     until TabCodigosSituacao.Next = 0;
@@ -259,20 +259,20 @@ report 53052 "Mapa CGA - Aberto"
                             ("Linhas Movs. Empregado"."Cód. Situação" = '58') then begin
                             //ver se a falta está em dias ou horas
                             TabConfUnidadeMedida.Reset;
-                            if TabConfUnidadeMedida.Get("Linhas Movs. Empregado".UnidadeMedida) then begin
+                            if TabConfUnidadeMedida.Get("Linhas Movs. Empregado"."Unit of Measure") then begin
                                 if TabConfUnidadeMedida."Designação Interna" = TabConfUnidadeMedida."Designação Interna"::Dia then begin
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"1" then
-                                        DecNumDias := Abs("Linhas Movs. Empregado".Quantidade);
+                                        DecNumDias := Abs("Linhas Movs. Empregado".Quantity);
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"2" then
                                         DecNumDias := Round(30 *
-                                        (NhorasSemanaisTotais / Empregado."No. dias de Trabalho Semanal" * Abs("Linhas Movs. Empregado".Quantidade))
+                                        (NhorasSemanaisTotais / Empregado."No. dias de Trabalho Semanal" * Abs("Linhas Movs. Empregado".Quantity))
                                           / 88, 0.001, '<');
                                 end;
                                 if TabConfUnidadeMedida."Designação Interna" = TabConfUnidadeMedida."Designação Interna"::Hora then begin
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"1" then
-                                        DecNumDias := Abs("Linhas Movs. Empregado".Quantidade);
+                                        DecNumDias := Abs("Linhas Movs. Empregado".Quantity);
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"2" then
-                                        DecNumDias := Round(30 * Abs("Linhas Movs. Empregado".Quantidade) / 88, 0.001, '<'); //
+                                        DecNumDias := Round(30 * Abs("Linhas Movs. Empregado".Quantity) / 88, 0.001, '<'); //
                                 end;
                             end;
                         end;
@@ -296,7 +296,7 @@ report 53052 "Mapa CGA - Aberto"
                         //---------------------
                         if ("Linhas Movs. Empregado"."Cód. Situação" = '00') then begin
                             TabCatProfQPEmpregado.Reset;
-                            TabCatProfQPEmpregado.SetRange(TabCatProfQPEmpregado."No. Empregado", Empregado."No.");
+                            TabCatProfQPEmpregado.SetRange(TabCatProfQPEmpregado."Employee No.", Empregado."No.");
                             TabCatProfQPEmpregado.SetFilter(TabCatProfQPEmpregado."Promotion Reason", '<>%1', 0);
                             if TabCatProfQPEmpregado.Find('+') then
                                 Cat := CopyStr(TabCatProfQPEmpregado.Description, 1, 25)
@@ -315,7 +315,7 @@ report 53052 "Mapa CGA - Aberto"
                         //Valor do desconto
                         //---------------------
                         //07-02-2008 - Para nao contar com os professores de acumuação
-                        if TabEmpregado.Get("Linhas Movs. Empregado"."No. Empregado") and not TabEmpregado."Professor Acumulação" then
+                        if TabEmpregado.Get("Linhas Movs. Empregado"."Employee No.") and not TabEmpregado."Professor Acumulação" then
                             ValorDesconto := Round(ValorRemuneracao * ConfRH."Taxa Contributiva Empregado" / 100, 0.01);
                         //---------------------
                         //Perdas Efectivas
@@ -329,7 +329,7 @@ report 53052 "Mapa CGA - Aberto"
                                 //19.03.07 - correcção das faltas
                                 ValorDesconto := 0;
                                 ValorRemuneracao := 0;
-                                PerdasEfectivas := Abs("Linhas Movs. Empregado".Quantidade);
+                                PerdasEfectivas := Abs("Linhas Movs. Empregado".Quantity);
                                 //19.03.07 - fim
                             end;
                         end;
@@ -348,7 +348,7 @@ report 53052 "Mapa CGA - Aberto"
                             if not TabCodigosSituacao.Diuturnidades then
                                 NumeroDiuturnidades := 0
                             else
-                                NumeroDiuturnidades := "Linhas Movs. Empregado".Quantidade;
+                                NumeroDiuturnidades := "Linhas Movs. Empregado".Quantity;
                         end;
                         //---------------------
                         //Nome Empregado
@@ -393,15 +393,15 @@ report 53052 "Mapa CGA - Aberto"
                         //se o cod. mov for 6 ou 7, então a dataefeito é o que o utilizadpr escrever no campo ""Data a que se refere mov"
                         if "Linhas Movs. Empregado"."Cód. Movimento" > 0 then begin
                             TabHistAbonDescExtra.Reset;
-                            TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra.Data, DataIni, DataFim);
-                            TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra."Cód. Rubrica", "Linhas Movs. Empregado"."Cód. Rubrica");
-                            TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra."No. Empregado", Empregado."No.");//2008.12.11
+                            TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra.Date, DataIni, DataFim);
+                            TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra."Payroll Item Code", "Linhas Movs. Empregado"."Payroll Item Code");
+                            TabHistAbonDescExtra.SetRange(TabHistAbonDescExtra."Employee No.", Empregado."No.");//2008.12.11
                             if TabHistAbonDescExtra.FindSet then begin
                                 repeat
                                     if ("Linhas Movs. Empregado"."Cód. Situação" = '49') or
                                        ("Linhas Movs. Empregado"."Cód. Situação" = '56') or
                                        ("Linhas Movs. Empregado"."Cód. Situação" = '58') then
-                                        DecNumDias := TabHistAbonDescExtra.Quantidade
+                                        DecNumDias := TabHistAbonDescExtra.Quantity
                                     else
                                         DecNumDias := 0.0;
 
@@ -411,10 +411,10 @@ report 53052 "Mapa CGA - Aberto"
                                         ValorRemuneracao := 0;
 
                                     if "Linhas Movs. Empregado"."Cód. Movimento" = 1 then
-                                        varDataEfeito := DMY2Date(1, Date2DMY(TabHistAbonDescExtra."Data a que se refere o Mov.", 2),
-                                                          Date2DMY(TabHistAbonDescExtra."Data a que se refere o Mov.", 3))
+                                        varDataEfeito := DMY2Date(1, Date2DMY(TabHistAbonDescExtra."Reference Date", 2),
+                                                          Date2DMY(TabHistAbonDescExtra."Reference Date", 3))
                                     else
-                                        varDataEfeito := TabHistAbonDescExtra."Data a que se refere o Mov.";
+                                        varDataEfeito := TabHistAbonDescExtra."Reference Date";
 
                                     //>>>>>>  LINHA TIPO2 - Registo Movimento da RD >>>>>>>>>>>>>>>>>>>>>>>>>>
                                     TabTempFichTexto.Init;
@@ -438,7 +438,7 @@ report 53052 "Mapa CGA - Aberto"
                                     + PadStr(Cat, 25, ' ')                                                                           //Categoria2008.07.1
                                     + PadStr(Nivel, 3, ' ')                                                                          //Nivel 2008.07.1
                                     + PadStr("Observações Tipo2", 30, ' ');                                                          //Obs 2008.07.1
-                                    TabTempFichTexto."No. Empregado" := Empregado."No.";
+                                    TabTempFichTexto."Employee No." := Empregado."No.";
                                     TabTempFichTexto."Cod. Situacao" := "Linhas Movs. Empregado"."Cód. Situação";
                                     TabTempFichTexto.Valor := ValorRemuneracao;
                                     TabTempFichTexto.NDias := DecNumDias;
@@ -453,7 +453,7 @@ report 53052 "Mapa CGA - Aberto"
                             if (ValorRemuneracao <> 0) or ("Linhas Movs. Empregado"."Cód. Situação" <> '01') then begin
                                 TabTempFichTexto.Reset;
                                 TabTempFichTexto.SetRange(TabTempFichTexto."Tipo Ficheiro", TabTempFichTexto."Tipo Ficheiro"::CGA);
-                                TabTempFichTexto.SetRange(TabTempFichTexto."No. Empregado", Empregado."No.");
+                                TabTempFichTexto.SetRange(TabTempFichTexto."Employee No.", Empregado."No.");
                                 TabTempFichTexto.SetRange(TabTempFichTexto."Cod. Situacao", "Linhas Movs. Empregado"."Cód. Situação");
                                 if not TabTempFichTexto.FindFirst then begin
                                     TabTempFichTexto.Init;
@@ -477,7 +477,7 @@ report 53052 "Mapa CGA - Aberto"
                                     + PadStr(Cat, 25, ' ')                                                                           //Categoria2008.07.1
                                     + PadStr(Nivel, 3, ' ')                                                                          //Nivel 2008.07.1
                                     + PadStr("Observações Tipo2", 30, ' ');                                                          //Obs 2008.07.1
-                                    TabTempFichTexto."No. Empregado" := Empregado."No.";
+                                    TabTempFichTexto."Employee No." := Empregado."No.";
                                     TabTempFichTexto."Cod. Situacao" := "Linhas Movs. Empregado"."Cód. Situação";
                                     TabTempFichTexto.Valor := ValorRemuneracao;
                                     TabTempFichTexto.NDias := DecNumDias;
@@ -551,13 +551,13 @@ report 53052 "Mapa CGA - Aberto"
 
                 TabHistCabMesActual.Reset;
                 TabHistCabMesActual.SetRange(TabHistCabMesActual."Data Registo", DataIni, DataFim);
-                TabHistCabMesActual.SetRange(TabHistCabMesActual."No. Empregado", Empregado."No.");
+                TabHistCabMesActual.SetRange(TabHistCabMesActual."Employee No.", Empregado."No.");
                 TabHistCabMesActual.SetRange(TabHistCabMesActual."Tipo Processamento", TabHistCabMesActual."Tipo Processamento"::Vencimentos);
                 if TabHistCabMesActual.FindFirst then begin
                     TabHistLinhasMesActual.Reset;
                     TabHistLinhasMesActual.SetRange(TabHistLinhasMesActual."Cód. Processamento", TabHistCabMesActual."Cód. Processamento");
                     TabHistLinhasMesActual.SetRange(TabHistLinhasMesActual."Tipo Processamento", TabHistCabMesActual."Tipo Processamento");
-                    TabHistLinhasMesActual.SetRange(TabHistLinhasMesActual."No. Empregado", TabHistCabMesActual."No. Empregado");
+                    TabHistLinhasMesActual.SetRange(TabHistLinhasMesActual."Employee No.", TabHistCabMesActual."Employee No.");
                     TabHistLinhasMesActual.SetRange(TabHistLinhasMesActual."Cód. Situação", '01');
                     if TabHistLinhasMesActual.FindFirst then
                         VencimentoMesActual := TabHistLinhasMesActual.Valor;
@@ -604,13 +604,13 @@ report 53052 "Mapa CGA - Aberto"
                     Nivel := TabHistCabMesActual."Grau Função";
                     TabHistCabMesAnterior.Reset;
                     TabHistCabMesAnterior.SetRange(TabHistCabMesAnterior."Data Registo", CalcDate('-1M', DataIni), CalcDate('-1D', DataIni));
-                    TabHistCabMesAnterior.SetRange(TabHistCabMesAnterior."No. Empregado", Empregado."No.");
+                    TabHistCabMesAnterior.SetRange(TabHistCabMesAnterior."Employee No.", Empregado."No.");
                     TabHistCabMesAnterior.SetRange(TabHistCabMesAnterior."Tipo Processamento", TabHistCabMesAnterior."Tipo Processamento"::Vencimentos);
                     if TabHistCabMesAnterior.FindFirst then begin
                         TabHistLinhasMesAnterior.Reset;
                         TabHistLinhasMesAnterior.SetRange(TabHistLinhasMesAnterior."Cód. Processamento", TabHistCabMesAnterior."Cód. Processamento");
                         TabHistLinhasMesAnterior.SetRange(TabHistLinhasMesAnterior."Tipo Processamento", TabHistCabMesAnterior."Tipo Processamento");
-                        TabHistLinhasMesAnterior.SetRange(TabHistLinhasMesAnterior."No. Empregado", TabHistCabMesAnterior."No. Empregado");
+                        TabHistLinhasMesAnterior.SetRange(TabHistLinhasMesAnterior."Employee No.", TabHistCabMesAnterior."Employee No.");
                         TabHistLinhasMesAnterior.SetRange(TabHistLinhasMesAnterior."Cód. Situação", '01');
                         if TabHistLinhasMesAnterior.FindFirst then
                             VencimentoMesAnterior := TabHistLinhasMesAnterior.Valor;
@@ -623,7 +623,7 @@ report 53052 "Mapa CGA - Aberto"
                             end else begin
                                 if (TabHistCabMesActual."Descrição Cat Prof QP" <> TabHistCabMesAnterior."Descrição Cat Prof QP") then begin
                                     TabCatProfQPEmpregado.Reset;
-                                    TabCatProfQPEmpregado.SetRange(TabCatProfQPEmpregado."No. Empregado", Empregado."No.");
+                                    TabCatProfQPEmpregado.SetRange(TabCatProfQPEmpregado."Employee No.", Empregado."No.");
                                     TabCatProfQPEmpregado.SetRange(TabCatProfQPEmpregado.Description,
                                                                   TabHistCabMesActual."Descrição Cat Prof QP");
                                     TabCatProfQPEmpregado.SetFilter(TabCatProfQPEmpregado."Promotion Reason", '<>%1', 0);
@@ -863,7 +863,7 @@ report 53052 "Mapa CGA - Aberto"
         TotalRegistos: Integer;
         TotalDesconto: Decimal;
         Conv: Codeunit "Funções RH";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         TabRubricaEmpregado: Record "Rubrica Salarial Empregado";
         TabHistMovEmp: Record "Linhas Movs. Empregado";
@@ -896,7 +896,7 @@ report 53052 "Mapa CGA - Aberto"
         TabHistAbonDescExtra: Record "Abonos - Descontos Extra";
         Text0001: Label 'Empregado %1: o Nº CGA não pode ter mais de 7 caracteres.';
         remuneracao: Decimal;
-        recRubricaSalarial: Record "Rubrica Salarial";
+        recRubricaSalarial: Record "Payroll Item";
         recHistLinMovEmp: Record "Linhas Movs. Empregado";
         DescEmp: Decimal;
         DescEntPat: Decimal;

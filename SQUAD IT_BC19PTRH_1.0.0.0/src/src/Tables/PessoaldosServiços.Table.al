@@ -23,9 +23,9 @@ table 53116 "Pessoal dos Serviços"
         {
             Caption = 'NIF';
         }
-        field(9; "Nome Empregador"; Text[70])
+        field(9; "Employer Name"; Text[70])
         {
-            Caption = 'Nome do Empregador';
+            Caption = 'Nome Empregador';
         }
         field(10; "Emp. - No. Autorização"; Text[8])
         {

@@ -214,7 +214,7 @@ xmlport 53040 "RU - Anexo E - GRV"
                                         if rEmpregado.FindSet then begin
                                             repeat
                                                 rHistCabMovEmp.Reset;
-                                                rHistCabMovEmp.SetRange(rHistCabMovEmp."No. Empregado", rEmpregado."No.");
+                                                rHistCabMovEmp.SetRange(rHistCabMovEmp."Employee No.", rEmpregado."No.");
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
                                                 if rHistCabMovEmp.FindSet then
@@ -230,13 +230,13 @@ xmlport 53040 "RU - Anexo E - GRV"
                                         if rEmpregado.FindSet then begin
                                             repeat
                                                 rHistCabMovEmp.Reset;
-                                                rHistCabMovEmp.SetRange(rHistCabMovEmp."No. Empregado", rEmpregado."No.");
+                                                rHistCabMovEmp.SetRange(rHistCabMovEmp."Employee No.", rEmpregado."No.");
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp."Tipo Processamento", rHistCabMovEmp."Tipo Processamento"::Vencimentos);
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
                                                 rHistCabMovEmp.SetRange(rHistCabMovEmp.Valor, 0);
                                                 if rHistCabMovEmp.FindFirst then begin
                                                     rHistAusencia.Next;
-                                                    rHistAusencia.SetRange(rHistAusencia."Employee No.", rHistCabMovEmp."No. Empregado");
+                                                    rHistAusencia.SetRange(rHistAusencia."Employee No.", rHistCabMovEmp."Employee No.");
                                                     rHistAusencia.SetRange(rHistAusencia."To Date", DMY2Date(30, 9, vAno));
                                                     if rHistAusencia.FindFirst then
                                                         vConta := vConta - 1;
@@ -265,7 +265,7 @@ xmlport 53040 "RU - Anexo E - GRV"
                                             if rHistCabMovEmp.FindSet then begin
                                                 repeat
                                                     rEmpregado.Reset;
-                                                    rEmpregado.SetRange(rEmpregado."No.", rHistCabMovEmp."No. Empregado");
+                                                    rEmpregado.SetRange(rEmpregado."No.", rHistCabMovEmp."Employee No.");
                                                     rEmpregado.SetRange(rEmpregado.Estabelecimento, "Estabelecimentos da Empresa"."Número da Unidade Local");
                                                     rEmpregado.SetRange(rEmpregado."Tipo Contribuinte", rEmpregado."Tipo Contribuinte"::"Conta de Outrem");
                                                     if rEmpregado.FindFirst then

@@ -11,7 +11,7 @@ page 53152 "Doenças Profissionais"
             repeater(Control1102065000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 

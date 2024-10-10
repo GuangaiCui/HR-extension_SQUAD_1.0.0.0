@@ -65,9 +65,9 @@ report 53078 "Mapa ADSE - Aberto"
             DataItemTableView = SORTING("No.");
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(Vencimentos | SubNatal | SubFerias));
-                column(NumEmp; "Linhas Movs. Empregado"."No. Empregado")
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(Vencimentos | SubNatal | SubFerias));
+                column(NumEmp; "Linhas Movs. Empregado"."Employee No.")
                 {
                 }
                 column(NomeEmp; Empregado.Name)
@@ -85,7 +85,7 @@ report 53078 "Mapa ADSE - Aberto"
                     encontrou: Boolean;
                 begin
                     TabRubrica.Reset;
-                    if TabRubrica.Get("Linhas Movs. Empregado"."Cód. Rubrica") then
+                    if TabRubrica.Get("Linhas Movs. Empregado"."Payroll Item Code") then
                         if not (TabRubrica.Genero = TabRubrica.Genero::ADSE) then
                             CurrReport.Skip
                 end;
@@ -177,7 +177,7 @@ report 53078 "Mapa ADSE - Aberto"
         DataIni: Date;
         DataFim: Date;
         InfEmpresa: Record "Company Information";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         CodProcess: Code[10];
         Filtro: Text[30];
 }

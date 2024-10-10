@@ -156,15 +156,15 @@ report 53075 "Folha Remunerações"
             }
             dataitem("Movs. Abonos"; "Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Rubrica" = CONST(Abono), "Tipo Processamento" = FILTER(<> Encargos));
-                column("Movs__Abonos__Cód__Rubrica_"; "Cód. Rubrica")
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Payroll Item Type" = CONST(Abono), "Tipo Processamento" = FILTER(<> Encargos));
+                column("Movs__Abonos__Cód__Rubrica_"; "Payroll Item Code")
                 {
                 }
-                column("Movs__Abonos__Descrição_Rubrica_"; "Descrição Rubrica")
+                column("Movs__Abonos__Descrição_Rubrica_"; "Payroll Item Description")
                 {
                 }
-                column(Movs__Abonos_Quantidade; Quantidade)
+                column(Movs__Abonos_Quantidade; Quantity)
                 {
                 }
                 column(Movs__Abonos_Valor; Valor)
@@ -176,7 +176,7 @@ report 53075 "Folha Remunerações"
                 column(Movs__Abonos_Tipo_Processamento; "Tipo Processamento")
                 {
                 }
-                column(Movs__Abonos_N__Empregado; "No. Empregado")
+                column(Movs__Abonos_N__Empregado; "Employee No.")
                 {
                 }
                 column(Movs__Abonos_N__Linha; "No. Linha")
@@ -191,18 +191,18 @@ report 53075 "Folha Remunerações"
             }
             dataitem("Movs. Descontos"; "Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Rubrica" = CONST(Desconto), "Tipo Processamento" = FILTER(<> Encargos));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Payroll Item Type" = CONST(Desconto), "Tipo Processamento" = FILTER(<> Encargos));
                 column(Movs__Descontos_Valor; Valor)
                 {
                 }
                 column(varqtd; varqtd)
                 {
                 }
-                column("Movs__Descontos__Descrição_Rubrica_"; "Descrição Rubrica")
+                column("Movs__Descontos__Descrição_Rubrica_"; "Payroll Item Description")
                 {
                 }
-                column("Movs__Descontos__Cód__Rubrica_"; "Cód. Rubrica")
+                column("Movs__Descontos__Cód__Rubrica_"; "Payroll Item Code")
                 {
                 }
                 column(ABS__Movs__Abonos__Valor____ABS__Movs__Descontos__Valor_; Abs("Movs. Abonos".Valor) - Abs("Movs. Descontos".Valor))
@@ -214,7 +214,7 @@ report 53075 "Folha Remunerações"
                 column(Movs__Descontos_Tipo_Processamento; "Tipo Processamento")
                 {
                 }
-                column(Movs__Descontos_N__Empregado; "No. Empregado")
+                column(Movs__Descontos_N__Empregado; "Employee No.")
                 {
                 }
                 column(Movs__Descontos_N__Linha; "No. Linha")
@@ -226,7 +226,7 @@ report 53075 "Folha Remunerações"
                     if "Movs. Descontos"."Quatidade Recibo Vencimentos" <> 0.0 then
                         varqtd := "Movs. Descontos"."Quatidade Recibo Vencimentos"
                     else
-                        varqtd := "Movs. Descontos".Quantidade;
+                        varqtd := "Movs. Descontos".Quantity;
                 end;
 
                 trigger OnPreDataItem()
@@ -237,18 +237,18 @@ report 53075 "Folha Remunerações"
             }
             dataitem("Hist. Movs. Abonos"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Rubrica" = CONST(Abono), "Tipo Processamento" = FILTER(<> Encargos));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Payroll Item Type" = CONST(Abono), "Tipo Processamento" = FILTER(<> Encargos));
                 column(Hist__Movs__Abonos_Valor; Valor)
                 {
                 }
-                column(Hist__Movs__Abonos_Quantidade; Quantidade)
+                column(Hist__Movs__Abonos_Quantidade; Quantity)
                 {
                 }
-                column("Hist__Movs__Abonos__Descrição_Rubrica_"; "Descrição Rubrica")
+                column("Hist__Movs__Abonos__Descrição_Rubrica_"; "Payroll Item Description")
                 {
                 }
-                column("Hist__Movs__Abonos__Cód__Rubrica_"; "Cód. Rubrica")
+                column("Hist__Movs__Abonos__Cód__Rubrica_"; "Payroll Item Code")
                 {
                 }
                 column("Hist__Movs__Abonos_Cód__Processamento"; "Cód. Processamento")
@@ -257,7 +257,7 @@ report 53075 "Folha Remunerações"
                 column(Hist__Movs__Abonos_Tipo_Processamento; "Tipo Processamento")
                 {
                 }
-                column(Hist__Movs__Abonos_N__Empregado; "No. Empregado")
+                column(Hist__Movs__Abonos_N__Empregado; "Employee No.")
                 {
                 }
                 column(Hist__Movs__Abonos_N__Linha; "No. Linha")
@@ -272,18 +272,18 @@ report 53075 "Folha Remunerações"
             }
             dataitem("Hist. Movs. Descontos"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Rubrica" = CONST(Desconto), "Tipo Processamento" = FILTER(<> Encargos));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Payroll Item Type" = CONST(Desconto), "Tipo Processamento" = FILTER(<> Encargos));
                 column(Hist__Movs__Descontos_Valor; Valor)
                 {
                 }
                 column(varqtd_Control1102056036; varqtd)
                 {
                 }
-                column("Hist__Movs__Descontos__Descrição_Rubrica_"; "Descrição Rubrica")
+                column("Hist__Movs__Descontos__Descrição_Rubrica_"; "Payroll Item Description")
                 {
                 }
-                column("Hist__Movs__Descontos__Cód__Rubrica_"; "Cód. Rubrica")
+                column("Hist__Movs__Descontos__Cód__Rubrica_"; "Payroll Item Code")
                 {
                 }
                 column(ABS__Hist__Movs__Abonos__Valor____ABS__Hist__Movs__Descontos__Valor_; Abs("Hist. Movs. Abonos".Valor) - Abs("Hist. Movs. Descontos".Valor))
@@ -295,7 +295,7 @@ report 53075 "Folha Remunerações"
                 column(Hist__Movs__Descontos_Tipo_Processamento; "Tipo Processamento")
                 {
                 }
-                column(Hist__Movs__Descontos_N__Empregado; "No. Empregado")
+                column(Hist__Movs__Descontos_N__Empregado; "Employee No.")
                 {
                 }
                 column(Hist__Movs__Descontos_N__Linha; "No. Linha")
@@ -307,7 +307,7 @@ report 53075 "Folha Remunerações"
                     if "Hist. Movs. Descontos"."Quatidade Recibo Vencimentos" <> 0.0 then
                         varqtd := "Hist. Movs. Descontos"."Quatidade Recibo Vencimentos"
                     else
-                        varqtd := "Hist. Movs. Descontos".Quantidade;
+                        varqtd := "Hist. Movs. Descontos".Quantity;
                 end;
 
                 trigger OnPreDataItem()

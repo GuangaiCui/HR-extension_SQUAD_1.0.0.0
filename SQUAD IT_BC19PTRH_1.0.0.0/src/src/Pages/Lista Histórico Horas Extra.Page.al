@@ -15,12 +15,12 @@ page 53091 "Lista Histórico Horas Extra"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Mov."; Rec."No. Mov.")
+                field("Entry No."; Rec."Entry No.")
                 {
 
 
                 }
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -40,12 +40,12 @@ page 53091 "Lista Histórico Horas Extra"
 
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
 
@@ -55,7 +55,7 @@ page 53091 "Lista Histórico Horas Extra"
 
 
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
 
@@ -94,7 +94,7 @@ page 53091 "Lista Histórico Horas Extra"
                     Image = ViewComments;
                     RunObject = Page "Folha Comentários RH";
                     RunPageLink = "Table Name" = CONST(HHorEx),
-                                  "Table Line No." = FIELD("No. Mov.");
+                                  "Table Line No." = FIELD("Entry No.");
                 }
                 separator(Action1101490026)
                 {
@@ -106,7 +106,7 @@ page 53091 "Lista Histórico Horas Extra"
                     Caption = 'Vista p/ &Categorias';
                     Image = ServiceHours;
                     RunObject = Page "Vista HoraExtra por Categorias";
-                    RunPageLink = "Employee No. Filter" = FIELD("No. Empregado");
+                    RunPageLink = "Employee No. Filter" = FIELD("Employee No.");
                 }
             }
         }

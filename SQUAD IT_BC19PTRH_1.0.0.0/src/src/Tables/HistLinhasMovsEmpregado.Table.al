@@ -18,7 +18,7 @@ table 53109 "Hist. Linhas Movs. Empregado"
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
-        field(3; "No. Empregado"; Code[20])
+        field(3; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -35,18 +35,18 @@ table 53109 "Hist. Linhas Movs. Empregado"
         {
             Caption = 'Employee Name';
         }
-        field(19; "Cód. Rubrica"; Code[20])
+        field(19; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
         }
-        field(20; "Descrição Rubrica"; Text[100])
+        field(20; "Payroll Item Description"; Text[100])
         {
-            Caption = 'Salary Iten Description';
+            Caption = 'Descrição Rubrica';
         }
-        field(21; "Tipo Rubrica"; Option)
+        field(21; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Iten Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
@@ -55,23 +55,23 @@ table 53109 "Hist. Linhas Movs. Empregado"
             OptionCaption = ' ,Cód. Comissões,Cód. Sub. Férias,Cód. Sub. Natal,Remuneração Permanente,Subsídios Reg. Não Mensal,Forças Armadas,Férias Pagas não Gozadas,Diferenças de Vencimento,Ajudas Custo e Trans.,Prémios-Bonus Mensal,Compensação,Honorários,Subsídios regulares,Prémios-bonus Não mensal,Sub. Ref.,Trab. Supl.,Trab. Noct.,Compensação Cont. Intermitente';
             OptionMembers = " ","Cód. Comissões","Cód. Sub. Férias","Cód. Sub. Natal","Remuneração Permanente","Subsídios Reg. Não Mensal","Forças Armadas","Férias Pagas não Gozadas","Diferenças de Vencimento","Ajudas Custo e Trans.","Prémios-Bonus Mensal","Compensação","Honorários","Subsídios regulares","Prémios-bonus Não mensal","Sub. Ref.","Trab. Supl.","Trab. Noct.","Compensação Cont. Intermitente";
         }
-        field(25; "No. Conta a Debitar"; Code[20])
+        field(25; "Debit Acc. No."; Code[20])
         {
-            Caption = 'Debit Acc. No.';
+            Caption = 'No. Conta a Debitar';
             TableRelation = "G/L Account";
         }
-        field(26; "No. Conta a Creditar"; Code[20])
+        field(26; "Credit Acc. No."; Code[20])
         {
-            Caption = 'Credit Acc. No.';
+            Caption = 'No. Conta a Creditar';
             TableRelation = "G/L Account";
         }
-        field(38; Quantidade; Decimal)
+        field(38; Quantity; Decimal)
         {
             Caption = 'Quantity';
         }
-        field(39; "Valor Unitário"; Decimal)
+        field(39; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
         }
         field(40; "Valor Débito"; Decimal)
         {
@@ -133,7 +133,7 @@ table 53109 "Hist. Linhas Movs. Empregado"
             Caption = 'Qtd. in Salary Slip';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
-        field(91; UnidadeMedida; Code[20])
+        field(91; "Unit of Measure"; Code[20])
         {
             Caption = 'Unit Code';
             Description = 'HG - por causa das ausencias em dias e em horas';
@@ -173,45 +173,45 @@ table 53109 "Hist. Linhas Movs. Empregado"
 
     keys
     {
-        key(Key1; "Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha")
+        key(Key1; "Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha")
         {
             Clustered = true;
             SumIndexFields = Valor;
         }
-        key(Key2; "No. Empregado", "Data Registo")
+        key(Key2; "Employee No.", "Data Registo")
         {
         }
-        key(Key3; "No. Empregado")
+        key(Key3; "Employee No.")
         {
         }
-        key(Key4; "No. Conta a Debitar")
+        key(Key4; "Debit Acc. No.")
         {
         }
         key(Key5; "Tipo Rendimento")
         {
         }
-        key(Key6; "No. Empregado", "Data Registo", "Cód. Situação")
+        key(Key6; "Employee No.", "Data Registo", "Cód. Situação")
         {
         }
-        key(Key7; "No. Empregado", "Tipo Rendimento")
+        key(Key7; "Employee No.", "Tipo Rendimento")
         {
         }
-        key(Key8; "Tipo Processamento", "Cód. Processamento", "No. Empregado", "No. Linha", "Data a que se refere o mov")
+        key(Key8; "Tipo Processamento", "Cód. Processamento", "Employee No.", "No. Linha", "Data a que se refere o mov")
         {
         }
         key(Key9; "Data Registo")
         {
         }
-        key(Key10; "No. Empregado", "Data Registo", "Cód. Situação", "Cód. Movimento")
+        key(Key10; "Employee No.", "Data Registo", "Cód. Situação", "Cód. Movimento")
         {
         }
-        key(Key11; "Cód. Rubrica")
+        key(Key11; "Payroll Item Code")
         {
         }
-        key(Key12; "No. Empregado", "Tipo Rendimento Cat.A")
+        key(Key12; "Employee No.", "Tipo Rendimento Cat.A")
         {
         }
-        key(Key13; "No. Empregado", "Data a que se refere o mov")
+        key(Key13; "Employee No.", "Data a que se refere o mov")
         {
         }
     }

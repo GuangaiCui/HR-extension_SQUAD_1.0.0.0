@@ -8,7 +8,7 @@ pageextension 53036 GenJournalRH extends "General Journal"
 
         {
 
-            field("No. Empregado"; Rec."No. Empregado")
+            field("Employee No."; Rec."Employee No.")
 
             {
 

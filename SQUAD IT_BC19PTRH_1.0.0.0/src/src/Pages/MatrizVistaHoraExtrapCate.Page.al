@@ -615,7 +615,7 @@ page 53093 "Matriz Vista HoraExtra p Cate."
             EmployeeExtraHour.SetRange(Data, Rec."Period Start", Rec."Period End")
         else
             EmployeeExtraHour.SetRange(Data, 0D, Rec."Period End");
-        EmployeeExtraHour.SetFilter("No. Empregado", EmployeeNoFilter);
+        EmployeeExtraHour.SetFilter("Employee No.", EmployeeNoFilter);
         EmployeeExtraHour.SetRange("Cód. Hora Extra", MatrixRecords[ColumnID].Código);
         PAGE.Run(0, EmployeeExtraHour);
     end;

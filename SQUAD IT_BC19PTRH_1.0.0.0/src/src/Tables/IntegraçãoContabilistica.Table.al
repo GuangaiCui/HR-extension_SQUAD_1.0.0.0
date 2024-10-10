@@ -13,14 +13,14 @@ table 53113 "Integração Contabilistica"
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
-        field(3; "No. Empregado"; Code[20])
+        field(3; "Employee No."; Code[20])
         {
             TableRelation = Empregado;
 
             trigger OnValidate()
             begin
                 CreateDim(
-                  DATABASE::Empregado, "No. Empregado",
+                  DATABASE::Empregado, "Employee No.",
                   DATABASE::"Periodos Processamento", "Cód. Processamento");
             end;
         }
@@ -33,15 +33,17 @@ table 53113 "Integração Contabilistica"
         field(13; "Designação Empregado"; Text[75])
         {
         }
-        field(19; "Cód. Rubrica"; Code[20])
+        field(19; "Payroll Item Code"; Code[20])
         {
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
         }
-        field(20; "Descrição Rubrica"; Text[100])
+        field(20; "Payroll Item Description"; Text[100])
         {
+            Caption = 'Descrição Rubrica';
         }
-        field(21; "Tipo Rubrica"; Option)
+        field(21; "Payroll Item Type"; Option)
         {
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
@@ -100,17 +102,17 @@ table 53113 "Integração Contabilistica"
 
     keys
     {
-        key(Key1; "Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha")
+        key(Key1; "Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado")
+        key(Key2; "Employee No.")
         {
         }
         key(Key3; "No. Conta")
         {
         }
-        key(Key4; "No. Empregado", "Cód. Rubrica")
+        key(Key4; "Employee No.", "Payroll Item Code")
         {
         }
     }

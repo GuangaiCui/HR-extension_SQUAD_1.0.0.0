@@ -2,7 +2,7 @@
 page 53075 "Lista Cat. Prof. Int. Emp."
 {
     AutoSplitKey = true;
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     PageType = List;
     RefreshOnActivate = true;
     SourceTable = "Cat. Prof. Int. Empregado";
@@ -16,7 +16,7 @@ page 53075 "Lista Cat. Prof. Int. Emp."
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -64,7 +64,7 @@ page 53075 "Lista Cat. Prof. Int. Emp."
                     Image = ViewComments;
                     RunObject = Page "Folha Comentários RH";
                     RunPageLink = "Table Name" = CONST(CatProf),
-                                  "No." = FIELD("No. Empregado"),
+                                  "No." = FIELD("Employee No."),
                                   "Table Line No." = FIELD("No. Linha");
                 }
             }

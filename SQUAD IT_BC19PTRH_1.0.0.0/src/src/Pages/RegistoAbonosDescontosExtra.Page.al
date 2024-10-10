@@ -14,47 +14,47 @@ page 53096 "Registo Abonos-Descontos Extra"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Mov."; Rec."No. Mov.")
+                field("Entry No."; Rec."Entry No.")
                 {
 
 
                 }
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
                 }
-                field(Data; Rec.Data)
+                field(Data; Rec.Date)
                 {
 
 
                 }
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
 
                 }
-                field("Tipo Rubrica"; Rec."Tipo Rubrica")
+                field("Payroll Item Type"; Rec."Payroll Item Type")
                 {
 
 
                 }
-                field("Descrição Rubrica"; Rec."Descrição Rubrica")
+                field("Payroll Item Description"; Rec."Payroll Item Description")
                 {
 
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
 
                 }
-                field(UnidadeMedida; Rec.UnidadeMedida)
+                field("Unit of Measure"; Rec."Unit of Measure")
                 {
 
 
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
 
@@ -64,12 +64,12 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field("Anular Falta"; Rec."Anular Falta")
+                field("Anular Falta"; Rec."Cancel Absence")
                 {
 
 
                 }
-                field("Data a que se refere o Mov."; Rec."Data a que se refere o Mov.")
+                field("Reference Date"; Rec."Reference Date")
                 {
 
 
@@ -79,7 +79,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field("Abono - Desconto Bloqueado"; Rec."Abono - Desconto Bloqueado")
+                field("Earning - Blocked Deduction"; Rec."Earning - Blocked Deduction")
                 {
 
 
@@ -113,7 +113,7 @@ page 53096 "Registo Abonos-Descontos Extra"
         //Não deixar apagar Abono-Desconto bloqueadas
 
         //2009.03.24 - a mensagem só deve aparecer uma vez por cada delete e não por cada registo
-        if (Rec."Abono - Desconto Bloqueado" = true) and (Flag = false) then begin
+        if (Rec."Earning - Blocked Deduction" = true) and (Flag = false) then begin
             Message(Text0001);
             Flag := true;
         end;
@@ -126,13 +126,13 @@ page 53096 "Registo Abonos-Descontos Extra"
     trigger OnInsertRecord(BelowxRec: Boolean): Boolean
     begin
 
-        exit(Employee.Get(Rec."No. Empregado"));
+        exit(Employee.Get(Rec."Employee No."));
     end;
 
     trigger OnNewRecord(BelowxRec: Boolean)
     begin
         //HG
-        Rec."No. Empregado" := Rec.GetFilter("No. Empregado");
+        Rec."Employee No." := Rec.GetFilter("Employee No.");
     end;
 
     var

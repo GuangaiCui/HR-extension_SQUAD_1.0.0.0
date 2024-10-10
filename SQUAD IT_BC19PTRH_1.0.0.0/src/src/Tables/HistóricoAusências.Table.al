@@ -88,9 +88,9 @@ table 53105 "Histórico Ausências"
         {
             Caption = 'End Time';
         }
-        field(32; "Cód. Rubrica"; Code[20])
+        field(32; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Item Code';
+            Caption = 'Cód. Rúbrica';
         }
         field(42; "Influência No. dias férias"; Boolean)
         {

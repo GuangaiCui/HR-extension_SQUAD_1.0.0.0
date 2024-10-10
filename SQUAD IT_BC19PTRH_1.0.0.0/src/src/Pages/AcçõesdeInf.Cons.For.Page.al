@@ -21,7 +21,7 @@ page 53143 "Acções de Inf. Cons. For"
                 {
 
                 }
-                field("Código"; Rec."Código")
+                field("Código"; Rec."Code")
                 {
 
                 }

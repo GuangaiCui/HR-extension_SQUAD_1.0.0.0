@@ -15,14 +15,14 @@ table 53079 "Cab. Movs. Empregado"
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
-        field(3; "No. Empregado"; Code[20])
+        field(3; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
 
             trigger OnValidate()
             begin
-                if TabEmp.Get("No. Empregado") then
+                if TabEmp.Get("Employee No.") then
                     "Designação Empregado" := TabEmp.Name; //2008.05.23
                                                            //"Designação Empregado" := COPYSTR(TabEmp.Name,1,60);
             end;
@@ -39,7 +39,7 @@ table 53079 "Cab. Movs. Empregado"
         {
             CalcFormula = Sum("Linhas Movs. Empregado".Valor WHERE("Cód. Processamento" = FIELD("Cód. Processamento"),
                                                                     "Tipo Processamento" = FIELD("Tipo Processamento"),
-                                                                    "No. Empregado" = FIELD("No. Empregado")));
+                                                                    "Employee No." = FIELD("Employee No.")));
             Caption = 'Amount';
             FieldClass = FlowField;
         }
@@ -164,14 +164,14 @@ table 53079 "Cab. Movs. Empregado"
 
     keys
     {
-        key(Key1; "Cód. Processamento", "Tipo Processamento", "No. Empregado")
+        key(Key1; "Cód. Processamento", "Tipo Processamento", "Employee No.")
         {
             Clustered = true;
         }
         key(Key2; Seguradora, "No. Apólice")
         {
         }
-        key(Key3; Seguradora, "No. Apólice", "No. Empregado")
+        key(Key3; Seguradora, "No. Apólice", "Employee No.")
         {
         }
     }

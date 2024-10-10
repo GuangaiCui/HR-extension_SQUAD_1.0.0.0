@@ -40,14 +40,14 @@ report 53071 "Mapa Fundos Compensação Trab."
                     Error(Text0003);
             end;
         }
-        dataitem("Rubrica Salarial"; "Rubrica Salarial")
+        dataitem("Payroll Item"; "Payroll Item")
         {
             DataItemTableView = SORTING("Código") WHERE(Genero = CONST("FCT-FGCT"));
 
             trigger OnAfterGetRecord()
             begin
                 Conta := Conta + 1;
-                varRubrica[Conta] := "Rubrica Salarial".Código;
+                varRubrica[Conta] := "Payroll Item".Código;
             end;
         }
         dataitem(Empregado; Empregado)
@@ -163,15 +163,15 @@ report 53071 "Mapa Fundos Compensação Trab."
                 else
                     HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Data Registo", DataIni, DataFim);
 
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."No. Empregado", Empregado."No.");
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Cód. Rubrica", varRubrica[1]);
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Employee No.", Empregado."No.");
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Payroll Item Code", varRubrica[1]);
                 if HistLinhaMovEmp.FindFirst then
                     repeat
                         varFCT := varFCT + HistLinhaMovEmp.Valor;
                         varTotFCT := varTotFCT + HistLinhaMovEmp.Valor;
                     until HistLinhaMovEmp.Next = 0;
 
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Cód. Rubrica", varRubrica[2]);
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Payroll Item Code", varRubrica[2]);
                 if HistLinhaMovEmp.FindFirst then
                     repeat
                         varFGCT := varFGCT + HistLinhaMovEmp.Valor;

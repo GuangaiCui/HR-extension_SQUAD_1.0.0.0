@@ -5,74 +5,74 @@ table 53074 "Abonos - Descontos Extra"
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
-            Caption = 'Entry No.';
+            Caption = 'No. Mov';
         }
-        field(2; "No. Empregado"; Code[20])
+        field(2; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
-        field(3; Data; Date)
+        field(3; Date; Date)
         {
             Caption = 'Data';
         }
-        field(8; "Cód. Rubrica"; Code[20])
+        field(8; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Item Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
 
             trigger OnValidate()
             begin
-                TabRubrica.Get("Cód. Rubrica");
-                "Tipo Rubrica" := TabRubrica."Tipo Rubrica";
-                "Descrição Rubrica" := TabRubrica.Descrição;
-                Quantidade := TabRubrica.Quantidade;
-                "Valor Unitário" := TabRubrica."Valor Unitário";
+                TabRubrica.Get("Payroll Item Code");
+                "Payroll Item Type" := TabRubrica."Payroll Item Type";
+                "Payroll Item Description" := TabRubrica.Descrição;
+                Quantity := TabRubrica.Quantity;
+                "Unit Value" := TabRubrica."Unit Value";
                 "Valor Total" := TabRubrica."Valor Total";
             end;
         }
-        field(9; "Tipo Rubrica"; Option)
+        field(9; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Item Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
-        field(10; "Descrição Rubrica"; Text[100])
+        field(10; "Payroll Item Description"; Text[100])
         {
-            Caption = 'Salary Item Description';
+            Caption = 'Descrição Rubrica';
         }
-        field(14; Quantidade; Decimal)
+        field(14; Quantity; Decimal)
         {
             Caption = 'Quantity';
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantidade * "Valor Unitário";
+                "Valor Total" := Quantity * "Unit Value";
             end;
         }
-        field(15; "Valor Unitário"; Decimal)
+        field(15; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantidade * "Valor Unitário";
+                "Valor Total" := Quantity * "Unit Value";
             end;
         }
         field(16; "Valor Total"; Decimal)
         {
             Caption = 'Total Amount';
         }
-        field(17; UnidadeMedida; Code[20])
+        field(17; "Unit of Measure"; Code[20])
         {
-            Caption = 'Unit code';
+            Caption = 'Unidade Medida';
             TableRelation = "Unid. Medida Recursos Humanos";
         }
-        field(21; "Abono - Desconto Bloqueado"; Boolean)
+        field(21; "Earning - Blocked Deduction"; Boolean)
         {
-            Caption = 'Earning - Deduction Bloqued';
+            Caption = 'Abono - Desconto Bloqueado';
             Editable = false;
         }
         field(30; "Global Dimension 1 Code"; Code[20])
@@ -87,14 +87,14 @@ table 53074 "Abonos - Descontos Extra"
             Caption = 'Global Dimension 2 Code';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
-        field(35; "Anular Falta"; Boolean)
+        field(35; "Cancel Absence"; Boolean)
         {
-            Caption = 'Cancel Absence';
+            Caption = 'Anular Falta';
             Description = 'Para anular uma falta debitada por engano, no Fich SS e CGA';
         }
-        field(36; "Data a que se refere o Mov."; Date)
+        field(36; "Reference Date"; Date)
         {
-            Caption = 'Reference Date';
+            Caption = 'Data a que se refere o Mov.';
             Description = 'Para aparecer no Fic. Seg. Social e CGA com a data do mês a que se refere a falta ou acerto venc, etc...';
         }
         field(40; "Qtd. Perca Sub. Alimentação"; Integer)
@@ -111,11 +111,11 @@ table 53074 "Abonos - Descontos Extra"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado", "Data a que se refere o Mov.")
+        key(Key2; "Employee No.", "Reference Date")
         {
         }
     }
@@ -129,7 +129,7 @@ table 53074 "Abonos - Descontos Extra"
         //2009.02.26 - quando se apaga uma ausencia temos de apagar os comentários da mesma
         HumanResComment.Reset;
         HumanResComment.SetRange(HumanResComment."Table Name", DATABASE::"Abonos - Descontos Extra");
-        HumanResComment.SetRange(HumanResComment."Table Line No.", "No. Mov.");
+        HumanResComment.SetRange(HumanResComment."Table Line No.", "Entry No.");
         if HumanResComment.Find('-') then
             HumanResComment.DeleteAll;
 
@@ -138,11 +138,11 @@ table 53074 "Abonos - Descontos Extra"
 
     trigger OnInsert()
     begin
-        TabAbonosDescExtra.SetCurrentKey(TabAbonosDescExtra."No. Mov.");
+        TabAbonosDescExtra.SetCurrentKey(TabAbonosDescExtra."Entry No.");
         if TabAbonosDescExtra.Find('+') then
-            "No. Mov." := TabAbonosDescExtra."No. Mov." + 1
+            "Entry No." := TabAbonosDescExtra."Entry No." + 1
         else
-            "No. Mov." := 1;
+            "Entry No." := 1;
 
 
         //2009.03.11
@@ -152,13 +152,13 @@ table 53074 "Abonos - Descontos Extra"
 
         //2008.10.30
         if ConfRH.Get() then
-            UnidadeMedida := ConfRH."Base Unit of Measure";
+            "Unit of Measure" := ConfRH."Base Unit of Measure";
     end;
 
     var
         TabAbonosDescExtra: Record "Abonos - Descontos Extra";
         TabEmpregado: Record Empregado;
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         ConfRH: Record "Config. Recursos Humanos";
         HumanResComment: Record "Linha Coment. Recurso Humano";
         Employee: Record Empregado;

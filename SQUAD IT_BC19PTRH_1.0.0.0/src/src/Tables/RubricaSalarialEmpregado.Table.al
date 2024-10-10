@@ -1,51 +1,51 @@
 table 53078 "Rubrica Salarial Empregado"
 {
-    // //C+ -LCF-  Acrescentei a chave a tabela (Nº Empregado,Ordenação,Cód. Rúbrica Salarial,Data Início)
+    // //C+ -LCF-  Acrescentei a chave a tabela (Nº Empregado,Sort,Cód. Rúbrica Salarial,Data Início)
     // //IT001 - CPA - 2016.10.24 - mudei o nome do campo "Data Falta" para "Data a que se refere o mov" pois agora é usado para acerto de duodécimos
 
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
         field(2; "Cód. Rúbrica Salarial"; Code[20])
         {
-            Caption = 'Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Salary Item Code';
+            TableRelation = "Payroll Item";
 
             trigger OnValidate()
             begin
                 //HG
                 TabRubrica.Get("Cód. Rúbrica Salarial");
-                "Tipo Rubrica" := TabRubrica."Tipo Rubrica";
-                "Descrição Rubrica" := TabRubrica.Descrição;
-                "No. Conta a Debitar" := TabRubrica."No. Conta a Debitar";
-                "No. Conta a Creditar" := TabRubrica."No. Conta a Creditar";
-                Quantidade := TabRubrica.Quantidade;
-                "Valor Unitário" := TabRubrica."Valor Unitário";
+                "Payroll Item Type" := TabRubrica."Payroll Item Type";
+                "Payroll Item Description" := TabRubrica.Descrição;
+                "Debit Acc. No." := TabRubrica."Debit Acc. No.";
+                "Credit Acc. No." := TabRubrica."Credit Acc. No.";
+                Quantity := TabRubrica.Quantity;
+                "Unit Value" := TabRubrica."Unit Value";
                 "Valor Total" := TabRubrica."Valor Total";
 
                 "Cód. Situação" := TabRubrica."Cód. Situação"; //CGA
             end;
         }
-        field(3; "No. Linha"; Integer)
+        field(3; "Line No."; Integer)
         {
-            Caption = 'Line No.';
+            Caption = 'No. Linha';
         }
-        field(8; "Tipo Rubrica"; Option)
+        field(8; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Iten Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
-        field(9; "Descrição Rubrica"; Text[100])
+        field(9; "Payroll Item Description"; Text[100])
         {
             Caption = 'Salary Iten Descrption';
         }
-        field(14; "No. Conta a Debitar"; Code[20])
+        field(14; "Debit Acc. No."; Code[20])
         {
             Caption = 'Debit Acc. No.';
             TableRelation = "G/L Account";
@@ -54,58 +54,57 @@ table 53078 "Rubrica Salarial Empregado"
             begin
                 // 2007.09.05 AMFB - Nao deixar preencher se for conta maior
 
-                if TabGLAccount.Get("No. Conta a Debitar") then begin
+                if TabGLAccount.Get("Debit Acc. No.") then begin
                     if TabGLAccount."Account Type" = TabGLAccount."Account Type"::Heading then
-                        Error(Text0003, "No. Conta a Debitar");
+                        Error(Text0003, "Debit Acc. No.");
                 end;
             end;
         }
-        field(15; "No. Conta a Creditar"; Code[20])
+        field(15; "Credit Acc. No."; Code[20])
         {
-            Caption = 'Credit Acc. No.';
+            Caption = 'No. Conta a Creditar';
             TableRelation = "G/L Account";
 
             trigger OnValidate()
             begin
                 // 2007.09.05 AMFB - Nao deixar preencher se for conta maior
 
-                if TabGLAccount.Get("No. Conta a Creditar") then begin
+                if TabGLAccount.Get("Credit Acc. No.") then begin
                     if TabGLAccount."Account Type" = TabGLAccount."Account Type"::Heading then
-                        Error(Text0003, "No. Conta a Creditar");
+                        Error(Text0003, "Credit Acc. No.");
                 end;
             end;
         }
-        field(20; Quantidade; Decimal)
+        field(20; Quantity; Decimal)
         {
-            Caption = 'Quantity';
+            Caption = 'Quantidade';
 
             trigger OnValidate()
             begin
                 //HG
-
-                Validate("Valor Total", Round(Quantidade * "Valor Unitário", 0.01));
+                //Validate("Valor Total", Round(Quantity * "Unit Value", 0.01));
+                "Valor Total" := Quantity * "Unit Value";
             end;
         }
-        field(21; "Valor Unitário"; Decimal)
+        field(21; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
 
             trigger OnValidate()
             begin
                 //HG
-                Validate("Valor Total", Round(Quantidade * "Valor Unitário", 0.01));
+                //Validate("Valor Total", Round(Quantity * "Unit Value", 0.01));
+                "Valor Total" := Quantity * "Unit Value";
             end;
         }
         field(22; "Valor Total"; Decimal)
         {
             Caption = 'Total Value';
-
             trigger OnValidate()
             begin
                 //HG - Não deixar colocar valor na rubrica se esta tiver filhas, pois neste caso o valor é o somatório das filhas
-
                 TabRubricaSalLinhas.Reset;
-                TabRubricaSalLinhas.SetRange(TabRubricaSalLinhas."Cód. Rubrica", "Cód. Rúbrica Salarial");
+                TabRubricaSalLinhas.SetRange(TabRubricaSalLinhas."Payroll Item Code", "Cód. Rúbrica Salarial");
                 if TabRubricaSalLinhas.Find('-') then
                     Error(Text0002, "Cód. Rúbrica Salarial");
             end;
@@ -120,9 +119,9 @@ table 53078 "Rubrica Salarial Empregado"
             Caption = 'End Date';
             InitValue = 21001231D;
         }
-        field(30; "Ordenação"; Integer)
+        field(30; "Sort"; Integer)
         {
-            Caption = 'Sort';
+            Caption = 'Ordenação';
             Description = 'Define a ordem pela qual as rúbricas aparecem no recibo';
         }
         field(60; "Cód. Situação"; Code[2])
@@ -160,7 +159,7 @@ table 53078 "Rubrica Salarial Empregado"
             Caption = 'Salary Slip Qtd.';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
-        field(91; UnidadeMedida; Code[20])
+        field(91; "Unit of Measure"; Code[20])
         {
             Caption = 'Unit of Measure';
             Description = 'HG - por causa das ausencias em dias e em horas';
@@ -175,9 +174,9 @@ table 53078 "Rubrica Salarial Empregado"
             Caption = 'Line No. Emp. Salary Iten';
             Description = 'Usado na Analitica para relacionar com Coef Default';
         }
-        field(101; Tabela; Integer)
+        field(101; Table; Integer)
         {
-            Caption = 'Table';
+            Caption = 'Tabela';
             Description = 'Usado na Analitica para relacionar com Coef Default';
         }
         field(105; "Valor Incidência SS"; Decimal)
@@ -208,17 +207,17 @@ table 53078 "Rubrica Salarial Empregado"
 
     keys
     {
-        key(Key1; "No. Empregado", "No. Linha")
+        key(Key1; "Employee No.", "Line No.")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado", "Ordenação", "Cód. Rúbrica Salarial")
+        key(Key2; "Employee No.", Sort, "Cód. Rúbrica Salarial")
         {
         }
-        key(Key3; "No. Empregado", "Ordenação", "Cód. Rúbrica Salarial", "Data Início")
+        key(Key3; "Employee No.", Sort, "Cód. Rúbrica Salarial", "Data Início")
         {
         }
-        key(Key4; "No. Empregado", "Ordenação", "Cód. Rúbrica Salarial", "Data a que se refere o mov", UnidadeMedida)
+        key(Key4; "Employee No.", Sort, "Cód. Rúbrica Salarial", "Data a que se refere o mov", "Unit of Measure")
         {
         }
     }
@@ -229,15 +228,15 @@ table 53078 "Rubrica Salarial Empregado"
 
     trigger OnInsert()
     begin
-        //C+ -LCF-  Acrescentei a chave a tabela (Nº Empregado,Ordenação,Cód. Rúbrica Salarial,Data Início)
+        //C+ -LCF-  Acrescentei a chave a tabela (Nº Empregado,Sort,Cód. Rúbrica Salarial,Data Início)
 
-        //Preenche automaticamente o campo ordenação pela ordem que os registos são criados
+        //Preenche automaticamente o campo Sort pela ordem que os registos são criados
         //Permitindo ao utilizador alterar
-        Ordenação := Round("No. Linha" / 10000, 1);
+        Sort := Round("Line No." / 10000, 1);
     end;
 
     var
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaSalLinhas: Record "Rubrica Salarial Linhas";
         TabRubricaSalEmp: Record "Rubrica Salarial Empregado";
         Text0002: Label 'A rúbrica %1 está depende de outras e como tal não se deve definir um valor.';

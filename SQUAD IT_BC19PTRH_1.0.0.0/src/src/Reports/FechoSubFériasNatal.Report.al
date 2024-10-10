@@ -27,7 +27,7 @@ report 53039 "Fecho Sub. Férias/Natal"
             dataitem("Cab. Movs. Empregado"; "Cab. Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -42,7 +42,7 @@ report 53039 "Fecho Sub. Férias/Natal"
 
                     //Marca os empregados deste processamento
                     //---------------------------------------
-                    TabEmpregado.SetRange(TabEmpregado."No.", "Cab. Movs. Empregado"."No. Empregado");
+                    TabEmpregado.SetRange(TabEmpregado."No.", "Cab. Movs. Empregado"."Employee No.");
                     if TabEmpregado.FindFirst then
                         TabEmpregado.Mark(true);
                 end;
@@ -50,7 +50,7 @@ report 53039 "Fecho Sub. Férias/Natal"
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -62,9 +62,9 @@ report 53039 "Fecho Sub. Férias/Natal"
                     //quando fecho 1 mes com Sub. Férias processados tenho de actualizar a ficha do  empregado com a Ultima data Acerto SF
                     if ConfRH.Get() then;
                     RubricSalarial.Reset;
-                    if (RubricSalarial.Get("Linhas Movs. Empregado"."Cód. Rubrica")) and
+                    if (RubricSalarial.Get("Linhas Movs. Empregado"."Payroll Item Code")) and
                        (RubricSalarial.NATREM = RubricSalarial.NATREM::"Cód. Sub. Férias") then begin
-                        if TabEmp.Get("Linhas Movs. Empregado"."No. Empregado") then begin
+                        if TabEmp.Get("Linhas Movs. Empregado"."Employee No.") then begin
                             ContratoEmp.Reset;
                             ContratoEmp.SetRange(ContratoEmp."Cód. Empregado", TabEmp."No.");
                             ContratoEmp.SetFilter(ContratoEmp."Data Inicio Contrato", '<=%1', "Periodos Processamento"."Data Fim Processamento");
@@ -116,23 +116,23 @@ report 53039 "Fecho Sub. Férias/Natal"
             DataItemTableView = SORTING("No.");
             dataitem("Abonos - Descontos Extra"; "Abonos - Descontos Extra")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Mov.");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Entry No.");
 
                 trigger OnAfterGetRecord()
                 begin
                     //Passar para Histórico as Abonos/Descontos deste processamento
                     //------------------------------------------------------
-                    if ("Abonos - Descontos Extra".Data >= "Periodos Processamento"."Data Inicio Processamento") and
-                      ("Abonos - Descontos Extra".Data <= "Periodos Processamento"."Data Fim Processamento") then begin
+                    if ("Abonos - Descontos Extra".Date >= "Periodos Processamento"."Data Inicio Processamento") and
+                      ("Abonos - Descontos Extra".Date <= "Periodos Processamento"."Data Fim Processamento") then begin
                         HistAboDesExtra.Reset;
                         if HistAboDesExtra.FindLast then
-                            VarNMov := HistAboDesExtra."No. Mov." + 1
+                            VarNMov := HistAboDesExtra."Entry No." + 1
                         else
                             VarNMov := 1;
                         HistAboDesExtra.Init;
                         HistAboDesExtra.TransferFields("Abonos - Descontos Extra");
-                        HistAboDesExtra."No. Mov." := VarNMov;
+                        HistAboDesExtra."Entry No." := VarNMov;
                         HistAboDesExtra.Insert;
                         "Abonos - Descontos Extra".Delete;
                     end;
@@ -214,7 +214,7 @@ report 53039 "Fecho Sub. Férias/Natal"
         HistAboDesExtra: Record "Histórico Abonos - Desc. Extra";
         VarNMov: Integer;
         ConfRH: Record "Config. Recursos Humanos";
-        RubricSalarial: Record "Rubrica Salarial";
+        RubricSalarial: Record "Payroll Item";
         TabEmp: Record Empregado;
         ContratoEmp: Record "Contrato Empregado";
         PeriodoCode: Code[10];

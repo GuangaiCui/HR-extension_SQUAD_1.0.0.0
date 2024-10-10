@@ -1,5 +1,6 @@
-table 53076 "Rubrica Salarial"
+table 53076 "Payroll Item"
 {
+    Caption = 'Rubrica Salarial';
     // IT001 - CPA:Novo campo para a funcionalidade de certos de Duodécimos
     // 
     // IT003 - CPA - 207.07.03 -  Novo campo "Vencimento Base" para ser usado nos recibos de vencimento
@@ -13,9 +14,9 @@ table 53076 "Rubrica Salarial"
         {
             Caption = 'Code';
         }
-        field(6; "Tipo Rubrica"; Option)
+        field(6; "Payroll Item Type"; Option)
         {
-            Caption = 'Salary Iten Type';
+            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
@@ -33,22 +34,22 @@ table 53076 "Rubrica Salarial"
         {
             Caption = 'Start Frequency';
         }
-        field(19; "No. Conta a Debitar"; Code[20])
+        field(19; "Debit Acc. No."; Code[20])
         {
-            Caption = 'Debit Acc. No.';
+            Caption = 'No. Conta a Debitar';
             TableRelation = "G/L Account";
 
             trigger OnValidate()
             begin
                 // 2007.09.05 AMFB - Nao deixar preencher se for conta maior
 
-                if TabGLAccount.Get("No. Conta a Debitar") then begin
+                if TabGLAccount.Get("Debit Acc. No.") then begin
                     if TabGLAccount."Account Type" = TabGLAccount."Account Type"::Heading then
-                        Error(Text0003, "No. Conta a Debitar");
+                        Error(Text0003, "Debit Acc. No.");
                 end;
             end;
         }
-        field(20; "No. Conta a Creditar"; Code[20])
+        field(20; "Credit Acc. No."; Code[20])
         {
             Caption = 'Credit Acc. No.';
             TableRelation = "G/L Account";
@@ -57,28 +58,28 @@ table 53076 "Rubrica Salarial"
             begin
                 // 2007.09.05 AMFB - Nao deixar preencher se for conta maior
 
-                if TabGLAccount.Get("No. Conta a Creditar") then begin
+                if TabGLAccount.Get("Credit Acc. No.") then begin
                     if TabGLAccount."Account Type" = TabGLAccount."Account Type"::Heading then
-                        Error(Text0003, "No. Conta a Creditar");
+                        Error(Text0003, "Credit Acc. No.");
                 end;
             end;
         }
-        field(25; Quantidade; Decimal)
+        field(25; Quantity; Decimal)
         {
-            Caption = 'Quantity';
+            Caption = 'Quantidade';
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantidade * "Valor Unitário";
+                "Valor Total" := Quantity * "Unit Value";
             end;
         }
-        field(26; "Valor Unitário"; Decimal)
+        field(26; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantidade * "Valor Unitário";
+                "Valor Total" := Quantity * "Unit Value";
             end;
         }
         field(27; "Valor Total"; Decimal)
@@ -87,8 +88,8 @@ table 53076 "Rubrica Salarial"
 
             trigger OnValidate()
             begin
-                if Quantidade = 0 then Quantidade := 1;
-                "Valor Unitário" := "Valor Total" / Quantidade;
+                if Quantity = 0 then Quantity := 1;
+                "Unit Value" := "Valor Total" / Quantity;
             end;
         }
         field(35; NATREM; Enum "Rubrica Salarial Nat. Rem.")
@@ -100,7 +101,7 @@ table 53076 "Rubrica Salarial"
 
             trigger OnValidate()
             var
-                lRubricaSal: Record "Rubrica Salarial";
+                lRubricaSal: Record "Payroll Item";
                 lRubricaSalLinhas: Record "Rubrica Salarial Linhas";
             begin
                 if NATREM <> NATREM::" " then begin
@@ -108,7 +109,7 @@ table 53076 "Rubrica Salarial"
                     lRubricaSal.SetRange(lRubricaSal.Genero, lRubricaSal.Genero::SS);
                     if lRubricaSal.Find('-') then begin
                         lRubricaSalLinhas.Reset;
-                        lRubricaSalLinhas.SetRange(lRubricaSalLinhas."Cód. Rubrica", lRubricaSal.Código);
+                        lRubricaSalLinhas.SetRange(lRubricaSalLinhas."Payroll Item Code", lRubricaSal.Código);
                         lRubricaSalLinhas.SetRange(lRubricaSalLinhas."Cód. Rubrica Filha", Código);
                         if not lRubricaSalLinhas.Find('-') then
                             Message(Text0004, Código);
@@ -204,7 +205,7 @@ table 53076 "Rubrica Salarial"
         {
             Clustered = true;
         }
-        key(Key2; "Tipo Rubrica", "Mês Início Periocidade", Quantidade)
+        key(Key2; "Payroll Item Type", "Mês Início Periocidade", Quantity)
         {
         }
     }
@@ -224,7 +225,7 @@ table 53076 "Rubrica Salarial"
 
 
         TabRubricaSalLinhas.Reset;
-        TabRubricaSalLinhas.SetRange(TabRubricaSalLinhas."Cód. Rubrica", Código);
+        TabRubricaSalLinhas.SetRange(TabRubricaSalLinhas."Payroll Item Code", Código);
         if TabRubricaSalLinhas.Find('-') then TabRubricaSalLinhas.DeleteAll;
 
         TabRubricaSalLinhas.Reset;
@@ -247,34 +248,34 @@ table 53076 "Rubrica Salarial"
         if TabRubricaSalEmp.Find('-') then begin
             if Confirm(Text0001, true, Código) then begin
                 repeat
-                    if xRec."Tipo Rubrica" <> "Tipo Rubrica" then begin
-                        if TabRubricaSalEmp."Tipo Rubrica" = xRec."Tipo Rubrica" then
-                            TabRubricaSalEmp."Tipo Rubrica" := "Tipo Rubrica";
+                    if xRec."Payroll Item Type" <> "Payroll Item Type" then begin
+                        if TabRubricaSalEmp."Payroll Item Type" = xRec."Payroll Item Type" then
+                            TabRubricaSalEmp."Payroll Item Type" := "Payroll Item Type";
                     end;
 
                     if xRec.Descrição <> Descrição then begin
-                        if TabRubricaSalEmp."Descrição Rubrica" = xRec.Descrição then
-                            TabRubricaSalEmp."Descrição Rubrica" := Descrição;
+                        if TabRubricaSalEmp."Payroll Item Description" = xRec.Descrição then
+                            TabRubricaSalEmp."Payroll Item Description" := Descrição;
                     end;
 
-                    if xRec."No. Conta a Debitar" <> "No. Conta a Debitar" then begin
-                        if TabRubricaSalEmp."No. Conta a Debitar" = xRec."No. Conta a Debitar" then
-                            TabRubricaSalEmp."No. Conta a Debitar" := "No. Conta a Debitar";
+                    if xRec."Debit Acc. No." <> "Debit Acc. No." then begin
+                        if TabRubricaSalEmp."Debit Acc. No." = xRec."Debit Acc. No." then
+                            TabRubricaSalEmp."Debit Acc. No." := "Debit Acc. No.";
                     end;
 
-                    if xRec."No. Conta a Creditar" <> "No. Conta a Creditar" then begin
-                        if TabRubricaSalEmp."No. Conta a Creditar" = xRec."No. Conta a Creditar" then
-                            TabRubricaSalEmp."No. Conta a Creditar" := "No. Conta a Creditar";
+                    if xRec."Credit Acc. No." <> "Credit Acc. No." then begin
+                        if TabRubricaSalEmp."Credit Acc. No." = xRec."Credit Acc. No." then
+                            TabRubricaSalEmp."Credit Acc. No." := "Credit Acc. No.";
                     end;
 
-                    if xRec.Quantidade <> Quantidade then begin
-                        if TabRubricaSalEmp.Quantidade = xRec.Quantidade then
-                            TabRubricaSalEmp.Quantidade := Quantidade;
+                    if xRec.Quantity <> Quantity then begin
+                        if TabRubricaSalEmp.Quantity = xRec.Quantity then
+                            TabRubricaSalEmp.Quantity := Quantity;
                     end;
 
-                    if xRec."Valor Unitário" <> "Valor Unitário" then begin
-                        if TabRubricaSalEmp."Valor Unitário" = xRec."Valor Unitário" then
-                            TabRubricaSalEmp."Valor Unitário" := "Valor Unitário";
+                    if xRec."Unit Value" <> "Unit Value" then begin
+                        if TabRubricaSalEmp."Unit Value" = xRec."Unit Value" then
+                            TabRubricaSalEmp."Unit Value" := "Unit Value";
                     end;
 
                     if xRec."Cód. Situação" <> "Cód. Situação" then begin
@@ -297,23 +298,23 @@ table 53076 "Rubrica Salarial"
         if TabRubricaSalEmp.Find('-') then begin
             if Confirm(Text0002, true, Código) then begin
                 repeat
-                    if xRec."Tipo Rubrica" <> "Tipo Rubrica" then
-                        TabRubricaSalEmp."Tipo Rubrica" := "Tipo Rubrica";
+                    if xRec."Payroll Item Type" <> "Payroll Item Type" then
+                        TabRubricaSalEmp."Payroll Item Type" := "Payroll Item Type";
 
                     if xRec.Descrição <> Descrição then
-                        TabRubricaSalEmp."Descrição Rubrica" := Descrição;
+                        TabRubricaSalEmp."Payroll Item Description" := Descrição;
 
-                    if xRec."No. Conta a Debitar" <> "No. Conta a Debitar" then
-                        TabRubricaSalEmp."No. Conta a Debitar" := "No. Conta a Debitar";
+                    if xRec."Debit Acc. No." <> "Debit Acc. No." then
+                        TabRubricaSalEmp."Debit Acc. No." := "Debit Acc. No.";
 
-                    if xRec."No. Conta a Creditar" <> "No. Conta a Creditar" then
-                        TabRubricaSalEmp."No. Conta a Creditar" := "No. Conta a Creditar";
+                    if xRec."Credit Acc. No." <> "Credit Acc. No." then
+                        TabRubricaSalEmp."Credit Acc. No." := "Credit Acc. No.";
 
-                    if xRec.Quantidade <> Quantidade then
-                        TabRubricaSalEmp.Quantidade := Quantidade;
+                    if xRec.Quantity <> Quantity then
+                        TabRubricaSalEmp.Quantity := Quantity;
 
-                    if xRec."Valor Unitário" <> "Valor Unitário" then
-                        TabRubricaSalEmp."Valor Unitário" := "Valor Unitário";
+                    if xRec."Unit Value" <> "Unit Value" then
+                        TabRubricaSalEmp."Unit Value" := "Unit Value";
 
                     if xRec."Cód. Situação" <> "Cód. Situação" then
                         TabRubricaSalEmp."Cód. Situação" := "Cód. Situação";

@@ -200,7 +200,7 @@ xmlport 53035 "RU - Anexo 0"
                                 if rHistCabMovEmp.FindSet then begin
                                     repeat
                                         rHistAusen.Next;
-                                        rHistAusen.SetRange(rHistAusen."Employee No.", rHistCabMovEmp."No. Empregado");
+                                        rHistAusen.SetRange(rHistAusen."Employee No.", rHistCabMovEmp."Employee No.");
                                         rHistAusen.SetRange(rHistAusen."To Date", DMY2Date(30, 11, vAno));
                                         if rHistAusen.FindFirst then
                                             vTotPessoas := vTotPessoas - 1;
@@ -244,7 +244,7 @@ xmlport 53035 "RU - Anexo 0"
                                 if rHistCabMovEmp.FindSet then begin
                                     repeat
                                         rEmpregado.Reset;
-                                        if rEmpregado.Get(rHistCabMovEmp."No. Empregado") then begin
+                                        if rEmpregado.Get(rHistCabMovEmp."Employee No.") then begin
                                             if rEmpregado."Tipo Contribuinte" = rEmpregado."Tipo Contribuinte"::"Conta de Outrem" then
                                                 vConta := vConta + 1;
                                         end;
@@ -259,7 +259,7 @@ xmlport 53035 "RU - Anexo 0"
                                 if rHistCabMovEmp.FindSet then begin
                                     repeat
                                         rHistAusen.Next;
-                                        rHistAusen.SetRange(rHistAusen."Employee No.", rHistCabMovEmp."No. Empregado");
+                                        rHistAusen.SetRange(rHistAusen."Employee No.", rHistCabMovEmp."Employee No.");
                                         rHistAusen.SetRange(rHistAusen."To Date", DMY2Date(30, 11, vAno));
                                         if rHistAusen.FindFirst then
                                             vConta := vConta - 1;
@@ -288,7 +288,7 @@ xmlport 53035 "RU - Anexo 0"
                                     if rHistCabMovEmp.FindSet then begin
                                         repeat
                                             rEmpregado.Reset;
-                                            if rEmpregado.Get(rHistCabMovEmp."No. Empregado") then begin
+                                            if rEmpregado.Get(rHistCabMovEmp."Employee No.") then begin
                                                 if rEmpregado."Tipo Contribuinte" = rEmpregado."Tipo Contribuinte"::"Conta de Outrem" then
                                                     vTotPessoas := vTotPessoas + 1;
                                             end;
@@ -307,12 +307,12 @@ xmlport 53035 "RU - Anexo 0"
                             trigger OnBeforePassVariable()
                             begin
                                 rDestacamentos.Reset;
-                                rDestacamentos.SetRange(rDestacamentos."Data Início Destacamento", DMY2Date(1, 1, vAno),
+                                rDestacamentos.SetRange(rDestacamentos."Detachment Begin Date", DMY2Date(1, 1, vAno),
                                                         DMY2Date(31, 12, vAno));
                                 if rDestacamentos.Find('-') then begin
                                     repeat
                                         tempDestacamentos.Init;
-                                        tempDestacamentos."No. Emp." := rDestacamentos."No. Emp.";
+                                        tempDestacamentos."Employee No." := rDestacamentos."Employee No.";
                                         if not tempDestacamentos.Insert then;
                                     until rDestacamentos.Next = 0;
                                 end;
@@ -327,7 +327,7 @@ xmlport 53035 "RU - Anexo 0"
                             trigger OnBeforePassVariable()
                             begin
                                 rDestacamentos.Reset;
-                                rDestacamentos.SetRange(rDestacamentos."Data Início Destacamento", DMY2Date(1, 1, vAno),
+                                rDestacamentos.SetRange(rDestacamentos."Detachment Begin Date", DMY2Date(1, 1, vAno),
                                                         DMY2Date(31, 12, vAno));
                                 if rDestacamentos.FindLast then
                                     n_destacamentos := Format(rDestacamentos.Count);
@@ -343,7 +343,7 @@ xmlport 53035 "RU - Anexo 0"
                                 if rRubricaSalarial.FindFirst then begin
                                     rHistLinhasMovEmp.Reset;
                                     rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Data Registo", DMY2Date(1, 10, vAno), DMY2Date(31, 10, vAno));
-                                    rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Cód. Rubrica", rRubricaSalarial.Código);
+                                    rHistLinhasMovEmp.SetRange(rHistLinhasMovEmp."Payroll Item Code", rRubricaSalarial.Código);
                                     if rHistLinhasMovEmp.FindLast then
                                         n_trab_sindic_31Out := Format(rHistLinhasMovEmp.Count);
 
@@ -497,7 +497,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -517,7 +517,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -541,7 +541,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -562,7 +562,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -587,7 +587,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -608,7 +608,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -633,7 +633,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -654,7 +654,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -679,7 +679,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -699,7 +699,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -727,7 +727,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -748,7 +748,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -773,7 +773,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -795,7 +795,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -821,7 +821,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -843,7 +843,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -869,7 +869,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -891,7 +891,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -917,7 +917,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -938,7 +938,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -966,7 +966,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -987,7 +987,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -1012,7 +1012,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -1034,7 +1034,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -1060,7 +1060,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -1082,7 +1082,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -1108,7 +1108,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -1130,7 +1130,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -1156,7 +1156,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -1177,7 +1177,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -1205,7 +1205,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -1226,7 +1226,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') < 18 then
                                                         i := i + 1;
                                                 end;
@@ -1251,7 +1251,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -1273,7 +1273,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 18) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 34) then
                                                         i := i + 1;
@@ -1299,7 +1299,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -1321,7 +1321,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 35) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 44) then
                                                         i := i + 1;
@@ -1347,7 +1347,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -1369,7 +1369,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 45) and
                                                        (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') <= 64) then
                                                         i := i + 1;
@@ -1395,7 +1395,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Male) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -1416,7 +1416,7 @@ xmlport 53035 "RU - Anexo 0"
                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                         if rPerdAnomEmp.FindSet then begin
                                             repeat
-                                                if (rEmpregado.Get(rPerdAnomEmp."No. Empregado")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
+                                                if (rEmpregado.Get(rPerdAnomEmp."Employee No.")) and (rEmpregado.Sex = rEmpregado.Sex::Female) then begin
                                                     if (Round((DMY2Date(31, 12, vAno) - rEmpregado."Birth Date") / 365, 1, '<') >= 65) then
                                                         i := i + 1;
                                                 end;
@@ -1450,7 +1450,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1480,7 +1480,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1513,7 +1513,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1542,7 +1542,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1575,7 +1575,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1604,7 +1604,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1637,7 +1637,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1666,7 +1666,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1700,7 +1700,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1730,7 +1730,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
                                                             i := i + 1;
@@ -1767,7 +1767,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -1798,7 +1798,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -1832,7 +1832,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -1862,7 +1862,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -1896,7 +1896,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -1926,7 +1926,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -1960,7 +1960,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -1990,7 +1990,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2025,7 +2025,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2056,7 +2056,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Inferior a 60%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2094,7 +2094,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2125,7 +2125,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2159,7 +2159,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2189,7 +2189,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2223,7 +2223,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2253,7 +2253,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2287,7 +2287,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2317,7 +2317,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2352,7 +2352,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2383,7 +2383,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"De 60% e Inferior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2421,7 +2421,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2452,7 +2452,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2486,7 +2486,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2516,7 +2516,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2550,7 +2550,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2580,7 +2580,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2614,7 +2614,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2644,7 +2644,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2679,7 +2679,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -2710,7 +2710,7 @@ xmlport 53035 "RU - Anexo 0"
                                                 if rEmpregado.Find('-') then begin
                                                     repeat
                                                         rPerdAnomEmp.Reset;
-                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."No. Empregado", rEmpregado."No.");
+                                                        rPerdAnomEmp.SetRange(rPerdAnomEmp."Employee No.", rEmpregado."No.");
                                                         rPerdAnomEmp.SetRange(rPerdAnomEmp."Grau de Incapacidade", rPerdAnomEmp."Grau de Incapacidade"::"Igual ou Superior a 80%");
                                                         rPerdAnomEmp.SetFilter(rPerdAnomEmp."Data Grau de Incapacidade", '<=%1', DMY2Date(31, 12, vAno));
                                                         if rPerdAnomEmp.FindFirst then
@@ -3263,7 +3263,7 @@ xmlport 53035 "RU - Anexo 0"
                                                     vContaDiasEmp := vContaDiasEmp - rFeriados.Count;
                                                 //tirar as férias
                                                 rFeriasEmpregado.Reset;
-                                                rFeriasEmpregado.SetRange(rFeriasEmpregado."No. Empregado", rEmpregado."No.");
+                                                rFeriasEmpregado.SetRange(rFeriasEmpregado."Employee No.", rEmpregado."No.");
                                                 rFeriasEmpregado.SetRange(rFeriasEmpregado.Data, DMY2Date(1, 1, vAno), DMY2Date(31, 12, vAno));
                                                 rFeriasEmpregado.SetRange(rFeriasEmpregado.Gozada, true);
                                                 if rFeriasEmpregado.FindLast then
@@ -3545,7 +3545,7 @@ xmlport 53035 "RU - Anexo 0"
         rSST: Record "Segurança e Saúde no Trabalho";
         tempDestacamentos: Record Destacamentos temporary;
         rHistLinhasMovEmp: Record "Hist. Linhas Movs. Empregado";
-        rRubricaSalarial: Record "Rubrica Salarial";
+        rRubricaSalarial: Record "Payroll Item";
         rHistCabMovEmp: Record "Hist. Cab. Movs. Empregado";
         rHistHorasExtra: Record "Histórico Horas Extra";
         rGLEntry: Record "G/L Entry";

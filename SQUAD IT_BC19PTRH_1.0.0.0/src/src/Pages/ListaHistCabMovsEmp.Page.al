@@ -28,7 +28,7 @@ page 53108 "Lista Hist. Cab. Movs. Emp"
 
 
                 }
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -96,7 +96,7 @@ page 53108 "Lista Hist. Cab. Movs. Emp"
                     RunObject = Page "Hist. Cab. Movs. Empregado";
                     RunPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),
                                   "Tipo Processamento" = FIELD("Tipo Processamento"),
-                                  "No. Empregado" = FIELD("No. Empregado");
+                                  "Employee No." = FIELD("Employee No.");
                     ShortCutKey = 'Shift+F7';
                 }
             }

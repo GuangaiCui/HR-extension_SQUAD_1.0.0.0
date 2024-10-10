@@ -15,14 +15,14 @@ table 53080 "Linhas Movs. Empregado"
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
-        field(3; "No. Empregado"; Code[20])
+        field(3; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
 
             trigger OnValidate()
             begin
-                if TabEmp.Get("No. Empregado") then
+                if TabEmp.Get("Employee No.") then
                     "Designação Empregado" := TabEmp.Name;// + ' ' + TabEmp."First Name" + ' ' + TabEmp."Last Name"; //2008.05.23
             end;
         }
@@ -38,27 +38,27 @@ table 53080 "Linhas Movs. Empregado"
         {
             Caption = 'Employee Name';
         }
-        field(19; "Cód. Rubrica"; Code[20])
+        field(19; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
 
             trigger OnValidate()
             begin
-                if TabRubrica.Get("Cód. Rubrica") then begin
-                    "Descrição Rubrica" := TabRubrica.Descrição;
-                    "No. Conta a Debitar" := TabRubrica."No. Conta a Debitar";
-                    "No. Conta a Creditar" := TabRubrica."No. Conta a Creditar";
-                    "Tipo Rubrica" := TabRubrica."Tipo Rubrica";
+                if TabRubrica.Get("Payroll Item Code") then begin
+                    "Payroll Item Description" := TabRubrica.Descrição;
+                    "Debit Acc. No." := TabRubrica."Debit Acc. No.";
+                    "Credit Acc. No." := TabRubrica."Credit Acc. No.";
+                    "Payroll Item Type" := TabRubrica."Payroll Item Type";
                     NATREM := TabRubrica.NATREM;
                 end;
             end;
         }
-        field(20; "Descrição Rubrica"; Text[100])
+        field(20; "Payroll Item Description"; Text[100])
         {
             Caption = 'Salary Iten Description';
         }
-        field(21; "Tipo Rubrica"; Option)
+        field(21; "Payroll Item Type"; Option)
         {
             Caption = 'Salary Iten Type';
             OptionCaption = 'Abono,Desconto';
@@ -70,23 +70,23 @@ table 53080 "Linhas Movs. Empregado"
             //OptionCaption = ' ,Cód. Comissões,Cód. Sub. Férias,Cód. Sub. Natal,Remuneração Permanente,Subsídios Reg. Não Mensal,Forças Armadas,Férias Pagas não Gozadas,Diferenças de Vencimento,Ajudas Custo e Trans.,Prémios-Bonus Mensal,Compensação,Honorários,Subsídios regulares,Prémios-bonus Não mensal,Sub. Ref.,Trab. Supl.,Trab. Noct.,Compensação Cont. Intermitente';
             //OptionMembers = " ","Cód. Comissões","Cód. Sub. Férias","Cód. Sub. Natal","Remuneração Permanente","Subsídios Reg. Não Mensal","Forças Armadas","Férias Pagas não Gozadas","Diferenças de Vencimento","Ajudas Custo e Trans.","Prémios-Bonus Mensal","Compensação","Honorários","Subsídios regulares","Prémios-bonus Não mensal","Sub. Ref.","Trab. Supl.","Trab. Noct.","Compensação Cont. Intermitente";
         }
-        field(25; "No. Conta a Debitar"; Code[20])
+        field(25; "Debit Acc. No."; Code[20])
         {
             Caption = 'Debit Acc. No.';
             TableRelation = "G/L Account";
         }
-        field(26; "No. Conta a Creditar"; Code[20])
+        field(26; "Credit Acc. No."; Code[20])
         {
             Caption = 'Credit Acc. No.';
             TableRelation = "G/L Account";
         }
-        field(38; Quantidade; Decimal)
+        field(38; Quantity; Decimal)
         {
-            Caption = 'Quantity';
+            Caption = 'Quantidade';
         }
-        field(39; "Valor Unitário"; Decimal)
+        field(39; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
         }
         field(40; "Valor Débito"; Decimal)
         {
@@ -147,7 +147,7 @@ table 53080 "Linhas Movs. Empregado"
             Caption = 'Qtd. in Salary Slip';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
-        field(91; UnidadeMedida; Code[20])
+        field(91; "Unit of Measure"; Code[20])
         {
             Caption = 'Unit Code';
             Description = 'HG - por causa das ausencias em dias e em horas';
@@ -187,30 +187,30 @@ table 53080 "Linhas Movs. Empregado"
 
     keys
     {
-        key(Key1; "Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha")
+        key(Key1; "Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha")
         {
             Clustered = true;
             SumIndexFields = Valor;
         }
-        key(Key2; "No. Empregado", "Data Registo")
+        key(Key2; "Employee No.", "Data Registo")
         {
         }
-        key(Key3; "No. Empregado", "Data Registo", "Cód. Situação")
+        key(Key3; "Employee No.", "Data Registo", "Cód. Situação")
         {
         }
-        key(Key4; "No. Empregado", "Data Registo", "Cód. Situação", "Cód. Movimento")
+        key(Key4; "Employee No.", "Data Registo", "Cód. Situação", "Cód. Movimento")
         {
         }
-        key(Key5; "Cód. Rubrica")
+        key(Key5; "Payroll Item Code")
         {
         }
-        key(Key6; "Tipo Rubrica")
+        key(Key6; "Payroll Item Type")
         {
         }
-        key(Key7; "Cód. Processamento", "No. Empregado", "No. Linha")
+        key(Key7; "Cód. Processamento", "Employee No.", "No. Linha")
         {
         }
-        key(Key8; "No. Empregado", "Data a que se refere o mov")
+        key(Key8; "Employee No.", "Data a que se refere o mov")
         {
         }
     }
@@ -221,7 +221,7 @@ table 53080 "Linhas Movs. Empregado"
 
     var
         TabEmp: Record Empregado;
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabConta: Record "G/L Account";
         TabMovEmp: Record "Cab. Movs. Empregado";
 }

@@ -1,16 +1,16 @@
 table 53073 "Horas Extra Empregado"
 {
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     DrillDownPageID = "Registo Horas Extra";
     LookupPageID = "Registo Horas Extra";
 
     fields
     {
-        field(1; "No. Mov."; Integer)
+        field(1; "Entry No."; Integer)
         {
             Caption = 'Entry No.';
         }
-        field(2; "No. Empregado"; Code[20])
+        field(2; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -29,7 +29,7 @@ table 53073 "Horas Extra Empregado"
                 //HG
                 TabHora.Get("Cód. Hora Extra");
                 Descrição := TabHora.Descrição;
-                "Cód. Rubrica" := TabHora."Cód. Rubrica";
+                "Payroll Item Code" := TabHora."Payroll Item Code";
                 Factor := TabHora.Factor;
             end;
         }
@@ -37,27 +37,27 @@ table 53073 "Horas Extra Empregado"
         {
             Caption = 'Description';
         }
-        field(12; "Cód. Rubrica"; Code[20])
+        field(12; "Payroll Item Code"; Code[20])
         {
             Caption = 'Salary Item code';
-            TableRelation = "Rubrica Salarial";
+            TableRelation = "Payroll Item";
         }
-        field(17; Quantidade; Decimal)
+        field(17; Quantity; Decimal)
         {
-            Caption = 'Quantity';
+            Caption = 'Quantidade';
         }
         field(18; Factor; Decimal)
         {
             Caption = 'Factor';
         }
-        field(19; "Valor Unitário"; Decimal)
+        field(19; "Unit Value"; Decimal)
         {
-            Caption = 'Unit Value';
+            Caption = 'Valor Unitário';
         }
         field(25; "Comentário"; Boolean)
         {
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(HorEx),
-                                                                      "Table Line No." = FIELD("No. Mov.")));
+                                                                      "Table Line No." = FIELD("Entry No.")));
             Caption = 'Commet';
             Editable = false;
             FieldClass = FlowField;
@@ -83,7 +83,7 @@ table 53073 "Horas Extra Empregado"
 
     keys
     {
-        key(Key1; "No. Mov.")
+        key(Key1; "Entry No.")
         {
             Clustered = true;
         }
@@ -98,7 +98,7 @@ table 53073 "Horas Extra Empregado"
         //2009.02.26 - quando se apaga uma ausencia temos de apagar os comentários da mesma
         HumanResComment.Reset;
         HumanResComment.SetRange(HumanResComment."Table Name", DATABASE::"Horas Extra Empregado");
-        HumanResComment.SetRange(HumanResComment."Table Line No.", "No. Mov.");
+        HumanResComment.SetRange(HumanResComment."Table Line No.", "Entry No.");
         if HumanResComment.Find('-') then
             HumanResComment.DeleteAll;
 
@@ -107,11 +107,11 @@ table 53073 "Horas Extra Empregado"
 
     trigger OnInsert()
     begin
-        TabHoraExtraEmpregado.SetCurrentKey(TabHoraExtraEmpregado."No. Mov.");
+        TabHoraExtraEmpregado.SetCurrentKey(TabHoraExtraEmpregado."Entry No.");
         if TabHoraExtraEmpregado.Find('+') then
-            "No. Mov." := TabHoraExtraEmpregado."No. Mov." + 1
+            "Entry No." := TabHoraExtraEmpregado."Entry No." + 1
         else
-            "No. Mov." := 1;
+            "Entry No." := 1;
     end;
 
     var

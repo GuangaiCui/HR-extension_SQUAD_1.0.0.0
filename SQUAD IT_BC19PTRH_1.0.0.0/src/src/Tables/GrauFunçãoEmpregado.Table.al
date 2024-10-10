@@ -1,12 +1,12 @@
 table 53063 "Grau Função Empregado"
 {
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     DrillDownPageID = "Lista Grau Função Empregado";
     LookupPageID = "Lista Grau Função Empregado";
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -41,7 +41,7 @@ table 53063 "Grau Função Empregado"
         field(7; "Comentário"; Boolean)
         {
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Grau),
-                                                                      "No." = FIELD("No. Empregado"),
+                                                                      "No." = FIELD("Employee No."),
                                                                       "Table Line No." = FIELD("No. Linha")));
             Caption = 'Comment';
             Editable = false;
@@ -51,7 +51,7 @@ table 53063 "Grau Função Empregado"
 
     keys
     {
-        key(Key1; "No. Empregado", "Cód. Grau Função", "No. Linha")
+        key(Key1; "Employee No.", "Cód. Grau Função", "No. Linha")
         {
             Clustered = true;
         }

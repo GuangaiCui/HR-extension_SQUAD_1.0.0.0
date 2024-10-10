@@ -2,7 +2,7 @@
 page 53101 "Lista Rubrica Salarial Emp."
 {
     AutoSplitKey = true;
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     DelayedInsert = true;
     PageType = List;
     RefreshOnActivate = true;
@@ -15,7 +15,7 @@ page 53101 "Lista Rubrica Salarial Emp."
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -25,32 +25,32 @@ page 53101 "Lista Rubrica Salarial Emp."
 
 
                 }
-                field("Tipo Rubrica"; Rec."Tipo Rubrica")
+                field("Payroll Item Type"; Rec."Payroll Item Type")
                 {
 
 
                 }
-                field("Descrição Rubrica"; Rec."Descrição Rubrica")
+                field("Payroll Item Description"; Rec."Payroll Item Description")
                 {
 
 
                 }
-                field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
+                field("Debit Acc. No."; Rec."Debit Acc. No.")
                 {
 
 
                 }
-                field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
+                field("Credit Acc. No."; Rec."Credit Acc. No.")
                 {
 
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
 
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
 
@@ -70,7 +70,7 @@ page 53101 "Lista Rubrica Salarial Emp."
 
 
                 }
-                field("Ordenação"; Rec."Ordenação")
+                field("Ordenação"; Rec.Sort)
                 {
 
 
@@ -90,7 +90,7 @@ page 53101 "Lista Rubrica Salarial Emp."
         //uma rubrica CGA se não for subscritor
         //uma rubrica IVA se for Cat. A
 
-        if TabEmpregado.Get(Rec."No. Empregado") then begin
+        if TabEmpregado.Get(Rec."Employee No.") then begin
             if TabRubricaSalarial.Get(Rec."Cód. Rúbrica Salarial") then begin
 
                 //SS
@@ -122,7 +122,7 @@ page 53101 "Lista Rubrica Salarial Emp."
 
     var
         TabEmpregado: Record Empregado;
-        TabRubricaSalarial: Record "Rubrica Salarial";
+        TabRubricaSalarial: Record "Payroll Item";
         Text0001: Label 'Não pode parametrizar uma Rúbrica do tipo Seg. Social, pois este empregado não é Subscritor.';
         Text0002: Label 'Não pode parametrizar uma Rúbrica do tipo CGA, pois este empregado não é Subscritor.';
         Text0003: Label 'Não pode parametrizar uma Rúbrica do tipo IVA, pois este empregado é da Cat. A.';

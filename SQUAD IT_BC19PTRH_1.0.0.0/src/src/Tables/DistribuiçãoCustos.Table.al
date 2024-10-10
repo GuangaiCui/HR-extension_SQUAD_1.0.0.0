@@ -3,7 +3,7 @@ table 53099 "Distribuição Custos"
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado."No.";
@@ -11,7 +11,7 @@ table 53099 "Distribuição Custos"
             trigger OnValidate()
             begin
                 //CreateDim(
-                //  DATABASE::Empregado,"No. Empregado");
+                //  DATABASE::Empregado,"Employee No.");
             end;
         }
         field(7; Percentagem; Decimal)
@@ -41,7 +41,7 @@ table 53099 "Distribuição Custos"
                 //empregado e ao ser preenchida esta quantidade, o sistema preenche
                 //automaticamente a percentagem tendo como referência o Nº de horas semanais.
 
-                if TabEmpregado.Get("No. Empregado") then begin
+                if TabEmpregado.Get("Employee No.") then begin
                     TabEmpregado.TestField(TabEmpregado."No. Horas Semanais");
                     Percentagem := "No. Horas" * 100 / TabEmpregado."No. Horas Semanais" / 100;
                 end;
@@ -131,7 +131,7 @@ table 53099 "Distribuição Custos"
 
     keys
     {
-        key(Key1; "No. Empregado", "Data Inicio", "Global Dimension 1 Code", "Global Dimension 2 Code", "Shortcut Dimension 3 Code", "Shortcut Dimension 4 Code", "Shortcut Dimension 5 Code", "Shortcut Dimension 6 Code", "Shortcut Dimension 7 Code", "Shortcut Dimension 8 Code")
+        key(Key1; "Employee No.", "Data Inicio", "Global Dimension 1 Code", "Global Dimension 2 Code", "Shortcut Dimension 3 Code", "Shortcut Dimension 4 Code", "Shortcut Dimension 5 Code", "Shortcut Dimension 6 Code", "Shortcut Dimension 7 Code", "Shortcut Dimension 8 Code")
         {
             Clustered = true;
         }
@@ -156,7 +156,7 @@ table 53099 "Distribuição Custos"
         OldDimSetID := "Dimension Set ID";
         "Dimension Set ID" :=
           HRFunctions.EditDimensionSet2(
-            "Dimension Set ID", StrSubstNo('%1 %2', "No. Empregado", "Data Inicio"),
+            "Dimension Set ID", StrSubstNo('%1 %2', "Employee No.", "Data Inicio"),
             "Global Dimension 1 Code", "Global Dimension 2 Code");
         if OldDimSetID <> "Dimension Set ID" then begin
             Modify;
@@ -196,7 +196,7 @@ table 53099 "Distribuição Custos"
     begin
         OldDimSetID := "Dimension Set ID";
         DimMgt.ValidateShortcutDimValues(FieldNumber, ShortcutDimCode, "Dimension Set ID");
-        if "No. Empregado" <> '' then
+        if "Employee No." <> '' then
             Modify;
         if OldDimSetID <> "Dimension Set ID" then begin
             Modify;

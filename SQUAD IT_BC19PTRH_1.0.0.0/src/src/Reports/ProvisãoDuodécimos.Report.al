@@ -52,7 +52,7 @@ report 53068 "Provisão Duodécimos"
                 //Tem Distribuição
                 //*****************
                 DistribCustos.Reset;
-                DistribCustos.SetRange(DistribCustos."No. Empregado", Empregado."No.");
+                DistribCustos.SetRange(DistribCustos."Employee No.", Empregado."No.");
                 if DistribCustos.FindSet then begin
                     repeat
                         GenLedSetup.Reset;
@@ -89,7 +89,7 @@ report 53068 "Provisão Duodécimos"
                                 DimMgt.ValidateShortcutDimValues(7, DistribCustos."Shortcut Dimension 7 Code", GenJnlLine."Dimension Set ID");
                             if DistribCustos."Shortcut Dimension 8 Code" <> '' then
                                 DimMgt.ValidateShortcutDimValues(8, DistribCustos."Shortcut Dimension 8 Code", GenJnlLine."Dimension Set ID");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
 
                             //------------------------------------
@@ -126,7 +126,7 @@ report 53068 "Provisão Duodécimos"
                                     DimMgt.ValidateShortcutDimValues(7, DistribCustos."Shortcut Dimension 7 Code", GenJnlLine."Dimension Set ID");
                                 if DistribCustos."Shortcut Dimension 8 Code" <> '' then
                                     DimMgt.ValidateShortcutDimValues(8, DistribCustos."Shortcut Dimension 8 Code", GenJnlLine."Dimension Set ID");
-                                GenJnlLine."No. Empregado" := Empregado."No.";
+                                GenJnlLine."Employee No." := Empregado."No.";
                                 GenJnlLine.Insert;
                             end;
                             //------------------------------------
@@ -161,7 +161,7 @@ report 53068 "Provisão Duodécimos"
                                 DimMgt.ValidateShortcutDimValues(7, DistribCustos."Shortcut Dimension 7 Code", GenJnlLine."Dimension Set ID");
                             if DistribCustos."Shortcut Dimension 8 Code" <> '' then
                                 DimMgt.ValidateShortcutDimValues(8, DistribCustos."Shortcut Dimension 8 Code", GenJnlLine."Dimension Set ID");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                         end;
                     until DistribCustos.Next = 0;
@@ -195,7 +195,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", SF);
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 1 Code", DefDim."Dimension Value Code");
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 2 Code", DefDim."Dimension Value Code");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                             //------------------------------------
                             //registo Férias
@@ -217,7 +217,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", Fer);
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 1 Code", DefDim."Dimension Value Code");
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 2 Code", DefDim."Dimension Value Code");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                             //------------------------------------
                             //registo Sub. Natal
@@ -239,7 +239,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", SN);
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 1 Code", DefDim."Dimension Value Code");
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 2 Code", DefDim."Dimension Value Code");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                         end else begin
                             //Não tem dimensões
@@ -261,7 +261,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Method" := GenJnlLine."Recurring Method"::"F  Fixed";
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", SF);
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                             //------------------------------------
                             //registo Férias
@@ -281,7 +281,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Method" := GenJnlLine."Recurring Method"::"F  Fixed";
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", Fer);
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                             //------------------------------------
                             //registo Sub. Natal
@@ -301,7 +301,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Method" := GenJnlLine."Recurring Method"::"F  Fixed";
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", SN);
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                         end;
                     end;
@@ -324,7 +324,7 @@ report 53068 "Provisão Duodécimos"
                 if Empregado."Cód. Rúbrica Enc. CGA" <> '' then begin
                     TaxaEnc := ConfRH."Taxa Contributiva Ent Patronal" / 100;
                     RubSalEmp.Reset;
-                    RubSalEmp.SetRange(RubSalEmp."No. Empregado", Empregado."No.");
+                    RubSalEmp.SetRange(RubSalEmp."Employee No.", Empregado."No.");
                     if RubSalEmp.FindSet then begin
                         repeat
                             RubSal.Reset;
@@ -332,7 +332,7 @@ report 53068 "Provisão Duodécimos"
                             RubSal.SetRange(RubSal.Genero, RubSal.Genero::CGA);
                             if RubSal.FindFirst then begin
                                 RubSalLinhas.Reset;
-                                RubSalLinhas.SetRange(RubSalLinhas."Cód. Rubrica", RubSal.Código);
+                                RubSalLinhas.SetRange(RubSalLinhas."Payroll Item Code", RubSal.Código);
                                 if RubSalLinhas.FindSet then begin
                                     repeat
                                         RubSal2.Reset;
@@ -340,7 +340,7 @@ report 53068 "Provisão Duodécimos"
                                         RubSal2.SetRange(RubSal2.Genero, RubSal2.Genero::"Vencimento Base");
                                         if RubSal2.FindFirst then begin
                                             RubSalEmp2.Reset;
-                                            RubSalEmp2.SetRange(RubSalEmp2."No. Empregado", Empregado."No.");
+                                            RubSalEmp2.SetRange(RubSalEmp2."Employee No.", Empregado."No.");
                                             RubSalEmp2.SetRange(RubSalEmp2."Cód. Rúbrica Salarial", RubSal2.Código);
                                             if RubSalEmp2.FindLast then
                                                 VBCGA := VBCGA + RubSalEmp2."Valor Total";
@@ -370,7 +370,7 @@ report 53068 "Provisão Duodécimos"
                 //Tem Distribuição
                 //*****************
                 DistribCustos.Reset;
-                DistribCustos.SetRange(DistribCustos."No. Empregado", Empregado."No.");
+                DistribCustos.SetRange(DistribCustos."Employee No.", Empregado."No.");
                 if DistribCustos.FindSet then begin
                     repeat
                         GenLedSetup.Reset;
@@ -404,7 +404,7 @@ report 53068 "Provisão Duodécimos"
                                 DimMgt.ValidateShortcutDimValues(7, DistribCustos."Shortcut Dimension 7 Code", GenJnlLine."Dimension Set ID");
                             if DistribCustos."Shortcut Dimension 8 Code" <> '' then
                                 DimMgt.ValidateShortcutDimValues(8, DistribCustos."Shortcut Dimension 8 Code", GenJnlLine."Dimension Set ID");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                             //------------------------------------
                             //registo Férias
@@ -436,7 +436,7 @@ report 53068 "Provisão Duodécimos"
                                     DimMgt.ValidateShortcutDimValues(7, DistribCustos."Shortcut Dimension 7 Code", GenJnlLine."Dimension Set ID");
                                 if DistribCustos."Shortcut Dimension 8 Code" <> '' then
                                     DimMgt.ValidateShortcutDimValues(8, DistribCustos."Shortcut Dimension 8 Code", GenJnlLine."Dimension Set ID");
-                                GenJnlLine."No. Empregado" := Empregado."No.";
+                                GenJnlLine."Employee No." := Empregado."No.";
                                 GenJnlLine.Insert;
                             end;
                             //------------------------------------
@@ -468,7 +468,7 @@ report 53068 "Provisão Duodécimos"
                                 DimMgt.ValidateShortcutDimValues(7, DistribCustos."Shortcut Dimension 7 Code", GenJnlLine."Dimension Set ID");
                             if DistribCustos."Shortcut Dimension 8 Code" <> '' then
                                 DimMgt.ValidateShortcutDimValues(8, DistribCustos."Shortcut Dimension 8 Code", GenJnlLine."Dimension Set ID");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                         end;
                     until DistribCustos.Next = 0;
@@ -498,7 +498,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", EncSF);
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 1 Code", DefDim."Dimension Value Code");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                             //------------------------------------
                             //registo Férias
@@ -516,7 +516,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", EncFer);
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 1 Code", DefDim."Dimension Value Code");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
 
                             //------------------------------------
@@ -535,7 +535,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", EncSN);
                             GenJnlLine.Validate(GenJnlLine."Shortcut Dimension 1 Code", DefDim."Dimension Value Code");
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                         end else begin
                             //Não tem dimensões
@@ -554,7 +554,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Method" := GenJnlLine."Recurring Method"::"F  Fixed";
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", EncSF);
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                             //------------------------------------
                             //registo Férias
@@ -571,7 +571,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Method" := GenJnlLine."Recurring Method"::"F  Fixed";
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", EncFer);
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                             //------------------------------------
                             //registo Sub. Natal
@@ -588,7 +588,7 @@ report 53068 "Provisão Duodécimos"
                             GenJnlLine."Recurring Method" := GenJnlLine."Recurring Method"::"F  Fixed";
                             GenJnlLine."Recurring Frequency" := Datef;
                             GenJnlLine.Validate(GenJnlLine."Debit Amount", EncSN);
-                            GenJnlLine."No. Empregado" := Empregado."No.";
+                            GenJnlLine."Employee No." := Empregado."No.";
                             GenJnlLine.Insert;
                         end;
                     end;
@@ -801,8 +801,8 @@ report 53068 "Provisão Duodécimos"
         RegSS: Record "Regime Seg. Social";
         RubSalEmp: Record "Rubrica Salarial Empregado";
         RubSalEmp2: Record "Rubrica Salarial Empregado";
-        RubSal: Record "Rubrica Salarial";
-        RubSal2: Record "Rubrica Salarial";
+        RubSal: Record "Payroll Item";
+        RubSal2: Record "Payroll Item";
         RubSalLinhas: Record "Rubrica Salarial Linhas";
         NoSeriesMgt: Codeunit "No. Series";
         nDocumento: Code[20];

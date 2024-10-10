@@ -22,7 +22,7 @@ table 53112 "Tabela Temp Ficheiros Texto"
         field(10; Data; Date)
         {
         }
-        field(20; "No. Empregado"; Code[20])
+        field(20; "Employee No."; Code[20])
         {
         }
         field(21; "Cod. Situacao"; Code[20])

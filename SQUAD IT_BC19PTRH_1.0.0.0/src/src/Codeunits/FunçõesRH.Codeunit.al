@@ -327,7 +327,7 @@ codeunit 53037 "Funções RH"
     end;
 
 
-    procedure GetPeriodicidade(TabRubrica: Record "Rubrica Salarial"; Data: Date) Processar: Boolean
+    procedure GetPeriodicidade(TabRubrica: Record "Payroll Item"; Data: Date) Processar: Boolean
     var
         i: Integer;
         VarPeriodicidade: Integer;
@@ -360,14 +360,14 @@ codeunit 53037 "Funções RH"
     procedure CalcularVencimentoBase(Data: Date; Empregado: Record Empregado) VencimentoBase: Decimal
     var
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         TabRubricaSalEmpregado2: Record "Rubrica Salarial Empregado";
     begin
         //HG - Obter numa precisa Data qual o Vencimento Base de um Empregado
 
         TabRubricaSalEmpregado.Reset;
-        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."No. Empregado", Empregado."No.");
+        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Employee No.", Empregado."No.");
         TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Início", '<=%1', Data);
         TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Fim", '>=%1|=%2', Data, 0D);
         if TabRubricaSalEmpregado.Find('-') then begin
@@ -377,11 +377,11 @@ codeunit 53037 "Funções RH"
                     //HG 19.01.09 - rubricas como o IHT não tem valor é uma % então temos de ir calcular 1º o valor
                     if TabRubricaSalEmpregado."Valor Total" = 0 then begin
                         TabRubricaLinhas.Reset;
-                        TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
+                        TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
                         if TabRubricaLinhas.Find('-') then begin
                             repeat
                                 TabRubricaSalEmpregado2.Reset;
-                                TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."No. Empregado", Empregado."No.");
+                                TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Employee No.", Empregado."No.");
                                 TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Início", '<=%1', Data);
                                 TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Fim", '>=%1|=%2', Data, 0D);
                                 TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Cód. Rúbrica Salarial",
@@ -406,14 +406,14 @@ codeunit 53037 "Funções RH"
     procedure CalcularVencimentoBaseFaltas(Data: Date; Empregado: Record Empregado) VencimentoBase: Decimal
     var
         TabRubricaSalEmpregado: Record "Rubrica Salarial Empregado";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabRubricaLinhas: Record "Rubrica Salarial Linhas";
         TabRubricaSalEmpregado2: Record "Rubrica Salarial Empregado";
     begin
         //HG - Obter numa precisa Data qual o Vencimento Base de um Empregado
         VencimentoBase := 0;
         TabRubricaSalEmpregado.Reset;
-        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."No. Empregado", Empregado."No.");
+        TabRubricaSalEmpregado.SetRange(TabRubricaSalEmpregado."Employee No.", Empregado."No.");
         TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Início", '<=%1', Data);
         TabRubricaSalEmpregado.SetFilter(TabRubricaSalEmpregado."Data Fim", '>=%1|=%2', Data, 0D);
         if TabRubricaSalEmpregado.Find('-') then begin
@@ -425,11 +425,11 @@ codeunit 53037 "Funções RH"
                     //HG 04.05.07 - como o IHT não tem valor é uma % então temos de ir calcular 1º o valor
                     if TabRubricaSalEmpregado."Valor Total" = 0 then begin
                         TabRubricaLinhas.Reset;
-                        TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
+                        TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
                         if TabRubricaLinhas.Find('-') then begin
                             repeat
                                 TabRubricaSalEmpregado2.Reset;
-                                TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."No. Empregado", Empregado."No.");
+                                TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Employee No.", Empregado."No.");
                                 TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Início", '<=%1', Data);
                                 TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Fim", '>=%1|=%2', Data, 0D);
                                 TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Cód. Rúbrica Salarial",
@@ -453,11 +453,11 @@ codeunit 53037 "Funções RH"
                         //HG 19.01.10 - como o IHT não tem valor é uma % então temos de ir calcular 1º o valor
                         if TabRubricaSalEmpregado."Valor Total" = 0 then begin
                             TabRubricaLinhas.Reset;
-                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Cód. Rubrica", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
+                            TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
                             if TabRubricaLinhas.Find('-') then begin
                                 repeat
                                     TabRubricaSalEmpregado2.Reset;
-                                    TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."No. Empregado", Empregado."No.");
+                                    TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Employee No.", Empregado."No.");
                                     TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Início", '<=%1', Data);
                                     TabRubricaSalEmpregado2.SetFilter(TabRubricaSalEmpregado2."Data Fim", '>=%1|=%2', Data, 0D);
                                     TabRubricaSalEmpregado2.SetRange(TabRubricaSalEmpregado2."Cód. Rúbrica Salarial",

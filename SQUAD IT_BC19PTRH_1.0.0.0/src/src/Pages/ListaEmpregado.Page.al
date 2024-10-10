@@ -637,7 +637,7 @@ page 53036 "Lista Empregado"
                         Caption = 'Dimensions-Single';
                         Image = Dimensions;
                         RunObject = Page "Default Dimensions";
-                        RunPageLink = "Table ID" = CONST(31003035),
+                        RunPageLink = "Table ID" = CONST(53035),
                                       "No." = FIELD("No.");
                         ShortCutKey = 'Shift+Ctrl+D';
                     }
@@ -658,7 +658,7 @@ page 53036 "Lista Empregado"
                     Caption = 'Rubricas Salariais';
                     Image = SalesTaxStatement;
                     RunObject = Page "Lista Rubrica Salarial Emp.";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Hist. Ausências")
                 {
@@ -676,7 +676,7 @@ page 53036 "Lista Empregado"
                     Caption = 'Hist. Horas Extra';
                     Image = ServiceHours;
                     RunObject = Page "Registo Horas Extra";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
                 action("Hist. Abonos e Descontos extra")
                 {
@@ -685,7 +685,7 @@ page 53036 "Lista Empregado"
                     Caption = 'Hist. Abonos e Descontos extra';
                     Image = ChangePaymentTolerance;
                     RunObject = Page "Lista Hist. Abon. - Des. Extr.";
-                    RunPageLink = "No. Empregado" = FIELD("No.");
+                    RunPageLink = "Employee No." = FIELD("No.");
                 }
             }
         }

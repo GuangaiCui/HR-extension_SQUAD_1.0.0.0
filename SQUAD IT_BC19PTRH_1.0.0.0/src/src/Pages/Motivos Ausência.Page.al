@@ -44,7 +44,7 @@ page 53045 "Motivos Ausência"
 
 
                 }
-                field("Rubric Code"; Rec."Rubric Code")
+                field("Rubric Code"; Rec."Payroll Item Code")
                 {
 
 

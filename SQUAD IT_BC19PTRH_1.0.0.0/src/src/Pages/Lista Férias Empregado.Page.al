@@ -13,7 +13,7 @@ page 53119 "Lista Férias Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 

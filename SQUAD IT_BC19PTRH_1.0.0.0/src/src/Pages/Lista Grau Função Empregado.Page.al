@@ -2,7 +2,7 @@
 page 53079 "Lista Grau Função Empregado"
 {
     AutoSplitKey = true;
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Grau Função Empregado";
 
@@ -13,7 +13,7 @@ page 53079 "Lista Grau Função Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -62,7 +62,7 @@ page 53079 "Lista Grau Função Empregado"
                     Image = ViewComments;
                     RunObject = Page "Folha Comentários RH";
                     RunPageLink = "Table Name" = CONST(Grau),
-                                  "No." = FIELD("No. Empregado"),
+                                  "No." = FIELD("Employee No."),
                                   "Table Line No." = FIELD("No. Linha");
                 }
             }

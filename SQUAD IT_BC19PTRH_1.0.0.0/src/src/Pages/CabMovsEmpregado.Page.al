@@ -15,7 +15,7 @@ page 53102 "Cab. Movs. Empregado"
             group(Geral)
             {
                 Caption = 'Geral';
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -54,8 +54,8 @@ page 53102 "Cab. Movs. Empregado"
                 Caption = 'Abonos';
                 SubPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),
                               "Tipo Processamento" = FIELD("Tipo Processamento"),
-                              "No. Empregado" = FIELD("No. Empregado");
-                SubPageView = WHERE("Tipo Rubrica" = CONST(Abono));
+                              "Employee No." = FIELD("Employee No.");
+                SubPageView = WHERE("Payroll Item Type" = CONST(Abono));
             }
             part(Descontos; "Linhas Movs. Empregado")
             {
@@ -64,8 +64,8 @@ page 53102 "Cab. Movs. Empregado"
                 Caption = 'Descontos';
                 SubPageLink = "Cód. Processamento" = FIELD("Cód. Processamento"),
                               "Tipo Processamento" = FIELD("Tipo Processamento"),
-                              "No. Empregado" = FIELD("No. Empregado");
-                SubPageView = WHERE("Tipo Rubrica" = CONST(Desconto));
+                              "Employee No." = FIELD("Employee No.");
+                SubPageView = WHERE("Payroll Item Type" = CONST(Desconto));
             }
         }
     }

@@ -134,70 +134,70 @@ page 53112 "Preparação Fecho Contas"
 
 
                     Caption = 'Rub. Idemnização Acordo Mutuo ou Desp.';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica2; CodRubIndemFaltaAvisoEmpregado)
                 {
 
 
                     Caption = 'Rub. Idemnização Falta Aviso Prévio do Empregado';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica3; CodRubIndemFaltaAvisoEmpresa)
                 {
 
 
                     Caption = 'Rub. Idemnização Falta Aviso Prévio do Empresa';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica4; CodRubCompenFimContrato)
                 {
 
 
                     Caption = 'Rub. Compensação Fim Contrato';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica5; CodRubFeriasNaoGozadas)
                 {
 
 
                     Caption = 'Rub. Férias Não Gozadas';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica6; CodRubPropSubFerias)
                 {
 
 
                     Caption = 'Rub. Proporcionais Sub. Férias';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica7; CodRubPropFerias)
                 {
 
 
                     Caption = 'Rub. Proporcionais Férias';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica8; CodRubPropSubNatal)
                 {
 
 
                     Caption = 'Rub. Proporcionais Sub. Natal';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica9; CodRubSubFeriasAnoAnterior)
                 {
 
 
                     Caption = 'Rub. Sub. Férias (ano anterior)';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
                 field(Rubrica10; CodRubHorasFormacao)
                 {
 
 
                     Caption = 'Rub. Crédito Horas Formação';
-                    TableRelation = "Rubrica Salarial";
+                    TableRelation = "Payroll Item";
                 }
             }
         }
@@ -402,8 +402,8 @@ page 53112 "Preparação Fecho Contas"
         TabEmpregado: Record Empregado;
         AbonosDescExtra: Record "Abonos - Descontos Extra";
         TabRubricaEmp: Record "Rubrica Salarial Empregado";
-        TabRubSal: Record "Rubrica Salarial";
-        TabRubSal2: Record "Rubrica Salarial";
+        TabRubSal: Record "Payroll Item";
+        TabRubSal2: Record "Payroll Item";
         TabRU: Record "RU - Tabelas";
         ValorTotal: Decimal;
         Text0003: Label 'Não existe nenhuma Rúbrica definida como Indem. Mútuo Acordo ou Despedimento.';
@@ -512,7 +512,7 @@ page 53112 "Preparação Fecho Contas"
                     ConcluirVisible := false;
 
                     TabFeriasEmp.Reset;
-                    TabFeriasEmp.SetRange(TabFeriasEmp."No. Empregado", Empregado);
+                    TabFeriasEmp.SetRange(TabFeriasEmp."Employee No.", Empregado);
                     TabFeriasEmp.SetRange(TabFeriasEmp.Gozada, false);
                     if TabFeriasEmp.Find('+') then
                         FeriasTotal := TabFeriasEmp.Count;
@@ -671,9 +671,9 @@ page 53112 "Preparação Fecho Contas"
             ////////Saber quais os abonos que entram para o calculo da indemnização///////////////
             Clear(ValorTotal);
             TabRubricaEmp.Reset;
-            TabRubricaEmp.SetCurrentKey("No. Empregado", "No. Linha");
-            TabRubricaEmp.SetRange("Tipo Rubrica", TabRubricaEmp."Tipo Rubrica"::Abono);
-            TabRubricaEmp.SetRange("No. Empregado", Empregado);
+            TabRubricaEmp.SetCurrentKey("Employee No.", "Line No.");
+            TabRubricaEmp.SetRange("Payroll Item Type", TabRubricaEmp."Payroll Item Type"::Abono);
+            TabRubricaEmp.SetRange("Employee No.", Empregado);
             TabRubricaEmp.SetFilter(TabRubricaEmp."Data Início", '<=%1', DataTerminacao);
             TabRubricaEmp.SetFilter(TabRubricaEmp."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
             if TabRubricaEmp.Find('-') then begin
@@ -808,10 +808,10 @@ page 53112 "Preparação Fecho Contas"
 
             if CodRubIndemAcordo <> '' then begin
                 AbonosDescExtra.Init;
-                AbonosDescExtra."No. Empregado" := Empregado;
-                AbonosDescExtra.Data := DataTerminacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubIndemAcordo);
-                AbonosDescExtra.Quantidade := Round(NDiasIndemn, 0.01);
+                AbonosDescExtra."Employee No." := Empregado;
+                AbonosDescExtra.Date := DataTerminacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubIndemAcordo);
+                AbonosDescExtra.Quantity := Round(NDiasIndemn, 0.01);
                 if ((NDiasIndemn * ValorTotal / 30) > (12 * ValorTotal)) and
                    ((NDiasIndemn * ValorTotal / 30) > (240 * ConfRH."Ordenado Mínimo")) then begin
                     if (12 * ValorTotal) > (240 * ConfRH."Ordenado Mínimo") then
@@ -819,7 +819,7 @@ page 53112 "Preparação Fecho Contas"
                     else
                         AbonosDescExtra."Valor Total" := 240 * ConfRH."Ordenado Mínimo";
                 end else
-                    AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", ValorTotal / 30);
+                    AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", ValorTotal / 30);
 
                 AbonosDescExtra.Insert(true);
             end else
@@ -833,11 +833,11 @@ page 53112 "Preparação Fecho Contas"
         if (NDiasAvisoEmp <> 0) then begin
             if CodRubIndemFaltaAvisoEmpregado <> '' then begin
                 AbonosDescExtra.Init;
-                AbonosDescExtra."No. Empregado" := Empregado;
-                AbonosDescExtra.Data := DataTerminacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubIndemFaltaAvisoEmpregado);
-                AbonosDescExtra.Quantidade := NDiasAvisoEmp;
-                AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", TabEmpregado."Valor Dia");
+                AbonosDescExtra."Employee No." := Empregado;
+                AbonosDescExtra.Date := DataTerminacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubIndemFaltaAvisoEmpregado);
+                AbonosDescExtra.Quantity := NDiasAvisoEmp;
+                AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", TabEmpregado."Valor Dia");
                 AbonosDescExtra.Insert(true);
             end else
                 Error(Text0004);
@@ -855,11 +855,11 @@ page 53112 "Preparação Fecho Contas"
            then begin
             if CodRubIndemFaltaAvisoEmpresa <> '' then begin
                 AbonosDescExtra.Init;
-                AbonosDescExtra."No. Empregado" := Empregado;
-                AbonosDescExtra.Data := DataTerminacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubIndemFaltaAvisoEmpresa);
-                AbonosDescExtra.Quantidade := NDiasAvisoEmpresa;
-                AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", TabEmpregado."Valor Dia");
+                AbonosDescExtra."Employee No." := Empregado;
+                AbonosDescExtra.Date := DataTerminacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubIndemFaltaAvisoEmpresa);
+                AbonosDescExtra.Quantity := NDiasAvisoEmpresa;
+                AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", TabEmpregado."Valor Dia");
                 AbonosDescExtra.Insert(true);
             end else
                 Error(Text0005);
@@ -874,9 +874,9 @@ page 53112 "Preparação Fecho Contas"
 
             Clear(ValorTotal);
             TabRubricaEmp.Reset;
-            TabRubricaEmp.SetCurrentKey("No. Empregado", "No. Linha");
-            TabRubricaEmp.SetRange("Tipo Rubrica", TabRubricaEmp."Tipo Rubrica"::Abono);
-            TabRubricaEmp.SetRange("No. Empregado", Empregado);
+            TabRubricaEmp.SetCurrentKey("Employee No.", "Line No.");
+            TabRubricaEmp.SetRange("Payroll Item Type", TabRubricaEmp."Payroll Item Type"::Abono);
+            TabRubricaEmp.SetRange("Employee No.", Empregado);
             TabRubricaEmp.SetFilter(TabRubricaEmp."Data Início", '<=%1', DataTerminacao);
             TabRubricaEmp.SetFilter(TabRubricaEmp."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
             if TabRubricaEmp.Find('-') then begin
@@ -937,10 +937,10 @@ page 53112 "Preparação Fecho Contas"
 
             if CodRubCompenFimContrato <> '' then begin
                 AbonosDescExtra.Init;
-                AbonosDescExtra."No. Empregado" := Empregado;
-                AbonosDescExtra.Data := DataTerminacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubCompenFimContrato);
-                AbonosDescExtra.Quantidade := Round(NDiasCaducidadeCont, 0.01);
+                AbonosDescExtra."Employee No." := Empregado;
+                AbonosDescExtra.Date := DataTerminacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubCompenFimContrato);
+                AbonosDescExtra.Quantity := Round(NDiasCaducidadeCont, 0.01);
                 if ((NDiasCaducidadeCont * ValorTotal / 30) > (12 * ValorTotal)) and
                    ((NDiasCaducidadeCont * ValorTotal / 30) > (240 * ConfRH."Ordenado Mínimo")) then begin
                     if (12 * ValorTotal) > (240 * ConfRH."Ordenado Mínimo") then
@@ -948,7 +948,7 @@ page 53112 "Preparação Fecho Contas"
                     else
                         AbonosDescExtra."Valor Total" := 240 * ConfRH."Ordenado Mínimo";
                 end else
-                    AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", ValorTotal / 30);
+                    AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", ValorTotal / 30);
                 AbonosDescExtra.Insert(true);
             end else
                 Error(Text0006);
@@ -960,11 +960,11 @@ page 53112 "Preparação Fecho Contas"
         if NHorasFormacao <> 0 then begin
             if CodRubHorasFormacao <> '' then begin
                 AbonosDescExtra.Init;
-                AbonosDescExtra."No. Empregado" := Empregado;
-                AbonosDescExtra.Data := DataTerminacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubHorasFormacao);
-                AbonosDescExtra.Quantidade := NHorasFormacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário",
+                AbonosDescExtra."Employee No." := Empregado;
+                AbonosDescExtra.Date := DataTerminacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubHorasFormacao);
+                AbonosDescExtra.Quantity := NHorasFormacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Unit Value",
                   (TabEmpregado."Valor Vencimento Base" * 12) / (52 * TabEmpregado."No. Horas Semanais"));
                 AbonosDescExtra.Insert(true);
             end else
@@ -980,30 +980,30 @@ page 53112 "Preparação Fecho Contas"
                 //#001 - JTP - 2020.06.24 - Begin
                 if (FeriasAnoAnterior <> 0) and (FeriasAnoCorrente <> 0) then begin
                     AbonosDescExtra.Init;
-                    AbonosDescExtra."No. Empregado" := Empregado;
-                    AbonosDescExtra.Data := DataTerminacao;
-                    AbonosDescExtra."Data a que se refere o Mov." := CalcDate('-CM-1D', DataTerminacao);
-                    AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubFeriasNaoGozadas);
-                    AbonosDescExtra.Quantidade := FeriasAnoAnterior;
-                    AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", TabEmpregado."Valor Vencimento Base" / 22);
+                    AbonosDescExtra."Employee No." := Empregado;
+                    AbonosDescExtra.Date := DataTerminacao;
+                    AbonosDescExtra."Reference Date" := CalcDate('-CM-1D', DataTerminacao);
+                    AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubFeriasNaoGozadas);
+                    AbonosDescExtra.Quantity := FeriasAnoAnterior;
+                    AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", TabEmpregado."Valor Vencimento Base" / 22);
                     AbonosDescExtra.Insert(true);
 
                     AbonosDescExtra.Init;
-                    AbonosDescExtra."No. Empregado" := Empregado;
-                    AbonosDescExtra.Data := DataTerminacao;
-                    AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubFeriasNaoGozadas);
-                    AbonosDescExtra.Quantidade := FeriasAnoCorrente;
-                    AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", TabEmpregado."Valor Vencimento Base" / 22);
+                    AbonosDescExtra."Employee No." := Empregado;
+                    AbonosDescExtra.Date := DataTerminacao;
+                    AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubFeriasNaoGozadas);
+                    AbonosDescExtra.Quantity := FeriasAnoCorrente;
+                    AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", TabEmpregado."Valor Vencimento Base" / 22);
                     AbonosDescExtra.Insert(true);
                 end
                 else begin
                     //#001 - JTP - 2020.06.24 - End
                     AbonosDescExtra.Init;
-                    AbonosDescExtra."No. Empregado" := Empregado;
-                    AbonosDescExtra.Data := DataTerminacao;
-                    AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubFeriasNaoGozadas);
-                    AbonosDescExtra.Quantidade := FeriasTotal;
-                    AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", TabEmpregado."Valor Vencimento Base" / 22);
+                    AbonosDescExtra."Employee No." := Empregado;
+                    AbonosDescExtra.Date := DataTerminacao;
+                    AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubFeriasNaoGozadas);
+                    AbonosDescExtra.Quantity := FeriasTotal;
+                    AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", TabEmpregado."Valor Vencimento Base" / 22);
                     AbonosDescExtra.Insert(true);
                 end;
             end else
@@ -1017,11 +1017,11 @@ page 53112 "Preparação Fecho Contas"
 
         if CodRubPropSubFerias <> '' then begin
             AbonosDescExtra.Init;
-            AbonosDescExtra."No. Empregado" := Empregado;
-            AbonosDescExtra.Data := DataTerminacao;
-            AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubPropSubFerias);
-            AbonosDescExtra.Quantidade := 1;
-            AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", ProporcionaisSF(Empregado));
+            AbonosDescExtra."Employee No." := Empregado;
+            AbonosDescExtra.Date := DataTerminacao;
+            AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubPropSubFerias);
+            AbonosDescExtra.Quantity := 1;
+            AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", ProporcionaisSF(Empregado));
             AbonosDescExtra.Insert(true);
         end else
             Error(Text0008);
@@ -1033,11 +1033,11 @@ page 53112 "Preparação Fecho Contas"
         if CodRubPropFerias <> '' then begin
             if PropFerias(Empregado) <> 0 then begin
                 AbonosDescExtra.Init;
-                AbonosDescExtra."No. Empregado" := Empregado;
-                AbonosDescExtra.Data := DataTerminacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubPropFerias);
-                AbonosDescExtra.Quantidade := 1;
-                AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", PropFerias(Empregado));
+                AbonosDescExtra."Employee No." := Empregado;
+                AbonosDescExtra.Date := DataTerminacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubPropFerias);
+                AbonosDescExtra.Quantity := 1;
+                AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", PropFerias(Empregado));
                 AbonosDescExtra.Insert(true);
             end;
         end else
@@ -1051,11 +1051,11 @@ page 53112 "Preparação Fecho Contas"
         if DataTerminacao - TabEmpregado."Employment Date" > 365 then begin
             if CodRubSubFeriasAnoAnterior <> '' then begin
                 AbonosDescExtra.Init;
-                AbonosDescExtra."No. Empregado" := Empregado;
-                AbonosDescExtra.Data := DataTerminacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubSubFeriasAnoAnterior);
-                AbonosDescExtra.Quantidade := 1;
-                AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", ProporcionaisSFAnoAnterior(Empregado));
+                AbonosDescExtra."Employee No." := Empregado;
+                AbonosDescExtra.Date := DataTerminacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubSubFeriasAnoAnterior);
+                AbonosDescExtra.Quantity := 1;
+                AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", ProporcionaisSFAnoAnterior(Empregado));
                 AbonosDescExtra.Insert(true);
             end else
                 Error(Text0011);
@@ -1066,11 +1066,11 @@ page 53112 "Preparação Fecho Contas"
         //***************************************
         if CodRubPropSubNatal <> '' then begin
             AbonosDescExtra.Init;
-            AbonosDescExtra."No. Empregado" := Empregado;
-            AbonosDescExtra.Data := DataTerminacao;
-            AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", CodRubPropSubNatal);
-            AbonosDescExtra.Quantidade := 1;
-            AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", ProporcionaisSN(Empregado));
+            AbonosDescExtra."Employee No." := Empregado;
+            AbonosDescExtra.Date := DataTerminacao;
+            AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", CodRubPropSubNatal);
+            AbonosDescExtra.Quantity := 1;
+            AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", ProporcionaisSN(Empregado));
             AbonosDescExtra.Insert(true);
         end else
             Error(Text0009);
@@ -1092,12 +1092,12 @@ page 53112 "Preparação Fecho Contas"
             TabRubSal.SetRange(TabRubSal.Genero, TabRubSal.Genero::"Admissão-Demissão");
             if TabRubSal.Find('-') then begin
                 AbonosDescExtra.Init;
-                AbonosDescExtra."No. Empregado" := Empregado;
-                AbonosDescExtra.Data := DataTerminacao;
-                AbonosDescExtra.Validate(AbonosDescExtra."Cód. Rubrica", TabRubSal.Código);
-                AbonosDescExtra.Quantidade := (CalcDate('30D-1D', DMY2Date(1, Date2DMY(DataTerminacao, 2), Date2DMY(DataTerminacao, 3))) -
+                AbonosDescExtra."Employee No." := Empregado;
+                AbonosDescExtra.Date := DataTerminacao;
+                AbonosDescExtra.Validate(AbonosDescExtra."Payroll Item Code", TabRubSal.Código);
+                AbonosDescExtra.Quantity := (CalcDate('30D-1D', DMY2Date(1, Date2DMY(DataTerminacao, 2), Date2DMY(DataTerminacao, 3))) -
                                               DataTerminacao) + DiasNTrabalhados;
-                AbonosDescExtra.Validate(AbonosDescExtra."Valor Unitário", TabEmpregado."Valor Dia");
+                AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", TabEmpregado."Valor Dia");
                 AbonosDescExtra.Insert(true);
             end else
                 Error(Text0010);
@@ -1110,7 +1110,7 @@ page 53112 "Preparação Fecho Contas"
 
     procedure ProporcionaisSF(CodigoEmp: Code[20]) Valor: Decimal
     var
-        RubricaSalarial: Record "Rubrica Salarial";
+        RubricaSalarial: Record "Payroll Item";
         RubricaSalariaLinhas: Record "Rubrica Salarial Linhas";
         RubricaSalaEmpregado: Record "Rubrica Salarial Empregado";
         RubricaSalariaLinhas2: Record "Rubrica Salarial Linhas";
@@ -1128,22 +1128,22 @@ page 53112 "Preparação Fecho Contas"
         RubricaSalarial.SetRange(RubricaSalarial.Código, CodRubSubFeriasAnoAnterior);
         if RubricaSalarial.Find('-') then begin
             RubricaSalariaLinhas.Reset;
-            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Cód. Rubrica", RubricaSalarial.Código);
+            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Payroll Item Code", RubricaSalarial.Código);
             if RubricaSalariaLinhas.Find('-') then begin
                 repeat
                     RubricaSalaEmpregado.Reset;
-                    RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."No. Empregado", CodigoEmp);
+                    RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."Employee No.", CodigoEmp);
                     RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."Cód. Rúbrica Salarial", RubricaSalariaLinhas."Cód. Rubrica Filha");
                     RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Início", '<=%1', DataTerminacao);
                     RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
                     if RubricaSalaEmpregado.Find('-') then begin
                         repeat
                             RubricaSalariaLinhas2.Reset;
-                            RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Cód. Rubrica", RubricaSalariaLinhas."Cód. Rubrica Filha");
+                            RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Payroll Item Code", RubricaSalariaLinhas."Cód. Rubrica Filha");
                             if RubricaSalariaLinhas2.Find('-') then begin
                                 repeat
                                     RubricaSalaEmpregado2.Reset;
-                                    RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."No. Empregado", CodigoEmp);
+                                    RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."Employee No.", CodigoEmp);
                                     RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."Cód. Rúbrica Salarial",
                                       RubricaSalariaLinhas2."Cód. Rubrica Filha");
                                     RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Início", '<=%1', DataTerminacao);
@@ -1198,8 +1198,8 @@ page 53112 "Preparação Fecho Contas"
         if RubricaSalarial.FindSet then begin
             repeat
                 HistLinhaMovEmp.Reset;
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."No. Empregado", CodigoEmp);
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Cód. Rubrica", RubricaSalarial.Código);
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Employee No.", CodigoEmp);
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Payroll Item Code", RubricaSalarial.Código);
                 HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Data Registo", DataInicioAno, DataTerminacao);
                 if HistLinhaMovEmp.FindSet then begin
                     repeat
@@ -1218,7 +1218,7 @@ page 53112 "Preparação Fecho Contas"
 
     procedure ProporcionaisSN(CodigoEmp: Code[20]) Valor: Decimal
     var
-        RubricaSalarial: Record "Rubrica Salarial";
+        RubricaSalarial: Record "Payroll Item";
         RubricaSalariaLinhas: Record "Rubrica Salarial Linhas";
         RubricaSalaEmpregado: Record "Rubrica Salarial Empregado";
         RubricaSalariaLinhas2: Record "Rubrica Salarial Linhas";
@@ -1239,26 +1239,26 @@ page 53112 "Preparação Fecho Contas"
         if RubricaSalarial.Find('-') then begin
             repeat
                 AuxRubricaSalaEmpregado.Reset;
-                AuxRubricaSalaEmpregado.SetRange(AuxRubricaSalaEmpregado."No. Empregado", CodigoEmp);
+                AuxRubricaSalaEmpregado.SetRange(AuxRubricaSalaEmpregado."Employee No.", CodigoEmp);
                 AuxRubricaSalaEmpregado.SetRange(AuxRubricaSalaEmpregado."Cód. Rúbrica Salarial", RubricaSalarial.Código);
                 if AuxRubricaSalaEmpregado.Find('-') then begin
                     RubricaSalariaLinhas.Reset;
-                    RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Cód. Rubrica", RubricaSalarial.Código);
+                    RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Payroll Item Code", RubricaSalarial.Código);
                     if RubricaSalariaLinhas.Find('-') then begin
                         repeat
                             RubricaSalaEmpregado.Reset;
-                            RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."No. Empregado", CodigoEmp);
+                            RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."Employee No.", CodigoEmp);
                             RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."Cód. Rúbrica Salarial", RubricaSalariaLinhas."Cód. Rubrica Filha");
                             RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Início", '<=%1', DataTerminacao);
                             RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
                             if RubricaSalaEmpregado.Find('-') then begin
                                 repeat
                                     RubricaSalariaLinhas2.Reset;
-                                    RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Cód. Rubrica", RubricaSalariaLinhas."Cód. Rubrica Filha");
+                                    RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Payroll Item Code", RubricaSalariaLinhas."Cód. Rubrica Filha");
                                     if RubricaSalariaLinhas2.Find('-') then begin
                                         repeat
                                             RubricaSalaEmpregado2.Reset;
-                                            RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."No. Empregado", CodigoEmp);
+                                            RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."Employee No.", CodigoEmp);
                                             RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."Cód. Rúbrica Salarial",
                                               RubricaSalariaLinhas2."Cód. Rubrica Filha");
                                             RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Início", '<=%1', DataTerminacao);
@@ -1320,8 +1320,8 @@ page 53112 "Preparação Fecho Contas"
         if RubricaSalarial.Find('-') then begin
             repeat
                 HistLinhaMovEmp.Reset;
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."No. Empregado", CodigoEmp);
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Cód. Rubrica", RubricaSalarial.Código);
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Employee No.", CodigoEmp);
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Payroll Item Code", RubricaSalarial.Código);
                 HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Data Registo", DataInicioAno, DataTerminacao);
                 if HistLinhaMovEmp.FindSet then begin
                     repeat
@@ -1343,7 +1343,7 @@ page 53112 "Preparação Fecho Contas"
 
     procedure ProporcionaisSFAnoAnterior(CodigoEmp: Code[20]) Valor: Decimal
     var
-        RubricaSalarial: Record "Rubrica Salarial";
+        RubricaSalarial: Record "Payroll Item";
         RubricaSalariaLinhas: Record "Rubrica Salarial Linhas";
         RubricaSalaEmpregado: Record "Rubrica Salarial Empregado";
         RubricaSalariaLinhas2: Record "Rubrica Salarial Linhas";
@@ -1358,22 +1358,22 @@ page 53112 "Preparação Fecho Contas"
         RubricaSalarial.SetRange(RubricaSalarial.Código, CodRubSubFeriasAnoAnterior);
         if RubricaSalarial.Find('-') then begin
             RubricaSalariaLinhas.Reset;
-            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Cód. Rubrica", RubricaSalarial.Código);
+            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Payroll Item Code", RubricaSalarial.Código);
             if RubricaSalariaLinhas.Find('-') then begin
                 repeat
                     RubricaSalaEmpregado.Reset;
-                    RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."No. Empregado", CodigoEmp);
+                    RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."Employee No.", CodigoEmp);
                     RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."Cód. Rúbrica Salarial", RubricaSalariaLinhas."Cód. Rubrica Filha");
                     RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Início", '<=%1', DataTerminacao);
                     RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
                     if RubricaSalaEmpregado.Find('-') then begin
                         repeat
                             RubricaSalariaLinhas2.Reset;
-                            RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Cód. Rubrica", RubricaSalariaLinhas."Cód. Rubrica Filha");
+                            RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Payroll Item Code", RubricaSalariaLinhas."Cód. Rubrica Filha");
                             if RubricaSalariaLinhas2.Find('-') then begin
                                 repeat
                                     RubricaSalaEmpregado2.Reset;
-                                    RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."No. Empregado", CodigoEmp);
+                                    RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."Employee No.", CodigoEmp);
                                     RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."Cód. Rúbrica Salarial",
                                       RubricaSalariaLinhas2."Cód. Rubrica Filha");
                                     RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Início", '<=%1', DataTerminacao);
@@ -1404,8 +1404,8 @@ page 53112 "Preparação Fecho Contas"
         if RubricaSalarial.Find('-') then begin
             repeat
                 HistLinhaMovEmp.Reset;
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."No. Empregado", CodigoEmp);
-                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Cód. Rubrica", RubricaSalarial.Código);
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Employee No.", CodigoEmp);
+                HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Payroll Item Code", RubricaSalarial.Código);
                 HistLinhaMovEmp.SetRange(HistLinhaMovEmp."Data Registo", DataInicioAno, DataTerminacao);
                 if HistLinhaMovEmp.FindSet then begin
                     repeat
@@ -1426,7 +1426,7 @@ page 53112 "Preparação Fecho Contas"
 
     procedure PropFerias(CodigoEmp: Code[20]) Valor: Decimal
     var
-        RubricaSalarial: Record "Rubrica Salarial";
+        RubricaSalarial: Record "Payroll Item";
         RubricaSalariaLinhas: Record "Rubrica Salarial Linhas";
         RubricaSalaEmpregado: Record "Rubrica Salarial Empregado";
         RubricaSalariaLinhas2: Record "Rubrica Salarial Linhas";
@@ -1444,22 +1444,22 @@ page 53112 "Preparação Fecho Contas"
         RubricaSalarial.SetRange(RubricaSalarial.Código, CodRubSubFeriasAnoAnterior);
         if RubricaSalarial.Find('-') then begin
             RubricaSalariaLinhas.Reset;
-            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Cód. Rubrica", RubricaSalarial.Código);
+            RubricaSalariaLinhas.SetRange(RubricaSalariaLinhas."Payroll Item Code", RubricaSalarial.Código);
             if RubricaSalariaLinhas.Find('-') then begin
                 repeat
                     RubricaSalaEmpregado.Reset;
-                    RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."No. Empregado", CodigoEmp);
+                    RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."Employee No.", CodigoEmp);
                     RubricaSalaEmpregado.SetRange(RubricaSalaEmpregado."Cód. Rúbrica Salarial", RubricaSalariaLinhas."Cód. Rubrica Filha");
                     RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Início", '<=%1', DataTerminacao);
                     RubricaSalaEmpregado.SetFilter(RubricaSalaEmpregado."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
                     if RubricaSalaEmpregado.Find('-') then begin
                         repeat
                             RubricaSalariaLinhas2.Reset;
-                            RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Cód. Rubrica", RubricaSalariaLinhas."Cód. Rubrica Filha");
+                            RubricaSalariaLinhas2.SetRange(RubricaSalariaLinhas2."Payroll Item Code", RubricaSalariaLinhas."Cód. Rubrica Filha");
                             if RubricaSalariaLinhas2.Find('-') then begin
                                 repeat
                                     RubricaSalaEmpregado2.Reset;
-                                    RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."No. Empregado", CodigoEmp);
+                                    RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."Employee No.", CodigoEmp);
                                     RubricaSalaEmpregado2.SetRange(RubricaSalaEmpregado2."Cód. Rúbrica Salarial",
                                       RubricaSalariaLinhas2."Cód. Rubrica Filha");
                                     RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Início", '<=%1', DataTerminacao);

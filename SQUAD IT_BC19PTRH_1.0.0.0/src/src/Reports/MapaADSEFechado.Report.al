@@ -64,9 +64,9 @@ report 53103 "Mapa ADSE - Fechado"
             DataItemTableView = SORTING("No.");
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(Vencimentos | SubNatal | SubFerias));
-                column(NumEmp; "Hist. Linhas Movs. Empregado"."No. Empregado")
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(Vencimentos | SubNatal | SubFerias));
+                column(NumEmp; "Hist. Linhas Movs. Empregado"."Employee No.")
                 {
                 }
                 column(NomeEmp; Empregado.Name)
@@ -84,7 +84,7 @@ report 53103 "Mapa ADSE - Fechado"
                     encontrou: Boolean;
                 begin
                     TabRubrica.Reset;
-                    if TabRubrica.Get("Hist. Linhas Movs. Empregado"."Cód. Rubrica") then begin
+                    if TabRubrica.Get("Hist. Linhas Movs. Empregado"."Payroll Item Code") then begin
                         if not (TabRubrica.Genero = TabRubrica.Genero::ADSE) then begin
                             CurrReport.Skip
                         end;
@@ -176,7 +176,7 @@ report 53103 "Mapa ADSE - Fechado"
         DataIni: Date;
         DataFim: Date;
         InfEmpresa: Record "Company Information";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         CodProcess: Code[10];
         Filtro: Text[30];
 }

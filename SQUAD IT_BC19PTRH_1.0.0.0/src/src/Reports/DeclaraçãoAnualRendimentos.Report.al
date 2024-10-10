@@ -137,14 +137,14 @@ report 53054 "Declaração Anual Rendimentos"
             }
             dataitem("Imposto Retido"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Empregado", "Tipo Rendimento");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", "Tipo Rendimento");
 
                 trigger OnAfterGetRecord()
                 begin
                     //Para apanhar só os registos que são do Genero IRS ou IRS Sub. Férias  ou IRS Sub. NAtal
                     TabRubrica.Reset;
-                    TabRubrica.SetRange(TabRubrica.Código, "Imposto Retido"."Cód. Rubrica");
+                    TabRubrica.SetRange(TabRubrica.Código, "Imposto Retido"."Payroll Item Code");
                     TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", false);//2013.01.14
                     if TabRubrica.Find('-') then begin
                         if (TabRubrica.Genero <> TabRubrica.Genero::IRS) and
@@ -176,14 +176,14 @@ report 53054 "Declaração Anual Rendimentos"
             }
             dataitem(SobretaxaExtraordinaria; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Empregado", "Tipo Rendimento");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", "Tipo Rendimento");
 
                 trigger OnAfterGetRecord()
                 begin
                     //Para apanhar só os registos que são do Genero IRS ou IRS Sub. Férias  ou IRS Sub. NAtal
                     TabRubrica.Reset;
-                    TabRubrica.SetRange(TabRubrica.Código, SobretaxaExtraordinaria."Cód. Rubrica");
+                    TabRubrica.SetRange(TabRubrica.Código, SobretaxaExtraordinaria."Payroll Item Code");
                     TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", true);
                     if TabRubrica.FindFirst then begin
                         if (TabRubrica.Genero <> TabRubrica.Genero::IRS) and
@@ -204,8 +204,8 @@ report 53054 "Declaração Anual Rendimentos"
             }
             dataitem("Sujeito a Retenção"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Empregado", "Data Registo");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", "Data Registo");
 
                 trigger OnAfterGetRecord()
                 var
@@ -213,7 +213,7 @@ report 53054 "Declaração Anual Rendimentos"
                     recRubricaSalarialLinhas: Record "Rubrica Salarial Linhas";
                     TabHistLinhasMov2: Record "Hist. Linhas Movs. Empregado";
                     Flag: Boolean;
-                    TabRubrica2: Record "Rubrica Salarial";
+                    TabRubrica2: Record "Payroll Item";
                     TabRubricaLinha2: Record "Rubrica Salarial Linhas";
                 begin
                 end;
@@ -222,13 +222,13 @@ report 53054 "Declaração Anual Rendimentos"
                 var
                     TabHistLinhasMov2: Record "Hist. Linhas Movs. Empregado";
                     Flag: Boolean;
-                    TabRubrica2: Record "Rubrica Salarial";
+                    TabRubrica2: Record "Payroll Item";
                     TabRubricaLinha2: Record "Rubrica Salarial Linhas";
                 begin
                     //Filtrar os registos para o ano desejado
                     "Sujeito a Retenção".SetFilter("Sujeito a Retenção"."Data Registo", '>=%1&<=%2', DMY2Date(1, 1, varAno), DMY2Date(31, 12, varAno));
                     TabHistLinhasMov2.Reset;
-                    TabHistLinhasMov2.SetRange(TabHistLinhasMov2."No. Empregado", Empregado."No.");
+                    TabHistLinhasMov2.SetRange(TabHistLinhasMov2."Employee No.", Empregado."No.");
                     TabHistLinhasMov2.SetFilter(TabHistLinhasMov2."Tipo Processamento", '<>%1', TabHistLinhasMov2."Tipo Processamento"::Encargos);
                     TabHistLinhasMov2.SetRange(TabHistLinhasMov2."Data Registo",
                                                  DMY2Date(1, 1, varAno),
@@ -243,13 +243,13 @@ report 53054 "Declaração Anual Rendimentos"
                                 if TabRubrica2.FindSet then
                                     repeat
                                         TabRubricaLinha2.Reset;
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica", TabRubrica2.Código);
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Cód. Rubrica");
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Payroll Item Code", TabRubrica2.Código);
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Payroll Item Code");
                                         if TabRubricaLinha2.FindFirst then begin
                                             if TabRubricaLinha2."Valor Limite Máximo" <> 0 then begin
-                                                if TabHistLinhasMov2.Valor > TabHistLinhasMov2.Quantidade * TabRubricaLinha2."Valor Limite Máximo" then
+                                                if TabHistLinhasMov2.Valor > TabHistLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo" then
                                                     varSujeitoA := varSujeitoA +
-                                                                ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantidade * TabRubricaLinha2."Valor Limite Máximo")
+                                                                ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo")
                                                                 * (TabRubricaLinha2.Percentagem / 100));
 
                                             end else
@@ -266,11 +266,11 @@ report 53054 "Declaração Anual Rendimentos"
                                 if TabRubrica2.FindSet then
                                     repeat
                                         TabRubricaLinha2.Reset;
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica", TabRubrica2.Código);
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Cód. Rubrica");
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Payroll Item Code", TabRubrica2.Código);
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Payroll Item Code");
                                         if TabRubricaLinha2.Find('-') then begin
                                             varSujeitoB := varSujeitoB +
-                                                        ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantidade * TabRubricaLinha2."Valor Limite Máximo")
+                                                        ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo")
                                                         * (TabRubricaLinha2.Percentagem / 100));
                                             Flag := true;
                                         end;
@@ -284,11 +284,11 @@ report 53054 "Declaração Anual Rendimentos"
                                 if TabRubrica2.FindSet then
                                     repeat
                                         TabRubricaLinha2.Reset;
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica", TabRubrica2.Código);
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Cód. Rubrica");
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Payroll Item Code", TabRubrica2.Código);
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Payroll Item Code");
                                         if TabRubricaLinha2.FindFirst then begin
                                             varSujeitoE := varSujeitoE +
-                                                        ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantidade * TabRubricaLinha2."Valor Limite Máximo")
+                                                        ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo")
                                                         * (TabRubricaLinha2.Percentagem / 100));
                                             Flag := true;
                                         end;
@@ -301,11 +301,11 @@ report 53054 "Declaração Anual Rendimentos"
                                 if TabRubrica2.FindSet then
                                     repeat
                                         TabRubricaLinha2.Reset;
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica", TabRubrica2.Código);
-                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Cód. Rubrica");
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Payroll Item Code", TabRubrica2.Código);
+                                        TabRubricaLinha2.SetRange(TabRubricaLinha2."Cód. Rubrica Filha", TabHistLinhasMov2."Payroll Item Code");
                                         if TabRubricaLinha2.Find('-') then begin
                                             varSujeitoF := varSujeitoF +
-                                                        ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantidade * TabRubricaLinha2."Valor Limite Máximo")
+                                                        ((TabHistLinhasMov2.Valor - TabHistLinhasMov2.Quantity * TabRubricaLinha2."Valor Limite Máximo")
                                                         * (TabRubricaLinha2.Percentagem / 100));
                                             Flag := true;
                                         end;
@@ -317,8 +317,8 @@ report 53054 "Declaração Anual Rendimentos"
             }
             dataitem("Não Sujeito"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Empregado", "Data Registo");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", "Data Registo");
 
                 trigger OnPreDataItem()
                 var
@@ -327,7 +327,7 @@ report 53054 "Declaração Anual Rendimentos"
                     //Filtrar os registos para o ano desejado
                     "Não Sujeito".SetFilter("Não Sujeito"."Data Registo", '>=%1&<=%2', DMY2Date(1, 1, varAno), DMY2Date(31, 12, varAno));
                     TabHistLinhasMov2.Reset;
-                    TabHistLinhasMov2.SetRange(TabHistLinhasMov2."No. Empregado", Empregado."No.");
+                    TabHistLinhasMov2.SetRange(TabHistLinhasMov2."Employee No.", Empregado."No.");
                     TabHistLinhasMov2.SetFilter(TabHistLinhasMov2."Tipo Processamento", '<>%1', TabHistLinhasMov2."Tipo Processamento"::Encargos);
                     TabHistLinhasMov2.SetRange(TabHistLinhasMov2."Data Registo", DMY2Date(1, 1, varAno), DMY2Date(31, 12, varAno));
                     TabHistLinhasMov2.SetFilter(TabHistLinhasMov2."Tipo Rendimento Cat.A", '%1|%2|%3|%4|%5|%6|%7|%8|%9|%10', 10, 11, 12, 13, 14, 15, 16, 21, 23, 24);
@@ -443,8 +443,8 @@ report 53054 "Declaração Anual Rendimentos"
             }
             dataitem("Deduções"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("No. Empregado", "Data Registo");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Employee No.", "Data Registo");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -452,7 +452,7 @@ report 53054 "Declaração Anual Rendimentos"
                     TabRubrica.Reset;
 
                     TabRubrica.Reset;
-                    TabRubrica.SetRange(TabRubrica.Código, Deduções."Cód. Rubrica");
+                    TabRubrica.SetRange(TabRubrica.Código, Deduções."Payroll Item Code");
                     if TabRubrica.FindSet then begin
                         if (TabRubrica.Genero = TabRubrica.Genero::SS) or (TabRubrica.Genero = TabRubrica.Genero::ADSE) or
                           (TabRubrica.Genero = TabRubrica.Genero::CGA) then
@@ -463,7 +463,7 @@ report 53054 "Declaração Anual Rendimentos"
 
                     //Para apanhar só os registos que são do Genero Sindicato
                     TabRubrica.Reset;
-                    TabRubrica.SetRange(TabRubrica.Código, Deduções."Cód. Rubrica");
+                    TabRubrica.SetRange(TabRubrica.Código, Deduções."Payroll Item Code");
                     if TabRubrica.FindFirst then
                         if TabRubrica.Genero = TabRubrica.Genero::Sindicato then
                             VarSindicato := VarSindicato + Deduções.Valor
@@ -530,7 +530,7 @@ report 53054 "Declaração Anual Rendimentos"
                 //Impedir que apareçam empregados que não têm rendimentos mas estão activos
                 TabHistLinhasMovEmp.Reset;
                 TabHistLinhasMovEmp.SetFilter("Data Registo", '>=%1&<=%2', DMY2Date(1, 1, varAno), DMY2Date(31, 12, varAno));
-                TabHistLinhasMovEmp.SetRange("No. Empregado", "No.");
+                TabHistLinhasMovEmp.SetRange("Employee No.", "No.");
                 if not TabHistLinhasMovEmp.Find('-') then
                     CurrReport.Skip;
 
@@ -591,7 +591,7 @@ report 53054 "Declaração Anual Rendimentos"
     end;
 
     var
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabHistLinhasMovEmp: Record "Hist. Linhas Movs. Empregado";
         varAno: Integer;
         varRetidoA: Decimal;

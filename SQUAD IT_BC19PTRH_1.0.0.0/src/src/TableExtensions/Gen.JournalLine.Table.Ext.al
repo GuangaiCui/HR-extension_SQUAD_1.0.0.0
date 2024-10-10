@@ -3,7 +3,7 @@ tableextension 53037 GenJournalLineRH extends "Gen. Journal Line"
     fields
     {
         //HR10.0
-        field(53035; "No. Empregado"; Code[20])
+        field(53035; "Employee No."; Code[20])
         {
             Caption = 'No. Empregado';
             TableRelation = "Empregado";

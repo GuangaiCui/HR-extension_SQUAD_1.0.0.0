@@ -20,8 +20,8 @@ report 53089 "Formação por Empregado"
     {
         dataitem("Formação Empregado"; "Formação Empregado")
         {
-            DataItemTableView = SORTING("No. Empregado", "Data Início", Tipo);
-            RequestFilterFields = "No. Empregado", "Cód. Acção", "Data Início", "Data Fim";
+            DataItemTableView = SORTING("Employee No.", "Data Início", Tipo);
+            RequestFilterFields = "Employee No.", "Cód. Acção", "Data Início", "Data Fim";
             column(N__Contribuinte______TabConfEmpresa__VAT_Registration_No__; 'Nº Contribuinte: ' + TabConfEmpresa."VAT Registration No.")
             {
             }
@@ -58,7 +58,7 @@ report 53089 "Formação por Empregado"
             column(Employee_FullName; Employee.FullName)
             {
             }
-            column("Formação_Empregado__Formação_Empregado___No__Empregado_"; "Formação Empregado"."No. Empregado")
+            column("Formação_Empregado__Formação_Empregado___No__Empregado_"; "Formação Empregado"."Employee No.")
             {
             }
             column("Formação_Empregado__Formação_Empregado___Entidade_Prestadora_"; "Formação Empregado"."Entidade Prestadora")
@@ -126,13 +126,13 @@ report 53089 "Formação por Empregado"
             begin
                 if AccaoFormacao.Get("Cód. Acção") then;
 
-                Employee.Get("Formação Empregado"."No. Empregado");
+                Employee.Get("Formação Empregado"."Employee No.");
                 Total := Total + "Formação Empregado"."No. Horas Acção";
             end;
 
             trigger OnPreDataItem()
             begin
-                LastFieldNo := FieldNo("Formação Empregado"."No. Empregado");
+                LastFieldNo := FieldNo("Formação Empregado"."Employee No.");
                 //TODO: Check is Total has right value
                 // CurrReport.CreateTotals(Total);
             end;

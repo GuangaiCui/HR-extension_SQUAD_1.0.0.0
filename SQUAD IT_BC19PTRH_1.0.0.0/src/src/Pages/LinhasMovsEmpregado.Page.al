@@ -16,31 +16,31 @@ page 53103 "Linhas Movs. Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Cód. Rubrica"; Rec."Cód. Rubrica")
+                field("Payroll Item Code"; Rec."Payroll Item Code")
                 {
 
                 }
-                field("Descrição Rubrica"; Rec."Descrição Rubrica")
+                field("Payroll Item Description"; Rec."Payroll Item Description")
                 {
 
                 }
-                field("No. Conta a Debitar"; Rec."No. Conta a Debitar")
+                field("Debit Acc. No."; Rec."Debit Acc. No.")
                 {
 
                 }
-                field("No. Conta a Creditar"; Rec."No. Conta a Creditar")
+                field("Credit Acc. No."; Rec."Credit Acc. No.")
                 {
 
                 }
-                field(UnidadeMedida; Rec.UnidadeMedida)
+                field("Unit of Measure"; Rec."Unit of Measure")
                 {
 
                 }
-                field(Quantidade; Rec.Quantidade)
+                field(Quantity; Rec.Quantity)
                 {
 
                 }
-                field("Valor Unitário"; Rec."Valor Unitário")
+                field("Unit Value"; Rec."Unit Value")
                 {
 
                 }
@@ -63,7 +63,7 @@ page 53103 "Linhas Movs. Empregado"
         // usamos uma variável que vai buscar o Abs(valor) para que os descontos não
         //apareçam a negativo, o que faz confusão ao utilizador.
 
-        if Rec."Tipo Rubrica" = Rec."Tipo Rubrica"::Desconto then
+        if Rec."Payroll Item Type" = Rec."Payroll Item Type"::Desconto then
             ValorSemSinal := Abs(Rec.Valor)
         else
             ValorSemSinal := Rec.Valor;

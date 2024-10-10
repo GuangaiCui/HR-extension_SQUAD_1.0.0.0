@@ -1,10 +1,10 @@
 table 53057 "Inactividade Empregado"
 {
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -39,7 +39,7 @@ table 53057 "Inactividade Empregado"
         field(7; "Comentário"; Boolean)
         {
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Inac),
-                                                                      "No." = FIELD("No. Empregado"),
+                                                                      "No." = FIELD("Employee No."),
                                                                       "Table Line No." = FIELD("No. Linha")));
             Caption = 'Comment';
             Editable = false;
@@ -49,7 +49,7 @@ table 53057 "Inactividade Empregado"
 
     keys
     {
-        key(Key1; "No. Empregado", "No. Linha")
+        key(Key1; "Employee No.", "No. Linha")
         {
             Clustered = true;
         }

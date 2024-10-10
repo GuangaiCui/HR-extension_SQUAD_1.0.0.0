@@ -161,25 +161,25 @@ report 53098 "Mapa Resumo Processamento B"
             }
             dataitem("Linhas Movs. Empregado"; "Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
 
                 trigger OnAfterGetRecord()
                 begin
                     TabRubrica.Reset;
-                    TabRubrica.SetRange(TabRubrica.Código, "Linhas Movs. Empregado"."Cód. Rubrica");
+                    TabRubrica.SetRange(TabRubrica.Código, "Linhas Movs. Empregado"."Payroll Item Code");
                     if TabRubrica.Find('-') then begin
                         if TabRubrica.Genero = TabRubrica.Genero::"Vencimento Base" then
                             VarHonorario := VarHonorario + "Linhas Movs. Empregado".Valor;
                         if TabRubrica.Genero = TabRubrica.Genero::IVA then
                             VarIVA := VarIVA + "Linhas Movs. Empregado".Valor;
-                        if (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) and
+                        if (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) and
                            (TabRubrica.Genero <> TabRubrica.Genero::"Vencimento Base") and
                            (TabRubrica.Genero <> TabRubrica.Genero::IVA) then
                             VarOutrosRendim := VarOutrosRendim + "Linhas Movs. Empregado".Valor;
                         if (TabRubrica.Genero = TabRubrica.Genero::IRS) then
                             VarIRS := VarIRS + "Linhas Movs. Empregado".Valor;
-                        if (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Desconto) and
+                        if (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Desconto) and
                            (TabRubrica.Genero <> TabRubrica.Genero::IRS) then
                             VarOutrosDesc := VarOutrosDesc + "Linhas Movs. Empregado".Valor;
                     end;
@@ -218,26 +218,26 @@ report 53098 "Mapa Resumo Processamento B"
             }
             dataitem("Hist. Linhas Movs. Empregado"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
 
                 trigger OnAfterGetRecord()
                 begin
 
                     TabRubrica.Reset;
-                    TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado"."Cód. Rubrica");
+                    TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. Empregado"."Payroll Item Code");
                     if TabRubrica.FindFirst then begin
                         if TabRubrica.Genero = TabRubrica.Genero::"Vencimento Base" then
                             VarHonorario := VarHonorario + "Hist. Linhas Movs. Empregado".Valor;
                         if TabRubrica.Genero = TabRubrica.Genero::IVA then
                             VarIVA := VarIVA + "Hist. Linhas Movs. Empregado".Valor;
-                        if (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Abono) and
+                        if (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Abono) and
                            (TabRubrica.Genero <> TabRubrica.Genero::"Vencimento Base") and
                            (TabRubrica.Genero <> TabRubrica.Genero::IVA) then
                             VarOutrosRendim := VarOutrosRendim + "Hist. Linhas Movs. Empregado".Valor;
                         if TabRubrica.Genero = TabRubrica.Genero::IRS then
                             VarIRS := VarIRS + "Hist. Linhas Movs. Empregado".Valor;
-                        if (TabRubrica."Tipo Rubrica" = TabRubrica."Tipo Rubrica"::Desconto) and
+                        if (TabRubrica."Payroll Item Type" = TabRubrica."Payroll Item Type"::Desconto) and
                            (TabRubrica.Genero <> TabRubrica.Genero::IRS) then
                             VarOutrosDesc := VarOutrosDesc + "Hist. Linhas Movs. Empregado".Valor;
                     end;
@@ -392,7 +392,7 @@ report 53098 "Mapa Resumo Processamento B"
     end;
 
     var
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         TabLinhasMov: Record "Linhas Movs. Empregado";
         TabHistLinhasMov: Record "Hist. Linhas Movs. Empregado";
         VarHonorario: Decimal;

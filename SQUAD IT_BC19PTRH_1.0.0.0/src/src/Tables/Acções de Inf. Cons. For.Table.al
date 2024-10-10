@@ -20,10 +20,10 @@ table 53120 "Acções de Inf. Cons. For"
 
             trigger OnValidate()
             begin
-                Validate(Código, '');
+                Validate(Code, '');
             end;
         }
-        field(7; "Código"; Code[20])
+        field(7; "Code"; Code[20])
         {
             Caption = 'Código';
             TableRelation = IF ("Tipo de Acção" = CONST("Informação")) "RU - Tabelas"."Código" WHERE(Tipo = CONST(AcInf))
@@ -43,7 +43,7 @@ table 53120 "Acções de Inf. Cons. For"
                 if "Tipo de Acção" = "Tipo de Acção"::"Formação" then
                     RUTabelas.SetRange(RUTabelas.Tipo, RUTabelas.Tipo::AcFor);
 
-                RUTabelas.SetRange(RUTabelas.Código, Código);
+                RUTabelas.SetRange(RUTabelas.Código, Code);
                 if RUTabelas.FindFirst then
                     Descrição := RUTabelas.Descrição
                 else

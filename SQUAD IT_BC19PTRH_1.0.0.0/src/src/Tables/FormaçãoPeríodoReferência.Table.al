@@ -5,7 +5,7 @@ table 53097 "Formação - Período Referência"
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado."No.";
@@ -41,7 +41,7 @@ table 53097 "Formação - Período Referência"
 
     keys
     {
-        key(Key1; "No. Empregado", "Cód. Acção", "No. Linha")
+        key(Key1; "Employee No.", "Cód. Acção", "No. Linha")
         {
             Clustered = true;
         }

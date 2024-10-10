@@ -37,7 +37,7 @@ report 53093 "Mapa Companhia Seguros"
             }
             dataitem("Movs. Empregado"; "Cab. Movs. Empregado")
             {
-                DataItemTableView = SORTING(Seguradora, "No. Apólice", "No. Empregado") WHERE("Tipo Processamento" = FILTER(<> Encargos), "No. Apólice" = FILTER(<> ''));
+                DataItemTableView = SORTING(Seguradora, "No. Apólice", "Employee No.") WHERE("Tipo Processamento" = FILTER(<> Encargos), "No. Apólice" = FILTER(<> ''));
                 PrintOnlyIfDetail = false;
                 column(TabConfEmpresa_Picture; TabConfEmpresa.Picture)
                 {
@@ -81,7 +81,7 @@ report 53093 "Mapa Companhia Seguros"
                 column(FORMAT_Mensal___________FORMAT_Ano_; Format(Mensal) + ' ' + Format(Ano))
                 {
                 }
-                column(Movs__Empregado__N__Empregado_; "No. Empregado")
+                column(Movs__Empregado__N__Empregado_; "Employee No.")
                 {
                 }
                 column("Movs__Empregado__Designação_Empregado_"; "Designação Empregado")
@@ -209,8 +209,8 @@ report 53093 "Mapa Companhia Seguros"
                 }
                 dataitem("Linhas Movs. Empregado1"; "Linhas Movs. Empregado")
                 {
-                    DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento"), "Tipo Processamento" = FIELD("Tipo Processamento"), "No. Empregado" = FIELD("No. Empregado");
-                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
+                    DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento"), "Tipo Processamento" = FIELD("Tipo Processamento"), "Employee No." = FIELD("Employee No.");
+                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
 
                     trigger OnAfterGetRecord()
                     begin
@@ -219,7 +219,7 @@ report 53093 "Mapa Companhia Seguros"
                         else begin
 
                             TabRubrica.Reset;
-                            if TabRubrica.Get("Linhas Movs. Empregado1"."Cód. Rubrica") then begin
+                            if TabRubrica.Get("Linhas Movs. Empregado1"."Payroll Item Code") then begin
                                 if TabRubrica."Mapa Companhia Seguros" = true then begin
                                     //      Total := Total + "Linhas Movs. Empregado1".Valor;
                                     //      TotalGlobal := TotalGlobal + "Linhas Movs. Empregado1".Valor;
@@ -244,7 +244,7 @@ report 53093 "Mapa Companhia Seguros"
 
                 trigger OnAfterGetRecord()
                 begin
-                    if TabEmpregado.Get("No. Empregado") then
+                    if TabEmpregado.Get("Employee No.") then
                         decVencBase := TabEmpregado."Valor Vencimento Base";
 
 
@@ -289,8 +289,8 @@ report 53093 "Mapa Companhia Seguros"
 
 
 
-                    if nemp <> "Movs. Empregado"."No. Empregado" then begin
-                        nemp := "Movs. Empregado"."No. Empregado";
+                    if nemp <> "Movs. Empregado"."Employee No." then begin
+                        nemp := "Movs. Empregado"."Employee No.";
 
                         //2009.04.16
                         Clear(valorvencimento);
@@ -306,13 +306,13 @@ report 53093 "Mapa Companhia Seguros"
                         "Movs. Empregado".CalcFields("Movs. Empregado".Valor);
                         if "Movs. Empregado".Valor <> 0 then begin
 
-                            Vencimentos("Movs. Empregado"."No. Empregado");
-                            ProcessaFaltas("Movs. Empregado"."No. Empregado");
-                            Diuturnidades("Movs. Empregado"."No. Empregado");
-                            SubsAlmoco("Movs. Empregado"."No. Empregado");
-                            SubsNatalFerias("Movs. Empregado"."No. Empregado");
-                            ProcessaOutros("Movs. Empregado"."No. Empregado");
-                            OutrosAbonos("Movs. Empregado"."No. Empregado");
+                            Vencimentos("Movs. Empregado"."Employee No.");
+                            ProcessaFaltas("Movs. Empregado"."Employee No.");
+                            Diuturnidades("Movs. Empregado"."Employee No.");
+                            SubsAlmoco("Movs. Empregado"."Employee No.");
+                            SubsNatalFerias("Movs. Empregado"."Employee No.");
+                            ProcessaOutros("Movs. Empregado"."Employee No.");
+                            OutrosAbonos("Movs. Empregado"."Employee No.");
                             CalcTotal();
                             TotalVencimento += valorvencimento;
                             TotalDiuturnidades += valorDiuturnidades;
@@ -380,7 +380,7 @@ report 53093 "Mapa Companhia Seguros"
             }
             dataitem("Hist. Movs. Empregado"; "Hist. Cab. Movs. Empregado")
             {
-                DataItemTableView = SORTING(Seguradora, "No. Apólice", "No. Empregado") WHERE("Tipo Processamento" = FILTER(<> Encargos), "No. Apólice" = FILTER(<> ''));
+                DataItemTableView = SORTING(Seguradora, "No. Apólice", "Employee No.") WHERE("Tipo Processamento" = FILTER(<> Encargos), "No. Apólice" = FILTER(<> ''));
                 PrintOnlyIfDetail = false;
                 column(TabConfEmpresa_Picture_Control1102059078; TabConfEmpresa.Picture)
                 {
@@ -433,7 +433,7 @@ report 53093 "Mapa Companhia Seguros"
                 column(USERID_Control1102059100; UserId)
                 {
                 }
-                column(Hist__Movs__Empregado__N__Empregado_; "No. Empregado")
+                column(Hist__Movs__Empregado__N__Empregado_; "Employee No.")
                 {
                 }
                 column("Hist__Movs__Empregado__Designação_Empregado_"; "Designação Empregado")
@@ -546,8 +546,8 @@ report 53093 "Mapa Companhia Seguros"
                 }
                 dataitem("Hist. Linhas Movs. Empregado1"; "Hist. Linhas Movs. Empregado")
                 {
-                    DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento"), "Tipo Processamento" = FIELD("Tipo Processamento"), "No. Empregado" = FIELD("No. Empregado");
-                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
+                    DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento"), "Tipo Processamento" = FIELD("Tipo Processamento"), "Employee No." = FIELD("Employee No.");
+                    DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos));
 
                     trigger OnAfterGetRecord()
                     var
@@ -562,7 +562,7 @@ report 53093 "Mapa Companhia Seguros"
                         else begin
 
                             TabRubrica.Reset;
-                            if TabRubrica.Get("Hist. Linhas Movs. Empregado1"."Cód. Rubrica") then begin
+                            if TabRubrica.Get("Hist. Linhas Movs. Empregado1"."Payroll Item Code") then begin
                                 if TabRubrica."Mapa Companhia Seguros" = true then begin
                                     //      Total := Total + "Hist. Linhas Movs. Empregado1".Valor;
                                     //      TotalGlobal := TotalGlobal + "Hist. Linhas Movs. Empregado1".Valor;
@@ -587,7 +587,7 @@ report 53093 "Mapa Companhia Seguros"
 
                 trigger OnAfterGetRecord()
                 begin
-                    if TabEmpregado.Get("No. Empregado") then
+                    if TabEmpregado.Get("Employee No.") then
                         decVencBase := TabEmpregado."Valor Vencimento Base";
 
 
@@ -639,8 +639,8 @@ report 53093 "Mapa Companhia Seguros"
 
 
 
-                    if nemp <> "Hist. Movs. Empregado"."No. Empregado" then begin
-                        nemp := "Hist. Movs. Empregado"."No. Empregado";
+                    if nemp <> "Hist. Movs. Empregado"."Employee No." then begin
+                        nemp := "Hist. Movs. Empregado"."Employee No.";
 
                         //2009.04.16
                         Clear(valorvencimento);
@@ -657,13 +657,13 @@ report 53093 "Mapa Companhia Seguros"
                         "Hist. Movs. Empregado".CalcFields("Hist. Movs. Empregado".Valor);
                         if "Hist. Movs. Empregado".Valor <> 0 then begin
 
-                            Vencimentos("No. Empregado");
-                            ProcessaFaltas("No. Empregado");
-                            Diuturnidades("No. Empregado");
-                            SubsAlmoco("No. Empregado");
-                            SubsNatalFerias("No. Empregado");
-                            ProcessaOutros("No. Empregado");
-                            OutrosAbonos("No. Empregado");
+                            Vencimentos("Employee No.");
+                            ProcessaFaltas("Employee No.");
+                            Diuturnidades("Employee No.");
+                            SubsAlmoco("Employee No.");
+                            SubsNatalFerias("Employee No.");
+                            ProcessaOutros("Employee No.");
+                            OutrosAbonos("Employee No.");
                             CalcTotal();
 
                             TotalVencimento += valorvencimento;
@@ -797,7 +797,7 @@ report 53093 "Mapa Companhia Seguros"
                     {
 
                         Caption = 'Vencimento';
-                        TableRelation = "Rubrica Salarial";
+                        TableRelation = "Payroll Item";
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
@@ -817,7 +817,7 @@ report 53093 "Mapa Companhia Seguros"
                     {
 
                         Caption = 'Diuturnidades';
-                        TableRelation = "Rubrica Salarial";
+                        TableRelation = "Payroll Item";
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
@@ -837,7 +837,7 @@ report 53093 "Mapa Companhia Seguros"
                     {
 
                         Caption = 'Subsídio Almoço';
-                        TableRelation = "Rubrica Salarial";
+                        TableRelation = "Payroll Item";
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
@@ -857,7 +857,7 @@ report 53093 "Mapa Companhia Seguros"
                     {
 
                         Caption = 'Subsídio Natal/Férias';
-                        TableRelation = "Rubrica Salarial";
+                        TableRelation = "Payroll Item";
 
                         trigger OnLookup(var Text: Text): Boolean
                         begin
@@ -925,7 +925,7 @@ report 53093 "Mapa Companhia Seguros"
         TotalGlobal: Decimal;
         TabLinhasMov: Record "Linhas Movs. Empregado";
         TabHistLinhasMov: Record "Hist. Linhas Movs. Empregado";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         FiltroDataInicProc: Text[1024];
         FiltroDataFimProc: Text[1024];
         FiltroCodProc: Text[1024];
@@ -1068,33 +1068,33 @@ report 53093 "Mapa Companhia Seguros"
             valorvencimento := 0;
             if "Periodos Processamento".Estado = "Periodos Processamento".Estado::Aberto then begin
                 rLinhasMovsEmpregado.Reset;
-                rLinhasMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
+                rLinhasMovsEmpregado.SetFilter("Employee No.", pEmpregado);
                 //comentei para poder colocar rubricas de desconto como por exemplo a incapacidade
-                //rLinhasMovsEmpregado.SETRANGE("Tipo Rubrica",rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                //rLinhasMovsEmpregado.SETRANGE("Payroll Item Type",rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasMovsEmpregado.SetFilter("Cód. Rubrica", varVencimento);
+                rLinhasMovsEmpregado.SetFilter("Payroll Item Code", varVencimento);
                 if rLinhasMovsEmpregado.Find('-') then begin
                     repeat
                         valorvencimento += rLinhasMovsEmpregado.Valor;
-                        NDias += rLinhasMovsEmpregado.Quantidade;
+                        NDias += rLinhasMovsEmpregado.Quantity;
                     until rLinhasMovsEmpregado.Next = 0;
                 end;
             end
             else begin
                 rLinhasHistMovsEmpregado.Reset;
-                rLinhasHistMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
+                rLinhasHistMovsEmpregado.SetFilter("Employee No.", pEmpregado);
                 //comentei para poder colocar rubricas de desconto como por exemplo a incapacidade
-                //rLinhasHistMovsEmpregado.SETRANGE("Tipo Rubrica",rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                //rLinhasHistMovsEmpregado.SETRANGE("Payroll Item Type",rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasHistMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasHistMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasHistMovsEmpregado.SetFilter("Cód. Rubrica", varVencimento);
+                rLinhasHistMovsEmpregado.SetFilter("Payroll Item Code", varVencimento);
                 if rLinhasHistMovsEmpregado.Find('-') then begin
                     repeat
                         valorvencimento += rLinhasHistMovsEmpregado.Valor;
-                        NDias += rLinhasHistMovsEmpregado.Quantidade;
+                        NDias += rLinhasHistMovsEmpregado.Quantity;
                     until rLinhasHistMovsEmpregado.Next = 0;
                 end;
             end;
@@ -1114,13 +1114,13 @@ report 53093 "Mapa Companhia Seguros"
             valorDiuturnidades := 0;
             if "Periodos Processamento".Estado = "Periodos Processamento".Estado::Aberto then begin
                 rLinhasMovsEmpregado.Reset;
-                rLinhasMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
+                rLinhasMovsEmpregado.SetFilter("Employee No.", pEmpregado);
                 //comentei para poder colocar rubricas de desconto como por exemplo a incapacidade
-                //rLinhasMovsEmpregado.SETRANGE("Tipo Rubrica",rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                //rLinhasMovsEmpregado.SETRANGE("Payroll Item Type",rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasMovsEmpregado.SetFilter("Cód. Rubrica", varDiuturnidades);
+                rLinhasMovsEmpregado.SetFilter("Payroll Item Code", varDiuturnidades);
                 if rLinhasMovsEmpregado.Find('-') then begin
                     repeat
                         valorDiuturnidades += rLinhasMovsEmpregado.Valor;
@@ -1129,13 +1129,13 @@ report 53093 "Mapa Companhia Seguros"
             end
             else begin
                 rLinhasHistMovsEmpregado.Reset;
-                rLinhasHistMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
+                rLinhasHistMovsEmpregado.SetFilter("Employee No.", pEmpregado);
                 //comentei para poder colocar rubricas de desconto como por exemplo a incapacidade
-                //rLinhasHistMovsEmpregado.SETRANGE("Tipo Rubrica",rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                //rLinhasHistMovsEmpregado.SETRANGE("Payroll Item Type",rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasHistMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasHistMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasHistMovsEmpregado.SetFilter("Cód. Rubrica", varDiuturnidades);
+                rLinhasHistMovsEmpregado.SetFilter("Payroll Item Code", varDiuturnidades);
                 if rLinhasHistMovsEmpregado.Find('-') then begin
                     repeat
                         valorDiuturnidades += rLinhasHistMovsEmpregado.Valor;
@@ -1158,12 +1158,12 @@ report 53093 "Mapa Companhia Seguros"
             valorSubsAlmoco := 0;
             if "Periodos Processamento".Estado = "Periodos Processamento".Estado::Aberto then begin
                 rLinhasMovsEmpregado.Reset;
-                rLinhasMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-                rLinhasMovsEmpregado.SetRange("Tipo Rubrica", rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                rLinhasMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+                rLinhasMovsEmpregado.SetRange("Payroll Item Type", rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasMovsEmpregado.SetFilter("Cód. Rubrica", varSubsAlmoco);
+                rLinhasMovsEmpregado.SetFilter("Payroll Item Code", varSubsAlmoco);
                 if rLinhasMovsEmpregado.Find('-') then begin
                     repeat
                         valorSubsAlmoco += rLinhasMovsEmpregado.Valor;
@@ -1172,12 +1172,12 @@ report 53093 "Mapa Companhia Seguros"
             end
             else begin
                 rLinhasHistMovsEmpregado.Reset;
-                rLinhasHistMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-                rLinhasHistMovsEmpregado.SetRange("Tipo Rubrica", rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                rLinhasHistMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+                rLinhasHistMovsEmpregado.SetRange("Payroll Item Type", rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasHistMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasHistMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasHistMovsEmpregado.SetFilter("Cód. Rubrica", varSubsAlmoco);
+                rLinhasHistMovsEmpregado.SetFilter("Payroll Item Code", varSubsAlmoco);
                 if rLinhasHistMovsEmpregado.Find('-') then begin
                     repeat
                         valorSubsAlmoco += rLinhasHistMovsEmpregado.Valor;
@@ -1200,12 +1200,12 @@ report 53093 "Mapa Companhia Seguros"
             valorSubsNatalFerias := 0;
             if "Periodos Processamento".Estado = "Periodos Processamento".Estado::Aberto then begin
                 rLinhasMovsEmpregado.Reset;
-                rLinhasMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-                rLinhasMovsEmpregado.SetRange("Tipo Rubrica", rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                rLinhasMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+                rLinhasMovsEmpregado.SetRange("Payroll Item Type", rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasMovsEmpregado.SetFilter("Cód. Rubrica", varSubsNatalFerias);
+                rLinhasMovsEmpregado.SetFilter("Payroll Item Code", varSubsNatalFerias);
                 if rLinhasMovsEmpregado.Find('-') then begin
                     repeat
                         valorSubsNatalFerias += rLinhasMovsEmpregado.Valor;
@@ -1214,12 +1214,12 @@ report 53093 "Mapa Companhia Seguros"
             end
             else begin
                 rLinhasHistMovsEmpregado.Reset;
-                rLinhasHistMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-                rLinhasHistMovsEmpregado.SetRange("Tipo Rubrica", rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                rLinhasHistMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+                rLinhasHistMovsEmpregado.SetRange("Payroll Item Type", rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasHistMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasHistMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasHistMovsEmpregado.SetFilter("Cód. Rubrica", varSubsNatalFerias);
+                rLinhasHistMovsEmpregado.SetFilter("Payroll Item Code", varSubsNatalFerias);
                 if rLinhasHistMovsEmpregado.Find('-') then begin
                     repeat
                         valorSubsNatalFerias += rLinhasHistMovsEmpregado.Valor;
@@ -1244,12 +1244,12 @@ report 53093 "Mapa Companhia Seguros"
 
             if "Periodos Processamento".Estado = "Periodos Processamento".Estado::Aberto then begin
                 rLinhasMovsEmpregado.Reset;
-                rLinhasMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-                rLinhasMovsEmpregado.SetRange("Tipo Rubrica", rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                rLinhasMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+                rLinhasMovsEmpregado.SetRange("Payroll Item Type", rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasMovsEmpregado.SetFilter("Cód. Rubrica", varOutros);
+                rLinhasMovsEmpregado.SetFilter("Payroll Item Code", varOutros);
                 if rLinhasMovsEmpregado.Find('-') then begin
                     repeat
                         valorOutros += rLinhasMovsEmpregado.Valor;
@@ -1258,12 +1258,12 @@ report 53093 "Mapa Companhia Seguros"
             end
             else begin
                 rLinhasHistMovsEmpregado.Reset;
-                rLinhasHistMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-                rLinhasHistMovsEmpregado.SetRange("Tipo Rubrica", rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+                rLinhasHistMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+                rLinhasHistMovsEmpregado.SetRange("Payroll Item Type", rLinhasMovsEmpregado."Payroll Item Type"::Abono);
                 if FiltroCodProc <> '' then rLinhasHistMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                 if dataInicioProc <> 0D then
                     rLinhasHistMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                rLinhasHistMovsEmpregado.SetFilter("Cód. Rubrica", varOutros);
+                rLinhasHistMovsEmpregado.SetFilter("Payroll Item Code", varOutros);
                 if rLinhasHistMovsEmpregado.Find('-') then begin
                     repeat
                         valorOutros += rLinhasHistMovsEmpregado.Valor;
@@ -1301,54 +1301,54 @@ report 53093 "Mapa Companhia Seguros"
 
         if "Periodos Processamento".Estado = "Periodos Processamento".Estado::Aberto then begin
             rLinhasMovsEmpregado.Reset;
-            rLinhasMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-            rLinhasMovsEmpregado.SetRange("Tipo Rubrica", rLinhasMovsEmpregado."Tipo Rubrica"::Abono);
+            rLinhasMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+            rLinhasMovsEmpregado.SetRange("Payroll Item Type", rLinhasMovsEmpregado."Payroll Item Type"::Abono);
             if FiltroCodProc <> '' then rLinhasMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
             if dataInicioProc <> 0D then
                 rLinhasMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
             if rLinhasMovsEmpregado.Find('-') then
                 repeat
-                    if StrPos(varVencimento, rLinhasMovsEmpregado."Cód. Rubrica") = 0 then begin
-                        if StrPos(varDiuturnidades, rLinhasMovsEmpregado."Cód. Rubrica") = 0 then
-                            if StrPos(varSubsAlmoco, rLinhasMovsEmpregado."Cód. Rubrica") = 0 then
-                                if StrPos(varSubsNatalFerias, rLinhasMovsEmpregado."Cód. Rubrica") = 0 then
-                                    if StrPos(varOutros, rLinhasMovsEmpregado."Cód. Rubrica") = 0 then begin
+                    if StrPos(varVencimento, rLinhasMovsEmpregado."Payroll Item Code") = 0 then begin
+                        if StrPos(varDiuturnidades, rLinhasMovsEmpregado."Payroll Item Code") = 0 then
+                            if StrPos(varSubsAlmoco, rLinhasMovsEmpregado."Payroll Item Code") = 0 then
+                                if StrPos(varSubsNatalFerias, rLinhasMovsEmpregado."Payroll Item Code") = 0 then
+                                    if StrPos(varOutros, rLinhasMovsEmpregado."Payroll Item Code") = 0 then begin
                                         TabRubrica.Reset;
-                                        TabRubrica.Get(rLinhasMovsEmpregado."Cód. Rubrica");
+                                        TabRubrica.Get(rLinhasMovsEmpregado."Payroll Item Code");
                                         if TabRubrica."Mapa Companhia Seguros" = true then
                                             if first = true then begin
-                                                varOutros += rLinhasMovsEmpregado."Cód. Rubrica";
+                                                varOutros += rLinhasMovsEmpregado."Payroll Item Code";
                                                 first := false;
                                             end
                                             else
-                                                varOutros += '|' + rLinhasMovsEmpregado."Cód. Rubrica";
+                                                varOutros += '|' + rLinhasMovsEmpregado."Payroll Item Code";
                                     end;
                     end;
                 until rLinhasMovsEmpregado.Next = 0;
         end
         else begin
             rLinhasHistMovsEmpregado.Reset;
-            rLinhasHistMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-            rLinhasHistMovsEmpregado.SetRange("Tipo Rubrica", rLinhasHistMovsEmpregado."Tipo Rubrica"::Abono);
+            rLinhasHistMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+            rLinhasHistMovsEmpregado.SetRange("Payroll Item Type", rLinhasHistMovsEmpregado."Payroll Item Type"::Abono);
             if FiltroCodProc <> '' then rLinhasHistMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
             if dataInicioProc <> 0D then
                 rLinhasHistMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
             if rLinhasHistMovsEmpregado.Find('-') then
                 repeat
-                    if StrPos(varVencimento, rLinhasHistMovsEmpregado."Cód. Rubrica") = 0 then begin
-                        if StrPos(varDiuturnidades, rLinhasHistMovsEmpregado."Cód. Rubrica") = 0 then
-                            if StrPos(varSubsAlmoco, rLinhasHistMovsEmpregado."Cód. Rubrica") = 0 then
-                                if StrPos(varSubsNatalFerias, rLinhasHistMovsEmpregado."Cód. Rubrica") = 0 then
-                                    if StrPos(varOutros, rLinhasHistMovsEmpregado."Cód. Rubrica") = 0 then begin
+                    if StrPos(varVencimento, rLinhasHistMovsEmpregado."Payroll Item Code") = 0 then begin
+                        if StrPos(varDiuturnidades, rLinhasHistMovsEmpregado."Payroll Item Code") = 0 then
+                            if StrPos(varSubsAlmoco, rLinhasHistMovsEmpregado."Payroll Item Code") = 0 then
+                                if StrPos(varSubsNatalFerias, rLinhasHistMovsEmpregado."Payroll Item Code") = 0 then
+                                    if StrPos(varOutros, rLinhasHistMovsEmpregado."Payroll Item Code") = 0 then begin
                                         TabRubrica.Reset;
-                                        TabRubrica.Get(rLinhasHistMovsEmpregado."Cód. Rubrica");
+                                        TabRubrica.Get(rLinhasHistMovsEmpregado."Payroll Item Code");
                                         if TabRubrica."Mapa Companhia Seguros" = true then
                                             if first = true then begin
-                                                varOutros += rLinhasHistMovsEmpregado."Cód. Rubrica";
+                                                varOutros += rLinhasHistMovsEmpregado."Payroll Item Code";
                                                 first := false;
                                             end
                                             else
-                                                varOutros += '|' + rLinhasHistMovsEmpregado."Cód. Rubrica";
+                                                varOutros += '|' + rLinhasHistMovsEmpregado."Payroll Item Code";
                                     end;
                     end;
                 until rLinhasHistMovsEmpregado.Next = 0;
@@ -1377,19 +1377,19 @@ report 53093 "Mapa Companhia Seguros"
 
                     if "Periodos Processamento".Estado = "Periodos Processamento".Estado::Aberto then begin
                         rLinhasMovsEmpregado.Reset;
-                        rLinhasMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-                        rLinhasMovsEmpregado.SetRange("Tipo Rubrica", rLinhasMovsEmpregado."Tipo Rubrica"::Desconto);
+                        rLinhasMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+                        rLinhasMovsEmpregado.SetRange("Payroll Item Type", rLinhasMovsEmpregado."Payroll Item Type"::Desconto);
                         if FiltroCodProc <> '' then rLinhasMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                         if dataInicioProc <> 0D then
                             rLinhasMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                        rLinhasMovsEmpregado.SetFilter("Cód. Rubrica", TabRubrica.Código);
+                        rLinhasMovsEmpregado.SetFilter("Payroll Item Code", TabRubrica.Código);
                         if rLinhasMovsEmpregado.Find('-') then begin
                             repeat
                                 valorvencimento += rLinhasMovsEmpregado.Valor;
-                                if rLinhasMovsEmpregado.Quantidade < 0 then
-                                    NDias += rLinhasMovsEmpregado.Quantidade
+                                if rLinhasMovsEmpregado.Quantity < 0 then
+                                    NDias += rLinhasMovsEmpregado.Quantity
                                 else
-                                    NDias -= rLinhasMovsEmpregado.Quantidade;
+                                    NDias -= rLinhasMovsEmpregado.Quantity;
                             until rLinhasMovsEmpregado.Next = 0;
                             // IF (varVencimento <> '') AND (valorvencimento = 0) THEN
                             //     CurrReport.SKIP;
@@ -1397,19 +1397,19 @@ report 53093 "Mapa Companhia Seguros"
                     end
                     else begin
                         rLinhasHistMovsEmpregado.Reset;
-                        rLinhasHistMovsEmpregado.SetFilter("No. Empregado", pEmpregado);
-                        rLinhasHistMovsEmpregado.SetRange("Tipo Rubrica", rLinhasHistMovsEmpregado."Tipo Rubrica"::Desconto);
+                        rLinhasHistMovsEmpregado.SetFilter("Employee No.", pEmpregado);
+                        rLinhasHistMovsEmpregado.SetRange("Payroll Item Type", rLinhasHistMovsEmpregado."Payroll Item Type"::Desconto);
                         if FiltroCodProc <> '' then rLinhasHistMovsEmpregado.SetFilter("Cód. Processamento", FiltroCodProc);
                         if dataInicioProc <> 0D then
                             rLinhasHistMovsEmpregado.SetRange("Data Registo", dataInicioProc, dataFimProc);
-                        rLinhasHistMovsEmpregado.SetFilter("Cód. Rubrica", TabRubrica.Código);
+                        rLinhasHistMovsEmpregado.SetFilter("Payroll Item Code", TabRubrica.Código);
                         if rLinhasHistMovsEmpregado.Find('-') then begin
                             repeat
                                 valorvencimento += rLinhasHistMovsEmpregado.Valor;
-                                if rLinhasHistMovsEmpregado.Quantidade < 0 then
-                                    NDias += rLinhasHistMovsEmpregado.Quantidade
+                                if rLinhasHistMovsEmpregado.Quantity < 0 then
+                                    NDias += rLinhasHistMovsEmpregado.Quantity
                                 else
-                                    NDias -= rLinhasHistMovsEmpregado.Quantidade;
+                                    NDias -= rLinhasHistMovsEmpregado.Quantity;
 
                             until rLinhasHistMovsEmpregado.Next = 0;
                             //  IF (varVencimento <> '') AND (valorvencimento = 0) THEN

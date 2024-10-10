@@ -3,13 +3,13 @@ table 53066 "Horário Empregado"
     // //C+ -LCF-  21.05.2008
     // //tive de alterar a chave para "Nº Empregado,Data Iníco Horário,Data Fim Horário"
 
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     DrillDownPageID = "Lista Horário Empregado";
     LookupPageID = "Lista Horário Empregado";
 
     fields
     {
-        field(1; "No. Empregado"; Code[20])
+        field(1; "Employee No."; Code[20])
         {
             Caption = 'Employee No.';
             TableRelation = Empregado;
@@ -64,17 +64,17 @@ table 53066 "Horário Empregado"
 
     keys
     {
-        key(Key1; "No. Empregado", "Cód. Horário", "No. Linha")
+        key(Key1; "Employee No.", "Cód. Horário", "No. Linha")
         {
             Clustered = true;
         }
-        key(Key2; "No. Empregado", "Mês", "Dia da Semana")
+        key(Key2; "Employee No.", "Mês", "Dia da Semana")
         {
         }
-        key(Key3; "No. Empregado", "Data Iníco Horário", "Data Fim Horário")
+        key(Key3; "Employee No.", "Data Iníco Horário", "Data Fim Horário")
         {
         }
-        key(Key4; "No. Empregado", "Data Iníco Horário", "Dia da Semana")
+        key(Key4; "Employee No.", "Data Iníco Horário", "Dia da Semana")
         {
         }
     }

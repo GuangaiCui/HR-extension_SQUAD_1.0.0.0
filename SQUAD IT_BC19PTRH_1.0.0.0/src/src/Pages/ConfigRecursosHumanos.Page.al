@@ -57,12 +57,12 @@ page 53068 "Config. Recursos Humanos"
 
 
                 }
-                field("Nome Livro Diario"; Rec."Nome Livro Diario")
+                field("Nome Livro Diario"; Rec."Journal Template Name")
                 {
 
 
                 }
-                field("Secção Diario"; Rec."Secção Diario")
+                field("Secção Diario"; Rec."Journal Batch Name")
                 {
 
 
@@ -111,7 +111,7 @@ page 53068 "Config. Recursos Humanos"
 
 
                 }
-                field("Usar Feriados calculo Sub Ali"; Rec."Usar Feriados calculo Sub Ali")
+                field("Usar Feriados calculo Sub Ali"; Rec."Use Holidays to Calc Lunch Sub")
                 {
 
 
@@ -120,22 +120,22 @@ page 53068 "Config. Recursos Humanos"
             group("Responsável")
             {
                 Caption = 'Responsável';
-                field("Nome responsável RH"; Rec."Nome responsável RH")
+                field("Nome responsável RH"; Rec."Name of HR Responsable")
                 {
 
 
                 }
-                field("Telefone responsável RH"; Rec."Telefone responsável RH")
+                field("Telefone responsável RH"; Rec."Phone of HR Responsable")
                 {
 
 
                 }
-                field("Fax responsável RH"; Rec."Fax responsável RH")
+                field("Fax responsável RH"; Rec."Fax of HR Responsable")
                 {
 
 
                 }
-                field("E-mail responsável RH"; Rec."E-mail responsável RH")
+                field("E-mail responsável RH"; Rec."E-mail of HR Responsable")
                 {
 
 
@@ -206,7 +206,7 @@ page 53068 "Config. Recursos Humanos"
             group(Outros)
             {
                 Caption = 'Outros';
-                field(Seguradora; Rec.Seguradora)
+                field(Seguradora; Rec."Insurance Company")
                 {
 
 

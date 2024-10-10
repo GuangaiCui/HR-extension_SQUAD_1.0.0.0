@@ -175,8 +175,8 @@ report 53067 "Retenção Mensal de IRS"
             }
             dataitem("Hist. Linhas Movs. EmpregadoA"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Tipo Rubrica" = CONST(Desconto));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Payroll Item Type" = CONST(Desconto));
 
                 trigger OnAfterGetRecord()
                 begin
@@ -185,7 +185,7 @@ report 53067 "Retenção Mensal de IRS"
                         CurrReport.Skip
                     else begin
                         TabRubrica.Reset;
-                        TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. EmpregadoA"."Cód. Rubrica");
+                        TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. EmpregadoA"."Payroll Item Code");
                         TabRubrica.SetRange(TabRubrica."Imposto Extraordinário", false);//2011.11.25
                         TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", false);//2013.01.14 Normatica
                         if TabRubrica.FindFirst then begin
@@ -197,7 +197,7 @@ report 53067 "Retenção Mensal de IRS"
                             end;
                         end;
                         TabRubrica.Reset;
-                        TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. EmpregadoA"."Cód. Rubrica");
+                        TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. EmpregadoA"."Payroll Item Code");
                         TabRubrica.SetRange(TabRubrica."Sobretaxa em Sede de IRS", true);//2013.01.14 ormatica
                         if TabRubrica.FindFirst then begin
                             if (TabRubrica.Genero = TabRubrica.Genero::IRS) or
@@ -293,8 +293,8 @@ report 53067 "Retenção Mensal de IRS"
             }
             dataitem("Hist. Linhas Movs. EmpregadoB"; "Hist. Linhas Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Tipo Rubrica" = CONST(Desconto));
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha") WHERE("Tipo Processamento" = FILTER(<> Encargos), "Payroll Item Type" = CONST(Desconto));
 
                 trigger OnAfterGetRecord()
                 begin
@@ -302,7 +302,7 @@ report 53067 "Retenção Mensal de IRS"
                         CurrReport.Skip
                     else begin
                         TabRubrica.Reset;
-                        TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. EmpregadoB"."Cód. Rubrica");
+                        TabRubrica.SetRange(TabRubrica.Código, "Hist. Linhas Movs. EmpregadoB"."Payroll Item Code");
                         if TabRubrica.FindFirst then begin
                             if (TabRubrica.Genero = TabRubrica.Genero::IRS) or
                                (TabRubrica.Genero = TabRubrica.Genero::"IRS Sub. Férias") or
@@ -471,7 +471,7 @@ report 53067 "Retenção Mensal de IRS"
 
     var
         TabConfEmpresa: Record "Company Information";
-        TabRubrica: Record "Rubrica Salarial";
+        TabRubrica: Record "Payroll Item";
         VarIRS: Decimal;
         TotalIRSA: Decimal;
         TotalIRSB: Decimal;

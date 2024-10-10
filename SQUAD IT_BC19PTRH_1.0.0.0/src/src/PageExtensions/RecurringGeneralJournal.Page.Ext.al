@@ -7,7 +7,7 @@ pageextension 53038 RecurringGeneralJournalRH extends "Recurring General Journal
 
         {
 
-            field("No. Empregado"; Rec."No. Empregado")
+            field("Employee No."; Rec."Employee No.")
 
             {
 

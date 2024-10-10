@@ -19,7 +19,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                 rCabMovEmpregado.Reset;
                 rCabMovEmpregado.SetFilter(rCabMovEmpregado."Tipo Processamento", '<>%1', rCabMovEmpregado."Tipo Processamento"::Encargos);
                 rCabMovEmpregado.SetRange(rCabMovEmpregado."Cód. Processamento", CodProc);
-                rCabMovEmpregado.SetRange(rCabMovEmpregado."No. Empregado", Empregado."No.");
+                rCabMovEmpregado.SetRange(rCabMovEmpregado."Employee No.", Empregado."No.");
                 if not rCabMovEmpregado.FindFirst then
                     CurrReport.Skip;
 
@@ -61,13 +61,13 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                 rLinhasMovEmpregado.Reset;
                 rLinhasMovEmpregado.SetFilter(rLinhasMovEmpregado."Tipo Processamento", '<>%1', rLinhasMovEmpregado."Tipo Processamento"::Encargos);
                 rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Cód. Processamento", CodProc);
-                rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."No. Empregado", Empregado."No.");
-                rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Tipo Rubrica", rLinhasMovEmpregado."Tipo Rubrica"::Desconto);
+                rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Employee No.", Empregado."No.");
+                rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Payroll Item Type", rLinhasMovEmpregado."Payroll Item Type"::Desconto);
                 if rLinhasMovEmpregado.FindSet then begin
                     repeat
                         //IRS
                         rRubSal.Reset;
-                        rRubSal.SetRange(rRubSal.Código, rLinhasMovEmpregado."Cód. Rubrica");
+                        rRubSal.SetRange(rRubSal.Código, rLinhasMovEmpregado."Payroll Item Code");
                         rRubSal.SetFilter(rRubSal.Genero, '%1|%2|%3', rRubSal.Genero::IRS, rRubSal.Genero::"IRS Sub. Férias",
                                           rRubSal.Genero::"IRS Sub. Natal");
                         rRubSal.SetRange(rRubSal."Imposto Extraordinário", false);
@@ -77,14 +77,14 @@ report 53081 "Sobretaxa em Sede IRS 2013"
 
                         //SS
                         rRubSal.Reset;
-                        rRubSal.SetRange(rRubSal.Código, rLinhasMovEmpregado."Cód. Rubrica");
+                        rRubSal.SetRange(rRubSal.Código, rLinhasMovEmpregado."Payroll Item Code");
                         rRubSal.SetRange(rRubSal.Genero, rRubSal.Genero::SS);
                         if rRubSal.FindFirst then
                             ValorSS := rLinhasMovEmpregado.Valor;
 
                         //ADSE
                         rRubSal.Reset;
-                        rRubSal.SetRange(rRubSal.Código, rLinhasMovEmpregado."Cód. Rubrica");
+                        rRubSal.SetRange(rRubSal.Código, rLinhasMovEmpregado."Payroll Item Code");
                         rRubSal.SetRange(rRubSal.Genero, rRubSal.Genero::ADSE);
                         if rRubSal.FindFirst then
                             ValorADSE := rLinhasMovEmpregado.Valor;
@@ -92,7 +92,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                         //CGA
                         if Empregado."Professor Acumulação" = false then begin
                             rRubSal.Reset;
-                            rRubSal.SetRange(rRubSal.Código, rLinhasMovEmpregado."Cód. Rubrica");
+                            rRubSal.SetRange(rRubSal.Código, rLinhasMovEmpregado."Payroll Item Code");
                             rRubSal.SetRange(rRubSal.Genero, rRubSal.Genero::CGA);
                             if rRubSal.FindFirst then
                                 ValorCGA := rLinhasMovEmpregado.Valor;
@@ -103,7 +103,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                 //Para saber se este processamento tem rubrica de VB (pois no caso de proc. autonomo de Seb. férias não existe VB)
                 rLinhasMovEmpregado3.Reset;
                 rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Cód. Processamento", CodProc);
-                rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."No. Empregado", Empregado."No.");
+                rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Employee No.", Empregado."No.");
                 rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3.NATREM, rLinhasMovEmpregado3.NATREM::"Remuneração Permanente");
                 if rLinhasMovEmpregado3.FindSet then
                     OrdenadoMinimo := rConfRH."Ordenado Mínimo";
@@ -114,8 +114,8 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                 if rRubSal.FindFirst then begin
                     rLinhasMovEmpregado3.Reset;
                     rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Cód. Processamento", CodProc);
-                    rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."No. Empregado", Empregado."No.");
-                    rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Cód. Rubrica", rRubSal.Código);
+                    rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Employee No.", Empregado."No.");
+                    rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Payroll Item Code", rRubSal.Código);
                     if rLinhasMovEmpregado3.FindFirst then
                         OrdenadoMinimo := Abs(rConfRH."Ordenado Mínimo" * (Empregado."Valor Vencimento Base" - Abs(rLinhasMovEmpregado3.Valor)) / Empregado."Valor Vencimento Base");
                 end;
@@ -123,7 +123,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                 //Para saber o Prop. do Ordenado minimo relativamente ao Sub. Férias e Duo SF
                 rLinhasMovEmpregado3.Reset;
                 rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Cód. Processamento", CodProc);
-                rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."No. Empregado", Empregado."No.");
+                rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Employee No.", Empregado."No.");
                 rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3.NATREM, rLinhasMovEmpregado3.NATREM::"Cód. Sub. Férias");
                 if rLinhasMovEmpregado3.FindSet then begin
                     repeat
@@ -135,7 +135,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                 //Para saber o Prop. do Ordenado minimo relativamente ao Sub. Natal e Duo SN
                 rLinhasMovEmpregado3.Reset;
                 rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Cód. Processamento", CodProc);
-                rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."No. Empregado", Empregado."No.");
+                rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3."Employee No.", Empregado."No.");
                 rLinhasMovEmpregado3.SetRange(rLinhasMovEmpregado3.NATREM, rLinhasMovEmpregado3.NATREM::"Cód. Sub. Natal");
                 if rLinhasMovEmpregado3.FindSet then begin
                     repeat
@@ -154,14 +154,14 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                 //Ver se a linha do imposto já exite, e se existir apaga-a
                 rLinhasMovEmpregado.Reset;
                 rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Cód. Processamento", CodProc);
-                rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."No. Empregado", Empregado."No.");
-                rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Cód. Rubrica", CodRub);
+                rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Employee No.", Empregado."No.");
+                rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Payroll Item Code", CodRub);
                 if rLinhasMovEmpregado.FindFirst then
                     rLinhasMovEmpregado.Delete;
 
                 rAbonosDesc.Reset;
-                rAbonosDesc.SetRange(rAbonosDesc."No. Empregado", Empregado."No.");
-                rAbonosDesc.SetRange(rAbonosDesc."Cód. Rubrica", CodRub);
+                rAbonosDesc.SetRange(rAbonosDesc."Employee No.", Empregado."No.");
+                rAbonosDesc.SetRange(rAbonosDesc."Payroll Item Code", CodRub);
                 if rAbonosDesc.FindFirst then
                     rAbonosDesc.Delete;
 
@@ -174,14 +174,14 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                     rRubSal.SetRange(rRubSal.Código, CodRub);
                     rRubSal.SetRange(rRubSal.Genero, rRubSal.Genero::IRS);
                     rRubSal.SetRange(rRubSal."Sobretaxa em Sede de IRS", true);
-                    rRubSal.SetRange(rRubSal."Tipo Rubrica", rRubSal."Tipo Rubrica"::Desconto);
+                    rRubSal.SetRange(rRubSal."Payroll Item Type", rRubSal."Payroll Item Type"::Desconto);
                     if rRubSal.FindFirst then;
 
                     //Procura o ultimo numero linha usado
                     rLinhasMovEmpregado.Reset;
-                    rLinhasMovEmpregado.SetCurrentKey("Cód. Processamento", "No. Empregado", "No. Linha");
+                    rLinhasMovEmpregado.SetCurrentKey("Cód. Processamento", "Employee No.", "No. Linha");
                     rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Cód. Processamento", CodProc);
-                    rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."No. Empregado", Empregado."No.");
+                    rLinhasMovEmpregado.SetRange(rLinhasMovEmpregado."Employee No.", Empregado."No.");
                     if rLinhasMovEmpregado.FindLast then
                         numlinha := rLinhasMovEmpregado."No. Linha" + 10000;
 
@@ -189,25 +189,25 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                     rLinhasMovEmpregado2.Init;
                     rLinhasMovEmpregado2.Validate(rLinhasMovEmpregado2."Cód. Processamento", CodProc);
                     rLinhasMovEmpregado2."Tipo Processamento" := rPeriodosProces."Tipo Processamento";
-                    rLinhasMovEmpregado2.Validate(rLinhasMovEmpregado2."No. Empregado", Empregado."No.");
+                    rLinhasMovEmpregado2.Validate(rLinhasMovEmpregado2."Employee No.", Empregado."No.");
                     rLinhasMovEmpregado2."No. Linha" := numlinha;
                     rLinhasMovEmpregado2."Data Registo" := rPeriodosProces."Data Registo";
-                    rLinhasMovEmpregado2.Validate(rLinhasMovEmpregado2."Cód. Rubrica", CodRub);
-                    rLinhasMovEmpregado2."No. Conta a Debitar" := rRubSal."No. Conta a Debitar";
-                    rLinhasMovEmpregado2."No. Conta a Creditar" := rRubSal."No. Conta a Creditar";
-                    rLinhasMovEmpregado2.Quantidade := PerSobretaxa;
+                    rLinhasMovEmpregado2.Validate(rLinhasMovEmpregado2."Payroll Item Code", CodRub);
+                    rLinhasMovEmpregado2."Debit Acc. No." := rRubSal."Debit Acc. No.";
+                    rLinhasMovEmpregado2."Credit Acc. No." := rRubSal."Credit Acc. No.";
+                    rLinhasMovEmpregado2.Quantity := PerSobretaxa;
                     rLinhasMovEmpregado2.Valor := -ValorImposto;
                     rLinhasMovEmpregado2.Insert;
 
                     rAbonosDesc.Init;
-                    rAbonosDesc.Validate(rAbonosDesc."No. Empregado", Empregado."No.");
-                    rAbonosDesc.Data := rPeriodosProces."Data Registo";
-                    rAbonosDesc.Validate(rAbonosDesc."Cód. Rubrica", CodRub);
-                    rAbonosDesc.Quantidade := PerSobretaxa;
-                    rAbonosDesc.UnidadeMedida := '';
-                    rAbonosDesc."Valor Unitário" := ValorImposto;
+                    rAbonosDesc.Validate(rAbonosDesc."Employee No.", Empregado."No.");
+                    rAbonosDesc.Date := rPeriodosProces."Data Registo";
+                    rAbonosDesc.Validate(rAbonosDesc."Payroll Item Code", CodRub);
+                    rAbonosDesc.Quantity := PerSobretaxa;
+                    rAbonosDesc."Unit of Measure" := '';
+                    rAbonosDesc."Unit Value" := ValorImposto;
                     rAbonosDesc."Valor Total" := ValorImposto;
-                    rAbonosDesc."Abono - Desconto Bloqueado" := true;
+                    rAbonosDesc."Earning - Blocked Deduction" := true;
                     rAbonosDesc.Insert(true);
                 end;
             end;
@@ -219,7 +219,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                 rRubSal.SetRange(rRubSal.Código, CodRub);
                 rRubSal.SetRange(rRubSal.Genero, rRubSal.Genero::IRS);
                 rRubSal.SetRange(rRubSal."Sobretaxa em Sede de IRS", true);
-                rRubSal.SetRange(rRubSal."Tipo Rubrica", rRubSal."Tipo Rubrica"::Desconto);
+                rRubSal.SetRange(rRubSal."Payroll Item Type", rRubSal."Payroll Item Type"::Desconto);
                 if not rRubSal.FindFirst then
                     Error(Text0003);
 
@@ -253,7 +253,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                     {
 
                         Caption = 'Cód. Rúbrica Imposto Extraordinário';
-                        TableRelation = "Rubrica Salarial";
+                        TableRelation = "Payroll Item";
                     }
                 }
             }
@@ -269,7 +269,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
             rRubSal.Reset;
             rRubSal.SetRange(rRubSal.Genero, rRubSal.Genero::IRS);
             rRubSal.SetRange(rRubSal."Sobretaxa em Sede de IRS", true);
-            rRubSal.SetRange(rRubSal."Tipo Rubrica", rRubSal."Tipo Rubrica"::Desconto);
+            rRubSal.SetRange(rRubSal."Payroll Item Type", rRubSal."Payroll Item Type"::Desconto);
             if rRubSal.FindFirst then
                 CodRub := rRubSal.Código
             else
@@ -308,7 +308,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
         rLinhasMovEmpregado: Record "Linhas Movs. Empregado";
         rLinhasMovEmpregado2: Record "Linhas Movs. Empregado";
         rLinhasMovEmpregado3: Record "Linhas Movs. Empregado";
-        rRubSal: Record "Rubrica Salarial";
+        rRubSal: Record "Payroll Item";
         rAbonosDesc: Record "Abonos - Descontos Extra";
         rConfRH: Record "Config. Recursos Humanos";
         CodProc: Code[10];
@@ -348,7 +348,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
         rRubSal.Reset;
         rRubSal.SetRange(rRubSal.Genero, rRubSal.Genero::IRS);
         rRubSal.SetRange(rRubSal."Sobretaxa em Sede de IRS", true);
-        rRubSal.SetRange(rRubSal."Tipo Rubrica", rRubSal."Tipo Rubrica"::Desconto);
+        rRubSal.SetRange(rRubSal."Payroll Item Type", rRubSal."Payroll Item Type"::Desconto);
         if rRubSal.FindFirst then
             CodRub := rRubSal.Código;
 

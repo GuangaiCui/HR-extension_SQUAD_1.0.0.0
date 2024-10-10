@@ -158,8 +158,8 @@ report 53046 "Mapa Transferência Bancária"
             dataitem("Cab. Movs. Empregado"; "Cab. Movs. Empregado")
             {
                 CalcFields = Valor;
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado") ORDER(Ascending);
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.") ORDER(Ascending);
 
                 trigger OnAfterGetRecord()
                 begin
@@ -175,7 +175,7 @@ report 53046 "Mapa Transferência Bancária"
                         Flag := true;
 
                     //2008.05.04  - passa a ir buscar o Nib e o nome do empregado ao processamento e não há ficha
-                    Num := "Cab. Movs. Empregado"."No. Empregado";
+                    Num := "Cab. Movs. Empregado"."Employee No.";
                     vIBAN := "Cab. Movs. Empregado".IBAN;
                     Nome := "Cab. Movs. Empregado"."Designação Empregado";
                 end;
@@ -220,8 +220,8 @@ report 53046 "Mapa Transferência Bancária"
             }
             dataitem("Hist. Cab. Movs. Empregado"; "Hist. Cab. Movs. Empregado")
             {
-                DataItemLink = "No. Empregado" = FIELD("No.");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado");
+                DataItemLink = "Employee No." = FIELD("No.");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.");
 
                 trigger OnAfterGetRecord()
                 begin
@@ -236,7 +236,7 @@ report 53046 "Mapa Transferência Bancária"
                         Flag := true;
 
                     //2008.05.04  - passa a ir buscar o Nib e o nome do empredao ao processamento e não á ficha pois pode mudar
-                    Num := "Hist. Cab. Movs. Empregado"."No. Empregado";
+                    Num := "Hist. Cab. Movs. Empregado"."Employee No.";
                     vIBAN := "Hist. Cab. Movs. Empregado".IBAN;
                     Nome := "Hist. Cab. Movs. Empregado"."Designação Empregado";
                 end;
@@ -322,7 +322,7 @@ report 53046 "Mapa Transferência Bancária"
                 vIBAN := '';
 
                 _HistCabEmp.Reset;
-                _HistCabEmp.SetRange("No. Empregado", Empregado."No.");
+                _HistCabEmp.SetRange("Employee No.", Empregado."No.");
 
                 if FiltroCodProc = '' then begin
                     if (FiltroDataInicProc <> '') and (FiltroDataFimProc <> '') then begin
@@ -347,7 +347,7 @@ report 53046 "Mapa Transferência Bancária"
                     TemHistMovEmp := true;
 
                 _CabMovEmp.Reset;
-                _CabMovEmp.SetRange("No. Empregado", Empregado."No.");
+                _CabMovEmp.SetRange("Employee No.", Empregado."No.");
 
                 if FiltroCodProc = '' then begin
                     if (FiltroDataInicProc <> '') and (FiltroDataFimProc <> '') then begin

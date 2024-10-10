@@ -125,7 +125,7 @@ page 53057 "Folha Comentários RH"
 
             HRCommentLine."Table Name"::Inac:
                 begin
-                    InactividadeEmpregado.SetRange(InactividadeEmpregado."No. Empregado", HRCommentLine."No.");
+                    InactividadeEmpregado.SetRange(InactividadeEmpregado."Employee No.", HRCommentLine."No.");
                     InactividadeEmpregado.SetRange(InactividadeEmpregado."No. Linha", HRCommentLine."Table Line No.");
                     if (InactividadeEmpregado.Find('-')) and (Employee.Get(HRCommentLine."No."))
                     then
@@ -136,7 +136,7 @@ page 53057 "Folha Comentários RH"
 
             HRCommentLine."Table Name"::CatProf:
                 begin
-                    CatProfInternaEmp.SetRange(CatProfInternaEmp."No. Empregado", HRCommentLine."No.");
+                    CatProfInternaEmp.SetRange(CatProfInternaEmp."Employee No.", HRCommentLine."No.");
                     CatProfInternaEmp.SetRange(CatProfInternaEmp."No. Linha", HRCommentLine."Table Line No.");
                     if (CatProfInternaEmp.Find('-')) and (Employee.Get(HRCommentLine."No."))
                     then
@@ -147,7 +147,7 @@ page 53057 "Folha Comentários RH"
 
             HRCommentLine."Table Name"::CatProfQP:
                 begin
-                    CatProfQPEmp.SetRange(CatProfQPEmp."No. Empregado", HRCommentLine."No.");
+                    CatProfQPEmp.SetRange(CatProfQPEmp."Employee No.", HRCommentLine."No.");
                     CatProfQPEmp.SetRange(CatProfQPEmp."No. Linha", HRCommentLine."Table Line No.");
                     if (CatProfQPEmp.Find('-')) and (Employee.Get(HRCommentLine."No."))
                     then
@@ -158,7 +158,7 @@ page 53057 "Folha Comentários RH"
 
             HRCommentLine."Table Name"::Grau:
                 begin
-                    GrauEmpregado.SetRange(GrauEmpregado."No. Empregado", HRCommentLine."No.");
+                    GrauEmpregado.SetRange(GrauEmpregado."Employee No.", HRCommentLine."No.");
                     GrauEmpregado.SetRange(GrauEmpregado."No. Linha", HRCommentLine."Table Line No.");
                     if (GrauEmpregado.Find('-')) and (Employee.Get(HRCommentLine."No."))
                     then
@@ -179,7 +179,7 @@ page 53057 "Folha Comentários RH"
 
             HRCommentLine."Table Name"::HorEx:
                 if HoraExtraEmpregado.Get(HRCommentLine."Table Line No.") then begin
-                    Employee.Get(HoraExtraEmpregado."No. Empregado");
+                    Employee.Get(HoraExtraEmpregado."Employee No.");
                     exit(
                       Employee."No." + ' ' + Employee.FullName + ' ' +
                       HoraExtraEmpregado."Cód. Hora Extra" + ' ' +
@@ -189,7 +189,7 @@ page 53057 "Folha Comentários RH"
 
             HRCommentLine."Table Name"::HHorEx:
                 if HistHoraExtra.Get(HRCommentLine."Table Line No.") then begin
-                    Employee.Get(HistHoraExtra."No. Empregado");
+                    Employee.Get(HistHoraExtra."Employee No.");
                     exit(
                       Employee."No." + ' ' + Employee.FullName + ' ' +
                       HistHoraExtra."Cód. Hora Extra" + ' ' +

@@ -20,11 +20,11 @@ report 53047 "Integração Contabilística"
             dataitem("Movs. Empregado"; "Hist. Linhas Movs. Empregado")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "No. Empregado", "No. Linha");
+                DataItemTableView = SORTING("Cód. Processamento", "Tipo Processamento", "Employee No.", "No. Linha");
 
                 trigger OnAfterGetRecord()
                 begin
-                    if ("Movs. Empregado".Valor = 0.0) or (("Movs. Empregado"."No. Conta a Debitar" = '') and ("Movs. Empregado"."No. Conta a Creditar" = '')) then
+                    if ("Movs. Empregado".Valor = 0.0) or (("Movs. Empregado"."Debit Acc. No." = '') and ("Movs. Empregado"."Credit Acc. No." = '')) then
                         CurrReport.Skip; //não enviar valores a zero
 
                     //-----------------------------------------------------------
@@ -39,25 +39,25 @@ report 53047 "Integração Contabilística"
                     //Testa se as contas estão preenchidas e se são menores e se existem, caso contrario dá um aviso
                     //-----------------------------------------------------------------
                     /*
-                    IF "Movs. Empregado"."No. Conta a Debitar" = '' THEN
-                       MESSAGE(Text0005,"Movs. Empregado"."Descrição Rubrica","Movs. Empregado"."No. Empregado");
+                    IF "Movs. Empregado"."Debit Acc. No." = '' THEN
+                       MESSAGE(Text0005,"Movs. Empregado"."Payroll Item Description","Movs. Empregado"."Employee No.");
                     
-                    IF "Movs. Empregado"."No. Conta a Creditar" = '' THEN
-                       MESSAGE(Text0005,"Movs. Empregado"."Descrição Rubrica","Movs. Empregado"."No. Empregado");
+                    IF "Movs. Empregado"."Credit Acc. No." = '' THEN
+                       MESSAGE(Text0005,"Movs. Empregado"."Payroll Item Description","Movs. Empregado"."Employee No.");
                     
-                    IF TabContaAux.GET("Movs. Empregado"."No. Conta a Debitar") THEN BEGIN
+                    IF TabContaAux.GET("Movs. Empregado"."Debit Acc. No.") THEN BEGIN
                        IF TabContaAux."Account Type" = TabContaAux."Account Type"::Heading THEN
-                          MESSAGE(Text0006,"Movs. Empregado"."No. Empregado","Movs. Empregado"."No. Conta a Debitar"
-                                  ,"Movs. Empregado"."Descrição Rubrica");
+                          MESSAGE(Text0006,"Movs. Empregado"."Employee No.","Movs. Empregado"."Debit Acc. No."
+                                  ,"Movs. Empregado"."Payroll Item Description");
                     END ELSE
-                      MESSAGE(Text0007,"Movs. Empregado"."No. Conta a Debitar");
+                      MESSAGE(Text0007,"Movs. Empregado"."Debit Acc. No.");
                     
-                    IF TabContaAux.GET("Movs. Empregado"."No. Conta a Creditar") THEN BEGIN
+                    IF TabContaAux.GET("Movs. Empregado"."Credit Acc. No.") THEN BEGIN
                        IF TabContaAux."Account Type" = TabContaAux."Account Type"::Heading THEN
-                          MESSAGE(Text0006,"Movs. Empregado"."No. Empregado","Movs. Empregado"."No. Conta a Creditar"
-                                  ,"Movs. Empregado"."Descrição Rubrica");
+                          MESSAGE(Text0006,"Movs. Empregado"."Employee No.","Movs. Empregado"."Credit Acc. No."
+                                  ,"Movs. Empregado"."Payroll Item Description");
                     END ELSE
-                      MESSAGE(Text0007,"Movs. Empregado"."No. Conta a Creditar");
+                      MESSAGE(Text0007,"Movs. Empregado"."Credit Acc. No.");
                     */
                     //-----------------------------------
                     //Faltas com contas diferentes
@@ -66,18 +66,18 @@ report 53047 "Integração Contabilística"
 
                     Clear(TotAbonos);
                     TabRubSal.Reset;
-                    if TabRubSal.Get("Movs. Empregado"."Cód. Rubrica") then begin
+                    if TabRubSal.Get("Movs. Empregado"."Payroll Item Code") then begin
                         if TabRubSal.Genero = TabRubSal.Genero::Falta then begin
                             //Percorrer todos os abonos deste empregado e soma o valor daqueles
                             //que são do tipo vencimento base e/ou tem o pisco no campo faltas
                             AuxLinhasMovEmp.Reset;
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Cód. Processamento", "Movs. Empregado"."Cód. Processamento");
-                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."No. Empregado", "Movs. Empregado"."No. Empregado");
-                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Tipo Rubrica", AuxLinhasMovEmp."Tipo Rubrica"::Abono);
+                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Employee No.", "Movs. Empregado"."Employee No.");
+                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Payroll Item Type", AuxLinhasMovEmp."Payroll Item Type"::Abono);
                             if AuxLinhasMovEmp.FindSet then begin
                                 repeat
                                     TabRubSal2.Reset;
-                                    if TabRubSal2.Get(AuxLinhasMovEmp."Cód. Rubrica") then
+                                    if TabRubSal2.Get(AuxLinhasMovEmp."Payroll Item Code") then
                                         if (TabRubSal2.Faults = true) or (TabRubSal2.Genero = TabRubSal2.Genero::"Vencimento Base") then
                                             TotAbonos := TotAbonos + AuxLinhasMovEmp.Valor;
                                 until AuxLinhasMovEmp.Next = 0;
@@ -89,18 +89,18 @@ report 53047 "Integração Contabilística"
                             Clear(NLinha2);
                             AuxLinhasMovEmp.Reset;
                             AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Cód. Processamento", "Movs. Empregado"."Cód. Processamento");
-                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."No. Empregado", "Movs. Empregado"."No. Empregado");
-                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Tipo Rubrica", AuxLinhasMovEmp."Tipo Rubrica"::Abono);
+                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Employee No.", "Movs. Empregado"."Employee No.");
+                            AuxLinhasMovEmp.SetRange(AuxLinhasMovEmp."Payroll Item Type", AuxLinhasMovEmp."Payroll Item Type"::Abono);
                             if AuxLinhasMovEmp.FindSet then begin
                                 repeat
                                     TabRubSal2.Reset;
-                                    if TabRubSal2.Get(AuxLinhasMovEmp."Cód. Rubrica") then
+                                    if TabRubSal2.Get(AuxLinhasMovEmp."Payroll Item Code") then
                                         if (TabRubSal2.Faults) or (TabRubSal2.Genero = TabRubSal2.Genero::"Vencimento Base") then begin
                                             NLinha2 := NLinha2 + 10000;
                                             TempLinhasMovEmp.Init;
                                             TempLinhasMovEmp.TransferFields("Movs. Empregado");
                                             TempLinhasMovEmp."No. Linha" := NLinha2;
-                                            TempLinhasMovEmp."No. Conta a Creditar" := AuxLinhasMovEmp."No. Conta a Debitar";
+                                            TempLinhasMovEmp."Credit Acc. No." := AuxLinhasMovEmp."Debit Acc. No.";
                                             TempLinhasMovEmp.Valor := "Movs. Empregado".Valor * AuxLinhasMovEmp.Valor / TotAbonos;
                                             TempLinhasMovEmp.Insert;
                                         end;
@@ -127,7 +127,7 @@ report 53047 "Integração Contabilística"
             dataitem(DimDistribuir; "Integração Contabilistica")
             {
                 DataItemLink = "Cód. Processamento" = FIELD("Cód. Processamento");
-                DataItemTableView = SORTING("No. Empregado", "Cód. Rubrica") WHERE("No. Conta" = FILTER('6*'));
+                DataItemTableView = SORTING("Employee No.", "Payroll Item Code") WHERE("No. Conta" = FILTER('6*'));
 
                 trigger OnAfterGetRecord()
                 var
@@ -148,8 +148,8 @@ report 53047 "Integração Contabilística"
                     /*IT005
                     //Ir buscar o último nº de linha usado
                     GenJnl.RESET;
-                    GenJnl.SETRANGE(GenJnl."Journal Template Name",TabConfRH."Nome Livro Diario");
-                    GenJnl.SETRANGE(GenJnl."Journal Batch Name",TabConfRH."Secção Diario");
+                    GenJnl.SETRANGE(GenJnl."Journal Template Name",TabConfRH."Journal Template Name");
+                    GenJnl.SETRANGE(GenJnl."Journal Batch Name",TabConfRH."Journal Batch Name");
                     IF GenJnl.FINDLAST THEN
                       LastMov := GenJnl."Line No."
                     ELSE
@@ -158,8 +158,8 @@ report 53047 "Integração Contabilística"
                     // Ir buscar o ultimo Nº do Documento
                     CLEAR(NoSeriesMgt);
                     TabSeccaoDiarioGeral.RESET;
-                    TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral."Journal Template Name",TabConfRH."Nome Livro Diario");
-                    TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral.Name,TabConfRH."Secção Diario");
+                    TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral."Journal Template Name",TabConfRH."Journal Template Name");
+                    TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral.Name,TabConfRH."Journal Batch Name");
                     IF TabSeccaoDiarioGeral.FIND('-') THEN
                       NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series",WORKDATE,FALSE)
                     ELSE
@@ -174,7 +174,7 @@ report 53047 "Integração Contabilística"
                     // Este If é por causa das horas extra que podem vir com dimensão já definida e então ignora a distribuição
                     if DimDistribuir."Global Dimension 1 Code" = '' then begin
                         TabEmpregadoDistribCustos.Reset;
-                        TabEmpregadoDistribCustos.SetRange(TabEmpregadoDistribCustos."No. Empregado", DimDistribuir."No. Empregado");
+                        TabEmpregadoDistribCustos.SetRange(TabEmpregadoDistribCustos."Employee No.", DimDistribuir."Employee No.");
                         if TabEmpregadoDistribCustos.FindSet then begin
                             repeat
                                 if (TabEmpregadoDistribCustos."Data Inicio" <= "Periodos Processamento"."Data Inicio Processamento") and
@@ -186,8 +186,8 @@ report 53047 "Integração Contabilística"
                                         TabCodSerie.TestField("Integração Vencimentos");
 
                                     GenJnl.Init;
-                                    GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                    GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                    GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                    GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                     GenJnl.Validate("Line No.", LastMov);
                                     GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                     GenJnl.Validate("Account No.", DimDistribuir."No. Conta");
@@ -232,7 +232,7 @@ report 53047 "Integração Contabilística"
                                     if TabEmpregadoDistribCustos."Shortcut Dimension 8 Code" <> '' then
                                         DimMgt.ValidateShortcutDimValues(8, TabEmpregadoDistribCustos."Shortcut Dimension 8 Code", GenJnl."Dimension Set ID");
 
-                                    GenJnl."No. Empregado" := DimDistribuir."No. Empregado";
+                                    GenJnl."Employee No." := DimDistribuir."Employee No.";
                                     GenJnl."Source Code" := TabCodSerie."Integração Vencimentos";
                                     //Para o caso do utilizador apagar as linhas do diario sem registar
                                     //nos sabermos a que processamento corresponde e desta forma tirarmos o pisco
@@ -247,7 +247,7 @@ report 53047 "Integração Contabilística"
                             //************************************************************************************************
                             EmpDefaultDim.Reset;
                             EmpDefaultDim.SetRange(EmpDefaultDim."Table ID", 53035);
-                            EmpDefaultDim.SetRange(EmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                            EmpDefaultDim.SetRange(EmpDefaultDim."No.", DimDistribuir."Employee No.");
                             EmpDefaultDim.SetFilter(EmpDefaultDim."Dimension Value Code", '<>%1', '');
                             if EmpDefaultDim.FindFirst then begin
                                 LastMov := LastMov + 10000;
@@ -257,8 +257,8 @@ report 53047 "Integração Contabilística"
                                     TabCodSerie.TestField("Integração Vencimentos");
 
                                 GenJnl.Init;
-                                GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                 GenJnl.Validate("Account No.", DimDistribuir."No. Conta");
@@ -280,7 +280,7 @@ report 53047 "Integração Contabilística"
                                 if GenLedgerSetup."Global Dimension 1 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Global Dimension 1 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -290,7 +290,7 @@ report 53047 "Integração Contabilística"
                                 if GenLedgerSetup."Global Dimension 2 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Global Dimension 2 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -300,7 +300,7 @@ report 53047 "Integração Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 3 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 3 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -310,7 +310,7 @@ report 53047 "Integração Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 4 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 4 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -320,7 +320,7 @@ report 53047 "Integração Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 5 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 5 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -330,7 +330,7 @@ report 53047 "Integração Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 6 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 6 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -340,7 +340,7 @@ report 53047 "Integração Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 7 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 7 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
@@ -350,14 +350,14 @@ report 53047 "Integração Contabilística"
                                 if GenLedgerSetup."Shortcut Dimension 8 Code" <> '' then begin
                                     AuxEmpDefaultDim.Reset;
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Table ID", 53035);
-                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."No. Empregado");
+                                    AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."No.", DimDistribuir."Employee No.");
                                     AuxEmpDefaultDim.SetRange(AuxEmpDefaultDim."Dimension Code", GenLedgerSetup."Shortcut Dimension 8 Code");
                                     AuxEmpDefaultDim.SetFilter(AuxEmpDefaultDim."Dimension Value Code", '<>%1', '');
                                     if AuxEmpDefaultDim.Find('-') then
                                         DimMgt.ValidateShortcutDimValues(8, AuxEmpDefaultDim."Dimension Value Code", GenJnl."Dimension Set ID");
                                 end;
 
-                                GenJnl."No. Empregado" := DimDistribuir."No. Empregado";
+                                GenJnl."Employee No." := DimDistribuir."Employee No.";
                                 GenJnl."Source Code" := TabCodSerie."Integração Vencimentos";
                                 //Para o caso do utilizador apagar as linhas do diario sem registar
                                 //nos sabermos a que processamento corresponde e desta forma tirarmos o pisco
@@ -376,8 +376,8 @@ report 53047 "Integração Contabilística"
                                     TabCodSerie.TestField("Integração Vencimentos");
 
                                 GenJnl.Init;
-                                GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                 GenJnl.Validate("Account No.", DimDistribuir."No. Conta");
@@ -397,7 +397,7 @@ report 53047 "Integração Contabilística"
                                 if DimDistribuir."Valor Crédito" <> 0 then
                                     GenJnl.Validate("Credit Amount", DimDistribuir."Valor Crédito");
 
-                                GenJnl."No. Empregado" := DimDistribuir."No. Empregado";
+                                GenJnl."Employee No." := DimDistribuir."Employee No.";
                                 GenJnl."Source Code" := TabCodSerie."Integração Vencimentos";
                                 GenJnl."Dimension Set ID" := DimDistribuir."Dimension Set ID";
                                 //Para o caso do utilizador apagar as linhas do diario sem registar
@@ -411,8 +411,8 @@ report 53047 "Integração Contabilística"
                     end else begin
                         LastMov := LastMov + 10000;
                         GenJnl.Init;
-                        GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                        GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                        GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                        GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                         GenJnl.Validate("Line No.", LastMov);
                         GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                         GenJnl.Validate("Account No.", DimDistribuir."No. Conta");
@@ -434,7 +434,7 @@ report 53047 "Integração Contabilística"
 
                         GenJnl.Validate(GenJnl."Shortcut Dimension 1 Code", DimDistribuir."Global Dimension 1 Code");
                         GenJnl.Validate(GenJnl."Shortcut Dimension 2 Code", DimDistribuir."Global Dimension 2 Code");
-                        GenJnl."No. Empregado" := DimDistribuir."No. Empregado";
+                        GenJnl."Employee No." := DimDistribuir."Employee No.";
                         GenJnl."Posting No. Series" := nSerieReg;//IT005
                         GenJnl.Insert;
                     end;
@@ -483,8 +483,8 @@ report 53047 "Integração Contabilística"
                             /*IT005
                             //Ir buscar o último nº de linha usado
                             GenJnl.RESET;
-                            GenJnl.SETRANGE(GenJnl."Journal Template Name",TabConfRH."Nome Livro Diario");
-                            GenJnl.SETRANGE(GenJnl."Journal Batch Name",TabConfRH."Secção Diario");
+                            GenJnl.SETRANGE(GenJnl."Journal Template Name",TabConfRH."Journal Template Name");
+                            GenJnl.SETRANGE(GenJnl."Journal Batch Name",TabConfRH."Journal Batch Name");
                             IF GenJnl.FINDLAST THEN
                               LastMov := GenJnl."Line No."
                             ELSE
@@ -493,8 +493,8 @@ report 53047 "Integração Contabilística"
                             // Ir buscar o ultimo Nº do Documento
                             CLEAR(NoSeriesMgt);
                             TabSeccaoDiarioGeral.RESET;
-                            TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral."Journal Template Name",TabConfRH."Nome Livro Diario");
-                            TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral.Name,TabConfRH."Secção Diario");
+                            TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral."Journal Template Name",TabConfRH."Journal Template Name");
+                            TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral.Name,TabConfRH."Journal Batch Name");
                             IF TabSeccaoDiarioGeral.FINDFIRST THEN
                               NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series",WORKDATE,FALSE)
                             ELSE
@@ -511,8 +511,8 @@ report 53047 "Integração Contabilística"
                                 TabCodSerie.TestField("Integração Vencimentos");
 
                             GenJnl.Init;
-                            GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                            GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                            GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                            GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                             GenJnl.Validate("Line No.", LastMov);
                             GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                             GenJnl.Validate("Account No.", DimNDistribuir."No. Conta");
@@ -532,7 +532,7 @@ report 53047 "Integração Contabilística"
                             if DimNDistribuir."Valor Crédito" <> 0 then
                                 GenJnl.Validate("Credit Amount", DimNDistribuir."Valor Crédito");
 
-                            GenJnl."No. Empregado" := DimNDistribuir."No. Empregado";
+                            GenJnl."Employee No." := DimNDistribuir."Employee No.";
                             GenJnl."Source Code" := TabCodSerie."Integração Vencimentos";
                             //Para o caso do utilizador apagar as linhas do diario sem registar
                             //nos sabermos a que processamento corresponde e desta forma tirarmos o pisco
@@ -565,8 +565,8 @@ report 53047 "Integração Contabilística"
                                 /*IT005
                                 //Ir buscar o último nº de linha usado
                                 GenJnl.RESET;
-                                GenJnl.SETRANGE(GenJnl."Journal Template Name",TabConfRH."Nome Livro Diario");
-                                GenJnl.SETRANGE(GenJnl."Journal Batch Name",TabConfRH."Secção Diario");
+                                GenJnl.SETRANGE(GenJnl."Journal Template Name",TabConfRH."Journal Template Name");
+                                GenJnl.SETRANGE(GenJnl."Journal Batch Name",TabConfRH."Journal Batch Name");
                                 IF GenJnl.FINDLAST THEN
                                    LastMov := GenJnl."Line No."
                                 ELSE
@@ -575,8 +575,8 @@ report 53047 "Integração Contabilística"
                                 // Ir buscar o ultimo Nº do Documento
                                 CLEAR(NoSeriesMgt);
                                 TabSeccaoDiarioGeral.RESET;
-                                TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral."Journal Template Name",TabConfRH."Nome Livro Diario");
-                                TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral.Name,TabConfRH."Secção Diario");
+                                TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral."Journal Template Name",TabConfRH."Journal Template Name");
+                                TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral.Name,TabConfRH."Journal Batch Name");
                                 IF TabSeccaoDiarioGeral.FIND('-') THEN
                                   NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series",WORKDATE,FALSE)
                                 ELSE
@@ -593,8 +593,8 @@ report 53047 "Integração Contabilística"
                                     TabCodSerie.TestField("Integração Vencimentos");
 
                                 GenJnl.Init;
-                                GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                 GenJnl.Validate("Account No.", NConta);
@@ -650,8 +650,8 @@ report 53047 "Integração Contabilística"
                                 /*IT005
                                 //Ir buscar o último nº de linha usado
                                 GenJnl.RESET;
-                                GenJnl.SETRANGE(GenJnl."Journal Template Name",TabConfRH."Nome Livro Diario");
-                                GenJnl.SETRANGE(GenJnl."Journal Batch Name",TabConfRH."Secção Diario");
+                                GenJnl.SETRANGE(GenJnl."Journal Template Name",TabConfRH."Journal Template Name");
+                                GenJnl.SETRANGE(GenJnl."Journal Batch Name",TabConfRH."Journal Batch Name");
                                 IF GenJnl.FIND('+') THEN
                                    LastMov := GenJnl."Line No."
                                 ELSE
@@ -660,8 +660,8 @@ report 53047 "Integração Contabilística"
                                 // Ir buscar o ultimo Nº do Documento
                                 CLEAR(NoSeriesMgt);
                                 TabSeccaoDiarioGeral.RESET;
-                                TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral."Journal Template Name",TabConfRH."Nome Livro Diario");
-                                TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral.Name,TabConfRH."Secção Diario");
+                                TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral."Journal Template Name",TabConfRH."Journal Template Name");
+                                TabSeccaoDiarioGeral.SETRANGE(TabSeccaoDiarioGeral.Name,TabConfRH."Journal Batch Name");
                                 IF TabSeccaoDiarioGeral.FINDFIRST THEN
                                   NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series",WORKDATE,FALSE)
                                 ELSE
@@ -677,8 +677,8 @@ report 53047 "Integração Contabilística"
                                     TabCodSerie.TestField("Integração Vencimentos");
 
                                 GenJnl.Init;
-                                GenJnl.Validate("Journal Template Name", TabConfRH."Nome Livro Diario");
-                                GenJnl.Validate("Journal Batch Name", TabConfRH."Secção Diario");
+                                GenJnl.Validate("Journal Template Name", TabConfRH."Journal Template Name");
+                                GenJnl.Validate("Journal Batch Name", TabConfRH."Journal Batch Name");
                                 GenJnl.Validate("Line No.", LastMov);
                                 GenJnl.Validate("Account Type", GenJnl."Account Type"::"G/L Account");
                                 GenJnl.Validate("Account No.", NConta);
@@ -728,17 +728,17 @@ report 53047 "Integração Contabilística"
                     Clear(varEmpregado);
                     Clear(varConta);
                     GenJnl.Reset;
-                    GenJnl.SetCurrentKey(GenJnl."No. Empregado", GenJnl."Account No.");
+                    GenJnl.SetCurrentKey(GenJnl."Employee No.", GenJnl."Account No.");
                     GenJnl.SetFilter(GenJnl."Account No.", '6*');
                     if GenJnl.Find('-') then begin
                         repeat
-                            if (varEmpregado <> '') and ((varEmpregado <> GenJnl."No. Empregado") or (varConta <> GenJnl."Account No.")) then begin
+                            if (varEmpregado <> '') and ((varEmpregado <> GenJnl."Employee No.") or (varConta <> GenJnl."Account No.")) then begin
 
                                 Clear(varTotalHistorico);
                                 l_HistMovEmp.Reset;
                                 l_HistMovEmp.SetRange(l_HistMovEmp."Cód. Processamento", "Periodos Processamento"."Cód. Processamento");
-                                l_HistMovEmp.SetRange(l_HistMovEmp."No. Empregado", varEmpregado);
-                                l_HistMovEmp.SetRange(l_HistMovEmp."No. Conta a Debitar", varConta);
+                                l_HistMovEmp.SetRange(l_HistMovEmp."Employee No.", varEmpregado);
+                                l_HistMovEmp.SetRange(l_HistMovEmp."Debit Acc. No.", varConta);
                                 if l_HistMovEmp.FindSet then begin
                                     repeat
                                         varTotalHistorico := varTotalHistorico + l_HistMovEmp.Valor
@@ -754,11 +754,11 @@ report 53047 "Integração Contabilística"
 
                                 Clear(varTotalDiario);
                                 varTotalDiario := GenJnl."Debit Amount"; //GenJnl.Amount;
-                                varEmpregado := GenJnl."No. Empregado";
+                                varEmpregado := GenJnl."Employee No.";
                                 varConta := GenJnl."Account No.";
 
                             end else begin
-                                varEmpregado := GenJnl."No. Empregado";
+                                varEmpregado := GenJnl."Employee No.";
                                 varConta := GenJnl."Account No.";
                                 varTotalDiario := varTotalDiario + GenJnl."Debit Amount";
                             end;
@@ -804,8 +804,8 @@ report 53047 "Integração Contabilística"
                 //IT005,sn
                 //Ir buscar o último nº de linha usado
                 GenJnl.Reset;
-                GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Nome Livro Diario");
-                GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Secção Diario");
+                GenJnl.SetRange(GenJnl."Journal Template Name", TabConfRH."Journal Template Name");
+                GenJnl.SetRange(GenJnl."Journal Batch Name", TabConfRH."Journal Batch Name");
                 if GenJnl.FindLast then
                     LastMov := GenJnl."Line No."
                 else
@@ -814,8 +814,8 @@ report 53047 "Integração Contabilística"
                 // Ir buscar o ultimo Nº do Documento
                 Clear(NoSeriesMgt);
                 TabSeccaoDiarioGeral.Reset;
-                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Nome Livro Diario");
-                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Secção Diario");
+                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral."Journal Template Name", TabConfRH."Journal Template Name");
+                TabSeccaoDiarioGeral.SetRange(TabSeccaoDiarioGeral.Name, TabConfRH."Journal Batch Name");
                 if TabSeccaoDiarioGeral.Find('-') then begin
                     NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series", WorkDate, true);
                     nSerieReg := TabSeccaoDiarioGeral."Posting No. Series";//IT005
@@ -923,8 +923,8 @@ report 53047 "Integração Contabilística"
         FooterPrinted: Boolean;
         NumDocDif: Boolean;
         NEmp: Code[20];
-        TabRubSal: Record "Rubrica Salarial";
-        TabRubSal2: Record "Rubrica Salarial";
+        TabRubSal: Record "Payroll Item";
+        TabRubSal2: Record "Payroll Item";
         AuxLinhasMovEmp: Record "Hist. Linhas Movs. Empregado";
         TempLinhasMovEmp: Record "Hist. Linhas Movs. Empregado" temporary;
         TotAbonos: Decimal;
@@ -954,24 +954,24 @@ report 53047 "Integração Contabilística"
         TabIntegracaoContab.Init;
         TabIntegracaoContab."Cód. Processamento" := MovsEmp."Cód. Processamento";
         TabIntegracaoContab."Tipo Processamento" := MovsEmp."Tipo Processamento";
-        TabIntegracaoContab."No. Empregado" := MovsEmp."No. Empregado";
+        TabIntegracaoContab."Employee No." := MovsEmp."Employee No.";
         TabIntegracaoContab."No. Linha" := NLinha;
         TabIntegracaoContab."Data Registo" := WorkDate;
         TabIntegracaoContab."Designação Empregado" := MovsEmp."Designação Empregado";
-        TabIntegracaoContab."Cód. Rubrica" := MovsEmp."Cód. Rubrica";
-        TabIntegracaoContab."Descrição Rubrica" := MovsEmp."Descrição Rubrica";
-        TabIntegracaoContab."Tipo Rubrica" := MovsEmp."Tipo Rubrica";
-        TabIntegracaoContab."No. Conta" := MovsEmp."No. Conta a Debitar";
+        TabIntegracaoContab."Payroll Item Code" := MovsEmp."Payroll Item Code";
+        TabIntegracaoContab."Payroll Item Description" := MovsEmp."Payroll Item Description";
+        TabIntegracaoContab."Payroll Item Type" := MovsEmp."Payroll Item Type";
+        TabIntegracaoContab."No. Conta" := MovsEmp."Debit Acc. No.";
         //Se for Abono Negativo troca a coluna e o sinal
         //***************************************************************************************
-        if (MovsEmp."Tipo Rubrica" = MovsEmp."Tipo Rubrica"::Abono) and
+        if (MovsEmp."Payroll Item Type" = MovsEmp."Payroll Item Type"::Abono) and
           (MovsEmp.Valor < 0) then begin
             TabIntegracaoContab."Valor Débito" := 0;
             TabIntegracaoContab."Valor Crédito" := Abs(MovsEmp.Valor);
         end else begin
             //Se for Desconto Negativo troca o sinal
             //***************************************************************************************
-            if MovsEmp."Tipo Rubrica" = MovsEmp."Tipo Rubrica"::Desconto then
+            if MovsEmp."Payroll Item Type" = MovsEmp."Payroll Item Type"::Desconto then
                 TabIntegracaoContab."Valor Débito" := Abs(MovsEmp.Valor)
             else
                 TabIntegracaoContab."Valor Débito" := MovsEmp.Valor;
@@ -989,18 +989,18 @@ report 53047 "Integração Contabilística"
         TabIntegracaoContab.Init;
         TabIntegracaoContab."Cód. Processamento" := MovsEmp."Cód. Processamento";
         TabIntegracaoContab."Tipo Processamento" := MovsEmp."Tipo Processamento";
-        TabIntegracaoContab."No. Empregado" := MovsEmp."No. Empregado";
+        TabIntegracaoContab."Employee No." := MovsEmp."Employee No.";
         TabIntegracaoContab."No. Linha" := NLinha;
         TabIntegracaoContab."Data Registo" := WorkDate;
         TabIntegracaoContab."Designação Empregado" := MovsEmp."Designação Empregado";
-        TabIntegracaoContab."Cód. Rubrica" := MovsEmp."Cód. Rubrica";
-        TabIntegracaoContab."Descrição Rubrica" := MovsEmp."Descrição Rubrica";
-        TabIntegracaoContab."Tipo Rubrica" := MovsEmp."Tipo Rubrica";
-        TabIntegracaoContab."No. Conta" := MovsEmp."No. Conta a Creditar";
+        TabIntegracaoContab."Payroll Item Code" := MovsEmp."Payroll Item Code";
+        TabIntegracaoContab."Payroll Item Description" := MovsEmp."Payroll Item Description";
+        TabIntegracaoContab."Payroll Item Type" := MovsEmp."Payroll Item Type";
+        TabIntegracaoContab."No. Conta" := MovsEmp."Credit Acc. No.";
 
         //Se for Abono Negativo troca a coluna e o sinal
         //***************************************************************************************
-        if (MovsEmp."Tipo Rubrica" = MovsEmp."Tipo Rubrica"::Abono) and
+        if (MovsEmp."Payroll Item Type" = MovsEmp."Payroll Item Type"::Abono) and
           (MovsEmp.Valor < 0) then begin
             TabIntegracaoContab."Valor Débito" := Abs(MovsEmp.Valor);
             TabIntegracaoContab."Valor Crédito" := 0;
@@ -1008,7 +1008,7 @@ report 53047 "Integração Contabilística"
             TabIntegracaoContab."Valor Débito" := 0;
             //Se for Desconto Negativo troca o sinal
             //***************************************************************************************
-            if MovsEmp."Tipo Rubrica" = MovsEmp."Tipo Rubrica"::Desconto then
+            if MovsEmp."Payroll Item Type" = MovsEmp."Payroll Item Type"::Desconto then
                 TabIntegracaoContab."Valor Crédito" := Abs(MovsEmp.Valor)
             else
                 TabIntegracaoContab."Valor Crédito" := MovsEmp.Valor;

@@ -3,7 +3,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
 {
     AutoSplitKey = true;
     Caption = 'Categoria Prof. Empregado QP';
-    DataCaptionFields = "No. Empregado";
+    DataCaptionFields = "Employee No.";
     DelayedInsert = true;
     PageType = List;
     SourceTable = "Cat. Prof. QP Empregado";
@@ -17,7 +17,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("No. Empregado"; Rec."No. Empregado")
+                field("Employee No."; Rec."Employee No.")
                 {
 
 
@@ -99,7 +99,7 @@ page 53077 "Lista Cat. Prof. Emp. QP"
                     Image = ViewComments;
                     RunObject = Page "Folha Comentários RH";
                     RunPageLink = "Table Name" = CONST(CatProfQP),
-                                  "No." = FIELD("No. Empregado"),
+                                  "No." = FIELD("Employee No."),
                                   "Table Line No." = FIELD("No. Linha");
                 }
             }

@@ -11,8 +11,8 @@ report 53086 "Horario Empregado"
     {
         dataitem("Horário Empregado"; "Horário Empregado")
         {
-            DataItemTableView = SORTING("No. Empregado", "Data Iníco Horário", "Dia da Semana");
-            RequestFilterFields = "No. Empregado", "Data Iníco Horário", "Data Fim Horário";
+            DataItemTableView = SORTING("Employee No.", "Data Iníco Horário", "Dia da Semana");
+            RequestFilterFields = "Employee No.", "Data Iníco Horário", "Data Fim Horário";
             column(FORMAT_TODAY_0_4_; Format(Today, 0, 4))
             {
             }
@@ -61,7 +61,7 @@ report 53086 "Horario Empregado"
             column("Período_de___Caption"; Período_de___CaptionLbl)
             {
             }
-            column("Horário_Empregado___No__Empregado_Caption"; FieldCaption("No. Empregado"))
+            column("Horário_Empregado___No__Empregado_Caption"; FieldCaption("Employee No."))
             {
             }
             column(NomeCaption; NomeCaptionLbl)
@@ -91,7 +91,7 @@ report 53086 "Horario Empregado"
             column(Dia_da_SemanaCaption; Dia_da_SemanaCaptionLbl)
             {
             }
-            column("Horário_Empregado_No__Empregado"; "No. Empregado")
+            column("Horário_Empregado_No__Empregado"; "Employee No.")
             {
             }
             column("Horário_Empregado_Cód__Horário"; "Cód. Horário")
@@ -110,7 +110,7 @@ report 53086 "Horario Empregado"
             {
                 DataItemLink = "Código" = FIELD("Cód. Horário");
                 DataItemTableView = SORTING("Código") ORDER(Ascending);
-                column("Horário_Empregado___No__Empregado_"; "Horário Empregado"."No. Empregado")
+                column("Horário_Empregado___No__Empregado_"; "Horário Empregado"."Employee No.")
                 {
                 }
                 column(NomeEmpregado; NomeEmpregado)
@@ -146,7 +146,7 @@ report 53086 "Horario Empregado"
 
                 trigger OnAfterGetRecord()
                 begin
-                    if rEmpregado.Get("Horário Empregado"."No. Empregado") then
+                    if rEmpregado.Get("Horário Empregado"."Employee No.") then
                         NomeEmpregado := rEmpregado.Name
                     else
                         NomeEmpregado := '';
@@ -155,7 +155,7 @@ report 53086 "Horario Empregado"
 
             trigger OnPreDataItem()
             begin
-                LastFieldNo := FieldNo("No. Empregado");
+                LastFieldNo := FieldNo("Employee No.");
 
                 DataInicio := "Horário Empregado".GetFilter("Horário Empregado"."Data Iníco Horário");
                 DataFim := "Horário Empregado".GetFilter("Horário Empregado"."Data Fim Horário");
