@@ -40,7 +40,7 @@
 
     <div id="content">
 
-      <p class="heading1">iTIMEws</p><br>
+      <p class="heading1">iTIMEws</p><br />
 
       
 
@@ -56,33 +56,33 @@
           The test form is only available for requests from the local machine.
                  <span>
               <h3>SOAP 1.1</h3>
-              <p>The following is a sample SOAP 1.1 request and response.  The <font class=value>placeholders</font> shown need to be replaced with actual values.</p>
+              <p>The following is a sample SOAP 1.1 request and response.  The <font class="value">placeholders</font> shown need to be replaced with actual values.</p>
 
               <pre>POST /itimews/itimews.asmx HTTP/1.1
 Host: itimeweb.com
 Content-Type: text/xml; charset=utf-8
-Content-Length: <font class=value>length</font>
+Content-Length: <font class="value">length</font>
 SOAPAction: "https://itimeweb.com/delUtilizadores"
 
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;soap:Body&gt;
     &lt;delUtilizadores xmlns="https://itimeweb.com/"&gt;
-      &lt;sigla&gt;<font class=value>string</font>&lt;/sigla&gt;
-      &lt;nNumero&gt;<font class=value>int</font>&lt;/nNumero&gt;
+      &lt;sigla&gt;<font class="value">string</font>&lt;/sigla&gt;
+      &lt;nNumero&gt;<font class="value">int</font>&lt;/nNumero&gt;
     &lt;/delUtilizadores&gt;
   &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;</pre>
 
               <pre>HTTP/1.1 200 OK
 Content-Type: text/xml; charset=utf-8
-Content-Length: <font class=value>length</font>
+Content-Length: <font class="value">length</font>
 
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;soap:Body&gt;
     &lt;delUtilizadoresResponse xmlns="https://itimeweb.com/"&gt;
-      &lt;delUtilizadoresResult&gt;<font class=value>string</font>&lt;/delUtilizadoresResult&gt;
+      &lt;delUtilizadoresResult&gt;<font class="value">string</font>&lt;/delUtilizadoresResult&gt;
     &lt;/delUtilizadoresResponse&gt;
   &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;</pre>
@@ -90,36 +90,37 @@ Content-Length: <font class=value>length</font>
 
           <span>
               <h3>SOAP 1.2</h3>
-              <p>The following is a sample SOAP 1.2 request and response.  The <font class=value>placeholders</font> shown need to be replaced with actual values.</p>
+              <p>The following is a sample SOAP 1.2 request and response.  The <font class="value">placeholders</font> shown need to be replaced with actual values.</p>
 
               <pre>POST /itimews/itimews.asmx HTTP/1.1
 Host: itimeweb.com
 Content-Type: application/soap+xml; charset=utf-8
-Content-Length: <font class=value>length</font>
+Content-Length: <font class="value">length</font>
 
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
   &lt;soap12:Body&gt;
     &lt;delUtilizadores xmlns="https://itimeweb.com/"&gt;
-      &lt;sigla&gt;<font class=value>string</font>&lt;/sigla&gt;
-      &lt;nNumero&gt;<font class=value>int</font>&lt;/nNumero&gt;
+      &lt;sigla&gt;<font class="value">string</font>&lt;/sigla&gt;
+      &lt;nNumero&gt;<font class="value">int</font>&lt;/nNumero&gt;
     &lt;/delUtilizadores&gt;
   &lt;/soap12:Body&gt;
 &lt;/soap12:Envelope&gt;</pre>
 
               <pre>HTTP/1.1 200 OK
 Content-Type: application/soap+xml; charset=utf-8
-Content-Length: <font class=value>length</font>
+Content-Length: <font class="value">length</font>
 
 &lt;?xml version="1.0" encoding="utf-8"?&gt;
 &lt;soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"&gt;
   &lt;soap12:Body&gt;
     &lt;delUtilizadoresResponse xmlns="https://itimeweb.com/"&gt;
-      &lt;delUtilizadoresResult&gt;<font class=value>string</font>&lt;/delUtilizadoresResult&gt;
+      &lt;delUtilizadoresResult&gt;<font class="value">string</font>&lt;/delUtilizadoresResult&gt;
     &lt;/delUtilizadoresResponse&gt;
   &lt;/soap12:Body&gt;
 &lt;/soap12:Envelope&gt;</pre>
           </span>
       </span>
+      </div>
   </body>
 </html>

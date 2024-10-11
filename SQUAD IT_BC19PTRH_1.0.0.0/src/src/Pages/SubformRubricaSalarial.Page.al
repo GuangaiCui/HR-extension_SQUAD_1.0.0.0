@@ -1,19 +1,16 @@
-#pragma implicitwith disable
 page 53099 "Subform Rubrica Salarial"
 {
     AutoSplitKey = true;
-    DelayedInsert = true;
-    MultipleNewLines = true;
+    ApplicationArea = All;
+    Caption = 'teste_vc';
     PageType = ListPart;
     SourceTable = "Rubrica Salarial Linhas";
-
     layout
     {
-        area(content)
+        area(Content)
         {
             repeater(Control1101490000)
             {
-                ShowCaption = false;
                 field("Cód. Rubrica Filha"; Rec."Cód. Rubrica Filha")
                 {
 
@@ -22,11 +19,11 @@ page 53099 "Subform Rubrica Salarial"
                 field("Descrição Rubrica Filha"; Rec."Descrição Rubrica Filha")
                 {
 
-
+                    Editable = false;
                 }
                 field("Tipo Rubrica Filha"; Rec."Tipo Rubrica Filha")
                 {
-
+                    Editable = false;
 
                 }
                 field(Percentagem; Rec.Percentagem)
@@ -42,11 +39,6 @@ page 53099 "Subform Rubrica Salarial"
             }
         }
     }
-
-    actions
-    {
-    }
 }
 
-#pragma implicitwith restore
 

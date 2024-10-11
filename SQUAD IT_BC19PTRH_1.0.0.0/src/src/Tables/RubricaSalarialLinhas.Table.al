@@ -1,24 +1,25 @@
 table 53077 "Rubrica Salarial Linhas"
 {
+    Caption = 'Rubrica Salarial Linhas';
 
     fields
     {
         field(1; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Cód. Rubrica';
-            TableRelation = "Payroll Item";
+            Caption = 'Salary Iten Code';
+            TableRelation = "Rubrica Salarial";
         }
         field(2; "Cód. Rubrica Filha"; Code[20])
         {
             Caption = 'Second Salary Iten Code';
-            TableRelation = "Payroll Item";
+            TableRelation = "Rubrica Salarial";
 
             trigger OnValidate()
             begin
                 if TabRubrica.Get("Cód. Rubrica Filha") then begin
                     "Descrição Rubrica Filha" := TabRubrica.Descrição;
-                    "Tipo Rubrica Filha" := TabRubrica."Payroll Item Type";
-                    if rRubrica.Get("Payroll Item Code") then begin
+                    "Tipo Rubrica Filha" := TabRubrica."Tipo Rubrica";
+                    if rRubrica.Get("Cód. Rubrica") then begin
                         if rRubrica.Genero = rRubrica.Genero::SS then
                             if TabRubrica.NATREM = TabRubrica.NATREM::" " then
                                 Error(Text001, "Cód. Rubrica Filha");
