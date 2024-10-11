@@ -406,7 +406,7 @@ report 53052 "Mapa CGA - Aberto"
                                         DecNumDias := 0.0;
 
                                     if "Linhas Movs. Empregado"."Cód. Movimento" <> 1 then
-                                        ValorRemuneracao := TabHistAbonDescExtra."Valor Total"
+                                        ValorRemuneracao := TabHistAbonDescExtra."Total Amount"
                                     else
                                         ValorRemuneracao := 0;
 

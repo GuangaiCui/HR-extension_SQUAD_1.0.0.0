@@ -30,7 +30,7 @@ table 53074 "Abonos - Descontos Extra"
                 "Payroll Item Description" := TabRubrica.Descrição;
                 Quantity := TabRubrica.Quantity;
                 "Unit Value" := TabRubrica."Unit Value";
-                "Valor Total" := TabRubrica."Valor Total";
+                "Total Amount" := TabRubrica."Total Amount";
             end;
         }
         field(9; "Payroll Item Type"; Option)
@@ -45,11 +45,11 @@ table 53074 "Abonos - Descontos Extra"
         }
         field(14; Quantity; Decimal)
         {
-            Caption = 'Quantity';
+            Caption = 'Quantidade';
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantity * "Unit Value";
+                "Total Amount" := Quantity * "Unit Value";
             end;
         }
         field(15; "Unit Value"; Decimal)
@@ -58,12 +58,12 @@ table 53074 "Abonos - Descontos Extra"
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantity * "Unit Value";
+                "Total Amount" := Quantity * "Unit Value";
             end;
         }
-        field(16; "Valor Total"; Decimal)
+        field(16; "Total Amount"; Decimal)
         {
-            Caption = 'Total Amount';
+            Caption = 'Valor Total';
         }
         field(17; "Unit of Measure"; Code[20])
         {
@@ -97,14 +97,14 @@ table 53074 "Abonos - Descontos Extra"
             Caption = 'Data a que se refere o Mov.';
             Description = 'Para aparecer no Fic. Seg. Social e CGA com a data do mês a que se refere a falta ou acerto venc, etc...';
         }
-        field(40; "Qtd. Perca Sub. Alimentação"; Integer)
+        field(40; "Qty. Food Subsidy Loss"; Integer)
         {
-            Caption = 'Loss of Lunch Subsidy Qtd.';
+            Caption = 'Qtd. Perca Sub. Alimentação';
             Description = 'Para nas Admissões Demissões abater o Sub. Alimentação';
         }
-        field(60; "Garnishmen No."; Code[50])
+        field(60; "Garnishment No."; Code[50])
         {
-            Caption = 'Garnishmen No.';
+            Caption = 'No. Penhora';
             DataClassification = ToBeClassified;
         }
     }

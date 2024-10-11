@@ -26,7 +26,7 @@ table 53078 "Rubrica Salarial Empregado"
                 "Credit Acc. No." := TabRubrica."Credit Acc. No.";
                 Quantity := TabRubrica.Quantity;
                 "Unit Value" := TabRubrica."Unit Value";
-                "Valor Total" := TabRubrica."Valor Total";
+                "Total Amount" := TabRubrica."Total Amount";
 
                 "Cód. Situação" := TabRubrica."Cód. Situação"; //CGA
             end;
@@ -82,8 +82,8 @@ table 53078 "Rubrica Salarial Empregado"
             trigger OnValidate()
             begin
                 //HG
-                //Validate("Valor Total", Round(Quantity * "Unit Value", 0.01));
-                "Valor Total" := Quantity * "Unit Value";
+                //Validate("Total Amount", Round(Quantity * "Unit Value", 0.01));
+                "Total Amount" := Quantity * "Unit Value";
             end;
         }
         field(21; "Unit Value"; Decimal)
@@ -93,13 +93,13 @@ table 53078 "Rubrica Salarial Empregado"
             trigger OnValidate()
             begin
                 //HG
-                //Validate("Valor Total", Round(Quantity * "Unit Value", 0.01));
-                "Valor Total" := Quantity * "Unit Value";
+                //Validate("Total Amount", Round(Quantity * "Unit Value", 0.01));
+                "Total Amount" := Quantity * "Unit Value";
             end;
         }
-        field(22; "Valor Total"; Decimal)
+        field(22; "Total Amount"; Decimal)
         {
-            Caption = 'Total Value';
+            Caption = 'Valor Total';
             trigger OnValidate()
             begin
                 //HG - Não deixar colocar valor na rubrica se esta tiver filhas, pois neste caso o valor é o somatório das filhas

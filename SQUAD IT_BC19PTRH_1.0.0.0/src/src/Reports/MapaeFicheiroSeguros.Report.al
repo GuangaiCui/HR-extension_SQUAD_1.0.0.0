@@ -1080,7 +1080,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                             Date2DMY(TabHistAboDesExtra."Reference Date", 3)) then begin
                                 Encontrou := true;
                                 TempTabHistAboDesExtra.Quantity := TempTabHistAboDesExtra.Quantity + TabHistAboDesExtra.Quantity;
-                                TempTabHistAboDesExtra."Valor Total" := TempTabHistAboDesExtra."Valor Total" + TabHistAboDesExtra."Valor Total";
+                                TempTabHistAboDesExtra."Total Amount" := TempTabHistAboDesExtra."Total Amount" + TabHistAboDesExtra."Total Amount";
                                 TempTabHistAboDesExtra.Modify;
                             end;
                         until (TempTabHistAboDesExtra.Next = 0) or (Encontrou = true);
@@ -1122,15 +1122,15 @@ report 53101 "Mapa e Ficheiro - Seguros"
                     TabTempFichTexto.Texto1 := TabTempFichTexto.Texto1
                      + '0'
                      + strNatrem                                                                               //NATREM
-                     + DelChr(ConvertStr(Format(Round(TempTabHistAboDesExtra."Valor Total",
+                     + DelChr(ConvertStr(Format(Round(TempTabHistAboDesExtra."Total Amount",
                       0.01), 10, '<Sign><Integer><Decimals,3>'), ' ', '0'), '=', ',')  //Valor
                      + '0'                                                                                   //Sinal do valor
                      + Empregado."Class. Nac. Profi."         //profissão
                      + ' ';
                     TabTempFichTexto.Insert;
-                    TotalRemuneracaoes := TotalRemuneracaoes + Round(TempTabHistAboDesExtra."Valor Total", 0.01);//20150904 - acrescentei round
+                    TotalRemuneracaoes := TotalRemuneracaoes + Round(TempTabHistAboDesExtra."Total Amount", 0.01);//20150904 - acrescentei round
                     TotalRegistos := TotalRegistos + 1;
-                    Valorlancar := Valorlancar - TempTabHistAboDesExtra."Valor Total"; //para abater este valor à linha P do vencimento base
+                    Valorlancar := Valorlancar - TempTabHistAboDesExtra."Total Amount"; //para abater este valor à linha P do vencimento base
                 until TempTabHistAboDesExtra.Next = 0;
             end;
         end;
@@ -1348,9 +1348,9 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                                 Encontrou := true;
                                                 TempTabHistAboDesExtra.Quantity := TempTabHistAboDesExtra.Quantity + LHistAbonDescExtra.Quantity;
                                                 if LHistAbonDescExtra."Payroll Item Type" = LHistAbonDescExtra."Payroll Item Type"::Abono then
-                                                    TempTabHistAboDesExtra."Valor Total" := TempTabHistAboDesExtra."Valor Total" + LHistAbonDescExtra."Valor Total";
+                                                    TempTabHistAboDesExtra."Total Amount" := TempTabHistAboDesExtra."Total Amount" + LHistAbonDescExtra."Total Amount";
                                                 if LHistAbonDescExtra."Payroll Item Type" = LHistAbonDescExtra."Payroll Item Type"::Desconto then
-                                                    TempTabHistAboDesExtra."Valor Total" := TempTabHistAboDesExtra."Valor Total" - LHistAbonDescExtra."Valor Total";
+                                                    TempTabHistAboDesExtra."Total Amount" := TempTabHistAboDesExtra."Total Amount" - LHistAbonDescExtra."Total Amount";
                                                 TempTabHistAboDesExtra.Modify;
                                             end;
                                         until (TempTabHistAboDesExtra.Next = 0) or (Encontrou);
@@ -1359,9 +1359,9 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                         TempTabHistAboDesExtra.Init;
                                         TempTabHistAboDesExtra.TransferFields(LHistAbonDescExtra);
                                         if LHistAbonDescExtra."Payroll Item Type" = LHistAbonDescExtra."Payroll Item Type"::Abono then
-                                            TempTabHistAboDesExtra."Valor Total" := LHistAbonDescExtra."Valor Total";
+                                            TempTabHistAboDesExtra."Total Amount" := LHistAbonDescExtra."Total Amount";
                                         if LHistAbonDescExtra."Payroll Item Type" = LHistAbonDescExtra."Payroll Item Type"::Desconto then
-                                            TempTabHistAboDesExtra."Valor Total" := -LHistAbonDescExtra."Valor Total";
+                                            TempTabHistAboDesExtra."Total Amount" := -LHistAbonDescExtra."Total Amount";
                                         TempTabHistAboDesExtra.Insert;
                                     end;
                                 until LHistAbonDescExtra.Next = 0;
@@ -1377,7 +1377,7 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                     //sinal dias trabalho ( - )
                                     //valor positivo
                                     //sinal do valor ( + )
-                                    if TempTabHistAboDesExtra."Valor Total" < 0 then begin
+                                    if TempTabHistAboDesExtra."Total Amount" < 0 then begin
                                         SinalDiasTrabalho := '-';
                                         SinalValor := '-';
                                     end;
@@ -1397,13 +1397,13 @@ report 53101 "Mapa e Ficheiro - Seguros"
                                     TabTempFichTexto.Texto1 := TabTempFichTexto.Texto1
                                      + SinalDiasTrabalho
                                      + strNatrem                                                                               //NATREM
-                                     + DelChr(ConvertStr(Format(Round(Abs(TempTabHistAboDesExtra."Valor Total"),
+                                     + DelChr(ConvertStr(Format(Round(Abs(TempTabHistAboDesExtra."Total Amount"),
                                       0.01), 10, '<Sign><Integer><Decimals,3>'), ' ', '0'), '=', ',')  //Valor
                                      + SinalValor                                                                                    //Sinal do valor
                                      + Empregado."Class. Nac. Profi."         //profissão
                                      + ' ';
                                     TabTempFichTexto.Insert;
-                                    TotalRemuneracaoes := TotalRemuneracaoes + Round(TempTabHistAboDesExtra."Valor Total", 0.01);//20150904 - acrescentei round
+                                    TotalRemuneracaoes := TotalRemuneracaoes + Round(TempTabHistAboDesExtra."Total Amount", 0.01);//20150904 - acrescentei round
                                     TotalRegistos := TotalRegistos + 1;
 
                                 until TempTabHistAboDesExtra.Next = 0;

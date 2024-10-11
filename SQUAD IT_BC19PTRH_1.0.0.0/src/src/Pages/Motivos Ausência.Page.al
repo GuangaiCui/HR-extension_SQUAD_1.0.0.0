@@ -1,7 +1,8 @@
 #pragma implicitwith disable
 page 53045 "Motivos Ausência"
 {
-    Caption = 'Causes of Absence';
+    Caption = 'Causes of Absence SQUAD';
+    //TODO: to change Caption
     PageType = List;
     SourceTable = "Absence Reason";
     UsageCategory = Administration;

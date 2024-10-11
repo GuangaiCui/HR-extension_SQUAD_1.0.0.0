@@ -7,12 +7,12 @@ table 53050 Confidencial
     {
         field(1; "Code"; Code[10])
         {
-            Caption = 'Code';
+            Caption = 'Código';
             NotBlank = true;
         }
         field(2; Description; Text[30])
         {
-            Caption = 'Description';
+            Caption = 'Descrição';
         }
     }
 

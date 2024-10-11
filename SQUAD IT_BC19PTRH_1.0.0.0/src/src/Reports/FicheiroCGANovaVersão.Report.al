@@ -337,7 +337,7 @@ report 53051 "Ficheiro CGA Nova Versão"
                                         DecNumDias := 0.0;
 
                                     if "Hist. Linhas Movs. Empregado"."Cód. Movimento" <> 1 then
-                                        ValorRemuneracao := TabHistAbonDescExtra."Valor Total"
+                                        ValorRemuneracao := TabHistAbonDescExtra."Total Amount"
                                     else
                                         ValorRemuneracao := 0;
 

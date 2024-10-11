@@ -9,7 +9,7 @@ table 53104 "Associações Empregadores"
         }
         field(5; "Associação de Empregadores"; Code[20])
         {
-            Caption = 'Employers Association';
+            //Caption = 'Employers Association';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(AssEmp));
 
             trigger OnValidate()
@@ -25,11 +25,11 @@ table 53104 "Associações Empregadores"
         }
         field(6; "Desc. Associação"; Text[250])
         {
-            Caption = 'Association Description';
+            //Caption = 'Association Description';
         }
         field(7; "Data de Adesão"; Date)
         {
-            Caption = 'Admition Date';
+            //Caption = 'Admition Date';
         }
     }
 

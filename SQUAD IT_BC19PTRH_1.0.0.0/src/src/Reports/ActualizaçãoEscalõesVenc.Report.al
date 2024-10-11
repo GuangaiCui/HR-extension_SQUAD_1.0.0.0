@@ -164,7 +164,7 @@ report 53079 "Actualização Escalões Venc."
         rRubricaSalarialEmp."Data Início" := DataInicio;
         //2009.01.21 - os vencimentos agora são de Janeiro a Dezembro
         rRubricaSalarialEmp."Data Fim" := DMY2Date(31, 12, Date2DMY(DataInicio, 3));
-        rRubricaSalarialEmp."Valor Total" := pValorTotal;
+        rRubricaSalarialEmp."Total Amount" := pValorTotal;
         rRubricaSalarialEmp.Insert;
     end;
 }

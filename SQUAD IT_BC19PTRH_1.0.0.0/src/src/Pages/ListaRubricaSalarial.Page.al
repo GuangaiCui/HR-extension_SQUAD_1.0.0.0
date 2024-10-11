@@ -61,7 +61,7 @@ page 53100 "Lista Rubrica Salarial"
 
 
                 }
-                field("Valor Total"; Rec."Valor Total")
+                field("Total Amount"; Rec."Total Amount")
                 {
 
 

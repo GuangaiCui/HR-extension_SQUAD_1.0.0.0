@@ -55,7 +55,7 @@ page 53101 "Lista Rubrica Salarial Emp."
 
 
                 }
-                field("Valor Total"; Rec."Valor Total")
+                field("Total Amount"; Rec."Total Amount")
                 {
 
 

@@ -88,9 +88,9 @@ report 53040 "Processamento Sub. Natal"
                             TempRubricaEmpregado."Unit of Measure" := "Abonos - Descontos Extra"."Unit of Measure";//2008.10.30
                             TempRubricaEmpregado."Unit Value" := "Abonos - Descontos Extra"."Unit Value";
                             if "Abonos - Descontos Extra"."Payroll Item Type" = "Abonos - Descontos Extra"."Payroll Item Type"::Abono then
-                                TempRubricaEmpregado."Valor Total" := Abs("Abonos - Descontos Extra"."Valor Total")
+                                TempRubricaEmpregado."Total Amount" := Abs("Abonos - Descontos Extra"."Total Amount")
                             else
-                                TempRubricaEmpregado."Valor Total" := -"Abonos - Descontos Extra"."Valor Total";
+                                TempRubricaEmpregado."Total Amount" := -"Abonos - Descontos Extra"."Total Amount";
                             TempRubricaEmpregado.Sort := 300;
                             TempRubricaEmpregado."Cód. Situação" := TabRubricaSalarial."Cód. Situação";
                             TempRubricaEmpregado."Cód. Movimento" := TabRubricaSalarial."Cód. Movimento";
@@ -183,9 +183,9 @@ report 53040 "Processamento Sub. Natal"
                                             RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Fim", '>=%1|=%2',
                                             "Periodos Processamento"."Data Inicio Processamento", 0D);
                                             if RubricaSalaEmpregado2.Find('-') then begin
-                                                TempRubricaEmpregado."Valor Total" := Round(
-                                                                          TempRubricaEmpregado."Valor Total" +
-                                                                          ((RubricaSalaEmpregado2."Valor Total" * RubricaSalariaLinhas2.Percentagem / 100)),
+                                                TempRubricaEmpregado."Total Amount" := Round(
+                                                                          TempRubricaEmpregado."Total Amount" +
+                                                                          ((RubricaSalaEmpregado2."Total Amount" * RubricaSalariaLinhas2.Percentagem / 100)),
                                                                               0.01);
                                             end;
                                         until RubricaSalariaLinhas2.Next = 0;
@@ -237,19 +237,19 @@ report 53040 "Processamento Sub. Natal"
                                                 end;
                                             end;
 
-                                            RubricaSalaEmpregado."Valor Total" := RubricaSalaEmpregado."Valor Total" / 12 * MesesTrabalhados;
+                                            RubricaSalaEmpregado."Total Amount" := RubricaSalaEmpregado."Total Amount" / 12 * MesesTrabalhados;
 
 
                                         end;
 
                                         //TAXA IRS SUB NATAL
                                         //**********************
-                                        ValorTotalSubNatal := Round(ValorTotalSubNatal + RubricaSalaEmpregado."Valor Total", 0.01);
+                                        ValorTotalSubNatal := Round(ValorTotalSubNatal + RubricaSalaEmpregado."Total Amount", 0.01);
 
                                         TempRubricaEmpregado.Quantity := Round(MesesTrabalhados * 30 / 12, 0.01);
-                                        TempRubricaEmpregado."Valor Total" := Round(
-                                                                           TempRubricaEmpregado."Valor Total" +
-                                                                          (RubricaSalaEmpregado."Valor Total" * (RubricaSalariaLinhas.Percentagem / 100)),
+                                        TempRubricaEmpregado."Total Amount" := Round(
+                                                                           TempRubricaEmpregado."Total Amount" +
+                                                                          (RubricaSalaEmpregado."Total Amount" * (RubricaSalariaLinhas.Percentagem / 100)),
                                                                            0.01);
                                     end;
                                 end;
@@ -337,25 +337,25 @@ report 53040 "Processamento Sub. Natal"
                                                     if (TempRubricaEmpregado."Cód. Situação" = '30') or
                                                        (TempRubricaEmpregado."Cód. Situação" = '32') then begin
                                                         if Empregado."Valor Vencimento Base" > GrauFuncao."Max Value" then
-                                                            TempRubricaEmpregado."Valor Total" := TempRubricaEmpregado."Valor Total" *
+                                                            TempRubricaEmpregado."Total Amount" := TempRubricaEmpregado."Total Amount" *
                                                                                                    GrauFuncao."Max Value" /
                                                                                                    Empregado."Valor Vencimento Base";
                                                     end else begin
                                                         //2013.02.06 - se a pessoa ganha acima da tabela então desconta sobre o valor tabela
-                                                        if TempRubricaEmpregado."Valor Total" > GrauFuncao."Max Value" then begin
-                                                            TempRubricaEmpregado."Valor Total" := Round(GrauFuncao."Max Value");
-                                                            TempRubricaEmpregado."Valor Total" := Round(TempRubricaEmpregado."Valor Total", 0.01);
+                                                        if TempRubricaEmpregado."Total Amount" > GrauFuncao."Max Value" then begin
+                                                            TempRubricaEmpregado."Total Amount" := Round(GrauFuncao."Max Value");
+                                                            TempRubricaEmpregado."Total Amount" := Round(TempRubricaEmpregado."Total Amount", 0.01);
                                                         end;
                                                     end;
                                                 end;
                                                 //2008.12.09 - Fim
-                                                TempRubricaEmpregado2."Valor Total" := Round(TempRubricaEmpregado2."Valor Total" +
-                                                      ((TempRubricaEmpregado."Valor Total" - VarValorLimite)
+                                                TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount" +
+                                                      ((TempRubricaEmpregado."Total Amount" - VarValorLimite)
                                                     * RubricaSalariaLinhas.Percentagem / 100), 0.01);
                                             end else begin
                                                 //Calculo normal para os restantes casos
-                                                TempRubricaEmpregado2."Valor Total" := Round(TempRubricaEmpregado2."Valor Total" +
-                                                          ((TempRubricaEmpregado."Valor Total" - VarValorLimite)
+                                                TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount" +
+                                                          ((TempRubricaEmpregado."Total Amount" - VarValorLimite)
                                                           * RubricaSalariaLinhas.Percentagem / 100), 0.01);
                                                 //2007.11.08 - para aparecer a % do desconto na coluna quantidade
                                                 TempRubricaEmpregado2.Quantity := RubricaSalariaLinhas.Percentagem;
@@ -369,17 +369,17 @@ report 53040 "Processamento Sub. Natal"
                             //************************************************
                             if TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::"IRS Sub. Natal" then begin
                                 //Sobretaxa - guarda o valor sobre o qual indice IRS
-                                ValorIncidenciaIRS := ValorIncidenciaIRS + TempRubricaEmpregado2."Valor Total";
+                                ValorIncidenciaIRS := ValorIncidenciaIRS + TempRubricaEmpregado2."Total Amount";
                                 ValorEscalaoSobretaxa := Empregado."Valor Vencimento Base";
                                 if Empregado."IRS % Fixa" = 0.0 then begin
                                     //2009.01.28 - Proporcionais SubNatal
                                     //********************************************
                                     IRSTaxa := FuncoesRH.CalcularTaxaIRS(ValorIncidenciaIRS, Empregado,
                                                                         Date2DMY("Periodos Processamento"."Data Registo", 3));
-                                    TempRubricaEmpregado2."Valor Total" := Round(TempRubricaEmpregado2."Valor Total" * IRSTaxa / 100, 1, '<');
+                                    TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100, 1, '<');
                                     TempRubricaEmpregado2.Quantity := IRSTaxa;
                                 end else begin
-                                    TempRubricaEmpregado2."Valor Total" := Round((TempRubricaEmpregado2."Valor Total")
+                                    TempRubricaEmpregado2."Total Amount" := Round((TempRubricaEmpregado2."Total Amount")
                                                                            * Empregado."IRS % Fixa" / 100, 1, '<');
                                     TempRubricaEmpregado2.Quantity := Empregado."IRS % Fixa";
                                 end;
@@ -391,8 +391,8 @@ report 53040 "Processamento Sub. Natal"
                             if TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::SS then begin
                                 TabRegimeSS.Reset;
                                 if TabRegimeSS.Get(Empregado."Cod. Regime SS") then begin
-                                    VarValorTotal := TempRubricaEmpregado2."Valor Total";
-                                    TempRubricaEmpregado2."Valor Total" := Round(VarValorTotal * TabRegimeSS."Taxa Contributiva Empregado" / 100, 0.01);
+                                    VarValorTotal := TempRubricaEmpregado2."Total Amount";
+                                    TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabRegimeSS."Taxa Contributiva Empregado" / 100, 0.01);
                                     TempRubricaEmpregado2.Quantity := TabRegimeSS."Taxa Contributiva Empregado";
                                     if Empregado."Subscritor SS" = true then Empregado.TestField(Empregado."Cód. Rúbrica Enc. Seg. Social");
                                     ProcessarEncSociais(VarValorTotal, TabRegimeSS."Taxa Contributiva Ent Patronal",
@@ -404,13 +404,13 @@ report 53040 "Processamento Sub. Natal"
                             //****************CGA*****************************
                             //************************************************
                             if TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::CGA then begin
-                                VarValorTotal := TempRubricaEmpregado2."Valor Total";
+                                VarValorTotal := TempRubricaEmpregado2."Total Amount";
                                 //HG 2007.11.05 - Coloquei o IF - Se for professor de acumula?Æo nÆo desconta
                                 if Empregado."Professor Acumulação" = false then begin
-                                    TempRubricaEmpregado2."Valor Total" := Round(VarValorTotal * TabConfRH."Taxa Contributiva Empregado" / 100, 0.01);
+                                    TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabConfRH."Taxa Contributiva Empregado" / 100, 0.01);
                                     TempRubricaEmpregado2.Quantity := TabConfRH."Taxa Contributiva Empregado";
                                 end else begin
-                                    TempRubricaEmpregado2."Valor Total" := 0;
+                                    TempRubricaEmpregado2."Total Amount" := 0;
                                     TempRubricaEmpregado2.Quantity := 0;
                                 end;
                                 if Empregado."Subsccritor CGA" then Empregado.TestField(Empregado."Cód. Rúbrica Enc. CGA");
@@ -426,15 +426,15 @@ report 53040 "Processamento Sub. Natal"
                             //****************ADSE****************************
                             //************************************************
                             if TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::ADSE then begin
-                                VarValorTotal := TempRubricaEmpregado2."Valor Total";
+                                VarValorTotal := TempRubricaEmpregado2."Total Amount";
                                 //se o empregado faltar o mes todo este valor vem a negativo e como tal passo-o para 0
                                 if VarValorTotal < 0 then VarValorTotal := 0;
-                                TempRubricaEmpregado2."Valor Total" := Round(VarValorTotal * TabConfRH."Taxa Contr. Empregado ADSE" / 100, 0.01);
+                                TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabConfRH."Taxa Contr. Empregado ADSE" / 100, 0.01);
                                 TempRubricaEmpregado2.Quantity := TabConfRH."Taxa Contr. Empregado ADSE";
                             end;
 
 
-                            TempRubricaEmpregado2."Valor Total" := -TempRubricaEmpregado2."Valor Total";
+                            TempRubricaEmpregado2."Total Amount" := -TempRubricaEmpregado2."Total Amount";
                             TempRubricaEmpregado2.Insert;
                         end;
                     end;
@@ -520,7 +520,7 @@ report 53040 "Processamento Sub. Natal"
                     TempRubricaEmpregado2.Sort, TempRubricaEmpregado2."Cód. Rúbrica Salarial");
                     if TempRubricaEmpregado2.Find('-') then begin
                         repeat
-                            if TempRubricaEmpregado2."Valor Total" <> 0 then begin
+                            if TempRubricaEmpregado2."Total Amount" <> 0 then begin
                                 if VarCodRubrica <> TempRubricaEmpregado2."Cód. Rúbrica Salarial" then begin
                                     NLinha := NLinha + 10000;
                                     LinhaMovEmpregado.Init;
@@ -537,7 +537,7 @@ report 53040 "Processamento Sub. Natal"
                                     LinhaMovEmpregado."Credit Acc. No." := TempRubricaEmpregado2."Credit Acc. No.";
                                     LinhaMovEmpregado.Quantity := TempRubricaEmpregado2.Quantity;
                                     LinhaMovEmpregado."Unit Value" := TempRubricaEmpregado2."Unit Value";
-                                    LinhaMovEmpregado.Valor := TempRubricaEmpregado2."Valor Total";
+                                    LinhaMovEmpregado.Valor := TempRubricaEmpregado2."Total Amount";
                                     //Preencher o Tipo Rendimento por causa do Anexo J
                                     LinhaMovEmpregado."Tipo Rendimento" := Empregado2."Tipo Rendimento";
                                     //Preenher os campos para a CGA
@@ -556,7 +556,7 @@ report 53040 "Processamento Sub. Natal"
                                     LinhaMovEmpregado.Insert;
                                 end else begin
                                     LinhaMovEmpregado.Quantity := LinhaMovEmpregado.Quantity + TempRubricaEmpregado2.Quantity;
-                                    LinhaMovEmpregado.Valor := LinhaMovEmpregado.Valor + TempRubricaEmpregado2."Valor Total";
+                                    LinhaMovEmpregado.Valor := LinhaMovEmpregado.Valor + TempRubricaEmpregado2."Total Amount";
                                     LinhaMovEmpregado.Modify;
                                 end;
                             end;

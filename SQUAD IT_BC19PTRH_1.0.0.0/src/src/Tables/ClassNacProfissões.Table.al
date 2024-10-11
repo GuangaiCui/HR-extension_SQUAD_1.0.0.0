@@ -7,11 +7,11 @@ table 53071 "Class. Nac. Profissões"
     {
         field(1; "Code"; Code[20])
         {
-            Caption = 'Code';
+            Caption = 'Código';
         }
         field(2; Description; Text[150])
         {
-            Caption = 'Descripton';
+            Caption = 'Descrição';
         }
     }
 

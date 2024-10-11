@@ -245,7 +245,7 @@ report 53104 "Reabrir Processamento"
             column("Histórico_Abonos___Desc__Extra_Quantidade"; Quantity)
             {
             }
-            column("Histórico_Abonos___Desc__Extra__Valor_Total_"; "Valor Total")
+            column("Histórico_Abonos___Desc__Extra__Valor_Total_"; "Total Amount")
             {
             }
             column("Histórico_Abonos___Desc__Extra_UnidadeMedida"; "Unit of Measure")

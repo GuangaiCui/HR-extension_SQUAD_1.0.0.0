@@ -70,7 +70,7 @@ table 53076 "Payroll Item"
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantity * "Unit Value";
+                "Total Amount" := Quantity * "Unit Value";
             end;
         }
         field(26; "Unit Value"; Decimal)
@@ -79,17 +79,17 @@ table 53076 "Payroll Item"
 
             trigger OnValidate()
             begin
-                "Valor Total" := Quantity * "Unit Value";
+                "Total Amount" := Quantity * "Unit Value";
             end;
         }
-        field(27; "Valor Total"; Decimal)
+        field(27; "Total Amount"; Decimal)
         {
-            Caption = 'Total Value';
+            Caption = 'Valor Total';
 
             trigger OnValidate()
             begin
                 if Quantity = 0 then Quantity := 1;
-                "Unit Value" := "Valor Total" / Quantity;
+                "Unit Value" := "Total Amount" / Quantity;
             end;
         }
         field(35; NATREM; Enum "Rubrica Salarial Nat. Rem.")

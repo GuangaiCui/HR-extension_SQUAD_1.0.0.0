@@ -7,64 +7,64 @@ table 53092 "Acções Formação"
     {
         field(1; "Código"; Code[10])
         {
-            Caption = 'Code';
+            //Caption = 'Code';
         }
         field(3; "Descrição"; Text[100])
         {
-            Caption = 'Description';
+            //Caption = 'Description';
         }
         field(5; Tipo; Option)
         {
-            Caption = 'Type';
+            //Caption = 'Type';
             OptionCaption = ' ,Interna,Externa,Outra';
             OptionMembers = " ",Interna,Externa,Outra;
         }
         field(6; "No. Horas Acção"; Decimal)
         {
-            Caption = 'Duration in Hours';
+            //Caption = 'Duration in Hours';
         }
         field(7; "Data Início"; Date)
         {
-            Caption = 'Start Date';
+            //Caption = 'Start Date';
         }
         field(8; "Data Fim"; Date)
         {
-            Caption = 'End Date';
+            //Caption = 'End Date';
         }
         field(9; "Local"; Text[30])
         {
-            Caption = 'Local';
+            //Caption = 'Local';
         }
         field(10; "Nome Entidade Prestadora"; Text[30])
         {
-            Caption = 'Training Organization Name';
+            //Caption = 'Training Organization Name';
         }
         field(11; "Nome Formador"; Text[30])
         {
-            Caption = 'Trainer Name';
+            //Caption = 'Trainer Name';
         }
         field(12; "Custo Acção"; Decimal)
         {
-            Caption = 'Cost';
+            //Caption = 'Cost';
         }
         field(13; "Max. Participantes"; Integer)
         {
-            Caption = 'Maximum of Trainees';
+            //Caption = 'Maximum of Trainees';
         }
         field(14; "Participantes Inscritos"; Integer)
         {
             CalcFormula = Count("Formação Empregado" WHERE("Cód. Acção" = FIELD("Código")));
-            Caption = 'Enrolled Trainees';
+            //Caption = 'Enrolled Trainees';
             FieldClass = FlowField;
         }
         field(20; Objectivos; Text[250])
         {
-            Caption = 'Goals';
+            //Caption = 'Goals';
             Description = 'MISI';
         }
         field(30; "Cod. Área de Educ./Formação"; Code[10])
         {
-            Caption = 'Education Area Code';
+            //Caption = 'Education Area Code';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(AreaEdu));
 
@@ -81,12 +81,12 @@ table 53092 "Acções Formação"
         }
         field(31; "Área de Educação/Formação"; Text[250])
         {
-            Caption = 'Education Area';
+            //Caption = 'Education Area';
             Description = 'RU';
         }
         field(32; "Cod. Modalidade"; Code[10])
         {
-            Caption = 'Modality Code';
+            //Caption = 'Modality Code';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(ModFor));
 
@@ -103,12 +103,12 @@ table 53092 "Acções Formação"
         }
         field(33; Modalidade; Text[250])
         {
-            Caption = 'Modality';
+            //Caption = 'Modality';
             Description = 'RU';
         }
         field(35; "Cod. Entidade Formadora"; Code[10])
         {
-            Caption = 'Training Organization Code';
+            //Caption = 'Training Organization Code';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(EntFor));
 
@@ -125,12 +125,12 @@ table 53092 "Acções Formação"
         }
         field(36; "Entidade Formadora"; Text[250])
         {
-            Caption = 'Training Organization';
+            //Caption = 'Training Organization';
             Description = 'RU';
         }
         field(39; "Cód. Nível Qualificação Form."; Code[10])
         {
-            Caption = 'Code of Qualification Training Level';
+            //Caption = 'Code of Qualification Training Level';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(QualFor));
 
@@ -145,12 +145,12 @@ table 53092 "Acções Formação"
         }
         field(40; "Nível Qualificação Formação"; Text[250])
         {
-            Caption = 'Qualification Training Level';
+            //Caption = 'Qualification Training Level';
             Description = 'RU';
         }
         field(41; "Temp No. Accao"; Integer)
         {
-            Caption = 'Training Temp';
+            //Caption = 'Training Temp';
             Description = 'RU';
         }
     }

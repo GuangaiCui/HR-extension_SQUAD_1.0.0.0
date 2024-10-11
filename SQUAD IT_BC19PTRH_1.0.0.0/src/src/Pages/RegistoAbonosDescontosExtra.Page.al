@@ -59,7 +59,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field("Valor Total"; Rec."Valor Total")
+                field("Total Amount"; Rec."Total Amount")
                 {
 
 
@@ -74,7 +74,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field("Qtd. Perca Sub. Alimentação"; Rec."Qtd. Perca Sub. Alimentação")
+                field("Qtd. Perca Sub. Alimentação"; Rec."Qty. Food Subsidy Loss")
                 {
 
 
@@ -94,7 +94,7 @@ page 53096 "Registo Abonos-Descontos Extra"
 
 
                 }
-                field("Garnishmen No."; Rec."Garnishmen No.")
+                field("Garnishmen No."; Rec."Garnishment No.")
                 {
 
 

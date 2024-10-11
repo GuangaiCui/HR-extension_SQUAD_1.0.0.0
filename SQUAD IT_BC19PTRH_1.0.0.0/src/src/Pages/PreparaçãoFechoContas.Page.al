@@ -680,7 +680,7 @@ page 53112 "Preparação Fecho Contas"
                 repeat
                     TabRubSal.Reset;
                     if (TabRubSal.Get(TabRubricaEmp."Cód. Rúbrica Salarial")) and (TabRubSal."Usado no cálculo indemnização" = true) then
-                        ValorTotal := ValorTotal + TabRubricaEmp."Valor Total";
+                        ValorTotal := ValorTotal + TabRubricaEmp."Total Amount";
                 until TabRubricaEmp.Next = 0;
             end;
 
@@ -815,9 +815,9 @@ page 53112 "Preparação Fecho Contas"
                 if ((NDiasIndemn * ValorTotal / 30) > (12 * ValorTotal)) and
                    ((NDiasIndemn * ValorTotal / 30) > (240 * ConfRH."Ordenado Mínimo")) then begin
                     if (12 * ValorTotal) > (240 * ConfRH."Ordenado Mínimo") then
-                        AbonosDescExtra."Valor Total" := 12 * ValorTotal
+                        AbonosDescExtra."Total Amount" := 12 * ValorTotal
                     else
-                        AbonosDescExtra."Valor Total" := 240 * ConfRH."Ordenado Mínimo";
+                        AbonosDescExtra."Total Amount" := 240 * ConfRH."Ordenado Mínimo";
                 end else
                     AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", ValorTotal / 30);
 
@@ -883,7 +883,7 @@ page 53112 "Preparação Fecho Contas"
                 repeat
                     TabRubSal.Reset;
                     if (TabRubSal.Get(TabRubricaEmp."Cód. Rúbrica Salarial")) and (TabRubSal."Usado no cálculo indemnização" = true) then
-                        ValorTotal := ValorTotal + TabRubricaEmp."Valor Total";
+                        ValorTotal := ValorTotal + TabRubricaEmp."Total Amount";
 
                 until TabRubricaEmp.Next = 0;
             end;
@@ -944,9 +944,9 @@ page 53112 "Preparação Fecho Contas"
                 if ((NDiasCaducidadeCont * ValorTotal / 30) > (12 * ValorTotal)) and
                    ((NDiasCaducidadeCont * ValorTotal / 30) > (240 * ConfRH."Ordenado Mínimo")) then begin
                     if (12 * ValorTotal) > (240 * ConfRH."Ordenado Mínimo") then
-                        AbonosDescExtra."Valor Total" := 12 * ValorTotal
+                        AbonosDescExtra."Total Amount" := 12 * ValorTotal
                     else
-                        AbonosDescExtra."Valor Total" := 240 * ConfRH."Ordenado Mínimo";
+                        AbonosDescExtra."Total Amount" := 240 * ConfRH."Ordenado Mínimo";
                 end else
                     AbonosDescExtra.Validate(AbonosDescExtra."Unit Value", ValorTotal / 30);
                 AbonosDescExtra.Insert(true);
@@ -1150,11 +1150,11 @@ page 53112 "Preparação Fecho Contas"
                                     RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
                                     if RubricaSalaEmpregado2.Find('-') then
                                         Valor := Round(Valor +
-                                                  ((RubricaSalaEmpregado2."Valor Total" * RubricaSalariaLinhas2.Percentagem / 100)), 0.01);
+                                                  ((RubricaSalaEmpregado2."Total Amount" * RubricaSalariaLinhas2.Percentagem / 100)), 0.01);
                                 until RubricaSalariaLinhas2.Next = 0;
                             end else
                                 Valor := Round(Valor +
-                                         ((RubricaSalaEmpregado."Valor Total" * RubricaSalariaLinhas.Percentagem / 100)), 0.01);
+                                         ((RubricaSalaEmpregado."Total Amount" * RubricaSalariaLinhas.Percentagem / 100)), 0.01);
 
                         until RubricaSalaEmpregado.Next = 0;
                     end;
@@ -1264,12 +1264,12 @@ page 53112 "Preparação Fecho Contas"
                                             RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Início", '<=%1', DataTerminacao);
                                             RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
                                             if RubricaSalaEmpregado2.Find('-') then begin
-                                                Valor := Round(Valor + RubricaSalaEmpregado2."Valor Total", 0.01);
+                                                Valor := Round(Valor + RubricaSalaEmpregado2."Total Amount", 0.01);
                                                 Flag := true;
                                             end;
                                         until RubricaSalariaLinhas2.Next = 0;
                                     end else begin
-                                        Valor := Round(Valor + RubricaSalaEmpregado."Valor Total", 0.01);
+                                        Valor := Round(Valor + RubricaSalaEmpregado."Total Amount", 0.01);
                                         Flag := true;
                                     end;
                                 until RubricaSalaEmpregado.Next = 0;
@@ -1380,11 +1380,11 @@ page 53112 "Preparação Fecho Contas"
                                     RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
                                     if RubricaSalaEmpregado2.Find('-') then
                                         Valor := Round(Valor +
-                                                  ((RubricaSalaEmpregado2."Valor Total" * RubricaSalariaLinhas2.Percentagem / 100)), 0.01);
+                                                  ((RubricaSalaEmpregado2."Total Amount" * RubricaSalariaLinhas2.Percentagem / 100)), 0.01);
                                 until RubricaSalariaLinhas2.Next = 0;
                             end else
                                 Valor := Round(Valor +
-                                         ((RubricaSalaEmpregado."Valor Total" * RubricaSalariaLinhas.Percentagem / 100)), 0.01);
+                                         ((RubricaSalaEmpregado."Total Amount" * RubricaSalariaLinhas.Percentagem / 100)), 0.01);
 
                         until RubricaSalaEmpregado.Next = 0;
                     end;
@@ -1466,11 +1466,11 @@ page 53112 "Preparação Fecho Contas"
                                     RubricaSalaEmpregado2.SetFilter(RubricaSalaEmpregado2."Data Fim", '>=%1|=%2', DataTerminacao, 0D);
                                     if RubricaSalaEmpregado2.Find('-') then
                                         Valor := Round(Valor +
-                                                  ((RubricaSalaEmpregado2."Valor Total" * RubricaSalariaLinhas2.Percentagem / 100)), 0.01);
+                                                  ((RubricaSalaEmpregado2."Total Amount" * RubricaSalariaLinhas2.Percentagem / 100)), 0.01);
                                 until RubricaSalariaLinhas2.Next = 0;
                             end else
                                 Valor := Round(Valor +
-                                         ((RubricaSalaEmpregado."Valor Total" * RubricaSalariaLinhas.Percentagem / 100)), 0.01);
+                                         ((RubricaSalaEmpregado."Total Amount" * RubricaSalariaLinhas.Percentagem / 100)), 0.01);
 
                         until RubricaSalaEmpregado.Next = 0;
                     end;

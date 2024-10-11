@@ -6,12 +6,12 @@ table 53094 "Consultas Médicas Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado."No.";
         }
         field(3; "Data Consulta"; Date)
         {
-            Caption = 'Date of Medical Appointment';
+            //Caption = 'Date of Medical Appointment';
 
             trigger OnValidate()
             begin
@@ -32,21 +32,21 @@ table 53094 "Consultas Médicas Empregado"
         }
         field(12; "Data Próxima Consulta"; Date)
         {
-            Caption = 'Next Medical Appointment';
+            //Caption = 'Next Medical Appointment';
         }
         field(13; Resultado; Option)
         {
-            Caption = 'Conclusion';
+            //Caption = 'Conclusion';
             OptionCaption = ' ,Apto,Inapto,Outro';
             OptionMembers = " ",Apto,Inapto,Outro;
         }
         field(14; "No. de Diagnóstico"; Text[30])
         {
-            Caption = 'Diagnostic No.';
+            //Caption = 'Diagnostic No.';
         }
         field(15; "Observações"; Text[250])
         {
-            Caption = 'Observations';
+            //Caption = 'Observations';
         }
     }
 

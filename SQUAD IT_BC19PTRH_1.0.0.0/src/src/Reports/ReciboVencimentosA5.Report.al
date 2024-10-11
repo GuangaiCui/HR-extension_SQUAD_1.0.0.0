@@ -906,7 +906,7 @@ report 53043 "Recibo Vencimentos A5"
                     RubSalEmp.SetFilter(RubSalEmp."Data Fim", '>=%1', "Periodos Processamento"."Data Fim Processamento");
                     RubSalEmp.SetFilter("Data Início", '<=%1', "Periodos Processamento"."Data Fim Processamento"); //IT004, Valor do vencimento não estava correto quando se adicionava uma nova rubrica a alterar o vencimento base com uma data futura
                     if RubSalEmp.FindLast then begin
-                        varVencimentoBase := RubSalEmp."Valor Total";
+                        varVencimentoBase := RubSalEmp."Total Amount";
                         varValorHora := varVencimentoBase * 12 / 52 / Empregado."No. Horas Semanais";
                     end;
                 end;

@@ -8,16 +8,16 @@ table 53041 "Absence Reason"
     {
         field(1; "Code"; Code[10])
         {
-            Caption = 'Code';
+            Caption = 'Código';
             NotBlank = true;
         }
         field(2; Description; Text[30])
         {
-            Caption = 'Description';
+            Caption = 'Descrição';
         }
         field(3; "Unit of Measure Code"; Code[10])
         {
-            Caption = 'Unit of Measure Code';
+            Caption = 'Cód. Unidade Medida';
             TableRelation = "Unid. Medida Recursos Humanos";
         }
         field(4; "Total Absence (Base)"; Decimal)
@@ -25,7 +25,7 @@ table 53041 "Absence Reason"
             CalcFormula = Sum("Histórico Ausências"."Quantity (Base)" WHERE("Cause of Absence Code" = FIELD(Code),
                                                                              "Employee No." = FIELD("Employee No. Filter"),
                                                                              "From Date" = FIELD("Date Filter")));
-            Caption = 'Total Absence (Base)';
+            Caption = 'Ausência Total (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
@@ -33,59 +33,59 @@ table 53041 "Absence Reason"
         field(5; "Global Dimension 1 Filter"; Code[20])
         {
             CaptionClass = '1,3,1';
-            Caption = 'Global Dimension 1 Filter';
+            Caption = 'Filtro Dimensão 1 Global';
             FieldClass = FlowFilter;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(6; "Global Dimension 2 Filter"; Code[20])
         {
             CaptionClass = '1,3,2';
-            Caption = 'Global Dimension 2 Filter';
+            Caption = 'Filtro Dimensão 2 Global';
             FieldClass = FlowFilter;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(7; "Employee No. Filter"; Code[20])
         {
-            Caption = 'Employee No. Filter';
+            Caption = 'Filtro nº Empregado';
             FieldClass = FlowFilter;
             TableRelation = Empregado;
         }
         field(8; "Date Filter"; Date)
         {
-            Caption = 'Date Filter';
+            Caption = 'Filtro Data';
             FieldClass = FlowFilter;
         }
         field(12; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Cód. Rúbrica';
+            Caption = 'Cód. Rubrica';
             TableRelation = "Payroll Item";
         }
         field(15; Justified; Boolean)
         {
-            Caption = 'Justify';
+            Caption = 'Justificada';
         }
         field(16; "Remuneration Loss"; Boolean)
         {
-            Caption = 'With Loss of Pay';
+            Caption = 'Com Perda Remuneração';
         }
         field(17; "Food Subsidy Loss"; Boolean)
         {
-            Caption = 'With Loss of Lunch Subsidy';
+            Caption = 'Com Perda Sub. Alimentação';
         }
         field(22; "Vacation Days Influence"; Boolean)
         {
-            Caption = 'Influence the No. of Vacation Days';
+            Caption = 'Influência No. dias férias';
             Description = 'Util para o mapa de férias';
         }
         field(23; License; Option)
         {
-            Caption = 'Licence';
+            Caption = 'Licença';
             OptionCaption = ' ,Com Vencimento,Sem Vencimento';
             OptionMembers = " ","Com Vencimento","Sem Vencimento";
         }
         field(24; "Not Working Hours Reason Code"; Code[10])
         {
-            Caption = 'Reason Code of Non Work Hours';
+            Caption = 'Cod. Motivo Horas não Trab.';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotHNTrab));
 
@@ -102,21 +102,21 @@ table 53041 "Absence Reason"
         }
         field(25; "Not Working Hours Reason Desc."; Text[250])
         {
-            Caption = 'Reason Description of Non Work Hours';
+            Caption = 'Desc. Motivo Horas não Trab.';
             Description = 'RU';
         }
         field(26; "Cod. Mot. Horas Normais N Rem"; Code[10])
         {
-            Caption = 'Reason Code of Non Pay Work Hours';
+            Caption = 'Cod. Mot. Horas Normais Não Remuneradas';
             Description = 'RU';
         }
         field(27; "Holiday Subsidy Influence"; Boolean)
         {
-            Caption = 'Influence Vacation Salary';
+            Caption = 'Influência Sub. Férias';
         }
         field(28; "Christmas Subsidy Influence"; Boolean)
         {
-            Caption = 'Influence Christmas Salary';
+            Caption = 'Influência Sub. Férias';
         }
     }
 

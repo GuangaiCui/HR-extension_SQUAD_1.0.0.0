@@ -6,19 +6,19 @@ table 53088 "Códigos Situação"
     {
         field(1; "Cód. Situação"; Code[2])
         {
-            Caption = 'Situation Code';
+            //Caption = 'Situation Code';
         }
         field(2; "Descrição"; Text[60])
         {
-            Caption = 'Description';
+            //Caption = 'Description';
         }
         field(3; "Perdas Efectivas"; Boolean)
         {
-            Caption = 'Efective Losses';
+            //Caption = 'Efective Losses';
         }
         field(4; Diuturnidades; Boolean)
         {
-            Caption = 'Seniority';
+            //Caption = 'Seniority';
         }
     }
 

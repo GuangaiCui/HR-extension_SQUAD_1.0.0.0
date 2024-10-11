@@ -206,7 +206,7 @@ report 53081 "Sobretaxa em Sede IRS 2013"
                     rAbonosDesc.Quantity := PerSobretaxa;
                     rAbonosDesc."Unit of Measure" := '';
                     rAbonosDesc."Unit Value" := ValorImposto;
-                    rAbonosDesc."Valor Total" := ValorImposto;
+                    rAbonosDesc."Total Amount" := ValorImposto;
                     rAbonosDesc."Earning - Blocked Deduction" := true;
                     rAbonosDesc.Insert(true);
                 end;

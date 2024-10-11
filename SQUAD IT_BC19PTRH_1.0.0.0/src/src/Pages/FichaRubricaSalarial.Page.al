@@ -70,7 +70,7 @@ page 53098 "Ficha Rubrica Salarial"
                         Validacao;
                     end;
                 }
-                field("Valor Total"; Rec."Valor Total")
+                field("Total Amount"; Rec."Total Amount")
                 {
 
 
@@ -267,7 +267,7 @@ page 53098 "Ficha Rubrica Salarial"
     begin
         //HG 21.10.05 - Não deixar uma Rubrica ter valor e Rubricas Filhas ao mesmo tempo
 
-        if (Rec.Quantity = 0) and (Rec."Unit Value" = 0) and (Rec."Valor Total" = 0) then
+        if (Rec.Quantity = 0) and (Rec."Unit Value" = 0) and (Rec."Total Amount" = 0) then
             RubricaSalarialLinhasEditable := true
         else
             RubricaSalarialLinhasEditable := false;
@@ -277,7 +277,7 @@ page 53098 "Ficha Rubrica Salarial"
         if TabRubricaLinhas.Find('-') then begin
             Rec.Quantity := 0;
             Rec."Unit Value" := 0;
-            Rec."Valor Total" := 0;
+            Rec."Total Amount" := 0;
             Message(Text0002, Rec."Código");
         end;
     end;

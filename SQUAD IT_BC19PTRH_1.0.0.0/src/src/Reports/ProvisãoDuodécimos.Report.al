@@ -343,7 +343,7 @@ report 53068 "Provisão Duodécimos"
                                             RubSalEmp2.SetRange(RubSalEmp2."Employee No.", Empregado."No.");
                                             RubSalEmp2.SetRange(RubSalEmp2."Cód. Rúbrica Salarial", RubSal2.Código);
                                             if RubSalEmp2.FindLast then
-                                                VBCGA := VBCGA + RubSalEmp2."Valor Total";
+                                                VBCGA := VBCGA + RubSalEmp2."Total Amount";
                                         end;
                                     until RubSalLinhas.Next = 0;
                                 end;

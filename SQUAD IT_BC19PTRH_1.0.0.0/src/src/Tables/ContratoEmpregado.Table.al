@@ -8,16 +8,16 @@ table 53056 "Contrato Empregado"
     {
         field(1; "Cód. Empregado"; Code[20])
         {
-            Caption = 'Employee No.';
+            //Caption = 'Employee No.';
             TableRelation = Empregado."No.";
         }
         field(2; "No. Linha"; Integer)
         {
-            Caption = 'Line No.';
+            //Caption = 'Line No.';
         }
         field(3; "Cód. Contrato"; Code[10])
         {
-            Caption = 'Contract Code';
+            //Caption = 'Contract Code';
             TableRelation = "Contrato Trabalho".Code;
 
             trigger OnValidate()
@@ -30,29 +30,29 @@ table 53056 "Contrato Empregado"
         }
         field(4; "Descrição"; Text[50])
         {
-            Caption = 'Description';
+            //Caption = 'Description';
         }
         field(5; "Tipo Contrato"; Option)
         {
-            Caption = 'Contract Type';
+            //Caption = 'Contract Type';
             OptionCaption = ',Sem Termo,A Termo,Por Tempo Indeterminado,A Termo p/ Cedência Temporária,Situação Residual';
             OptionMembers = ,"Sem Termo","A Termo","Por Tempo Indeterminado","A Termo p/ Cedência Temporária","Situação Residual";
         }
         field(6; "Duração Contrato"; Text[30])
         {
-            Caption = 'Contract Duration';
+            //Caption = 'Contract Duration';
         }
         field(7; "Data Inicio Contrato"; Date)
         {
-            Caption = 'Contract Start Date';
+            //Caption = 'Contract Start Date';
         }
         field(8; "Data Fim Contrato"; Date)
         {
-            Caption = 'Contract End Date';
+            //Caption = 'Contract End Date';
         }
         field(9; "Cód. Motivo Terminação"; Code[10])
         {
-            Caption = 'Termnation Reason Code';
+            //Caption = 'Termnation Reason Code';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSai));
         }
         field(10; "Comentário"; Boolean)
@@ -60,41 +60,41 @@ table 53056 "Contrato Empregado"
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Cont),
                                                                       "No." = FIELD("Cód. Empregado"),
                                                                       "Table Line No." = FIELD("No. Linha")));
-            Caption = 'Comment';
+            //Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;
         }
         field(11; "No. Contrato Trabalho"; Code[20])
         {
-            Caption = 'Contract No.';
+            //Caption = 'Contract No.';
             Description = 'Funcionalidade Contratos';
             Editable = true;
         }
         field(20; "Ficheiro Contrato Trabalho"; BLOB)
         {
-            Caption = 'Contract File';
+            //Caption = 'Contract File';
             Compressed = false;
             Description = 'Funcionalidade Contratos';
             SubType = UserDefined;
         }
         field(22; "Extensão Ficheiro"; Text[4])
         {
-            Caption = 'File Extension';
+            //Caption = 'File Extension';
         }
         field(30; "Cód. Tipo Contrato"; Code[10])
         {
-            Caption = 'Contract Type Code';
+            //Caption = 'Contract Type Code';
             Description = 'RU';
         }
         field(35; "Motivo Entrada"; Code[20])
         {
-            Caption = 'Admission Reason';
+            //Caption = 'Admission Reason';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MEnt));
         }
         field(143; "Cod. Cliente"; Code[20])
         {
-            Caption = 'Customer Code';
+            //Caption = 'Customer Code';
             Description = 'Funcionalidade Contratos - para facturar o Imposto Selo';
             TableRelation = Customer."No.";
         }

@@ -126,7 +126,7 @@ report 53095 "Declarações RH BC"
                     repeat
                         if (TabRubrica.Get(TabRubricaSalEmpregado."Cód. Rúbrica Salarial")) and
                           (TabRubrica.Genero = TabRubrica.Genero::"Vencimento Base") then begin
-                            VencimentoBase := VencimentoBase + TabRubricaSalEmpregado."Valor Total";
+                            VencimentoBase := VencimentoBase + TabRubricaSalEmpregado."Total Amount";
                         end;
                     until TabRubricaSalEmpregado.Next = 0;
                 end;

@@ -55,7 +55,7 @@ page 53097 "Lista Hist. Abon. - Des. Extr."
 
 
                 }
-                field("Valor Total"; Rec."Valor Total")
+                field("Total Amount"; Rec."Total Amount")
                 {
 
 

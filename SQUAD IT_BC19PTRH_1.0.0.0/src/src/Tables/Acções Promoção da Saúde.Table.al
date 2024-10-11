@@ -5,6 +5,7 @@ table 53082 "Acções Promoção da Saúde"
     {
         field(1; "Entry No."; Integer)
         {
+            Caption = 'No. Mov';
             AutoIncrement = true;
         }
         field(5; Data; Date)

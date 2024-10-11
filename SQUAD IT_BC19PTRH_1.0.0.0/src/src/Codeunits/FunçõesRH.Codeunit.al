@@ -375,7 +375,7 @@ codeunit 53037 "Funções RH"
                 if (TabRubrica.Get(TabRubricaSalEmpregado."Cód. Rúbrica Salarial")) and
                    (TabRubrica.Genero = TabRubrica.Genero::"Vencimento Base") then begin
                     //HG 19.01.09 - rubricas como o IHT não tem valor é uma % então temos de ir calcular 1º o valor
-                    if TabRubricaSalEmpregado."Valor Total" = 0 then begin
+                    if TabRubricaSalEmpregado."Total Amount" = 0 then begin
                         TabRubricaLinhas.Reset;
                         TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
                         if TabRubricaLinhas.Find('-') then begin
@@ -388,7 +388,7 @@ codeunit 53037 "Funções RH"
                                                                  TabRubricaLinhas."Cód. Rubrica Filha");
                                 if TabRubricaSalEmpregado2.Find('-') then
                                     VencimentoBase := VencimentoBase +
-                                    (TabRubricaSalEmpregado2."Valor Total" * TabRubricaLinhas.Percentagem / 100);
+                                    (TabRubricaSalEmpregado2."Total Amount" * TabRubricaLinhas.Percentagem / 100);
 
                             until TabRubricaLinhas.Next = 0;
                         end;
@@ -396,7 +396,7 @@ codeunit 53037 "Funções RH"
                     end else
                         //HG 19.01.09 - fim
 
-                        VencimentoBase := VencimentoBase + TabRubricaSalEmpregado."Valor Total";
+                        VencimentoBase := VencimentoBase + TabRubricaSalEmpregado."Total Amount";
                 end;
             until TabRubricaSalEmpregado.Next = 0;
         end;
@@ -423,7 +423,7 @@ codeunit 53037 "Funções RH"
                    (TabRubrica.Faults) then begin
 
                     //HG 04.05.07 - como o IHT não tem valor é uma % então temos de ir calcular 1º o valor
-                    if TabRubricaSalEmpregado."Valor Total" = 0 then begin
+                    if TabRubricaSalEmpregado."Total Amount" = 0 then begin
                         TabRubricaLinhas.Reset;
                         TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
                         if TabRubricaLinhas.Find('-') then begin
@@ -436,7 +436,7 @@ codeunit 53037 "Funções RH"
                                                                  TabRubricaLinhas."Cód. Rubrica Filha");
                                 if TabRubricaSalEmpregado2.Find('-') then
                                     VencimentoBase := VencimentoBase +
-                                    (TabRubricaSalEmpregado2."Valor Total" * TabRubricaLinhas.Percentagem / 100);
+                                    (TabRubricaSalEmpregado2."Total Amount" * TabRubricaLinhas.Percentagem / 100);
 
                             until TabRubricaLinhas.Next = 0;
                         end;
@@ -444,14 +444,14 @@ codeunit 53037 "Funções RH"
                     end else
                         //HG 04.05.07 - fim
 
-                        VencimentoBase := VencimentoBase + TabRubricaSalEmpregado."Valor Total";
+                        VencimentoBase := VencimentoBase + TabRubricaSalEmpregado."Total Amount";
                 end
                 else
                     if (TabRubrica.Get(TabRubricaSalEmpregado."Cód. Rúbrica Salarial")) and
                        (TabRubrica.Genero = TabRubrica.Genero::"Vencimento Base") then begin
 
                         //HG 19.01.10 - como o IHT não tem valor é uma % então temos de ir calcular 1º o valor
-                        if TabRubricaSalEmpregado."Valor Total" = 0 then begin
+                        if TabRubricaSalEmpregado."Total Amount" = 0 then begin
                             TabRubricaLinhas.Reset;
                             TabRubricaLinhas.SetRange(TabRubricaLinhas."Payroll Item Code", TabRubricaSalEmpregado."Cód. Rúbrica Salarial");
                             if TabRubricaLinhas.Find('-') then begin
@@ -464,7 +464,7 @@ codeunit 53037 "Funções RH"
                                                                      TabRubricaLinhas."Cód. Rubrica Filha");
                                     if TabRubricaSalEmpregado2.Find('-') then
                                         VencimentoBase := VencimentoBase +
-                                        (TabRubricaSalEmpregado2."Valor Total" * TabRubricaLinhas.Percentagem / 100);
+                                        (TabRubricaSalEmpregado2."Total Amount" * TabRubricaLinhas.Percentagem / 100);
 
                                 until TabRubricaLinhas.Next = 0;
                             end;
@@ -472,7 +472,7 @@ codeunit 53037 "Funções RH"
                         end else
                             //HG 19.01.10 - fim
 
-                            VencimentoBase := VencimentoBase + TabRubricaSalEmpregado."Valor Total";
+                            VencimentoBase := VencimentoBase + TabRubricaSalEmpregado."Total Amount";
                     end;
 
             until TabRubricaSalEmpregado.Next = 0;

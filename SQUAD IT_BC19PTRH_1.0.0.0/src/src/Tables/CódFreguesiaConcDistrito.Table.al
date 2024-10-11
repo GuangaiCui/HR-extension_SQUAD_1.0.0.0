@@ -6,19 +6,19 @@ table 53091 "Cód. Freguesia/Conc/Distrito"
     {
         field(1; "Código"; Code[6])
         {
-            Caption = 'Code';
+            //Caption = 'Code';
         }
         field(3; Freguesia; Text[100])
         {
-            Caption = 'Parish';
+            //Caption = 'Parish';
         }
         field(4; Concelho; Text[100])
         {
-            Caption = 'County';
+            //Caption = 'County';
         }
         field(5; Distrito; Text[100])
         {
-            Caption = 'District';
+            //Caption = 'District';
         }
     }
 

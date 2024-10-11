@@ -8,16 +8,16 @@ table 53053 "Config. Recursos Humanos"
     {
         field(1; "Primary Key"; Code[10])
         {
-            Caption = 'Primary Key';
+            Caption = 'Chave Primária';
         }
         field(2; "Employee Nos."; Code[10])
         {
-            Caption = 'Employee Nos.';
+            Caption = 'No. Empregado';
             TableRelation = "No. Series";
         }
         field(3; "Base Unit of Measure"; Code[10])
         {
-            Caption = 'Base Unit of Measure';
+            Caption = 'Unidade Base de Medida';
             TableRelation = "Unid. Medida Recursos Humanos";
 
             trigger OnValidate()
@@ -169,19 +169,19 @@ table 53053 "Config. Recursos Humanos"
         }
         field(72; "Nos. Contratos"; Code[10])
         {
-            Caption = 'Contracts Nos.';
+            //Caption = 'Contracts Nos.';
             Description = 'Funcionalidade Contratos';
             TableRelation = "No. Series".Code;
         }
         field(100; "No. Conta Pag. Enc. SSocialEmp"; Code[20])
         {
-            Caption = 'Acc. No. of Employee Social Security';
+            //Caption = 'Acc. No. of Employee Social Security';
             Description = 'Pagamentos Encargos';
             TableRelation = "Bank Account";
         }
         field(101; "No. Conta Pag. Enc. SSocialPat"; Code[20])
         {
-            Caption = 'Acc. No. of Company Social Security';
+            //Caption = 'Acc. No. of Company Social Security';
             Description = 'Pagamentos Encargos';
             TableRelation = "Bank Account";
         }
@@ -199,7 +199,7 @@ table 53053 "Config. Recursos Humanos"
         }
         field(104; "No. Conta Pag. IRS"; Code[20])
         {
-            Caption = 'Acc. No. of IRS';
+            //Caption = 'Acc. No. of IRS';
             Description = 'Pagamentos Encargos';
             TableRelation = "Bank Account";
         }
@@ -217,84 +217,84 @@ table 53053 "Config. Recursos Humanos"
         }
         field(107; "No. Conta Pag. Enc. FCT-FGCT"; Code[20])
         {
-            Caption = 'Acc. No. of FCT-FGCT>';
+            //Caption = 'Acc. No. of FCT-FGCT>';
             Description = 'Pagamentos Encargos';
             TableRelation = "Bank Account";
         }
         field(204; "Diário Imposto Selo"; Code[20])
         {
-            Caption = 'Journal Template Stamp Duty';
+            //Caption = 'Journal Template Stamp Duty';
             Description = 'Funcionalidade Contratos';
             Enabled = false;
             TableRelation = "Gen. Journal Template";
         }
         field(205; "Secção Imposto Selo"; Code[20])
         {
-            Caption = 'Journal Batch Stamp Duty';
+            //Caption = 'Journal Batch Stamp Duty';
             Description = 'Funcionalidade Contratos';
             Enabled = false;
             TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Diário Imposto Selo"));
         }
         field(206; "Cód. Imposto Selo"; Code[20])
         {
-            Caption = 'Satm Duty Cod.';
+            //Caption = 'Satm Duty Cod.';
             Description = 'Funcionalidade Contratos';
             Enabled = false;
             TableRelation = "PTSS Stamp Duty General Table";
         }
         field(207; "Conta Contrapartida Imp. Selo"; Text[30])
         {
-            Caption = 'Bal. Account Stamp Duty';
+            //Caption = 'Bal. Account Stamp Duty';
             Description = 'Funcionalidade Contratos';
             Enabled = false;
             TableRelation = "G/L Account";
         }
         field(208; "Regista Imposto Selo"; Boolean)
         {
-            Caption = 'Post Stamp Duty';
+            //Caption = 'Post Stamp Duty';
             Description = 'Funcionalidade Contratos';
             Enabled = false;
         }
         field(209; "Conta Outros Devedores"; Text[30])
         {
-            Caption = 'Acc. No. Other Debtors';
+            //Caption = 'Acc. No. Other Debtors';
             Description = 'Funcionalidade Contratos';
             Enabled = false;
             TableRelation = "G/L Account";
         }
         field(222; "Aniversários"; Boolean)
         {
-            Caption = 'Birthdays';
+            //Caption = 'Birthdays';
             Description = 'Indica se é para aparecer um aviso com os aniversariantes';
         }
         field(223; "Dias de antecedência Aniversár"; Integer)
         {
-            Caption = 'Days in advance of Birthdays';
+            //Caption = 'Days in advance of Birthdays';
             Description = 'Indica com qtos dias de antecedencia para o aniverário';
         }
         field(224; "Contratos a terminar"; Boolean)
         {
-            Caption = 'Finish Contracts';
+            //Caption = 'Finish Contracts';
             Description = 'Indica se é para aparecer um aviso com os contratos a terminar';
         }
         field(225; "Dias de antecedência Contrato"; Integer)
         {
-            Caption = 'Days in Advance of Contracts';
+            //Caption = 'Days in Advance of Contracts';
             Description = 'Indica a qtidade de dias de antecedencia de termino de contrato';
         }
         field(300; "Mod10 - Incluir Fornecedores"; Boolean)
         {
-            Caption = 'Mod10 - Include Vendors';
+            //Caption = 'Mod10 - Include Vendors';
             Description = 'Para os Fornecedores aparecerem no Mod. 10';
         }
         field(301; "Mod10-Forn - Conta Valor Sujei"; Code[20])
         {
-            Caption = 'Mod10-Vendor - Acc. No. Exposure Value';
+            //Caption = 'Mod10-Vendor - Acc. No. Exposure Value';
             Description = 'Para os Fornecedores aparecerem no Mod. 10 na cat. B e F';
         }
         field(302; "Mod10-Forn - Conta Valor Reten"; Code[20])
         {
-            Caption = 'Mod10-Vendor - Acc. No. Retain value';
+            //Caption = 'Mod10-Vendor - Acc. No. Retain value';
             Description = 'Para os Fornecedores aparecerem no Mod. 10 na cat. B e F';
         }
         field(310; "Área de Negócio"; Option)
@@ -307,85 +307,85 @@ table 53053 "Config. Recursos Humanos"
         }
         field(311; "Ano Tabela IRS"; Integer)
         {
-            Caption = 'Year of IRS Table';
+            //Caption = 'Year of IRS Table';
             Description = 'Serve para guardar o ano da ultima tabela de IRS importada';
         }
         field(312; "Data Importação Tabela IRS"; Date)
         {
-            Caption = 'Import Date of IRS Table';
+            //Caption = 'Import Date of IRS Table';
             Description = 'Guarda a 1ª data em que a tabela do ano do campo anterior foi importada';
         }
         field(313; "Retroactivos Processados"; Boolean)
         {
-            Caption = 'Retroactives Posted';
+            //Caption = 'Retroactives Posted';
             Description = 'Indica que para o ano do campo 311 os retroactivos já foram feitos';
         }
         field(314; "Pagamento total Sub. Férias"; Option)
         {
-            Caption = 'Total Payment of Vacation Salary';
+            //Caption = 'Total Payment of Vacation Salary';
             Description = 'Significa que quando a empresa pagar o Sub. Férias paga logo até ao fim do ano, não havendo necessidade de acerto.';
             OptionCaption = ' ,Contratos Sem Termo,Contratos a Termo,Para ambos';
             OptionMembers = " ","Contratos Sem Termo","Contratos a Termo","Para ambos";
         }
         field(315; "Mês Acerto Sub. Férias"; Integer)
         {
-            Caption = 'Month of Settlement of Vacation Salary';
+            //Caption = 'Month of Settlement of Vacation Salary';
             Description = 'Permite à empresa definir qual o mês em que pretende fazer o acerto.';
         }
         field(316; "Atribuição dias extra de féria"; Boolean)
         {
-            Caption = 'Extra Vacation Days';
+            //Caption = 'Extra Vacation Days';
             Description = 'Indica se a empresa quer que o empregado tenha direito a mais 3 dias de férias no caso de n haver ausências';
         }
         field(317; "Limite dias falta abate SN/F"; Integer)
         {
-            Caption = 'Number of Absence Days to Cut Vacation/Christmas Salary';
+            //Caption = 'Number of Absence Days to Cut Vacation/Christmas Salary';
             Description = 'Se o empregado faltar mais de X dias, esses dias serão abatidos ao  Sub Natal e Ferias.';
         }
         field(400; "Gr. Contabilístico Negócio"; Code[10])
         {
-            Caption = 'Gen. Business Posting Group';
+            //Caption = 'Gen. Business Posting Group';
             Description = 'Para criar um Cliente a partir de um Empregado quado regista o imposto selo do contrato de trabalho';
             Enabled = false;
             TableRelation = "Gen. Business Posting Group".Code;
         }
         field(401; "Gr. Contabilístico Cliente"; Code[10])
         {
-            Caption = 'Customer Posting Group';
+            //Caption = 'Customer Posting Group';
             Description = 'Para criar um Cliente a partir de um Empregado quado regista o imposto selo do contrato de trabalho';
             Enabled = false;
             TableRelation = "Customer Posting Group".Code;
         }
         field(402; "Gr. Registo IVA negócio"; Code[10])
         {
-            Caption = 'VAT Business Posting Group';
+            //Caption = 'VAT Business Posting Group';
             Description = 'Para criar um Cliente a partir de um Empregado quado regista o imposto selo do contrato de trabalho';
             Enabled = false;
             TableRelation = "VAT Business Posting Group".Code;
         }
         field(403; "Cód. Termos Pagamento"; Code[10])
         {
-            Caption = 'Payment Terms';
+            //Caption = 'Payment Terms';
             Description = 'Para criar um Cliente a partir de um Empregado quado regista o imposto selo do contrato de trabalho';
             Enabled = false;
             TableRelation = "Payment Terms".Code;
         }
         field(404; "Cód. Forma Pagamento"; Code[10])
         {
-            Caption = 'Payment Method';
+            //Caption = 'Payment Method';
             Description = 'Para criar um Cliente a partir de um Empregado quado regista o imposto selo do contrato de trabalho';
             Enabled = false;
             TableRelation = "Payment Method".Code;
         }
         field(500; "Nome Diário Duodécimos"; Code[10])
         {
-            Caption = 'Journal Template Twelfhs';
+            //Caption = 'Journal Template Twelfhs';
             Description = 'Diario que é usado para registar os duodécimos dos RH';
             TableRelation = "Gen. Journal Template".Name;
         }
         field(501; "Nome Secção Duodécimos"; Code[10])
         {
-            Caption = 'Journal Batch Twelfhs';
+            //Caption = 'Journal Batch Twelfhs';
             Description = 'Secção que é usada para registar os duodécimos dos RH';
             TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Nome Diário Duodécimos"));
         }
@@ -403,55 +403,55 @@ table 53053 "Config. Recursos Humanos"
         }
         field(504; "No. Conta Duo. SF"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Vacation Salary';
+            //Caption = 'Acc. No. Twelfh Vacation Salary';
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(505; "No. Conta Duo. SN"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Christmas Salary';
+            //Caption = 'Acc. No. Twelfh Christmas Salary';
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(506; "No. Conta Contrap. Duo. SF"; Code[20])
         {
-            Caption = 'Bal. Acc. No. Twelfh Vacation Salary';
+            //Caption = 'Bal. Acc. No. Twelfh Vacation Salary';
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(507; "No. Conta Contrap. Duo. SN"; Code[20])
         {
-            Caption = 'Bal. Acc. No. Twelfh Christmas Salary';
+            //Caption = 'Bal. Acc. No. Twelfh Christmas Salary';
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(508; "No. Conta Enc. Duo. SF"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Vacation Salary - Company';
+            //Caption = 'Acc. No. Twelfh Vacation Salary - Company';
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(509; "No. Conta Enc. Duo. SN"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Christmas Salary - Company';
+            //Caption = 'Acc. No. Twelfh Christmas Salary - Company';
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(510; "No. Conta Contrap. Enc. Duo.SF"; Code[20])
         {
-            Caption = 'Bal. Acc. No. Twelfh Vacation Salary - Company';
+            //Caption = 'Bal. Acc. No. Twelfh Vacation Salary - Company';
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(511; "No. Conta Contrap. Enc. Duo.SN"; Code[20])
         {
-            Caption = 'Bal. Acc. No. Twelfh Christmas Salary - Company';
+            //Caption = 'Bal. Acc. No. Twelfh Christmas Salary - Company';
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(512; "No. Meses"; Integer)
         {
-            Caption = 'No. Months';
+            //Caption = 'No. Months';
             MaxValue = 12;
             MinValue = 1;
         }
@@ -465,85 +465,85 @@ table 53053 "Config. Recursos Humanos"
         }
         field(514; "No. Conta Duo. F"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Vacation Salary';
+            //Caption = 'Acc. No. Twelfh Vacation Salary';
             DataClassification = ToBeClassified;
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(515; "No. Conta Contrap. Duo. F"; Code[20])
         {
-            Caption = 'Bal. Acc. No. Twelfh Vacation Salary';
+            //Caption = 'Bal. Acc. No. Twelfh Vacation Salary';
             DataClassification = ToBeClassified;
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(516; "No. Conta Enc. Duo. F"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Vacation Salary - Company';
+            //Caption = 'Acc. No. Twelfh Vacation Salary - Company';
             DataClassification = ToBeClassified;
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(517; "No. Conta Contrap. Enc. Duo.F"; Code[20])
         {
-            Caption = 'Bal. Acc. No. Twelfh Vacation Salary - Company';
+            //Caption = 'Bal. Acc. No. Twelfh Vacation Salary - Company';
             DataClassification = ToBeClassified;
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(518; "No. Conta Enc. Duo. SF OrgSoc"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Vacation Salary - Company';
+            //Caption = 'Acc. No. Twelfh Vacation Salary - Company';
             DataClassification = ToBeClassified;
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(519; "No. Conta Enc. Duo. SN OrgSoc"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Christmas Salary - Company';
+            //Caption = 'Acc. No. Twelfh Christmas Salary - Company';
             DataClassification = ToBeClassified;
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(520; "No. Conta Enc. Duo. F OrgSoc"; Code[20])
         {
-            Caption = 'Acc. No. Twelfh Vacation Salary - Company';
+            //Caption = 'Acc. No. Twelfh Vacation Salary - Company';
             DataClassification = ToBeClassified;
             Description = 'Contas a usar nos duodecimos dos RH';
             TableRelation = "G/L Account"."No.";
         }
         field(600; "Caminho Exportação Rel. Único"; Text[250])
         {
-            Caption = 'RU Exportation Path';
+            //Caption = 'RU Exportation Path';
             Description = 'RU';
 
         }
         field(601; Entidade; Text[6])
         {
-            Caption = 'Entity';
+            //Caption = 'Entity';
             Description = 'RU';
         }
         field(900; "Ordenado Mínimo"; Decimal)
         {
-            Caption = 'Minimum Salary';
+            //Caption = 'Minimum Salary';
         }
         field(901; "Sobretaxa %"; Decimal)
         {
-            Caption = 'Surcharge %';
+            //Caption = 'Surcharge %';
         }
         field(1000; Consultas; Boolean)
         {
-            Caption = 'Medical Appointment';
+            //Caption = 'Medical Appointment';
             Description = 'Indica se é para aparecer um aviso com os Consultas';
         }
         field(1001; "Dias de antecedência Consultas"; Integer)
         {
-            Caption = 'Days Before Medical Appointment';
+            //Caption = 'Days Before Medical Appointment';
             Description = 'Indica com qtos dias de antecedencia para as Consultas';
         }
         field(1002; "Mês Abate Sub. Alimentação"; Integer)
         {
-            Caption = 'Month of Lunch Subsidy Adjustment';
+            //Caption = 'Month of Lunch Subsidy Adjustment';
             Description = 'Indica que neste mês não se paga sub Alimentação';
 
             trigger OnValidate()
@@ -566,7 +566,7 @@ table 53053 "Config. Recursos Humanos"
         }
         field(50000; "Balance Cash-Flow Code"; Code[10])
         {
-            Caption = 'Balance Cash-Flow Code';
+            //Caption = 'Balance Cash-Flow Code';
             Description = 'TAGUS - Pagamento Vencimentos';
             TableRelation = "PTSS Cash-Flow Plan"."No." WHERE(Type = CONST(Posting));
 

@@ -41,9 +41,9 @@ table 53107 "Histórico Abonos - Desc. Extra"
         {
             Caption = 'Valor Unitário';
         }
-        field(16; "Valor Total"; Decimal)
+        field(16; "Total Amount"; Decimal)
         {
-            Caption = 'Total Amount';
+            Caption = 'Valor Total';
         }
         field(17; "Unit of Measure"; Code[20])
         {
