@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53046 "Ausências Empregado"
 {
-    Caption = 'Employee Absences';
+    //Caption = 'Employee Absences';
     DataCaptionFields = "Employee No.";
     DelayedInsert = true;
     Editable = false;
