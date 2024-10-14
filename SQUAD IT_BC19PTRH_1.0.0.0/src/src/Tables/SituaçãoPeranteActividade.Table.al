@@ -5,11 +5,11 @@ table 53089 "Situação Perante Actividade"
     {
         field(1; "Cod. Estabelecimento"; Code[4])
         {
-            //Caption = 'Office Code';
+            Caption = 'Office Code';
         }
         field(2; "No. Linha"; Integer)
         {
-            //Caption = 'Line No.';
+            Caption = 'Line No.';
         }
         field(5; CAE; Code[20])
         {
@@ -17,7 +17,7 @@ table 53089 "Situação Perante Actividade"
         }
         field(8; "Situação"; Code[20])
         {
-            //Caption = 'Situation';
+            Caption = 'Situation';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(SitAct));
 
             trigger OnValidate()
@@ -33,11 +33,11 @@ table 53089 "Situação Perante Actividade"
         }
         field(9; "Desc. Situação"; Text[50])
         {
-            //Caption = 'Situation Description';
+            Caption = 'Situation Description';
         }
         field(10; Motivo; Code[20])
         {
-            //Caption = 'Reason Code';
+            Caption = 'Reason Code';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSit));
 
             trigger OnValidate()
@@ -57,11 +57,11 @@ table 53089 "Situação Perante Actividade"
         }
         field(12; "Data Início"; Date)
         {
-            //Caption = 'Start Date';
+            Caption = 'Start Date';
         }
         field(13; "Data Fim"; Date)
         {
-            //Caption = 'End Date';
+            Caption = 'End Date';
         }
     }
 

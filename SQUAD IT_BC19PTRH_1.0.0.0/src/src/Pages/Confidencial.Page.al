@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53055 Confidencial
 {
-    //Caption = 'Confidential';
+    Caption = 'Confidential';
     PageType = List;
     SourceTable = Confidencial;
     UsageCategory = Administration;

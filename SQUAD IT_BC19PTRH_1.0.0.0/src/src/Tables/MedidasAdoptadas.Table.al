@@ -13,7 +13,7 @@ table 53122 "Medidas Adoptadas"
         }
         field(3; "Tipo de Risco"; Option)
         {
-            //Caption = 'Risk Type';
+            Caption = 'Risk Type';
             OptionMembers = "Físico","Químico","Biológico","Músculo-esquelético",Psicossociais,Outros;
         }
         field(5; "Medida de Prevenção Adoptada"; Code[20])

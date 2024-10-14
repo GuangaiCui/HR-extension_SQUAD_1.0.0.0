@@ -126,45 +126,45 @@ table 53042 "Ausência Empregado"
         }
         field(20; Justificada; Boolean)
         {
-            //Caption = 'Justify';
+            Caption = 'Justify';
         }
         field(21; "Com Perda de Remuneração"; Boolean)
         {
-            //Caption = 'With Loss of Pay';
+            Caption = 'With Loss of Pay';
         }
         field(22; "Com Perda Sub. Alimentação"; Boolean)
         {
-            //Caption = 'With Loss of Lunch Subsidy';
+            Caption = 'With Loss of Lunch Subsidy';
         }
         field(23; "Qtd. Perda Sub. Alimentação"; Decimal)
         {
-            //Caption = 'Loss of Lunch Subsidy Qtd.';
+            Caption = 'Loss of Lunch Subsidy Qtd.';
         }
         field(26; "Hora Inicio"; Time)
         {
-            //Caption = 'Start Time';
+            Caption = 'Start Time';
         }
         field(27; "Hora Fim"; Time)
         {
-            //Caption = 'End Time';
+            Caption = 'End Time';
         }
         field(32; "Payroll Item Code"; Code[20])
         {
-            //Caption = 'Cód. Rubrica';
+            Caption = 'Cód. Rubrica';
             TableRelation = "Payroll Item";
         }
         field(36; "Quantidade Pendente"; Decimal)
         {
-            //Caption = 'Outstanding Qty.';
+            Caption = 'Outstanding Qty.';
         }
         field(39; "Ausência Bloqueada"; Boolean)
         {
-            //Caption = 'Absence Blocked';
+            Caption = 'Absence Blocked';
             Editable = false;
         }
         field(42; "Influência Nº dias férias"; Boolean)
         {
-            //Caption = 'Influence the No. of Vacation Days';
+            Caption = 'Influence the No. of Vacation Days';
             Description = 'Util para o mapa de férias';
         }
         field(43; "Novo Valor Ausencia"; Decimal)

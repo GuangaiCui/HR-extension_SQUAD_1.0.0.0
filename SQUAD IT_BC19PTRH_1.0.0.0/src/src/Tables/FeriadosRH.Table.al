@@ -6,24 +6,24 @@ table 53085 "Feriados RH"
     {
         field(1; Chave; Integer)
         {
-            //Caption = 'Key';
+            Caption = 'Key';
             Editable = false;
         }
         field(2; Data; Date)
         {
-            //Caption = 'Date';
+            Caption = 'Date';
         }
         field(5; "Descritivo feriado"; Text[30])
         {
-            //Caption = 'Holiday Description';
+            Caption = 'Holiday Description';
         }
         field(7; Nacional; Boolean)
         {
-            //Caption = 'Nacional';
+            Caption = 'Nacional';
         }
         field(10; Estabelecimento; Code[4])
         {
-            //Caption = 'Office';
+            Caption = 'Office';
             TableRelation = "Estabelecimentos da Empresa"."Número da Unidade Local";
         }
     }

@@ -27,13 +27,13 @@ table 53046 "Contrato Trabalho"
         }
         field(4; "Tipo Contrato"; Option)
         {
-            //Caption = 'Contract Type';
+            Caption = 'Contract Type';
             OptionCaption = ' ,Sem Termo,A Termo,Por Tempo Indeterminado,Contrato de trabalho temporário,Situação Residual';
             OptionMembers = " ","Sem Termo","A Termo","Por Tempo Indeterminado","Contrato de trabalho temporário","Situação Residual";
         }
         field(5; "Cód. Tipo Contrato"; Code[10])
         {
-            //Caption = 'Contract Type Code';
+            Caption = 'Contract Type Code';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(TCont));
 
@@ -50,22 +50,22 @@ table 53046 "Contrato Trabalho"
         }
         field(6; "Desc. Tipo Contrato"; Text[100])
         {
-            //Caption = 'Contract Type Description';
+            Caption = 'Contract Type Description';
             Description = 'RU';
         }
         field(10; "Data Filtro Inicio"; Date)
         {
-            //Caption = 'Start Date Filter';
+            Caption = 'Start Date Filter';
             FieldClass = FlowFilter;
         }
         field(11; "Data Filtro Fim"; Date)
         {
-            //Caption = 'End Date Filter';
+            Caption = 'End Date Filter';
             FieldClass = FlowFilter;
         }
         field(20; "Template Contrato"; BLOB)
         {
-            //Caption = 'Contract Template';
+            Caption = 'Contract Template';
             Compressed = false;
             Description = 'Funcionalidade Contratos';
         }

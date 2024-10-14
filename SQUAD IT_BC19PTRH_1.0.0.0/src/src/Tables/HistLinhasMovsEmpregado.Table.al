@@ -10,11 +10,11 @@ table 53109 "Hist. Linhas Movs. Empregado"
     {
         field(1; "Cód. Processamento"; Code[10])
         {
-            //Caption = 'Payroll Code';
+            Caption = 'Payroll Code';
         }
         field(2; "Tipo Processamento"; Option)
         {
-            //Caption = 'Payroll Code';
+            Caption = 'Payroll Code';
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
@@ -25,11 +25,11 @@ table 53109 "Hist. Linhas Movs. Empregado"
         }
         field(4; "No. Linha"; Integer)
         {
-            //Caption = 'Line No.';
+            Caption = 'Line No.';
         }
         field(6; "Data Registo"; Date)
         {
-            //Caption = 'Posting Date';
+            Caption = 'Posting Date';
         }
         field(13; "Designação Empregado"; Text[75])
         {
@@ -75,72 +75,72 @@ table 53109 "Hist. Linhas Movs. Empregado"
         }
         field(40; "Valor Débito"; Decimal)
         {
-            //Caption = 'Debit Amount';
+            Caption = 'Debit Amount';
             Enabled = false;
         }
         field(41; "Valor Crédito"; Decimal)
         {
-            //Caption = 'Credit Amount';
+            Caption = 'Credit Amount';
             Enabled = false;
         }
         field(42; Valor; Decimal)
         {
-            //Caption = 'Amount';
+            Caption = 'Amount';
         }
         field(50; "Tipo Rendimento"; Option)
         {
-            //Caption = 'Type of Earning';
+            Caption = 'Type of Earning';
             Description = 'Anexo J';
             OptionCaption = 'A,B,E,EE,F,G,H,OUTRO';
             OptionMembers = A,B,E,EE,F,G,H,OUTRO;
         }
         field(60; "Cód. Situação"; Code[2])
         {
-            //Caption = 'Situation Code';
+            Caption = 'Situation Code';
             Description = 'CGA';
             TableRelation = "Códigos Situação"."Cód. Situação";
         }
         field(61; "Cód. Movimento"; Option)
         {
-            //Caption = 'Transaction Code';
+            Caption = 'Transaction Code';
             Description = 'CGA';
             OptionCaption = ' ,9-Anulação do movimento,6-Movimento retroactivo positivo,7-Anulação movimento retroactivo';
             OptionMembers = " ","9","6","7";
         }
         field(62; "Data Efeito"; Date)
         {
-            //Caption = 'Start Date';
+            Caption = 'Start Date';
             Description = 'CGA';
         }
         field(80; Pendente; Boolean)
         {
-            //Caption = 'Open';
+            Caption = 'Open';
             Description = 'Pagamento Encargos';
             InitValue = true;
         }
         field(81; "Pago por No. Documento"; Code[20])
         {
-            //Caption = 'Payment Document No.';
+            Caption = 'Payment Document No.';
             Description = 'Pagamento Encargos';
         }
         field(85; "Data a que se refere o mov"; Date)
         {
-            //Caption = 'Absence Start Date';
+            Caption = 'Absence Start Date';
             Description = 'LCF - o campo serve para as faltas do  fich Seg Social';
         }
         field(90; "Quatidade Recibo Vencimentos"; Decimal)
         {
-            //Caption = 'Qtd. in Salary Slip';
+            Caption = 'Qtd. in Salary Slip';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
         field(91; "Unit of Measure"; Code[20])
         {
-            //Caption = 'Unit Code';
+            Caption = 'Unit Code';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
         field(105; "Valor Incidência SS"; Decimal)
         {
-            //Caption = 'Soc. Sec. Incidence Value';
+            Caption = 'Soc. Sec. Incidence Value';
             Description = 'Quando há valor limite(ex:Sub Alim), aqui a aplicação coloca só o valor no qual incide SS';
         }
         field(110; "Global Dimension 1 Code"; Code[20])
@@ -159,7 +159,7 @@ table 53109 "Hist. Linhas Movs. Empregado"
         }
         field(112; "Tipo Rendimento Cat.A"; Option)
         {
-            //Caption = 'Type of Earning - Cat. A';
+            Caption = 'Type of Earning - Cat. A';
             Description = 'Usado na Declaração Mensal de Remunerações';
             OptionCaption = ' ,A,A2,A11,A12,A13,A14,A15,A16,A17,A20,A21,A22,A23,A30,A31,A32,A3,A4,A5,A18,A33,A19,A24,A25';
             OptionMembers = " ",A,A2,A11,A12,A13,A14,A15,A16,A17,A20,A21,A22,A23,A30,A31,A32,A3,A4,A5,A18,A33,A19,A24,A25;

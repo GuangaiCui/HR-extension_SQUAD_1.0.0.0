@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53052 "Contratos Trabalho"
 {
-    //Caption = 'Employment Contracts';
+    Caption = 'Employment Contracts';
     PageType = List;
     SourceTable = "Contrato Trabalho";
     UsageCategory = Administration;

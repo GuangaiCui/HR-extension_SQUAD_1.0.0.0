@@ -7,48 +7,48 @@ table 53065 "Horário RH"
     {
         field(1; "Código"; Code[20])
         {
-            //Caption = 'Code';
+            Caption = 'Code';
         }
         field(2; "Descrição"; Text[100])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(3; "Hora Entrada"; Time)
         {
-            //Caption = 'Start Period';
+            Caption = 'Start Period';
         }
         field(4; "Hora Saída"; Time)
         {
-            //Caption = 'End Period';
+            Caption = 'End Period';
         }
         field(5; "Hora Início Almoço"; Time)
         {
-            //Caption = 'Lunch Start Period';
+            Caption = 'Lunch Start Period';
         }
         field(6; "Hora Fim Almoço"; Time)
         {
-            //Caption = 'Lunch End Period';
+            Caption = 'Lunch End Period';
         }
         field(10; "No. Horas Diárias"; Decimal)
         {
-            //Caption = 'No. of Daily Hours';
+            Caption = 'No. of Daily Hours';
         }
         field(11; "No. Horas Semanais"; Decimal)
         {
-            //Caption = 'No. of Week Hours';
+            Caption = 'No. of Week Hours';
         }
         field(12; "No. Horas Mensais"; Decimal)
         {
-            //Caption = 'No. of Month Hours';
+            Caption = 'No. of Month Hours';
         }
         field(13; "Data Filtro Inicio"; Date)
         {
-            //Caption = 'Start Date Filter';
+            Caption = 'Start Date Filter';
             FieldClass = FlowFilter;
         }
         field(14; "Data Filtro Fim"; Date)
         {
-            //Caption = 'End Date Filter';
+            Caption = 'End Date Filter';
             FieldClass = FlowFilter;
         }
     }

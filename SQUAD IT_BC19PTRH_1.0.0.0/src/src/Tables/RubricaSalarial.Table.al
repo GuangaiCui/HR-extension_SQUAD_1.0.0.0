@@ -12,7 +12,7 @@ table 53076 "Payroll Item"
     {
         field(1; "Código"; Code[20])
         {
-            //Caption = 'Code';
+            Caption = 'Code';
         }
         field(6; "Payroll Item Type"; Option)
         {
@@ -26,13 +26,13 @@ table 53076 "Payroll Item"
         }
         field(13; Periodicidade; Option)
         {
-            //Caption = 'Frequency';
+            Caption = 'Frequency';
             OptionCaption = 'Mensal,Bimestral,Trimestral,Quadrimestral,Semestral,Anual';
             OptionMembers = Mensal,Bimestral,Trimestral,Quadrimestral,Semestral,Anual;
         }
         field(14; "Mês Início Periocidade"; Integer)
         {
-            //Caption = 'Start Frequency';
+            Caption = 'Start Frequency';
         }
         field(19; "Debit Acc. No."; Code[20])
         {
@@ -132,7 +132,7 @@ table 53076 "Payroll Item"
         }
         field(50; "Tipo de Remuneração"; Option)
         {
-            //Caption = 'Salary Type';
+            Caption = 'Salary Type';
             Description = 'RU';
             OptionCaption = ' ,Prémios e Subsídios Regulares,Prestações Irregulares,Subsídio Turno';
             OptionMembers = " ","Prémios e Subsídios Regulares","Prestações Irregulares","Subsídio Turno";
@@ -155,7 +155,7 @@ table 53076 "Payroll Item"
         }
         field(58; Faults; Boolean)
         {
-            //Caption = 'Absence';
+            Caption = 'Absence';
             Description = 'Significa que as faltas são abatidas a esta rubrica.';
         }
         field(100; Acertos; Boolean)
@@ -164,12 +164,12 @@ table 53076 "Payroll Item"
         }
         field(101; "Actualização Vencimento"; Boolean)
         {
-            //Caption = 'Salary Update';
+            Caption = 'Salary Update';
             Description = 'Serve para indicar qual a rubrica que vai sofrer act. por parte da rotina de Act. Vencimento';
         }
         field(102; "Usado no cálculo indemnização"; Boolean)
         {
-            //Caption = 'Use in Compensation Salary';
+            Caption = 'Use in Compensation Salary';
             Description = 'Fecho de Contas';
         }
         field(110; "Imposto Extraordinário"; Boolean)

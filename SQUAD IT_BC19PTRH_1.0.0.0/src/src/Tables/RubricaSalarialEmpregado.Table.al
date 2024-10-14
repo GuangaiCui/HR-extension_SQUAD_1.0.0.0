@@ -13,7 +13,7 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(2; "Cód. Rúbrica Salarial"; Code[20])
         {
-            //Caption = 'Salary Item Code';
+            Caption = 'Salary Item Code';
             TableRelation = "Payroll Item";
 
             trigger OnValidate()
@@ -111,12 +111,12 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(27; "Data Início"; Date)
         {
-            //Caption = 'Start Date';
+            Caption = 'Start Date';
             InitValue = 19000101D;
         }
         field(28; "Data Fim"; Date)
         {
-            //Caption = 'End Date';
+            Caption = 'End Date';
             InitValue = 21001231D;
         }
         field(30; "Sort"; Integer)
@@ -126,37 +126,37 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(60; "Cód. Situação"; Code[2])
         {
-            //Caption = 'Situation Code';
+            Caption = 'Situation Code';
             Description = 'CGA';
             TableRelation = "Códigos Situação"."Cód. Situação";
         }
         field(61; "Cód. Movimento"; Option)
         {
-            //Caption = 'Transaction Code';
+            Caption = 'Transaction Code';
             Description = 'CGA';
             OptionCaption = ' ,9-Anulação do movimento,6-Movimento retroactivo positivo,7-Anulação movimento retroactivo';
             OptionMembers = " ","9","6","7";
         }
         field(62; "Data Efeito"; Date)
         {
-            //Caption = 'Start Date';
+            Caption = 'Start Date';
             Description = 'CGA';
         }
         field(63; "Origem TP"; Boolean)
         {
-            //Caption = 'Edu Source';
+            Caption = 'Edu Source';
         }
         field(64; "Utilizador Integracao"; Code[20])
         {
-            //Caption = 'Integration User ID';
+            Caption = 'Integration User ID';
         }
         field(65; "Data Integracao"; Date)
         {
-            //Caption = 'Integration Date';
+            Caption = 'Integration Date';
         }
         field(90; "Quatidade Recibo Vencimentos"; Decimal)
         {
-            //Caption = 'Salary Slip Qtd.';
+            Caption = 'Salary Slip Qtd.';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
         field(91; "Unit of Measure"; Code[20])
@@ -166,12 +166,12 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(98; "Data a que se refere o mov"; Date)
         {
-            //Caption = 'Absence Start Date';
+            Caption = 'Absence Start Date';
             Description = 'Usado no Ficheiro Seg. Social';
         }
         field(99; NLinhaRubSalEmp; Integer)
         {
-            //Caption = 'Line No. Emp. Salary Iten';
+            Caption = 'Line No. Emp. Salary Iten';
             Description = 'Usado na Analitica para relacionar com Coef Default';
         }
         field(101; Table; Integer)
@@ -181,7 +181,7 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(105; "Valor Incidência SS"; Decimal)
         {
-            //Caption = 'Soc. Sec. Value';
+            Caption = 'Soc. Sec. Value';
             Description = 'Quando há valor limite(ex:Sub Alim), aqui a aplicação coloca só o valor no qual incide SS';
         }
         field(110; "Global Dimension 1 Code"; Code[20])

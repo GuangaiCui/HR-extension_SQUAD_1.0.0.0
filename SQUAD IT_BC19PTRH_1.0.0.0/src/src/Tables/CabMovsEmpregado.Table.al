@@ -7,17 +7,17 @@ table 53079 "Cab. Movs. Empregado"
     {
         field(1; "Cód. Processamento"; Code[10])
         {
-            //Caption = 'Payroll Code';
+            Caption = 'Payroll Code';
         }
         field(2; "Tipo Processamento"; Option)
         {
-            //Caption = 'Payroll Type';
+            Caption = 'Payroll Type';
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
         field(3; "Employee No."; Code[20])
         {
-            //Caption = 'Employee No.';
+            Caption = 'Employee No.';
             TableRelation = Empregado;
 
             trigger OnValidate()
@@ -29,40 +29,40 @@ table 53079 "Cab. Movs. Empregado"
         }
         field(5; "Designação Empregado"; Text[75])
         {
-            //Caption = 'Employee Name';
+            Caption = 'Employee Name';
         }
         field(10; "Data Registo"; Date)
         {
-            //Caption = 'Posting Date';
+            Caption = 'Posting Date';
         }
         field(20; Valor; Decimal)
         {
             CalcFormula = Sum("Linhas Movs. Empregado".Valor WHERE("Cód. Processamento" = FIELD("Cód. Processamento"),
                                                                     "Tipo Processamento" = FIELD("Tipo Processamento"),
                                                                     "Employee No." = FIELD("Employee No.")));
-            //Caption = 'Amount';
+            Caption = 'Amount';
             FieldClass = FlowField;
         }
         field(30; "Usa Transferência Bancária"; Boolean)
         {
-            //Caption = 'Use Bank Transfer';
+            Caption = 'Use Bank Transfer';
         }
         field(31; "Cód. Banco Transf."; Code[20])
         {
-            //Caption = 'Bank Transfer Code';
+            Caption = 'Bank Transfer Code';
         }
         field(40; "Abate Sub Alimentação"; Integer)
         {
-            //Caption = 'Abate Sub Alimentação';
+            Caption = 'Abate Sub Alimentação';
         }
         field(50; "No. Segurança Social"; Text[11])
         {
-            //Caption = 'Social Security No.';
+            Caption = 'Social Security No.';
             Numeric = true;
         }
         field(51; "No. Contribuinte"; Text[9])
         {
-            //Caption = 'VAT No.';
+            Caption = 'VAT No.';
             Numeric = true;
 
             trigger OnValidate()
@@ -75,7 +75,7 @@ table 53079 "Cab. Movs. Empregado"
         }
         field(52; IBAN; Code[50])
         {
-            //Caption = 'IBAN';
+            Caption = 'IBAN';
             Numeric = true;
 
             trigger OnValidate()
@@ -96,35 +96,35 @@ table 53079 "Cab. Movs. Empregado"
         }
         field(54; Seguradora; Text[60])
         {
-            //Caption = 'Insurance';
+            Caption = 'Insurance';
         }
         field(55; "No. Apólice"; Text[20])
         {
-            //Caption = 'Insurance No.';
+            Caption = 'Insurance No.';
         }
         field(56; "Grau Função"; Code[20])
         {
-            //Caption = 'Degree';
+            Caption = 'Degree';
         }
         field(57; "Descrição Cat Prof QP"; Text[100])
         {
-            //Caption = 'QP Prof. Categ. Description';
+            Caption = 'QP Prof. Categ. Description';
         }
         field(58; "Valor Vencimento Base"; Decimal)
         {
-            //Caption = 'Base Salary Amount';
+            Caption = 'Base Salary Amount';
         }
         field(59; "Valor Hora"; Decimal)
         {
-            //Caption = 'Hour Amount';
+            Caption = 'Hour Amount';
         }
         field(60; "No. Horas Semanais"; Decimal)
         {
-            //Caption = 'No. of Weekly Hours';
+            Caption = 'No. of Weekly Hours';
         }
         field(61; "Nº Horas Semanais Totais"; Decimal)
         {
-            //Caption = 'Nº Horas Semanais Totais';
+            Caption = 'Nº Horas Semanais Totais';
             Enabled = false;
         }
         field(62; "Nº Horas Docência Calc. Desct."; Integer)
@@ -134,7 +134,7 @@ table 53079 "Cab. Movs. Empregado"
         }
         field(1000; "Valor Incidência IRS"; Decimal)
         {
-            //Caption = 'IRS Value';
+            Caption = 'IRS Value';
             Description = 'Usado na Sobretaxa 3,5 de 2013';
         }
         field(1001; "Valor para Escalão Sobretaxa"; Decimal)

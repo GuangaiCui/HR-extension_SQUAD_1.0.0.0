@@ -274,7 +274,7 @@ table 53111 "Historico Empregado"
         }
         field(54; "Tipo Empregado"; Code[20])
         {
-            //Caption = 'Employee Type';
+            Caption = 'Employee Type';
             TableRelation = "Tipo Empregado";
         }
         field(55; IBAN; Code[50])
@@ -303,50 +303,50 @@ table 53111 "Historico Empregado"
         }
         field(59; Seguradora; Text[60])
         {
-            //Caption = 'Insurance Company';
+            Caption = 'Insurance Company';
         }
         field(60; "No. Apólice"; Text[20])
         {
-            //Caption = 'Insurance Policy No.';
+            Caption = 'Insurance Policy No.';
         }
         field(61; "Documento Identificação"; Option)
         {
-            //Caption = 'Identification Document';
+            Caption = 'Identification Document';
             OptionCaption = ' ,Cédula,BI,Passaporte,Cartão Cidadão,Autorização residência temporária,Autorização residência permanente,Cartão residência,Visto trabalho,Outros';
             OptionMembers = " ","Cédula",BI,Passaporte,"Cartão Cidadão","Autorização residência temporária","Autorização residência permanente","Cartão residência","Visto trabalho",Outros;
         }
         field(62; "No. Doc. Identificação"; Text[14])
         {
-            //Caption = 'Identification Doc. No.';
+            Caption = 'Identification Doc. No.';
         }
         field(63; "Local Emissão Doc. Ident."; Text[30])
         {
-            //Caption = 'Ident. Doc. Issue Local';
+            Caption = 'Ident. Doc. Issue Local';
         }
         field(64; "Data Doc. Ident."; Date)
         {
-            //Caption = 'Ident. Doc.Date';
+            Caption = 'Ident. Doc.Date';
         }
         field(65; "Data Validade Doc. Ident."; Date)
         {
-            //Caption = 'Ident. Doc. Expiration Date';
+            Caption = 'Ident. Doc. Expiration Date';
         }
         field(66; Naturalidade; Text[60])
         {
-            //Caption = 'Birth';
+            Caption = 'Birth';
         }
         field(67; Nacionalidade; Text[30])
         {
-            //Caption = 'Nationality';
+            Caption = 'Nationality';
             TableRelation = "Country/Region";
         }
         field(68; "Nacionalidade Descrição"; Text[50])
         {
-            //Caption = 'Nationality Description';
+            Caption = 'Nationality Description';
         }
         field(69; "No. Contribuinte"; Text[9])
         {
-            //Caption = 'Taxpayer No.';
+            Caption = 'Taxpayer No.';
             Numeric = true;
 
             trigger OnValidate()
@@ -359,72 +359,72 @@ table 53111 "Historico Empregado"
         }
         field(70; "Tipo Contribuinte"; Option)
         {
-            //Caption = 'Taxpayer Type';
+            Caption = 'Taxpayer Type';
             OptionCaption = ' ,Conta de Outrem,Trabalhador Independente,Pensionista';
             OptionMembers = " ","Conta de Outrem","Trabalhador Independente",Pensionista;
         }
         field(71; "Cod. Repartição Finanças"; Text[4])
         {
-            //Caption = 'Finance Allocation Code';
+            Caption = 'Finance Allocation Code';
             Numeric = true;
         }
         field(72; "Repartição Finanças"; Text[30])
         {
-            //Caption = 'Finance Allocation';
+            Caption = 'Finance Allocation';
         }
         field(73; "Data Emissão NIF"; Date)
         {
-            //Caption = 'Tax Information No. Issue Date';
+            Caption = 'Tax Information No. Issue Date';
         }
         field(74; "Tipo Rendimento"; Option)
         {
-            //Caption = 'Salary Type';
+            Caption = 'Salary Type';
             OptionCaption = 'A,B';
             OptionMembers = A,B;
         }
         field(75; "Local Obtenção Rendimento"; Option)
         {
-            //Caption = 'Income Obtaining Location';
+            Caption = 'Income Obtaining Location';
             OptionCaption = ' ,C,RA,RM';
             OptionMembers = " ",C,RA,RM;
         }
         field(76; Deficiente; Option)
         {
-            //Caption = 'With disability';
+            Caption = 'With disability';
             OptionCaption = ' ,Sim,Forças Armadas';
             OptionMembers = "Não",Sim,"Forças Armadas";
         }
         field(77; "Estado Civil"; Option)
         {
-            //Caption = 'Marital Status';
+            Caption = 'Marital Status';
             OptionCaption = 'Solteiro,Casado,Divorciado,Viúvo,Outro,União Facto';
             OptionMembers = Solteiro,Casado,Divorciado,"Viúvo",Outro,"União Facto";
         }
         field(78; "Titular Rendimentos"; Option)
         {
-            //Caption = 'Income Holder';
+            Caption = 'Income Holder';
             OptionCaption = ' ,Único Titular,Dois Titulares';
             OptionMembers = " ","Único Titular","Dois Titulares";
         }
         field(79; "Conjuge Deficiente"; Boolean)
         {
-            //Caption = 'Disabled Spouse';
+            Caption = 'Disabled Spouse';
         }
         field(80; "No. Dependentes"; Integer)
         {
-            //Caption = 'Dependents No.';
+            Caption = 'Dependents No.';
         }
         field(81; "No. Dependentes Deficientes"; Integer)
         {
-            //Caption = 'Disabled Dependents No.';
+            Caption = 'Disabled Dependents No.';
         }
         field(82; "Tabela IRS"; Text[3])
         {
-            //Caption = 'IRS Tables';
+            Caption = 'IRS Tables';
         }
         field(83; "Descrição Tabela IRS"; Text[60])
         {
-            //Caption = 'IRS Tables Description';
+            Caption = 'IRS Tables Description';
         }
         field(84; "IRS %"; Decimal)
         {
@@ -434,35 +434,35 @@ table 53111 "Historico Empregado"
         }
         field(85; "IRS % Fixa"; Decimal)
         {
-            //Caption = 'IRS Fixed %';
+            Caption = 'IRS Fixed %';
             MaxValue = 100;
             MinValue = 0;
         }
         field(86; "Subscritor SS"; Boolean)
         {
-            //Caption = 'SS Subscriber';
+            Caption = 'SS Subscriber';
         }
         field(87; "No. Segurança Social"; Text[11])
         {
-            //Caption = 'Social Security No.';
+            Caption = 'Social Security No.';
             Numeric = true;
         }
         field(88; "Data da Admissão SS"; Date)
         {
-            //Caption = 'SS Admission Date';
+            Caption = 'SS Admission Date';
         }
         field(89; "Data Emissão SS"; Date)
         {
-            //Caption = 'SS Emission Date';
+            Caption = 'SS Emission Date';
         }
         field(90; "Cod. Instituição SS"; Code[10])
         {
-            //Caption = 'SS Institution Code';
+            Caption = 'SS Institution Code';
             TableRelation = "Instituição Seg. Social".Code;
         }
         field(91; "Cod. Regime SS"; Code[10])
         {
-            //Caption = 'SS Regime Code';
+            Caption = 'SS Regime Code';
             TableRelation = "Regime Seg. Social"."Código" WHERE("Código" = FIELD("Cod. Regime SS"));
         }
         field(92; "Subscritor ADSE"; Boolean)
@@ -505,15 +505,15 @@ table 53111 "Historico Empregado"
         }
         field(101; "Data de Antiguidade"; Date)
         {
-            //Caption = 'Seniority Date';
+            Caption = 'Seniority Date';
         }
         field(102; "Data Fim"; Date)
         {
-            //Caption = 'End Date';
+            Caption = 'End Date';
         }
         field(103; "Motivo de Terminação"; Code[10])
         {
-            //Caption = 'End Reason';
+            Caption = 'End Reason';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSai));
         }
@@ -524,7 +524,7 @@ table 53111 "Historico Empregado"
         }
         field(105; "Acordo Colectivo"; Code[20])
         {
-            //Caption = 'Collective Agreement';
+            Caption = 'Collective Agreement';
         }
         field(106; "Descrição IRCT"; Text[100])
         {
@@ -532,7 +532,7 @@ table 53111 "Historico Empregado"
         }
         field(107; "Aplicabilidade do IRCT"; Option)
         {
-            //Caption = 'IRCT Applicability';
+            Caption = 'IRCT Applicability';
             Description = 'RU';
             OptionCaption = 'Filiação,Portaria de Extensão,Escolha,Acto de Gestão,Não sabe qual dos IRCT se aplica,Sem aplicabilidade,Automática';
             OptionMembers = "01","02","03","04","05","06","07";
@@ -542,7 +542,7 @@ table 53111 "Historico Empregado"
             CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Cód. Cat. Prof." WHERE("Employee No." = FIELD("No."),
                                                                                       "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                       "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
-            //Caption = 'Professional Category Code';
+            Caption = 'Professional Category Code';
             FieldClass = FlowField;
         }
         field(109; "Descrição Cat Prof"; Text[100])
@@ -550,7 +550,7 @@ table 53111 "Historico Empregado"
             CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Descrição" WHERE("Employee No." = FIELD("No."),
                                                                                 "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                 "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
-            //Caption = 'Prof. Cate. Description';
+            Caption = 'Prof. Cate. Description';
             FieldClass = FlowField;
         }
         field(110; "Cód. Cat. Prof QP"; Code[20])
@@ -558,7 +558,7 @@ table 53111 "Historico Empregado"
             CalcFormula = Lookup("Cat. Prof. QP Empregado"."Cód. Cat. Prof. QP" WHERE("Employee No." = FIELD("No."),
                                                                                        "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                        "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
-            //Caption = 'Prof. Cate. QP Code';
+            Caption = 'Prof. Cate. QP Code';
             FieldClass = FlowField;
         }
         field(111; "Descrição Cat Prof QP"; Text[200])
@@ -566,12 +566,12 @@ table 53111 "Historico Empregado"
             CalcFormula = Lookup("Cat. Prof. QP Empregado".Description WHERE("Employee No." = FIELD("No."),
                                                                               "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                               "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
-            //Caption = 'Prof. Cate. QP Description';
+            Caption = 'Prof. Cate. QP Description';
             FieldClass = FlowField;
         }
         field(112; "Class. Nac. Profi."; Code[20])
         {
-            //Caption = 'Nac. Profe. Class.';
+            Caption = 'Nac. Profe. Class.';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(CNP));
         }
         field(113; "Descrição Class. Nac."; Text[150])
@@ -580,16 +580,16 @@ table 53111 "Historico Empregado"
         }
         field(114; "Cód. Habilitações"; Code[20])
         {
-            //Caption = 'Qualifications Code';
+            Caption = 'Qualifications Code';
             TableRelation = "Habilitação"."Código";
         }
         field(115; "Descrição Habilitações"; Text[200])
         {
-            //Caption = 'Qualifications Description';
+            Caption = 'Qualifications Description';
         }
         field(116; "Situação Profissional"; Option)
         {
-            //Caption = 'Professional Status';
+            Caption = 'Professional Status';
             Description = 'RU';
             OptionCaption = ' ,Empregador,Trabalhador Familiar Não Remunerado,Trabalhador por Conta de Outrém,Membro Activo de Cooperativa de Produção,Outra Situação';
             OptionMembers = " ","1","2","3","4","8";
@@ -599,7 +599,7 @@ table 53111 "Historico Empregado"
             CalcFormula = Lookup("Grau Função Empregado"."Cód. Grau Função" WHERE("Employee No." = FIELD("No."),
                                                                                    "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                                    "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
-            //Caption = 'Degree Role';
+            Caption = 'Degree Role';
             FieldClass = FlowField;
         }
         field(118; "Descrição Grau Função"; Text[200])
@@ -607,7 +607,7 @@ table 53111 "Historico Empregado"
             CalcFormula = Lookup("Grau Função Empregado"."Descrição" WHERE("Employee No." = FIELD("No."),
                                                                             "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                             "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
-            //Caption = 'Degree Role Description';
+            Caption = 'Degree Role Description';
             FieldClass = FlowField;
         }
         field(119; "Cód. Horário"; Code[20])
@@ -615,48 +615,48 @@ table 53111 "Historico Empregado"
             CalcFormula = Lookup("Horário Empregado"."Cód. Horário" WHERE("Employee No." = FIELD("No."),
                                                                            "Data Iníco Horário" = FIELD("Data Filtro Inicio"),
                                                                            "Data Fim Horário" = FIELD("Data Filtro Fim")));
-            //Caption = 'Schedule Code';
+            Caption = 'Schedule Code';
             FieldClass = FlowField;
             //The property 'ValidateTableRelation' can only be set if the property 'TableRelation' is set
             //ValidateTableRelation = true;
         }
         field(120; "Valor Vencimento Base"; Decimal)
         {
-            //Caption = 'Base Salary Amount';
+            Caption = 'Base Salary Amount';
         }
         field(121; "Valor Dia"; Decimal)
         {
-            //Caption = 'Day Amount';
+            Caption = 'Day Amount';
         }
         field(122; "Valor Hora"; Decimal)
         {
-            //Caption = 'Hour Amount';
+            Caption = 'Hour Amount';
         }
         field(123; "No. Horas Semanais"; Decimal)
         {
-            //Caption = 'Week Hours No.';
+            Caption = 'Week Hours No.';
         }
         field(124; "Mês Proc. Sub. Férias"; Integer)
         {
-            //Caption = 'Proc. Vacat. Benef. Month';
+            Caption = 'Proc. Vacat. Benef. Month';
         }
         field(125; "Nº Professor"; Code[20])
         {
         }
         field(126; "Regime Duração Trabalho"; Option)
         {
-            //Caption = 'Work Duration Regime';
+            Caption = 'Work Duration Regime';
             Description = 'RU';
             OptionCaption = ' ,A tempo completo,A tempo parcial';
             OptionMembers = " ","1","2";
         }
         field(127; "Usa Transf. Bancária"; Boolean)
         {
-            //Caption = 'Use Bank Transfer';
+            Caption = 'Use Bank Transfer';
         }
         field(128; "Cód. Banco Transf."; Code[20])
         {
-            //Caption = 'Bank Transfer Code';
+            Caption = 'Bank Transfer Code';
             TableRelation = "Bank Account";
         }
         field(129; "IVA %"; Decimal)
@@ -668,26 +668,26 @@ table 53111 "Historico Empregado"
         }
         field(130; "Nome Livro Diario Pag."; Code[10])
         {
-            //Caption = 'Gen. Journal Name Pag.';
+            Caption = 'Gen. Journal Name Pag.';
             Description = 'Pagamento';
             TableRelation = "Gen. Journal Template".Name;
         }
         field(131; "Secção Diario Pag."; Code[10])
         {
-            //Caption = 'Gen. Journal Section';
+            Caption = 'Gen. Journal Section';
             Description = 'Pagamento';
             TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Nome Livro Diario Pag."));
         }
         field(132; Pagamento; Option)
         {
-            //Caption = 'Payment';
+            Caption = 'Payment';
             Description = 'Pagamento';
             OptionCaption = 'Conta Bancária,Conta CG';
             OptionMembers = "Bank Account","G/L Account";
         }
         field(133; "Conta Pag."; Code[20])
         {
-            //Caption = 'Payment Acc.';
+            Caption = 'Payment Acc.';
             Description = 'Pagamento';
             TableRelation = IF (Pagamento = CONST("Bank Account")) "Bank Account"."No."
             ELSE
@@ -695,36 +695,36 @@ table 53111 "Historico Empregado"
         }
         field(134; "Envio Recibo via E-Mail"; Boolean)
         {
-            //Caption = 'Send Receipt via E-Mail';
+            Caption = 'Send Receipt via E-Mail';
             Description = 'Recibo PDF via Email';
             ExtendedDatatype = None;
         }
         field(135; "Password Recibo em PDF"; Text[8])
         {
-            //Caption = 'Receipt Passord PDF';
+            Caption = 'Receipt Passord PDF';
             Description = 'Recibo PDF via Email';
         }
         field(136; "Endereço de Envio"; Option)
         {
-            //Caption = 'Send to Email';
+            Caption = 'Send to Email';
             Description = 'Recibo PDF via Email';
             OptionCaption = 'Empresa,Pessoal';
             OptionMembers = Empresa,Pessoal;
         }
         field(137; "Última data Proc. Sub. Férias"; Date)
         {
-            //Caption = 'Last Date Proc. Vacation Benef.';
+            Caption = 'Last Date Proc. Vacation Benef.';
             Description = 'Para saber até que data o Sub. Férias está pago';
         }
         field(138; "Data Filtro Inicio"; Date)
         {
-            //Caption = 'Start Date Filter';
+            Caption = 'Start Date Filter';
             Description = 'Filtra os Contratos, Categorias Profissionais e Funções Actuais';
             FieldClass = FlowFilter;
         }
         field(139; "Data Filtro Fim"; Date)
         {
-            //Caption = 'End Date Filter';
+            Caption = 'End Date Filter';
             Description = 'Filtra os Contratos, Categorias Profissionais e Funções Actuais';
             FieldClass = FlowFilter;
         }
@@ -732,14 +732,14 @@ table 53111 "Historico Empregado"
         {
             CalcFormula = Sum("Férias Empregados"."Qtd." WHERE("Employee No." = FIELD("No."),
                                                                 Data = FIELD("Date Filter")));
-            //Caption = 'Total Vacations';
+            Caption = 'Total Vacations';
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
         }
         field(141; "Filtro Hora Extra"; Code[10])
         {
-            //Caption = 'Extra Hour Filter';
+            Caption = 'Extra Hour Filter';
             FieldClass = FlowFilter;
             TableRelation = "Tipos Horas Extra";
         }
@@ -748,39 +748,39 @@ table 53111 "Historico Empregado"
             CalcFormula = Sum("Histórico Horas Extra".Quantity WHERE("Employee No." = FIELD("No."),
                                                                         "Cód. Hora Extra" = FIELD("Filtro Hora Extra"),
                                                                         Data = FIELD("Date Filter")));
-            //Caption = 'Extra Hour Total (Base)';
+            Caption = 'Extra Hour Total (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
         }
         field(143; "Naturalidade - Concelho"; Text[60])
         {
-            //Caption = 'Birth - County';
+            Caption = 'Birth - County';
         }
         field(144; "Tipo Horario"; Option)
         {
-            //Caption = 'Schedule Type';
+            Caption = 'Schedule Type';
             Description = 'HR.02 - BS - Diversos tipos de Horarios';
             OptionMembers = " ","Normal fixo","Normal flexível","Turno fixo e/ou flexível","Irregular e/ou movel",Reduzido,"Insencão horario","Outros ";
         }
         field(145; "No. dias de Trabalho Semanal"; Decimal)
         {
-            //Caption = 'Work Week No. of days';
+            Caption = 'Work Week No. of days';
             Description = 'HR.02 - BS';
         }
         field(146; "Profissionalização"; Boolean)
         {
             CalcFormula = Exist("Profissionalização" WHERE("Cod Empregado" = FIELD("No.")));
-            //Caption = 'Professionalization';
+            Caption = 'Professionalization';
             FieldClass = FlowField;
         }
         field(147; "Data Profissionalização"; Date)
         {
-            //Caption = 'Professionalization Date';
+            Caption = 'Professionalization Date';
         }
         field(148; "Cód. Rúbrica Enc. Seg. Social"; Code[20])
         {
-            //Caption = 'Social Security Charges Rubric Code';
+            Caption = 'Social Security Charges Rubric Code';
             TableRelation = "Payroll Item";
         }
         field(149; "Cód. Rúbrica Enc. CGA"; Code[20])
@@ -799,7 +799,7 @@ table 53111 "Historico Empregado"
         }
         field(153; "No. antigo do Empregado"; Code[20])
         {
-            //Caption = 'Old Employee No.';
+            Caption = 'Old Employee No.';
         }
         field(154; "Nº Horas Semanais Totais"; Decimal)
         {
@@ -807,7 +807,7 @@ table 53111 "Historico Empregado"
         }
         field(155; "Vitalício"; Boolean)
         {
-            //Caption = 'Perpetual';
+            Caption = 'Perpetual';
         }
         field(156; "CGA - Requisição"; Boolean)
         {
@@ -996,13 +996,13 @@ table 53111 "Historico Empregado"
         }
         field(191; "Cod. Cliente"; Code[20])
         {
-            //Caption = 'Customer Code';
+            Caption = 'Customer Code';
             Description = 'Funcionalidade Contratos - Usado para criar um cliente para facturar Imp. Selo dos Contratos';
             TableRelation = Customer."No.";
         }
         field(192; "Qualificação"; Code[50])
         {
-            //Caption = 'Qualification';
+            Caption = 'Qualification';
             Description = 'RU';
 
             trigger OnLookup()
@@ -1013,44 +1013,44 @@ table 53111 "Historico Empregado"
         }
         field(193; "Cod. Regime Reforma Aplicado"; Code[10])
         {
-            //Caption = 'Applied Code Regime Reform';
+            Caption = 'Applied Code Regime Reform';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(RRef));
         }
         field(194; "Regime Reforma Aplicado"; Text[30])
         {
-            //Caption = 'Applied Regime Reform';
+            Caption = 'Applied Regime Reform';
             Description = 'RU';
         }
         field(195; "Duração do Tempo de Trabalho"; Code[20])
         {
-            //Caption = 'Work Time Duration';
+            Caption = 'Work Time Duration';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(DTT));
         }
         field(196; "Desc. Duração Tempo Trabalho"; Text[200])
         {
-            //Caption = 'Work Time Duration Description';
+            Caption = 'Work Time Duration Description';
             Description = 'RU';
         }
         field(197; "Formação-Situação face à freq."; Code[20])
         {
-            //Caption = 'Training-Situation face the freq.';
+            Caption = 'Training-Situation face the freq.';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(SitFF));
         }
         field(198; Marcado; Boolean)
         {
-            //Caption = 'Marked';
+            Caption = 'Marked';
             Description = 'RU - usado para fazer filtros';
         }
         field(199; "Orgão Social"; Boolean)
         {
-            //Caption = 'Social Organ';
+            Caption = 'Social Organ';
         }
         field(200; "No. Dias Trabalho Mensal"; Decimal)
         {
-            //Caption = 'Month Work Days No.';
+            Caption = 'Month Work Days No.';
             Description = 'por causa dos trabalhadores a tempo parcial';
             Editable = false;
         }
@@ -1082,7 +1082,7 @@ table 53111 "Historico Empregado"
         }
         field(62374; "No. Documento"; Text[11])
         {
-            //Caption = 'Document No.';
+            Caption = 'Document No.';
         }
     }
 

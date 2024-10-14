@@ -1,6 +1,6 @@
 table 53055 "Unid. Medida Recursos Humanos"
 {
-    //Caption = 'Human Resource Unit of Measure';
+    Caption = 'Human Resource Unit of Measure';
     DataCaptionFields = "Code";
     DrillDownPageID = "Unid. Medida Recursos Humanos";
     LookupPageID = "Unid. Medida Recursos Humanos";
@@ -30,7 +30,7 @@ table 53055 "Unid. Medida Recursos Humanos"
         }
         field(3; "Designação Interna"; Option)
         {
-            //Caption = 'Interna Description';
+            Caption = 'Interna Description';
             OptionCaption = 'Dia,Hora,Minuto';
             OptionMembers = Dia,Hora,Minuto;
         }

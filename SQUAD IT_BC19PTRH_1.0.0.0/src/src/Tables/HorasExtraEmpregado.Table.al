@@ -17,11 +17,11 @@ table 53073 "Horas Extra Empregado"
         }
         field(3; Data; Date)
         {
-            //Caption = 'Date';
+            Caption = 'Date';
         }
         field(6; "Cód. Hora Extra"; Code[20])
         {
-            //Caption = 'Extra Hour Code';
+            Caption = 'Extra Hour Code';
             TableRelation = "Tipos Horas Extra";
 
             trigger OnValidate()
@@ -35,7 +35,7 @@ table 53073 "Horas Extra Empregado"
         }
         field(7; "Descrição"; Text[100])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(12; "Payroll Item Code"; Code[20])
         {
@@ -58,13 +58,13 @@ table 53073 "Horas Extra Empregado"
         {
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(HorEx),
                                                                       "Table Line No." = FIELD("Entry No.")));
-            //Caption = 'Commet';
+            Caption = 'Commet';
             Editable = false;
             FieldClass = FlowField;
         }
         field(26; "Hora Extra Bloqueada"; Boolean)
         {
-            //Caption = 'Extra Hour Bloqued';
+            Caption = 'Extra Hour Bloqued';
             Editable = false;
         }
         field(30; "Global Dimension 1 Code"; Code[20])

@@ -16,21 +16,21 @@ table 53099 "Distribuição Custos"
         }
         field(7; Percentagem; Decimal)
         {
-            //Caption = 'Percentage';
+            Caption = 'Percentage';
             MaxValue = 1;
             MinValue = 0;
         }
         field(8; "Data Inicio"; Date)
         {
-            //Caption = 'Start Date';
+            Caption = 'Start Date';
         }
         field(9; "Data Fim"; Date)
         {
-            //Caption = 'End Date';
+            Caption = 'End Date';
         }
         field(15; "No. Horas"; Decimal)
         {
-            //Caption = 'Total Time';
+            Caption = 'Total Time';
 
             trigger OnValidate()
             begin

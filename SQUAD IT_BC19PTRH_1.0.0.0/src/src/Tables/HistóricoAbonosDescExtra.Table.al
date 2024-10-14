@@ -16,7 +16,7 @@ table 53107 "Histórico Abonos - Desc. Extra"
         }
         field(3; Data; Date)
         {
-            //Caption = 'Date';
+            Caption = 'Date';
         }
         field(8; "Payroll Item Code"; Code[20])
         {
@@ -64,7 +64,7 @@ table 53107 "Histórico Abonos - Desc. Extra"
         }
         field(35; "Anular Falta"; Boolean)
         {
-            //Caption = 'Cancel Absence';
+            Caption = 'Cancel Absence';
             Description = 'Para anular uma falta debitada por engano, no Fich SS';
         }
         field(36; "Reference Date"; Date)

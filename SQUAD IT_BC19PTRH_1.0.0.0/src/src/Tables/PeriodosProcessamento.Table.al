@@ -9,7 +9,7 @@ table 53081 "Periodos Processamento"
     {
         field(1; "Cód. Processamento"; Code[10])
         {
-            //Caption = 'Payroll Code';
+            Caption = 'Payroll Code';
 
             trigger OnValidate()
             var
@@ -58,45 +58,45 @@ table 53081 "Periodos Processamento"
         }
         field(3; "Tipo Processamento"; Option)
         {
-            //Caption = 'Payroll Type';
+            Caption = 'Payroll Type';
             OptionCaption = 'Vencimentos,Encargos,Sub. Natal,Sub. Férias';
             OptionMembers = Vencimentos,Encargos,SubNatal,SubFerias;
         }
         field(5; "Data Registo"; Date)
         {
-            //Caption = 'Posting Date';
+            Caption = 'Posting Date';
         }
         field(6; Estado; Option)
         {
-            //Caption = 'Status';
+            Caption = 'Status';
             OptionCaption = 'Aberto,Fechado';
             OptionMembers = Aberto,Fechado;
         }
         field(7; "Data Inicio Processamento"; Date)
         {
-            //Caption = 'Payroll Start Date';
+            Caption = 'Payroll Start Date';
         }
         field(8; "Data Fim Processamento"; Date)
         {
-            //Caption = 'Payroll End Date';
+            Caption = 'Payroll End Date';
         }
         field(15; "Integrado na Contabilidade"; Boolean)
         {
-            //Caption = 'Posted in General Ledger';
+            Caption = 'Posted in General Ledger';
         }
         field(20; "Data Inicio Proces. Faltas"; Date)
         {
-            //Caption = 'Absence Start Date';
+            Caption = 'Absence Start Date';
         }
         field(21; "Data Fim Proces. Faltas"; Date)
         {
-            //Caption = 'Absence End Date';
+            Caption = 'Absence End Date';
         }
         field(30; Pendente; Boolean)
         {
             CalcFormula = Lookup("Hist. Cab. Movs. Empregado".Pendente WHERE("Cód. Processamento" = FIELD("Cód. Processamento"),
                                                                               "Tipo Processamento" = FIELD("Tipo Processamento")));
-            //Caption = 'Open';
+            Caption = 'Open';
             FieldClass = FlowField;
         }
     }

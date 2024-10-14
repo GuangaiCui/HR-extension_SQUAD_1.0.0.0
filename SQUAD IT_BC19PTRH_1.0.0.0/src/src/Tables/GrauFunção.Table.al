@@ -53,11 +53,11 @@ table 53062 "Grau Função"
         }
         field(18; "Valor Hora Semanal"; Decimal)
         {
-            //Caption = 'Weekly Hours Value';
+            Caption = 'Weekly Hours Value';
         }
         field(19; "Cod. Índice"; Integer)
         {
-            //Caption = 'Indice Code';
+            Caption = 'Indice Code';
         }
     }
 

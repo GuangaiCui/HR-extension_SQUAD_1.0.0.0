@@ -66,27 +66,27 @@ table 53105 "Histórico Ausências"
         }
         field(20; Justificada; Boolean)
         {
-            //Caption = 'Justify';
+            Caption = 'Justify';
         }
         field(21; "Com Perca de Remuneração"; Boolean)
         {
-            //Caption = 'With Loss of Pay';
+            Caption = 'With Loss of Pay';
         }
         field(22; "Com Perca Sub. Alimentação"; Boolean)
         {
-            //Caption = 'With Loss of Lunch Subsidy';
+            Caption = 'With Loss of Lunch Subsidy';
         }
         field(23; "Qtd. Perca Sub. Alimentação"; Decimal)
         {
-            //Caption = 'Loss of Lunch Subsidy Qtd.';
+            Caption = 'Loss of Lunch Subsidy Qtd.';
         }
         field(26; "Hora Inicio"; Time)
         {
-            //Caption = 'Start Time';
+            Caption = 'Start Time';
         }
         field(27; "Hora Fim"; Time)
         {
-            //Caption = 'End Time';
+            Caption = 'End Time';
         }
         field(32; "Payroll Item Code"; Code[20])
         {

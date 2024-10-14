@@ -7,19 +7,19 @@ table 53075 "Estabelecimentos da Empresa"
     {
         field(1; "Número da Unidade Local"; Code[4])
         {
-            //Caption = 'Local Unit No.';
+            Caption = 'Local Unit No.';
         }
         field(2; "Descrição"; Text[200])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(3; Morada; Text[30])
         {
-            //Caption = 'Address';
+            Caption = 'Address';
         }
         field(4; "Cód. Postal"; Code[10])
         {
-            //Caption = 'Post Code';
+            Caption = 'Post Code';
             TableRelation = "Post Code".Code;
 
             trigger OnValidate()
@@ -30,7 +30,7 @@ table 53075 "Estabelecimentos da Empresa"
         }
         field(5; Cidade; Text[30])
         {
-            //Caption = 'City';
+            Caption = 'City';
 
             trigger OnValidate()
             begin
@@ -39,7 +39,7 @@ table 53075 "Estabelecimentos da Empresa"
         }
         field(6; Telefone; Text[30])
         {
-            //Caption = 'Phone No.';
+            Caption = 'Phone No.';
             Numeric = true;
         }
         field(7; Fax; Text[30])
@@ -49,11 +49,11 @@ table 53075 "Estabelecimentos da Empresa"
         }
         field(8; Localidade; Text[100])
         {
-            //Caption = 'Town';
+            Caption = 'Town';
         }
         field(9; "País"; Code[10])
         {
-            //Caption = 'Country';
+            Caption = 'Country';
             TableRelation = "Country/Region";
         }
         field(10; "E-mail"; Text[60])
@@ -62,7 +62,7 @@ table 53075 "Estabelecimentos da Empresa"
         }
         field(11; "Cód. Distrito/Concelho/Freg."; Code[6])
         {
-            //Caption = 'Parish/County/District Code';
+            Caption = 'Parish/County/District Code';
             TableRelation = "Cód. Freguesia/Conc/Distrito"."Código";
 
             trigger OnValidate()
@@ -79,7 +79,7 @@ table 53075 "Estabelecimentos da Empresa"
         }
         field(15; "Instituição Seg. Social"; Code[20])
         {
-            //Caption = 'Social Security Office';
+            Caption = 'Social Security Office';
             Description = 'RU';
             TableRelation = "Instituição Seg. Social".Code;
         }
@@ -102,22 +102,22 @@ table 53075 "Estabelecimentos da Empresa"
         }
         field(50; "Data Inicio"; Date)
         {
-            //Caption = 'Start Date';
+            Caption = 'Start Date';
             Description = 'RU';
         }
         field(60; Sede; Boolean)
         {
-            //Caption = 'Head Office';
+            Caption = 'Head Office';
             Description = 'RU';
         }
         field(61; "ID Unidade Local"; Text[6])
         {
-            //Caption = 'Local Unit Id.';
+            Caption = 'Local Unit Id.';
             Description = 'RU';
         }
         field(60000; "Região"; Option)
         {
-            //Caption = 'Region';
+            Caption = 'Region';
             Description = 'HR.02 - BS';
             OptionCaption = 'Continente,R.A.Madeira,R.A.Açores';
             OptionMembers = Continente,"R.A.Madeira","R.A.Açores";

@@ -7,7 +7,7 @@ table 53074 "Abonos - Descontos Extra"
     {
         field(1; "Entry No."; Integer)
         {
-            //Caption = 'No. Mov';
+            Caption = 'No. Mov';
         }
         field(2; "Employee No."; Code[20])
         {

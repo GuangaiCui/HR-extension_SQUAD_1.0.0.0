@@ -15,11 +15,11 @@ table 53084 "Doenças Profissionais"
         }
         field(6; "Data Participação"; Date)
         {
-            //Caption = 'Comunication Date';
+            Caption = 'Comunication Date';
         }
         field(7; "Factor Risco"; Code[20])
         {
-            //Caption = 'Risk Factor';
+            Caption = 'Risk Factor';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(RDoeProf));
 
             trigger OnValidate()
@@ -36,12 +36,12 @@ table 53084 "Doenças Profissionais"
         }
         field(8; "Designação Factor Risco"; Text[70])
         {
-            //Caption = 'Risk Factor Description';
+            Caption = 'Risk Factor Description';
             TableRelation = Empregado;
         }
         field(9; "Doença Profissional"; Code[20])
         {
-            //Caption = 'Profissional Disease';
+            Caption = 'Profissional Disease';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(DoeProf),
                                                            "Classificação" = FIELD("Factor Risco"));
 
@@ -59,11 +59,11 @@ table 53084 "Doenças Profissionais"
         }
         field(10; "Designação Doença Profissional"; Text[70])
         {
-            //Caption = 'Profissional Disease Description';
+            Caption = 'Profissional Disease Description';
         }
         field(11; "Data Confirmação"; Date)
         {
-            //Caption = 'Confirmation Date';
+            Caption = 'Confirmation Date';
         }
     }
 

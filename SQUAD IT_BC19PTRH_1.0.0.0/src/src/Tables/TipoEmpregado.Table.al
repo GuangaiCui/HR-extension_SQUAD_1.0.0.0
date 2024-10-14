@@ -6,11 +6,11 @@ table 53098 "Tipo Empregado"
     {
         field(1; "Código"; Code[20])
         {
-            //Caption = 'Code';
+            Caption = 'Code';
         }
         field(3; "Descrição"; Text[50])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
     }
 

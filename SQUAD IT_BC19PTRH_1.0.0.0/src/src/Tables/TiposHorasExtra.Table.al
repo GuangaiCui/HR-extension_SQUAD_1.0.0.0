@@ -7,11 +7,11 @@ table 53072 "Tipos Horas Extra"
     {
         field(1; "Código"; Code[20])
         {
-            //Caption = 'Code';
+            Caption = 'Code';
         }
         field(2; "Descrição"; Text[100])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(7; "Payroll Item Code"; Code[20])
         {
@@ -45,7 +45,7 @@ table 53072 "Tipos Horas Extra"
         }
         field(18; "Dia semanal"; Option)
         {
-            //Caption = 'Week Day';
+            Caption = 'Week Day';
             Description = 'HR.02 - BS';
             OptionMembers = " ","Dia útil","Descanso complementar",Feriado,"Descanso obrigatório";
         }

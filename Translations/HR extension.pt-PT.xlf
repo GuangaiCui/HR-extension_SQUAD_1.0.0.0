@@ -29,19 +29,19 @@
         </trans-unit>
         <trans-unit id="Table 2186427419 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Abonos - Descontos Extra - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2186427419 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Abonos - Descontos Extra - Field Entry No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2186427419 - Field 3706268623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Penhora</source>
-          <target>No. Penhora</target> 
+          <target>Nº Penhora</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Abonos - Descontos Extra - Field Garnishment No. - Property Caption</note>
         </trans-unit>
@@ -299,7 +299,7 @@
         </trans-unit>
         <trans-unit id="Table 2448551292 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov.</source>
-          <target>Não. Mov.</target> 
+          <target>Nº Mov.</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Acidentes de Trabalho - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -365,7 +365,7 @@
         </trans-unit>
         <trans-unit id="Table 3297835521 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov.</source>
-          <target>Não. Mov.</target> 
+          <target>Nº Mov.</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Actividades dos Serviços - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -419,13 +419,13 @@
         </trans-unit>
         <trans-unit id="Table 1468122472 - Field 1744470093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Acções de Inf. Cons. For - Field No. Mov - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1468122472 - Field 3993995800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nº de Participantes Homens</source>
-          <target>N.º de participantes Homens</target> 
+          <target>Nº de participantes Homens</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Acções de Inf. Cons. For - Field No. Participantes Homens - Property Caption</note>
         </trans-unit>
@@ -533,7 +533,7 @@
         </trans-unit>
         <trans-unit id="Table 55552654 - Field 355573803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Acção</source>
-          <target>No. Horas Acção</target> 
+          <target>Nº Horas Acção</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Acções Formação - Field No. Horas Acção - Property Caption</note>
         </trans-unit>
@@ -611,25 +611,25 @@
         </trans-unit>
         <trans-unit id="Table 2345958770 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Acções Promoção da Saúde - Field Entry No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2345958770 - Field 3621043681 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Acções Realizadas</source>
-          <target>No. Acções Realizadas</target> 
+          <target>Nº Acções Realizadas</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Acções Promoção da Saúde - Field No. Acções Realizadas - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2345958770 - Field 3173567771 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Trabalhadores Abrangidos H</source>
-          <target>No. Trabalhadores Abrangidos H</target> 
+          <target>Nº Trabalhadores Abrangidos H</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Acções Promoção da Saúde - Field No. Trabalhadores Abrangidos H - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2345958770 - Field 1260477920 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Trabalhadores Abrangidos M</source>
-          <target>No. Trabalhadores Abrangidos M</target> 
+          <target>Nº Trabalhadores Abrangidos M</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Acções Promoção da Saúde - Field No. Trabalhadores Abrangidos M - Property Caption</note>
         </trans-unit>
@@ -677,7 +677,7 @@
         </trans-unit>
         <trans-unit id="Table 2588844705 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov.</source>
-          <target>Não. Mov.</target> 
+          <target>Nº Mov.</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Associações Empregadores - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -731,13 +731,13 @@
         </trans-unit>
         <trans-unit id="Table 1767108198 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Ausência Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1767108198 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Ausência Empregado - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -953,25 +953,25 @@
         </trans-unit>
         <trans-unit id="Table 951046047 - Field 2105118754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Apólice</source>
-          <target>No. Apólice</target> 
+          <target>Nº Apólice</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Cab. Movs. Empregado - Field No. Apólice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 951046047 - Field 814637661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Contribuinte</source>
-          <target>No. Contribuinte</target> 
+          <target>Nº Contribuinte</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Cab. Movs. Empregado - Field No. Contribuinte - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 951046047 - Field 3658314281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Semanais</source>
-          <target>No. Horas Semanais</target> 
+          <target>Nº Horas Semanais</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Cab. Movs. Empregado - Field No. Horas Semanais - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 951046047 - Field 1983983589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Segurança Social</source>
-          <target>No. Segurança Social</target> 
+          <target>Nº Segurança Social</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Cab. Movs. Empregado - Field No. Segurança Social - Property Caption</note>
         </trans-unit>
@@ -1103,13 +1103,13 @@
         </trans-unit>
         <trans-unit id="Table 3817522470 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Cat. Prof. Int. Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3817522470 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Cat. Prof. Int. Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -1151,13 +1151,13 @@
         </trans-unit>
         <trans-unit id="Table 2572053386 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Cat. Prof. QP Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2572053386 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Cat. Prof. QP Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -1223,7 +1223,7 @@
         </trans-unit>
         <trans-unit id="Table 2052490215 - Field 617584666 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregados</source>
-          <target>No. Empregados</target> 
+          <target>Nº Empregados</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Categoria Profissional Interna - Field No. Empregados - Property Caption</note>
         </trans-unit>
@@ -1259,7 +1259,7 @@
         </trans-unit>
         <trans-unit id="Table 1649552921 - Field 617584666 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregados</source>
-          <target>No. Empregados</target> 
+          <target>Nº Empregados</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Categoria Profissional QP - Field No. Empregados - Property Caption</note>
         </trans-unit>
@@ -1499,7 +1499,7 @@
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 3500962882 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Employee Nos. - Property Caption</note>
         </trans-unit>
@@ -1607,7 +1607,7 @@
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 2105118754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Apólice</source>
-          <target>No. Apólice</target> 
+          <target>Nº Apólice</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field No. Apólice - Property Caption</note>
         </trans-unit>
@@ -1631,25 +1631,25 @@
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 3770786941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta Contrap. Enc. Duo.F</source>
-          <target>No. Conta Contrap. Enc. Duo.F</target> 
+          <target>Nº Conta Contrap. Enc. Duo.F</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field No. Conta Contrap. Enc. Duo.F - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 1383207452 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta Contrap. Enc. Duo.SF</source>
-          <target>No. Conta Contrap. Enc. Duo.SF</target> 
+          <target>Nº Conta Contrap. Enc. Duo.SF</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field No. Conta Contrap. Enc. Duo.SF - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 2189813092 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta Contrap. Enc. Duo.SN</source>
-          <target>No. Conta Contrap. Enc. Duo.SN</target> 
+          <target>Nº Conta Contrap. Enc. Duo.SN</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field No. Conta Contrap. Enc. Duo.SN - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 510356258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta Duo. F</source>
-          <target>Não. Duo de Contagem. F</target> 
+          <target>Nº Duo de Contagem. F</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field No. Conta Duo. F - Property Caption</note>
         </trans-unit>
@@ -1661,7 +1661,7 @@
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 1107219687 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta Duo. SF</source>
-          <target>Não. Contar Duo. SF</target> 
+          <target>Nº Contar Duo. SF</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field No. Conta Duo. SF - Property Caption</note>
         </trans-unit>
@@ -1673,7 +1673,7 @@
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 300614047 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta Duo. SN</source>
-          <target>Não. Duo de Contagem. SN</target> 
+          <target>Nº Duo de Contagem. SN</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field No. Conta Duo. SN - Property Caption</note>
         </trans-unit>
@@ -1727,7 +1727,7 @@
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 1384413428 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nº Conta Pag. Enc. ADSE Ent. Patronal</source>
-          <target>Não. Conta Pag. Enc. ADSE Employer's Ent.</target> 
+          <target>Nº Conta Pag. Enc. ADSE Employer's Ent.</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field No. Conta Pag. Enc. ADSE Pat - Property Caption</note>
         </trans-unit>
@@ -1925,7 +1925,7 @@
         </trans-unit>
         <trans-unit id="Table 3523101480 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Consultas Médicas Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -2105,13 +2105,13 @@
         </trans-unit>
         <trans-unit id="Table 1596526320 - Field 309320818 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Contrato Trabalho</source>
-          <target>No. Contrato Trabalho</target> 
+          <target>Nº Contrato Trabalho</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Contrato Empregado - Field No. Contrato Trabalho - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1596526320 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Contrato Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -2291,7 +2291,7 @@
         </trans-unit>
         <trans-unit id="Table 2411810995 - Field 1747577585 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Boletim do Trabalho</source>
-          <target>No. Boletim do Trabalho</target> 
+          <target>Nº Boletim do Trabalho</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Código IRCT - Field No. Boletim do Trabalho - Property Caption</note>
         </trans-unit>
@@ -2369,7 +2369,7 @@
         </trans-unit>
         <trans-unit id="Table 720289981 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Destacamentos - Field Line No. - Property Caption</note>
         </trans-unit>
@@ -2477,7 +2477,7 @@
         </trans-unit>
         <trans-unit id="Table 1450238683 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Distribuição Custos - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -2579,13 +2579,13 @@
         </trans-unit>
         <trans-unit id="Table 3538436384 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Doenças Profissionais - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3538436384 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Doenças Profissionais - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -3383,7 +3383,7 @@
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 4245796576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Director</source>
-          <target>Não. Diretor</target> 
+          <target>Nº Diretor</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field Manager No. - Property Caption</note>
         </trans-unit>
@@ -3461,31 +3461,31 @@
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target>Não.</target> 
+          <target>Nº</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 254657288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. antigo do Empregado</source>
-          <target>No. antigo do Empregado</target> 
+          <target>Nº antigo do Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. antigo do Empregado - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 2105118754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Apólice</source>
-          <target>No. Apólice</target> 
+          <target>Nº Apólice</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Apólice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 814637661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Contribuinte</source>
-          <target>No. Contribuinte</target> 
+          <target>Nº Contribuinte</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Contribuinte - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 1491278564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Dependentes</source>
-          <target>No. Dependentes</target> 
+          <target>Nº Dependentes</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Dependentes - Property Caption</note>
         </trans-unit>
@@ -3497,43 +3497,43 @@
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 1694788801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. dias de Trabalho Semanal</source>
-          <target>No. dias de Trabalho Semanal</target> 
+          <target>Nº dias de Trabalho Semanal</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. dias de Trabalho Semanal - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 1477303129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Dias Trabalho Mensal</source>
-          <target>No. Dias Trabalho Mensal</target> 
+          <target>Nº Dias Trabalho Mensal</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Dias Trabalho Mensal - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 2460232504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Doc. Identificação</source>
-          <target>No. Doc. Identificação</target> 
+          <target>Nº Doc. Identificação</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Doc. Identificação - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 3658314281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Semanais</source>
-          <target>No. Horas Semanais</target> 
+          <target>Nº Horas Semanais</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Horas Semanais - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 3546135909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Semanais Totais</source>
-          <target>Não. Horas Semanais Totais</target> 
+          <target>Nº Horas Semanais Totais</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Horas Semanais Totais - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 1983983589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Segurança Social</source>
-          <target>No. Segurança Social</target> 
+          <target>Nº Segurança Social</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Segurança Social - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 1351594800 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Séries</source>
-          <target>No. Séries</target> 
+          <target>Nº Séries</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field No. Series - Property Caption</note>
         </trans-unit>
@@ -3737,7 +3737,7 @@
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 3961767479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Recurso</source>
-          <target>Não. Recurso</target> 
+          <target>Nº Recurso</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field Resource No. - Property Caption</note>
         </trans-unit>
@@ -3803,7 +3803,7 @@
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 4159879974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Segurança Social</source>
-          <target>No. Segurança Social</target> 
+          <target>Nº Segurança Social</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field Social Security No. - Property Caption</note>
         </trans-unit>
@@ -4043,13 +4043,13 @@
         </trans-unit>
         <trans-unit id="Table 2089122892 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Endereço Alternativo - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2089122892 - Field 1807381932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Fax</source>
-          <target>No. Fax</target> 
+          <target>Nº Fax</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Endereço Alternativo - Field Fax No. - Property Caption</note>
         </trans-unit>
@@ -4229,7 +4229,7 @@
         </trans-unit>
         <trans-unit id="Table 2050358786 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov.</source>
-          <target>Não. Mov.</target> 
+          <target>Nº Mov.</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Factores de Risco - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -4247,25 +4247,25 @@
         </trans-unit>
         <trans-unit id="Table 2050358786 - Field 3523499894 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Avaliações Efectuadas</source>
-          <target>No. Avaliações Efectuadas</target> 
+          <target>Nº Avaliações Efectuadas</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Factores de Risco - Field No. Avaliações Efectuadas - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2050358786 - Field 353819690 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Ordem - Código</source>
-          <target>No. Ordem - Código</target> 
+          <target>Nº Ordem - Código</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Factores de Risco - Field No. Ordem - Código - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2050358786 - Field 2919093111 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Trab. Expostos - Homens</source>
-          <target>No. Trab. Expostos - Homens</target> 
+          <target>Nº Trab. Expostos - Homens</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Factores de Risco - Field No. Trab. Expostos H - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2050358786 - Field 1812608900 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Trab. Expostos - Mulheres</source>
-          <target>No. Trab. Expostos - Mulheres</target> 
+          <target>Nº Trab. Expostos - Mulheres</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Factores de Risco - Field No. Trab. Expostos M - Property Caption</note>
         </trans-unit>
@@ -4361,7 +4361,7 @@
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -4385,7 +4385,7 @@
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Line No. - Property Caption</note>
         </trans-unit>
@@ -4409,7 +4409,7 @@
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 1092359700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Contribuinte</source>
-          <target>No. Contribuinte</target> 
+          <target>Nº Contribuinte</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Vat Number - Property Caption</note>
         </trans-unit>
@@ -4475,13 +4475,13 @@
         </trans-unit>
         <trans-unit id="Table 429936122 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Formação - Período Referência - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 429936122 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Formação - Período Referência - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -4541,7 +4541,7 @@
         </trans-unit>
         <trans-unit id="Table 3768195162 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Formação Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -4583,7 +4583,7 @@
         </trans-unit>
         <trans-unit id="Table 3768195162 - Field 355573803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Acção</source>
-          <target>No. Horas Acção</target> 
+          <target>Nº Horas Acção</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Formação Empregado - Field No. Horas Acção - Property Caption</note>
         </trans-unit>
@@ -4643,7 +4643,7 @@
         </trans-unit>
         <trans-unit id="Table 2072897769 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Férias Empregados - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -4793,13 +4793,13 @@
         </trans-unit>
         <trans-unit id="Table 2536754783 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Grau Função Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2536754783 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Grau Função Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -5003,25 +5003,25 @@
         </trans-unit>
         <trans-unit id="Table 3251291087 - Field 2105118754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Apólice</source>
-          <target>No. Apólice</target> 
+          <target>Nº Apólice</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Cab. Movs. Empregado - Field No. Apólice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3251291087 - Field 814637661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Contribuinte</source>
-          <target>No. Contribuinte</target> 
+          <target>Nº Contribuinte</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Cab. Movs. Empregado - Field No. Contribuinte - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3251291087 - Field 3658314281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Semanais</source>
-          <target>No. Horas Semanais</target> 
+          <target>Nº Horas Semanais</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Cab. Movs. Empregado - Field No. Horas Semanais - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3251291087 - Field 1983983589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Segurança Social</source>
-          <target>No. Segurança Social</target> 
+          <target>Nº Segurança Social</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Cab. Movs. Empregado - Field No. Segurança Social - Property Caption</note>
         </trans-unit>
@@ -5129,7 +5129,7 @@
         </trans-unit>
         <trans-unit id="Table 2858165414 - Field 3636275823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta a Creditar</source>
-          <target>No. Conta a Creditar</target> 
+          <target>Nº Conta a Creditar</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Linhas Movs. Empregado - Field Credit Acc. No. - Property Caption</note>
         </trans-unit>
@@ -5189,7 +5189,7 @@
         </trans-unit>
         <trans-unit id="Table 2858165414 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Linhas Movs. Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -5225,7 +5225,7 @@
         </trans-unit>
         <trans-unit id="Table 2858165414 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Linhas Movs. Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -5945,7 +5945,7 @@
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 1807381932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Fax</source>
-          <target>No. Fax</target> 
+          <target>Nº Fax</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field Fax No. - Property Caption</note>
         </trans-unit>
@@ -6113,7 +6113,7 @@
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 4245796576 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Director</source>
-          <target>Não. Diretor</target> 
+          <target>Nº Diretor</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field Manager No. - Property Caption</note>
         </trans-unit>
@@ -6191,31 +6191,31 @@
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target>Não.</target> 
+          <target>Nº</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 254657288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. antigo do Empregado</source>
-          <target>No. antigo do Empregado</target> 
+          <target>Nº antigo do Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. antigo do Empregado - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 2105118754 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Apólice</source>
-          <target>No. Apólice</target> 
+          <target>Nº Apólice</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. Apólice - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 814637661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Contribuinte</source>
-          <target>No. Contribuinte</target> 
+          <target>Nº Contribuinte</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. Contribuinte - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 1491278564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Dependentes</source>
-          <target>No. Dependentes</target> 
+          <target>Nº Dependentes</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. Dependentes - Property Caption</note>
         </trans-unit>
@@ -6227,19 +6227,19 @@
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 1694788801 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. dias de Trabalho Semanal</source>
-          <target>No. dias de Trabalho Semanal</target> 
+          <target>Nº dias de Trabalho Semanal</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. dias de Trabalho Semanal - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 1477303129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Dias Trabalho Mensal</source>
-          <target>No. Dias Trabalho Mensal</target> 
+          <target>Nº Dias Trabalho Mensal</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. Dias Trabalho Mensal - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 2460232504 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Doc. Identificação</source>
-          <target>No. Doc. Identificação</target> 
+          <target>Nº Doc. Identificação</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. Doc. Identificação - Property Caption</note>
         </trans-unit>
@@ -6251,13 +6251,13 @@
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 3658314281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Semanais</source>
-          <target>No. Horas Semanais</target> 
+          <target>Nº Horas Semanais</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. Horas Semanais - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 1983983589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Segurança Social</source>
-          <target>No. Segurança Social</target> 
+          <target>Nº Segurança Social</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field No. Segurança Social - Property Caption</note>
         </trans-unit>
@@ -6467,7 +6467,7 @@
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 3961767479 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Recurso</source>
-          <target>Não. Recurso</target> 
+          <target>Nº Recurso</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field Resource No. - Property Caption</note>
         </trans-unit>
@@ -6527,7 +6527,7 @@
         </trans-unit>
         <trans-unit id="Table 2816668800 - Field 4159879974 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Segurança Social</source>
-          <target>No. Segurança Social</target> 
+          <target>Nº Segurança Social</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Historico Empregado - Field Social Security No. - Property Caption</note>
         </trans-unit>
@@ -6743,13 +6743,13 @@
         </trans-unit>
         <trans-unit id="Table 3977790376 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Histórico Abonos - Desc. Extra - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3977790376 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Histórico Abonos - Desc. Extra - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -6863,13 +6863,13 @@
         </trans-unit>
         <trans-unit id="Table 2005190083 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Histórico Ausências - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2005190083 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov.</source>
-          <target>Não. Mov.</target> 
+          <target>Nº Mov.</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Histórico Ausências - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -6983,13 +6983,13 @@
         </trans-unit>
         <trans-unit id="Table 720049129 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Histórico Horas Extra - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 720049129 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Histórico Horas Extra - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -7067,13 +7067,13 @@
         </trans-unit>
         <trans-unit id="Table 3223974313 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Horas Extra Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3223974313 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Horas Extra Empregado - Field Entry No. - Property Caption</note>
         </trans-unit>
@@ -7163,7 +7163,7 @@
         </trans-unit>
         <trans-unit id="Table 3520031494 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Horário Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -7181,7 +7181,7 @@
         </trans-unit>
         <trans-unit id="Table 3520031494 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Horário Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -7253,19 +7253,19 @@
         </trans-unit>
         <trans-unit id="Table 440422390 - Field 2634218751 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Diárias</source>
-          <target>No. Horas Diárias</target> 
+          <target>Nº Horas Diárias</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Horário RH - Field No. Horas Diárias - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 440422390 - Field 3799517498 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Mensais</source>
-          <target>No. Horas Mensais</target> 
+          <target>Nº Horas Mensais</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Horário RH - Field No. Horas Mensais - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 440422390 - Field 3658314281 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Semanais</source>
-          <target>No. Horas Semanais</target> 
+          <target>Nº Horas Semanais</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Horário RH - Field No. Horas Semanais - Property Caption</note>
         </trans-unit>
@@ -7367,7 +7367,7 @@
         </trans-unit>
         <trans-unit id="Table 2531571152 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target>Não.</target> 
+          <target>Nº</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Importação Templates - Field No. - Property Caption</note>
         </trans-unit>
@@ -7433,13 +7433,13 @@
         </trans-unit>
         <trans-unit id="Table 1616768363 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Inactividade Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1616768363 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Inactividade Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -7469,7 +7469,7 @@
         </trans-unit>
         <trans-unit id="Table 252929349 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Informação Artigos Div. - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -7487,7 +7487,7 @@
         </trans-unit>
         <trans-unit id="Table 252929349 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Informação Artigos Div. - Field Line No. - Property Caption</note>
         </trans-unit>
@@ -7541,13 +7541,13 @@
         </trans-unit>
         <trans-unit id="Table 3194221914 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Informação Confidencial - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3194221914 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Informação Confidencial - Field Line No. - Property Caption</note>
         </trans-unit>
@@ -7649,7 +7649,7 @@
         </trans-unit>
         <trans-unit id="Table 250735696 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Integração Contabilistica - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -7667,13 +7667,13 @@
         </trans-unit>
         <trans-unit id="Table 250735696 - Field 3482056276 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta</source>
-          <target>Não. Conta</target> 
+          <target>Nº Conta</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Integração Contabilistica - Field No. Conta - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 250735696 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Integração Contabilistica - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -7763,19 +7763,19 @@
         </trans-unit>
         <trans-unit id="Table 1298775598 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Lin. Coment. Confidencial RH - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1298775598 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target>Não.</target> 
+          <target>Nº</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Lin. Coment. Confidencial RH - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1298775598 - Field 2227025489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha Tabela</source>
-          <target>No. Linha Tabela</target> 
+          <target>Nº Linha Tabela</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Lin. Coment. Confidencial RH - Field Table Line No. - Property Caption</note>
         </trans-unit>
@@ -7823,19 +7823,19 @@
         </trans-unit>
         <trans-unit id="Table 455875023 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Linha Coment. Recurso Humano - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 455875023 - Field 4200184881 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No.</source>
-          <target>Não.</target> 
+          <target>Nº</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Linha Coment. Recurso Humano - Field No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 455875023 - Field 2227025489 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha Tabela</source>
-          <target>No. Linha Tabela</target> 
+          <target>Nº Linha Tabela</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Linha Coment. Recurso Humano - Field Table Line No. - Property Caption</note>
         </trans-unit>
@@ -7925,7 +7925,7 @@
         </trans-unit>
         <trans-unit id="Table 3830482134 - Field 3636275823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta a Creditar</source>
-          <target>No. Conta a Creditar</target> 
+          <target>Nº Conta a Creditar</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Linhas Movs. Empregado - Field Credit Acc. No. - Property Caption</note>
         </trans-unit>
@@ -7985,7 +7985,7 @@
         </trans-unit>
         <trans-unit id="Table 3830482134 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Linhas Movs. Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -8015,7 +8015,7 @@
         </trans-unit>
         <trans-unit id="Table 3830482134 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Linhas Movs. Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -8249,7 +8249,7 @@
         </trans-unit>
         <trans-unit id="Table 2534484196 - Field 3636275823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta a Creditar</source>
-          <target>No. Conta a Creditar</target> 
+          <target>Nº Conta a Creditar</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Payroll Item - Field Credit Acc. No. - Property Caption</note>
         </trans-unit>
@@ -8435,13 +8435,13 @@
         </trans-unit>
         <trans-unit id="Table 1227672072 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Penhoras - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1227672072 - Field 1634176155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Penhora</source>
-          <target>No. Penhora</target> 
+          <target>Nº Penhora</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Penhoras - Field Garnishmen No. - Property Caption</note>
         </trans-unit>
@@ -8507,7 +8507,7 @@
         </trans-unit>
         <trans-unit id="Table 2456618195 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Perdas e Anomalias Emp. - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -8525,7 +8525,7 @@
         </trans-unit>
         <trans-unit id="Table 2456618195 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Perdas e Anomalias Emp. - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -8903,13 +8903,13 @@
         </trans-unit>
         <trans-unit id="Table 4100501642 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Mov</source>
-          <target>No. Mov</target> 
+          <target>Nº Mov</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Profissionalização - Field Entry No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4100501642 - Field 3649388346 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Profissionalização</source>
-          <target>No. Horas Profissionalização</target> 
+          <target>Nº Horas Profissionalização</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Profissionalização - Field No. Horas Profissionalização - Property Caption</note>
         </trans-unit>
@@ -9011,7 +9011,7 @@
         </trans-unit>
         <trans-unit id="Table 730386960 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Qualificação Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -9059,7 +9059,7 @@
         </trans-unit>
         <trans-unit id="Table 730386960 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Qualificação Empregado - Field Line No. - Property Caption</note>
         </trans-unit>
@@ -9407,7 +9407,7 @@
         </trans-unit>
         <trans-unit id="Table 3828589753 - Field 3636275823 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Conta a Creditar</source>
-          <target>No. Conta a Creditar</target> 
+          <target>Nº Conta a Creditar</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial Empregado - Field Credit Acc. No. - Property Caption</note>
         </trans-unit>
@@ -9473,7 +9473,7 @@
         </trans-unit>
         <trans-unit id="Table 3828589753 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
@@ -9497,7 +9497,7 @@
         </trans-unit>
         <trans-unit id="Table 3828589753 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial Empregado - Field Line No. - Property Caption</note>
         </trans-unit>
@@ -9611,7 +9611,7 @@
         </trans-unit>
         <trans-unit id="Table 3591825832 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Rubrica Salarial Linhas - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -9797,13 +9797,13 @@
         </trans-unit>
         <trans-unit id="Table 1176422711 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Seguro Saude Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1176422711 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Seguro Saude Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -9911,7 +9911,7 @@
         </trans-unit>
         <trans-unit id="Table 2803557244 - Field 1807381932 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Fax</source>
-          <target>No. Fax</target> 
+          <target>Nº Fax</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Sindicato - Field Fax No. - Property Caption</note>
         </trans-unit>
@@ -10001,7 +10001,7 @@
         </trans-unit>
         <trans-unit id="Table 123277984 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Situação Perante Actividade - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -10037,7 +10037,7 @@
         </trans-unit>
         <trans-unit id="Table 311200057 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Linha</source>
-          <target>No. Linha</target> 
+          <target>Nº Linha</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela IRS - Field No. Linha - Property Caption</note>
         </trans-unit>
@@ -15887,13 +15887,13 @@
         </trans-unit>
         <trans-unit id="Report 3234697897 - ReportLabel 2021553572" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Professor</source>
-          <target>Não. Professor</target> 
+          <target>Nº Professor</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Report Ficha Empregado - ReportLabel No_Professor_lbl</note>
         </trans-unit>
         <trans-unit id="Report 3234697897 - ReportLabel 4147148595" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Horas Docência</source>
-          <target>No. Horas Docência</target> 
+          <target>Nº Horas Docência</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Report Ficha Empregado - ReportLabel N_Horas_Docencia</note>
         </trans-unit>
@@ -18947,7 +18947,7 @@
         </trans-unit>
         <trans-unit id="Report 1031003887 - NamedType 2601538438" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nº Empre.</source>
-          <target>Empregador não.</target> 
+          <target>Empregador Nº</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Integração Contabilística - NamedType N__Empre_CaptionLbl</note>
         </trans-unit>
@@ -20369,7 +20369,7 @@
         </trans-unit>
         <trans-unit id="Report 4277344948 - NamedType 2601538438" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nº Empre.</source>
-          <target>Empregador não.</target> 
+          <target>Empregador Nº</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Report Mapa Validação Contabilística - NamedType N__Empre_CaptionLbl</note>
         </trans-unit>
@@ -21143,7 +21143,7 @@
         </trans-unit>
         <trans-unit id="Report 3616543702 - ReportLabel 2469513936" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">Report Reabrir Processamento - ReportLabel lblNEmp</note>
         </trans-unit>
@@ -22091,7 +22091,7 @@
         </trans-unit>
         <trans-unit id="TableExtension 1129381755 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1806786327">
           <source>No. Empregado</source>
-          <target>No. Empregado</target> 
+          <target>Nº Empregado</target> 
           <note from="Developer" annotates="general" priority="2" />
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension GenJournalLineRH - Field Employee No. - Property Caption</note>
         </trans-unit>

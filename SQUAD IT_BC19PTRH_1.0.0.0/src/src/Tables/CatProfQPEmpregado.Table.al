@@ -12,11 +12,11 @@ table 53061 "Cat. Prof. QP Empregado"
         }
         field(2; "No. Linha"; Integer)
         {
-            //Caption = 'Line No.';
+            Caption = 'Line No.';
         }
         field(3; "Cód. Cat. Prof. QP"; Code[20])
         {
-            //Caption = 'QP Prof. Cat. Code';
+            Caption = 'QP Prof. Cat. Code';
             TableRelation = "Categoria Profissional QP";
 
             trigger OnValidate()
@@ -27,15 +27,15 @@ table 53061 "Cat. Prof. QP Empregado"
         }
         field(4; Description; Text[200])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(5; "Data Inicio Cat. Prof."; Date)
         {
-            //Caption = 'Prof. Cat. Start Date';
+            Caption = 'Prof. Cat. Start Date';
         }
         field(6; "Data Fim Cat. Prof."; Date)
         {
-            //Caption = 'Prof. Cat. End Date';
+            Caption = 'Prof. Cat. End Date';
         }
         field(10; Comment; Boolean)
         {

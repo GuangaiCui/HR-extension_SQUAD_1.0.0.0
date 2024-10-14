@@ -189,7 +189,7 @@ report 53060 "Ausência por Empregado"
             {
                 group("Opções")
                 {
-                    //Caption = 'Options';
+                    Caption = 'Options';
                     field(AbertoFechado; AbertoFechado)
                     {
 

@@ -12,11 +12,11 @@ table 53059 "Cat. Prof. Int. Empregado"
         }
         field(2; "No. Linha"; Integer)
         {
-            //Caption = 'Line No.';
+            Caption = 'Line No.';
         }
         field(3; "Cód. Cat. Prof."; Code[20])
         {
-            //Caption = 'Prof. Cat. Code';
+            Caption = 'Prof. Cat. Code';
             TableRelation = "Categoria Profissional Interna"."Código";
 
             trigger OnValidate()
@@ -27,11 +27,11 @@ table 53059 "Cat. Prof. Int. Empregado"
         }
         field(4; "Descrição"; Text[100])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(5; "Data Inicio Cat. Prof."; Date)
         {
-            //Caption = 'Prof. Cat. Start Date';
+            Caption = 'Prof. Cat. Start Date';
         }
         field(6; "Data Fim Cat. Prof."; Date)
         {
@@ -42,7 +42,7 @@ table 53059 "Cat. Prof. Int. Empregado"
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(CatProf),
                                                                       "No." = FIELD("Employee No."),
                                                                       "Table Line No." = FIELD("No. Linha")));
-            //Caption = 'Comment';
+            Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;
         }

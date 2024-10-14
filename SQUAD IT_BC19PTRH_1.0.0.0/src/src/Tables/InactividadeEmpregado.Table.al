@@ -11,11 +11,11 @@ table 53057 "Inactividade Empregado"
         }
         field(2; "No. Linha"; Integer)
         {
-            //Caption = 'Line No.';
+            Caption = 'Line No.';
         }
         field(3; "Cód. Inactividade"; Code[10])
         {
-            //Caption = 'Inactivity Code';
+            Caption = 'Inactivity Code';
             TableRelation = "Motivo Inactividade";
 
             trigger OnValidate()
@@ -26,22 +26,22 @@ table 53057 "Inactividade Empregado"
         }
         field(4; "Descrição"; Text[30])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(5; "Data Inicio Inactividade"; Date)
         {
-            //Caption = 'Inactivity Begin Date';
+            Caption = 'Inactivity Begin Date';
         }
         field(6; "Data Fim Inactividade"; Date)
         {
-            //Caption = 'Inactivity End Date';
+            Caption = 'Inactivity End Date';
         }
         field(7; "Comentário"; Boolean)
         {
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Inac),
                                                                       "No." = FIELD("Employee No."),
                                                                       "Table Line No." = FIELD("No. Linha")));
-            //Caption = 'Comment';
+            Caption = 'Comment';
             Editable = false;
             FieldClass = FlowField;
         }

@@ -10,11 +10,11 @@ table 53100 "Profissionalização"
         }
         field(2; "Data Início"; Date)
         {
-            //Caption = 'Start Date';
+            Caption = 'Start Date';
         }
         field(3; "Data Fim"; Date)
         {
-            //Caption = 'End Date';
+            Caption = 'End Date';
 
             trigger OnValidate()
             begin
@@ -24,20 +24,20 @@ table 53100 "Profissionalização"
         }
         field(4; "No. Horas Profissionalização"; Decimal)
         {
-            //Caption = 'No. of Profissionalization Hours';
+            Caption = 'No. of Profissionalization Hours';
         }
         field(5; "Descrição"; Text[50])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(6; "Cod Empregado"; Code[20])
         {
-            //Caption = 'Employee Code';
+            Caption = 'Employee Code';
             TableRelation = Empregado."No.";
         }
         field(7; "Classificação"; Decimal)
         {
-            //Caption = 'Classification';
+            Caption = 'Classification';
         }
     }
 

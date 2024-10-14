@@ -7,31 +7,31 @@ table 53068 "Regime Seg. Social"
     {
         field(1; "Código"; Code[10])
         {
-            //Caption = 'Code';
+            Caption = 'Code';
         }
         field(5; "Descrição"; Text[200])
         {
-            //Caption = 'Description';
+            Caption = 'Description';
         }
         field(6; "Tipo Dedução SS"; Text[30])
         {
-            //Caption = 'Soc. Sec. Deduction Type';
+            Caption = 'Soc. Sec. Deduction Type';
         }
         field(7; "Taxa Contributiva Empregado"; Decimal)
         {
-            //Caption = 'Emloyee Rate';
+            Caption = 'Emloyee Rate';
             MaxValue = 100;
             MinValue = 0;
         }
         field(8; "Taxa Contributiva Ent Patronal"; Decimal)
         {
-            //Caption = 'Company Rate';
+            Caption = 'Company Rate';
             MaxValue = 100;
             MinValue = 0;
         }
         field(15; Majorante; Decimal)
         {
-            //Caption = 'Upper Bound';
+            Caption = 'Upper Bound';
         }
     }
 

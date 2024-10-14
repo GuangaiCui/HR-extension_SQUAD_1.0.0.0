@@ -17,7 +17,7 @@ page 53092 "Vista HoraExtra por Categorias"
         {
             group("Opções")
             {
-                //Caption = 'Options';
+                Caption = 'Options';
                 field(EmployeeNoFilter; EmployeeNoFilter)
                 {
 

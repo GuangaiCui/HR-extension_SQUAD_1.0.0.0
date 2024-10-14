@@ -61,7 +61,7 @@ report 53079 "Actualização Escalões Venc."
             {
                 group("Opções")
                 {
-                    //Caption = 'Options';
+                    Caption = 'Options';
                     field(DataInicio; DataInicio)
                     {
 
