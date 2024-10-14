@@ -9,13 +9,13 @@ table 53055 "Unid. Medida Recursos Humanos"
     {
         field(1; "Code"; Code[10])
         {
-            Caption = 'Code';
+            Caption = 'Código';
             NotBlank = true;
             TableRelation = "Unit of Measure";
         }
         field(2; "Qty. per Unit of Measure"; Decimal)
         {
-            Caption = 'Qty. per Unit of Measure';
+            Caption = 'Qtd. por Unidade Medida';
             DecimalPlaces = 0 : 5;
             InitValue = 1;
 

@@ -7,13 +7,13 @@ table 53051 "Informação Confidencial"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             NotBlank = true;
             TableRelation = Empregado;
         }
         field(2; "Confidential Code"; Code[10])
         {
-            Caption = 'Confidential Code';
+            Caption = 'Código Confidencial';
             NotBlank = true;
             TableRelation = Confidencial;
 
@@ -25,19 +25,19 @@ table 53051 "Informação Confidencial"
         }
         field(3; "Line No."; Integer)
         {
-            Caption = 'Line No.';
+            Caption = 'No. Linha';
             NotBlank = true;
         }
         field(4; Description; Text[30])
         {
-            Caption = 'Description';
+            Caption = 'Descrição';
         }
         field(5; Comment; Boolean)
         {
             CalcFormula = Exist("Lin. Coment. Confidencial RH" WHERE("Table Name" = CONST("Informação Confidencial"),
                                                                       "No." = FIELD("Employee No."),
                                                                       "Table Line No." = FIELD("Line No.")));
-            Caption = 'Comment';
+            Caption = 'Comentário';
             Editable = false;
             FieldClass = FlowField;
         }

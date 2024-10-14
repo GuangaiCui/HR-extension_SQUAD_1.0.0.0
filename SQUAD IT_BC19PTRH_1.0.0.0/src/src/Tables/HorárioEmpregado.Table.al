@@ -11,16 +11,16 @@ table 53066 "Horário Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
         field(2; "No. Linha"; Integer)
         {
-            Caption = 'Line No.';
+            //Caption = 'Line No.';
         }
         field(3; "Cód. Horário"; Code[20])
         {
-            Caption = 'Schedule code';
+            //Caption = 'Schedule code';
             TableRelation = "Horário RH";
 
             trigger OnValidate()
@@ -31,31 +31,31 @@ table 53066 "Horário Empregado"
         }
         field(4; "Descrição"; Text[100])
         {
-            Caption = 'Description';
+            //Caption = 'Description';
         }
         field(5; "Data Iníco Horário"; Date)
         {
-            Caption = 'Schedule Start Date';
+            //Caption = 'Schedule Start Date';
         }
         field(6; "Data Fim Horário"; Date)
         {
-            Caption = 'Schedule End Date';
+            //Caption = 'Schedule End Date';
         }
         field(9; "Dia da Semana"; Option)
         {
-            Caption = 'Weekday';
+            //Caption = 'Weekday';
             OptionCaption = ' ,Segunda,Terça,Quarta,Quinta,Sexta';
             OptionMembers = " ",Segunda,"Terça",Quarta,Quinta,Sexta;
         }
         field(10; "Mês"; Option)
         {
-            Caption = 'Month';
+            //Caption = 'Month';
             OptionCaption = ' ,Janeiro,Fevereiro,Março,Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro';
             OptionMembers = " ",Janeiro,Fevereiro,"Março",Abril,Maio,Junho,Julho,Agosto,Setembro,Outubro,Novembro,Dezembro;
         }
         field(11; "Organização Tempo Trabalho"; Option)
         {
-            Caption = 'Schedule Type';
+            //Caption = 'Schedule Type';
             Description = 'RU';
             OptionCaption = ' ,Horário de trabalho fixo,Horário de trabalho flexível,Horário de trabalho móvel,Horário de trabalho por turnos fixos,Horário de trabalho por turnos rotativos';
             OptionMembers = " ","1","2","3","4","5";

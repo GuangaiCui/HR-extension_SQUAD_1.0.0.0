@@ -7,21 +7,21 @@ table 53097 "Formação - Período Referência"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado."No.";
         }
         field(2; "Cód. Acção"; Code[10])
         {
-            Caption = 'Training Code';
+            //Caption = 'Training Code';
             TableRelation = "Acções Formação"."Código";
         }
         field(3; "No. Linha"; Integer)
         {
-            Caption = 'Line No.';
+            //Caption = 'Line No.';
         }
         field(4; "Período Ref. Formação"; Code[20])
         {
-            Caption = 'Training Period';
+            //Caption = 'Training Period';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(PRF));
 
             trigger OnValidate()
@@ -35,7 +35,7 @@ table 53097 "Formação - Período Referência"
         }
         field(5; "Descrição"; Text[250])
         {
-            Caption = 'Description';
+            //Caption = 'Description';
         }
     }
 

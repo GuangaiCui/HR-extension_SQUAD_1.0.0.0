@@ -6,11 +6,11 @@ table 53096 "Natureza Jurídica"
     {
         field(1; "Código"; Code[5])
         {
-            Caption = 'Code';
+            //Caption = 'Code';
         }
         field(3; "Descrição"; Text[200])
         {
-            Caption = 'Description';
+            //Caption = 'Description';
         }
     }
 

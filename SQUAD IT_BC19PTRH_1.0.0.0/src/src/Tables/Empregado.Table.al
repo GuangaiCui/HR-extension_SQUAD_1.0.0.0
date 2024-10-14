@@ -25,6 +25,7 @@ table 53035 "Empregado"
         }
         field(2; Name; Text[75])
         {
+            Caption = 'Nome Completo';
 
             trigger OnValidate()
             begin
@@ -72,12 +73,15 @@ table 53035 "Empregado"
         }
         field(3; "First Name"; Text[65])
         {
+            Caption = 'Nome Próprio';
         }
         field(4; "Last Name"; Text[65])
         {
+            Caption = 'Último Nome';
         }
         field(5; Initials; Text[30])
         {
+            Caption = 'Iniciais';
 
             trigger OnValidate()
             begin
@@ -87,18 +91,23 @@ table 53035 "Empregado"
         }
         field(6; "Job Title"; Text[30])
         {
+            Caption = 'Cargo';
         }
         field(7; "Search Name"; Code[30])
         {
+            Caption = 'Alias Nome';
         }
         field(8; Address; Text[75])
         {
+            Caption = 'Endereço';
         }
         field(9; "Address 2"; Text[75])
         {
+            Caption = 'Endereço 2';
         }
         field(10; City; Text[30])
         {
+            Caption = 'Cidade';
 
             trigger OnLookup()
             begin
@@ -113,6 +122,7 @@ table 53035 "Empregado"
         }
         field(11; "Post Code"; Code[20])
         {
+            Caption = 'Cód. Postal';
             TableRelation = "Post Code";
             //This property is currently not supported
             //TestTableRelation = false;
@@ -125,14 +135,16 @@ table 53035 "Empregado"
         }
         field(12; County; Text[30])
         {
+            Caption = 'Distrito';
         }
         field(13; "Phone No."; Text[30])
         {
+            Caption = 'Telefone';
             ExtendedDatatype = PhoneNo;
         }
         field(14; "Mobile Phone No."; Text[30])
         {
-            Caption = 'Mobile Phone No.';
+            Caption = 'Nº telefone Móvel';
             ExtendedDatatype = PhoneNo;
         }
         field(15; "E-Mail"; Text[80])
@@ -142,54 +154,54 @@ table 53035 "Empregado"
         }
         field(16; "Alt. Address Code"; Code[10])
         {
-            Caption = 'Alt. Address Code';
+            Caption = 'Cód. Endereço Altern.';
             TableRelation = "Endereço Alternativo".Code WHERE("Employee No." = FIELD("No."));
         }
         field(17; "Alt. Address Start Date"; Date)
         {
-            Caption = 'Alt. Address Start Date';
+            Caption = 'Data Início Endç. Alter.';
         }
         field(18; "Alt. Address End Date"; Date)
         {
-            Caption = 'Alt. Address End Date';
+            Caption = 'Data Final Endç. Alter.';
         }
         field(19; Picture; BLOB)
         {
-            Caption = 'Picture';
+            Caption = 'Imagem';
             SubType = Bitmap;
         }
         field(20; "Birth Date"; Date)
         {
-            Caption = 'Birth Date';
+            Caption = 'Data Nascimento';
         }
         field(21; "Social Security No."; Text[30])
         {
-            Caption = 'Social Security No.';
+            Caption = 'No. Segurança Social';
             Enabled = false;
         }
         field(22; "Union Code"; Code[10])
         {
-            Caption = 'Union Code';
+            Caption = 'Cód. Sindicato';
             TableRelation = Sindicato;
         }
         field(23; "Union Membership No."; Text[30])
         {
-            Caption = 'Union Membership No.';
+            Caption = 'Nº Afiliação Sindicato';
         }
         field(24; Sex; Option)
         {
-            Caption = 'Sex';
-            OptionCaption = ' ,Female,Male';
+            Caption = 'Sexo';
+            OptionCaption = ' ,Feminino,Masculino';
             OptionMembers = " ",Female,Male;
         }
         field(25; "Country Code"; Code[10])
         {
-            Caption = 'Country Code';
+            Caption = 'Cód. País';
             TableRelation = "Country/Region";
         }
         field(26; "Manager No."; Code[20])
         {
-            Caption = 'Manager No.';
+            Caption = 'No. Director';
             TableRelation = Empregado;
         }
         field(27; "Emplymt. Contract Code"; Code[10])
@@ -197,21 +209,21 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Contrato Empregado"."Cód. Contrato" WHERE("Cód. Empregado" = FIELD("No."),
                                                                              "Data Inicio Contrato" = FIELD("Data Filtro Inicio"),
                                                                              "Data Fim Contrato" = FIELD("Data Filtro Fim")));
-            Caption = 'Emplymt. Contract Code';
+            Caption = 'Cód. Contrato Trabalho';
             FieldClass = FlowField;
         }
         field(28; "Statistics Group Code"; Code[10])
         {
-            Caption = 'Statistics Group Code';
+            Caption = 'Cód. Departamento';
             TableRelation = "Departamentos Empregado";
         }
         field(29; "Employment Date"; Date)
         {
-            Caption = 'Employment Date';
+            Caption = 'Data Admissão';
         }
         field(31; Status; Enum "Employee Status")
         {
-            Caption = 'Status';
+            Caption = 'Estado';
 
             trigger OnValidate()
             begin
@@ -222,16 +234,16 @@ table 53035 "Empregado"
         }
         field(32; "Inactive Date"; Date)
         {
-            Caption = 'Inactive Date';
+            Caption = 'Data Inactividade';
         }
         field(33; "Cause of Inactivity Code"; Code[10])
         {
-            Caption = 'Cause of Inactivity Code';
+            Caption = 'Cód. Motivo Inactividade';
             TableRelation = "Motivo Inactividade";
         }
         field(34; "Termination Date"; Date)
         {
-            Caption = 'Termination Date';
+            Caption = 'Data Terminação';
         }
         field(35; "Grounds for Term. Code"; Code[10])
         {
@@ -241,7 +253,7 @@ table 53035 "Empregado"
         field(36; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
-            Caption = 'Global Dimension 1 Code';
+            Caption = 'Cód. Dimensão Global 1';
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
 
@@ -253,7 +265,7 @@ table 53035 "Empregado"
         field(37; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
-            Caption = 'Global Dimension 2 Code';
+            Caption = 'Cód. Dimensão Global 2';
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
 
@@ -264,7 +276,7 @@ table 53035 "Empregado"
         }
         field(38; "Resource No."; Code[20])
         {
-            Caption = 'Resource No.';
+            Caption = 'No. Recurso';
             TableRelation = Resource WHERE(Type = CONST(Person));
 
             trigger OnValidate()
@@ -278,37 +290,37 @@ table 53035 "Empregado"
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Emp),
                                                                       "No." = FIELD("No."),
                                                                       "Table Line No." = CONST(0)));
-            Caption = 'Comment';
+            Caption = 'Comentário';
             Editable = false;
             FieldClass = FlowField;
         }
         field(40; "Last Date Modified"; Date)
         {
-            Caption = 'Last Date Modified';
+            Caption = 'Data Últ. Modif.';
             Editable = false;
         }
         field(41; "Date Filter"; Date)
         {
-            Caption = 'Date Filter';
+            Caption = 'Filtro Data';
             FieldClass = FlowFilter;
         }
         field(42; "Global Dimension 1 Filter"; Code[20])
         {
             CaptionClass = '1,3,1';
-            Caption = 'Global Dimension 1 Filter';
+            Caption = 'Filtro Dimensão 1 Global';
             FieldClass = FlowFilter;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(43; "Global Dimension 2 Filter"; Code[20])
         {
             CaptionClass = '1,3,2';
-            Caption = 'Global Dimension 2 Filter';
+            Caption = 'Filtro Dimensão 2 Global';
             FieldClass = FlowFilter;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(44; "Cause of Absence Filter"; Code[10])
         {
-            Caption = 'Cause of Absence Filter';
+            Caption = 'Filtro Motivo Ausência';
             FieldClass = FlowFilter;
             TableRelation = "Absence Reason";
         }
@@ -317,53 +329,53 @@ table 53035 "Empregado"
             CalcFormula = Sum("Histórico Ausências"."Quantity (Base)" WHERE("Employee No." = FIELD("No."),
                                                                              "Cause of Absence Code" = FIELD("Cause of Absence Filter"),
                                                                              "From Date" = FIELD("Date Filter")));
-            Caption = 'Total Absence (Base)';
+            Caption = 'Ausência Total (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
         }
         field(46; Extension; Text[30])
         {
-            Caption = 'Extension';
+            Caption = 'Extensão';
         }
         field(47; "Employee No. Filter"; Code[20])
         {
-            Caption = 'Employee No. Filter';
+            Caption = 'Filtro No. Empregado';
             FieldClass = FlowFilter;
             TableRelation = Empregado;
         }
         field(48; CompanyMobilePhoneNo; Text[30])
         {
-            Caption = 'Company Mobile Phone No.';
+            Caption = 'Nº Telefone Móvel Empresa';
             ExtendedDatatype = PhoneNo;
         }
         field(49; "Company Phone No."; Text[30])
         {
-            Caption = 'Company Phone No.';
+            Caption = 'No. Telefone Empresa';
         }
         field(50; "Company E-Mail"; Text[80])
         {
-            Caption = 'Company E-Mail';
+            Caption = 'Empresa E-Mail';
             ExtendedDatatype = EMail;
         }
         field(51; Title; Text[30])
         {
-            Caption = 'Title';
+            Caption = 'Título';
         }
         field(52; "Salespers./Purch. Code"; Code[10])
         {
-            Caption = 'Salespers./Purch. Code';
+            Caption = 'Cód. Vendedor/Comprador';
             TableRelation = "Salesperson/Purchaser";
         }
         field(53; "No. Series"; Code[10])
         {
-            Caption = 'No. Series';
+            Caption = 'No. Séries';
             Editable = false;
             TableRelation = "No. Series";
         }
         field(54; "Tipo Empregado"; Code[20])
         {
-            Caption = 'Employee Type';
+            Caption = 'Tipo Empregado';
             TableRelation = "Tipo Empregado";
         }
         field(55; IBAN; Code[50])
@@ -394,41 +406,41 @@ table 53035 "Empregado"
         }
         field(59; Seguradora; Text[60])
         {
-            Caption = 'Insurance Company';
+            //Caption = 'Insurance Company';
         }
         field(60; "No. Apólice"; Text[20])
         {
-            Caption = 'Insurance Policy No.';
+            //Caption = 'Insurance Policy No.';
         }
         field(61; "Documento Identificação"; Option)
         {
-            Caption = 'Identification Document';
+            //Caption = 'Identification Document';
             OptionCaption = ' ,Cédula,BI,Passaporte,Cartão Cidadão,Autorização residência temporária,Autorização residência permanente,Cartão residência,Visto trabalho,Outros';
             OptionMembers = " ","Cédula",BI,Passaporte,"Cartão Cidadão","Autorização residência temporária","Autorização residência permanente","Cartão residência","Visto trabalho",Outros;
         }
         field(62; "No. Doc. Identificação"; Text[14])
         {
-            Caption = 'Identification Doc. No.';
+            //Caption = 'Identification Doc. No.';
         }
         field(63; "Local Emissão Doc. Ident."; Text[30])
         {
-            Caption = 'Ident. Doc. Issue Local';
+            //Caption = 'Ident. Doc. Issue Local';
         }
         field(64; "Data Doc. Ident."; Date)
         {
-            Caption = 'Ident. Doc.Date';
+            //Caption = 'Ident. Doc.Date';
         }
         field(65; "Data Validade Doc. Ident."; Date)
         {
-            Caption = 'Ident. Doc. Expiration Date';
+            //Caption = 'Ident. Doc. Expiration Date';
         }
         field(66; Naturalidade; Text[60])
         {
-            Caption = 'Birth';
+            //Caption = 'Birth';
         }
         field(67; Nacionalidade; Text[30])
         {
-            Caption = 'Nationality';
+            //Caption = 'Nationality';
             TableRelation = "Country/Region";
 
             trigger OnValidate()
@@ -443,11 +455,11 @@ table 53035 "Empregado"
         }
         field(68; "Nacionalidade Descrição"; Text[50])
         {
-            Caption = 'Nationality Description';
+            //Caption = 'Nationality Description';
         }
         field(69; "No. Contribuinte"; Text[9])
         {
-            Caption = 'Taxpayer No.';
+            //Caption = 'Taxpayer No.';
             Numeric = true;
 
             trigger OnValidate()
@@ -463,7 +475,7 @@ table 53035 "Empregado"
         }
         field(70; "Tipo Contribuinte"; Option)
         {
-            Caption = 'Taxpayer Type';
+            //Caption = 'Taxpayer Type';
             OptionCaption = ' ,Conta de Outrem,Trabalhador Independente,Pensionista';
             OptionMembers = " ","Conta de Outrem","Trabalhador Independente",Pensionista;
 
@@ -483,66 +495,66 @@ table 53035 "Empregado"
         }
         field(71; "Cod. Repartição Finanças"; Text[4])
         {
-            Caption = 'Finance Allocation Code';
+            //Caption = 'Finance Allocation Code';
             Numeric = true;
         }
         field(72; "Repartição Finanças"; Text[30])
         {
-            Caption = 'Finance Allocation';
+            //Caption = 'Finance Allocation';
         }
         field(73; "Data Emissão NIF"; Date)
         {
-            Caption = 'Tax Information No. Issue Date';
+            //Caption = 'Tax Information No. Issue Date';
         }
         field(74; "Tipo Rendimento"; Option)
         {
-            Caption = 'Salary Type';
+            //Caption = 'Salary Type';
             OptionCaption = 'A,B';
             OptionMembers = A,B;
         }
         field(75; "Local Obtenção Rendimento"; Option)
         {
-            Caption = 'Income Obtaining Location';
+            //Caption = 'Income Obtaining Location';
             OptionCaption = ' ,C,RA,RM';
             OptionMembers = " ",C,RA,RM;
         }
         field(76; Deficiente; Option)
         {
-            Caption = 'With disability';
+            //Caption = 'With disability';
             OptionCaption = ' ,Sim,Forças Armadas';
             OptionMembers = "Não",Sim,"Forças Armadas";
         }
         field(77; "Estado Civil"; Option)
         {
-            Caption = 'Marital Status';
+            //Caption = 'Marital Status';
             OptionCaption = 'Solteiro,Casado,Divorciado,Viúvo,Outro,União Facto';
             OptionMembers = Solteiro,Casado,Divorciado,"Viúvo",Outro,"União Facto";
         }
         field(78; "Titular Rendimentos"; Option)
         {
-            Caption = 'Income Holder';
+            //Caption = 'Income Holder';
             OptionCaption = ' ,Único Titular,Dois Titulares';
             OptionMembers = " ","Único Titular","Dois Titulares";
         }
         field(79; "Conjuge Deficiente"; Boolean)
         {
-            Caption = 'Disabled Spouse';
+            //Caption = 'Disabled Spouse';
         }
         field(80; "No. Dependentes"; Integer)
         {
-            Caption = 'Dependents No.';
+            //Caption = 'Dependents No.';
         }
         field(81; "No. Dependentes Deficientes"; Integer)
         {
-            Caption = 'Disabled Dependents No.';
+            //Caption = 'Disabled Dependents No.';
         }
         field(82; "Tabela IRS"; Text[3])
         {
-            Caption = 'IRS Tables';
+            //Caption = 'IRS Tables';
         }
         field(83; "Descrição Tabela IRS"; Text[60])
         {
-            Caption = 'IRS Tables Description';
+            //Caption = 'IRS Tables Description';
         }
         field(84; "IRS %"; Decimal)
         {
@@ -552,17 +564,17 @@ table 53035 "Empregado"
         }
         field(85; "IRS % Fixa"; Decimal)
         {
-            Caption = 'IRS Fixed %';
+            //Caption = 'IRS Fixed %';
             MaxValue = 100;
             MinValue = 0;
         }
         field(86; "Subscritor SS"; Boolean)
         {
-            Caption = 'SS Subscriber';
+            //Caption = 'SS Subscriber';
         }
         field(87; "No. Segurança Social"; Text[11])
         {
-            Caption = 'Social Security No.';
+            //Caption = 'Social Security No.';
             Numeric = true;
 
             trigger OnValidate()
@@ -574,20 +586,20 @@ table 53035 "Empregado"
         }
         field(88; "Data da Admissão SS"; Date)
         {
-            Caption = 'SS Admission Date';
+            //Caption = 'SS Admission Date';
         }
         field(89; "Data Emissão SS"; Date)
         {
-            Caption = 'SS Emission Date';
+            //Caption = 'SS Emission Date';
         }
         field(90; "Cod. Instituição SS"; Code[10])
         {
-            Caption = 'SS Institution Code';
+            //Caption = 'SS Institution Code';
             TableRelation = "Instituição Seg. Social".Code;
         }
         field(91; "Cod. Regime SS"; Code[10])
         {
-            Caption = 'SS Regime Code';
+            //Caption = 'SS Regime Code';
             TableRelation = "Regime Seg. Social"."Código" WHERE("Código" = FIELD("Cod. Regime SS"));
         }
         field(92; "Subscritor ADSE"; Boolean)
@@ -595,7 +607,7 @@ table 53035 "Empregado"
         }
         field(93; "Nº ADSE"; Text[11])
         {
-            Caption = 'Nº ADSE';
+            //Caption = 'Nº ADSE';
         }
         field(94; "Data da Admissão ADSE"; Date)
         {
@@ -629,15 +641,15 @@ table 53035 "Empregado"
         }
         field(101; "Data de Antiguidade"; Date)
         {
-            Caption = 'Seniority Date';
+            //Caption = 'Seniority Date';
         }
         field(102; "End Date"; Date)
         {
-            Caption = 'End Date';
+            Caption = 'Data Fim';
         }
         field(103; "Motivo de Terminação"; Code[10])
         {
-            Caption = 'End Reason';
+            //Caption = 'End Reason';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSai));
         }
@@ -655,15 +667,15 @@ table 53035 "Empregado"
         }
         field(105; "Acordo Colectivo"; Code[20])
         {
-            Caption = 'Collective Agreement';
+            //Caption = 'Collective Agreement';
         }
         field(106; "Descrição IRCT"; Text[100])
         {
-            Caption = 'IRCT Description';
+            //Caption = 'IRCT Description';
         }
         field(107; "Aplicabilidade do IRCT"; Option)
         {
-            Caption = 'IRCT Applicability';
+            //Caption = 'IRCT Applicability';
             Description = 'RU';
             OptionCaption = 'Filiação,Portaria de Extensão,Escolha,Acto de Gestão,Não sabe qual dos IRCT se aplica,Sem aplicabilidade,Automática';
             OptionMembers = "01","02","03","04","05","06","07";
@@ -673,7 +685,7 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Cód. Cat. Prof." WHERE("Employee No." = FIELD("No."),
                                                                                       "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                       "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
-            Caption = 'Professional Category Code';
+            //Caption = 'Professional Category Code';
             FieldClass = FlowField;
         }
         field(109; "Descrição Cat Prof"; Text[100])
@@ -681,7 +693,7 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Cat. Prof. Int. Empregado"."Descrição" WHERE("Employee No." = FIELD("No."),
                                                                                 "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                 "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
-            Caption = 'Prof. Cate. Description';
+            //Caption = 'Prof. Cate. Description';
             FieldClass = FlowField;
         }
         field(110; "Cód. Cat. Prof QP"; Code[20])
@@ -689,7 +701,7 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Cat. Prof. QP Empregado"."Cód. Cat. Prof. QP" WHERE("Employee No." = FIELD("No."),
                                                                                        "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                                        "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
-            Caption = 'Prof. Cate. QP Code';
+            //Caption = 'Prof. Cate. QP Code';
             FieldClass = FlowField;
         }
         field(111; "Descrição Cat Prof QP"; Text[200])
@@ -697,12 +709,12 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Cat. Prof. QP Empregado".Description WHERE("Employee No." = FIELD("No."),
                                                                               "Data Inicio Cat. Prof." = FIELD("Data Filtro Inicio"),
                                                                               "Data Fim Cat. Prof." = FIELD("Data Filtro Fim")));
-            Caption = 'Prof. Cate. QP Description';
+            //Caption = 'Prof. Cate. QP Description';
             FieldClass = FlowField;
         }
         field(112; "Class. Nac. Profi."; Code[20])
         {
-            Caption = 'Nac. Profe. Class.';
+            //Caption = 'Nac. Profe. Class.';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(CNP));
 
             trigger OnValidate()
@@ -716,11 +728,11 @@ table 53035 "Empregado"
         }
         field(113; "Descrição Class. Nac."; Text[150])
         {
-            Caption = 'Nac. Class. Description';
+            //Caption = 'Nac. Class. Description';
         }
         field(114; "Cód. Habilitações"; Code[20])
         {
-            Caption = 'Qualifications Code';
+            //Caption = 'Qualifications Code';
             TableRelation = "Habilitação"."Código";
 
             trigger OnValidate()
@@ -731,11 +743,11 @@ table 53035 "Empregado"
         }
         field(115; "Descrição Habilitações"; Text[200])
         {
-            Caption = 'Qualifications Description';
+            //Caption = 'Qualifications Description';
         }
         field(116; "Situação Profissional"; Option)
         {
-            Caption = 'Professional Status';
+            //Caption = 'Professional Status';
             Description = 'RU';
             OptionCaption = ' ,Empregador,Trabalhador Familiar Não Remunerado,Trabalhador por Conta de Outrém,Membro Activo de Cooperativa de Produção,Outra Situação';
             OptionMembers = " ","1","2","3","4","8";
@@ -745,7 +757,7 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Grau Função Empregado"."Cód. Grau Função" WHERE("Employee No." = FIELD("No."),
                                                                                    "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                                    "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
-            Caption = 'Degree Role';
+            //Caption = 'Degree Role';
             FieldClass = FlowField;
         }
         field(118; "Descrição Grau Função"; Text[200])
@@ -753,7 +765,7 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Grau Função Empregado"."Descrição" WHERE("Employee No." = FIELD("No."),
                                                                             "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                             "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
-            Caption = 'Degree Role Description';
+            //Caption = 'Degree Role Description';
             FieldClass = FlowField;
         }
         field(119; "Cód. Horário"; Code[20])
@@ -761,30 +773,30 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Horário Empregado"."Cód. Horário" WHERE("Employee No." = FIELD("No."),
                                                                            "Data Iníco Horário" = FIELD("Data Filtro Inicio"),
                                                                            "Data Fim Horário" = FIELD("Data Filtro Fim")));
-            Caption = 'Schedule Code';
+            //Caption = 'Schedule Code';
             FieldClass = FlowField;
             //The property 'ValidateTableRelation' can only be set if the property 'TableRelation' is set
             //ValidateTableRelation = true;
         }
         field(120; "Valor Vencimento Base"; Decimal)
         {
-            Caption = 'Base Salary Amount';
+            //Caption = 'Base Salary Amount';
         }
         field(121; "Valor Dia"; Decimal)
         {
-            Caption = 'Day Amount';
+            //Caption = 'Day Amount';
         }
         field(122; "Valor Hora"; Decimal)
         {
-            Caption = 'Hour Amount';
+            //Caption = 'Hour Amount';
         }
         field(123; "No. Horas Semanais"; Decimal)
         {
-            Caption = 'Week Hours No.';
+            //Caption = 'Week Hours No.';
         }
         field(124; "Mês Proc. Sub. Férias"; Integer)
         {
-            Caption = 'Proc. Vacat. Benef. Month';
+            //Caption = 'Proc. Vacat. Benef. Month';
         }
         field(125; "Nº Professor"; Code[20])
         {
@@ -793,14 +805,14 @@ table 53035 "Empregado"
         }
         field(126; "Regime Duração Trabalho"; Option)
         {
-            Caption = 'Work Duration Regime';
+            //Caption = 'Work Duration Regime';
             Description = 'RU';
             OptionCaption = ' ,A tempo completo,A tempo parcial';
             OptionMembers = " ","1","2";
         }
         field(127; "Usa Transf. Bancária"; Boolean)
         {
-            Caption = 'Use Bank Transfer';
+            //Caption = 'Use Bank Transfer';
 
             trigger OnValidate()
             begin
@@ -812,7 +824,7 @@ table 53035 "Empregado"
         }
         field(128; "Cód. Banco Transf."; Code[20])
         {
-            Caption = 'Bank Transfer Code';
+            //Caption = 'Bank Transfer Code';
             TableRelation = "Bank Account";
 
             trigger OnValidate()
@@ -835,26 +847,26 @@ table 53035 "Empregado"
         }
         field(130; "Nome Livro Diario Pag."; Code[10])
         {
-            Caption = 'Gen. Journal Name Pag.';
+            //Caption = 'Gen. Journal Name Pag.';
             Description = 'Pagamento';
             TableRelation = "Gen. Journal Template".Name;
         }
         field(131; "Secção Diario Pag."; Code[10])
         {
-            Caption = 'Gen. Journal Section';
+            //Caption = 'Gen. Journal Section';
             Description = 'Pagamento';
             TableRelation = "Gen. Journal Batch".Name WHERE("Journal Template Name" = FIELD("Nome Livro Diario Pag."));
         }
         field(132; Pagamento; Option)
         {
-            Caption = 'Payment';
+            //Caption = 'Payment';
             Description = 'Pagamento';
             OptionCaption = 'Conta Bancária,Conta CG';
             OptionMembers = "Bank Account","G/L Account";
         }
         field(133; "Conta Pag."; Code[20])
         {
-            Caption = 'Payment Acc.';
+            //Caption = 'Payment Acc.';
             Description = 'Pagamento';
             TableRelation = IF (Pagamento = CONST("Bank Account")) "Bank Account"."No."
             ELSE
@@ -862,36 +874,36 @@ table 53035 "Empregado"
         }
         field(134; "Envio Recibo via E-Mail"; Boolean)
         {
-            Caption = 'Send Receipt via E-Mail';
+            //Caption = 'Send Receipt via E-Mail';
             Description = 'Recibo PDF via Email';
             ExtendedDatatype = None;
         }
         field(135; "Password Recibo em PDF"; Text[8])
         {
-            Caption = 'Receipt Passord PDF';
+            //Caption = 'Receipt Passord PDF';
             Description = 'Recibo PDF via Email';
         }
         field(136; "Endereço de Envio"; Option)
         {
-            Caption = 'Send to Email';
+            //Caption = 'Send to Email';
             Description = 'Recibo PDF via Email';
             OptionCaption = 'Empresa,Pessoal';
             OptionMembers = Empresa,Pessoal;
         }
         field(137; "Última data Proc. Sub. Férias"; Date)
         {
-            Caption = 'Last Date Proc. Vacation Benef.';
+            //Caption = 'Last Date Proc. Vacation Benef.';
             Description = 'Para saber até que data o Sub. Férias está pago';
         }
         field(138; "Data Filtro Inicio"; Date)
         {
-            Caption = 'Start Date Filter';
+            //Caption = 'Start Date Filter';
             Description = 'Filtra os Contratos, Categorias Profissionais e Funções Actuais';
             FieldClass = FlowFilter;
         }
         field(139; "Data Filtro Fim"; Date)
         {
-            Caption = 'End Date Filter';
+            //Caption = 'End Date Filter';
             Description = 'Filtra os Contratos, Categorias Profissionais e Funções Actuais';
             FieldClass = FlowFilter;
         }
@@ -900,14 +912,14 @@ table 53035 "Empregado"
             CalcFormula = Sum("Férias Empregados"."Qtd." WHERE("Employee No." = FIELD("No."),
                                                                 Data = FIELD("Date Filter"),
                                                                 Tipo = CONST(ferias)));
-            Caption = 'Total Vacations';
+            //Caption = 'Total Vacations';
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
         }
         field(141; "Filtro Hora Extra"; Code[10])
         {
-            Caption = 'Extra Hour Filter';
+            //Caption = 'Extra Hour Filter';
             FieldClass = FlowFilter;
             TableRelation = "Tipos Horas Extra";
         }
@@ -916,32 +928,32 @@ table 53035 "Empregado"
             CalcFormula = Sum("Histórico Horas Extra".Quantity WHERE("Employee No." = FIELD("No."),
                                                                         "Cód. Hora Extra" = FIELD("Filtro Hora Extra"),
                                                                         Data = FIELD("Date Filter")));
-            Caption = 'Extra Hour Total (Base)';
+            //Caption = 'Extra Hour Total (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
         }
         field(143; "Naturalidade - Concelho"; Text[60])
         {
-            Caption = 'Birth - County';
+            //Caption = 'Birth - County';
         }
         field(145; "No. dias de Trabalho Semanal"; Decimal)
         {
-            Caption = 'Work Week No. of days';
+            //Caption = 'Work Week No. of days';
         }
         field(146; "Profissionalização"; Boolean)
         {
             CalcFormula = Exist("Profissionalização" WHERE("Cod Empregado" = FIELD("No.")));
-            Caption = 'Professionalization';
+            //Caption = 'Professionalization';
             FieldClass = FlowField;
         }
         field(147; "Data Profissionalização"; Date)
         {
-            Caption = 'Professionalization Date';
+            //Caption = 'Professionalization Date';
         }
         field(148; "Cód. Rúbrica Enc. Seg. Social"; Code[20])
         {
-            Caption = 'Social Security Charges Rubric Code';
+            //Caption = 'Social Security Charges Rubric Code';
             TableRelation = "Payroll Item";
         }
         field(149; "Cód. Rúbrica Enc. CGA"; Code[20])
@@ -967,7 +979,7 @@ table 53035 "Empregado"
         }
         field(153; "No. antigo do Empregado"; Code[20])
         {
-            Caption = 'Old Employee No.';
+            //Caption = 'Old Employee No.';
         }
         field(154; "No. Horas Semanais Totais"; Decimal)
         {
@@ -1213,13 +1225,13 @@ table 53035 "Empregado"
         }
         field(191; "Cod. Cliente"; Code[20])
         {
-            Caption = 'Customer Code';
+            //Caption = 'Customer Code';
             Description = 'Funcionalidade Contratos - Usado para criar um cliente para facturar Imp. Selo dos Contratos';
             TableRelation = Customer."No.";
         }
         field(192; "Qualificação"; Code[50])
         {
-            Caption = 'Qualification';
+            //Caption = 'Qualification';
             Description = 'RU';
 
             trigger OnLookup()
@@ -1235,7 +1247,7 @@ table 53035 "Empregado"
         }
         field(193; "Cod. Regime Reforma Aplicado"; Code[10])
         {
-            Caption = 'Applied Code Regime Reform';
+            //Caption = 'Applied Code Regime Reform';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(RRef));
 
@@ -1250,12 +1262,12 @@ table 53035 "Empregado"
         }
         field(194; "Regime Reforma Aplicado"; Text[30])
         {
-            Caption = 'Applied Regime Reform';
+            //Caption = 'Applied Regime Reform';
             Description = 'RU';
         }
         field(195; "Duração do Tempo de Trabalho"; Code[20])
         {
-            Caption = 'Work Time Duration';
+            //Caption = 'Work Time Duration';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(DTT));
 
@@ -1270,45 +1282,45 @@ table 53035 "Empregado"
         }
         field(196; "Desc. Duração Tempo Trabalho"; Text[200])
         {
-            Caption = 'Work Time Duration Description';
+            //Caption = 'Work Time Duration Description';
             Description = 'RU';
         }
         field(197; "Formação-Situação face à freq."; Code[20])
         {
-            Caption = 'Training-Situation face the freq.';
+            // Caption = 'Training-Situation face the freq.';
             Description = 'RU - passou para uma tabela';
             //Enabled = false;
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(SitFF));
         }
         field(198; Marcado; Boolean)
         {
-            Caption = 'Marked';
+            //Caption = 'Marked';
             Description = 'RU - usado para fazer filtros';
         }
         field(199; "Orgão Social"; Boolean)
         {
-            Caption = 'Social Organ';
+            //Caption = 'Social Organ';
         }
         field(200; "No. Dias Trabalho Mensal"; Decimal)
         {
-            Caption = 'Month Work Days No.';
+            //Caption = 'Month Work Days No.';
             Description = 'por causa dos trabalhadores a tempo parcial';
             Editable = false;
         }
         field(230; Intern; Boolean)
         {
-            Caption = 'Intern';
+            Caption = 'Estagiário';
             DataClassification = ToBeClassified;
         }
         field(231; "Civil State Date"; Date)
         {
-            Caption = 'Civil State Date';
+            Caption = 'Data Estado Civil';
             DataClassification = ToBeClassified;
             Description = 'portal empregado';
         }
         field(232; Locality; Text[30])
         {
-            Caption = 'Locality';
+            Caption = 'Localidade';
             DataClassification = ToBeClassified;
             Description = 'portal empregado';
         }
@@ -1321,7 +1333,7 @@ table 53035 "Empregado"
         }
         field(300; "NAV User Id"; Text[50])
         {
-            Caption = 'NAV User Id';
+            Caption = 'ID Utilizador NAV';
 
             trigger OnLookup()
             var
@@ -1331,12 +1343,12 @@ table 53035 "Empregado"
         }
         field(301; "Responsibility Center"; Code[10])
         {
-            Caption = 'Responsibility Center';
+            Caption = 'Centro Responsabilidade';
             TableRelation = "Responsibility Center";
         }
         field(50000; "NIB Cartao Ref"; Text[30])
         {
-            Caption = 'Meal Card';
+            Caption = 'NIB Cartão Refeição';
             DataClassification = ToBeClassified;
             Description = 'tagus';
         }

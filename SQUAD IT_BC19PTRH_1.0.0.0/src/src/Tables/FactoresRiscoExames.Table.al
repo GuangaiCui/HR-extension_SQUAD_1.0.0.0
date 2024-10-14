@@ -5,7 +5,7 @@ table 53125 "Factores Risco - Exames"
     {
         field(1; "Entry No."; Integer)
         {
-            Caption = 'Nº Movimento';
+            Caption = 'Nº Mov';
         }
         field(2; "Line No."; Integer)
         {

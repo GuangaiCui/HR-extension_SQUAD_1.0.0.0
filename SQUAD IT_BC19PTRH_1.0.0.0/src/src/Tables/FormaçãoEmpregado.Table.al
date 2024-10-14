@@ -9,12 +9,12 @@ table 53093 "Formação Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado."No.";
         }
         field(2; "Cód. Acção"; Code[10])
         {
-            Caption = 'Training Code';
+            //Caption = 'Training Code';
             TableRelation = "Acções Formação"."Código";
 
             trigger OnValidate()
@@ -35,63 +35,63 @@ table 53093 "Formação Empregado"
         }
         field(3; "Descrição"; Text[100])
         {
-            Caption = 'Description';
+            //Caption = 'Description';
         }
         field(5; Tipo; Option)
         {
-            Caption = 'Type';
+            //Caption = 'Type';
             OptionCaption = ' ,Interna,Externa,Outra';
             OptionMembers = " ",Interna,Externa,Outra;
         }
         field(10; "No. Horas Acção"; Decimal)
         {
-            Caption = 'Total Hours';
+            //Caption = 'Total Hours';
         }
         field(11; "Data Início"; Date)
         {
-            Caption = 'Start Date';
+            //Caption = 'Start Date';
         }
         field(12; "Data Fim"; Date)
         {
-            Caption = 'End Date';
+            //Caption = 'End Date';
         }
         field(13; "Custo Acção"; Decimal)
         {
-            Caption = 'Cost';
+            //Caption = 'Cost';
         }
         field(14; "Observações"; Text[250])
         {
-            Caption = 'Observations';
+            //Caption = 'Observations';
         }
         field(15; "Local"; Text[30])
         {
-            Caption = 'Local';
+            //Caption = 'Local';
         }
         field(16; "Entidade Prestadora"; Text[30])
         {
-            Caption = 'Training Organization Name';
+            //Caption = 'Training Organization Name';
         }
         field(20; "Avaliação"; Text[30])
         {
-            Caption = 'Score';
+            //Caption = 'Score';
         }
         field(32; "Iniciativa da Formação"; Option)
         {
-            Caption = 'Training Origin';
+            //Caption = 'Training Origin';
             Description = 'RU';
             OptionCaption = 'Da responsabilidade do empregador,Da iniciativa do trabalhador,Da iniciativa da empresa utilizadora de mão-de-obra';
             OptionMembers = "01","02","03";
         }
         field(34; "Horário Formação"; Option)
         {
-            Caption = 'Training Schedule';
+            //Caption = 'Training Schedule';
             Description = 'RU';
             OptionCaption = 'Laboral,Pós-Laboral,Misto';
             OptionMembers = "01","02","03";
         }
         field(37; "Tipo Certificado/Diploma"; Code[10])
         {
-            Caption = 'Certificate Type';
+            //Caption = 'Certificate Type';
             Description = 'RU';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(Cert));
         }

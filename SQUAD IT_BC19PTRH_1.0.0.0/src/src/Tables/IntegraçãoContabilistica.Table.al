@@ -15,6 +15,7 @@ table 53113 "Integração Contabilistica"
         }
         field(3; "Employee No."; Code[20])
         {
+            Caption = 'No. Empregado';
             TableRelation = Empregado;
 
             trigger OnValidate()
@@ -60,7 +61,7 @@ table 53113 "Integração Contabilistica"
         field(42; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
-            Caption = 'Shortcut Dimension 1 Code';
+            Caption = 'Cód. Atalho Dimensão 1';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
 
             trigger OnValidate()
@@ -71,7 +72,7 @@ table 53113 "Integração Contabilistica"
         field(43; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
-            Caption = 'Shortcut Dimension 2 Code';
+            Caption = 'Cód. Atalho Dimensão 2';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
 
             trigger OnValidate()
@@ -82,20 +83,20 @@ table 53113 "Integração Contabilistica"
         field(110; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
-            Caption = 'Global Dimension 1 Code';
+            Caption = 'Cód. Dimensão 1 Global';
             Description = 'Para as horas extra';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(111; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
-            Caption = 'Global Dimension 2 Code';
+            Caption = 'Cód. Dimensão 2 Global';
             Description = 'Para as horas extra';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(480; "Dimension Set ID"; Integer)
         {
-            Caption = 'Dimension Set ID';
+            Caption = 'ID Conj. Dimensões';
             TableRelation = "Dimension Set Entry";
         }
     }

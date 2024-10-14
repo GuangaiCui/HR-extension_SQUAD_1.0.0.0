@@ -7,11 +7,11 @@ table 53072 "Tipos Horas Extra"
     {
         field(1; "Código"; Code[20])
         {
-            Caption = 'Code';
+            //Caption = 'Code';
         }
         field(2; "Descrição"; Text[100])
         {
-            Caption = 'Description';
+            //Caption = 'Description';
         }
         field(7; "Payroll Item Code"; Code[20])
         {
@@ -24,13 +24,13 @@ table 53072 "Tipos Horas Extra"
         }
         field(15; "Employee No. Filter"; Code[20])
         {
-            Caption = 'Employee No. Filter';
+            Caption = 'Filtro Nº Empregado';
             FieldClass = FlowFilter;
             TableRelation = Empregado;
         }
         field(16; "Date Filter"; Date)
         {
-            Caption = 'Date Filter';
+            Caption = 'Filtro Data';
             FieldClass = FlowFilter;
         }
         field(17; "Total Hora Extra"; Decimal)
@@ -38,14 +38,14 @@ table 53072 "Tipos Horas Extra"
             CalcFormula = Sum("Histórico Horas Extra".Quantity WHERE("Employee No." = FIELD("Employee No. Filter"),
                                                                         "Cód. Hora Extra" = FIELD("Código"),
                                                                         Data = FIELD("Date Filter")));
-            Caption = 'Total Absence (Base)';
+            Caption = 'Ausência Total (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
         }
         field(18; "Dia semanal"; Option)
         {
-            Caption = 'Week Day';
+            //Caption = 'Week Day';
             Description = 'HR.02 - BS';
             OptionMembers = " ","Dia útil","Descanso complementar",Feriado,"Descanso obrigatório";
         }

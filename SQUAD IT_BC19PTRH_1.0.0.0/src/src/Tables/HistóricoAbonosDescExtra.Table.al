@@ -7,16 +7,16 @@ table 53107 "Histórico Abonos - Desc. Extra"
     {
         field(1; "Entry No."; Integer)
         {
-            Caption = 'Entry No.';
+            Caption = 'No. Mov';
         }
         field(2; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
         field(3; Data; Date)
         {
-            Caption = 'Date';
+            //Caption = 'Date';
         }
         field(8; "Payroll Item Code"; Code[20])
         {
@@ -47,24 +47,24 @@ table 53107 "Histórico Abonos - Desc. Extra"
         }
         field(17; "Unit of Measure"; Code[20])
         {
-            Caption = 'Unit Code';
+            Caption = 'Unidade Medida';
             TableRelation = "Unid. Medida Recursos Humanos";
         }
         field(30; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
-            Caption = 'Global Dimension 1 Code';
+            Caption = 'Cód. Dimensão 1 Global';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(31; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
-            Caption = 'Global Dimension 2 Code';
+            Caption = 'Cód. Dimensão 2 Global';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(35; "Anular Falta"; Boolean)
         {
-            Caption = 'Cancel Absence';
+            //Caption = 'Cancel Absence';
             Description = 'Para anular uma falta debitada por engano, no Fich SS';
         }
         field(36; "Reference Date"; Date)

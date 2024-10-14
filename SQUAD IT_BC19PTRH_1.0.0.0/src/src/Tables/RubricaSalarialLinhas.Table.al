@@ -6,20 +6,20 @@ table 53077 "Rubrica Salarial Linhas"
     {
         field(1; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            Caption = 'Cód. Rubrica';
+            TableRelation = "Payroll Item";
         }
         field(2; "Cód. Rubrica Filha"; Code[20])
         {
-            Caption = 'Second Salary Iten Code';
-            TableRelation = "Rubrica Salarial";
+            //Caption = 'Second Salary Iten Code';
+            TableRelation = "Payroll Item";
 
             trigger OnValidate()
             begin
                 if TabRubrica.Get("Cód. Rubrica Filha") then begin
                     "Descrição Rubrica Filha" := TabRubrica.Descrição;
-                    "Tipo Rubrica Filha" := TabRubrica."Tipo Rubrica";
-                    if rRubrica.Get("Cód. Rubrica") then begin
+                    "Tipo Rubrica Filha" := TabRubrica."Payroll Item Type";
+                    if rRubrica.Get("Payroll Item Code") then begin
                         if rRubrica.Genero = rRubrica.Genero::SS then
                             if TabRubrica.NATREM = TabRubrica.NATREM::" " then
                                 Error(Text001, "Cód. Rubrica Filha");
@@ -29,23 +29,23 @@ table 53077 "Rubrica Salarial Linhas"
         }
         field(3; "No. Linha"; Integer)
         {
-            Caption = 'Line No.';
+            //Caption = 'Line No.';
         }
         field(8; "Tipo Rubrica Filha"; Option)
         {
-            Caption = 'Second Salary Iten Type';
+            //Caption = 'Second Salary Iten Type';
             Editable = false;
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
         field(9; "Descrição Rubrica Filha"; Text[100])
         {
-            Caption = 'Second Salary Iten Description';
+            //Caption = 'Second Salary Iten Description';
             Editable = false;
         }
         field(15; Percentagem; Decimal)
         {
-            Caption = 'Percentage';
+            //Caption = 'Percentage';
             DecimalPlaces = 2 : 3;
             InitValue = 100;
             MaxValue = 100;
@@ -53,7 +53,7 @@ table 53077 "Rubrica Salarial Linhas"
         }
         field(16; "Valor Limite Máximo"; Decimal)
         {
-            Caption = 'Exemption Maximum Limit Value';
+            //Caption = 'Exemption Maximum Limit Value';
         }
     }
 

@@ -7,57 +7,57 @@ table 53062 "Grau Função"
     {
         field(1; "Código"; Code[20])
         {
-            Caption = 'Code';
+            Caption = 'Código';
         }
         field(2; "Level 1"; Code[20])
         {
-            Caption = 'Level 1';
+            Caption = 'Nível 1';
         }
         field(3; "Level 2"; Code[20])
         {
-            Caption = 'Level 2';
+            Caption = 'Nível 2';
         }
         field(4; "Level 3"; Code[20])
         {
-            Caption = 'Level 3';
+            Caption = 'Nível 3';
         }
         field(5; Description; Text[200])
         {
-            Caption = 'Description';
+            Caption = 'Descrição';
         }
         field(6; "Min Value"; Decimal)
         {
-            Caption = 'Min. Value';
+            Caption = 'Valor Mínimo';
         }
         field(7; "Max Value"; Decimal)
         {
-            Caption = 'Max value';
+            Caption = 'Valor Máximo';
         }
         field(8; "Employees No."; Integer)
         {
             CalcFormula = Count("Grau Função Empregado" WHERE("Cód. Grau Função" = FIELD("Código"),
                                                                "Data Inicio Grau Função" = FIELD("Data Filtro Inicio"),
                                                                "Data Fim Grau Função" = FIELD("Data Filtro Fim")));
-            Caption = 'Number of Employees';
+            Caption = 'Nº Empregados';
             FieldClass = FlowField;
         }
         field(12; "Data Filtro Inicio"; Date)
         {
-            Caption = 'Begin Date Filter';
+            Caption = 'Data Filtro Inicio';
             FieldClass = FlowFilter;
         }
         field(13; "Data Filtro Fim"; Date)
         {
-            Caption = 'End Date Filter';
+            Caption = 'Data Filtro Fim';
             FieldClass = FlowFilter;
         }
         field(18; "Valor Hora Semanal"; Decimal)
         {
-            Caption = 'Weekly Hours Value';
+            //Caption = 'Weekly Hours Value';
         }
         field(19; "Cod. Índice"; Integer)
         {
-            Caption = 'Indice Code';
+            //Caption = 'Indice Code';
         }
     }
 

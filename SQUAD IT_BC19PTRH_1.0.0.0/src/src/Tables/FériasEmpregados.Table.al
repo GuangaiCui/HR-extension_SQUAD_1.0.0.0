@@ -7,33 +7,33 @@ table 53090 "Férias Empregados"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
         field(2; Data; Date)
         {
-            Caption = 'Date';
+            //Caption = 'Date';
         }
         field(3; Tipo; Option)
         {
-            Caption = 'Type';
+            //Caption = 'Type';
             DataClassification = ToBeClassified;
             OptionCaption = 'Vacation,Compensation';
             OptionMembers = ferias,compensacao;
         }
         field(4; "Ano a que se refere"; Integer)
         {
-            Caption = 'Last Year';
+            //Caption = 'Last Year';
         }
         field(6; "Qtd."; Decimal)
         {
-            Caption = 'Qtd. in hours';
+            //Caption = 'Qtd. in hours';
             DataClassification = ToBeClassified;
             ValuesAllowed = 1, 0, 5;
         }
         field(7; Gozada; Boolean)
         {
-            Caption = 'Used';
+            //Caption = 'Used';
             Editable = false;
         }
         field(50; "Processamento Referencia"; Code[10])

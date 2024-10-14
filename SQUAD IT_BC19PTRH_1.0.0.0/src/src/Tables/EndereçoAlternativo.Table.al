@@ -9,7 +9,7 @@ table 53036 "Endereço Alternativo"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             NotBlank = true;
             TableRelation = Empregado;
 
@@ -21,28 +21,28 @@ table 53036 "Endereço Alternativo"
         }
         field(2; "Code"; Code[10])
         {
-            Caption = 'Code';
+            Caption = 'Código';
             NotBlank = true;
         }
         field(3; Name; Text[30])
         {
-            Caption = 'Name';
+            Caption = 'Nome';
         }
         field(4; "Name 2"; Text[30])
         {
-            Caption = 'Name 2';
+            Caption = 'Nome 2';
         }
         field(5; Address; Text[30])
         {
-            Caption = 'Address';
+            Caption = 'Endereço';
         }
         field(6; "Address 2"; Text[30])
         {
-            Caption = 'Address 2';
+            Caption = 'Endereço 2';
         }
         field(7; City; Text[30])
         {
-            Caption = 'City';
+            Caption = 'Cidade';
 
             trigger OnValidate()
             begin
@@ -51,7 +51,7 @@ table 53036 "Endereço Alternativo"
         }
         field(8; "Post Code"; Code[20])
         {
-            Caption = 'Post Code';
+            Caption = 'Cód. Postal';
             TableRelation = "Post Code";
             //This property is currently not supported
             //TestTableRelation = false;
@@ -64,15 +64,15 @@ table 53036 "Endereço Alternativo"
         }
         field(9; County; Text[30])
         {
-            Caption = 'County';
+            Caption = 'Distrito';
         }
         field(10; "Phone No."; Text[30])
         {
-            Caption = 'Phone No.';
+            Caption = 'Telefone';
         }
         field(11; "Fax No."; Text[30])
         {
-            Caption = 'Fax No.';
+            Caption = 'No. Fax';
         }
         field(12; "E-Mail"; Text[80])
         {
@@ -83,13 +83,13 @@ table 53036 "Endereço Alternativo"
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST("Edç"),
                                                                       "No." = FIELD("Employee No."),
                                                                       "Alternative Address Code" = FIELD(Code)));
-            Caption = 'Comment';
+            Caption = 'Comentário';
             Editable = false;
             FieldClass = FlowField;
         }
         field(14; "Country Code"; Code[10])
         {
-            Caption = 'Country Code';
+            Caption = 'Cód. País';
             TableRelation = "Country/Region";
         }
     }

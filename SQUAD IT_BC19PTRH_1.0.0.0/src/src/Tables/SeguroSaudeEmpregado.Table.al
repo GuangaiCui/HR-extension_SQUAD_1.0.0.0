@@ -8,6 +8,7 @@ table 53128 "Seguro Saude Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
+            Caption = 'No. Empregado';
             TableRelation = Empregado;
 
             trigger OnValidate()

@@ -8,11 +8,11 @@ table 53110 "Tabela Temporária Relatórios"
     {
         field(1; Code1; Code[20])
         {
-            Caption = 'Code1';
+            Caption = 'Código1';
         }
         field(2; Code2; Text[250])
         {
-            Caption = 'Code2';
+            Caption = 'Código2';
         }
         field(3; Decimal1; Decimal)
         {
@@ -52,7 +52,7 @@ table 53110 "Tabela Temporária Relatórios"
         }
         field(15; "Line No"; Integer)
         {
-            Caption = 'Line No';
+            Caption = 'Nº Linha';
         }
         field(16; Code3; Text[250])
         {

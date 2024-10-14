@@ -9,34 +9,34 @@ table 53040 "Familiar Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'Employee No.';
+            Caption = 'No. Empregado';
             NotBlank = true;
             TableRelation = Empregado;
         }
         field(2; "Line No."; Integer)
         {
-            Caption = 'Line No.';
+            Caption = 'No. Linha';
         }
         field(3; "Relative Code"; Code[10])
         {
-            Caption = 'Relative Code';
+            Caption = 'Cód. Familiar';
             TableRelation = Familiar;
         }
         field(4; Name; Text[60])
         {
-            Caption = 'Name';
+            Caption = 'Nome';
         }
         field(7; "Birth Date"; Date)
         {
-            Caption = 'Birth Date';
+            Caption = 'Data Nascimento';
         }
         field(8; "Phone No."; Text[30])
         {
-            Caption = 'Phone No.';
+            Caption = 'Telefone';
         }
         field(9; "Employee Relative No."; Code[20])
         {
-            Caption = 'Relative''s Employee No.';
+            Caption = 'Nº Familiar Empregado';
             TableRelation = Empregado;
         }
         field(10; Comment; Boolean)
@@ -44,25 +44,25 @@ table 53040 "Familiar Empregado"
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Fam),
                                                                       "No." = FIELD("Employee No."),
                                                                       "Table Line No." = FIELD("Line No.")));
-            Caption = 'Comment';
+            Caption = 'Comentário';
             Editable = false;
             FieldClass = FlowField;
         }
         field(20; "Emergency Contact"; Boolean)
         {
-            Caption = 'Emergency Contact';
+            Caption = 'Contacto Emergência';
             DataClassification = ToBeClassified;
         }
         field(21; Gender; Option)
         {
-            Caption = 'Gender';
+            Caption = 'Sexo';
             DataClassification = ToBeClassified;
-            OptionCaption = ' ,Female,Male';
+            OptionCaption = ' ,Femenino,Masculino';
             OptionMembers = " ",Female,Male;
         }
         field(22; "Vat Number"; Text[9])
         {
-            Caption = 'Vat Number';
+            Caption = 'No. Contribuinte';
             DataClassification = ToBeClassified;
             Numeric = true;
 

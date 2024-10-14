@@ -8,20 +8,20 @@ table 53044 Sindicato
     {
         field(1; "Code"; Code[10])
         {
-            Caption = 'Code';
+            Caption = 'Código';
             NotBlank = true;
         }
         field(2; Name; Text[30])
         {
-            Caption = 'Name';
+            Caption = 'Nome';
         }
         field(3; Address; Text[30])
         {
-            Caption = 'Address';
+            Caption = 'Endereço';
         }
         field(4; "Post Code"; Code[20])
         {
-            Caption = 'Post Code';
+            Caption = 'Cód. Postal';
             TableRelation = "Post Code";
             //This property is currently not supported
             //TestTableRelation = false;
@@ -34,7 +34,7 @@ table 53044 Sindicato
         }
         field(5; City; Text[30])
         {
-            Caption = 'City';
+            Caption = 'Cidade';
 
             trigger OnValidate()
             begin
@@ -43,31 +43,31 @@ table 53044 Sindicato
         }
         field(6; "Phone No."; Text[30])
         {
-            Caption = 'Phone No.';
+            Caption = 'Telefone';
         }
         field(7; "No. of Members Employed"; Integer)
         {
             CalcFormula = Count(Empregado WHERE(Status = FILTER(<> Terminated),
                                                  "Union Code" = FIELD(Code)));
-            Caption = 'No. of Members Employed';
+            Caption = 'N.º de Empregados';
             Editable = false;
             FieldClass = FlowField;
         }
         field(8; "Name 2"; Text[30])
         {
-            Caption = 'Name 2';
+            Caption = 'Nome 2';
         }
         field(9; "Address 2"; Text[30])
         {
-            Caption = 'Address 2';
+            Caption = 'Endereço 2';
         }
         field(10; County; Text[30])
         {
-            Caption = 'County';
+            Caption = 'Distrito';
         }
         field(11; "Fax No."; Text[30])
         {
-            Caption = 'Fax No.';
+            Caption = 'No. Fax';
         }
         field(12; "E-Mail"; Text[80])
         {
@@ -75,11 +75,11 @@ table 53044 Sindicato
         }
         field(13; "Home Page"; Text[80])
         {
-            Caption = 'Home Page';
+            Caption = 'Página Inicial';
         }
         field(14; "Country Code"; Code[10])
         {
-            Caption = 'Country Code';
+            Caption = 'Cód. País';
             TableRelation = "Country/Region";
         }
     }

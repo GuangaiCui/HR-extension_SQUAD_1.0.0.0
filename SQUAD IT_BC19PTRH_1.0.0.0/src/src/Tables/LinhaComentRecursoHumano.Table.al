@@ -9,7 +9,7 @@ table 53043 "Linha Coment. Recurso Humano"
     {
         field(1; "Table Name"; Option)
         {
-            Caption = 'Table Name';
+            Caption = 'Nome Tabela';
             OptionCaption = 'Employee,Alternative Address,Employee Qualification,Employee Relative,Employee Absence,Misc. Article Information,Confidential Information';
             OptionMembers = Emp,"Edç",Qual,Fam,Aus,InfArt,Cont,Inac,CatProf,CatProfQP,Grau,HAus,HorEx,HHorEx;
         }
@@ -46,28 +46,28 @@ table 53043 "Linha Coment. Recurso Humano"
         }
         field(3; "Table Line No."; Integer)
         {
-            Caption = 'Table Line No.';
+            Caption = 'No. Linha Tabela';
         }
         field(4; "Alternative Address Code"; Code[10])
         {
-            Caption = 'Alternative Address Code';
+            Caption = 'Cód. Endereço Alternativo';
             TableRelation = IF ("Table Name" = CONST("Edç")) "Endereço Alternativo".Code WHERE("Employee No." = FIELD("No."));
         }
         field(6; "Line No."; Integer)
         {
-            Caption = 'Line No.';
+            Caption = 'No. Linha';
         }
         field(7; Date; Date)
         {
-            Caption = 'Date';
+            Caption = 'Data';
         }
         field(8; "Code"; Code[10])
         {
-            Caption = 'Code';
+            Caption = 'Código';
         }
         field(9; Comment; Text[80])
         {
-            Caption = 'Comment';
+            Caption = 'Comentário';
         }
     }
 

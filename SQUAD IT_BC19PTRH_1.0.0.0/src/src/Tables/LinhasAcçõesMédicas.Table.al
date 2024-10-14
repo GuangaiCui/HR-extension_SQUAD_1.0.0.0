@@ -6,7 +6,7 @@ table 53124 "Linhas Acções Médicas"
         field(1; "Entry No."; Integer)
         {
             AutoIncrement = true;
-            Caption = 'Nº Movimento';
+            Caption = 'Nº Mov';
         }
         field(2; "Line No."; Integer)
         {

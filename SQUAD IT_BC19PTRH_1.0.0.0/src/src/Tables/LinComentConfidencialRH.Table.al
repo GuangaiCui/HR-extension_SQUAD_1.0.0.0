@@ -9,7 +9,7 @@ table 53054 "Lin. Coment. Confidencial RH"
     {
         field(1; "Table Name"; Option)
         {
-            Caption = 'Table Name';
+            Caption = 'Nome Tabela';
             OptionCaption = 'Confidential Information';
             OptionMembers = "Informação Confidencial";
         }
@@ -20,24 +20,24 @@ table 53054 "Lin. Coment. Confidencial RH"
         }
         field(3; "Code"; Code[10])
         {
-            Caption = 'Code';
+            Caption = 'Código';
             TableRelation = Confidencial.Code;
         }
         field(4; "Table Line No."; Integer)
         {
-            Caption = 'Table Line No.';
+            Caption = 'No. Linha Tabela';
         }
         field(6; "Line No."; Integer)
         {
-            Caption = 'Line No.';
+            Caption = 'No. Linha';
         }
         field(7; Date; Date)
         {
-            Caption = 'Date';
+            Caption = 'Data';
         }
         field(9; Comment; Text[80])
         {
-            Caption = 'Comment';
+            Caption = 'Comentário';
         }
     }
 
