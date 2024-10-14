@@ -7,6 +7,7 @@ page 53037 "Imagem Empregado"
     LinksAllowed = false;
     PageType = Card;
     SourceTable = Empregado;
+    ApplicationArea = HumanResourcesAppArea;
 
     layout
     {

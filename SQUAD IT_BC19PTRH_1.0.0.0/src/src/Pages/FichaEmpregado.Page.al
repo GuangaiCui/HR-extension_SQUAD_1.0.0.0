@@ -7,7 +7,7 @@ page 53035 "Ficha Empregado"
     //TODO: to change name after hide original
     PageType = Card;
     SourceTable = Empregado;
-
+    ApplicationArea = All;
     layout
     {
         area(content)

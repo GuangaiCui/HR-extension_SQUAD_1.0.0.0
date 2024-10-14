@@ -7,7 +7,7 @@ page 53130 "Qualificações Empregado RU"
     DelayedInsert = true;
     PageType = List;
     SourceTable = "Qualificação Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

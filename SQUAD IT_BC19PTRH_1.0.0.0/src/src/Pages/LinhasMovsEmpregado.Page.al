@@ -8,7 +8,7 @@ page 53103 "Linhas Movs. Empregado"
     MultipleNewLines = true;
     PageType = ListPart;
     SourceTable = "Linhas Movs. Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

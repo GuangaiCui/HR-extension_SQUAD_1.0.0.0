@@ -3,7 +3,7 @@ page 53171 MyEmpregado
 {
     PageType = ListPart;
     SourceTable = Empregado;
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

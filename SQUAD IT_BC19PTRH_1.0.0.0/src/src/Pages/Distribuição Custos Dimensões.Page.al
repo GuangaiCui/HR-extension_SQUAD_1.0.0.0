@@ -4,7 +4,7 @@ page 53113 "Distribuição Custos -Dimensões"
     DelayedInsert = true;
     PageType = List;
     SourceTable = "Distribuição Custos";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

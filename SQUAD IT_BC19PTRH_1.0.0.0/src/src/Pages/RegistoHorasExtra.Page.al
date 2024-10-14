@@ -4,7 +4,7 @@ page 53090 "Registo Horas Extra"
     DelayedInsert = true;
     PageType = List;
     SourceTable = "Horas Extra Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

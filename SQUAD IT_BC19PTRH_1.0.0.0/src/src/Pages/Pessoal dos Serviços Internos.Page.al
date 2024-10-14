@@ -5,7 +5,7 @@ page 53140 "Pessoal dos Serviços Internos"
     Caption = 'Pessoal dos Serviços Internos';
     PageType = List;
     SourceTable = "Pessoal dos Serviços Int";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

@@ -5,7 +5,7 @@ page 53079 "Lista Grau Função Empregado"
     DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Grau Função Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

@@ -7,7 +7,7 @@ page 53062 "Matriz de Vista Aus. p/ Per.."
     LinksAllowed = false;
     PageType = List;
     SourceTable = Empregado;
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

@@ -7,6 +7,7 @@ page 53101 "Lista Rubrica Salarial Emp."
     PageType = List;
     RefreshOnActivate = true;
     SourceTable = "Rubrica Salarial Empregado";
+    ApplicationArea = all;
 
     layout
     {

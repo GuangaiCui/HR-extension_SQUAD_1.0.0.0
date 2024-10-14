@@ -4,7 +4,7 @@ page 53128 "Profissionalização"
     DelayedInsert = true;
     PageType = List;
     SourceTable = "Profissionalização";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

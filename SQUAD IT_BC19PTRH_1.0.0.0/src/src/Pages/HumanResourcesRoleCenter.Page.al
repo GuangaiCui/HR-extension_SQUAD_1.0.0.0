@@ -17,13 +17,13 @@ page 53170 "Human Resources Role Center"
                 {
 
 
-                    //Caption = 'Employee';
+                    Caption = 'Employee';
                 }
                 part(Control1000000004; "MyRegistoAusências")
                 {
 
 
-                    //Caption = 'Absense Registration';
+                    Caption = 'Absense Registration';
                 }
             }
             group(Control1000000003)
@@ -33,7 +33,7 @@ page 53170 "Human Resources Role Center"
                 {
 
 
-                    //Caption = 'Hist. Movs. Emp.';
+                    Caption = 'Hist. Movs. Emp.';
                 }
                 systempart(Control1; MyNotes)
                 {
@@ -52,14 +52,14 @@ page 53170 "Human Resources Role Center"
             {
 
 
-                //Caption = 'Employee';
+                Caption = 'Employee';
                 RunObject = Page "Lista Empregado";
             }
             action("Registo Ausências")
             {
 
 
-                //Caption = 'Absense Register';
+                Caption = 'Absense Register';
                 RunObject = Page "Registo Ausência";
             }
             action("Registo Abonos - Descontos Extra")
@@ -73,7 +73,7 @@ page 53170 "Human Resources Role Center"
             {
 
 
-                //Caption = 'Processing';
+                Caption = 'Processing';
                 RunObject = Page "Periodos Processamento";
             }
             action("Movimentos Empregado")
@@ -81,7 +81,7 @@ page 53170 "Human Resources Role Center"
 
 
                 Caption = 'Movimentos Empregado';
-                RunObject = Page "Lista Cab. Movs. Empregado";
+                RunObject = Page "Lista Movs. Empregado";
             }
             action("Hist. Mov. Empregado")
             {
@@ -100,7 +100,7 @@ page 53170 "Human Resources Role Center"
                 {
 
 
-                    //Caption = 'Employee';
+                    Caption = 'Employee';
                     Image = HumanResources;
                     RunObject = Page "Lista Empregado";
                 }

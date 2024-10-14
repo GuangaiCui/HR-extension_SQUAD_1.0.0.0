@@ -3,7 +3,7 @@ page 53137 "Dispensa Situações Empregado"
 {
     PageType = List;
     SourceTable = "Dispensa Sit - Cargos Empregad";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

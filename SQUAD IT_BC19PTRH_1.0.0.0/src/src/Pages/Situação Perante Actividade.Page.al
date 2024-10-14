@@ -4,6 +4,7 @@ page 53157 "Situação Perante Actividade"
     AutoSplitKey = true;
     PageType = List;
     SourceTable = "Situação Perante Actividade";
+    ApplicationArea = HumanResourcesAppArea;
 
     layout
     {

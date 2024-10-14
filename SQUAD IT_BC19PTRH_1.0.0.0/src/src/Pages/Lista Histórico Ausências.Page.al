@@ -10,7 +10,7 @@ page 53088 "Lista Histórico Ausências"
     ModifyAllowed = false;
     PageType = List;
     SourceTable = "Histórico Ausências";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

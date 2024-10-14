@@ -4,7 +4,7 @@ page 53149 "Lista Acções Médicas"
     Editable = false;
     PageType = List;
     SourceTable = "Cab. Acções Médicas";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

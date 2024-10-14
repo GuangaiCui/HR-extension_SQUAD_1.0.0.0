@@ -7,7 +7,7 @@ page 53087 "Matriz Vista Ferias"
     LinksAllowed = false;
     PageType = List;
     SourceTable = Empregado;
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

@@ -8,6 +8,7 @@ page 53109 "Lista Movs. Empregado"
     PageType = List;
     RefreshOnActivate = true;
     SourceTable = "Linhas Movs. Empregado";
+    ApplicationArea = all;
 
     layout
     {

@@ -9753,8 +9753,23 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2269271619 - Control 901740945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Hist. Movs. Emp.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Hist. Movs. Emp. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Control 1846148150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Absense Registration</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Control1000000004 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2269271619 - Control 1208451533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Employee</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Control1000000005 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3018226411 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Empregados</source>
+          <source>Employee</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Empregados - Property Caption</note>
         </trans-unit>
@@ -9769,7 +9784,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Movimentos Empregado - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3797651617 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Processamento</source>
+          <source>Processing</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Processamento - Property Caption</note>
         </trans-unit>
@@ -9779,7 +9794,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Registo Abonos - Descontos Extra - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3867069054 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Registo Ausências</source>
+          <source>Absense Register</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Registo Ausências - Property Caption</note>
         </trans-unit>
@@ -9789,7 +9804,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Action1000000013 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Action 3374806942 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Action1000000014</source>
+          <source>Employee</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Action1000000014 - Property Caption</note>
         </trans-unit>

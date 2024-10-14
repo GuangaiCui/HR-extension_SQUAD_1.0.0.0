@@ -8,7 +8,7 @@ page 53069 "Folha Coment. Confidencial"
     MultipleNewLines = true;
     PageType = List;
     SourceTable = "Lin. Coment. Confidencial RH";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

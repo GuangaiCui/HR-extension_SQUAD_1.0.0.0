@@ -10,7 +10,7 @@ page 53108 "Lista Hist. Cab. Movs. Emp"
     PageType = List;
     RefreshOnActivate = true;
     SourceTable = "Hist. Cab. Movs. Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

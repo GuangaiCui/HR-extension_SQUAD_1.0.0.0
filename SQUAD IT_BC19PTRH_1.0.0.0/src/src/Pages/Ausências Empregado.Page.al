@@ -9,7 +9,7 @@ page 53046 "Ausências Empregado"
     PopulateAllFields = true;
     SourceTable = "Ausência Empregado";
     SourceTableView = SORTING("Employee No.", "From Date");
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

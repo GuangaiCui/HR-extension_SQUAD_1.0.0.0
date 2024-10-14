@@ -7,7 +7,7 @@ page 53093 "Matriz Vista HoraExtra p Cate."
     LinksAllowed = false;
     PageType = List;
     SourceTable = Date;
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

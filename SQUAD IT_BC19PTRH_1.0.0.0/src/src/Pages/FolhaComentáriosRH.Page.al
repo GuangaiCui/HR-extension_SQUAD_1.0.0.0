@@ -8,7 +8,7 @@ page 53057 "Folha Comentários RH"
     MultipleNewLines = true;
     PageType = List;
     SourceTable = "Linha Coment. Recurso Humano";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

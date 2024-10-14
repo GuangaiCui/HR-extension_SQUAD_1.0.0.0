@@ -6,7 +6,7 @@ page 53042 "Empregados Qualificados"
     Editable = false;
     PageType = List;
     SourceTable = "Qualificação Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

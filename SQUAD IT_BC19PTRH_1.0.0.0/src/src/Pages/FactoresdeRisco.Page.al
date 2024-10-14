@@ -3,7 +3,7 @@ page 53144 "Factores de Risco"
 {
     PageType = List;
     SourceTable = "Factores de Risco";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

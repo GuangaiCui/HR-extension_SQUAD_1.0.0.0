@@ -7,7 +7,7 @@ page 53102 "Cab. Movs. Empregado"
     PageType = Document;
     RefreshOnActivate = true;
     SourceTable = "Cab. Movs. Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

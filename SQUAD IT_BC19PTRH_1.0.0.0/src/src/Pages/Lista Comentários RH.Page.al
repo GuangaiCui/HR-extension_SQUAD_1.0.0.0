@@ -7,7 +7,7 @@ page 53058 "Lista Comentários RH"
     Editable = false;
     PageType = List;
     SourceTable = "Linha Coment. Recurso Humano";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

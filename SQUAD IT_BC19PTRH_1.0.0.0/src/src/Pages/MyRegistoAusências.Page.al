@@ -4,7 +4,7 @@ page 53172 "MyRegistoAusências"
     Caption = 'Registo Ausências';
     PageType = ListPart;
     SourceTable = "Ausência Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

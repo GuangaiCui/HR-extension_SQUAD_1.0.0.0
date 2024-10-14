@@ -5,6 +5,7 @@ page 53099 "Subform Rubrica Salarial"
     Caption = 'teste_vc';
     PageType = ListPart;
     SourceTable = "Rubrica Salarial Linhas";
+
     layout
     {
         area(Content)

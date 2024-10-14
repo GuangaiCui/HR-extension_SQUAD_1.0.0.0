@@ -7,7 +7,7 @@ page 53091 "Lista Histórico Horas Extra"
     ModifyAllowed = false;
     PageType = List;
     SourceTable = "Histórico Horas Extra";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

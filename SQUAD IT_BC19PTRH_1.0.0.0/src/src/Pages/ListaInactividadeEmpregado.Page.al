@@ -6,7 +6,7 @@ page 53073 "Lista Inactividade Empregado"
     DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Inactividade Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

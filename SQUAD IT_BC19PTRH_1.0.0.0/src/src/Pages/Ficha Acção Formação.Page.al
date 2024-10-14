@@ -3,7 +3,7 @@ page 53133 "Ficha Acção Formação"
 {
     PageType = Card;
     SourceTable = "Acções Formação";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

@@ -5,7 +5,7 @@ page 53141 "Pessoal dos Serviços Ext"
     Caption = 'Pessoal dos Serviços Externos';
     PageType = List;
     SourceTable = "Pessoal dos Serviços Ext";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

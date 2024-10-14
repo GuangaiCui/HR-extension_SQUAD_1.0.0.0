@@ -4,7 +4,7 @@ page 53147 "Linhas Acções Médicas"
     AutoSplitKey = true;
     PageType = ListPart;
     SourceTable = "Linhas Acções Médicas";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

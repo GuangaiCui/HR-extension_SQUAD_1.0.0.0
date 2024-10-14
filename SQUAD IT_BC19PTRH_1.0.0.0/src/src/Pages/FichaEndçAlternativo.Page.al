@@ -6,7 +6,7 @@ page 53038 "Ficha Endç. Alternativo"
     PageType = Card;
     PopulateAllFields = true;
     SourceTable = "Endereço Alternativo";
-
+    ApplicationArea = All;
     layout
     {
         area(content)
