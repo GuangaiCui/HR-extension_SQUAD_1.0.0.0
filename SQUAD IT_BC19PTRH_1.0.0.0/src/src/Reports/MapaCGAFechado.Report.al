@@ -775,7 +775,7 @@ report 53053 "Mapa CGA - Fechado"
         NameLbl = 'Name';
         SitCodeLbl = 'Sit. Code';
         MoveCodeLbl = 'Mov. Code';
-        EfectDateLbl = 'Efect Date';
+        EfectDateLbl = 'Effect Date';
         DaysNoLbl = 'Days No.';
         ParcialHrLbl = 'Parcial Hor.';
         CompHrLbl = 'Comp. Hor.';

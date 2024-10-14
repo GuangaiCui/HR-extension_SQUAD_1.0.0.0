@@ -5,7 +5,7 @@ page 53070 "Lista Comentários Confidencial"
     Editable = false;
     PageType = Card;
     SourceTable = "Lin. Coment. Confidencial RH";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

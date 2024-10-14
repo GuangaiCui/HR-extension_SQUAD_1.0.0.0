@@ -767,7 +767,7 @@ report 53052 "Mapa CGA - Aberto"
         NameLbl = 'Name';
         SitCodeLbl = 'Sit. Code';
         MoveCodeLbl = 'Mov. Code';
-        EfectDateLbl = 'Efect Date';
+        EfectDateLbl = 'Effect Date';
         DaysNoLbl = 'Days No.';
         ParcialHrLbl = 'Parcial Hor.';
         CompHrLbl = 'Comp. Hor.';

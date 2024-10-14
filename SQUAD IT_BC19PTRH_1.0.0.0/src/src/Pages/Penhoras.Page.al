@@ -3,7 +3,7 @@ page 53050 Penhoras
 {
     PageType = List;
     SourceTable = Penhoras;
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

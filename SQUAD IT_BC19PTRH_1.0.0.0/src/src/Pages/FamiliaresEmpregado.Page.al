@@ -6,7 +6,7 @@ page 53044 "Familiares Empregado"
     DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Familiar Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

@@ -3,7 +3,7 @@ page 53076 "Categoria Profissional QP"
 {
     PageType = List;
     SourceTable = "Categoria Profissional QP";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

@@ -7,7 +7,7 @@ page 53039 "Lista Endereços Alternativos"
     Editable = false;
     PageType = List;
     SourceTable = "Endereço Alternativo";
-
+    ApplicationArea = All;
     layout
     {
         area(content)

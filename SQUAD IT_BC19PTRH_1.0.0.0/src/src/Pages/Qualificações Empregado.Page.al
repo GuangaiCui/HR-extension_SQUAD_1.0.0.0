@@ -8,7 +8,7 @@ page 53041 "Qualificações Empregado"
     PageType = List;
     SourceTable = "Qualificação Empregado";
     SourceTableView = WHERE(Type = FILTER(<> "Qualificações RU"));
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

@@ -3,7 +3,7 @@ page 53152 "Doenças Profissionais"
 {
     PageType = List;
     SourceTable = "Doenças Profissionais";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

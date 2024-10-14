@@ -7,7 +7,7 @@ page 53067 "Matriz de Vista Aus. por Cate."
     LinksAllowed = false;
     PageType = List;
     SourceTable = Date;
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

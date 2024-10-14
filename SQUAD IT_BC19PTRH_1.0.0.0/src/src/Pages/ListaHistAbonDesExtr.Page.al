@@ -7,7 +7,7 @@ page 53097 "Lista Hist. Abon. - Des. Extr."
     ModifyAllowed = false;
     PageType = List;
     SourceTable = "Histórico Abonos - Desc. Extra";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

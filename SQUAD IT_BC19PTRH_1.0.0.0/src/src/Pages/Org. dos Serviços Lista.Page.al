@@ -4,7 +4,7 @@ page 53153 "Org. dos Serviços Lista"
     Editable = false;
     PageType = List;
     SourceTable = "Segurança e Saúde no Trabalho";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

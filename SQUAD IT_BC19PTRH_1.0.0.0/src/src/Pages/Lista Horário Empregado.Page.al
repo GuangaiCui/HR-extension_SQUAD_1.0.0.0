@@ -6,7 +6,7 @@ page 53082 "Lista Horário Empregado"
     PageType = List;
     SourceTable = "Horário Empregado";
     SourceTableView = SORTING("Employee No.", "Data Iníco Horário", "Dia da Semana");
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

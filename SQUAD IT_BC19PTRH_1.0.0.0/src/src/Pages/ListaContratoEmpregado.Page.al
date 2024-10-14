@@ -6,7 +6,7 @@ page 53072 "Lista Contrato Empregado"
     DataCaptionFields = "Cód. Empregado";
     PageType = List;
     SourceTable = "Contrato Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

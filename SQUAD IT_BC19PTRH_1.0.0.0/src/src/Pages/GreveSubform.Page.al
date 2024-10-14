@@ -3,7 +3,7 @@ page 53162 "Greve Subform"
 {
     PageType = CardPart;
     SourceTable = Greves;
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

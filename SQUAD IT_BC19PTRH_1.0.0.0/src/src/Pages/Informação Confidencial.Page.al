@@ -6,7 +6,7 @@ page 53056 "Informação Confidencial"
     DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Informação Confidencial";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

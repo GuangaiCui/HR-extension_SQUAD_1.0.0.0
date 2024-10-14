@@ -4,7 +4,7 @@ page 53173 MyHistMovsEmp
     Caption = 'Hist. Movs. Emp';
     PageType = ListPart;
     SourceTable = "Hist. Cab. Movs. Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

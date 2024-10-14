@@ -4,7 +4,7 @@ page 53167 "Seg Saude Empregado"
     AutoSplitKey = true;
     PageType = List;
     SourceTable = "Seguro Saude Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

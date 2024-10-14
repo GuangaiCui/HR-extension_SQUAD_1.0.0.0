@@ -4,7 +4,7 @@ page 53122 "Consultas Médicas Empregado"
     DelayedInsert = true;
     PageType = List;
     SourceTable = "Consultas Médicas Empregado";
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)

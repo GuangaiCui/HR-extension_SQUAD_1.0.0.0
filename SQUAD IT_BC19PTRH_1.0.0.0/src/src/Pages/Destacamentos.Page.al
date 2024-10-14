@@ -4,7 +4,7 @@ page 53159 Destacamentos
     AutoSplitKey = true;
     PageType = List;
     SourceTable = Destacamentos;
-
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(content)
