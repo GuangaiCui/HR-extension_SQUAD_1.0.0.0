@@ -197,9 +197,9 @@ report 53042 "Ficheiro Seg. Social"
                                     //>>>>>> LINHA R1 - Identificação da Entidade Empregadora >>>>>>>>>>>>>>>>>>>>>>>>>>
                                     if Contador = 0 then begin
                                         TabTempFichTexto.Init;
-                                        TabTempFichTexto."Tipo Ficheiro" := 0;
-                                        TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                                        TabTempFichTexto.Data := WorkDate;
+                                        TabTempFichTexto."File Type" := 0;
+                                        TabTempFichTexto."Line No." := TabTempFichTexto."Line No." + 1;
+                                        TabTempFichTexto.Date := WorkDate;
                                         TabTempFichTexto.Texto1 := 'R1'
                                         + TabInfEmpresa."Social Security No."
                                         + "Estabelecimentos da Empresa"."Instituição Seg. Social"
@@ -458,9 +458,9 @@ report 53042 "Ficheiro Seg. Social"
                                     "Regime Seg. Social"."Taxa Contributiva Ent Patronal";
 
                             TabTempFichTexto.Init;
-                            TabTempFichTexto."Tipo Ficheiro" := 0;
-                            TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                            TabTempFichTexto.Data := WorkDate;
+                            TabTempFichTexto."File Type" := 0;
+                            TabTempFichTexto."Line No." := TabTempFichTexto."Line No." + 1;
+                            TabTempFichTexto.Date := WorkDate;
                             TabTempFichTexto.Texto1 := 'R3'
                             + TabInfEmpresa."Social Security No."
                             + "Estabelecimentos da Empresa"."Instituição Seg. Social"
@@ -550,7 +550,7 @@ report 53042 "Ficheiro Seg. Social"
         //-------------------------------------------------------------------------------
         Commit;
         TabTempFichTexto.Reset;
-        TabTempFichTexto.SetRange(TabTempFichTexto."Tipo Ficheiro", TabTempFichTexto."Tipo Ficheiro"::MapaSS);
+        TabTempFichTexto.SetRange(TabTempFichTexto."File Type", TabTempFichTexto."File Type"::MapaSS);
         if TabTempFichTexto.FindFirst then
             XMLPORT.Run(XMLPORT::"Export Ficheiro Texto", true, false, TabTempFichTexto);
     end;
@@ -565,7 +565,7 @@ report 53042 "Ficheiro Seg. Social"
         //Limpar a tabela temporária para o tipo de ficheiro MapaSS
         //---------------------------------------------------------
 
-        TabTempFichTexto.SetRange(TabTempFichTexto."Tipo Ficheiro", TabTempFichTexto."Tipo Ficheiro"::MapaSS);
+        TabTempFichTexto.SetRange(TabTempFichTexto."File Type", TabTempFichTexto."File Type"::MapaSS);
         if TabTempFichTexto.Find('-') then
             TabTempFichTexto.DeleteAll;
 
@@ -573,8 +573,8 @@ report 53042 "Ficheiro Seg. Social"
         //>>>>>>  LINHA R0 - Identificação do Ficheiro >>>>>>>>>>>>>>>>>>>>>>>>>>
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
         TabTempFichTexto.Init;
-        TabTempFichTexto."Tipo Ficheiro" := 0;
-        TabTempFichTexto.NLinha := 1;
+        TabTempFichTexto."File Type" := 0;
+        TabTempFichTexto."Line No." := 1;
         TabTempFichTexto.Texto1 := 'R0' + 'RC4008' + '  ' + '01' + PadStr(' ', 106, ' ');
         TabTempFichTexto.Insert;
         //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -763,9 +763,9 @@ report 53042 "Ficheiro Seg. Social"
                                       (DataFalta <> TemHistMov."Data a que se refere o mov") then begin
 
                                         TabTempFichTexto.Init;
-                                        TabTempFichTexto."Tipo Ficheiro" := 0;
-                                        TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                                        TabTempFichTexto.Data := WorkDate;
+                                        TabTempFichTexto."File Type" := 0;
+                                        TabTempFichTexto."Line No." := TabTempFichTexto."Line No." + 1;
+                                        TabTempFichTexto.Date := WorkDate;
                                         TabTempFichTexto.Texto1 := 'R2'
                                          + TabInfEmpresa."Social Security No."                                                  //Nº Seg. Social da empresa
                                       + "Estabelecimentos da Empresa"."Instituição Seg. Social"        //Estabelecimento do Empregado
@@ -903,9 +903,9 @@ report 53042 "Ficheiro Seg. Social"
             if TempTabHistAboDesExtra.FindSet then begin
                 repeat
                     TabTempFichTexto.Init;
-                    TabTempFichTexto."Tipo Ficheiro" := 0;
-                    TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                    TabTempFichTexto.Data := WorkDate;
+                    TabTempFichTexto."File Type" := 0;
+                    TabTempFichTexto."Line No." := TabTempFichTexto."Line No." + 1;
+                    TabTempFichTexto.Date := WorkDate;
                     TabTempFichTexto.Texto1 := 'R2'
                      + TabInfEmpresa."Social Security No."                                                          //Nº Seg. Social da empresa
                      + "Estabelecimentos da Empresa"."Instituição Seg. Social"                                //Estabelecimento do Empregado
@@ -1018,9 +1018,9 @@ report 53042 "Ficheiro Seg. Social"
                                     LDataMov := TempHistMovEmp."Data Registo";
                                 //IT008 - JTP - 2020.07.02 - End
                                 TabTempFichTexto.Init;
-                                TabTempFichTexto."Tipo Ficheiro" := 0;
-                                TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                                TabTempFichTexto.Data := WorkDate;
+                                TabTempFichTexto."File Type" := 0;
+                                TabTempFichTexto."Line No." := TabTempFichTexto."Line No." + 1;
+                                TabTempFichTexto.Date := WorkDate;
                                 TabTempFichTexto.Texto1 := 'R2'
                                  + TabInfEmpresa."Social Security No."                                                          //Nº Seg. Social da empresa
                                  + "Estabelecimentos da Empresa"."Instituição Seg. Social"                                //Estabelecimento do Empregado
@@ -1111,9 +1111,9 @@ report 53042 "Ficheiro Seg. Social"
                                     LDataMov := TempHistMovEmp."Data Registo";
                                 //IT010 - JTP - 2021.04.09 - End
                                 TabTempFichTexto.Init;
-                                TabTempFichTexto."Tipo Ficheiro" := 0;
-                                TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                                TabTempFichTexto.Data := WorkDate;
+                                TabTempFichTexto."File Type" := 0;
+                                TabTempFichTexto."Line No." := TabTempFichTexto."Line No." + 1;
+                                TabTempFichTexto.Date := WorkDate;
                                 TabTempFichTexto.Texto1 := 'R2'
                                  + TabInfEmpresa."Social Security No."                                                          //Nº Seg. Social da empresa
                                  + "Estabelecimentos da Empresa"."Instituição Seg. Social"                                //Estabelecimento do Empregado
@@ -1215,9 +1215,9 @@ report 53042 "Ficheiro Seg. Social"
                                     end;
 
                                     TabTempFichTexto.Init;
-                                    TabTempFichTexto."Tipo Ficheiro" := 0;
-                                    TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                                    TabTempFichTexto.Data := WorkDate;
+                                    TabTempFichTexto."File Type" := 0;
+                                    TabTempFichTexto."Line No." := TabTempFichTexto."Line No." + 1;
+                                    TabTempFichTexto.Date := WorkDate;
                                     TabTempFichTexto.Texto1 := 'R2'
                                      + TabInfEmpresa."Social Security No."                                                          //Nº Seg. Social da empresa
                                      + "Estabelecimentos da Empresa"."Instituição Seg. Social"                                //Estabelecimento do Empregado
@@ -1268,9 +1268,9 @@ report 53042 "Ficheiro Seg. Social"
                     DiasTrabalho := '0' + DiasTrabalho;
                 if LValorLancar <> 0 then begin //2012.12.11 Normatica - Coloquei o if para não enviar linhas a 0
                     TabTempFichTexto.Init;
-                    TabTempFichTexto."Tipo Ficheiro" := 0;
-                    TabTempFichTexto.NLinha := TabTempFichTexto.NLinha + 1;
-                    TabTempFichTexto.Data := WorkDate;
+                    TabTempFichTexto."File Type" := 0;
+                    TabTempFichTexto."Line No." := TabTempFichTexto."Line No." + 1;
+                    TabTempFichTexto.Date := WorkDate;
                     TabTempFichTexto.Texto1 := 'R2'
                      + TabInfEmpresa."Social Security No."                                                          //Nº Seg. Social da empresa
                      + "Estabelecimentos da Empresa"."Instituição Seg. Social"                                //Estabelecimento do Empregado

@@ -205,7 +205,7 @@ report 53041 "Processamento Sub. Férias"
                                             if TabConfRH."Limite dias falta abate SN/F" <> 0 then begin
                                                 Clear(TotalDiasFalta);
                                                 UNidMedidaRH.Reset;
-                                                UNidMedidaRH.SetRange(UNidMedidaRH."Designação Interna", UNidMedidaRH."Designação Interna"::Dia);
+                                                UNidMedidaRH.SetRange(UNidMedidaRH."Internal Designation", UNidMedidaRH."Internal Designation"::Day);
                                                 if UNidMedidaRH.FindFirst then begin
                                                     TabAusencias.Reset;
                                                     TabAusencias.SetCurrentKey("Employee No.", "From Date");

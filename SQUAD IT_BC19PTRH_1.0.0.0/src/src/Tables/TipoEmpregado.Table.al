@@ -4,19 +4,17 @@ table 53098 "Tipo Empregado"
 
     fields
     {
-        field(1; "Código"; Code[20])
+        field(1; "Code"; Code[20])
         {
-            Caption = 'Code';
         }
-        field(3; "Descrição"; Text[50])
+        field(3; "Description"; Text[50])
         {
-            Caption = 'Description';
         }
     }
 
     keys
     {
-        key(Key1; "Código")
+        key(Key1; Code)
         {
             Clustered = true;
         }
@@ -24,7 +22,7 @@ table 53098 "Tipo Empregado"
 
     fieldgroups
     {
-        fieldgroup(DropDown; "Código", "Descrição")
+        fieldgroup(DropDown; Code, "Description")
         {
         }
     }

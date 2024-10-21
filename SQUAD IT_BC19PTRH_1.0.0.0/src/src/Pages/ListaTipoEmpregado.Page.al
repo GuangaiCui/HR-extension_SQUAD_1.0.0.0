@@ -13,12 +13,12 @@ page 53126 "Lista Tipo Empregado"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Rec."Código")
+                field("Código"; Rec."Code")
                 {
 
 
                 }
-                field("Descrição"; Rec."Descrição")
+                field("Descrição"; Rec."Description")
                 {
 
 

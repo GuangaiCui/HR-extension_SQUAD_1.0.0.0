@@ -236,8 +236,8 @@ report 53087 "Declaração Mensal Remu. AT"
             begin
                 //>>>>>>  LINHA 004 - Detalhe de DMR-AT 1 >>>>>>>>>>>>>>>>>>>>>>>>>>
                 TabelaTempFichTexto.Init;
-                TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-                TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+                TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                 TabelaTempFichTexto.Texto1 := '004'
                 + Converter(TotalRendSujeitosValor, 16, true)
                 + Converter(TotalRendSujeitosRetencoes, 15, false)
@@ -254,8 +254,8 @@ report 53087 "Declaração Mensal Remu. AT"
 
                 //>>>>>>  LINHA 005 - Detalhe de DMR-AT 2 >>>>>>>>>>>>>>>>>>>>>>>>>>
                 TabelaTempFichTexto.Init;
-                TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-                TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+                TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                 TabelaTempFichTexto.Texto1 := '005'
                 + Converter(TotalRendNSujeitosValor, 16, true)
                 + Converter(TotalRendNSujeitosRetencoes, 15, false)
@@ -550,8 +550,8 @@ report 53087 "Declaração Mensal Remu. AT"
                                 end;
                                 NLinha := NLinha + 1;
                                 TabelaTempFichTexto.Init;
-                                TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-                                TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                                TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+                                TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                                 TabelaTempFichTexto.Texto1 := '006'
                                 + PadStr('0', 7 - StrLen(Format(NLinha)), '0') + Format(NLinha)                             //nlinha
                                 + PadStr('0', 9 - StrLen(Empregado."No. Contribuinte"), '0') + Empregado."No. Contribuinte"   //NIF
@@ -595,8 +595,8 @@ report 53087 "Declaração Mensal Remu. AT"
                 //2009.02.09 - o codigo passou para aqui
                 //>>>>>>  LINHA 009 - Trailer DMR-AT >>>>>>>>>>>>>>>>>>>>>>>>>>
                 TabelaTempFichTexto.Init;
-                TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-                TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+                TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                 TabelaTempFichTexto.Texto1 := '009' + '+000000000000000'
                                                  + Converter(TotalRendimentosAno, 17, true)
                                                  + Converter(TotalImpRetidas, 16, false)
@@ -690,8 +690,8 @@ report 53087 "Declaração Mensal Remu. AT"
     begin
         //>>>>>>  LINHA 099 - Trailer Declaração  >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '099'
         + ConvertStr(Format(TotalRegistos + 4, 9, '<Sign><Integer>'), ' ', '0')
         + PadStr(' ', 160, ' ');
@@ -699,8 +699,8 @@ report 53087 "Declaração Mensal Remu. AT"
 
         //>>>>>>  LINHA 999 - Trailer Ficheiro>>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '999'
         + ConvertStr(Format(TotalRegistos + 6, 9, '<Sign><Integer>'), ' ', '0')
         + PadStr(' ', 160, ' ');
@@ -711,7 +711,7 @@ report 53087 "Declaração Mensal Remu. AT"
 
         Commit;
         TabelaTempFichTexto.Reset;
-        TabelaTempFichTexto.SetRange(TabelaTempFichTexto."Tipo Ficheiro", TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT");
+        TabelaTempFichTexto.SetRange(TabelaTempFichTexto."File Type", TabelaTempFichTexto."File Type"::"DMR-AT");
         if TabelaTempFichTexto.Find('-') then
             XMLPORT.Run(XMLPORT::"Export Ficheiro Texto", true, false, TabelaTempFichTexto);
     end;
@@ -723,15 +723,15 @@ report 53087 "Declaração Mensal Remu. AT"
         //InfEmpresa.CALCFIELDS(InfEmpresa.Picture);
         ConfRH.Get;
 
-        TabelaTempFichTexto.SetRange(TabelaTempFichTexto."Tipo Ficheiro", TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT");
+        TabelaTempFichTexto.SetRange(TabelaTempFichTexto."File Type", TabelaTempFichTexto."File Type"::"DMR-AT");
         if TabelaTempFichTexto.Find('-') then
             TabelaTempFichTexto.DeleteAll;
 
 
         //>>>>>>  LINHA 001 - Header do ficheiro >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-        TabelaTempFichTexto.NLinha := 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+        TabelaTempFichTexto."Line No." := 1;
         TabelaTempFichTexto.Texto1 := '001ASCII02'
         + Format(WorkDate, 0, '<Year4><Month,2><Day,2>')
         + PadStr(' ', 154, ' ');
@@ -740,8 +740,8 @@ report 53087 "Declaração Mensal Remu. AT"
 
         //>>>>>>  LINHA 002 - Header de declaração >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '002DMR-AT'
         + PadStr('0', 9 - StrLen(InfEmpresa."VAT Registration No."), '0') + InfEmpresa."VAT Registration No."  //NIF
         + Format(DataIni, 0, '<Year4>')                                                      //Periodo de
@@ -754,8 +754,8 @@ report 53087 "Declaração Mensal Remu. AT"
 
         //>>>>>>  LINHA 003 - Header de DMR-AT >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::"DMR-AT";
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::"DMR-AT";
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '003'
         + PadStr('0', 4 - StrLen(CodRepFinancas), '0') + CodRepFinancas;                                       //Cod. Rep. finanças
 

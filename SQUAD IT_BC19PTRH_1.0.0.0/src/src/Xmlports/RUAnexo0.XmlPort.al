@@ -3339,12 +3339,12 @@ xmlport 53035 "RU - Anexo 0"
                                             Clear(vContH);
                                             Clear(Qtd);
                                             rUniMedHR.Reset;
-                                            rUniMedHR.SetRange(rUniMedHR."Designação Interna", rUniMedHR."Designação Interna"::Dia);
+                                            rUniMedHR.SetRange(rUniMedHR."Internal Designation", rUniMedHR."Internal Designation"::Day);
                                             if rUniMedHR.FindFirst then
                                                 vDia := rUniMedHR.Code;
 
                                             rUniMedHR.Reset;
-                                            rUniMedHR.SetRange(rUniMedHR."Designação Interna", rUniMedHR."Designação Interna"::Hora);
+                                            rUniMedHR.SetRange(rUniMedHR."Internal Designation", rUniMedHR."Internal Designation"::Hour);
                                             if rUniMedHR.FindFirst then
                                                 vHora := rUniMedHR.Code;
 
@@ -3425,12 +3425,12 @@ xmlport 53035 "RU - Anexo 0"
                                             Clear(vContH);
                                             Clear(Qtd);
                                             rUniMedHR.Reset;
-                                            rUniMedHR.SetRange(rUniMedHR."Designação Interna", rUniMedHR."Designação Interna"::Dia);
+                                            rUniMedHR.SetRange(rUniMedHR."Internal Designation", rUniMedHR."Internal Designation"::Day);
                                             if rUniMedHR.FindFirst then
                                                 vDia := rUniMedHR.Code;
 
                                             rUniMedHR.Reset;
-                                            rUniMedHR.SetRange(rUniMedHR."Designação Interna", rUniMedHR."Designação Interna"::Hora);
+                                            rUniMedHR.SetRange(rUniMedHR."Internal Designation", rUniMedHR."Internal Designation"::Hour);
                                             if rUniMedHR.FindFirst then
                                                 vHora := rUniMedHR.Code;
 

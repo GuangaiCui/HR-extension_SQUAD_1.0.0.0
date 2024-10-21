@@ -5,7 +5,7 @@ table 53069 "Tabela IRS"
 
     fields
     {
-        field(1; "No. Linha"; Integer)
+        field(1; "Line No."; Integer)
         {
             Caption = 'Line No.';
         }
@@ -75,7 +75,7 @@ table 53069 "Tabela IRS"
 
     keys
     {
-        key(Key1; Ano, "No. Linha")
+        key(Key1; Ano, "Line No.")
         {
             Clustered = true;
         }

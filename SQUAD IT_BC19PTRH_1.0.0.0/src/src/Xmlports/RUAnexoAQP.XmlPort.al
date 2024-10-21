@@ -653,7 +653,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                         rMotAusencia.Reset;
                                                         rMotAusencia.SetRange(rMotAusencia.Code, rHistAusencia."Cause of Absence Code");
                                                         if rMotAusencia.FindFirst then
-                                                            if rMotAusencia."Cod. Mot. Horas Normais N Rem" <> '' then begin
+                                                            if rMotAusencia."Non-Paid Hours Reason Code" <> '' then begin
                                                                 if Filtro = '' then
                                                                     Filtro := rMotAusencia.Code
                                                                 else
@@ -690,7 +690,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                         {
                                             MinOccurs = Zero;
                                             XmlName = 'mot_rem_inf_Out';
-                                            fieldelement(motivo; "Motivo Ausência"."Cod. Mot. Horas Normais N Rem")
+                                            fieldelement(motivo; "Motivo Ausência"."Non-Paid Hours Reason Code")
                                             {
                                                 MaxOccurs = Unbounded;
                                                 MinOccurs = Once;
@@ -754,13 +754,13 @@ xmlport 53036 "RU - Anexo A - QP"
 
                                                             if TabRubrica.Genero = TabRubrica.Genero::Falta then begin
                                                                 TabUniMed.Reset;
-                                                                TabUniMed.SetRange(TabUniMed."Designação Interna", TabUniMed."Designação Interna"::Hora);
+                                                                TabUniMed.SetRange(TabUniMed."Internal Designation", TabUniMed."Internal Designation"::Hour);
                                                                 if TabUniMed.Find('-') then
                                                                     if HistMovEmp."Unit of Measure" = TabUniMed.Code then
                                                                         FaltasHoras := FaltasHoras + Abs(HistMovEmp.Quantity);
 
                                                                 TabUniMed.Reset;
-                                                                TabUniMed.SetRange(TabUniMed."Designação Interna", TabUniMed."Designação Interna"::Dia);
+                                                                TabUniMed.SetRange(TabUniMed."Internal Designation", TabUniMed."Internal Designation"::Day);
                                                                 if TabUniMed.Find('-') then
                                                                     if HistMovEmp."Unit of Measure" = TabUniMed.Code then
                                                                         FaltasDias := FaltasDias + Round(Abs(HistMovEmp.Quantity), 1);
@@ -980,7 +980,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                     repeat
                                                         rHorasExtra.Reset;
                                                         if (rHorasExtra.Get(rHistHorasExtra."Cód. Hora Extra")) and
-                                                           (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 1 do Artigo 227") then
+                                                           (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 1 of Article 227") then
                                                             decT_horas_1art227 := decT_horas_1art227 + rHistHorasExtra.Quantity;
                                                     until rHistHorasExtra.Next = 0;
                                                 end;
@@ -1006,7 +1006,7 @@ xmlport 53036 "RU - Anexo A - QP"
                                                     repeat
                                                         rHorasExtra.Reset;
                                                         if (rHorasExtra.Get(rHistHorasExtra."Cód. Hora Extra")) and
-                                                           (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 2 do Artigo 227") then
+                                                           (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 2 of Article 227") then
                                                             decT_horas_2art227 := decT_horas_2art227 + rHistHorasExtra.Quantity;
                                                     until rHistHorasExtra.Next = 0;
                                                 end;

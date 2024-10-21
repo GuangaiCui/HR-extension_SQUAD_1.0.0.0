@@ -147,8 +147,8 @@ report 53048 "Ficheiro Modelo 10"
 
                 //>>>>>>  LINHA J01 - Header Anexo J >>>>>>>>>>>>>>>>>>>>>>>>>>
                 TabelaTempFichTexto.Init;
-                TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-                TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+                TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                 TabelaTempFichTexto.Texto1 := 'J01'
                 + PadStr('0', 9 - StrLen(InfEmpresa."VAT Registration No."), '0') + InfEmpresa."VAT Registration No."  //NIF
                 + Format(DataIni, 0, '<Year4>')                                                                      //Ano
@@ -203,8 +203,8 @@ report 53048 "Ficheiro Modelo 10"
                             NLinha := NLinha + 1;
 
                             TabelaTempFichTexto.Init;
-                            TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-                            TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                            TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+                            TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                             TabelaTempFichTexto.Texto1 := 'J02'
                             + PadStr('0', 7 - StrLen(Format(NLinha)), '0') + Format(NLinha)                             //nlinha
                             + PadStr('0', 9 - StrLen(rAuxEmp."No. Contribuinte"), '0') + rAuxEmp."No. Contribuinte"   //NIF
@@ -392,8 +392,8 @@ report 53048 "Ficheiro Modelo 10"
                             NLinha := NLinha + 1;
 
                             TabelaTempFichTexto.Init;
-                            TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-                            TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                            TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+                            TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                             TabelaTempFichTexto.Texto1 := 'J02'
                             + PadStr('0', 7 - StrLen(Format(NLinha)), '0') + Format(NLinha)                             //nlinha
                             + PadStr('0', 9 - StrLen(rAuxEmp."No. Contribuinte"), '0') + rAuxEmp."No. Contribuinte"   //NIF
@@ -477,8 +477,8 @@ report 53048 "Ficheiro Modelo 10"
                             NLinha := NLinha + 1;//2009.02.09
 
                             TabelaTempFichTexto.Init;
-                            TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-                            TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                            TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+                            TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                             TabelaTempFichTexto.Texto1 := 'J02'
                             + PadStr('0', 7 - StrLen(Format(NLinha)), '0') + Format(NLinha)                             //nlinha
                             + PadStr('0', 9 - StrLen(Vendor."VAT Registration No."), '0') + Vendor."VAT Registration No."   //NIF
@@ -515,8 +515,8 @@ report 53048 "Ficheiro Modelo 10"
                 //2009.02.09 - o codigo passou para aqui
                 //>>>>>>  LINHA J99 - Trailer Anexo J >>>>>>>>>>>>>>>>>>>>>>>>>>
                 TabelaTempFichTexto.Init;
-                TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-                TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+                TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+                TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
                 TabelaTempFichTexto.Texto1 := 'J99'
                 + DelChr(ConvertStr(Format(Round(Abs(TotalA + TotalB + TotalE + TotalEE + TotalF + TotalG + TotalH)
                         + RetencoesIRC, 0.01), 16, '<Sign><Integer><Decimals,3>'), ' ', '0'), '=', ',')
@@ -669,8 +669,8 @@ report 53048 "Ficheiro Modelo 10"
     begin
         //>>>>>>  LINHA 006 - Trailer Declaração>>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '006'
         + ConvertStr(Format(TotalRegistosJ99 + 5, 9, '<Sign><Integer>'), ' ', '0')
         + PadStr(' ', 160, ' ');
@@ -678,8 +678,8 @@ report 53048 "Ficheiro Modelo 10"
 
         //>>>>>>  LINHA 999 - Trailer Ficheiro>>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '999'
         + ConvertStr(Format(TotalRegistosJ99 + 7, 9, '<Sign><Integer>'), ' ', '0')
         + PadStr(' ', 160, ' ');
@@ -691,7 +691,7 @@ report 53048 "Ficheiro Modelo 10"
 
         Commit;
         TabelaTempFichTexto.Reset;
-        TabelaTempFichTexto.SetRange(TabelaTempFichTexto."Tipo Ficheiro", TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ);
+        TabelaTempFichTexto.SetRange(TabelaTempFichTexto."File Type", TabelaTempFichTexto."File Type"::AnexoJ);
         if TabelaTempFichTexto.Find('-') then
             //DATAPORT.RUNMODAL(53036,TRUE,TabelaTempFichTexto);
             //XMLPORT.RUN(53043,FALSE,FALSE,TabelaTempFichTexto);
@@ -705,15 +705,15 @@ report 53048 "Ficheiro Modelo 10"
 
         ConfRH.Get;
 
-        TabelaTempFichTexto.SetRange(TabelaTempFichTexto."Tipo Ficheiro", TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ);
+        TabelaTempFichTexto.SetRange(TabelaTempFichTexto."File Type", TabelaTempFichTexto."File Type"::AnexoJ);
         if TabelaTempFichTexto.Find('-') then
             TabelaTempFichTexto.DeleteAll;
 
 
         //>>>>>>  LINHA 001 - Header do ficheiro >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-        TabelaTempFichTexto.NLinha := 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+        TabelaTempFichTexto."Line No." := 1;
         //JPC
         // TabelaTempFichTexto.Texto1:='001ASCII06'
         //TabelaTempFichTexto.Texto1:='001ASCII09'
@@ -731,8 +731,8 @@ report 53048 "Ficheiro Modelo 10"
 
         //>>>>>>  LINHA 002 - Header de declaração >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '002DANUAL'
         + PadStr('0', 9 - StrLen(InfEmpresa."VAT Registration No."), '0') + InfEmpresa."VAT Registration No."  //NIF
         + Format(DataIni, 0, '<Year4><Month,2><Day,2>')                                                      //Periodo de
@@ -745,8 +745,8 @@ report 53048 "Ficheiro Modelo 10"
 
         //>>>>>>  LINHA 003 - Header de declaração anual >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '003'
         + PadStr('0', 4 - StrLen(CodRepFinancas), '0') + CodRepFinancas                                        //Cod. Rep. finanças
         + PadStr('0', 5 - StrLen(InfEmpresa."PTSS CAE Code"), '0') + InfEmpresa."PTSS CAE Code"                          //CAE
@@ -785,8 +785,8 @@ report 53048 "Ficheiro Modelo 10"
 
         //>>>>>>  LINHA 004 - Detalhe de declaração anual >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '004'
         + '0000000001000000'
         + PadStr(' ', 153, ' ');
@@ -795,8 +795,8 @@ report 53048 "Ficheiro Modelo 10"
 
         //>>>>>>  LINHA 005 - Trailer de declaração anual >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabelaTempFichTexto.Init;
-        TabelaTempFichTexto."Tipo Ficheiro" := TabelaTempFichTexto."Tipo Ficheiro"::AnexoJ;
-        TabelaTempFichTexto.NLinha := TabelaTempFichTexto.NLinha + 1;
+        TabelaTempFichTexto."File Type" := TabelaTempFichTexto."File Type"::AnexoJ;
+        TabelaTempFichTexto."Line No." := TabelaTempFichTexto."Line No." + 1;
         TabelaTempFichTexto.Texto1 := '005'
         + '001'
         + PadStr(' ', 166, ' ');

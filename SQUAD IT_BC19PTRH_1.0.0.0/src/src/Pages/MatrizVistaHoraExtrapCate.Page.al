@@ -616,20 +616,20 @@ page 53093 "Matriz Vista HoraExtra p Cate."
         else
             EmployeeExtraHour.SetRange(Data, 0D, Rec."Period End");
         EmployeeExtraHour.SetFilter("Employee No.", EmployeeNoFilter);
-        EmployeeExtraHour.SetRange("Cód. Hora Extra", MatrixRecords[ColumnID].Código);
+        EmployeeExtraHour.SetRange("Cód. Hora Extra", MatrixRecords[ColumnID].Code);
         PAGE.Run(0, EmployeeExtraHour);
     end;
 
     local procedure MATRIX_OnAfterGetRecord(ColumnID: Integer)
     begin
-        CauseOfExtraHour.Código := MatrixRecords[ColumnID].Código;
+        CauseOfExtraHour.Code := MatrixRecords[ColumnID].Code;
         if ExtraHourAmountType = ExtraHourAmountType::"Net Change" then
             CauseOfExtraHour.SetRange("Date Filter", Rec."Period Start", Rec."Period End")
         else
             CauseOfExtraHour.SetRange("Date Filter", 0D, Rec."Period End");
         CauseOfExtraHour.SetFilter("Employee No. Filter", EmployeeNoFilter);
-        CauseOfExtraHour.CalcFields("Total Hora Extra");
-        MATRIX_CellData[ColumnID] := CauseOfExtraHour."Total Hora Extra";
+        CauseOfExtraHour.CalcFields("Total Overtime Hours");
+        MATRIX_CellData[ColumnID] := CauseOfExtraHour."Total Overtime Hours";
         SetVisible;
     end;
 

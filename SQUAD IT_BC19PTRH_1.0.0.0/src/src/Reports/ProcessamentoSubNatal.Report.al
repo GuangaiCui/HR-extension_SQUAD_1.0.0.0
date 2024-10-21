@@ -212,7 +212,7 @@ report 53040 "Processamento Sub. Natal"
                                             if TabConfRH."Limite dias falta abate SN/F" <> 0 then begin
                                                 Clear(TotalDiasFalta);
                                                 UNidMedidaRH.Reset;
-                                                UNidMedidaRH.SetRange(UNidMedidaRH."Designação Interna", UNidMedidaRH."Designação Interna"::Dia);
+                                                UNidMedidaRH.SetRange(UNidMedidaRH."Internal Designation", UNidMedidaRH."Internal Designation"::Day);
                                                 if UNidMedidaRH.Find('-') then begin
                                                     TabAusencias.Reset;
                                                     TabAusencias.SetCurrentKey("Employee No.", "From Date");
