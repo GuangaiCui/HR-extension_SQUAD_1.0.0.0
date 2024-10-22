@@ -564,6 +564,14 @@ table 53053 "Config. Recursos Humanos"
                     TestField("Mês Abate Sub. Alimentação", 0);
             end;
         }
+        field(1004; "Version Model 10"; Text[250])
+        {
+            DataClassification = ToBeClassified;
+        }
+        field(1005; "Start Of New Table IRS"; Date)
+        {
+            DataClassification = ToBeClassified;
+        }
         field(50000; "Balance Cash-Flow Code"; Code[10])
         {
             Caption = 'Balance Cash-Flow Code';

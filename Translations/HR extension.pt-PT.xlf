@@ -1857,6 +1857,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Sobretaxa % - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4017863741 - Field 666236101 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Start Of New Table IRS</source>
+          <target>Início Nova Tabela IRS</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Start Of New Table IRS - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 4017863741 - Field 3697546577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Taxa Contr. Empregado ADSE</source>
           <target>Taxa Contr. Empregado ADSE</target>
@@ -1892,6 +1898,12 @@
           <target>Valor Hora Lectiva,Valor Hora Total</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Valor Cálculo Ausências - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 4017863741 - Field 3535095496 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Version Model 10</source>
+          <target>Versão Modelo 10</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Config. Recursos Humanos - Field Version Model 10 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 4017863741 - Field 330880912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Área de Negócio</source>
@@ -10035,11 +10047,11 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela IRS - Field Descrição - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 311200057 - Field 258977191 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 311200057 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
           <target>Nº Linha</target>
           <note from="Developer" annotates="general" priority="2"/>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela IRS - Field No. Linha - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela IRS - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 311200057 - Field 3057767070 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Senior Mar. 1 Person</source>
@@ -10133,13 +10145,13 @@
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Amount</source>
-          <target state="needs-translation"/>
+          <target>Valor</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Amount - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Date</source>
-          <target state="needs-translation"/>
+          <target>Data</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Date - Property Caption</note>
         </trans-unit>
@@ -10151,31 +10163,31 @@
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 3004095410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>File Type</source>
-          <target state="needs-translation"/>
+          <target>Tipo Ficheiro</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field File Type - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 3004095410 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>MapaSS,PS2,AnexoJ,QP,CGA,DMR-AT,Seguros</source>
-          <target state="needs-translation"/>
+          <target>MapaSS,PS2,AnexoJ,QP,CGA,DMR-AT,Seguros</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field File Type - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Line No.</source>
-          <target state="needs-translation"/>
+          <target>Nº Linha</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 2701430011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>No. of Days</source>
-          <target state="needs-translation"/>
+          <target>Nº de Dias</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field No. of Days - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 3911839509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Situation Code</source>
-          <target state="needs-translation"/>
+          <target>Cód. Situação</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Situation Code - Property Caption</note>
         </trans-unit>
@@ -10302,44 +10314,122 @@
         <trans-unit id="Table 1694945659 - Field 3689924581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Echelon Code</source>
           <target>Cód. Escalão</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Echelon Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 1642458349 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Maximum Value</source>
           <target>Valor Máximo</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Maximum Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 531282063 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Minimum Value</source>
           <target>Valor Mínimo</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Minimum Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 1500409770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Table</source>
           <target>Tabela</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Table - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 1500409770 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
           <source>NCasCas2Tit,Cas1Tit</source>
           <target>NCasCas2Tit,Cas1Tit</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Table - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 2832823724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tax %</source>
           <target>Taxa %</target>
-          <note from="XLIFF Sync" annotates="general" priority="1">Source text has changed. Please review the translation.</note>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Tax % - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table IRS 2023</source>
+          <target>Tabela IRS 2023</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <target>Descrição</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 412016499 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Factor to Substract</source>
+          <target>Factor a abater</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Factor to Substract - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 3576283 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Fixed Value to Substract</source>
+          <target>Valor Fixo a abater</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Fixed Value to Substract - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 2110632758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>From Date</source>
+          <target>A Partir da Data</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field From Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <target>Nº Linha</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 2241665020 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Region</source>
+          <target>Região</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Region - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 2241665020 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Continente,Açores,Madeira</source>
+          <target>Continente,Açores,Madeira</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Region - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 1500409770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table</source>
+          <target>Tabela</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Table - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 1500409770 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>,I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI</source>
+          <target>,I,II,III,IV,V,VI,VII,VIII,IX,X,XI,XII,XIII,XIV,XV,XVI</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Table - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 213023903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tax</source>
+          <target>Taxa</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Tax - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 1131619133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Value</source>
+          <target>Valor Máximo</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 1614178153 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Value to Substract</source>
+          <target>Parcela a abater</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Value to Substract - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2399158543 - Field 3128222944 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Value to Substract/dependente</source>
+          <target>Parcela a abater/dependente</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Table IRS 2023 - Field Value to Substract/dependente - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3757299140 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipo Empregado</source>
@@ -12657,6 +12747,12 @@
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Linhas Movs. Empregado - Control ValorSemSinal - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 2182414705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>List Table IRS 2023</source>
+          <target>Lista Tabela IRS 2023</target>
+          <note from="Developer" annotates="general" priority="2"/>
+          <note from="Xliff Generator" annotates="general" priority="3">Page List Table IRS 2023 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3642726591 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lista Actividades Económicas</source>
           <target>Lista de actividades económicas</target>
@@ -13162,8 +13258,8 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Motivos Ausência - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2254903250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Causes of Inactivity</source>
-          <target>Causas de inatividade</target>
+          <source>Motivos Inactividade</source>
+          <target state="needs-adaptation">Causas de inatividade</target>
           <note from="Developer" annotates="general" priority="2"/>
           <note from="Xliff Generator" annotates="general" priority="3">Page Motivos Inactividade - Property Caption</note>
         </trans-unit>

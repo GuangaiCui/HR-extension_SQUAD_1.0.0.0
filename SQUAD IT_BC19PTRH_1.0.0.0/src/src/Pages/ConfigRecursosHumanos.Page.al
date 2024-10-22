@@ -247,6 +247,10 @@ page 53068 "Config. Recursos Humanos"
 
                     Caption = 'Sobretaxa %';
                 }
+                field("Version Model 10"; Rec."Version Model 10")
+                { }
+                field("Start Of New Table IRS"; Rec."Start Of New Table IRS")
+                { }
             }
             group(Pagamentos)
             {

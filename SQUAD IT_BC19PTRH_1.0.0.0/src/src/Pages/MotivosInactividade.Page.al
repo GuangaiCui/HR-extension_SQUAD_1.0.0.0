@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53049 "Motivos Inactividade"
 {
-    Caption = 'Causes of Inactivity';
+    //Caption = 'Causes of Inactivity';
     PageType = List;
     SourceTable = "Motivo Inactividade";
     UsageCategory = Administration;
