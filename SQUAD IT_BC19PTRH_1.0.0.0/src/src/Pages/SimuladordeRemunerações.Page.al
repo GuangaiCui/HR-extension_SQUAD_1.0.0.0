@@ -523,7 +523,7 @@ page 53117 "Simulador de Remunerações"
         if ValorSujeitoCGA <> 0 then
             if TaxaCGA = 0 then Error(Text0004);
 
-        l_TaxaIRS := FuncoesRH.CalcularTaxaIRS(ValorSujeitoIRS, TempEmpregado, Date2DMY(WorkDate, 3));
+        //   l_TaxaIRS := FuncoesRH.CalcularTaxaIRS2024(ValorSujeitoIRS, TempEmpregado, Date2DMY(WorkDate, 3));
         L_VencimentoLiquido := ValorTotal - (ValorSujeitoIRS * l_TaxaIRS / 100) - (ValorSujeitoSS * TaxaSS / 100)
                              - (ValorSujeitoCGA * TaxaCGA / 100);
 

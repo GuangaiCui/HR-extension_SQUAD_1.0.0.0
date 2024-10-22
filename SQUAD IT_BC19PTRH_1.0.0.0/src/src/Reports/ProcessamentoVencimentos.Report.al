@@ -928,8 +928,8 @@ report 53037 "Processamento Vencimentos"
                                 if Empregado."IRS % Fixa" = 0.0 then begin
                                     //Proporcionais SubFerias
                                     //********************************************
-                                    IRSTaxa := FuncoesRH.CalcularTaxaIRS(TempRubricaEmpregado2."Total Amount" - DescTaxaIRS, Empregado,
-                                                                        Date2DMY("Periodos Processamento"."Data Registo", 3));
+                                    IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(TempRubricaEmpregado2."Total Amount" - DescTaxaIRS, Empregado,
+                                                                    "Periodos Processamento"."Data Registo", DeductValue);
 
                                     //para os Empregados da categoria B o arredondamento é 0.01 (centimo mais proximo)
                                     if Empregado."Tipo Rendimento" = Empregado."Tipo Rendimento"::B then
@@ -1142,8 +1142,9 @@ report 53037 "Processamento Vencimentos"
                                                                                                  * TabRubSalLinha.Percentagem / 100);
                                                         end;
                                                     until TabHistLinhaMovEmp2.Next = 0;
-                                                    IRSTaxa := FuncoesRH.CalcularTaxaIRS(VarValorTotal2, Empregado,
-                                                                                Date2DMY("Periodos Processamento"."Data Registo", 3));
+
+                                                    IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(VarValorTotal2, Empregado,
+                                                                                "Periodos Processamento"."Data Registo", DeductValue);
                                                     //para os Empregados da categoria B o arredondamento é 0.01 (centimo mais proximo)
                                                     if Empregado."Tipo Rendimento" = Empregado."Tipo Rendimento"::B then
                                                         VarValorTotal2 := Round(VarValorTotal2 * (IRSTaxa / 100), 0.01, '=')
@@ -2036,6 +2037,7 @@ report 53037 "Processamento Vencimentos"
     end;
 
     var
+        DeductValue: Decimal;
         Text0001: Label 'Este Processamento encontra-se Fechado.';
         Text0002: Label 'Deve escolher um processamento do tipo Vencimentos.';
         RubricaSalaEmpregado: Record "Rubrica Salarial Empregado";

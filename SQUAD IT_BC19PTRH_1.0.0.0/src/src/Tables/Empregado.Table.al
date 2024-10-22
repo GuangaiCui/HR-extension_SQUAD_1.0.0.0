@@ -1641,6 +1641,7 @@ table 53035 "Empregado"
         Text50001: Label 'Não existe em vigor nenhuma Rúbrica do tipo Vencimento Base para o Empregado %1 - %2';
         TabelaIRS: Record "Tabela IRS";
         TabEmpregado: Record Empregado;
+        DeductValue: Decimal;
     begin
         TabEmpregado := pEmpregado;
         if TabEmpregado."IRS % Fixa" = 0 then begin
@@ -1648,8 +1649,8 @@ table 53035 "Empregado"
             TabEmpregado.Modify;
 
             if TabEmpregado."Valor Vencimento Base" <> 0 then begin
-                TabEmpregado."IRS %" := FuncoesRH.CalcularTaxaIRS(TabEmpregado."Valor Vencimento Base",
-                                                   TabEmpregado, Date2DMY(WorkDate, 3));
+                TabEmpregado."IRS %" := FuncoesRH.CalcularTaxaIRS2024(TabEmpregado."Valor Vencimento Base", TabEmpregado,
+                                            WORKDATE, DeductValue);
                 TabEmpregado.Modify;
                 //Trazer o Nome da Tabela de IRS
                 if (pEmpregado."Tipo Contribuinte" = 1) and (pEmpregado."Estado Civil" <> 1) and (pEmpregado."Estado Civil" <> 5)

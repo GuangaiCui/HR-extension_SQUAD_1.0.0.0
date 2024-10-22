@@ -19,313 +19,627 @@ codeunit 53037 "Funções RH"
         FormatAddress: Codeunit "Format Address";
 
 
-    procedure CalcularTaxaIRS(ValorVencimento: Decimal; Empregado: Record Empregado; Ano: Integer) TaxaIRS: Decimal
+    /*   procedure CalcularTaxaIRS(ValorVencimento: Decimal; Empregado: Record Empregado; Ano: Integer) TaxaIRS: Decimal
+       var
+           TabelaIRS: Record "Tabela IRS";
+           Passou: Boolean;
+       begin
+           Empregado.TestField(Empregado."Tipo Contribuinte");
+           Empregado.TestField(Empregado."Local Obtenção Rendimento");
+
+           //Procura a Tabela de IRS do ano do processamento, se não encontrar usa a no ano anterior
+           TabelaIRS.SetRange(TabelaIRS.Ano, Ano);
+           if not TabelaIRS.Find('-') then
+               TabelaIRS.SetRange(TabelaIRS.Ano, Ano - 1);
+
+           //-------------------------------------------------------------------
+           //-------TABELA I - TRABALHO DEPENDENTE NÃO CASADO-------------------
+           //-------------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 1) and (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5)
+              and (Empregado.Deficiente = 0) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 1);
+               TabelaIRS.SetRange(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                           if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                           if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                           if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                           if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                           if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                       if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                       if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                       if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                       if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                       if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                       exit;
+                   end;
+               end;
+           end;
+
+
+           //----------------------------------------------------------------------------
+           //-------TABELA II - TRABALHO DEPENDENTE CASADO, ÚNICO TITULAR----------------
+           //----------------------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 1) and ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+              and (Empregado.Deficiente = 0) and (Empregado."Titular Rendimentos" = 1) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 2);
+               TabelaIRS.SetRange(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                           if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                           if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                           if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                           if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                           if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                       if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                       if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                       if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                       if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                       if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                       exit;
+                   end;
+               end;
+           end;
+
+
+           //----------------------------------------------------------------------------
+           //------TABELA III - TRABALHO DEPENDENTE CASADO, DOIS TITULARES---------------
+           //----------------------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 1) and ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+              and (Empregado.Deficiente = 0) and (Empregado."Titular Rendimentos" = 2) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 3);
+               TabelaIRS.SetRange(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                           if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                           if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                           if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                           if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                           if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                       if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                       if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                       if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                       if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                       if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                       exit;
+                   end;
+               end;
+           end;
+
+
+
+           //--------------------------------------------------------------------------
+           //------TABELA IV - TRABALHO DEPENDENTE NÃO CASADO DEFICIENTE---------------
+           //--------------------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 1) and (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5)
+              and (Empregado.Deficiente = 1) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 4);
+               TabelaIRS.SetRange(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                           if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                           if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                           if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                           if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                           if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                       if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                       if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                       if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                       if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                       if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                       exit;
+                   end;
+               end;
+           end;
+
+
+
+           //----------------------------------------------------------------------------------
+           //-------TABELA V - TRABALHO DEPENDENTE CASADO ÚNICO TITULAR DEFICIENTE------------
+           //----------------------------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 1) and ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+              and (Empregado.Deficiente = 1) and (Empregado."Titular Rendimentos" = 1) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 5);
+               TabelaIRS.SetRange(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                           if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                           if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                           if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                           if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                           if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                       if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                       if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                       if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                       if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                       if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                       exit;
+                   end;
+               end;
+           end;
+
+
+
+
+           //---------------------------------------------------------------------------------------
+           //-------TABELA VI - TRABALHO DEPENDENTE CASADO, DOIS TITULARES DEFICIENTES--------------
+           //---------------------------------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 1) and ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+              and (Empregado.Deficiente = 1) and (Empregado."Titular Rendimentos" = 2) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 6);
+               TabelaIRS.SetRange(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                           if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                           if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                           if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                           if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                           if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
+                       if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
+                       if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
+                       if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
+                       if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
+                       if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
+                       exit;
+                   end;
+               end;
+           end;
+
+
+           //----------------------------------------------------------------
+           //----------TABELA VII - PENSÕES ---------------------------------
+           //----------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 3) and (Empregado.Deficiente = 0) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 7);
+               TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                              and (Empregado."Titular Rendimentos" = 2) then
+                               TaxaIRS := TabelaIRS.PenCas2Tit;
+                           if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
+                           if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                              and (Empregado."Titular Rendimentos" = 1) then
+                               TaxaIRS := TabelaIRS.PenCas1Tit;
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                          and (Empregado."Titular Rendimentos" = 2) then
+                           TaxaIRS := TabelaIRS.PenCas2Tit;
+                       if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
+                       if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                          and (Empregado."Titular Rendimentos" = 1) then
+                           TaxaIRS := TabelaIRS.PenCas1Tit;
+                       exit;
+                   end;
+               end;
+           end;
+
+
+           //------------------------------------------------------------------------
+           //------TABELA VIII - RENDIMENTOS DE PENSÕES/TITULARES DEFICIENTES--------
+           //------------------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 3) and (Empregado.Deficiente = 1) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 8);
+               TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                              and (Empregado."Titular Rendimentos" = 2) then
+                               TaxaIRS := TabelaIRS.PenCas2Tit;
+                           if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
+                           if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                              and (Empregado."Titular Rendimentos" = 1) then
+                               TaxaIRS := TabelaIRS.PenCas1Tit;
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                          and (Empregado."Titular Rendimentos" = 2) then
+                           TaxaIRS := TabelaIRS.PenCas2Tit;
+                       if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
+                       if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                          and (Empregado."Titular Rendimentos" = 1) then
+                           TaxaIRS := TabelaIRS.PenCas1Tit;
+                       exit;
+                   end;
+               end;
+           end;
+
+           //---------------------------------------------------------------------
+           //---TABELA IX - PENSÕES. TITULARES DEFICENTES DAS FORÇAS ARMADAS------
+           //---------------------------------------------------------------------
+           if (Empregado."Tipo Contribuinte" = 3) and (Empregado.Deficiente = 2) then begin
+               TabelaIRS.SetRange(TabelaIRS.Table, 9);
+               TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
+               if TabelaIRS.Find('-') then begin
+                   repeat
+                       if ValorVencimento <= TabelaIRS.Valor then begin
+                           if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                              and (Empregado."Titular Rendimentos" = 2) then
+                               TaxaIRS := TabelaIRS.PenCas2Tit;
+                           if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
+                           if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                              and (Empregado."Titular Rendimentos" = 1) then
+                               TaxaIRS := TabelaIRS.PenCas1Tit;
+                           exit;
+                       end;
+                   until TabelaIRS.Next = 0;
+                   if TabelaIRS.Find('+') then begin
+                       if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                          and (Empregado."Titular Rendimentos" = 2) then
+                           TaxaIRS := TabelaIRS.PenCas2Tit;
+                       if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
+                       if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
+                          and (Empregado."Titular Rendimentos" = 1) then
+                           TaxaIRS := TabelaIRS.PenCas1Tit;
+                       exit;
+                   end;
+               end;
+           end;
+       end;
+
+   */
+
+    procedure CalcularTaxaIRS2024(ValorVencimento: Decimal; Empregado: Record Empregado; DataProcessamento: Date; var ParcelaAbater: Decimal) TaxaIRS: Decimal
     var
-        TabelaIRS: Record "Tabela IRS";
+        TabelaIRS: record "Table IRS 2023";
         Passou: Boolean;
+        l_RecConfigRecursosHumanos: record "Config. Recursos Humanos";
     begin
-        Empregado.TestField(Empregado."Tipo Contribuinte");
-        Empregado.TestField(Empregado."Local Obtenção Rendimento");
 
+
+        Empregado.TESTFIELD(Empregado."Tipo Contribuinte");
+        Empregado.TESTFIELD(Empregado."Local Obtenção Rendimento");
+        CLEAR(l_RecConfigRecursosHumanos);
+        l_RecConfigRecursosHumanos.GET();
+
+        TabelaIRS.RESET;
+        TabelaIRS.SETCURRENTKEY("From Date", Region, Table, "Value");
         //Procura a Tabela de IRS do ano do processamento, se não encontrar usa a no ano anterior
-        TabelaIRS.SetRange(TabelaIRS.Ano, Ano);
-        if not TabelaIRS.Find('-') then
-            TabelaIRS.SetRange(TabelaIRS.Ano, Ano - 1);
+        TabelaIRS.SETFILTER("From Date", '<%1', DataProcessamento);
+        TabelaIRS.SETFILTER("From Date", '>=%1', l_RecConfigRecursosHumanos."Start Of New Table IRS");
+
+        //----------------------------------------------------------------------------------------
+        //-------TABELA I - Não casado sem dependentes ou casado dois titulares
+        //----------------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::"Conta de Outrem") AND
+              (
+                  ((Empregado."Estado Civil" IN [Empregado."Estado Civil"::Solteiro, Empregado."Estado Civil"::Divorciado, Empregado."Estado Civil"::Viúvo, Empregado."Estado Civil"::Outro]) AND
+                  (Empregado."No. Dependentes" = 0)
+                ) OR
+                (
+                  (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"]) AND
+                  (Empregado."Titular Rendimentos" = 2)
+                )
+              )
+           AND (Empregado.Deficiente = Empregado.Deficiente::Não) THEN BEGIN
+            TabelaIRS.SETRANGE(Table, TabelaIRS.Table::I);
+            TabelaIRS.SETRANGE(Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE BEGIN
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                END;
+
+                IF Empregado."No. Dependentes" > 0 THEN
+                    ParcelaAbater += (Empregado."No. Dependentes" * TabelaIRS."Value to Substract/dependente");
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
+
 
         //-------------------------------------------------------------------
-        //-------TABELA I - TRABALHO DEPENDENTE NÃO CASADO-------------------
+        //-------TABELA II - Não casado com um ou mais dependentes-------------------
         //-------------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 1) and (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5)
-           and (Empregado.Deficiente = 0) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 1);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                        if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                        if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                        if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                        if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                        if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                    if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                    if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                    if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                    if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                    if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                    exit;
-                end;
-            end;
-        end;
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::"Conta de Outrem") AND
+           (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Solteiro, Empregado."Estado Civil"::Divorciado, Empregado."Estado Civil"::Viúvo, Empregado."Estado Civil"::Outro]) AND
+           (Empregado."No. Dependentes" > 0)
+           AND
+           (Empregado.Deficiente = Empregado.Deficiente::Não) THEN BEGIN
+            TabelaIRS.SETRANGE(TabelaIRS.Table, TabelaIRS.Table::II);
+            TabelaIRS.SETRANGE(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                //IF Empregado."Dependent disability above 60%" THEN
+                //  Empregado."No. Dependentes" := 5;
+                IF Empregado."No. Dependentes" > 0 THEN
+                    ParcelaAbater += (Empregado."No. Dependentes" * TabelaIRS."Value to Substract/dependente");
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
+
+        //-------------------------------------------------------------------------------------------
+        //------TABELA III - Casado único titular	---------------
+        //-------------------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::"Conta de Outrem") AND
+           (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"])
+           AND (Empregado.Deficiente = Empregado.Deficiente::Não) AND (Empregado."Titular Rendimentos" = 1)
+            //AND (Empregado."No. Dependentes" <> 0)
+            THEN BEGIN
+            TabelaIRS.SETRANGE(TabelaIRS.Table, TabelaIRS.Table::III);
+            TabelaIRS.SETRANGE(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                IF Empregado."No. Dependentes" > 0 THEN
+                    ParcelaAbater += (Empregado."No. Dependentes" * TabelaIRS."Value to Substract/dependente");
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
 
 
-        //----------------------------------------------------------------------------
-        //-------TABELA II - TRABALHO DEPENDENTE CASADO, ÚNICO TITULAR----------------
-        //----------------------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 1) and ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-           and (Empregado.Deficiente = 0) and (Empregado."Titular Rendimentos" = 1) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 2);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                        if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                        if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                        if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                        if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                        if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                    if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                    if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                    if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                    if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                    if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                    exit;
-                end;
-            end;
-        end;
+        //--------------------------------------------------------------------------------------------------------
+        //-------TABELA IV - TRABALHO DEPENDENTE NÃO CASADO OU CASADO 2 TITULARES, SEM DEPENDENTES - DEFICIENTE --
+        //--------------------------------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::"Conta de Outrem") AND
+              (
+                (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Solteiro, Empregado."Estado Civil"::Divorciado, Empregado."Estado Civil"::Viúvo, Empregado."Estado Civil"::Outro]) OR
+                (
+                  (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"]) AND
+                  (Empregado."No. Dependentes" = 0) AND (Empregado."Titular Rendimentos" = 2)
+                )
+              )
+           AND (Empregado.Deficiente = Empregado.Deficiente::Sim) THEN BEGIN
+            TabelaIRS.SETRANGE(Table, TabelaIRS.Table::IV);
+            TabelaIRS.SETRANGE(Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE BEGIN
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                END;
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
 
 
-        //----------------------------------------------------------------------------
-        //------TABELA III - TRABALHO DEPENDENTE CASADO, DOIS TITULARES---------------
-        //----------------------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 1) and ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-           and (Empregado.Deficiente = 0) and (Empregado."Titular Rendimentos" = 2) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 3);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                        if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                        if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                        if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                        if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                        if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                    if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                    if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                    if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                    if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                    if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                    exit;
-                end;
-            end;
-        end;
+        //-----------------------------------------------------------------------------------
+        //-------TABELA V - TRABALHO DEPENDENTE NÃO CASADO COM DEPENDENTES - DEFICIENTE ---
+        //-----------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::"Conta de Outrem") AND
+           (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Solteiro, Empregado."Estado Civil"::Divorciado, Empregado."Estado Civil"::Viúvo, Empregado."Estado Civil"::Outro]) AND
+           (Empregado.Deficiente = Empregado.Deficiente::Sim) THEN BEGIN
+            TabelaIRS.SETRANGE(TabelaIRS.Table, TabelaIRS.Table::V);
+            TabelaIRS.SETRANGE(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                //IF Empregado."Dependent disability above 60%" THEN
+                //  Empregado."No. Dependentes" := 5;
+                IF Empregado."No. Dependentes" > 0 THEN
+                    ParcelaAbater += (Empregado."No. Dependentes" * TabelaIRS."Value to Substract/dependente");
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
+
+        //------------------------------------------------------------------------------
+        //------TABELA VI - TRABALHO DEPENDENTE CASADO, DOIS TITULARES - DEFICIENTE --
+        //------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::"Conta de Outrem") AND
+           (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"])
+           AND (Empregado.Deficiente = Empregado.Deficiente::Sim) AND (Empregado."Titular Rendimentos" = 2) THEN BEGIN
+            TabelaIRS.SETRANGE(TabelaIRS.Table, TabelaIRS.Table::VI);
+            TabelaIRS.SETRANGE(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                //IF Empregado."Dependent disability above 60%" THEN
+                //  Empregado."No. Dependentes" := 5;
+                IF Empregado."No. Dependentes" > 0 THEN
+                    ParcelaAbater += (Empregado."No. Dependentes" * TabelaIRS."Value to Substract/dependente");
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
+
+        //-------------------------------------------------------------------------------------------
+        //------TABELA VII - TRABALHO DEPENDENTE CASADO ÚNICO TITULAR, COM DEPENDENTES - DEFICIENTE ---
+        //-------------------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::"Conta de Outrem") AND
+           (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"])
+           AND (Empregado.Deficiente = Empregado.Deficiente::Sim) AND (Empregado."Titular Rendimentos" = 1) AND
+           (Empregado."No. Dependentes" <> 0) THEN BEGIN
+            TabelaIRS.SETRANGE(TabelaIRS.Table, TabelaIRS.Table::VII);
+            TabelaIRS.SETRANGE(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                IF Empregado."No. Dependentes" > 0 THEN
+                    ParcelaAbater += (Empregado."No. Dependentes" * TabelaIRS."Value to Substract/dependente");
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
 
 
+        //----------------------------------------------------------------------------------------
+        //-------TABELA VIII - PENSIONISTA NÃO CASADO OU CASADO 2 TITULARES, SEM DEPENDENTES
+        //----------------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::Pensionista) AND
+              (
+                (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Solteiro, Empregado."Estado Civil"::Divorciado, Empregado."Estado Civil"::Viúvo, Empregado."Estado Civil"::Outro]) OR
+                (
+                  (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"]) AND
+                  (Empregado."No. Dependentes" = 0) AND (Empregado."Titular Rendimentos" = 2)
+                )
+              )
+           AND (Empregado.Deficiente = Empregado.Deficiente::Não) THEN BEGIN
+            TabelaIRS.SETRANGE(Table, TabelaIRS.Table::VIII);
+            TabelaIRS.SETRANGE(Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE BEGIN
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                END;
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
 
-        //--------------------------------------------------------------------------
-        //------TABELA IV - TRABALHO DEPENDENTE NÃO CASADO DEFICIENTE---------------
-        //--------------------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 1) and (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5)
-           and (Empregado.Deficiente = 1) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 4);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                        if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                        if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                        if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                        if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                        if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                    if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                    if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                    if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                    if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                    if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                    exit;
-                end;
-            end;
-        end;
+        //-------------------------------------------------------------------------------------------
+        //------TABELA IX - PENSIONISTA CASADO ÚNICO TITULAR, SEM DEPENDENTES ---------------
+        //-------------------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::Pensionista) AND
+           (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"])
+           AND (Empregado.Deficiente = Empregado.Deficiente::Não) AND (Empregado."Titular Rendimentos" = 1) AND
+           (Empregado."No. Dependentes" = 0) THEN BEGIN
+            TabelaIRS.SETRANGE(TabelaIRS.Table, TabelaIRS.Table::IX);
+            TabelaIRS.SETRANGE(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE BEGIN
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                END;
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
 
+        //--------------------------------------------------------------------------------------------------------
+        //-------TABELA X - PENSIONISTA NÃO CASADO OU CASADO 2 TITULARES, SEM DEPENDENTES - DEFICIENTE --------
+        //--------------------------------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::Pensionista) AND
+              (
+                NOT (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"]) OR
+                (
+                  (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"]) AND
+                  (Empregado."No. Dependentes" = 0) AND (Empregado."Titular Rendimentos" = 2)
+                )
+              )
+           AND (Empregado.Deficiente = Empregado.Deficiente::Sim) THEN BEGIN
+            TabelaIRS.SETRANGE(Table, TabelaIRS.Table::X);
+            TabelaIRS.SETRANGE(Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE BEGIN
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                END;
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
 
-
-        //----------------------------------------------------------------------------------
-        //-------TABELA V - TRABALHO DEPENDENTE CASADO ÚNICO TITULAR DEFICIENTE------------
-        //----------------------------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 1) and ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-           and (Empregado.Deficiente = 1) and (Empregado."Titular Rendimentos" = 1) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 5);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                        if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                        if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                        if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                        if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                        if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                    if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                    if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                    if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                    if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                    if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                    exit;
-                end;
-            end;
-        end;
-
-
-
-
-        //---------------------------------------------------------------------------------------
-        //-------TABELA VI - TRABALHO DEPENDENTE CASADO, DOIS TITULARES DEFICIENTES--------------
-        //---------------------------------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 1) and ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-           and (Empregado.Deficiente = 1) and (Empregado."Titular Rendimentos" = 2) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 6);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                        if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                        if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                        if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                        if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                        if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if Empregado."No. Dependentes" = 0 then TaxaIRS := TabelaIRS."TD 0 Dependentes";
-                    if Empregado."No. Dependentes" = 1 then TaxaIRS := TabelaIRS."TD 1 Dependentes";
-                    if Empregado."No. Dependentes" = 2 then TaxaIRS := TabelaIRS."TD 2 Dependentes";
-                    if Empregado."No. Dependentes" = 3 then TaxaIRS := TabelaIRS."TD 3 Dependentes";
-                    if Empregado."No. Dependentes" = 4 then TaxaIRS := TabelaIRS."TD 4 Dependentes";
-                    if Empregado."No. Dependentes" >= 5 then TaxaIRS := TabelaIRS."TD 5ou Mais Dependentes";
-                    exit;
-                end;
-            end;
-        end;
-
-
-        //----------------------------------------------------------------
-        //----------TABELA VII - PENSÕES ---------------------------------
-        //----------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 3) and (Empregado.Deficiente = 0) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 7);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                           and (Empregado."Titular Rendimentos" = 2) then
-                            TaxaIRS := TabelaIRS.PenCas2Tit;
-                        if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
-                        if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                           and (Empregado."Titular Rendimentos" = 1) then
-                            TaxaIRS := TabelaIRS.PenCas1Tit;
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                       and (Empregado."Titular Rendimentos" = 2) then
-                        TaxaIRS := TabelaIRS.PenCas2Tit;
-                    if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
-                    if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                       and (Empregado."Titular Rendimentos" = 1) then
-                        TaxaIRS := TabelaIRS.PenCas1Tit;
-                    exit;
-                end;
-            end;
-        end;
-
-
-        //------------------------------------------------------------------------
-        //------TABELA VIII - RENDIMENTOS DE PENSÕES/TITULARES DEFICIENTES--------
-        //------------------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 3) and (Empregado.Deficiente = 1) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 8);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                           and (Empregado."Titular Rendimentos" = 2) then
-                            TaxaIRS := TabelaIRS.PenCas2Tit;
-                        if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
-                        if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                           and (Empregado."Titular Rendimentos" = 1) then
-                            TaxaIRS := TabelaIRS.PenCas1Tit;
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                       and (Empregado."Titular Rendimentos" = 2) then
-                        TaxaIRS := TabelaIRS.PenCas2Tit;
-                    if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
-                    if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                       and (Empregado."Titular Rendimentos" = 1) then
-                        TaxaIRS := TabelaIRS.PenCas1Tit;
-                    exit;
-                end;
-            end;
-        end;
-
-        //---------------------------------------------------------------------
-        //---TABELA IX - PENSÕES. TITULARES DEFICENTES DAS FORÇAS ARMADAS------
-        //---------------------------------------------------------------------
-        if (Empregado."Tipo Contribuinte" = 3) and (Empregado.Deficiente = 2) then begin
-            TabelaIRS.SetRange(TabelaIRS.Tabela, 9);
-            TabelaIRS.SetRange(TabelaIRS.Região, Empregado."Local Obtenção Rendimento" - 1);
-            if TabelaIRS.Find('-') then begin
-                repeat
-                    if ValorVencimento <= TabelaIRS.Valor then begin
-                        if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                           and (Empregado."Titular Rendimentos" = 2) then
-                            TaxaIRS := TabelaIRS.PenCas2Tit;
-                        if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
-                        if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                           and (Empregado."Titular Rendimentos" = 1) then
-                            TaxaIRS := TabelaIRS.PenCas1Tit;
-                        exit;
-                    end;
-                until TabelaIRS.Next = 0;
-                if TabelaIRS.Find('+') then begin
-                    if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                       and (Empregado."Titular Rendimentos" = 2) then
-                        TaxaIRS := TabelaIRS.PenCas2Tit;
-                    if (Empregado."Estado Civil" <> 1) and (Empregado."Estado Civil" <> 5) then TaxaIRS := TabelaIRS.PenNCas;
-                    if ((Empregado."Estado Civil" = 1) or (Empregado."Estado Civil" = 5))
-                       and (Empregado."Titular Rendimentos" = 1) then
-                        TaxaIRS := TabelaIRS.PenCas1Tit;
-                    exit;
-                end;
-            end;
-        end;
-    end;
-
+        //-------------------------------------------------------------------------------------------
+        //------TABELA XI - PENSIONISTA CASADO ÚNICO TITULAR, SEM DEPENDENTES - DEFICIENTE --
+        //-------------------------------------------------------------------------------------------
+        IF (Empregado."Tipo Contribuinte" = Empregado."Tipo Contribuinte"::Pensionista) AND
+           (Empregado."Estado Civil" IN [Empregado."Estado Civil"::Casado, Empregado."Estado Civil"::"União Facto"])
+           AND (Empregado.Deficiente = Empregado.Deficiente::Sim) AND (Empregado."Titular Rendimentos" = 1) AND
+           (Empregado."No. Dependentes" = 0) THEN BEGIN
+            TabelaIRS.SETRANGE(TabelaIRS.Table, TabelaIRS.Table::XI);
+            TabelaIRS.SETRANGE(TabelaIRS.Region, Empregado."Local Obtenção Rendimento" - 1);
+            TabelaIRS.SETFILTER("Value", '>=%1', ValorVencimento);
+            IF TabelaIRS.FINDFIRST THEN BEGIN
+                //REPEAT
+                TaxaIRS := TabelaIRS.Tax;
+                IF (TabelaIRS."Value to Substract" <> 0) OR (TaxaIRS = 0) THEN
+                    ParcelaAbater := TabelaIRS."Value to Substract"
+                ELSE BEGIN
+                    ParcelaAbater := ROUND(TabelaIRS.Tax * TabelaIRS."Factor to Substract" * (TabelaIRS."Fixed Value to Substract" - ValorVencimento) / 100, 0.01);
+                END;
+                EXIT;
+                //UNTIL TabelaIRS.NEXT =0;
+            END;
+        END;
+    END;
 
     procedure GetPeriodicidade(TabRubrica: Record "Payroll Item"; Data: Date) Processar: Boolean
     var
