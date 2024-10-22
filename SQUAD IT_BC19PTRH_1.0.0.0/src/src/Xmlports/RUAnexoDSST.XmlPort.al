@@ -808,11 +808,11 @@ xmlport 53039 "RU - Anexo D - SST"
 
                                             //saber os códigos
                                             rUniMedHR.Reset;
-                                            rUniMedHR.SetRange(rUniMedHR."Designação Interna", rUniMedHR."Designação Interna"::Dia);
+                                            rUniMedHR.SetRange(rUniMedHR."Internal Designation", rUniMedHR."Internal Designation"::Day);
                                             if rUniMedHR.FindFirst then
                                                 vDia := rUniMedHR.Code;
                                             rUniMedHR.Reset;
-                                            rUniMedHR.SetRange(rUniMedHR."Designação Interna", rUniMedHR."Designação Interna"::Hora);
+                                            rUniMedHR.SetRange(rUniMedHR."Internal Designation", rUniMedHR."Internal Designation"::Hour);
                                             if rUniMedHR.FindFirst then
                                                 vHora := rUniMedHR.Code;
 

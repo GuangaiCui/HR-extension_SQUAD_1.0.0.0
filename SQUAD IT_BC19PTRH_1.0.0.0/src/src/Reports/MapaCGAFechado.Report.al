@@ -264,7 +264,7 @@ report 53053 "Mapa CGA - Fechado"
                             //ver se a falta está em dias ou horas
                             TabConfUnidadeMedida.Reset;
                             if TabConfUnidadeMedida.Get("Hist. Linhas Movs. Empregado"."Unit of Measure") then begin
-                                if TabConfUnidadeMedida."Designação Interna" = TabConfUnidadeMedida."Designação Interna"::Dia then begin
+                                if TabConfUnidadeMedida."Internal Designation" = TabConfUnidadeMedida."Internal Designation"::Day then begin
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"1" then
                                         DecNumDias := Abs("Hist. Linhas Movs. Empregado".Quantity);
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"2" then
@@ -272,7 +272,7 @@ report 53053 "Mapa CGA - Fechado"
                                         (NhorasSemanaisTotais / Empregado."No. dias de Trabalho Semanal" * Abs("Hist. Linhas Movs. Empregado".Quantity))
                                           / 88, 0.001, '<');
                                 end;
-                                if TabConfUnidadeMedida."Designação Interna" = TabConfUnidadeMedida."Designação Interna"::Hora then begin
+                                if TabConfUnidadeMedida."Internal Designation" = TabConfUnidadeMedida."Internal Designation"::Hour then begin
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"1" then
                                         DecNumDias := Abs("Hist. Linhas Movs. Empregado".Quantity);
                                     if Empregado."Regime Duração Trabalho" = Empregado."Regime Duração Trabalho"::"2" then
@@ -421,10 +421,10 @@ report 53053 "Mapa CGA - Fechado"
 
                                     //>>>>>>  LINHA TIPO2 - Registo Movimento da RD >>>>>>>>>>>>>>>>>>>>>>>>>>
                                     TabTempFichTexto.Init;
-                                    TabTempFichTexto."Tipo Ficheiro" := TabTempFichTexto."Tipo Ficheiro"::CGA;
+                                    TabTempFichTexto."File Type" := TabTempFichTexto."File Type"::CGA;
                                     vNLinha := vNLinha + 1;
-                                    TabTempFichTexto.NLinha := vNLinha;
-                                    TabTempFichTexto.Data := WorkDate;
+                                    TabTempFichTexto."Line No." := vNLinha;
+                                    TabTempFichTexto.Date := WorkDate;
                                     TabTempFichTexto.Texto1 :=
                                     PadStr('0', 6 - StrLen(Format(ConfRH."Nº Serviço")), '0') + Format(ConfRH."Nº Serviço")           //Nº Serviço
                                     + Format("Hist. Linhas Movs. Empregado"."Data Registo", 0, '<Year4><Month,2>')                  //Data RD
@@ -442,9 +442,9 @@ report 53053 "Mapa CGA - Fechado"
                                     + PadStr(Nivel, 3, ' ')                                                                          //Nivel 2008.07.1
                                     + PadStr("Observações Tipo2", 30, ' ');                                                          //Obs 2008.07.1
                                     TabTempFichTexto."Employee No." := Empregado."No.";
-                                    TabTempFichTexto."Cod. Situacao" := "Hist. Linhas Movs. Empregado"."Cód. Situação";
-                                    TabTempFichTexto.Valor := ValorRemuneracao;
-                                    TabTempFichTexto.NDias := DecNumDias;
+                                    TabTempFichTexto."Situation Code" := "Hist. Linhas Movs. Empregado"."Cód. Situação";
+                                    TabTempFichTexto.Amount := ValorRemuneracao;
+                                    TabTempFichTexto."No. of Days" := DecNumDias;
                                     TabTempFichTexto.Texto2 := Format(DescEmp) + ' ' + Format(DescEntPat);
                                     TabTempFichTexto.Insert;
                                     TotalRegistos := TotalRegistos + 1;
@@ -455,15 +455,15 @@ report 53053 "Mapa CGA - Fechado"
                             //2007.04.03 - Criei este IF pq Se faltou o mês todo (ValorRemuneracao =0) não deve aparecer a linha 01
                             if (ValorRemuneracao <> 0) or ("Hist. Linhas Movs. Empregado"."Cód. Situação" <> '01') then begin
                                 TabTempFichTexto.Reset;
-                                TabTempFichTexto.SetRange(TabTempFichTexto."Tipo Ficheiro", TabTempFichTexto."Tipo Ficheiro"::CGA);
+                                TabTempFichTexto.SetRange(TabTempFichTexto."File Type", TabTempFichTexto."File Type"::CGA);
                                 TabTempFichTexto.SetRange(TabTempFichTexto."Employee No.", Empregado."No.");
-                                TabTempFichTexto.SetRange(TabTempFichTexto."Cod. Situacao", "Hist. Linhas Movs. Empregado"."Cód. Situação");
+                                TabTempFichTexto.SetRange(TabTempFichTexto."Situation Code", "Hist. Linhas Movs. Empregado"."Cód. Situação");
                                 if not TabTempFichTexto.FindFirst then begin
                                     TabTempFichTexto.Init;
-                                    TabTempFichTexto."Tipo Ficheiro" := TabTempFichTexto."Tipo Ficheiro"::CGA;
+                                    TabTempFichTexto."File Type" := TabTempFichTexto."File Type"::CGA;
                                     vNLinha := vNLinha + 1;
-                                    TabTempFichTexto.NLinha := vNLinha;
-                                    TabTempFichTexto.Data := WorkDate;
+                                    TabTempFichTexto."Line No." := vNLinha;
+                                    TabTempFichTexto.Date := WorkDate;
                                     TabTempFichTexto.Texto1 :=
                                     PadStr('0', 6 - StrLen(Format(ConfRH."Nº Serviço")), '0') + Format(ConfRH."Nº Serviço")           //Nº Serviço
                                     + Format("Hist. Linhas Movs. Empregado"."Data Registo", 0, '<Year4><Month,2>')                  //Data RD
@@ -481,15 +481,15 @@ report 53053 "Mapa CGA - Fechado"
                                     + PadStr(Nivel, 3, ' ')                                                                          //Nivel 2008.07.1
                                     + PadStr("Observações Tipo2", 30, ' ');                                                          //Obs 2008.07.1
                                     TabTempFichTexto."Employee No." := Empregado."No.";
-                                    TabTempFichTexto."Cod. Situacao" := "Hist. Linhas Movs. Empregado"."Cód. Situação";
-                                    TabTempFichTexto.Valor := ValorRemuneracao;
-                                    TabTempFichTexto.NDias := DecNumDias;
+                                    TabTempFichTexto."Situation Code" := "Hist. Linhas Movs. Empregado"."Cód. Situação";
+                                    TabTempFichTexto.Amount := ValorRemuneracao;
+                                    TabTempFichTexto."No. of Days" := DecNumDias;
                                     TabTempFichTexto.Texto2 := Format(DescEmp) + ' ' + Format(DescEntPat);
                                     TabTempFichTexto.Insert;
                                     TotalRegistos := TotalRegistos + 1;
                                 end else begin
-                                    ValorRemuneracao := ValorRemuneracao + TabTempFichTexto.Valor;
-                                    DecNumDias := DecNumDias + TabTempFichTexto.NDias;
+                                    ValorRemuneracao := ValorRemuneracao + TabTempFichTexto.Amount;
+                                    DecNumDias := DecNumDias + TabTempFichTexto."No. of Days";
                                     if DecNumDias > 30 then DecNumDias := 30; //2017.02.06 - nao pode passar dos 30
                                     TabTempFichTexto.Texto1 :=
                                     PadStr('0', 6 - StrLen(Format(ConfRH."Nº Serviço")), '0') + Format(ConfRH."Nº Serviço")           //Nº Serviço
@@ -648,7 +648,7 @@ report 53053 "Mapa CGA - Fechado"
         }
         dataitem("Tabela Temp Ficheiros Texto"; "Tabela Temp Ficheiros Texto")
         {
-            DataItemTableView = SORTING("Tipo Ficheiro", NLinha);
+            DataItemTableView = SORTING("File Type", "Line No.");
             column(NCGA; CopyStr("Tabela Temp Ficheiros Texto".Texto1, 14, 7))
             {
             }
@@ -682,7 +682,7 @@ report 53053 "Mapa CGA - Fechado"
             column(Nivel; CopyStr("Tabela Temp Ficheiros Texto".Texto1, 128, 3))
             {
             }
-            column(NLinha; NLinha)
+            column(NLinha; "Line No.")
             {
             }
             column(DescEmp; DescEmp)
@@ -719,8 +719,8 @@ report 53053 "Mapa CGA - Fechado"
 
             trigger OnPreDataItem()
             begin
-                "Tabela Temp Ficheiros Texto".SetRange("Tabela Temp Ficheiros Texto"."Tipo Ficheiro", "Tabela Temp Ficheiros Texto"."Tipo Ficheiro"::CGA);
-                "Tabela Temp Ficheiros Texto".SetFilter("Tabela Temp Ficheiros Texto".NLinha, '<>%1', 1);
+                "Tabela Temp Ficheiros Texto".SetRange("Tabela Temp Ficheiros Texto"."File Type", "Tabela Temp Ficheiros Texto"."File Type"::CGA);
+                "Tabela Temp Ficheiros Texto".SetFilter("Tabela Temp Ficheiros Texto"."Line No.", '<>%1', 1);
             end;
         }
     }
@@ -796,10 +796,10 @@ report 53053 "Mapa CGA - Fechado"
         TotalRegistos := TotalRegistos + 1;
         //>>>>>>  LINHA TIPO3 - Registo Totais da RD >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabTempFichTexto.Init;
-        TabTempFichTexto."Tipo Ficheiro" := TabTempFichTexto."Tipo Ficheiro"::CGA;
+        TabTempFichTexto."File Type" := TabTempFichTexto."File Type"::CGA;
         vNLinha := vNLinha + 1;
-        TabTempFichTexto.NLinha := vNLinha;
-        TabTempFichTexto.Data := WorkDate;
+        TabTempFichTexto."Line No." := vNLinha;
+        TabTempFichTexto.Date := WorkDate;
         TabTempFichTexto.Texto1 :=
           PadStr('0', 6 - StrLen(Format(ConfRH."Nº Serviço")), '0') + Format(ConfRH."Nº Serviço")  //Nº Serviço
         + Format(DataIni, 0, '<Year4><Month,2>')                                                 //Data RD
@@ -817,7 +817,7 @@ report 53053 "Mapa CGA - Fechado"
         ConfRH.Get;
 
         TabTempFichTexto.Reset;
-        TabTempFichTexto.SetRange(TabTempFichTexto."Tipo Ficheiro", TabTempFichTexto."Tipo Ficheiro"::CGA);
+        TabTempFichTexto.SetRange(TabTempFichTexto."File Type", TabTempFichTexto."File Type"::CGA);
         if TabTempFichTexto.FindFirst then
             TabTempFichTexto.DeleteAll;
 
@@ -831,10 +831,10 @@ report 53053 "Mapa CGA - Fechado"
         //------------------------------------------------------
         //>>>>>>  LINHA TIPO1 - Registo Identificação da RD >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabTempFichTexto.Init;
-        TabTempFichTexto."Tipo Ficheiro" := TabTempFichTexto."Tipo Ficheiro"::CGA;
+        TabTempFichTexto."File Type" := TabTempFichTexto."File Type"::CGA;
         vNLinha := vNLinha + 1;
-        TabTempFichTexto.NLinha := vNLinha;
-        TabTempFichTexto.Data := WorkDate;
+        TabTempFichTexto."Line No." := vNLinha;
+        TabTempFichTexto.Date := WorkDate;
         TabTempFichTexto.Texto1 :=
           PadStr('0', 6 - StrLen(Format(ConfRH."Nº Serviço")), '0') + Format(ConfRH."Nº Serviço")  //Nº Serviço
         + Format(DataIni, 0, '<Year4><Month,2>')                                                 //Data RD
@@ -915,10 +915,10 @@ report 53053 "Mapa CGA - Fechado"
     begin
         //>>>>>>  LINHA TIPO2 - Registo Movimento da RD >>>>>>>>>>>>>>>>>>>>>>>>>>
         TabTempFichTexto.Init;
-        TabTempFichTexto."Tipo Ficheiro" := TabTempFichTexto."Tipo Ficheiro"::CGA;
+        TabTempFichTexto."File Type" := TabTempFichTexto."File Type"::CGA;
         vNLinha := vNLinha + 1;
-        TabTempFichTexto.NLinha := vNLinha;
-        TabTempFichTexto.Data := WorkDate;
+        TabTempFichTexto."Line No." := vNLinha;
+        TabTempFichTexto.Date := WorkDate;
         TabTempFichTexto.Texto1 :=
         PadStr('0', 6 - StrLen(Format(ConfRH."Nº Serviço")), '0') + Format(ConfRH."Nº Serviço")                     //Nº Serviço
         + Format(TabHistCabMesActual."Data Registo", 0, '<Year4><Month,2>')                                    //Data RD

@@ -111,11 +111,11 @@ report 53037 "Processamento Vencimentos"
                             //Ausencias registadas em Hora --> valor unitário da ausência = Valor hora Empregado da ficha do Empregado
                             if "Ausência Empregado"."Novo Valor Ausencia" = 0 then begin
                                 if UnidMedidaRH.Get("Ausência Empregado"."Unit of Measure Code") then begin
-                                    if UnidMedidaRH."Designação Interna" = UnidMedidaRH."Designação Interna"::Dia then begin
+                                    if UnidMedidaRH."Internal Designation" = UnidMedidaRH."Internal Designation"::Day then begin
                                         TempRubricaEmpregado.Validate(TempRubricaEmpregado."Unit Value", Empregado."Valor Dia");
                                         TempRubricaEmpregado."Total Amount" := Round(Empregado."Valor Dia" * QtdAProcessarRecVen, 0.01);
                                     end;
-                                    if UnidMedidaRH."Designação Interna" = UnidMedidaRH."Designação Interna"::Hora then begin
+                                    if UnidMedidaRH."Internal Designation" = UnidMedidaRH."Internal Designation"::Hour then begin
                                         TempRubricaEmpregado.Validate(TempRubricaEmpregado."Unit Value", Empregado."Valor Hora");
                                         TempRubricaEmpregado."Total Amount" := Round(Empregado."Valor Hora" * QtdAProcessarRecVen, 0.01);
                                     end;
@@ -259,9 +259,9 @@ report 53037 "Processamento Vencimentos"
                                         l_ValorVencimentoBase := FuncoesRH.CalcularVencimentoBaseFaltas("Periodos Processamento"."Data Inicio Processamento", Empregado);
                                         "Abonos - Descontos Extra".Validate("Abonos - Descontos Extra"."Unit Value", FuncoesRH.CalcularValorDia(l_ValorVencimentoBase, Empregado));
                                     end else begin
-                                        if UnidMedidaRH."Designação Interna" = UnidMedidaRH."Designação Interna"::Dia then
+                                        if UnidMedidaRH."Internal Designation" = UnidMedidaRH."Internal Designation"::Day then
                                             "Abonos - Descontos Extra".Validate("Abonos - Descontos Extra"."Unit Value", Empregado."Valor Dia");
-                                        if UnidMedidaRH."Designação Interna" = UnidMedidaRH."Designação Interna"::Hora then
+                                        if UnidMedidaRH."Internal Designation" = UnidMedidaRH."Internal Designation"::Hour then
                                             "Abonos - Descontos Extra".Validate("Abonos - Descontos Extra"."Unit Value", Empregado."Valor Hora");
                                     end;
                                 end else
@@ -570,7 +570,7 @@ report 53037 "Processamento Vencimentos"
                                                             if TabConfRH."Limite dias falta abate SN/F" <> 0 then begin
                                                                 Clear(TotalDiasFalta);
                                                                 UnidMedidaRH.Reset;
-                                                                UnidMedidaRH.SetRange(UnidMedidaRH."Designação Interna", UnidMedidaRH."Designação Interna"::Dia);
+                                                                UnidMedidaRH.SetRange(UnidMedidaRH."Internal Designation", UnidMedidaRH."Internal Designation"::Day);
                                                                 if UnidMedidaRH.Find('-') then begin
                                                                     TabAusencias.Reset;
                                                                     TabAusencias.SetCurrentKey("Employee No.", "From Date");
@@ -634,7 +634,7 @@ report 53037 "Processamento Vencimentos"
                                                             if TabConfRH."Limite dias falta abate SN/F" <> 0 then begin
                                                                 Clear(TotalDiasFalta);
                                                                 UnidMedidaRH.Reset;
-                                                                UnidMedidaRH.SetRange(UnidMedidaRH."Designação Interna", UnidMedidaRH."Designação Interna"::Dia);
+                                                                UnidMedidaRH.SetRange(UnidMedidaRH."Internal Designation", UnidMedidaRH."Internal Designation"::Day);
                                                                 if UnidMedidaRH.Find('-') then begin
                                                                     TabAusencias.Reset;
                                                                     TabAusencias.SetCurrentKey("Employee No.", "From Date");

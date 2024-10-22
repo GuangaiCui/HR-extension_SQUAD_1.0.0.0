@@ -17,13 +17,13 @@ page 53170 "Human Resources Role Center"
                 {
 
 
-                    Caption = 'Employee';
+                    Caption = 'Empregado';
                 }
                 part(Control1000000004; "MyRegistoAusências")
                 {
 
 
-                    Caption = 'Absense Registration';
+                    Caption = 'Registro de Ausência';
                 }
             }
             group(Control1000000003)

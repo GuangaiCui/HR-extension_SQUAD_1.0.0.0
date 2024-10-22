@@ -28,7 +28,7 @@ table 53073 "Horas Extra Empregado"
             begin
                 //HG
                 TabHora.Get("Cód. Hora Extra");
-                Descrição := TabHora.Descrição;
+                Descrição := TabHora.Description;
                 "Payroll Item Code" := TabHora."Payroll Item Code";
                 Factor := TabHora.Factor;
             end;

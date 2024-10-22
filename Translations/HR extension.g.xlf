@@ -104,62 +104,57 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 1123289586 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Influência Sub. Férias</source>
+          <source>Christmas Subsidy Influence</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Christmas Subsidy Influence - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3726079371 - Field 906001748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cod. Mot. Horas Normais Não Remuneradas</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Cod. Mot. Horas Normais N Rem - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 3726079371 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Código</source>
+          <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 995090288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filtro Data</source>
+          <source>Date Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Date Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Descrição</source>
+          <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 2302164855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filtro nº Empregado</source>
+          <source>Employee No. Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Employee No. Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 3784655654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Com Perda Sub. Alimentação</source>
+          <source>Food Subsidy Loss</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Food Subsidy Loss - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 1861213814 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filtro Dimensão 1 Global</source>
+          <source>Global Dimension 1 Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Global Dimension 1 Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 588326355 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filtro Dimensão 2 Global</source>
+          <source>Global Dimension 2 Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Global Dimension 2 Filter - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 1012979548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Influência Sub. Férias</source>
+          <source>Holiday Subsidy Influence</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Holiday Subsidy Influence - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 603927193 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Justificada</source>
+          <source>Justified</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Justified - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 3357837221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Licença</source>
+          <source>License</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field License - Property Caption</note>
         </trans-unit>
@@ -168,38 +163,43 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field License - Property OptionCaption</note>
         </trans-unit>
+        <trans-unit id="Table 3726079371 - Field 3093139816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Non Paid Normal Hours Reason Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Non-Paid Hours Reason Code - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3726079371 - Field 2999588602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cod. Motivo Horas não Trab.</source>
+          <source>Not Working Hours Reason Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Not Working Hours Reason Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 4064160256 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Desc. Motivo Horas não Trab.</source>
+          <source>Not Working Hours Reason Desc.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Not Working Hours Reason Desc. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 3560623423 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cód. Rubrica</source>
+          <source>Payroll Item Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Payroll Item Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 4074495060 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Com Perda Remuneração</source>
+          <source>Remuneration Loss</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Remuneration Loss - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 2901154589 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ausência Total (Base)</source>
+          <source>Total Absence (Base)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Total Absence (Base) - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 2385270358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cód. Unidade Medida</source>
+          <source>Unit of Measure Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Unit of Measure Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3726079371 - Field 4097248805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Influência No. dias férias</source>
+          <source>Vacation Days Influence</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Absence Reason - Field Vacation Days Influence - Property Caption</note>
         </trans-unit>
@@ -8443,30 +8443,45 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3135262209 - Field 1915239779 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cod. Situacao</source>
+        <trans-unit id="Table 3135262209 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Cod. Situacao - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Amount - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3135262209 - Field 1447994436 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data</source>
+        <trans-unit id="Table 3135262209 - Field 3192175264 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Data - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Employee No. - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3135262209 - Field 3988076939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>NDias</source>
+        <trans-unit id="Table 3135262209 - Field 3004095410 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File Type</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field NDias - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field File Type - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3135262209 - Field 1691848384 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>NLinha</source>
+        <trans-unit id="Table 3135262209 - Field 3004095410 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>MapaSS,PS2,AnexoJ,QP,CGA,DMR-AT,Seguros</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field NLinha - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field File Type - Property OptionCaption</note>
+        </trans-unit>
+        <trans-unit id="Table 3135262209 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3135262209 - Field 2701430011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No. of Days</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field No. of Days - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3135262209 - Field 3911839509 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Situation Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Situation Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3135262209 - Field 3233571925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Texto1</source>
@@ -8478,33 +8493,18 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Texto2 - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3135262209 - Field 765944945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tipo Ficheiro</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Tipo Ficheiro - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3135262209 - Field 765944945 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>MapaSS,PS2,AnexoJ,QP,CGA,DMR-AT,Seguros</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Tipo Ficheiro - Property OptionCaption</note>
-        </trans-unit>
-        <trans-unit id="Table 3135262209 - Field 472720858 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Valor</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temp Ficheiros Texto - Field Valor - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1148523449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tabela Temporária Relatórios</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temporária Relatórios - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1148523449 - Field 742467424 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Código1</source>
+          <source>Code1</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temporária Relatórios - Field Code1 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1148523449 - Field 1380164041 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Código2</source>
+          <source>Code2</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temporária Relatórios - Field Code2 - Property Caption</note>
         </trans-unit>
@@ -8574,7 +8574,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temporária Relatórios - Field Decimal9 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1148523449 - Field 3123372377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Nº Linha</source>
+          <source>Line No</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabela Temporária Relatórios - Field Line No - Property Caption</note>
         </trans-unit>
@@ -8584,32 +8584,32 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 3689924581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cód. Escalão</source>
+          <source>Echelon Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Echelon Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 1642458349 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Valor Máximo</source>
+          <source>Maximum Value</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Maximum Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 531282063 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Valor Mínimo</source>
+          <source>Minimum Value</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Minimum Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 1500409770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tabela</source>
+          <source>Table</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Table - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 1500409770 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Não Casados e Casados 2 Tit.,Casados 1 Tit.</source>
+          <source>NCasCas2Tit,Cas1Tit</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Table - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 1694945659 - Field 2832823724 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Taxa %</source>
+          <source>Tax %</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tabelas Sobretaxa - Field Tax % - Property Caption</note>
         </trans-unit>
@@ -8618,31 +8618,44 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipo Empregado - Property Caption</note>
         </trans-unit>
+<<<<<<< HEAD
         <trans-unit id="Table 3757299140 - Field 743017303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+=======
+        <trans-unit id="Table 3757299140 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+>>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tipo Empregado - Field Código - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tipo Empregado - Field Code - Property Caption</note>
         </trans-unit>
+<<<<<<< HEAD
         <trans-unit id="Table 3757299140 - Field 1347197603 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+=======
+        <trans-unit id="Table 3757299140 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+>>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tipo Empregado - Field Descrição - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tipo Empregado - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3602875088 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipos Horas Extra</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Property Caption</note>
         </trans-unit>
+<<<<<<< HEAD
         <trans-unit id="Table 3602875088 - Field 743017303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+=======
+        <trans-unit id="Table 3602875088 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+>>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Código - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3602875088 - Field 995090288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filtro Data</source>
+          <source>Date Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Date Filter - Property Caption</note>
         </trans-unit>
+<<<<<<< HEAD
         <trans-unit id="Table 3602875088 - Field 1347197603 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -8657,9 +8670,15 @@
           <source> ,Dia útil,Descanso complementar,Feriado,Descanso obrigatório</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Dia semanal - Property OptionCaption</note>
+=======
+        <trans-unit id="Table 3602875088 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Description - Property Caption</note>
+>>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
         </trans-unit>
         <trans-unit id="Table 3602875088 - Field 2302164855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Filtro Nº Empregado</source>
+          <source>Employee No. Filter</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Employee No. Filter - Property Caption</note>
         </trans-unit>
@@ -8674,19 +8693,29 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Lei n. 7/2009 de 12 Fevereiro - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3602875088 - Field 1334795734 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,No. 1 do Artigo 227,No. 2 do Artigo 227</source>
+          <source> ,No. 1 of Article 227,No. 2 of Article 227</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Lei n. 7/2009 de 12 Fevereiro - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 3602875088 - Field 3560623423 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cód. Rubrica</source>
+          <source>Payroll Item Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Payroll Item Code - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 3602875088 - Field 866372664 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Ausência Total (Base)</source>
+        <trans-unit id="Table 3602875088 - Field 577613358 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Total Overtime Hours</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Total Hora Extra - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Total Overtime Hours - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3602875088 - Field 1881946848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Weekly Schedule</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Weekly Schedule - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3602875088 - Field 1881946848 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source> ,Business Day,Complementary Rest,Holiday,Mandatory Rest</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Weekly Schedule - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 4116002769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Human Resource Unit of Measure</source>
@@ -8699,22 +8728,27 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - NamedType Text000</note>
         </trans-unit>
         <trans-unit id="Table 4116002769 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Código</source>
+          <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - Field Code - Property Caption</note>
         </trans-unit>
+<<<<<<< HEAD
         <trans-unit id="Table 4116002769 - Field 3192555061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Interna Description</source>
+=======
+        <trans-unit id="Table 4116002769 - Field 1469990020 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal Designation</source>
+>>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - Field Designação Interna - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - Field Internal Designation - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 4116002769 - Field 3192555061 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dia,Hora,Minuto</source>
+        <trans-unit id="Table 4116002769 - Field 1469990020 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Day,Hour,Minute</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - Field Designação Interna - Property OptionCaption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - Field Internal Designation - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 4116002769 - Field 806193894 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Qtd. por Unidade Medida</source>
+          <source>Qty. per Unit of Measure</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - Field Qty. per Unit of Measure - Property Caption</note>
         </trans-unit>
@@ -9759,12 +9793,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Hist. Movs. Emp. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Control 1846148150 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Absense Registration</source>
+          <source>Registro de Ausência</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Control1000000004 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2269271619 - Control 1208451533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee</source>
+          <source>Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Control Control1000000005 - Property Caption</note>
         </trans-unit>

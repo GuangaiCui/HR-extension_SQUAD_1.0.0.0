@@ -14,7 +14,7 @@ xmlport 53043 "Tabelas IRS"
             {
                 AutoUpdate = true;
                 XmlName = 'TabelaIRS';
-                fieldelement(NoLinha; "Tabela IRS"."No. Linha")
+                fieldelement(NoLinha; "Tabela IRS"."Line No.")
                 {
                 }
                 fieldelement(Regiao; "Tabela IRS"."Região")

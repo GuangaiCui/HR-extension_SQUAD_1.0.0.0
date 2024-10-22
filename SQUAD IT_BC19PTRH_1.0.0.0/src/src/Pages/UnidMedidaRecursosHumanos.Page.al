@@ -24,7 +24,7 @@ page 53071 "Unid. Medida Recursos Humanos"
 
 
                 }
-                field("Designação Interna"; Rec."Designação Interna")
+                field("Internal Designation"; Rec."Internal Designation")
                 {
 
 

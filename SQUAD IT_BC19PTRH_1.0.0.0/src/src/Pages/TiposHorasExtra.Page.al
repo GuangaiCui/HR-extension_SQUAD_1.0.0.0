@@ -13,12 +13,12 @@ page 53089 "Tipos Horas Extra"
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Código"; Rec."Código")
+                field("Código"; Rec."Code")
                 {
 
 
                 }
-                field("Descrição"; Rec."Descrição")
+                field("Descrição"; Rec.Description)
                 {
 
 
@@ -38,7 +38,7 @@ page 53089 "Tipos Horas Extra"
 
 
                 }
-                field("Dia semanal"; Rec."Dia semanal")
+                field("Dia semanal"; Rec."Weekly Schedule")
                 {
 
 

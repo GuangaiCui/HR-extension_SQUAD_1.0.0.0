@@ -418,7 +418,7 @@ xmlport 53037 "RU - Anexo B - FEST"
                                                 repeat
                                                     rHorasExtra.Reset;
                                                     if (rHorasExtra.Get(rHistHorasExtra."Cód. Hora Extra")) and
-                                                       (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 1 do Artigo 227") then
+                                                       (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 1 of Article 227") then
                                                         dec_horas_1art227 := dec_horas_1art227 + rHistHorasExtra.Quantity;
                                                 until rHistHorasExtra.Next = 0;
                                             end;
@@ -440,7 +440,7 @@ xmlport 53037 "RU - Anexo B - FEST"
                                                 repeat
                                                     rHorasExtra.Reset;
                                                     if (rHorasExtra.Get(rHistHorasExtra."Cód. Hora Extra")) and
-                                                       (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 2 do Artigo 227") then
+                                                       (rHorasExtra."Lei n. 7/2009 de 12 Fevereiro" = rHorasExtra."Lei n. 7/2009 de 12 Fevereiro"::"No. 2 of Article 227") then
                                                         dec_horas_2art227 := dec_horas_2art227 + rHistHorasExtra.Quantity;
                                                 until rHistHorasExtra.Next = 0;
                                             end;

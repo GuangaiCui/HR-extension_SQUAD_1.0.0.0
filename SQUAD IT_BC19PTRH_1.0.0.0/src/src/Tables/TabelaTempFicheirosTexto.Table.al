@@ -5,12 +5,13 @@ table 53112 "Tabela Temp Ficheiros Texto"
 
     fields
     {
-        field(1; "Tipo Ficheiro"; Option)
+        field(1; "File Type"; Option)
         {
-            OptionCaption = 'MapaSS,PS2,AnexoJ,QP,CGA,DMR-AT,Seguros';
+            //OptionCaption = 'MapaSS,PS2,AnexoJ,QP,CGA,DMR-AT,Seguros';
+            //TODO: doubts on the translation of options
             OptionMembers = MapaSS,PS2,AnexoJ,QP,CGA,"DMR-AT",Seguros;
         }
-        field(2; NLinha; Integer)
+        field(2; "Line No."; Integer)
         {
         }
         field(5; Texto1; Text[250])
@@ -19,26 +20,26 @@ table 53112 "Tabela Temp Ficheiros Texto"
         field(6; Texto2; Text[250])
         {
         }
-        field(10; Data; Date)
+        field(10; Date; Date)
         {
         }
         field(20; "Employee No."; Code[20])
         {
         }
-        field(21; "Cod. Situacao"; Code[20])
+        field(21; "Situation Code"; Code[20])
         {
         }
-        field(22; Valor; Decimal)
+        field(22; Amount; Decimal)
         {
         }
-        field(23; NDias; Decimal)
+        field(23; "No. of Days"; Decimal)
         {
         }
     }
 
     keys
     {
-        key(Key1; "Tipo Ficheiro", NLinha)
+        key(Key1; "File Type", "Line No.")
         {
             Clustered = true;
         }
