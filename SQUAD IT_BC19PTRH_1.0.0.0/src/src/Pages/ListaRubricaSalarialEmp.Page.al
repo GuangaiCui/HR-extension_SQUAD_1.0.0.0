@@ -3,7 +3,7 @@ page 53101 "Lista Rubrica Salarial Emp."
 {
     AutoSplitKey = true;
     DataCaptionFields = "Employee No.";
-    DelayedInsert = true;
+    //DelayedInsert = true;
     PageType = List;
     RefreshOnActivate = true;
     SourceTable = "Rubrica Salarial Empregado";
@@ -16,11 +16,6 @@ page 53101 "Lista Rubrica Salarial Emp."
             repeater(Control1101490000)
             {
                 ShowCaption = false;
-                field("Employee No."; Rec."Employee No.")
-                {
-
-
-                }
                 field("Cód. Rúbrica Salarial"; Rec."Cód. Rúbrica Salarial")
                 {
 
