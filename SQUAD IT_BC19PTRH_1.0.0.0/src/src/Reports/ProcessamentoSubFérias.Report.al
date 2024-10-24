@@ -352,8 +352,12 @@ report 53041 "Processamento Sub. Férias"
                                 ValorIncidenciaIRS := ValorIncidenciaIRS + TempRubricaEmpregado2."Total Amount";
                                 ValorEscalaoSobretaxa := Empregado."Valor Vencimento Base";
                                 if Empregado."IRS % Fixa" = 0.0 then begin
-                                    IRSTaxa := FuncoesRH.CalcularTaxaIRS(ValorIncidenciaIRS, Empregado,
-                                                                        Date2DMY("Periodos Processamento"."Data Registo", 3));
+
+                                    //NEEEEEEEEEEEDS FIXING
+                                    //    IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(ValorIncidenciaIRS, Empregado, 
+                                    //                                       Date2DMY("Periodos Processamento"."Data Registo", 3));
+
+
                                     TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100, 1, '<');//HG arred IRS
                                     TempRubricaEmpregado2.Quantity := IRSTaxa;
                                 end else begin

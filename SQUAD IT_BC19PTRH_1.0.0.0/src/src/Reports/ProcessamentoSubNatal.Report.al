@@ -374,8 +374,9 @@ report 53040 "Processamento Sub. Natal"
                                 if Empregado."IRS % Fixa" = 0.0 then begin
                                     //2009.01.28 - Proporcionais SubNatal
                                     //********************************************
-                                    IRSTaxa := FuncoesRH.CalcularTaxaIRS(ValorIncidenciaIRS, Empregado,
-                                                                        Date2DMY("Periodos Processamento"."Data Registo", 3));
+                                    //NEEEEEEEEEEEDS FIXING
+                                    //  IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(ValorIncidenciaIRS, Empregado,
+                                    //                                     Date2DMY("Periodos Processamento"."Data Registo", 3));
                                     TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100, 1, '<');
                                     TempRubricaEmpregado2.Quantity := IRSTaxa;
                                 end else begin
