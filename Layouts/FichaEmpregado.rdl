@@ -10703,6 +10703,15 @@ End Function
         <Field Name="Empregado__Birth_Date_">
           <DataField>Empregado__Birth_Date_</DataField>
         </Field>
+        <Field Name="Empregado_Naturalidade">
+          <DataField>Empregado_Naturalidade</DataField>
+        </Field>
+        <Field Name="Empregado_NaturalidadeCaption">
+          <DataField>Empregado_NaturalidadeCaption</DataField>
+        </Field>
+        <Field Name="NacionalidadeCaption">
+          <DataField>NacionalidadeCaption</DataField>
+        </Field>
         <Field Name="varPais">
           <DataField>varPais</DataField>
         </Field>
@@ -10960,9 +10969,6 @@ End Function
         </Field>
         <Field Name="Empregado__Birth_Date_Caption">
           <DataField>Empregado__Birth_Date_Caption</DataField>
-        </Field>
-        <Field Name="NacionalidadeCaption">
-          <DataField>NacionalidadeCaption</DataField>
         </Field>
         <Field Name="Doc__IdentificaçãoCaption">
           <DataField>Doc__IdentificaçãoCaption</DataField>
