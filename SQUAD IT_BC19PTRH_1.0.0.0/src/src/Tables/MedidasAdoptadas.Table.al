@@ -5,11 +5,9 @@ table 53122 "Medidas Adoptadas"
     {
         field(1; "Entry No."; Integer)
         {
-            Caption = 'Nº Mov';
         }
         field(2; "No. Linha"; Integer)
         {
-            Caption = 'Nº Linha';
         }
         field(3; "Tipo de Risco"; Option)
         {

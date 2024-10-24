@@ -17,7 +17,6 @@ table 53053 "Config. Recursos Humanos"
         }
         field(3; "Base Unit of Measure"; Code[10])
         {
-            Caption = 'Unidade Base de Medida';
             TableRelation = "Unid. Medida Recursos Humanos";
 
             trigger OnValidate()
@@ -53,7 +52,6 @@ table 53053 "Config. Recursos Humanos"
         }
         field(25; "Use Holidays to Calc Lunch Sub"; Boolean)
         {
-            Caption = 'Usar Feriados calculo Sub Ali';
         }
         field(30; "Name of HR Responsable"; Text[60])
         {

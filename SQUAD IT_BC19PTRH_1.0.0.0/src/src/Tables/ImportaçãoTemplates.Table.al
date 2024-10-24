@@ -9,19 +9,16 @@ table 53114 "Importação Templates"
     {
         field(1; "No."; Code[100])
         {
-            Caption = 'No.';
             NotBlank = true;
         }
         field(2; "Report ID"; Integer)
         {
             DataClassification = ToBeClassified;
-            caption = 'Nº Report';
         }
 
         field(3; "Report Layout"; Code[50])
         {
             DataClassification = ToBeClassified;
-            Caption = 'Layout Report';
             trigger OnLookup()
             var
 
@@ -48,7 +45,6 @@ table 53114 "Importação Templates"
 
         field(4; "ReportCode"; code[20])
         {
-            Caption = 'Report Code';
         }
 
         /*
@@ -65,19 +61,15 @@ table 53114 "Importação Templates"
         */
         field(5; "File Extension"; enum fileExtension)
         {
-            Caption = 'File Extension';
         }
         field(6; "Read Only"; Boolean)
         {
-            Caption = 'Read Only';
         }
         field(7; "Last Date Modified"; Date)
         {
-            Caption = 'Last Date Modified';
         }
         field(8; "Last Time Modified"; Time)
         {
-            Caption = 'Last Time Modified';
         }
     }
 

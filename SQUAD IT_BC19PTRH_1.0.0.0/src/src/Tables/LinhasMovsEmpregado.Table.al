@@ -17,7 +17,6 @@ table 53080 "Linhas Movs. Empregado"
         }
         field(3; "Employee No."; Code[20])
         {
-            Caption = 'No. Empregado';
             TableRelation = Empregado;
 
             trigger OnValidate()

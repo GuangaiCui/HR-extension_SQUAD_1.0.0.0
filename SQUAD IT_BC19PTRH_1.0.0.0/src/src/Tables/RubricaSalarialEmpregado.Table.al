@@ -8,7 +8,6 @@ table 53078 "Rubrica Salarial Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
         field(2; "Cód. Rúbrica Salarial"; Code[20])
@@ -33,21 +32,17 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(3; "Line No."; Integer)
         {
-            Caption = 'No. Linha';
         }
         field(8; "Payroll Item Type"; Option)
         {
-            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
         field(9; "Payroll Item Description"; Text[100])
         {
-            Caption = 'Descrição Rubrica';
         }
         field(14; "Debit Acc. No."; Code[20])
         {
-            Caption = 'No. Conta a Debitar';
             TableRelation = "G/L Account";
 
             trigger OnValidate()
@@ -62,7 +57,6 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(15; "Credit Acc. No."; Code[20])
         {
-            Caption = 'No. Conta a Creditar';
             TableRelation = "G/L Account";
 
             trigger OnValidate()
@@ -77,7 +71,6 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(20; Quantity; Decimal)
         {
-            Caption = 'Quantidade';
 
             trigger OnValidate()
             begin
@@ -88,7 +81,6 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(21; "Unit Value"; Decimal)
         {
-            Caption = 'Valor Unitário';
 
             trigger OnValidate()
             begin
@@ -99,7 +91,6 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(22; "Total Amount"; Decimal)
         {
-            Caption = 'Valor Total';
             trigger OnValidate()
             begin
                 //HG - Não deixar colocar valor na rubrica se esta tiver filhas, pois neste caso o valor é o somatório das filhas
@@ -121,7 +112,6 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(30; "Sort"; Integer)
         {
-            Caption = 'Ordenação';
             Description = 'Define a ordem pela qual as rúbricas aparecem no recibo';
         }
         field(60; "Cód. Situação"; Code[2])
@@ -161,7 +151,6 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(91; "Unit of Measure"; Code[20])
         {
-            Caption = 'Unidade Medida';
             Description = 'HG - por causa das ausencias em dias e em horas';
         }
         field(98; "Data a que se refere o mov"; Date)
@@ -176,7 +165,6 @@ table 53078 "Rubrica Salarial Empregado"
         }
         field(101; Table; Integer)
         {
-            Caption = 'Tabela';
             Description = 'Usado na Analitica para relacionar com Coef Default';
         }
         field(105; "Valor Incidência SS"; Decimal)
@@ -187,20 +175,17 @@ table 53078 "Rubrica Salarial Empregado"
         field(110; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
-            Caption = 'Cód. Dimensão 1 Global';
             Description = 'Para as horas extra';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(111; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
-            Caption = 'Cód. Dimensão 1 Global';
             Description = 'Para as horas extra';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(120; "Garnishmen No."; Code[50])
         {
-            Caption = 'Garnishmen No.';
             DataClassification = ToBeClassified;
         }
     }

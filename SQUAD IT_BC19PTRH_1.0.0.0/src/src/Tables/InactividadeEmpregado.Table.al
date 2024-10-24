@@ -6,7 +6,6 @@ table 53057 "Inactividade Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
         field(2; "No. Linha"; Integer)

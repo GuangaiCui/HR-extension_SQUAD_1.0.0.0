@@ -6,15 +6,12 @@ table 53124 "Linhas Acções Médicas"
         field(1; "Entry No."; Integer)
         {
             AutoIncrement = true;
-            Caption = 'Nº Mov';
         }
         field(2; "Line No."; Integer)
         {
-            Caption = 'Nº Linha';
         }
         field(3; "Employee No."; Code[20])
         {
-            Caption = 'Nº Empregado';
             TableRelation = Empregado;
 
             trigger OnValidate()
@@ -27,28 +24,22 @@ table 53124 "Linhas Acções Médicas"
         }
         field(4; Name; Text[75])
         {
-            Caption = 'Nome';
         }
         field(6; Date; Date)
         {
-            Caption = 'Data';
         }
         field(7; Hour; Time)
         {
-            Caption = 'Hora';
         }
         field(8; Status; Option)
         {
-            Caption = 'Estado';
             OptionMembers = Planeada,Agendada,Realizada,Cancelada;
         }
         field(9; Observations; Text[250])
         {
-            Caption = 'Observações';
         }
         field(10; Attachment; BLOB)
         {
-            Caption = 'Anexo';
         }
     }
 

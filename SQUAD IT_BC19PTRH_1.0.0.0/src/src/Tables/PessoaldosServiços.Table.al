@@ -25,7 +25,6 @@ table 53116 "Pessoal dos Serviços"
         }
         field(9; "Employer Name"; Text[70])
         {
-            Caption = 'Nome Empregador';
         }
         field(10; "Emp. - No. Autorização"; Text[8])
         {

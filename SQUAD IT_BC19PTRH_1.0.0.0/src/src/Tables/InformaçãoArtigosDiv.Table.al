@@ -9,13 +9,11 @@ table 53049 "Informação Artigos Div."
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'No. Empregado';
             NotBlank = true;
             TableRelation = Empregado;
         }
         field(2; "Misc. Article Code"; Code[10])
         {
-            Caption = 'Cód. Artigo Diverso';
             NotBlank = true;
             TableRelation = "Artigo Diverso";
 
@@ -27,23 +25,18 @@ table 53049 "Informação Artigos Div."
         }
         field(3; "Line No."; Integer)
         {
-            Caption = 'No. Linha';
         }
         field(4; Description; Text[30])
         {
-            Caption = 'Descrição';
         }
         field(5; "From Date"; Date)
         {
-            Caption = 'Data Início';
         }
         field(6; "To Date"; Date)
         {
-            Caption = 'Data Fim';
         }
         field(7; "In Use"; Boolean)
         {
-            Caption = 'Em Utilização';
         }
         field(8; Comment; Boolean)
         {
@@ -51,13 +44,11 @@ table 53049 "Informação Artigos Div."
                                                                       "No." = FIELD("Employee No."),
                                                                       "Alternative Address Code" = FIELD("Misc. Article Code"),
                                                                       "Table Line No." = FIELD("Line No.")));
-            Caption = 'Comentário';
             Editable = false;
             FieldClass = FlowField;
         }
         field(9; "Serial No."; Text[30])
         {
-            Caption = 'No Série';
         }
     }
 

@@ -11,7 +11,6 @@ table 53066 "Horário Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'No. Empregado';
             TableRelation = Empregado;
         }
         field(2; "No. Linha"; Integer)

@@ -16,7 +16,6 @@ table 53076 "Payroll Item"
         }
         field(6; "Payroll Item Type"; Option)
         {
-            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
@@ -66,7 +65,6 @@ table 53076 "Payroll Item"
         }
         field(25; Quantity; Decimal)
         {
-            Caption = 'Quantidade';
 
             trigger OnValidate()
             begin
@@ -75,7 +73,6 @@ table 53076 "Payroll Item"
         }
         field(26; "Unit Value"; Decimal)
         {
-            Caption = 'Valor Unitário';
 
             trigger OnValidate()
             begin
@@ -84,7 +81,6 @@ table 53076 "Payroll Item"
         }
         field(27; "Total Amount"; Decimal)
         {
-            Caption = 'Valor Total';
 
             trigger OnValidate()
             begin
@@ -94,10 +90,7 @@ table 53076 "Payroll Item"
         }
         field(35; NATREM; Enum "Rubrica Salarial Nat. Rem.")
         {
-            Caption = 'NATREM';
             Description = 'Mapa Seg. Social';
-            //OptionCaption = ' ,Comissões - C,Cód. Sub. Férias - F,Cód. Sub. Natal - N,Remuneração Permanente - P,Subsídios Reg. Não Mensal - X,Forças Armadas,Férias Pagas não Gozadas - 2,Diferenças de Vencimento - 6,Ajudas Custo e Trans. - A,Prémios Bonus e outras Prest. Mensais - B,Compensação Cessação Contrato - D,Honorários - H,Subsídios Regulares Mensais - M,Prémios Bonus e outras Prest. Não Mensais - O,Sub. Ref. - R,Trab. Supl. - S,Trab. Noct. - T,Compensação Cont. Intermitente - I';
-            //OptionMembers = " ","Cód. Comissões","Cód. Sub. Férias","Cód. Sub. Natal","Remuneração Permanente","Subsídios Reg. Não Mensal","Forças Armadas","Férias Pagas não Gozadas","Diferenças de Vencimento","Ajudas Custo e Trans.","Prémios-Bonus Mensal","Compensação","Honorários","Subsídios regulares","Prémios-bonus Não mensal","Sub. Ref.","Trab. Supl.","Trab. Noct.","Compensação Cont. Intermitente";
 
             trigger OnValidate()
             var
@@ -139,7 +132,6 @@ table 53076 "Payroll Item"
         }
         field(55; "Cód. Situação"; Code[2])
         {
-            Description = 'CGA';
             TableRelation = "Códigos Situação"."Cód. Situação";
         }
         field(56; "Cód. Movimento"; Option)

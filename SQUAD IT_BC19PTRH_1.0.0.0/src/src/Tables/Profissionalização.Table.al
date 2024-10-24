@@ -6,7 +6,6 @@ table 53100 "Profissionalização"
         field(1; "Entry No."; Integer)
         {
             AutoIncrement = true;
-            Caption = 'No. Mov';
         }
         field(2; "Data Início"; Date)
         {

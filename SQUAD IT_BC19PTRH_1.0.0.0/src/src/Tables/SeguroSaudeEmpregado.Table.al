@@ -8,7 +8,6 @@ table 53128 "Seguro Saude Empregado"
     {
         field(1; "Employee No."; Code[20])
         {
-            Caption = 'No. Empregado';
             TableRelation = Empregado;
 
             trigger OnValidate()
@@ -25,7 +24,7 @@ table 53128 "Seguro Saude Empregado"
         }
         field(6; "No. Seguro"; Text[30])
         {
-            Caption = 'Nº de Seguro';
+
         }
         field(7; Parentesco; Code[10])
         {
@@ -52,7 +51,6 @@ table 53128 "Seguro Saude Empregado"
         }
         field(11; Tipo; Option)
         {
-            OptionCaption = 'Saúde,Vida';
             OptionMembers = "Saúde",Vida;
         }
         field(20; "Valor Anual"; Decimal)

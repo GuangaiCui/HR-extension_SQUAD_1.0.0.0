@@ -15,7 +15,6 @@ table 53113 "Integração Contabilistica"
         }
         field(3; "Employee No."; Code[20])
         {
-            Caption = 'No. Empregado';
             TableRelation = Empregado;
 
             trigger OnValidate()
@@ -40,11 +39,9 @@ table 53113 "Integração Contabilistica"
         }
         field(20; "Payroll Item Description"; Text[100])
         {
-            Caption = 'Descrição Rubrica';
         }
         field(21; "Payroll Item Type"; Option)
         {
-            Caption = 'Tipo Rubrica';
             OptionCaption = 'Abono,Desconto';
             OptionMembers = Abono,Desconto;
         }
@@ -61,7 +58,7 @@ table 53113 "Integração Contabilistica"
         field(42; "Shortcut Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,2,1';
-            Caption = 'Cód. Atalho Dimensão 1';
+            // Caption = 'Cód. Atalho Dimensão 1';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
 
             trigger OnValidate()
@@ -72,7 +69,7 @@ table 53113 "Integração Contabilistica"
         field(43; "Shortcut Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,2,2';
-            Caption = 'Cód. Atalho Dimensão 2';
+            //Caption = 'Cód. Atalho Dimensão 2';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
 
             trigger OnValidate()
@@ -83,20 +80,20 @@ table 53113 "Integração Contabilistica"
         field(110; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
-            Caption = 'Cód. Dimensão 1 Global';
+            //Caption = 'Cód. Dimensão 1 Global';
             Description = 'Para as horas extra';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(111; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
-            Caption = 'Cód. Dimensão 2 Global';
+            //Caption = 'Cód. Dimensão 2 Global';
             Description = 'Para as horas extra';
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(480; "Dimension Set ID"; Integer)
         {
-            Caption = 'ID Conj. Dimensões';
+            // Caption = 'ID Conj. Dimensões';
             TableRelation = "Dimension Set Entry";
         }
     }

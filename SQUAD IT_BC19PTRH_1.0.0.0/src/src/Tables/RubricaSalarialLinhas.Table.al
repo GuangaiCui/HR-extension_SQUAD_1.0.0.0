@@ -6,12 +6,12 @@ table 53077 "Rubrica Salarial Linhas"
     {
         field(1; "Payroll Item Code"; Code[20])
         {
-            Caption = 'Cód. Rubrica';
+            //Caption = 'Cód. Rubrica';
             TableRelation = "Payroll Item";
         }
         field(2; "Cód. Rubrica Filha"; Code[20])
         {
-            Caption = 'Second Salary Iten Code';
+            //Caption = 'Second Salary Iten Code';
             TableRelation = "Payroll Item";
 
             trigger OnValidate()

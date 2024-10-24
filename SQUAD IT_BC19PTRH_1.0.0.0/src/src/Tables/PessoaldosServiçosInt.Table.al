@@ -20,7 +20,6 @@ table 53117 "Pessoal dos Serviços Int"
         }
         field(5; Name; Text[70])
         {
-            Caption = 'Nome';
         }
         field(6; "No. da Cédula Profissional"; Text[5])
         {

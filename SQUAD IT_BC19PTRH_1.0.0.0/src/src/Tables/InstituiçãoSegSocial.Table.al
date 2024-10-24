@@ -7,19 +7,15 @@ table 53067 "Instituição Seg. Social"
     {
         field(1; "Code"; Code[20])
         {
-            Caption = 'Código';
         }
         field(2; Description; Text[200])
         {
-            Caption = 'Descrição';
         }
         field(3; Address; Text[30])
         {
-            Caption = 'Endereço';
         }
         field(4; "Post Code"; Code[10])
         {
-            Caption = 'Cód. Postal';
             TableRelation = "Post Code".Code;
 
             trigger OnValidate()
@@ -29,7 +25,6 @@ table 53067 "Instituição Seg. Social"
         }
         field(5; City; Text[30])
         {
-            Caption = 'Cidade';
 
             trigger OnValidate()
             begin
@@ -38,26 +33,21 @@ table 53067 "Instituição Seg. Social"
         }
         field(6; "Phone No."; Text[30])
         {
-            Caption = 'Telefone';
             Numeric = true;
         }
         field(7; Fax; Text[30])
         {
-            Caption = 'Fax';
             Numeric = true;
         }
         field(8; County; Text[30])
         {
-            Caption = 'Distrito';
         }
         field(10; NIPC; Text[9])
         {
-            Caption = 'NIPC';
             Description = 'DMR';
         }
         field(11; "Country Code"; Code[10])
         {
-            Caption = 'Cód. País';
         }
     }
 

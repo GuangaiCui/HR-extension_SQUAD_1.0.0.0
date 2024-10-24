@@ -7,7 +7,6 @@ table 53069 "Tabela IRS"
     {
         field(1; "Line No."; Integer)
         {
-            Caption = 'Line No.';
         }
         field(2; "Região"; Option)
         {
