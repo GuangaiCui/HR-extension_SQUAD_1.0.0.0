@@ -938,13 +938,13 @@ report 53070 "Mapa Integração Contabilística"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(AgruparContasBalanco; AgruparContasBalanco)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Agrupar contas de balanço';
                     }
                 }

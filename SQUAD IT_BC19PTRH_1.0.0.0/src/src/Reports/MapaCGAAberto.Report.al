@@ -726,27 +726,27 @@ report 53052 "Mapa CGA - Aberto"
             {
                 field(DataIni; DataIni)
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     Caption = 'Start Date';
                 }
                 field(DataFim; DataFim)
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     Caption = 'End Date';
                 }
                 field("Observações Tipo1"; "Observações Tipo1")
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     Caption = 'Observações Tipo 1';
                 }
                 field("Observações Tipo2"; "Observações Tipo2")
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     Caption = 'Observações Tipo 2';
                 }
                 field("Observações Tipo3"; "Observações Tipo3")
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     Caption = 'Observações Tipo 3';
                 }
             }

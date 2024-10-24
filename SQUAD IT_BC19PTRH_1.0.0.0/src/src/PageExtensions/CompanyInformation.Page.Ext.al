@@ -72,5 +72,6 @@ pageextension 53035 CompanyInfoRH extends "Company Information"
         }
 
     }
+
 }
 

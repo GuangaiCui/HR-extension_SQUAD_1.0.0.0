@@ -936,13 +936,13 @@ report 53073 "Mapa Validação Contabilística"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(AgruparContasBalanco; AgruparContasBalanco)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Agrupar contas de balanço';
                     }
                 }

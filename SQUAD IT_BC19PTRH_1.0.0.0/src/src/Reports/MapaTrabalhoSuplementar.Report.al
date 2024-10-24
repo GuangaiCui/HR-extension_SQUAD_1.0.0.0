@@ -204,12 +204,12 @@ report 53069 "Mapa Trabalho Suplementar"
                     Caption = 'Trabalho Suplementar';
                     field(Semestre; Semestre)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Semester';
                     }
                     field(Ano; Ano)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Year';
                     }
                 }

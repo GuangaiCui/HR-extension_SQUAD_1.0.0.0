@@ -743,7 +743,7 @@ report 53041 "Processamento Sub. Férias"
                     Caption = 'Periodo Processamento';
                     field(PeriodoCode; PeriodoCode)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Periodo Processamento';
                         TableRelation = "Periodos Processamento";
                     }
@@ -753,13 +753,13 @@ report 53041 "Processamento Sub. Férias"
                     Caption = 'Apagar Processamento de Empregado';
                     field(ApagaEmp; ApagaEmp)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Nº Empregado a apagar';
                         TableRelation = Empregado;
                     }
                     field(apagaTodosEmp; apagaTodosEmp)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Apagar Todos os Empregados';
                     }
                 }

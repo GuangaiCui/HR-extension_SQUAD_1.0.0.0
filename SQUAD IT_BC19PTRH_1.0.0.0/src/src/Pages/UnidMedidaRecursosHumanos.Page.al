@@ -36,6 +36,7 @@ page 53071 "Unid. Medida Recursos Humanos"
     actions
     {
     }
+
 }
 
 #pragma implicitwith restore

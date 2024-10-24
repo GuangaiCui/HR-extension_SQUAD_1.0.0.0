@@ -44,18 +44,18 @@ report 53036 "Hora Extra Colectiva"
                     Caption = 'Hora Extra Colectiva';
                     field(VarTipoHora; VarTipoHora)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Tipo Hora Extra';
                         TableRelation = "Tipos Horas Extra";
                     }
                     field(VarData; VarData)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data';
                     }
                     field(VarQuantidade; VarQuantidade)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Quantidade';
                     }
                 }

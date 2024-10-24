@@ -356,15 +356,16 @@ report 53098 "Mapa Resumo Processamento B"
 
                         Caption = 'Cod. Processamento';
                         TableRelation = "Periodos Processamento";
+                        ApplicationArea = HumanResourcesAppArea;
                     }
                     field(DataInicio; DataInicio)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data Fim';
                     }
                 }

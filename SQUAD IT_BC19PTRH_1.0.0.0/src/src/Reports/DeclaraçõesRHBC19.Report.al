@@ -149,12 +149,12 @@ report 53095 "Declarações RH BC"
             {
                 field(NomePessoaAssina; NomePessoaAssina)
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     Caption = 'Nome da Pessoa que assina';
                 }
                 field(cargo; cargo)
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     Caption = 'Cargo';
                 }
             }

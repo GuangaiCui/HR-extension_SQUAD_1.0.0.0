@@ -8698,20 +8698,12 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipo Empregado - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 3757299140 - Field 743017303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-=======
         <trans-unit id="Table 3757299140 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
->>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipo Empregado - Field Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 3757299140 - Field 1347197603 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-=======
         <trans-unit id="Table 3757299140 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
->>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipo Empregado - Field Description - Property Caption</note>
@@ -8721,11 +8713,7 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 3602875088 - Field 743017303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-=======
         <trans-unit id="Table 3602875088 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
->>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
           <source>Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Code - Property Caption</note>
@@ -8735,27 +8723,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Date Filter - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 3602875088 - Field 1347197603 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Description</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Descrição - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3602875088 - Field 125189855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Week Day</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Dia semanal - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 3602875088 - Field 125189855 - Property 62802879" size-unit="char" translate="yes" xml:space="preserve">
-          <source> ,Dia útil,Descanso complementar,Feriado,Descanso obrigatório</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Dia semanal - Property OptionCaption</note>
-=======
         <trans-unit id="Table 3602875088 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Description</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Tipos Horas Extra - Field Description - Property Caption</note>
->>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
         </trans-unit>
         <trans-unit id="Table 3602875088 - Field 2302164855 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Employee No. Filter</source>
@@ -8812,13 +8783,8 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - Field Code - Property Caption</note>
         </trans-unit>
-<<<<<<< HEAD
-        <trans-unit id="Table 4116002769 - Field 3192555061 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Interna Description</source>
-=======
         <trans-unit id="Table 4116002769 - Field 1469990020 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Internal Designation</source>
->>>>>>> 1772636070a488c755c4bd6f18c949ce6379a8f1
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Unid. Medida Recursos Humanos - Field Internal Designation - Property Caption</note>
         </trans-unit>

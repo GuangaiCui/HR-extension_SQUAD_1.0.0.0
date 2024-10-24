@@ -524,18 +524,18 @@ report 53056 "Mapa Resumo Processamento"
                     Caption = 'Resumo Processamento';
                     field(CodProcess; CodProcess)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Cod. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data Fim';
                     }
                 }

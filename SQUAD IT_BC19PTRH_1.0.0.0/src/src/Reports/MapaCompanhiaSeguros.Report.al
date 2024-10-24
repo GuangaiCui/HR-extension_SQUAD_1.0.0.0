@@ -779,23 +779,23 @@ report 53093 "Mapa Companhia Seguros"
                     Caption = 'Companhia Seguros';
                     field(CodProcess; CodProcess)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data Fim';
                     }
                     field(Venc; varVencimento)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Vencimento';
                         TableRelation = "Payroll Item";
 
@@ -815,7 +815,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(Diu; varDiuturnidades)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Diuturnidades';
                         TableRelation = "Payroll Item";
 
@@ -835,7 +835,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(SA; varSubsAlmoco)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Subsídio Almoço';
                         TableRelation = "Payroll Item";
 
@@ -855,7 +855,7 @@ report 53093 "Mapa Companhia Seguros"
                     }
                     field(SF; varSubsNatalFerias)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Subsídio Natal/Férias';
                         TableRelation = "Payroll Item";
 
