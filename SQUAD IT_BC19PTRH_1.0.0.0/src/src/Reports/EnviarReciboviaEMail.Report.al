@@ -171,12 +171,12 @@ report 53100 "Enviar Recibo via EMail"
                     Caption = 'Enviar Recibo Via Email';
                     field(EnviarTodos; EnviarTodos)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Enviar para todos os Empregados com a opção "Envio Recibo via E-Mail"';
                     }
                     field(CodProcess; CodProcess)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Processamento';
                         TableRelation = "Periodos Processamento";
                     }

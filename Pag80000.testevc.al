@@ -6,6 +6,7 @@ page 80000 teste_vc
     Caption = 'teste_vc';
     PageType = ListPart;
     SourceTable = "Rubrica Salarial Linhas";
+    ApplicationArea = HumanResourcesAppArea;
     layout
     {
         area(Content)

@@ -429,7 +429,7 @@ report 53072 "Mapa Férias Global"
                     Caption = 'Mapa Férias Global';
                     field(VarAno; VarAno)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Year';
                     }
                 }

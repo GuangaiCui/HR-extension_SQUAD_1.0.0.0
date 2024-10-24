@@ -257,23 +257,23 @@ report 53084 "Mapa Sindicato"
                     Caption = 'Sindicato';
                     field(CodProcess; CodProcess)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Cód. Processamento';
                         TableRelation = "Periodos Processamento";
                     }
                     field(DataInicio; DataInicio)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data Inicio';
                     }
                     field(DataFim; DataFim)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Data Fim';
                     }
                     field(Sindicato; CodSindicato)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Sindicato';
                         TableRelation = Sindicato;
 
@@ -285,7 +285,7 @@ report 53084 "Mapa Sindicato"
                     }
                     field(CodRubricas; CodRubricas)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Rubrica Salarial';
                         TableRelation = "Payroll Item";
                     }

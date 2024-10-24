@@ -106,8 +106,7 @@ report 53097 "Contract Templates"
             {
                 action(LayoutName)
                 {
-
-
+                    ApplicationArea = HumanResourcesAppArea;
                 }
             }
         }

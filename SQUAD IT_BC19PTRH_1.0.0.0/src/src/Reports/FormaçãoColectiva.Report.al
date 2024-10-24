@@ -41,7 +41,7 @@ report 53090 "Formação Colectiva"
                     Caption = 'Formação Colectiva';
                     field(CodAccao; CodAccao)
                     {
-
+                        ApplicationArea = HumanResourcesAppArea;
                         Caption = 'Cód. Formação';
                         TableRelation = "Acções Formação";
                     }

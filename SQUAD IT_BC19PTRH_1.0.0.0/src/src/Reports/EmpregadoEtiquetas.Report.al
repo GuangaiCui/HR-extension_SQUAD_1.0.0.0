@@ -147,12 +147,12 @@ report 53058 "Empregado - Etiquetas"
             {
                 field(AddrFormat; AddrFormat)
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     ShowCaption = false;
                 }
                 field(LabelFormat; LabelFormat)
                 {
-
+                    ApplicationArea = HumanResourcesAppArea;
                     ShowCaption = false;
                 }
             }
