@@ -11,7 +11,7 @@ report 53066 "Ficha Empregado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\FichaEmpregado.rdl';
+    RDLCLayout = '.\Layouts\FichaEmpregado.rdl';
 
     Caption = 'Ficha Empregado';
     PreviewMode = PrintLayout;
