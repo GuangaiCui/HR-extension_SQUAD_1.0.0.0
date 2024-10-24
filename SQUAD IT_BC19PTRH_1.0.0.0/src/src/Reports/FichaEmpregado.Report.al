@@ -11,7 +11,7 @@ report 53066 "Ficha Empregado"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\FichaEmpregado.rdl';
+    RDLCLayout = '.\Layouts\FichaEmpregado.rdl';
 
     Caption = 'Ficha Empregado';
     PreviewMode = PrintLayout;
@@ -111,6 +111,17 @@ report 53066 "Ficha Empregado"
             column(Empregado__Birth_Date_; "Birth Date")
             {
             }
+            column(Empregado_Naturalidade; Naturalidade)
+            {
+            }
+            column(Empregado_NaturalidadeCaption; FIELDCAPTION(Naturalidade))
+            {
+            }
+
+            column(NacionalidadeCaption; NacionalidadeCaptionLbl)
+            {
+            }
+
             column(varPais; varPais)
             {
             }
@@ -345,9 +356,7 @@ report 53066 "Ficha Empregado"
             column(Empregado__Birth_Date_Caption; FieldCaption("Birth Date"))
             {
             }
-            column(NacionalidadeCaption; NacionalidadeCaptionLbl)
-            {
-            }
+
             column("Doc__IdentificaçãoCaption"; Doc__IdentificaçãoCaptionLbl)
             {
             }
