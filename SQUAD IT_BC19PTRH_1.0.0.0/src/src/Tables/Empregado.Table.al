@@ -12,7 +12,6 @@ table 53035 "Empregado"
     {
         field(1; "No."; Code[20])
         {
-            Caption = 'No.';
 
             trigger OnValidate()
             begin
@@ -25,7 +24,6 @@ table 53035 "Empregado"
         }
         field(2; Name; Text[75])
         {
-            Caption = 'Nome Completo';
 
             trigger OnValidate()
             begin
@@ -73,15 +71,12 @@ table 53035 "Empregado"
         }
         field(3; "First Name"; Text[65])
         {
-            Caption = 'Nome Próprio';
         }
         field(4; "Last Name"; Text[65])
         {
-            Caption = 'Último Nome';
         }
         field(5; Initials; Text[30])
         {
-            Caption = 'Iniciais';
 
             trigger OnValidate()
             begin
@@ -89,25 +84,20 @@ table 53035 "Empregado"
                     "Search Name" := Initials;
             end;
         }
-        field(6; "Job Title"; Text[30])
+        field(6; "Job Title"; Text[100])
         {
-            Caption = 'Cargo';
         }
         field(7; "Search Name"; Code[30])
         {
-            Caption = 'Alias Nome';
         }
         field(8; Address; Text[75])
         {
-            Caption = 'Endereço';
         }
         field(9; "Address 2"; Text[75])
         {
-            Caption = 'Endereço 2';
         }
         field(10; City; Text[30])
         {
-            Caption = 'Cidade';
 
             trigger OnLookup()
             begin
@@ -122,7 +112,6 @@ table 53035 "Empregado"
         }
         field(11; "Post Code"; Code[20])
         {
-            Caption = 'Cód. Postal';
             TableRelation = "Post Code";
             //This property is currently not supported
             //TestTableRelation = false;
@@ -135,73 +124,58 @@ table 53035 "Empregado"
         }
         field(12; County; Text[30])
         {
-            Caption = 'Distrito';
         }
         field(13; "Phone No."; Text[30])
         {
-            Caption = 'Telefone';
             ExtendedDatatype = PhoneNo;
         }
         field(14; "Mobile Phone No."; Text[30])
         {
-            Caption = 'Nº telefone Móvel';
             ExtendedDatatype = PhoneNo;
         }
         field(15; "E-Mail"; Text[80])
         {
-            Caption = 'E-Mail';
             ExtendedDatatype = EMail;
         }
         field(16; "Alt. Address Code"; Code[10])
         {
-            Caption = 'Cód. Endereço Altern.';
             TableRelation = "Endereço Alternativo".Code WHERE("Employee No." = FIELD("No."));
         }
         field(17; "Alt. Address Start Date"; Date)
         {
-            Caption = 'Data Início Endç. Alter.';
         }
         field(18; "Alt. Address End Date"; Date)
         {
-            Caption = 'Data Final Endç. Alter.';
         }
         field(19; Picture; BLOB)
         {
-            Caption = 'Imagem';
             SubType = Bitmap;
         }
         field(20; "Birth Date"; Date)
         {
-            Caption = 'Data Nascimento';
         }
         field(21; "Social Security No."; Text[30])
         {
-            Caption = 'No. Segurança Social';
             Enabled = false;
         }
         field(22; "Union Code"; Code[10])
         {
-            Caption = 'Cód. Sindicato';
             TableRelation = Sindicato;
         }
         field(23; "Union Membership No."; Text[30])
         {
-            Caption = 'Nº Afiliação Sindicato';
         }
         field(24; Sex; Option)
         {
-            Caption = 'Sexo';
             OptionCaption = ' ,Feminino,Masculino';
             OptionMembers = " ",Female,Male;
         }
         field(25; "Country Code"; Code[10])
         {
-            Caption = 'Cód. País';
             TableRelation = "Country/Region";
         }
         field(26; "Manager No."; Code[20])
         {
-            Caption = 'No. Director';
             TableRelation = Empregado;
         }
         field(27; "Emplymt. Contract Code"; Code[10])
@@ -209,21 +183,17 @@ table 53035 "Empregado"
             CalcFormula = Lookup("Contrato Empregado"."Cód. Contrato" WHERE("Cód. Empregado" = FIELD("No."),
                                                                              "Data Inicio Contrato" = FIELD("Data Filtro Inicio"),
                                                                              "Data Fim Contrato" = FIELD("Data Filtro Fim")));
-            Caption = 'Cód. Contrato Trabalho';
             FieldClass = FlowField;
         }
         field(28; "Statistics Group Code"; Code[10])
         {
-            Caption = 'Cód. Departamento';
             TableRelation = "Departamentos Empregado";
         }
         field(29; "Employment Date"; Date)
         {
-            Caption = 'Data Admissão';
         }
         field(31; Status; Enum "Employee Status")
         {
-            Caption = 'Estado';
 
             trigger OnValidate()
             begin
@@ -234,26 +204,21 @@ table 53035 "Empregado"
         }
         field(32; "Inactive Date"; Date)
         {
-            Caption = 'Data Inactividade';
         }
         field(33; "Cause of Inactivity Code"; Code[10])
         {
-            Caption = 'Cód. Motivo Inactividade';
             TableRelation = "Motivo Inactividade";
         }
         field(34; "Termination Date"; Date)
         {
-            Caption = 'Data Terminação';
         }
         field(35; "Grounds for Term. Code"; Code[10])
         {
-            Caption = 'Grounds for Term. Code';
             TableRelation = "RU - Tabelas"."Código" WHERE(Tipo = CONST(MotSai));
         }
         field(36; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
-            Caption = 'Cód. Dimensão Global 1';
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
 
@@ -265,7 +230,6 @@ table 53035 "Empregado"
         field(37; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
-            Caption = 'Cód. Dimensão Global 2';
             DataClassification = ToBeClassified;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
 
@@ -276,7 +240,6 @@ table 53035 "Empregado"
         }
         field(38; "Resource No."; Code[20])
         {
-            Caption = 'No. Recurso';
             TableRelation = Resource WHERE(Type = CONST(Person));
 
             trigger OnValidate()
@@ -290,37 +253,31 @@ table 53035 "Empregado"
             CalcFormula = Exist("Linha Coment. Recurso Humano" WHERE("Table Name" = CONST(Emp),
                                                                       "No." = FIELD("No."),
                                                                       "Table Line No." = CONST(0)));
-            Caption = 'Comentário';
             Editable = false;
             FieldClass = FlowField;
         }
         field(40; "Last Date Modified"; Date)
         {
-            Caption = 'Data Últ. Modif.';
             Editable = false;
         }
         field(41; "Date Filter"; Date)
         {
-            Caption = 'Filtro Data';
             FieldClass = FlowFilter;
         }
         field(42; "Global Dimension 1 Filter"; Code[20])
         {
             CaptionClass = '1,3,1';
-            Caption = 'Filtro Dimensão 1 Global';
             FieldClass = FlowFilter;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
         }
         field(43; "Global Dimension 2 Filter"; Code[20])
         {
             CaptionClass = '1,3,2';
-            Caption = 'Filtro Dimensão 2 Global';
             FieldClass = FlowFilter;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
         }
         field(44; "Cause of Absence Filter"; Code[10])
         {
-            Caption = 'Filtro Motivo Ausência';
             FieldClass = FlowFilter;
             TableRelation = "Absence Reason";
         }
@@ -329,58 +286,47 @@ table 53035 "Empregado"
             CalcFormula = Sum("Histórico Ausências"."Quantity (Base)" WHERE("Employee No." = FIELD("No."),
                                                                              "Cause of Absence Code" = FIELD("Cause of Absence Filter"),
                                                                              "From Date" = FIELD("Date Filter")));
-            Caption = 'Ausência Total (Base)';
             DecimalPlaces = 0 : 5;
             Editable = false;
             FieldClass = FlowField;
         }
         field(46; Extension; Text[30])
         {
-            Caption = 'Extensão';
         }
         field(47; "Employee No. Filter"; Code[20])
         {
-            Caption = 'Filtro No. Empregado';
             FieldClass = FlowFilter;
             TableRelation = Empregado;
         }
         field(48; CompanyMobilePhoneNo; Text[30])
         {
-            Caption = 'Nº Telefone Móvel Empresa';
             ExtendedDatatype = PhoneNo;
         }
         field(49; "Company Phone No."; Text[30])
         {
-            Caption = 'No. Telefone Empresa';
         }
         field(50; "Company E-Mail"; Text[80])
         {
-            Caption = 'Empresa E-Mail';
             ExtendedDatatype = EMail;
         }
         field(51; Title; Text[30])
         {
-            Caption = 'Título';
         }
         field(52; "Salespers./Purch. Code"; Code[10])
         {
-            Caption = 'Cód. Vendedor/Comprador';
             TableRelation = "Salesperson/Purchaser";
         }
         field(53; "No. Series"; Code[10])
         {
-            Caption = 'No. Séries';
             Editable = false;
             TableRelation = "No. Series";
         }
         field(54; "Tipo Empregado"; Code[20])
         {
-            Caption = 'Tipo Empregado';
             TableRelation = "Tipo Empregado";
         }
         field(55; IBAN; Code[50])
         {
-            Caption = 'IBAN';
             Description = 'SEPA';
 
             trigger OnValidate()
@@ -392,25 +338,20 @@ table 53035 "Empregado"
         }
         field(56; "SWIFT Code"; Code[20])
         {
-            Caption = 'SWIFT Code';
             Description = 'SEPA';
         }
         field(57; Estabelecimento; Code[4])
         {
-            Caption = 'Estabelecimento';
             TableRelation = "Estabelecimentos da Empresa";
         }
         field(58; "Bank Account No."; Text[20])
         {
-            Caption = 'N.º Conta Bancária';
         }
         field(59; Seguradora; Text[60])
         {
-            Caption = 'Insurance Company';
         }
         field(60; "No. Apólice"; Text[20])
         {
-            Caption = 'Insurance Policy No.';
         }
         field(61; "Documento Identificação"; Option)
         {
