@@ -2012,6 +2012,7 @@ report 53037 "Processamento Vencimentos"
     {
     }
 
+    #region TRIGGERS
     trigger OnPostReport()
     begin
         "Periodos Processamento"."Data Inicio Proces. Faltas" := FiltroDataInicioFalta;
@@ -2035,7 +2036,9 @@ report 53037 "Processamento Vencimentos"
         if FiltroDataInicioFalta > FiltroDataFimFalta then
             Error(Text0009);
     end;
+    #endregion
 
+    #region VARIABLES
     var
         DeductValue: Decimal;
         Text0001: Label 'Este Processamento encontra-se Fechado.';
@@ -2156,76 +2159,13 @@ report 53037 "Processamento Vencimentos"
         DiasTrabMesAdmissao: Integer;
         DiasDesc: Integer;
         GuardaAbateSubAlim: Integer;
+    #endregion
 
-
-    procedure ProcessarEncSociais(Valor: Decimal; VarTaxa: Decimal; VarCodRubrica: Code[20]; VarContaDeb: Code[20]; varContaCred: Code[20])
-    var
-        TabCabMovEmpregado: Record "Cab. Movs. Empregado";
-        TabLinhaMovEmpregado: Record "Linhas Movs. Empregado";
-        TabRubSalarial: Record "Payroll Item";
-        recRubSalarialEmp: Record "Rubrica Salarial Empregado";
-        recRubSalarial: Record "Payroll Item";
-        Flag: Boolean;
-    begin
-        //****************************************************
-        //****** Processamento dos Encargos Sociais **********
-        //****************************************************
-        TabRubSalarial.Reset;
-        TabRubSalarial.SetRange(TabRubSalarial.Código, VarCodRubrica);
-        if TabRubSalarial.Find('-') then begin
-            TabCabMovEmpregado.Reset;
-            TabCabMovEmpregado.SetRange(TabCabMovEmpregado."Cód. Processamento", "Periodos Processamento"."Cód. Processamento");
-            TabCabMovEmpregado.SetRange(TabCabMovEmpregado."Tipo Processamento", TabCabMovEmpregado."Tipo Processamento"::Encargos);
-            TabCabMovEmpregado.SetRange(TabCabMovEmpregado."Employee No.", Empregado."No.");
-            if not TabCabMovEmpregado.Find('-') then begin
-                TabCabMovEmpregado.Init;
-                TabCabMovEmpregado."Cód. Processamento" := "Periodos Processamento"."Cód. Processamento";
-                TabCabMovEmpregado."Tipo Processamento" := TabCabMovEmpregado."Tipo Processamento"::Encargos;
-                TabCabMovEmpregado."Employee No." := Empregado."No.";
-                TabCabMovEmpregado."Designação Empregado" := Empregado.Name;
-                TabCabMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
-                TabCabMovEmpregado.Insert;
-            end;
-            NLinha := NLinha + 10000;
-            TabLinhaMovEmpregado.Init;
-            TabLinhaMovEmpregado."Cód. Processamento" := "Periodos Processamento"."Cód. Processamento";
-            TabLinhaMovEmpregado."Tipo Processamento" := TabCabMovEmpregado."Tipo Processamento"::Encargos;
-            TabLinhaMovEmpregado."Employee No." := Empregado."No.";
-            TabLinhaMovEmpregado."No. Linha" := NLinha;
-            TabLinhaMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
-            TabLinhaMovEmpregado."Designação Empregado" := Empregado.Name;
-            TabLinhaMovEmpregado."Payroll Item Code" := TabRubSalarial.Código;
-            TabLinhaMovEmpregado."Payroll Item Description" := TabRubSalarial.Descrição;
-            TabLinhaMovEmpregado."Payroll Item Type" := TabRubSalarial."Payroll Item Type";
-            //Novos parametros varcontadeb por causa do FCT
-            if VarContaDeb = '' then
-                TabLinhaMovEmpregado."Debit Acc. No." := TabRubSalarial."Debit Acc. No."
-            else
-                TabLinhaMovEmpregado."Debit Acc. No." := VarContaDeb;
-            if varContaCred = '' then
-                TabLinhaMovEmpregado."Credit Acc. No." := TabRubSalarial."Credit Acc. No."
-            else
-                TabLinhaMovEmpregado."Credit Acc. No." := varContaCred;
-            TabLinhaMovEmpregado.Quantity := VarTaxa;
-            TabLinhaMovEmpregado.Valor := Round(Valor * VarTaxa / 100, 0.01);
-
-            //Preencher o Tipo Rendimento por causa do Anexo J
-            TabLinhaMovEmpregado."Tipo Rendimento" := Empregado."Tipo Rendimento";
-            if TabRubSalarial.Genero = TabRubSalarial.Genero::"Enc. CGA" then begin
-                TabLinhaMovEmpregado."Cód. Situação" := Descontos."Cód. Situação";
-                TabLinhaMovEmpregado."Cód. Movimento" := Descontos."Cód. Movimento";
-                if Descontos."Data Efeito" <> 0D then
-                    TabLinhaMovEmpregado."Data Efeito" := Descontos."Data Efeito"
-                else
-                    TabLinhaMovEmpregado."Data Efeito" := "Periodos Processamento"."Data Fim Processamento";
-            end;
-            TabLinhaMovEmpregado.NATREM := TabRubSalarial.NATREM;
-            TabLinhaMovEmpregado.Insert;
-        end;
-    end;
-
-
-    procedure InserirDadosCabMovEmp()
+    #region CHANGES TO PROCESSING
+    /// <summary>
+    /// Deprecated
+    /// </summary>
+    procedure deprecated_InserirDadosCabMovEmp()
     var
         l_RubSal: Record "Payroll Item";
     begin
@@ -2305,6 +2245,211 @@ report 53037 "Processamento Vencimentos"
 
         LinhaMovEmpregado."Garnishmen No." := TempRubricaEmpregado2."Garnishmen No.";
         LinhaMovEmpregado.Insert;
+    end;
+
+    /// <summary>
+    /// Timesheet Validation
+    /// </summary>
+    local procedure InserirDadosCabMovEmp()
+    var
+        timeSheetDetail: Record "Time Sheet Detail";
+        job: Record Job temporary;
+        hoursTotal: Decimal;
+        tempJobHours: List of [Decimal];
+        tempJobNo: List of [Code[20]];
+        jobIndex: Integer;
+        distribuicaoCustos: Record "Distribuição Custos";
+        jobNameTemp: Text;
+    begin
+        timeSheetDetail.SetRange("Resource No.", Empregado."No."); //DUVIDA
+        timeSheetDetail.SetFilter(Date, '>=%1..<=%2', "Periodos Processamento"."Data Inicio Processamento", "Periodos Processamento"."Data Fim Processamento");
+
+        //timeSheetDetail.Date é por dia!!!
+        if not distribuicaoCustos.Get(Empregado."No.") then begin
+            if timeSheetDetail.FindSet() then
+                repeat
+                    if not tempJobNo.Contains(timeSheetDetail."Job No.") then begin
+                        tempJobHours.Add(timeSheetDetail.Quantity);
+                        tempJobNo.Add(timeSheetDetail."Job No.");
+                    end else begin
+                        jobIndex := tempJobNo.IndexOf(timeSheetDetail."Job No.");
+                        tempJobHours.Set(jobIndex, tempJobHours.Get(jobIndex) + timeSheetDetail.Quantity);
+                    end;
+
+                    hoursTotal += timeSheetDetail.Quantity;
+                until timeSheetDetail.Next() = 0;
+
+            //Descontruir a linha
+            if tempJobHours.Count() > 0 then begin
+                for i := 1 to tempJobHours.Count() do begin
+                    Clear(job);
+                    job.Get(tempJobNo.Get(i));
+                    ExecuteInserirDadosCabMovEmp(tempJobHours.Get(i) / hoursTotal * TempRubricaEmpregado."Total Amount", job.Description
+                    );
+                end
+            end else begin
+                ExecuteInserirDadosCabMovEmp(TempRubricaEmpregado."Total Amount", '');
+            end;
+        end;
+    end;
+
+    /// <summary>
+    /// Insert on table taking in consideration the percentages based on the timesheet hours.
+    /// </summary>
+    local procedure ExecuteInserirDadosCabMovEmp(TotalAmount: Decimal; ProjectDescription: Text)
+    var
+        l_RubSal: Record "Payroll Item";
+    begin
+        NLinha := NLinha + 10000;
+        LinhaMovEmpregado.Init;
+        LinhaMovEmpregado."Cód. Processamento" := "Periodos Processamento"."Cód. Processamento";
+        LinhaMovEmpregado."Tipo Processamento" := "Periodos Processamento"."Tipo Processamento";
+        LinhaMovEmpregado."Employee No." := Empregado2."No.";
+        LinhaMovEmpregado."No. Linha" := NLinha;
+        LinhaMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
+        LinhaMovEmpregado."Designação Empregado" := Empregado2.Name;
+        LinhaMovEmpregado."Payroll Item Code" := TempRubricaEmpregado2."Cód. Rúbrica Salarial";
+
+        if ProjectDescription = '' then begin
+            LinhaMovEmpregado."Payroll Item Description" := TempRubricaEmpregado2."Payroll Item Description";
+        end else begin
+            LinhaMovEmpregado."Payroll Item Description" := TempRubricaEmpregado2."Payroll Item Description" + ' - ' + ProjectDescription; //Adicionado nome do projecto
+        end;
+
+        //Retroactivos de IRS:
+        //O Código da Rubrica fica = Código da Rubrica de IRS seja qual for
+        //A Descrição da Rubrica fica fixa -->'Retroactivos de IRS de ' + mês
+        if CopyStr(TempRubricaEmpregado2."Cód. Rúbrica Salarial", 1, 9) = 'IRS RETRO' then begin
+            LinhaMovEmpregado."Payroll Item Code" := TempRubricaEmpregado2."Payroll Item Description";
+            LinhaMovEmpregado."Payroll Item Description" := 'Retroactivos de IRS de ' +
+                                                      CopyStr(TempRubricaEmpregado2."Cód. Rúbrica Salarial", 10);
+        end;
+        //Retroactivos de IRS - Fim
+
+        LinhaMovEmpregado."Payroll Item Type" := TempRubricaEmpregado2."Payroll Item Type";
+        LinhaMovEmpregado."Debit Acc. No." := TempRubricaEmpregado2."Debit Acc. No.";
+        LinhaMovEmpregado."Credit Acc. No." := TempRubricaEmpregado2."Credit Acc. No.";
+        LinhaMovEmpregado.Quantity := TempRubricaEmpregado2.Quantity;
+
+        //este código é para faltas aparecerem no recido em dias ou horas consoante o que foi lançado
+        LinhaMovEmpregado."Quatidade Recibo Vencimentos" := TempRubricaEmpregado2."Quatidade Recibo Vencimentos";
+        LinhaMovEmpregado."Unit of Measure" := TempRubricaEmpregado2."Unit of Measure";
+
+        LinhaMovEmpregado."Unit Value" := TempRubricaEmpregado2."Unit Value";
+        LinhaMovEmpregado.Valor := /*TempRubricaEmpregado2."Total Amount";*/ TotalAmount;// Modificado aqui.
+
+        //Preencher o Tipo Rendimento por causa do Anexo J
+        LinhaMovEmpregado."Tipo Rendimento" := Empregado2."Tipo Rendimento";
+        LinhaMovEmpregado."Cód. Situação" := TempRubricaEmpregado2."Cód. Situação";
+        LinhaMovEmpregado."Cód. Movimento" := TempRubricaEmpregado2."Cód. Movimento";
+        LinhaMovEmpregado."Data Efeito" := TempRubricaEmpregado2."Data Efeito";
+
+        //preencher o campo Natrem uma vez que deixou de ser FlowField
+        TabRubSal.Reset;
+        if TabRubSal.Get(TempRubricaEmpregado2."Cód. Rúbrica Salarial") then
+            LinhaMovEmpregado.NATREM := TabRubSal.NATREM;
+
+
+        //Preencher campos data inicio e data fim caso a rubricas seja do genero falta
+        //RubricaSalarial2.RESET;
+        //RubricaSalarial2.SETRANGE(Código,TempRubricaEmpregado2."Cód. Rúbrica Salarial");
+        //IF RubricaSalarial2.FIND('-') THEN BEGIN
+        //  IF (RubricaSalarial2.Genero = RubricaSalarial2.Genero::Falta)THEN BEGIN
+        LinhaMovEmpregado."Data a que se refere o mov" := TempRubricaEmpregado2."Data a que se refere o mov";
+        //  END;
+        //END;
+
+
+        //novo campo por causa do codigo contributivo
+        if TempRubricaEmpregado2."Valor Incidência SS" = 0 then begin
+            TempRubricaEmpregado.Reset;
+            TempRubricaEmpregado.SetRange(TempRubricaEmpregado."Employee No.", TempRubricaEmpregado2."Employee No.");
+            TempRubricaEmpregado.SetRange(TempRubricaEmpregado."Line No.", TempRubricaEmpregado2."Line No.");
+            if TempRubricaEmpregado.FindFirst then
+                LinhaMovEmpregado."Valor Incidência SS" := TempRubricaEmpregado."Valor Incidência SS"
+        end else
+            LinhaMovEmpregado."Valor Incidência SS" := TempRubricaEmpregado2."Valor Incidência SS";
+
+        //preencher as dimensões das horas extra  e abonos / descontos extra
+        LinhaMovEmpregado."Global Dimension 1 Code" := TempRubricaEmpregado."Global Dimension 1 Code";
+        LinhaMovEmpregado."Global Dimension 2 Code" := TempRubricaEmpregado."Global Dimension 2 Code";
+
+        //para preencher o campo que vai ser usado no Mapa Declaração Mensal Remunerações AT
+        l_RubSal.Reset;
+        if l_RubSal.Get(TempRubricaEmpregado2."Cód. Rúbrica Salarial") then begin
+            LinhaMovEmpregado."Tipo Rendimento Cat.A" := l_RubSal."Tipo Rendimento Cat.A";
+        end;
+
+        LinhaMovEmpregado."Garnishmen No." := TempRubricaEmpregado2."Garnishmen No.";
+        LinhaMovEmpregado.Insert;
+    end;
+    #endregion
+
+    #region PROCESSING AND CALCULATIONS PROCEDURES
+    procedure ProcessarEncSociais(Valor: Decimal; VarTaxa: Decimal; VarCodRubrica: Code[20]; VarContaDeb: Code[20]; varContaCred: Code[20])
+    var
+        TabCabMovEmpregado: Record "Cab. Movs. Empregado";
+        TabLinhaMovEmpregado: Record "Linhas Movs. Empregado";
+        TabRubSalarial: Record "Payroll Item";
+        recRubSalarialEmp: Record "Rubrica Salarial Empregado";
+        recRubSalarial: Record "Payroll Item";
+        Flag: Boolean;
+    begin
+        //****************************************************
+        //****** Processamento dos Encargos Sociais **********
+        //****************************************************
+        TabRubSalarial.Reset;
+        TabRubSalarial.SetRange(TabRubSalarial.Código, VarCodRubrica);
+        if TabRubSalarial.Find('-') then begin
+            TabCabMovEmpregado.Reset;
+            TabCabMovEmpregado.SetRange(TabCabMovEmpregado."Cód. Processamento", "Periodos Processamento"."Cód. Processamento");
+            TabCabMovEmpregado.SetRange(TabCabMovEmpregado."Tipo Processamento", TabCabMovEmpregado."Tipo Processamento"::Encargos);
+            TabCabMovEmpregado.SetRange(TabCabMovEmpregado."Employee No.", Empregado."No.");
+            if not TabCabMovEmpregado.Find('-') then begin
+                TabCabMovEmpregado.Init;
+                TabCabMovEmpregado."Cód. Processamento" := "Periodos Processamento"."Cód. Processamento";
+                TabCabMovEmpregado."Tipo Processamento" := TabCabMovEmpregado."Tipo Processamento"::Encargos;
+                TabCabMovEmpregado."Employee No." := Empregado."No.";
+                TabCabMovEmpregado."Designação Empregado" := Empregado.Name;
+                TabCabMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
+                TabCabMovEmpregado.Insert;
+            end;
+            NLinha := NLinha + 10000;
+            TabLinhaMovEmpregado.Init;
+            TabLinhaMovEmpregado."Cód. Processamento" := "Periodos Processamento"."Cód. Processamento";
+            TabLinhaMovEmpregado."Tipo Processamento" := TabCabMovEmpregado."Tipo Processamento"::Encargos;
+            TabLinhaMovEmpregado."Employee No." := Empregado."No.";
+            TabLinhaMovEmpregado."No. Linha" := NLinha;
+            TabLinhaMovEmpregado."Data Registo" := "Periodos Processamento"."Data Registo";
+            TabLinhaMovEmpregado."Designação Empregado" := Empregado.Name;
+            TabLinhaMovEmpregado."Payroll Item Code" := TabRubSalarial.Código;
+            TabLinhaMovEmpregado."Payroll Item Description" := TabRubSalarial.Descrição;
+            TabLinhaMovEmpregado."Payroll Item Type" := TabRubSalarial."Payroll Item Type";
+            //Novos parametros varcontadeb por causa do FCT
+            if VarContaDeb = '' then
+                TabLinhaMovEmpregado."Debit Acc. No." := TabRubSalarial."Debit Acc. No."
+            else
+                TabLinhaMovEmpregado."Debit Acc. No." := VarContaDeb;
+            if varContaCred = '' then
+                TabLinhaMovEmpregado."Credit Acc. No." := TabRubSalarial."Credit Acc. No."
+            else
+                TabLinhaMovEmpregado."Credit Acc. No." := varContaCred;
+            TabLinhaMovEmpregado.Quantity := VarTaxa;
+            TabLinhaMovEmpregado.Valor := Round(Valor * VarTaxa / 100, 0.01);
+
+            //Preencher o Tipo Rendimento por causa do Anexo J
+            TabLinhaMovEmpregado."Tipo Rendimento" := Empregado."Tipo Rendimento";
+            if TabRubSalarial.Genero = TabRubSalarial.Genero::"Enc. CGA" then begin
+                TabLinhaMovEmpregado."Cód. Situação" := Descontos."Cód. Situação";
+                TabLinhaMovEmpregado."Cód. Movimento" := Descontos."Cód. Movimento";
+                if Descontos."Data Efeito" <> 0D then
+                    TabLinhaMovEmpregado."Data Efeito" := Descontos."Data Efeito"
+                else
+                    TabLinhaMovEmpregado."Data Efeito" := "Periodos Processamento"."Data Fim Processamento";
+            end;
+            TabLinhaMovEmpregado.NATREM := TabRubSalarial.NATREM;
+            TabLinhaMovEmpregado.Insert;
+        end;
     end;
 
     local procedure CalcularDiasFeriasDireito(NEmpregado: Code[20]): Decimal
@@ -2407,5 +2552,5 @@ report 53037 "Processamento Vencimentos"
 
         exit(DiasFerias);
     end;
+    #endregion
 }
-
