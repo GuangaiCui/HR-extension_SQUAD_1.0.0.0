@@ -2,7 +2,7 @@
 page 53044 "Familiares Empregado"
 {
     AutoSplitKey = true;
-    Caption = 'Employee Relatives';
+    //Caption = 'Employee Relatives';
     DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Familiar Empregado";

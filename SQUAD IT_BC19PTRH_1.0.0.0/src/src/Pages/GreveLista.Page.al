@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53163 "Greve Lista"
 {
-    Caption = 'Lista Greve';
+    //Caption = 'Lista Greve';
     CardPageID = Greve;
     Editable = false;
     PageType = List;

@@ -2,7 +2,7 @@
 page 53057 "Folha Comentários RH"
 {
     AutoSplitKey = true;
-    Caption = 'Comment Sheet';
+    //Caption = 'Comment Sheet';
     DataCaptionExpression = Caption(Rec);
     DelayedInsert = true;
     MultipleNewLines = true;

@@ -2,7 +2,7 @@
 page 53058 "Lista Comentários RH"
 {
     AutoSplitKey = true;
-    Caption = 'Comment List';
+    //Caption = 'Comment List';
     DataCaptionExpression = HRCommentSheet.Caption;
     Editable = false;
     PageType = List;

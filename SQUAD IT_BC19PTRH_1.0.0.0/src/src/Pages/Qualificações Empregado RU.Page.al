@@ -2,7 +2,7 @@
 page 53130 "Qualificações Empregado RU"
 {
     AutoSplitKey = true;
-    Caption = 'Employee Qualifications RU ';
+    //Caption = 'Employee Qualifications RU ';
     DataCaptionFields = "Employee No.";
     DelayedInsert = true;
     PageType = List;

@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53061 "Vista Ausências por Per."
 {
-    Caption = 'Absence Overview by Periods';
+    //Caption = 'Absence Overview by Periods';
     DataCaptionExpression = '';
     DeleteAllowed = false;
     InsertAllowed = false;

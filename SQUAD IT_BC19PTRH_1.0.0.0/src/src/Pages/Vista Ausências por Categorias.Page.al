@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53066 "Vista Ausências por Categorias"
 {
-    Caption = 'Absence Overview by Categories';
+    //Caption = 'Absence Overview by Categories';
     DataCaptionExpression = '';
     DeleteAllowed = false;
     InsertAllowed = false;

@@ -2,7 +2,7 @@
 page 53072 "Lista Contrato Empregado"
 {
     AutoSplitKey = true;
-    Caption = 'Employee Relatives';
+    //Caption = 'Employee Relatives';
     DataCaptionFields = "Cód. Empregado";
     PageType = List;
     SourceTable = "Contrato Empregado";

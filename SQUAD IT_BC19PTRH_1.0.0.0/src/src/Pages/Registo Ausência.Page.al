@@ -3,7 +3,7 @@ page 53047 "Registo Ausência"
 {
     //  //CPA - Novo campo Novo Valor Ausencia
 
-    Caption = 'Absence Registration';
+    //Caption = 'Absence Registration';
     DataCaptionFields = "Employee No.";
     DelayedInsert = true;
     PageType = List;

@@ -2,7 +2,7 @@
 page 53041 "Qualificações Empregado"
 {
     AutoSplitKey = true;
-    Caption = 'Employee Qualifications';
+    //Caption = 'Employee Qualifications';
     DataCaptionFields = "Employee No.";
     DelayedInsert = true;
     PageType = List;

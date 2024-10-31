@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53092 "Vista HoraExtra por Categorias"
 {
-    Caption = 'Extra Hour Overview by Categories';
+    //Caption = 'Extra Hour Overview by Categories';
     DataCaptionExpression = '';
     DeleteAllowed = false;
     InsertAllowed = false;

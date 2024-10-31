@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53117 "Simulador de Remunerações"
 {
-    Caption = 'Remuneration Simulator';
+    //Caption = 'Remuneration Simulator';
     /**/
     DeleteAllowed = false;
     InsertAllowed = false;

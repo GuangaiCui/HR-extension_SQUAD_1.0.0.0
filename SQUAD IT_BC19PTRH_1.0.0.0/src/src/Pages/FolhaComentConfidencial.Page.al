@@ -2,7 +2,7 @@
 page 53069 "Folha Coment. Confidencial"
 {
     AutoSplitKey = true;
-    Caption = 'Confidential Comment Sheet';
+    //Caption = 'Confidential Comment Sheet';
     DataCaptionExpression = Caption(Rec);
     DelayedInsert = true;
     MultipleNewLines = true;

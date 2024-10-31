@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53139 "Pessoal dos Serviços"
 {
-    Caption = 'Pessoal dos Serviços';
+    //Caption = 'Pessoal dos Serviços';
     PageType = Card;
     SourceTable = "Pessoal dos Serviços";
     UsageCategory = Administration;

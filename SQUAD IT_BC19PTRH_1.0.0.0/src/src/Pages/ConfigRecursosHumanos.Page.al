@@ -4,7 +4,7 @@ page 53068 "Config. Recursos Humanos"
     // 
     //  IT004 - Tagus - 20191121 - novo campo Balance Cash-Flow Code utilizado no pagamento de vencientos
 
-    Caption = 'Human Resources Setup';
+    //Caption = 'Human Resources Setup';
     DeleteAllowed = false;
     InsertAllowed = false;
     PageType = Card;

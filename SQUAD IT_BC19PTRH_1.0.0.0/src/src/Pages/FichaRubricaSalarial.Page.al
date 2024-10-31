@@ -6,7 +6,6 @@ page 53098 "Ficha Rubrica Salarial"
     // IT003 - CPA - 207.07.03 -  No campo VB não quer que apareça o valor dos complementos
 
     ApplicationArea = All;
-    Caption = 'Ficha Rubrica Salarial';
     PageType = Card;
     SourceTable = "Payroll Item";
 

@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53071 "Unid. Medida Recursos Humanos"
 {
-    Caption = 'Human Resource Units of Measure';
+    //Caption = 'Human Resource Units of Measure';
     PageType = List;
     SourceTable = "Unid. Medida Recursos Humanos";
     UsageCategory = Administration;

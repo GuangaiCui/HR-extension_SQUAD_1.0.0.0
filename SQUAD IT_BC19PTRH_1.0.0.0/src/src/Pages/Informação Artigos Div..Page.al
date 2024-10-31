@@ -2,7 +2,7 @@
 page 53054 "Informação Artigos Div."
 {
     AutoSplitKey = true;
-    Caption = 'Misc. Article Information';
+    //Caption = 'Misc. Article Information';
     DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Informação Artigos Div.";

@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53039 "Lista Endereços Alternativos"
 {
-    Caption = 'Alternative Address List';
+    //Caption = 'Alternative Address List';
     CardPageID = "Ficha Endç. Alternativo";
     DataCaptionFields = "Employee No.";
     Editable = false;

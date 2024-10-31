@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53070 "Lista Comentários Confidencial"
 {
-    Caption = 'Comment List';
+    //Caption = 'Comment List';
     Editable = false;
     PageType = Card;
     SourceTable = "Lin. Coment. Confidencial RH";

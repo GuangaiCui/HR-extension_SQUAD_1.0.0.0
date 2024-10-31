@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53038 "Ficha Endç. Alternativo"
 {
-    Caption = 'Alternative Address Card';
+    //Caption = 'Alternative Address Card';
     DataCaptionExpression = Caption;
     PageType = Card;
     PopulateAllFields = true;

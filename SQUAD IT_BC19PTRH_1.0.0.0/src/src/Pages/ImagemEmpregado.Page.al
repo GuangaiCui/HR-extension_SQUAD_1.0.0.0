@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53037 "Imagem Empregado"
 {
-    Caption = 'Employee Picture';
+    // Caption = 'Employee Picture';
     DeleteAllowed = false;
     InsertAllowed = false;
     LinksAllowed = false;

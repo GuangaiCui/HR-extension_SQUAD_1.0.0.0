@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53093 "Matriz Vista HoraExtra p Cate."
 {
-    Caption = 'Extra hour Overview by Categories Matrix';
+    //Caption = 'Extra hour Overview by Categories Matrix';
     DataCaptionExpression = '';
     Editable = false;
     LinksAllowed = false;

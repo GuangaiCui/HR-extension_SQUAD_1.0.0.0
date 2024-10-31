@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53040 "Qualificações"
 {
-    Caption = 'Qualifications';
+    //Caption = 'Qualifications';
     PageType = List;
     SourceTable = "Qualificação";
     UsageCategory = Administration;

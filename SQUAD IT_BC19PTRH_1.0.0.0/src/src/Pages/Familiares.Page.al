@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53043 Familiares
 {
-    Caption = 'Relatives';
+    //Caption = 'Relatives';
     PageType = List;
     SourceTable = Familiar;
     UsageCategory = Administration;

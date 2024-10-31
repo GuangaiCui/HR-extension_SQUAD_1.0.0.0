@@ -2,7 +2,7 @@
 page 53073 "Lista Inactividade Empregado"
 {
     AutoSplitKey = true;
-    Caption = 'Inactividade Empregado ';
+    //Caption = 'Inactividade Empregado ';
     DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Inactividade Empregado";

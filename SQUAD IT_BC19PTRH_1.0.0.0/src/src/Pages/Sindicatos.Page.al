@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53048 Sindicatos
 {
-    Caption = 'Unions';
+    //Caption = 'Unions';
     PageType = List;
     SourceTable = Sindicato;
     UsageCategory = Administration;

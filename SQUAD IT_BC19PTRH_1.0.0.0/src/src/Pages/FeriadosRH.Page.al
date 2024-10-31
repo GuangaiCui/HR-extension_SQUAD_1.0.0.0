@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53114 "Feriados RH"
 {
-    Caption = 'Human Resource Units of Measure';
+    //Caption = 'Human Resource Units of Measure';
     PageType = List;
     SourceTable = "Feriados RH";
     ApplicationArea = HumanResourcesAppArea;

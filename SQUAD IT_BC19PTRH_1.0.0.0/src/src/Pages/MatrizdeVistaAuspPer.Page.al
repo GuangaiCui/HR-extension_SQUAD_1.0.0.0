@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53062 "Matriz de Vista Aus. p/ Per.."
 {
-    Caption = 'Abs. Overview by Period Matrix';
+    //Caption = 'Abs. Overview by Period Matrix';
     DataCaptionExpression = '';
     Editable = false;
     LinksAllowed = false;

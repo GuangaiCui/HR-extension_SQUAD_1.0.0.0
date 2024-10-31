@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53042 "Empregados Qualificados"
 {
-    Caption = 'Qualified Employees';
+    //Caption = 'Qualified Employees';
     DataCaptionFields = "Qualification Code";
     Editable = false;
     PageType = List;

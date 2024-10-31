@@ -2,7 +2,7 @@
 page 53056 "Informação Confidencial"
 {
     AutoSplitKey = true;
-    Caption = 'Confidential Information';
+    //Caption = 'Confidential Information';
     DataCaptionFields = "Employee No.";
     PageType = List;
     SourceTable = "Informação Confidencial";

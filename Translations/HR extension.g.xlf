@@ -8864,7 +8864,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Acções Promoção da Saúde - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 661410114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Misc. Articles</source>
+          <source>Artigos Diversos</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Artigos Diversos - Property Caption</note>
         </trans-unit>
@@ -8874,7 +8874,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Associações Empregadores - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3921771363 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee Absences</source>
+          <source>Ausências Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Ausências Empregado - Property Caption</note>
         </trans-unit>
@@ -8934,12 +8934,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Categoria Profissional QP - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1924883535 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Confidential</source>
+          <source>Confidencial</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Confidencial - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4017863741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Human Resources Setup</source>
+          <source>Config. Recursos Humanos</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Config. Recursos Humanos - Property Caption</note>
         </trans-unit>
@@ -9069,7 +9069,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Consultas Médicas Empregado - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 405747798 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employment Contracts</source>
+          <source>Contratos Trabalho</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Contratos Trabalho - Property Caption</note>
         </trans-unit>
@@ -9089,7 +9089,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Código IRCT - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4063298893 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee Statistics Groups</source>
+          <source>Departamentos Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Departamentos Empregado - Property Caption</note>
         </trans-unit>
@@ -9119,7 +9119,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Doenças Profissionais - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2332429056 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Qualified Employees</source>
+          <source>Empregados Qualificados</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Empregados Qualificados - Property Caption</note>
         </trans-unit>
@@ -9159,12 +9159,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Factores Risco - Exames - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4231552469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Relatives</source>
+          <source>Familiares</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Familiares - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4146011251 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee Relatives</source>
+          <source>Familiares Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Familiares Empregado - Property Caption</note>
         </trans-unit>
@@ -9179,7 +9179,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Familiares Empregado - Action Comentário - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2904513445 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Human Resource Units of Measure</source>
+          <source>Feriados RH</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Feriados RH - Property Caption</note>
         </trans-unit>
@@ -9594,7 +9594,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Empregado - Action Recibo Vencimentos A5 - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 338967234 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Alternative Address Card</source>
+          <source>Ficha Endç. Alternativo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Endç. Alternativo - Property Caption</note>
         </trans-unit>
@@ -9714,7 +9714,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Rubrica Salarial - Control RubricaSalarialLinhas - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3363949491 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Confidential Comment Sheet</source>
+          <source>Folha Coment. Confidencial</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Folha Coment. Confidencial - Property Caption</note>
         </trans-unit>
@@ -9724,7 +9724,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Folha Coment. Confidencial - NamedType Text000</note>
         </trans-unit>
         <trans-unit id="Page 3645275354 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Comment Sheet</source>
+          <source>Folha Comentários RH</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Folha Comentários RH - Property Caption</note>
         </trans-unit>
@@ -9759,7 +9759,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Greve - Control Registo Greve - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1934414788 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Lista Greve</source>
+          <source>Greve Lista</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Greve Lista - Property Caption</note>
         </trans-unit>
@@ -10504,7 +10504,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Human Resources Role Center - Action Pessoal dos Serviços - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3723792084 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee Picture</source>
+          <source>Imagem Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Imagem Empregado - Property Caption</note>
         </trans-unit>
@@ -10574,7 +10574,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Importação Templates - Action UpdateWordLayout - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 252929349 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Misc. Article Information</source>
+          <source>Informação Artigos Div.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Informação Artigos Div. - Property Caption</note>
         </trans-unit>
@@ -10599,7 +10599,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Informação Artigos Div. - Action Vista Artigos Div. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3194221914 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Confidential Information</source>
+          <source>Informação Confidencial</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Informação Confidencial - Property Caption</note>
         </trans-unit>
@@ -10689,17 +10689,17 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Cat. Prof. Int. Emp. - Action Comentários - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3934419962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Comment List</source>
+          <source>Lista Comentários Confidencial</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Comentários Confidencial - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 33671443 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Comment List</source>
+          <source>Lista Comentários RH</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Comentários RH - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2132975993 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee Relatives</source>
+          <source>Lista Contrato Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Contrato Empregado - Property Caption</note>
         </trans-unit>
@@ -10799,7 +10799,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Empregado - Action Rubricas Salariais - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2265133461 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Alternative Address List</source>
+          <source>Lista Endereços Alternativos</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Endereços Alternativos - Property Caption</note>
         </trans-unit>
@@ -10929,7 +10929,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Horário Empregado - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2106027958 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Inactividade Empregado </source>
+          <source>Lista Inactividade Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Inactividade Empregado - Property Caption</note>
         </trans-unit>
@@ -10989,7 +10989,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Tipo Empregado - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3758175868 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Abs. Overview by Period Matrix</source>
+          <source>Matriz de Vista Aus. p/ Per..</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Matriz de Vista Aus. p/ Per.. - Property Caption</note>
         </trans-unit>
@@ -10999,7 +10999,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Matriz de Vista Aus. p/ Per.. - Control Full Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1158712412 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Absence Overview by Categories Matrix</source>
+          <source>Matriz de Vista Aus. por Cate.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Matriz de Vista Aus. por Cate. - Property Caption</note>
         </trans-unit>
@@ -11024,7 +11024,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Matriz Vista Ferias - Control Full Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 339548261 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extra hour Overview by Categories Matrix</source>
+          <source>Matriz Vista HoraExtra p Cate.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Matriz Vista HoraExtra p Cate. - Property Caption</note>
         </trans-unit>
@@ -11364,7 +11364,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Profissionalização - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1284810555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Qualifications</source>
+          <source>Qualificações</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Qualificações - Property Caption</note>
         </trans-unit>
@@ -11379,7 +11379,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Qualificações - Action Análise Qualificação - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2948742941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee Qualifications</source>
+          <source>Qualificações Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Qualificações Empregado - Property Caption</note>
         </trans-unit>
@@ -11394,7 +11394,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Qualificações Empregado - Action Comentários - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 1817544816 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee Qualifications RU </source>
+          <source>Qualificações Empregado RU</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Qualificações Empregado RU - Property Caption</note>
         </trans-unit>
@@ -11424,7 +11424,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Registo Abonos-Descontos Extra - NamedType Text0001</note>
         </trans-unit>
         <trans-unit id="Page 844853459 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Absence Registration</source>
+          <source>Registo Ausência</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Registo Ausência - Property Caption</note>
         </trans-unit>
@@ -11619,7 +11619,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Segurança e Saúde no Trabalho - Action Organização Serviços - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 11812840 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Remuneration Simulator</source>
+          <source>Simulador de Remunerações</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Simulador de Remunerações - Property Caption</note>
         </trans-unit>
@@ -11929,7 +11929,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Simulador de Remunerações - Action Calcular Líquido - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 878169277 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Unions</source>
+          <source>Sindicatos</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Sindicatos - Property Caption</note>
         </trans-unit>
@@ -12019,12 +12019,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Tipos Horas Extra - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4116002769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Human Resource Units of Measure</source>
+          <source>Unid. Medida Recursos Humanos</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Unid. Medida Recursos Humanos - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2342109457 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Misc. Article Information</source>
+          <source>Vista Artigos Diversos</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vista Artigos Diversos - Property Caption</note>
         </trans-unit>
@@ -12044,7 +12044,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Vista Artigos Diversos - Action Co&amp;mentários - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 325496423 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Absence Overview by Categories</source>
+          <source>Vista Ausências por Categorias</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vista Ausências por Categorias - Property Caption</note>
         </trans-unit>
@@ -12109,7 +12109,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Vista Ausências por Categorias - Action ShowMatrix - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 229697602 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Absence Overview by Periods</source>
+          <source>Vista Ausências por Per.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vista Ausências por Per. - Property Caption</note>
         </trans-unit>
@@ -12229,7 +12229,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page Vista Férias Empregados - Action ShowMatrix - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 4028786628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Extra Hour Overview by Categories</source>
+          <source>Vista HoraExtra por Categorias</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Vista HoraExtra por Categorias - Property Caption</note>
         </trans-unit>

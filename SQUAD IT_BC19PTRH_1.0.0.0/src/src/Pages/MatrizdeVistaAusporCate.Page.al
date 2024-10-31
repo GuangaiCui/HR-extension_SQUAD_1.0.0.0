@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53067 "Matriz de Vista Aus. por Cate."
 {
-    Caption = 'Absence Overview by Categories Matrix';
+    //Caption = 'Absence Overview by Categories Matrix';
     DataCaptionExpression = '';
     Editable = false;
     LinksAllowed = false;

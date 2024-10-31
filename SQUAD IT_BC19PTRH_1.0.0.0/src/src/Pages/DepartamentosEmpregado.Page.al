@@ -1,7 +1,7 @@
 #pragma implicitwith disable
 page 53051 "Departamentos Empregado"
 {
-    Caption = 'Employee Statistics Groups';
+    //Caption = 'Employee Statistics Groups';
     PageType = List;
     SourceTable = "Departamentos Empregado";
     UsageCategory = Administration;
