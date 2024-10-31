@@ -3624,37 +3624,37 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Employee Relative</source>
+          <source>Familiar Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 1576740555 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data Nascimento</source>
+          <source>Birth Date</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Birth Date - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 2790486453 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Comentário</source>
+          <source>Comment</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Comment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 1189646787 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Contacto Emergência</source>
+          <source>Emergency Contact</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Emergency Contact - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 1964419135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No. Empregado</source>
+          <source>Employee No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Employee No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 1489020603 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Nº Familiar Empregado</source>
+          <source>Employee Relative No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Employee Relative No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 2303302321 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sexo</source>
+          <source>Gender</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Gender - Property Caption</note>
         </trans-unit>
@@ -3664,27 +3664,27 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Gender - Property OptionCaption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No. Linha</source>
+          <source>Line No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Line No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Nome</source>
+          <source>Name</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Name - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 3986423421 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Telefone</source>
+          <source>Phone No.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Phone No. - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 74742931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cód. Familiar</source>
+          <source>Relative Code</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Relative Code - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 1738753929 - Field 1092359700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>No. Contribuinte</source>
+          <source>Vat Number</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Familiar Empregado - Field Vat Number - Property Caption</note>
         </trans-unit>
