@@ -1,4 +1,5 @@
 page 80000 teste_vc
+//NOTES: not in use, 
 {
     AutoSplitKey = true;
     // ApplicationArea = All;

@@ -1,4 +1,5 @@
 page 53099 "Subform Rubrica Salarial"
+//NOTES: not in use, 
 {
     AutoSplitKey = true;
     ApplicationArea = All;
