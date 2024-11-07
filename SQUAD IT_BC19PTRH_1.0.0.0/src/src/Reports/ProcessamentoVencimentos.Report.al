@@ -2253,7 +2253,7 @@ report 53037 "Processamento Vencimentos"
     local procedure InserirDadosCabMovEmp()
     var
         timeSheetDetail: Record "Time Sheet Detail";
-        job: Record Job temporary;
+        job: Record Job;
         hoursTotal: Decimal;
         tempJobHours: List of [Decimal];
         tempJobNo: List of [Code[20]];
@@ -2261,22 +2261,25 @@ report 53037 "Processamento Vencimentos"
         distribuicaoCustos: Record "Distribuição Custos";
         jobNameTemp: Text;
     begin
-        timeSheetDetail.SetRange("Resource No.", Empregado."No."); //DUVIDA
+        timeSheetDetail.Reset();
+        timeSheetDetail.SetRange("Resource No.", Empregado."No."); //DUVIDA. Como é feito o match?m
         timeSheetDetail.SetFilter(Date, '>=%1..<=%2', "Periodos Processamento"."Data Inicio Processamento", "Periodos Processamento"."Data Fim Processamento");
 
-        //timeSheetDetail.Date é por dia!!!
+        //Count day by day. Takes into consideration if the timeSheetDetail is approved.
         if not distribuicaoCustos.Get(Empregado."No.") then begin
             if timeSheetDetail.FindSet() then
                 repeat
-                    if not tempJobNo.Contains(timeSheetDetail."Job No.") then begin
-                        tempJobHours.Add(timeSheetDetail.Quantity);
-                        tempJobNo.Add(timeSheetDetail."Job No.");
-                    end else begin
-                        jobIndex := tempJobNo.IndexOf(timeSheetDetail."Job No.");
-                        tempJobHours.Set(jobIndex, tempJobHours.Get(jobIndex) + timeSheetDetail.Quantity);
-                    end;
+                    if timeSheetDetail.Status = timeSheetDetail.Status::Approved then begin
+                        if not tempJobNo.Contains(timeSheetDetail."Job No.") then begin
+                            tempJobHours.Add(timeSheetDetail.Quantity);
+                            tempJobNo.Add(timeSheetDetail."Job No.");
+                        end else begin
+                            jobIndex := tempJobNo.IndexOf(timeSheetDetail."Job No.");
+                            tempJobHours.Set(jobIndex, tempJobHours.Get(jobIndex) + timeSheetDetail.Quantity);
+                        end;
 
-                    hoursTotal += timeSheetDetail.Quantity;
+                        hoursTotal += timeSheetDetail.Quantity;
+                    end;
                 until timeSheetDetail.Next() = 0;
 
             //Descontruir a linha
@@ -2290,6 +2293,8 @@ report 53037 "Processamento Vencimentos"
             end else begin
                 ExecuteInserirDadosCabMovEmp(TempRubricaEmpregado."Total Amount", '');
             end;
+        end else begin
+            ExecuteInserirDadosCabMovEmp(TempRubricaEmpregado."Total Amount", '');
         end;
     end;
 
@@ -2310,6 +2315,7 @@ report 53037 "Processamento Vencimentos"
         LinhaMovEmpregado."Designação Empregado" := Empregado2.Name;
         LinhaMovEmpregado."Payroll Item Code" := TempRubricaEmpregado2."Cód. Rúbrica Salarial";
 
+        //Validate project name
         if ProjectDescription = '' then begin
             LinhaMovEmpregado."Payroll Item Description" := TempRubricaEmpregado2."Payroll Item Description";
         end else begin
