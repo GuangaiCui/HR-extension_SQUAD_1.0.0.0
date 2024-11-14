@@ -13,7 +13,7 @@ table 53075 "Estabelecimentos da Empresa"
         {
             Caption = 'Description';
         }
-        field(3; Morada; Text[30])
+        field(3; Morada; Text[200])
         {
             Caption = 'Address';
         }

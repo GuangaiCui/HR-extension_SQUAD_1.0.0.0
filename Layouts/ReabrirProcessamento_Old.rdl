@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="lblAusenciasEliminadas">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblAusenciasEliminadas</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblAusenciasEliminadas</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblHorasExtraEliminadas">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblHorasExtraEliminadas</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblHorasExtraEliminadas</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblAbonosDescExtra">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblAbonosDescExtra</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblAbonosDescExtra</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblCodProc">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblCodProc</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblCodProc</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblNEmp">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblNEmp</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblNEmp</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblDataIni">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblDataIni</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblDataIni</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblDataFim">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblDataFim</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblDataFim</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblMotAus">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblMotAus</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblMotAus</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblDescrição">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblDescrição</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblDescrição</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblQtd">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblQtd</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblQtd</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblUniMed">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblUniMed</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblUniMed</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblData">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblData</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblData</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblHoraExtra">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblHoraExtra</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblHoraExtra</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblCodRubrica">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblCodRubrica</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblCodRubrica</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblFator">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblFator</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblFator</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblValorUni">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblValorUni</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblValorUni</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="lblValorTotal">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>lblValorTotal</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>lblValorTotal</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="TODAY">
+          <DataField>TODAY</DataField>
+        </Field>
+        <Field Name="USERID">
+          <DataField>USERID</DataField>
+        </Field>
+        <Field Name="Processamento_eliminado_reabertoCaption">
+          <DataField>Processamento_eliminado_reabertoCaption</DataField>
+        </Field>
+        <Field Name="Periodos_Processamento_Cód__Processamento">
+          <DataField>Periodos_Processamento_Cód__Processamento</DataField>
+        </Field>
+        <Field Name="Periodos_Processamento_Tipo_Processamento">
+          <DataField>Periodos_Processamento_Tipo_Processamento</DataField>
+        </Field>
+        <Field Name="Hist__Cab__Movs__Empregado_Cód__Processamento">
+          <DataField>Hist__Cab__Movs__Empregado_Cód__Processamento</DataField>
+        </Field>
+        <Field Name="Hist__Cab__Movs__Empregado_Tipo_Processamento">
+          <DataField>Hist__Cab__Movs__Empregado_Tipo_Processamento</DataField>
+        </Field>
+        <Field Name="Hist__Cab__Movs__Empregado_N__Empregado">
+          <DataField>Hist__Cab__Movs__Empregado_N__Empregado</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Cód__Processamento_">
+          <DataField>Hist__Linhas_Movs__Empregado__Cód__Processamento_</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Tipo_Processamento_">
+          <DataField>Hist__Linhas_Movs__Empregado__Tipo_Processamento_</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__N__Empregado_">
+          <DataField>Hist__Linhas_Movs__Empregado__N__Empregado_</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Designação_Empregado_">
+          <DataField>Hist__Linhas_Movs__Empregado__Designação_Empregado_</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Cód__Rubrica_">
+          <DataField>Hist__Linhas_Movs__Empregado__Cód__Rubrica_</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Descrição_Rubrica_">
+          <DataField>Hist__Linhas_Movs__Empregado__Descrição_Rubrica_</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado_Valor">
+          <DataField>Hist__Linhas_Movs__Empregado_Valor</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado_ValorFormat">
+          <DataField>Hist__Linhas_Movs__Empregado_ValorFormat</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Cód__Processamento_Caption">
+          <DataField>Hist__Linhas_Movs__Empregado__Cód__Processamento_Caption</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Tipo_Processamento_Caption">
+          <DataField>Hist__Linhas_Movs__Empregado__Tipo_Processamento_Caption</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__N__Empregado_Caption">
+          <DataField>Hist__Linhas_Movs__Empregado__N__Empregado_Caption</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Designação_Empregado_Caption">
+          <DataField>Hist__Linhas_Movs__Empregado__Designação_Empregado_Caption</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Cód__Rubrica_Caption">
+          <DataField>Hist__Linhas_Movs__Empregado__Cód__Rubrica_Caption</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado__Descrição_Rubrica_Caption">
+          <DataField>Hist__Linhas_Movs__Empregado__Descrição_Rubrica_Caption</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado_ValorCaption">
+          <DataField>Hist__Linhas_Movs__Empregado_ValorCaption</DataField>
+        </Field>
+        <Field Name="Hist__Linhas_Movs__Empregado_N__Linha">
+          <DataField>Hist__Linhas_Movs__Empregado_N__Linha</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__Employee_No__">
+          <DataField>Histórico_Ausências__Employee_No__</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__From_Date_">
+          <DataField>Histórico_Ausências__From_Date_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__To_Date_">
+          <DataField>Histórico_Ausências__To_Date_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__Cause_of_Absence_Code_">
+          <DataField>Histórico_Ausências__Cause_of_Absence_Code_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_Description">
+          <DataField>Histórico_Ausências_Description</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_Quantity">
+          <DataField>Histórico_Ausências_Quantity</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_QuantityFormat">
+          <DataField>Histórico_Ausências_QuantityFormat</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências__Unit_of_Measure_Code_">
+          <DataField>Histórico_Ausências__Unit_of_Measure_Code_</DataField>
+        </Field>
+        <Field Name="Histórico_Ausências_Entry_No_">
+          <DataField>Histórico_Ausências_Entry_No_</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra_Data">
+          <DataField>Histórico_Horas_Extra_Data</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra__Cód__Hora_Extra_">
+          <DataField>Histórico_Horas_Extra__Cód__Hora_Extra_</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra_Descrição">
+          <DataField>Histórico_Horas_Extra_Descrição</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra__Cód__Rubrica_">
+          <DataField>Histórico_Horas_Extra__Cód__Rubrica_</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra_Quantidade">
+          <DataField>Histórico_Horas_Extra_Quantidade</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra_QuantidadeFormat">
+          <DataField>Histórico_Horas_Extra_QuantidadeFormat</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra_Factor">
+          <DataField>Histórico_Horas_Extra_Factor</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra_FactorFormat">
+          <DataField>Histórico_Horas_Extra_FactorFormat</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra__Valor_Unitário_">
+          <DataField>Histórico_Horas_Extra__Valor_Unitário_</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra__Valor_Unitário_Format">
+          <DataField>Histórico_Horas_Extra__Valor_Unitário_Format</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra__N__Empregado_">
+          <DataField>Histórico_Horas_Extra__N__Empregado_</DataField>
+        </Field>
+        <Field Name="Histórico_Horas_Extra_N__Mov_">
+          <DataField>Histórico_Horas_Extra_N__Mov_</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra__N__Empregado_">
+          <DataField>Histórico_Abonos___Desc__Extra__N__Empregado_</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra_Data">
+          <DataField>Histórico_Abonos___Desc__Extra_Data</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra__Cód__Rubrica_">
+          <DataField>Histórico_Abonos___Desc__Extra__Cód__Rubrica_</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra__Descrição_Rubrica_">
+          <DataField>Histórico_Abonos___Desc__Extra__Descrição_Rubrica_</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra_Quantidade">
+          <DataField>Histórico_Abonos___Desc__Extra_Quantidade</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra_QuantidadeFormat">
+          <DataField>Histórico_Abonos___Desc__Extra_QuantidadeFormat</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra__Valor_Total_">
+          <DataField>Histórico_Abonos___Desc__Extra__Valor_Total_</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra__Valor_Total_Format">
+          <DataField>Histórico_Abonos___Desc__Extra__Valor_Total_Format</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra_UnidadeMedida">
+          <DataField>Histórico_Abonos___Desc__Extra_UnidadeMedida</DataField>
+        </Field>
+        <Field Name="Histórico_Abonos___Desc__Extra_N__Mov_">
+          <DataField>Histórico_Abonos___Desc__Extra_N__Mov_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

@@ -2,6 +2,23 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "INTROSYS SQD RH TESTE",
+            "type": "al",
+            "request": "launch",
+            "environmentType": "Sandbox",
+            "environmentName": "Sandbox_RHv2",
+            "startupObjectId": 53044,
+            "startupObjectType": "Report",
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "launchBrowser": true,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
+        },
+        {
             "name": "Publish: Squad RH SandBox",
             "type": "al",
             "request": "launch",

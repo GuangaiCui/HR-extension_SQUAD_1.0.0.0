@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSource">
@@ -103,7 +103,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa_Name.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa_Name.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontWeight>Bold</FontWeight>
@@ -133,7 +133,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -160,7 +160,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!FORMAT_TODAY_0_4_.Value</Value>
+                                                                                <Value>=Fields!FORMAT_TODAY_0_4_.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -195,7 +195,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa__Name_2_.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa__Name_2_.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontWeight>Bold</FontWeight>
@@ -225,7 +225,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!USERID.Value</Value>
+                                                                                <Value>=Fields!USERID.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -262,7 +262,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa_Address.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa_Address.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -291,7 +291,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -318,7 +318,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!CurrReport_PAGENOCaption.Value &amp; " " &amp; Fields!CurrReport_PAGENO.Value</Value>
+                                                                                <Value>=Fields!CurrReport_PAGENOCaption.Value &amp; " " &amp; code.PageNumber</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -353,7 +353,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa__Post_Code_.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa__Post_Code_.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -380,7 +380,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa_City.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa_City.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -407,7 +407,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -434,7 +434,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -466,7 +466,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!N__Telefone______TabConfEmpresa__Phone_No__.Value</Value>
+                                                                                <Value>=Fields!N__Telefone______TabConfEmpresa__Phone_No__.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -495,7 +495,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -522,7 +522,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -554,7 +554,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!N__Contribuinte______TabConfEmpresa__VAT_Registration_No__.Value</Value>
+                                                                                <Value>=Fields!N__Contribuinte______TabConfEmpresa__VAT_Registration_No__.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -583,7 +583,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -610,7 +610,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -747,7 +747,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -794,7 +794,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!MAPA_COMPANHIA_DE_SEGUROSCaption.Value</Value>
+                                                                  <Value>=Fields!MAPA_COMPANHIA_DE_SEGUROSCaption.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>12pt</FontSize>
@@ -844,7 +844,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!varProvisorio.Value</Value>
+                                                                  <Value>=Fields!varProvisorio.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -893,7 +893,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -940,7 +940,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Companhia_de_Seguros_Caption.Value</Value>
+                                                                  <Value>=Fields!Companhia_de_Seguros_Caption.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -971,7 +971,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Movs__Empregado_Seguradora.Value</Value>
+                                                                  <Value>=Fields!Movs__Empregado_Seguradora.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1004,7 +1004,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1032,7 +1032,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1060,7 +1060,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1088,7 +1088,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1116,7 +1116,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1144,7 +1144,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1172,7 +1172,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1205,7 +1205,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!N__Apólice_Caption.Value</Value>
+                                                                  <Value>=Fields!N__Apólice_Caption.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1234,7 +1234,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1262,7 +1262,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Movs__Empregado__N__Apólice_.Value</Value>
+                                                                  <Value>=Fields!Movs__Empregado__N__Apólice_.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1295,7 +1295,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1323,7 +1323,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1351,7 +1351,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1379,7 +1379,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1407,7 +1407,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1435,7 +1435,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1463,7 +1463,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1496,7 +1496,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1543,7 +1543,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Periodo_de_Processamento_Caption.Value &amp; " " &amp; Fields!FORMAT_Mensal___________FORMAT_Ano_.Value</Value>
+                                                                  <Value>=Fields!Periodo_de_Processamento_Caption.Value &amp; " " &amp; Fields!FORMAT_Mensal___________FORMAT_Ano_.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1577,7 +1577,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1605,7 +1605,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1633,7 +1633,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1661,7 +1661,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1689,7 +1689,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1717,7 +1717,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1745,7 +1745,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1773,7 +1773,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1806,7 +1806,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -1908,7 +1908,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!NomeCaption.Value</Value>
+                                                                                <Value>=Fields!NomeCaption.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>8pt</FontSize>
@@ -1948,7 +1948,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Parameters!lblVenBase.Value</Value>
+                                                                                <Value>=Parameters!lblVenBase.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -1985,7 +1985,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!DiasCaption.Value</Value>
+                                                                                <Value>=Fields!DiasCaption.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -2022,7 +2022,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!VencimentoCaption.Value</Value>
+                                                                                <Value>=Fields!VencimentoCaption.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -2059,7 +2059,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!DiuturnidadesCaption.Value</Value>
+                                                                                <Value>=Fields!DiuturnidadesCaption.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -2096,7 +2096,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!Subsídio_AlmoçoCaption.Value</Value>
+                                                                                <Value>=Fields!Subsídio_AlmoçoCaption.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -2133,7 +2133,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>8pt</FontSize>
@@ -2170,7 +2170,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!Subsídios_Natal_FériasCaption.Value</Value>
+                                                                                <Value>=Fields!Subsídios_Natal_FériasCaption.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -2207,7 +2207,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>8pt</FontSize>
@@ -2244,7 +2244,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!Outros_AbonosCaption.Value</Value>
+                                                                                <Value>=Fields!Outros_AbonosCaption.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -2281,7 +2281,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>8pt</FontSize>
@@ -2318,7 +2318,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TotalCaption.Value</Value>
+                                                                                <Value>=Fields!TotalCaption.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -2355,7 +2355,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>8pt</FontSize>
@@ -2534,7 +2534,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Movs__Empregado__Designação_Empregado_.Value</Value>
+                                                                  <Value>=Fields!Movs__Empregado__Designação_Empregado_.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2563,7 +2563,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Movs_Emp_VB.Value</Value>
+                                                                  <Value>=Fields!Movs_Emp_VB.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2592,7 +2592,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!NDias.Value</Value>
+                                                                  <Value>=Fields!NDias.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2620,7 +2620,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorvencimento.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorvencimento.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2649,7 +2649,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorDiuturnidades.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorDiuturnidades.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2678,7 +2678,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorSubsAlmoco.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorSubsAlmoco.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2707,7 +2707,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2735,7 +2735,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorSubsNatalFerias.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorSubsNatalFerias.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2764,7 +2764,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2792,7 +2792,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorOutros.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorOutros.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2821,7 +2821,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2849,7 +2849,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!Total.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!Total.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2878,7 +2878,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -2911,7 +2911,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Movs__Empregado__Movs__Empregado___Descrição_Cat_Prof_.Value</Value>
+                                                                  <Value>=Fields!Movs__Empregado__Movs__Empregado___Descrição_Cat_Prof_.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2943,7 +2943,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2971,7 +2971,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -2999,7 +2999,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3027,7 +3027,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3055,7 +3055,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3083,7 +3083,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3111,7 +3111,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3139,7 +3139,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3167,7 +3167,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -3285,7 +3285,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!TotaisCaption_Control1102059061.Value</Value>
+                                                                  <Value>=Fields!TotaisCaption_Control1102059061.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3320,7 +3320,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3354,7 +3354,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3388,7 +3388,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Sum(Fields!valorvencimento.Value)</Value>
+                                                                  <Value>=Sum(Fields!valorvencimento.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3424,7 +3424,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Sum(Fields!valorDiuturnidades.Value)</Value>
+                                                                  <Value>=Sum(Fields!valorDiuturnidades.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3460,7 +3460,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Sum(Fields!valorSubsAlmoco.Value)</Value>
+                                                                  <Value>=Sum(Fields!valorSubsAlmoco.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3496,7 +3496,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3531,7 +3531,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Sum(Fields!valorSubsNatalFerias.Value)</Value>
+                                                                  <Value>=Sum(Fields!valorSubsNatalFerias.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3567,7 +3567,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3602,7 +3602,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Sum(Fields!valorOutros.Value)</Value>
+                                                                  <Value>=Sum(Fields!valorOutros.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3638,7 +3638,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3673,7 +3673,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Sum(Fields!Total.Value)</Value>
+                                                                  <Value>=Sum(Fields!Total.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -3709,7 +3709,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -3830,7 +3830,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa_Name_Control1102059090.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa_Name_Control1102059090.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontWeight>Bold</FontWeight>
@@ -3860,7 +3860,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -3887,7 +3887,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!FORMAT_TODAY_0_4__Control1102059099.Value</Value>
+                                                                                <Value>=Fields!FORMAT_TODAY_0_4__Control1102059099.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -3922,7 +3922,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa__Name_2__Control1102059089.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa__Name_2__Control1102059089.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontWeight>Bold</FontWeight>
@@ -3952,7 +3952,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!USERID_Control1102059100.Value</Value>
+                                                                                <Value>=Fields!USERID_Control1102059100.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -3989,7 +3989,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa_Address_Control1102059091.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa_Address_Control1102059091.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4018,7 +4018,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4045,7 +4045,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!CurrReport_PAGENO_Control1102059088Caption.Value &amp; " " &amp; Fields!CurrReport_PAGENO_Control1102059088.Value</Value>
+                                                                                <Value>=Fields!CurrReport_PAGENOCaption.Value &amp; " " &amp; code.PageNumber</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -4080,7 +4080,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa__Post_Code__Control1102059093.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa__Post_Code__Control1102059093.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4107,7 +4107,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TabConfEmpresa_City_Control1102059092.Value</Value>
+                                                                                <Value>=Fields!TabConfEmpresa_City_Control1102059092.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4134,7 +4134,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4161,7 +4161,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4193,7 +4193,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!N__Telefone______TabConfEmpresa__Phone_No___Control1102059094.Value</Value>
+                                                                                <Value>=Fields!N__Telefone______TabConfEmpresa__Phone_No___Control1102059094.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4222,7 +4222,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4249,7 +4249,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4281,7 +4281,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!N__Contribuinte______TabConfEmpresa__VAT_Registration_No___Control1102059095.Value</Value>
+                                                                                <Value>=Fields!N__Contribuinte______TabConfEmpresa__VAT_Registration_No___Control1102059095.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4310,7 +4310,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4337,7 +4337,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                 </Style>
@@ -4474,7 +4474,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4521,7 +4521,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!MAPA_COMPANHIA_DE_SEGUROSCaption_Control1102059096.Value</Value>
+                                                                  <Value>=Fields!MAPA_COMPANHIA_DE_SEGUROSCaption_Control1102059096.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>12pt</FontSize>
@@ -4571,7 +4571,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!varProvisorio_Control1102059097.Value</Value>
+                                                                  <Value>=Fields!varProvisorio_Control1102059097.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4620,7 +4620,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4667,7 +4667,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Companhia_de_Seguros_Caption_Control1102059038.Value</Value>
+                                                                  <Value>=Fields!Companhia_de_Seguros_Caption_Control1102059038.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4698,7 +4698,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Hist__Movs__Empregado_Seguradora.Value</Value>
+                                                                  <Value>=Fields!Hist__Movs__Empregado_Seguradora.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4726,7 +4726,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4754,7 +4754,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4782,7 +4782,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4810,7 +4810,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4838,7 +4838,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4866,7 +4866,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4894,7 +4894,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4922,7 +4922,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4950,7 +4950,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -4978,7 +4978,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5006,7 +5006,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5039,7 +5039,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!N__Apólice_Caption_Control1102059040.Value</Value>
+                                                                  <Value>=Fields!N__Apólice_Caption_Control1102059040.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5068,7 +5068,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5096,7 +5096,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Hist__Movs__Empregado__N__Apólice_.Value</Value>
+                                                                  <Value>=Fields!Hist__Movs__Empregado__N__Apólice_.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5124,7 +5124,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5152,7 +5152,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5180,7 +5180,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5208,7 +5208,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5236,7 +5236,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5264,7 +5264,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5292,7 +5292,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5320,7 +5320,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5348,7 +5348,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5376,7 +5376,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5404,7 +5404,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5437,7 +5437,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5484,7 +5484,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Periodo_de_Processamento_Caption_Control1102059042.Value &amp; " " &amp; Fields!FORMAT_Mensal___________FORMAT_Ano__Control1102059041.Value</Value>
+                                                                  <Value>=Fields!Periodo_de_Processamento_Caption_Control1102059042.Value &amp; " " &amp; Fields!FORMAT_Mensal___________FORMAT_Ano__Control1102059041.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5518,7 +5518,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5546,7 +5546,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5574,7 +5574,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5602,7 +5602,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5630,7 +5630,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5658,7 +5658,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5686,7 +5686,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5714,7 +5714,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5747,7 +5747,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -5846,7 +5846,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!NomeCaption_Control1102059029.Value</Value>
+                                                                                <Value>=Fields!NomeCaption_Control1102059029.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -5885,7 +5885,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Parameters!lblVenBase.Value</Value>
+                                                                                <Value>=Parameters!lblVenBase.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -5922,7 +5922,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!DiasCaption_Control1102065006.Value</Value>
+                                                                                <Value>=Fields!DiasCaption_Control1102065006.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -5959,7 +5959,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!VencimentoCaption_Control1102059030.Value</Value>
+                                                                                <Value>=Fields!VencimentoCaption_Control1102059030.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -5996,7 +5996,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!DiuturnidadesCaption_Control1102059031.Value</Value>
+                                                                                <Value>=Fields!DiuturnidadesCaption_Control1102059031.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -6033,7 +6033,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!Subsídio_AlmoçoCaption_Control1102059032.Value</Value>
+                                                                                <Value>=Fields!Subsídio_AlmoçoCaption_Control1102059032.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -6070,7 +6070,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -6107,7 +6107,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!Subsídios_Natal_FériasCaption_Control1102059033.Value</Value>
+                                                                                <Value>=Fields!Subsídios_Natal_FériasCaption_Control1102059033.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -6144,7 +6144,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -6181,7 +6181,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!Outros_AbonosCaption_Control1102059034.Value</Value>
+                                                                                <Value>=Fields!Outros_AbonosCaption_Control1102059034.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -6218,7 +6218,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -6255,7 +6255,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto">=Fields!TotalCaption_Control1102059035.Value</Value>
+                                                                                <Value>=Fields!TotalCaption_Control1102059035.Value</Value>
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>7pt</FontSize>
@@ -6292,7 +6292,7 @@
                                                                           <Paragraph>
                                                                             <TextRuns>
                                                                               <TextRun>
-                                                                                <Value EvaluationMode="Auto" />
+                                                                                <Value />
                                                                                 <Style>
                                                                                   <FontFamily>Segoe UI</FontFamily>
                                                                                   <FontSize>8pt</FontSize>
@@ -6470,7 +6470,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Hist__Movs__Empregado__Designação_Empregado_.Value</Value>
+                                                                  <Value>=Fields!Hist__Movs__Empregado__Designação_Empregado_.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6500,7 +6500,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!HistMovs_Emp_VB.Value</Value>
+                                                                  <Value>=Fields!HistMovs_Emp_VB.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6530,7 +6530,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!NDias_Control1102065002.Value</Value>
+                                                                  <Value>=Fields!NDias_Control1102065002.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6559,7 +6559,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorvencimento_hist.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorvencimento_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6593,7 +6593,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorDiuturnidades_hist.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorDiuturnidades_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6627,7 +6627,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorSubsAlmoco_hist.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorSubsAlmoco_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6661,7 +6661,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6690,7 +6690,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorSubsNatalFerias_hist.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorSubsNatalFerias_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6724,7 +6724,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6753,7 +6753,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!valorOutros_hist.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!valorOutros_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6787,7 +6787,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6816,7 +6816,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=code.blankzero(Fields!Total_hist.Value)</Value>
+                                                                  <Value>=code.blankzero(Fields!Total_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6850,7 +6850,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -6883,7 +6883,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Hist__Movs__Empregado__Hist__Movs__Empregado___Descrição_Cat_Prof_.Value</Value>
+                                                                  <Value>=Fields!Hist__Movs__Empregado__Hist__Movs__Empregado___Descrição_Cat_Prof_.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6915,7 +6915,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6943,7 +6943,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6971,7 +6971,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -6999,7 +6999,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7027,7 +7027,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7055,7 +7055,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7083,7 +7083,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7111,7 +7111,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7139,7 +7139,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -7248,7 +7248,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!TotaisCaption_Control1102059061.Value</Value>
+                                                                  <Value>=Fields!TotaisCaption_Control1102059061.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7287,7 +7287,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=sum(Fields!valorvencimento_hist.Value)</Value>
+                                                                  <Value>=sum(Fields!valorvencimento_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7327,7 +7327,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=sum(Fields!valorDiuturnidades_hist.Value)</Value>
+                                                                  <Value>=sum(Fields!valorDiuturnidades_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7367,7 +7367,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=sum(Fields!valorSubsAlmoco_hist.Value)</Value>
+                                                                  <Value>=sum(Fields!valorSubsAlmoco_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7407,7 +7407,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7446,7 +7446,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=sum(Fields!valorSubsNatalFerias_hist.Value)</Value>
+                                                                  <Value>=sum(Fields!valorSubsNatalFerias_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7486,7 +7486,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7525,7 +7525,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=sum(Fields!valorOutros_hist.Value)</Value>
+                                                                  <Value>=sum(Fields!valorOutros_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7565,7 +7565,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7604,7 +7604,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=sum(Fields!Total_hist.Value)</Value>
+                                                                  <Value>=sum(Fields!Total_hist.Value)</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7633,7 +7633,6 @@
                                                             <PaddingBottom>2pt</PaddingBottom>
                                                           </Style>
                                                         </Textbox>
-                                                        <rd:Selected>true</rd:Selected>
                                                       </CellContents>
                                                     </TablixCell>
                                                   </TablixCells>
@@ -7727,7 +7726,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto">=Fields!Processado_por_ComputadorCaption_Control1102059072.Value</Value>
+                                                                  <Value>=Fields!Processado_por_ComputadorCaption_Control1102059072.Value</Value>
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7757,7 +7756,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7785,7 +7784,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7813,7 +7812,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7841,7 +7840,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7869,7 +7868,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7897,7 +7896,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7925,7 +7924,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7953,7 +7952,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -7981,7 +7980,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>7pt</FontSize>
@@ -8009,7 +8008,7 @@
                                                             <Paragraph>
                                                               <TextRuns>
                                                                 <TextRun>
-                                                                  <Value EvaluationMode="Auto" />
+                                                                  <Value />
                                                                   <Style>
                                                                     <FontFamily>Segoe UI</FontFamily>
                                                                     <FontSize>8pt</FontSize>
@@ -8245,7 +8244,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value EvaluationMode="Auto">=Parameters!lblProcComp.Value</Value>
+                      <Value>=Parameters!lblProcComp.Value</Value>
                       <Style>
                         <FontFamily>Segoe UI</FontFamily>
                         <FontSize>7pt</FontSize>
@@ -8305,6 +8304,24 @@
       <Prompt>lblProcComp</Prompt>
     </ReportParameter>
   </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>1</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>lblVenBase</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>lblProcComp</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -8339,7 +8356,10 @@ Public Function BlankNegAndZero(ByVal Value As Decimal)
     end if
     Return Value
 End Function
-</Code>
+
+Function PageNumber() As String      
+    Return Me.Report.Globals!PageNumber      
+End Function</Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
