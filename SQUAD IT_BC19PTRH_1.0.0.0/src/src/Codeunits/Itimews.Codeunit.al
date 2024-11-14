@@ -73,7 +73,6 @@ codeunit 53045 Itimews
                 Clear(contratoEmpregado);
                 if contratoEmpregado.Get(empregados."No.") then begin
                     dataIni := Format(contratoEmpregado."Data Inicio Contrato", 0, '<Year4>-<Month>-<Day>');
-                    dataFim := Format(contratoEmpregado."Data Fim Contrato", 0, '<Year4>-<Month>-<Day>');
 
                     if contratoEmpregado."Data Fim Contrato" <> 0D then begin
                         dataFim := Format(contratoEmpregado."Data Fim Contrato", 0, '<Year4>-<Month>-<Day>');
@@ -172,9 +171,54 @@ codeunit 53045 Itimews
     /// <summary>
     /// Syncronizes the vacation days with itime.
     /// </summary>
-    local procedure SetDireitoFerias()
+    /// <param name="ano"></param>
+    local procedure obsolete_SetDireitoFerias(year: Integer)
+    var
+        feriasEmpregados: Record "Férias Empregados";
+        soapContentRequest: Text;
+        soapAction: Text;
+        empgregados: Record Empregado;
+        horasGozadas: Decimal;
     begin
-        //TOOD. Que tabela dá match
+        soapAction := 'https://itimeweb.com/setDireitoFerias';
+
+        if empgregados.FindSet() then
+            repeat
+                feriasEmpregados.Reset();
+                feriasEmpregados.SetRange("Employee No.", empgregados."No.");
+                feriasEmpregados.SetRange("Ano a que se refere", year);
+
+                if feriasEmpregados.FindSet() then
+                    repeat
+                        if feriasEmpregados.Gozada = true then begin
+                            if feriasEmpregados."Qtd." = 1 then begin
+                                feriasEmpregados."Qtd." := 8;
+                            end
+                            else if feriasEmpregados."Qtd." = 5 then begin
+                                feriasEmpregados."Qtd." := 4;
+                            end;
+
+                            horasGozadas := horasGozadas + feriasEmpregados."Qtd.";
+                        end else begin
+                        end;
+                        // soapContentRequest :=
+                        //         '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:itim="https://itimeweb.com/">' +
+                        //         '<soapenv:Header/>' +
+                        //         '<soapenv:Body>' +
+                        //             '<itim:setDireitoFerias>' +
+                        //             '<itim:nNumero>' + feriasEmpregados."Employee No." + '</itim:nNumero>' +
+                        //             '<itim:Ano>' + Format(feriasEmpregados."Ano a que se refere") + '</itim:Ano>' +
+                        //             '<itim:fAnoAtual>' + Format(feriasEmpregados."Qtd.") + '</itim:fAnoAtual>' +
+                        //             '<itim:fAnoAnterior>' + '0' + '</itim:fAnoAnterior>' +
+                        //             '<itim:sigla>' + siglaEmpresa + '</itim:sigla>' +
+                        //         '</itim:setDireitoFerias>' +
+                        //         '</soapenv:Body>' +
+                        //         '</soapenv:Envelope>';
+
+                        MakeCall(soapContentRequest, soapAction);
+
+                    until feriasEmpregados.Next() = 0;
+            until empgregados.Next() = 0;
     end;
     #endregion
 
@@ -244,10 +288,10 @@ codeunit 53045 Itimews
 
         if response.HttpStatusCode = 200 then begin
             response.Content.ReadAs(responseText);
-            //Tratar do XML
             XmlDocument.ReadFrom(responseText, xmlDoc);
             exit(xmlDoc);
-        end else begin
+        end
+        else begin
             exit(xmlDoc);
         end;
     end;
