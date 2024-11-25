@@ -2658,6 +2658,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field Envio Recibo via E-Mail - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3078557310 - Field 4057372025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Escalão IRS Jovem</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field Escalão IRS Jovem - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3078557310 - Field 1746942854 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Estabelecimento</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2787,6 +2792,11 @@
           <source>IRS Fixed %</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field IRS % Fixa - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3078557310 - Field 2499871925 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>IRS Jovem</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Empregado - Field IRS Jovem - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3078557310 - Field 3955506093 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>IVA %</source>
@@ -7623,6 +7633,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Regime Seg. Social - Field Tipo Dedução SS - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1875183755 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Regimes IRS Jovem</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Regimes IRS Jovem - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1875183755 - Field 1440300220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ano</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Regimes IRS Jovem - Field Ano - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1875183755 - Field 3004954119 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Regimes IRS Jovem - Field Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1875183755 - Field 936308770 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Escalão</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Regimes IRS Jovem - Field Escalao - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1875183755 - Field 1585587686 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Isenção %</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Regimes IRS Jovem - Field Isenção - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1875183755 - Field 1995244460 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Limite</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Regimes IRS Jovem - Field Limite - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1875183755 - Field 975024907 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Regime</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Regimes IRS Jovem - Field Regime - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2233419849 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>RU</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -9272,6 +9317,11 @@
           <source>Communication</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Empregado - Control Comunicação - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3234697897 - Control 3575157661 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source></source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Ficha Empregado - Control IRSJovem - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3234697897 - Control 311200057 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tabela IRS</source>
@@ -10952,6 +11002,16 @@
           <source>Lista Natureza Jurídica</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Lista Natureza Jurídica - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1696310654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lista Regimes IRS Jovem</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lista Regimes IRS Jovem - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1696310654 - Action 1692444235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ActionName</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Lista Regimes IRS Jovem - Action ActionName - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2409788050 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Lista Rubrica Salarial</source>

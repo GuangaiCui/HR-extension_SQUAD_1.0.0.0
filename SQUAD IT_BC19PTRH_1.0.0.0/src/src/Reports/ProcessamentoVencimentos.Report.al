@@ -1494,7 +1494,9 @@ report 53037 "Processamento Vencimentos"
                     CabMovEmpregado."No. Horas Semanais" := Empregado."No. Horas Semanais";
                     CabMovEmpregado."Nº Horas Semanais Totais" := Empregado."No. Horas Semanais Totais";
                     CabMovEmpregado."Nº Horas Docência Calc. Desct." := Empregado."Nº Horas Docência Calc. Desct.";
-                    CabMovEmpregado."Valor Incidência IRS" := ValorIncidenciaIRS;
+                    //CabMovEmpregado."Valor Incidência IRS" := ValorIncidenciaIRS;
+                    CabMovEmpregado."Valor Incidência IRS" := RecalcularValordeIncidenciaIRSJovem(ValorIncidenciaIRS, Empregado);
+
                     CabMovEmpregado."Valor para Escalão Sobretaxa" := ValorEscalaoSobretaxa; //2016.01.08  -Sobretaxa 2016
                     CabMovEmpregado."Vacation Days Received" := CalcularDiasFeriasDireito(Empregado."No.");
                     CabMovEmpregado."Vacation Days Spent" := CalcularDiasFeriasGastos(Empregado."No.");
@@ -2559,4 +2561,32 @@ report 53037 "Processamento Vencimentos"
         exit(DiasFerias);
     end;
     #endregion
+
+    /// <summary>
+    /// Valida se pode ter IRS jovem e faz os calculos para saber o valor de incidencia
+    /// </summary>
+    local procedure RecalcularValordeIncidenciaIRSJovem(valorIncidencia: Decimal; empregado: Record Empregado): Decimal
+    var
+        regimeIRSJovem: Record "Regimes IRS Jovem";
+        valorNovoAux: Decimal;
+    begin
+        if (empregado."IRS Jovem" = false) then begin
+            exit(valorIncidencia);
+        end else begin
+            if regimeIRSJovem.Get(empregado."Escalão IRS Jovem") then begin
+                //Calcular o valor de incidencia
+                if (valorIncidencia <= regimeIRSJovem.Limite) then begin
+                    valorIncidencia := valorIncidencia - (valorIncidencia * regimeIRSJovem."Isenção" / 100);
+                end else begin
+                    // Se o valor de incidência ultrapassa o limite. Calcular o valor isento + valor que ultrapassa o limite.
+                    valorNovoAux := (regimeIRSJovem.Limite - (regimeIRSJovem.Limite * regimeIRSJovem."Isenção" / 100));
+                    valorIncidencia := valorNovoAux + (valorIncidencia - regimeIRSJovem.Limite);
+                end;
+
+                exit(valorIncidencia)
+            end else begin
+                exit(valorIncidencia);
+            end;
+        end;
+    end;
 }

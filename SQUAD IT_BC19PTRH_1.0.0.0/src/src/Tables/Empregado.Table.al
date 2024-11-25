@@ -1292,6 +1292,18 @@ table 53035 "Empregado"
             DataClassification = ToBeClassified;
             Description = 'tagus';
         }
+
+        field(302; "IRS Jovem"; Boolean)
+        {
+            Caption = 'IRS Jovem';
+            DataClassification = ToBeClassified;
+        }
+        field(303; "Escalão IRS Jovem"; Code[60])
+        {
+            Caption = 'Escalão IRS Jovem';
+            DataClassification = ToBeClassified;
+            TableRelation = "Regimes IRS Jovem".Code;
+        }
     }
 
     keys
