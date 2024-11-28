@@ -5,10 +5,9 @@ codeunit 53045 Itimews
         siglaEmpresa := 'WEBDEMO';
         endpoint := 'https://itimeweb.com:9876/itimews/itimews.asmx';
 
-        SetUtilizadores(true);
-        SetRubricas(true);
+        SetUtilizadoresFull();
+        SetRubricas();
     end;
-
 
     #region SERVICE CALLS
     local procedure GetUtilizadores()
@@ -49,7 +48,7 @@ codeunit 53045 Itimews
     /// <summary>
     /// Sincronizes all "Empregados" table with the Itime system.
     /// </summary>
-    local procedure SetUtilizadores(runAsDemo: Boolean)
+    local procedure SetUtilizadores_notused(runAsDemo: Boolean)
     var
         empregados: Record Empregado;
         soapContentRequest: Text;
@@ -119,11 +118,82 @@ codeunit 53045 Itimews
     end;
 
     /// <summary>
+    /// Sincronza os utilizadores
+    /// </summary>
+    local procedure SetUtilizadoresFull()
+    var
+        empregado: Record Empregado;
+        soapContentRequest: Text;
+        soapAction: Text;
+    begin
+        soapAction := 'https://itimeweb.com/setUtilizadorFull';
+
+        if empregado.FindSet() then
+            repeat
+                soapContentRequest :=
+                '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:itim="https://itimeweb.com/">' +
+                '<soapenv:Header/>' +
+                '<soapenv:Body>' +
+                    '<itim:setUtilizadorFull>' +
+                        '<itim:nNumero>' + empregado."No." + '</itim:nNumero>' +
+                        '<itim:mNome>' + empregado.Name + '</itim:mNome>' +
+                        '<itim:dataini></itim:dataini>' +
+                        '<itim:datafim></itim:datafim>' +
+                        '<itim:sigla></itim:sigla>' +
+                        '<itim:nMorada></itim:nMorada>' +
+                        '<itim:nCodPostal></itim:nCodPostal>' +
+                        '<itim:nNIF></itim:nNIF>' +
+                        '<itim:nBI></itim:nBI>' +
+                        '<itim:nValidadeBI></itim:nValidadeBI>' +
+                        '<itim:nDataNascimento></itim:nDataNascimento>' +
+                        '<itim:nEstadoCivil></itim:nEstadoCivil>' +
+                        '<itim:nTelefone></itim:nTelefone>' +
+                        '<itim:nProfissao></itim:nProfissao>' +
+                        //<!--Optional:-->
+                        //<itim:nDepartamento>?</itim:nDepartamento>
+                        //<!--Optional:-->
+                        //<itim:cDepartamento>?</itim:cDepartamento>
+                        //<!--Optional:-->
+                        //<itim:nSeccao>?</itim:nSeccao>
+                        //<!--Optional:-->
+                        //<itim:cSeccao>?</itim:cSeccao>
+                        //<!--Optional:-->
+                        //<itim:nSubSeccao>?</itim:nSubSeccao>
+                        //<!--Optional:-->
+                        //<itim:cSubSeccao>?</itim:cSubSeccao>
+                        //<!--Optional:-->
+                        //<itim:nCategoria>?</itim:nCategoria>
+                        //<!--Optional:-->
+                        //<itim:cCategoria>?</itim:cCategoria>
+                        //<!--Optional:-->
+                        //<itim:nCCusto>?</itim:nCCusto>
+                        //<!--Optional:-->
+                        //<itim:cCCusto>?</itim:cCCusto>
+                        //<!--Optional:-->
+                        //<itim:nLocal>?</itim:nLocal>
+                        //<!--Optional:-->
+                        //<itim:cLocal>?</itim:cLocal>
+                        '<itim:nEmail></itim:nEmail>' +
+                        //'<itim:nChefia>?</itim:nChefia>' +
+                        '<itim:fAno></itim:fAno>' +
+                        '<itim:fAnoAtual></itim:fAnoAtual>' +
+                        '<itim:fAnoAnterior></itim:fAnoAnterior>' +
+                    '</itim:setUtilizadorFull>' +
+                    '</soapenv:Body>' +
+                '</soapenv:Envelope>';
+
+                MakeCall(soapContentRequest, soapAction);
+
+            until empregado.Next() = 0;
+    end;
+
+    /// <summary>
     /// Syncronizes all Payroll Items with itime system.
     /// </summary>
-    local procedure SetRubricas(runAsDemo: Boolean)
+    local procedure SetRubricas()
     var
         rubrica: Record "Payroll Item";
+        motivoAusencia: Record "Cause of Absence";
         soapContentRequest: Text;
         soapAction: Text;
     begin
@@ -134,38 +204,48 @@ codeunit 53045 Itimews
             repeat
                 Clear(soapContentRequest);
 
-                if runAsDemo = true then begin
-                    soapContentRequest :=
-                                   '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:itim="https://itimeweb.com/">' +
-                                    '<soapenv:Header/>' +
-                                    '<soapenv:Body>' +
-                                        '<itim:setRubricas>' +
-                                            '<itim:sigla>' + 'WEBDEMO' + '</itim:sigla>' +
-                                            '<itim:cRubrica>' + 'CODE_SQ' + '</itim:cRubrica>' +
-                                            '<itim:nRubrica>' + 'DESCRIPTION' + '</itim:nRubrica>' +
-                                            '<itim:tipo></itim:tipo>' +
-                                        '</itim:setRubricas>' +
-                                    '</soapenv:Body>' +
-                                    '</soapenv:Envelope>';
+                soapContentRequest :=
+                               '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:itim="https://itimeweb.com/">' +
+                                '<soapenv:Header/>' +
+                                '<soapenv:Body>' +
+                                    '<itim:setRubricas>' +
+                                        '<itim:sigla>' + siglaEmpresa + '</itim:sigla>' +
+                                        '<itim:cRubrica>' + rubrica."Código" + '</itim:cRubrica>' +
+                                        '<itim:nRubrica>' + rubrica."Descrição" + '</itim:nRubrica>' +
+                                        '<itim:tipo>{Tipo}</itim:tipo>' +
+                                    '</itim:setRubricas>' +
+                                '</soapenv:Body>' +
+                                '</soapenv:Envelope>';
+
+                if rubrica."Payroll Item Type" = rubrica."Payroll Item Type"::Abono then begin
+                    soapContentRequest := soapContentRequest.Replace('{Tipo}', 'A');
                 end else begin
-                    soapContentRequest :=
-                                   '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:itim="https://itimeweb.com/">' +
-                                    '<soapenv:Header/>' +
-                                    '<soapenv:Body>' +
-                                        '<itim:setRubricas>' +
-                                            '<itim:sigla>' + siglaEmpresa + '</itim:sigla>' +
-                                            '<itim:cRubrica>' + rubrica."Código" + '</itim:cRubrica>' +
-                                            '<itim:nRubrica>' + rubrica."Descrição" + '</itim:nRubrica>' +
-                                            '<itim:tipo></itim:tipo>' +
-                                        '</itim:setRubricas>' +
-                                    '</soapenv:Body>' +
-                                    '</soapenv:Envelope>';
+                    soapContentRequest := soapContentRequest.Replace('{Tipo}', 'F');
                 end;
 
+                MakeCall(soapContentRequest, soapAction);
+            until rubrica.Next() = 0;
+
+        //Envia agora os motivos de ausencia
+        if motivoAusencia.FindSet() then
+            repeat
+                Clear(soapContentRequest);
+
+                soapContentRequest :=
+                         '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:itim="https://itimeweb.com/">' +
+                          '<soapenv:Header/>' +
+                          '<soapenv:Body>' +
+                              '<itim:setRubricas>' +
+                                  '<itim:sigla>' + siglaEmpresa + '</itim:sigla>' +
+                                  '<itim:cRubrica>' + motivoAusencia.Code + '</itim:cRubrica>' +
+                                  '<itim:nRubrica>' + motivoAusencia.Description + '</itim:nRubrica>' +
+                                  '<itim:tipo>F</itim:tipo>' +
+                              '</itim:setRubricas>' +
+                          '</soapenv:Body>' +
+                          '</soapenv:Envelope>';
 
                 MakeCall(soapContentRequest, soapAction);
-
-            until rubrica.Next() = 0
+            until motivoAusencia.Next() = 0
     end;
 
     /// <summary>

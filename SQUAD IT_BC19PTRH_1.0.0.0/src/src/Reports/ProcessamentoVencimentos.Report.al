@@ -2260,43 +2260,36 @@ report 53037 "Processamento Vencimentos"
         tempJobHours: List of [Decimal];
         tempJobNo: List of [Code[20]];
         jobIndex: Integer;
-        distribuicaoCustos: Record "Distribuição Custos";
         jobNameTemp: Text;
     begin
         timeSheetDetail.Reset();
         timeSheetDetail.SetRange("Resource No.", Empregado."No."); //DUVIDA. Como é feito o match?m
-        timeSheetDetail.SetFilter(Date, '>=%1..<=%2', "Periodos Processamento"."Data Inicio Processamento", "Periodos Processamento"."Data Fim Processamento");
+        timeSheetDetail.SetFilter(Date, '%1..%2', "Periodos Processamento"."Data Inicio Processamento", "Periodos Processamento"."Data Fim Processamento");
 
-        //Count day by day. Takes into consideration if the timeSheetDetail is approved.
-        if not distribuicaoCustos.Get(Empregado."No.") then begin
-            if timeSheetDetail.FindSet() then
-                repeat
-                    if timeSheetDetail.Status = timeSheetDetail.Status::Approved then begin
-                        if not tempJobNo.Contains(timeSheetDetail."Job No.") then begin
-                            tempJobHours.Add(timeSheetDetail.Quantity);
-                            tempJobNo.Add(timeSheetDetail."Job No.");
-                        end else begin
-                            jobIndex := tempJobNo.IndexOf(timeSheetDetail."Job No.");
-                            tempJobHours.Set(jobIndex, tempJobHours.Get(jobIndex) + timeSheetDetail.Quantity);
-                        end;
+        //Count day by day.
+        if timeSheetDetail.FindSet() then
+            repeat
+                if not tempJobNo.Contains(timeSheetDetail."Job No.") then begin
+                    tempJobHours.Add(timeSheetDetail.Quantity);
+                    tempJobNo.Add(timeSheetDetail."Job No.");
+                end else begin
+                    jobIndex := tempJobNo.IndexOf(timeSheetDetail."Job No.");
+                    tempJobHours.Set(jobIndex, tempJobHours.Get(jobIndex) + timeSheetDetail.Quantity);
+                end;
 
-                        hoursTotal += timeSheetDetail.Quantity;
-                    end;
-                until timeSheetDetail.Next() = 0;
+                hoursTotal += timeSheetDetail.Quantity;
+            until timeSheetDetail.Next() = 0;
 
-            //Descontruir a linha
-            if tempJobHours.Count() > 0 then begin
-                for i := 1 to tempJobHours.Count() do begin
-                    Clear(job);
-                    job.Get(tempJobNo.Get(i));
-                    ExecuteInserirDadosCabMovEmp(tempJobHours.Get(i) / hoursTotal * TempRubricaEmpregado."Total Amount", job.Description
-                    );
-                end
-            end else begin
-                ExecuteInserirDadosCabMovEmp(TempRubricaEmpregado."Total Amount", '');
-            end;
+        //Descontruir a linha
+        if tempJobHours.Count() > 0 then begin
+            for i := 1 to tempJobHours.Count() do begin
+                Clear(job);
+                job.Get(tempJobNo.Get(i));
+                ExecuteInserirDadosCabMovEmp(tempJobHours.Get(i) / hoursTotal * TempRubricaEmpregado2."Total Amount", job.Description
+                );
+            end
         end else begin
-            ExecuteInserirDadosCabMovEmp(TempRubricaEmpregado."Total Amount", '');
+            ExecuteInserirDadosCabMovEmp(TempRubricaEmpregado2."Total Amount", '');
         end;
     end;
 

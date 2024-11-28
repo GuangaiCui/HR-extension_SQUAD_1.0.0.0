@@ -45,7 +45,6 @@ table 53131 "Regimes IRS Jovem"
 
     trigger OnInsert()
     begin
-        // Generate the Code based on Ano and Regime (Primary Key)
         Code := StrSubstNo('%1_%2', Ano, Regime);
     end;
 

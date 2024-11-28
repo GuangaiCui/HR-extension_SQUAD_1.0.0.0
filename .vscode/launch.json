@@ -27,7 +27,7 @@
             "environmentName": "SQUAD_SNDBX_RH",
             "startupObjectId": 53064,
             "startupObjectType": "Report",
-            "schemaUpdateMode":"ForceSync",
+            //"schemaUpdateMode":"ForceSync",
             "breakOnError": "All",
             "breakOnRecordWrite": "None",
             "launchBrowser": true,
