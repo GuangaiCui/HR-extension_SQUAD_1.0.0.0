@@ -125,11 +125,44 @@ codeunit 53045 Itimews
         empregado: Record Empregado;
         soapContentRequest: Text;
         soapAction: Text;
+        codigoDepartamento: Code[20];
+        descricaoDepartamento: Text;
+        defaultDimensions: Record "Default Dimension";
+        dataInicio: Text;
+        dataFim: Text;
+        numeroBi: Text;
+        validadeBi: Text;
+        dataNascimento: Text;
     begin
         soapAction := 'https://itimeweb.com/setUtilizadorFull';
 
         if empregado.FindSet() then
             repeat
+                Clear(dataInicio);
+                Clear(dataFim);
+                Clear(validadeBi);
+                Clear(numeroBi);
+                Clear(dataNascimento);
+
+                if empregado."Employment Date" <> 0D then begin
+                    dataInicio := FORMAT(empregado."Employment Date", 0, '<Year4>-<Month>-<Day>');
+                end;
+
+                if empregado."End Date" <> 0D then begin
+                    dataFim := FORMAT(empregado."End Date", 0, '<Year4>-<Month>-<Day>');
+                end;
+
+                if (empregado."Documento Identificação" = empregado."Documento Identificação"::BI) or
+                (empregado."Documento Identificação" = empregado."Documento Identificação"::"Cartão Cidadão")
+                then begin
+                    numeroBi := empregado."No. Doc. Identificação";
+                    validadeBi := FORMAT(empregado."Data Doc. Ident.", 0, '<Year4>-<Month>-<Day>');
+                end;
+
+                if empregado."Birth Date" <> 0D then begin
+                    dataNascimento := FORMAT(empregado."Birth Date", 0, '<Year4>-<Month>-<Day>');
+                end;
+
                 soapContentRequest :=
                 '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:itim="https://itimeweb.com/">' +
                 '<soapenv:Header/>' +
@@ -137,50 +170,48 @@ codeunit 53045 Itimews
                     '<itim:setUtilizadorFull>' +
                         '<itim:nNumero>' + empregado."No." + '</itim:nNumero>' +
                         '<itim:mNome>' + empregado.Name + '</itim:mNome>' +
-                        '<itim:dataini></itim:dataini>' +
-                        '<itim:datafim></itim:datafim>' +
-                        '<itim:sigla></itim:sigla>' +
-                        '<itim:nMorada></itim:nMorada>' +
-                        '<itim:nCodPostal></itim:nCodPostal>' +
-                        '<itim:nNIF></itim:nNIF>' +
-                        '<itim:nBI></itim:nBI>' +
-                        '<itim:nValidadeBI></itim:nValidadeBI>' +
-                        '<itim:nDataNascimento></itim:nDataNascimento>' +
-                        '<itim:nEstadoCivil></itim:nEstadoCivil>' +
-                        '<itim:nTelefone></itim:nTelefone>' +
+                        '<itim:dataini>' + dataInicio + '</itim:dataini>' +
+                        '<itim:datafim>' + dataFim + '</itim:datafim>' +
+                        '<itim:sigla>' + siglaEmpresa + '</itim:sigla>' +
+                        '<itim:nMorada>' + empregado.Address + '</itim:nMorada>' +
+                        '<itim:nCodPostal>' + empregado."Post Code" + '</itim:nCodPostal>' +
+                        '<itim:nNIF>' + empregado."No. Contribuinte" + '</itim:nNIF>' +
+                        '<itim:nBI>' + numeroBi + '</itim:nBI>' +
+                        '<itim:nValidadeBI>' + validadeBi + '</itim:nValidadeBI>' +
+                        '<itim:nDataNascimento>' + dataNascimento + '</itim:nDataNascimento>' +
+                        '<itim:nEstadoCivil>' + Format(empregado."Estado Civil") + '</itim:nEstadoCivil>' +
+                        '<itim:nTelefone>' + empregado."Mobile Phone No." + '</itim:nTelefone>' +
                         '<itim:nProfissao></itim:nProfissao>' +
-                        //<!--Optional:-->
-                        //<itim:nDepartamento>?</itim:nDepartamento>
-                        //<!--Optional:-->
-                        //<itim:cDepartamento>?</itim:cDepartamento>
-                        //<!--Optional:-->
-                        //<itim:nSeccao>?</itim:nSeccao>
-                        //<!--Optional:-->
-                        //<itim:cSeccao>?</itim:cSeccao>
-                        //<!--Optional:-->
-                        //<itim:nSubSeccao>?</itim:nSubSeccao>
-                        //<!--Optional:-->
-                        //<itim:cSubSeccao>?</itim:cSubSeccao>
-                        //<!--Optional:-->
-                        //<itim:nCategoria>?</itim:nCategoria>
-                        //<!--Optional:-->
-                        //<itim:cCategoria>?</itim:cCategoria>
-                        //<!--Optional:-->
-                        //<itim:nCCusto>?</itim:nCCusto>
-                        //<!--Optional:-->
-                        //<itim:cCCusto>?</itim:cCCusto>
-                        //<!--Optional:-->
-                        //<itim:nLocal>?</itim:nLocal>
-                        //<!--Optional:-->
-                        //<itim:cLocal>?</itim:cLocal>
-                        '<itim:nEmail></itim:nEmail>' +
-                        //'<itim:nChefia>?</itim:nChefia>' +
-                        '<itim:fAno></itim:fAno>' +
-                        '<itim:fAnoAtual></itim:fAnoAtual>' +
-                        '<itim:fAnoAnterior></itim:fAnoAnterior>' +
-                    '</itim:setUtilizadorFull>' +
-                    '</soapenv:Body>' +
-                '</soapenv:Envelope>';
+                        '<itim:nDepartamento>' + codigoDepartamento + '</itim:nDepartamento>' +
+                         '<itim:cDepartamento>' + descricaoDepartamento + '</itim:cDepartamento>' +
+                         //<!--Optional:-->
+                         //<itim:nSeccao>?</itim:nSeccao>
+                         //<!--Optional:-->
+                         //<itim:cSeccao>?</itim:cSeccao>
+                         //<!--Optional:-->
+                         //<itim:nSubSeccao>?</itim:nSubSeccao>
+                         //<!--Optional:-->
+                         //<itim:cSubSeccao>?</itim:cSubSeccao>
+                         //<!--Optional:-->
+                         //<itim:nCategoria>?</itim:nCategoria>
+                         //<!--Optional:-->
+                         //<itim:cCategoria>?</itim:cCategoria>
+                         //<!--Optional:-->
+                         //<itim:nCCusto>?</itim:nCCusto>
+                         //<!--Optional:-->
+                         //<itim:cCCusto>?</itim:cCCusto>
+                         //<!--Optional:-->
+                         //<itim:nLocal>?</itim:nLocal>
+                         //<!--Optional:-->
+                         //<itim:cLocal>?</itim:cLocal>
+                         '<itim:nEmail>' + empregado."Company E-Mail" + '</itim:nEmail>' +
+                         //'<itim:nChefia>?</itim:nChefia>' +
+                         '<itim:fAno></itim:fAno>' +
+                         '<itim:fAnoAtual></itim:fAnoAtual>' +
+                         '<itim:fAnoAnterior></itim:fAnoAnterior>' +
+                     '</itim:setUtilizadorFull>' +
+                     '</soapenv:Body>' +
+                 '</soapenv:Envelope>';
 
                 MakeCall(soapContentRequest, soapAction);
 
