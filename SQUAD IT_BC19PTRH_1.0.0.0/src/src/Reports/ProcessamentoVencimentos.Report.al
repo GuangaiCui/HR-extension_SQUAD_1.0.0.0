@@ -500,6 +500,7 @@ report 53037 "Processamento Vencimentos"
                                             //           "Periodos Processamento"."Data Inicio Processamento", 0D);
 
                                             //ALERT: RubricaSalaEmpregado2 para RubricaSalaEmpregado
+                                            //O código percorria os "filhos dos filhos". Comentado para referência. ^^^
                                             if RubricaSalaEmpregado.FindFirst then begin
                                                 //se for iva, tem de ir buscar a percentagem à ficha do empregado e não à filha
                                                 TabRubricaSalAux.Reset;
@@ -675,13 +676,24 @@ report 53037 "Processamento Vencimentos"
                                                     //**********************
                                                     ValorTotalSubFerias := Round(ValorTotalSubFerias + (RubricaSalaEmpregado."Total Amount" * (auxpercentagem / 100)), 0.01);
                                                     TempRubricaEmpregado."Total Amount" := Round(TempRubricaEmpregado."Total Amount" +
-                                                                                  (RubricaSalaEmpregado."Total Amount" * (RubricaSalariaLinhas.Percentagem / 100)), 0.01)
+                                                                                  (RubricaSalaEmpregado."Total Amount" * (RubricaSalariaLinhas.Percentagem / 100)), 0.01);
+
                                                 end else begin
                                                     // ****************IVA*****************************                //
                                                     TempRubricaEmpregado."Total Amount" := TempRubricaEmpregado."Total Amount" +
                                                                                            RubricaSalaEmpregado."Total Amount";
                                                     TempRubricaEmpregado.Quantity := Empregado."IVA %";
                                                 end;
+                                            end;
+
+                                            //Guardar of valores totais
+                                            TabRubricaSalAux.Reset;
+                                            if TabRubricaSalAux.Get(RubricaSalariaLinhas."Payroll Item Code") then begin
+                                                TempRubricaEmpregadoValorTotalSemPercentagem."Employee No." := RubricaSalaEmpregado."Employee No.";
+                                                TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount" := RubricaSalaEmpregado."Total Amount";
+                                                TempRubricaEmpregadoValorTotalSemPercentagem."Line No." := NLinha;
+                                                TempRubricaEmpregadoValorTotalSemPercentagem."Cód. Rúbrica Salarial" := TempRubricaEmpregado."Cód. Rúbrica Salarial";
+                                                TempRubricaEmpregadoValorTotalSemPercentagem.Insert();
                                             end;
                                         until RubricaSalaEmpregado.Next = 0;
                                     end;
@@ -948,13 +960,20 @@ report 53037 "Processamento Vencimentos"
                                     //Proporcionais SubFerias
                                     //********************************************
 
-                                    //TODO: PASSAR VALOR TOTAL PARA EFEITOS DE CALCULO
+                                    //PASSAR VALOR TOTAL PARA EFEITOS DE CALCULO
+                                    TempRubricaEmpregadoValorTotalSemPercentagem.Reset();
+                                    TempRubricaEmpregadoValorTotalSemPercentagem.SetFilter("Employee No.", TempRubricaEmpregado."Employee No.");
+                                    TempRubricaEmpregadoValorTotalSemPercentagem.SetFilter("Cód. Rúbrica Salarial", Format(TempRubricaEmpregado."Cód. Rúbrica Salarial"));
 
-                                    IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(TempRubricaEmpregado2."Total Amount" - DescTaxaIRS, Empregado, "Periodos Processamento"."Data Registo", DeductValue);
-
-
-                                    //Descontos que estejam relacionados com o IRS jovem.
-                                    TempRubricaEmpregado2."Total Amount" := DescontosIRSJovemSeAplicavel(Empregado, TempRubricaEmpregado2."Total Amount");
+                                    if TempRubricaEmpregadoValorTotalSemPercentagem.FindFirst() then begin
+                                        IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount" - DescTaxaIRS, Empregado, "Periodos Processamento"."Data Registo", DeductValue);
+                                        //Descontos que estejam relacionados com o IRS jovem.
+                                        TempRubricaEmpregado2."Total Amount" := DescontosIRSJovemSeAplicavel(Empregado, TempRubricaEmpregado."Total Amount", TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount");
+                                    end else begin
+                                        IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(TempRubricaEmpregado2."Total Amount" - DescTaxaIRS, Empregado, "Periodos Processamento"."Data Registo", DeductValue);
+                                        //Descontos que estejam relacionados com o IRS jovem.
+                                        TempRubricaEmpregado2."Total Amount" := DescontosIRSJovemSeAplicavel(Empregado, TempRubricaEmpregado."Total Amount", TempRubricaEmpregado."Total Amount");
+                                    end;
 
                                     //para os Empregados da categoria B o arredondamento é 0.01 (centimo mais proximo)
                                     if Empregado."Tipo Rendimento" = Empregado."Tipo Rendimento"::B then
@@ -982,6 +1001,7 @@ report 53037 "Processamento Vencimentos"
                                             end;
                                         end;
                                     end;
+
                                     //IRS Retroactivos - Fim
                                 end else begin
                                     //para os Empregados da categoria B o arredondamento é 0.01 (centimo mais proximo)
@@ -1231,6 +1251,12 @@ report 53037 "Processamento Vencimentos"
                             if l_rubSalarial.FindFirst then
                                 DescTaxaIRS := DescTaxaIRS + TempRubricaEmpregado."Total Amount";
                             TempRubricaEmpregado2.Insert;
+
+                        // TempRubricaEmpregadoValorTotalSemPercentagem.Reset();
+                        // if TempRubricaEmpregadoValorTotalSemPercentagem.Get("Cód. Rúbrica Salarial", TempRubricaEmpregado."Cód. Rúbrica Salarial") then begin
+                        //     TempRubricaEmpregadoValorTotalSemPercentagem."Cód. Rúbrica Salarial":= 
+                        // end;
+
                         until TempRubricaEmpregado.Next = 0;
 
                     //*******************************************************************************************************************
@@ -2078,6 +2104,7 @@ report 53037 "Processamento Vencimentos"
         RubricaSalariaLinhas2: Record "Rubrica Salarial Linhas";
         TempRubricaEmpregado: Record "Rubrica Salarial Empregado" temporary;
         TempRubricaEmpregado2: Record "Rubrica Salarial Empregado" temporary;
+        TempRubricaEmpregadoValorTotalSemPercentagem: Record "Rubrica Salarial Empregado" temporary;
         CabMovEmpregado: Record "Cab. Movs. Empregado";
         LinhaMovEmpregado: Record "Linhas Movs. Empregado";
         NLinha: Integer;
@@ -2618,28 +2645,41 @@ report 53037 "Processamento Vencimentos"
     /// <param name="valor"></param>
     /// <param name="rubricas"></param>
     /// <returns></returns>
-    local procedure DescontosIRSJovemSeAplicavel(empregado: Record Empregado; valor: Decimal): Decimal
+    local procedure DescontosIRSJovemSeAplicavel(empregado: Record Empregado; valor: Decimal; valorTotal: Decimal): Decimal
     var
         regimeIRSJovem: Record "Regimes IRS Jovem";
         valorNovoAux: Decimal;
-        limite: Decimal;
+        limiteMensal: Decimal;
         somatorioAbonosIRS: Decimal;
         payrollItem: Record "Payroll Item";
+        percentagemValorRelativoAoTotal: Decimal;
+        valormaximoTributavel: Decimal;
+        valorRubricaMensal: Decimal;
+        valorATributar: Decimal;
+        limiteIASEmpercentual: Decimal;
     begin
+        valorRubricaMensal := valor;
+
         if empregado."IRS Jovem" = true then begin
             regimeIRSJovem.Reset();
             regimeIRSJovem.SetFilter(Code, empregado."Escalão IRS Jovem");
             if regimeIRSJovem.FindFirst() then begin
+                limiteMensal := RegimeIRSJovem.Limite / 14;
 
-                limite := RegimeIRSJovem.Limite / 12;
+                if valor < valorTotal then begin
+                    //Duodecimos
+                    limiteIASEmpercentual := limiteMensal * valor / valorTotal;
+                    valorATributar := valor - limiteIASEmpercentual;
+                    exit(valorATributar);
 
-                if (ValorTotalAbonosBrutoIRS <= limite) then begin
-                    exit(valor - (valor * regimeIRSJovem."Isenção" / 100));
                 end else begin
-                    //Se o valor de incidência ultrapassa o limite. Calcular o valor isento + valor que ultrapassa o limite.
-                    valorNovoAux := (limite - (limite * regimeIRSJovem."Isenção" / 100));
-                    exit(valorNovoAux + (valor - limite));
-                    //REVER!
+                    //Sem duodecimos
+                    if ((valorRubricaMensal * regimeIRSJovem."Isenção" / 100) <= limiteMensal) then begin
+                        exit(valor);
+                    end else begin
+                        valorATributar := valorRubricaMensal - limiteMensal;
+                        exit(valorATributar);
+                    end;
                 end;
             end else begin
                 //O code do irs jovem não foi encontrado.
