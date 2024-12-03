@@ -69,6 +69,14 @@ table 53109 "Hist. Linhas Movs. Empregado"
         {
             Caption = 'Quantidade';
         }
+        field(50002; "Parcela a Abater"; Decimal)
+        {
+            Caption = 'Parcela a Abater';
+        }
+        field(50003; "Taxa Efetiva IRS"; Decimal)
+        {
+            Caption = 'Taxa Efetiva IRS';
+        }
         field(39; "Unit Value"; Decimal)
         {
             Caption = 'Valor Unitário';

@@ -335,6 +335,8 @@ codeunit 53037 "Funções RH"
         l_RecConfigRecursosHumanos: record "Config. Recursos Humanos";
     begin
 
+        //Zerar Parcela a Abater
+        ParcelaAbater := 0;
 
         Empregado.TESTFIELD(Empregado."Tipo Contribuinte");
         Empregado.TESTFIELD(Empregado."Local Obtenção Rendimento");

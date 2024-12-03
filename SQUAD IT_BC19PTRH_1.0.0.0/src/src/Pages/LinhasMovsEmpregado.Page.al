@@ -46,8 +46,17 @@ page 53103 "Linhas Movs. Empregado"
                 }
                 field(ValorSemSinal; ValorSemSinal)
                 {
-
                     Caption = 'Valor';
+                }
+                field("Parcela a Abater"; Rec."Parcela a Abater")
+                {
+                    Caption = 'Parcela a Abater';
+                    Visible = Visibility;
+                }
+                field("Taxa Efetiva IRS"; Rec."Taxa Efetiva IRS")
+                {
+                    Caption = 'Taxa Efetiva IRS';
+                    Visible = Visibility;
                 }
             }
         }
@@ -63,14 +72,19 @@ page 53103 "Linhas Movs. Empregado"
         // usamos uma variável que vai buscar o Abs(valor) para que os descontos não
         //apareçam a negativo, o que faz confusão ao utilizador.
 
-        if Rec."Payroll Item Type" = Rec."Payroll Item Type"::Desconto then
-            ValorSemSinal := Abs(Rec.Valor)
-        else
+        if Rec."Payroll Item Type" = Rec."Payroll Item Type"::Desconto then begin
+            ValorSemSinal := Abs(Rec.Valor);
+            Visibility := true;
+        end
+        else begin
             ValorSemSinal := Rec.Valor;
+            Visibility := false;
+        end;
     end;
 
     var
         ValorSemSinal: Decimal;
+        Visibility: Boolean;
 }
 
 #pragma implicitwith restore

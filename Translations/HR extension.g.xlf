@@ -4383,6 +4383,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Linhas Movs. Empregado - Field Pago por No. Documento - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2858165414 - Field 1493249852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parcela a Abater</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Linhas Movs. Empregado - Field Parcela a Abater - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2858165414 - Field 3560623423 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cód. Rubrica</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -4417,6 +4422,11 @@
           <source>Qtd. in Salary Slip</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Linhas Movs. Empregado - Field Quatidade Recibo Vencimentos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2858165414 - Field 361597100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Taxa Efetiva IRS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Hist. Linhas Movs. Empregado - Field Taxa Efetiva IRS - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2858165414 - Field 1809143239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payroll Code</source>
@@ -6703,6 +6713,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Linhas Movs. Empregado - Field No. Linha - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3830482134 - Field 1493249852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parcela a Abater</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Linhas Movs. Empregado - Field Parcela a Abater - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 3830482134 - Field 3560623423 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cód. Rubrica</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -6732,6 +6747,11 @@
           <source>Qtd. in Salary Slip</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Linhas Movs. Empregado - Field Quatidade Recibo Vencimentos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3830482134 - Field 361597100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Taxa Efetiva IRS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Linhas Movs. Empregado - Field Taxa Efetiva IRS - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 3830482134 - Field 1809143239 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Payroll Type</source>
@@ -10667,6 +10687,16 @@
           <source>Linhas Movs. Empregado</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Linhas Movs. Empregado - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3830482134 - Control 1493249852 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parcela a Abater</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Linhas Movs. Empregado - Control Parcela a Abater - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3830482134 - Control 361597100 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Taxa Efetiva IRS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Linhas Movs. Empregado - Control Taxa Efetiva IRS - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3830482134 - Control 2450336280 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Valor</source>
