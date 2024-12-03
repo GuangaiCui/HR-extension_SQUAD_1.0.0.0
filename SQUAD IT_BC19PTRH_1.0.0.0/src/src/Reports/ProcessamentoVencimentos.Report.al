@@ -75,10 +75,10 @@ report 53037 "Processamento Vencimentos"
                         if "Ausência Empregado"."To Date" > FiltroDataFimFalta then begin
                             QtdAProcessar := Round("Ausência Empregado"."Quantity (Base)" /
                             (("Ausência Empregado"."From Date" - "Ausência Empregado"."To Date") + 1) *
-                            ((FiltroDataFimFalta - "Ausência Empregado"."From Date") + 1), 0.0001);
+                            ((FiltroDataFimFalta - "Ausência Empregado"."From Date") + 1), 0.01);
                             QtdAProcessarRecVen := Round("Ausência Empregado".Quantity /
                             (("Ausência Empregado"."From Date" - "Ausência Empregado"."To Date") + 1) *
-                            ((FiltroDataFimFalta - "Ausência Empregado"."From Date") + 1), 0.0001);
+                            ((FiltroDataFimFalta - "Ausência Empregado"."From Date") + 1), 0.01);
                             "Ausência Empregado"."Quantidade Pendente" := "Ausência Empregado"."Quantity (Base)" - QtdAProcessar;
                             if "Ausência Empregado"."Com Perda Sub. Alimentação" then
                                 VarAbateSubAlimentacao := VarAbateSubAlimentacao + Abs(QtdAProcessar);
@@ -113,11 +113,11 @@ report 53037 "Processamento Vencimentos"
                                 if UnidMedidaRH.Get("Ausência Empregado"."Unit of Measure Code") then begin
                                     if UnidMedidaRH."Internal Designation" = UnidMedidaRH."Internal Designation"::Day then begin
                                         TempRubricaEmpregado.Validate(TempRubricaEmpregado."Unit Value", Empregado."Valor Dia");
-                                        TempRubricaEmpregado."Total Amount" := Round(Empregado."Valor Dia" * QtdAProcessarRecVen, 0.0001);
+                                        TempRubricaEmpregado."Total Amount" := Round(Empregado."Valor Dia" * QtdAProcessarRecVen, 0.01);
                                     end;
                                     if UnidMedidaRH."Internal Designation" = UnidMedidaRH."Internal Designation"::Hour then begin
                                         TempRubricaEmpregado.Validate(TempRubricaEmpregado."Unit Value", Empregado."Valor Hora");
-                                        TempRubricaEmpregado."Total Amount" := Round(Empregado."Valor Hora" * QtdAProcessarRecVen, 0.0001);
+                                        TempRubricaEmpregado."Total Amount" := Round(Empregado."Valor Hora" * QtdAProcessarRecVen, 0.01);
                                     end;
                                 end else
                                     Error(Text0030, "Ausência Empregado"."From Date", Empregado."No.");
@@ -179,10 +179,10 @@ report 53037 "Processamento Vencimentos"
                             TempRubricaEmpregado.Validate(TempRubricaEmpregado.Quantity, "Horas Extra Empregado".Quantity);
                             if "Horas Extra Empregado"."Unit Value" = 0.0 then
                                 TempRubricaEmpregado.Validate(TempRubricaEmpregado."Unit Value", Round(Empregado."Valor Hora" *
-                                "Horas Extra Empregado".Factor, 0.0001))
+                                "Horas Extra Empregado".Factor, 0.01))
                             else
                                 TempRubricaEmpregado.Validate(TempRubricaEmpregado."Unit Value", Round("Horas Extra Empregado"."Unit Value" *
-                                "Horas Extra Empregado".Factor, 0.0001));
+                                "Horas Extra Empregado".Factor, 0.01));
 
                             TempRubricaEmpregado.Sort := 200;
                             //preencher os campos da CGA
@@ -270,9 +270,9 @@ report 53037 "Processamento Vencimentos"
 
                             TempRubricaEmpregado."Unit Value" := "Abonos - Descontos Extra"."Unit Value";
                             if "Abonos - Descontos Extra"."Payroll Item Type" = "Abonos - Descontos Extra"."Payroll Item Type"::Abono then
-                                TempRubricaEmpregado."Total Amount" := Abs(Round("Abonos - Descontos Extra"."Total Amount", 0.0001))
+                                TempRubricaEmpregado."Total Amount" := Abs(Round("Abonos - Descontos Extra"."Total Amount", 0.01))
                             else
-                                TempRubricaEmpregado."Total Amount" := -Round("Abonos - Descontos Extra"."Total Amount", 0.0001);
+                                TempRubricaEmpregado."Total Amount" := -Round("Abonos - Descontos Extra"."Total Amount", 0.01);
                             TempRubricaEmpregado.Sort := 300;
                             TempRubricaEmpregado."Cód. Situação" := TabRubricaSalarial."Cód. Situação";
                             TempRubricaEmpregado."Cód. Movimento" := TabRubricaSalarial."Cód. Movimento";
@@ -507,12 +507,12 @@ report 53037 "Processamento Vencimentos"
                                                 if TabRubricaSalAux.Get(RubricaSalariaLinhas."Payroll Item Code") then;
                                                 if TabRubricaSalAux.Genero <> TabRubricaSalAux.Genero::IVA then begin
                                                     TempRubricaEmpregado."Total Amount" := Round(TempRubricaEmpregado."Total Amount" +
-                                                                        ((RubricaSalaEmpregado."Total Amount" * RubricaSalariaLinhas.Percentagem / 100)), 0.0001);
+                                                                        ((RubricaSalaEmpregado."Total Amount" * RubricaSalariaLinhas.Percentagem / 100)), 0.01);
 
                                                 end else begin
                                                     //****************IVA*****************************
                                                     TempRubricaEmpregado."Total Amount" := Round(TempRubricaEmpregado."Total Amount" +
-                                                                                          ((RubricaSalaEmpregado."Total Amount" * Empregado."IVA %" / 100)), 0.0001);
+                                                                                          ((RubricaSalaEmpregado."Total Amount" * Empregado."IVA %" / 100)), 0.01);
                                                     TempRubricaEmpregado.Quantity := Empregado."IVA %";
                                                 end;
                                                 //end;
@@ -630,7 +630,7 @@ report 53037 "Processamento Vencimentos"
                                                                 // NumDias := 2.5*(DATE2DMY("Periodos Processamento"."Data Registo",2) -
                                                                 //                 DATE2DMY(Empregado."Employment Date",2) +1)
                                                                 MesesTrabalhados := Round(12 - Date2DMY(Empregado."Employment Date", 2) +
-                                                                          (30 - Date2DMY(Empregado."Employment Date", 1) + 1) / 30, 0.0001);
+                                                                          (30 - Date2DMY(Empregado."Employment Date", 1) + 1) / 30, 0.01);
 
                                                             end;
 
@@ -666,7 +666,7 @@ report 53037 "Processamento Vencimentos"
                                                             end;
 
                                                             RubricaSalaEmpregado."Total Amount" := RubricaSalaEmpregado."Total Amount" / 12 * MesesTrabalhados;
-                                                            TempRubricaEmpregado.Quantity := Round(MesesTrabalhados * 30 / 12, 0.0001);
+                                                            TempRubricaEmpregado.Quantity := Round(MesesTrabalhados * 30 / 12, 0.01);
 
                                                         end;
                                                     end;
@@ -674,9 +674,9 @@ report 53037 "Processamento Vencimentos"
 
                                                     //TAXA IRS SUB FERIAS
                                                     //**********************
-                                                    ValorTotalSubFerias := Round(ValorTotalSubFerias + (RubricaSalaEmpregado."Total Amount" * (auxpercentagem / 100)), 0.0001);
+                                                    ValorTotalSubFerias := Round(ValorTotalSubFerias + (RubricaSalaEmpregado."Total Amount" * (auxpercentagem / 100)), 0.01);
                                                     TempRubricaEmpregado."Total Amount" := Round(TempRubricaEmpregado."Total Amount" +
-                                                                                  (RubricaSalaEmpregado."Total Amount" * (RubricaSalariaLinhas.Percentagem / 100)), 0.0001);
+                                                                                  (RubricaSalaEmpregado."Total Amount" * (RubricaSalariaLinhas.Percentagem / 100)), 0.01);
 
                                                 end else begin
                                                     // ****************IVA*****************************                //
@@ -705,7 +705,7 @@ report 53037 "Processamento Vencimentos"
                             TabRubricaSalAux.Reset;
                             if TabRubricaSalAux.Get(RubricaSalariaLinhas."Payroll Item Code") then begin
                                 if TabRubricaSalAux.Genero = TabRubricaSalAux.Genero::IVA then
-                                    TempRubricaEmpregado."Total Amount" := Round((TempRubricaEmpregado."Total Amount" * Empregado."IVA %" / 100), 0.0001);
+                                    TempRubricaEmpregado."Total Amount" := Round((TempRubricaEmpregado."Total Amount" * Empregado."IVA %" / 100), 0.01);
                             end;
 
                             TempRubricaEmpregado."Data a que se refere o mov" := "Periodos Processamento"."Data Registo";
@@ -857,7 +857,7 @@ report 53037 "Processamento Vencimentos"
                                             // Fecho Contas - fim
                                             //Existe um limite máximo
                                             if RubricaSalariaLinhas."Valor Limite Máximo" <> 0.0 then begin
-                                                VarValorLimite := Round(TempRubricaEmpregado.Quantity * RubricaSalariaLinhas."Valor Limite Máximo", 0.0001);
+                                                VarValorLimite := Round(TempRubricaEmpregado.Quantity * RubricaSalariaLinhas."Valor Limite Máximo", 0.01);
                                                 if TempRubricaEmpregado."Total Amount" < 0 then
                                                     VarValorLimite := VarValorLimite * -1;
                                             end else
@@ -909,24 +909,24 @@ report 53037 "Processamento Vencimentos"
                                                             // se a pessoa ganha acima da tabela então desconta sobre o valor tabela
                                                             if TempRubricaEmpregado."Total Amount" > GrauFuncao."Max Value" then begin
                                                                 TempRubricaEmpregado."Total Amount" := Round(GrauFuncao."Max Value");
-                                                                TempRubricaEmpregado."Total Amount" := Round(TempRubricaEmpregado."Total Amount", 0.0001);
+                                                                TempRubricaEmpregado."Total Amount" := Round(TempRubricaEmpregado."Total Amount", 0.01);
                                                             end;
                                                         end;
                                                     end;
                                                     TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount" +
                                                           (TempRubricaEmpregado."Total Amount" - VarValorLimite)
-                                                          , 0.0001);
+                                                          , 0.01);
                                                 end else
                                                     TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount" +
                                                            ((TempRubricaEmpregado."Total Amount" - VarValorLimite)
                                                            * 100 * Empregado."No. Horas Semanais" / Empregado."No. Horas Semanais"
-                                                           / 100), 0.0001);
+                                                           / 100), 0.01);
                                             end;
                                         end else begin
                                             //Calculo normal para os restantes casos
                                             TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount" +
                                                       ((TempRubricaEmpregado."Total Amount" - VarValorLimite)
-                                                      * RubricaSalariaLinhas.Percentagem / 100), 0.0001);
+                                                      * RubricaSalariaLinhas.Percentagem / 100), 0.01);
                                             //para aparecer a % do desconto na coluna quantidade
                                             //TempRubricaEmpregado2.Quantity := RubricaSalariaLinhas.Percentagem ;
                                             TempRubricaEmpregado2.Quantity := 1;
@@ -973,7 +973,7 @@ report 53037 "Processamento Vencimentos"
                                         //Descontos que estejam relacionados com o IRS jovem.
                                         TempRubricaEmpregado2."Total Amount" := DescontosIRSJovemSeAplicavel(Empregado, TempRubricaEmpregado."Total Amount", TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount");
                                         //Recalcular o deductvalue com base no percentual:
-                                        DeductValue := Round(DeductValue * TempRubricaEmpregadoDeducts."Total Amount" / TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount", 0.0001);
+                                        DeductValue := Round(DeductValue * TempRubricaEmpregadoDeducts."Total Amount" / TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount", 0.01);
                                     end else begin
                                         IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(TempRubricaEmpregado2."Total Amount" - DescTaxaIRS, Empregado, "Periodos Processamento"."Data Registo", DeductValue);
                                         //Descontos que estejam relacionados com o IRS jovem.
@@ -983,16 +983,19 @@ report 53037 "Processamento Vencimentos"
                                     //para os Empregados da categoria B o arredondamento é 0.01 (centimo mais proximo)
                                     if Empregado."Tipo Rendimento" = Empregado."Tipo Rendimento"::B then begin
                                         //Calcula primeiro sem o round.
-                                        TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100;
+                                        //TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100;
                                         //TempRubricaEmpregadoDeducts."Total Amount" := Abs(TempRubricaEmpregado2."Total Amount" / TempRubricaEmpregadoDeducts."Total Amount" * 100);
-                                        TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount", 0.01, '=')
+                                        //TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount", 0.01, '=')
                                     end
                                     else begin
                                         //Calcula primeiro sem o round.
-                                        TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100;
+                                        //TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100;
                                         //TempRubricaEmpregadoDeducts."Total Amount" := Abs(TempRubricaEmpregado2."Total Amount" / TempRubricaEmpregadoDeducts."Total Amount" * 100);
-                                        TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount", 1, '<');
+                                        //TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount", 1, '<');
                                     end;
+
+                                    //Taxa IRS
+                                    TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100;
 
                                     //Remove do valor total o valor de dedução das parcelas a abater
                                     if Empregado."IRS Jovem" <> true then begin
@@ -1003,6 +1006,13 @@ report 53037 "Processamento Vencimentos"
 
                                     TempRubricaEmpregadoDeducts."Total Amount" := Abs(TempRubricaEmpregado2."Total Amount" / TempRubricaEmpregadoDeducts."Total Amount" * 100);
                                     TempRubricaEmpregado2.Quantity := IRSTaxa;
+
+                                    //Arredondar quando é tipo B
+                                    if Empregado."Tipo Rendimento" = Empregado."Tipo Rendimento"::B then begin
+                                        TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount", 0.01, '=')
+                                    end else begin
+                                        TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount", 1, '<');
+                                    end;
 
                                     //Insere as deducst para apresentar. Taxas a abater.
                                     TempRubricaEmpregadoDeducts."Employee No." := TempRubricaEmpregado."Employee No.";
@@ -1073,7 +1083,7 @@ report 53037 "Processamento Vencimentos"
                                     END;
                                     */
 
-                                    TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabRegimeSS."Taxa Contributiva Empregado" / 100, 0.0001);
+                                    TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabRegimeSS."Taxa Contributiva Empregado" / 100, 0.01);
                                     TempRubricaEmpregado2.Quantity := TabRegimeSS."Taxa Contributiva Empregado";
 
                                     if Empregado."Subscritor SS" = true then Empregado.TestField(Empregado."Cód. Rúbrica Enc. Seg. Social");
@@ -1101,7 +1111,7 @@ report 53037 "Processamento Vencimentos"
 
                                 //Se for professor de acumulação não desconta
                                 if Empregado."Professor Acumulação" = false then begin
-                                    TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabConfRH."Taxa Contributiva Empregado" / 100, 0.0001);
+                                    TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabConfRH."Taxa Contributiva Empregado" / 100, 0.01);
                                     TempRubricaEmpregado2.Quantity := TabConfRH."Taxa Contributiva Empregado";
                                 end else begin
                                     TempRubricaEmpregado2."Total Amount" := 0;
@@ -1144,7 +1154,7 @@ report 53037 "Processamento Vencimentos"
                                 if VarValorTotal < 0 then
                                     VarValorTotal := 0;
 
-                                TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabConfRH."Taxa Contr. Empregado ADSE" / 100, 0.0001);
+                                TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * TabConfRH."Taxa Contr. Empregado ADSE" / 100, 0.01);
                                 TempRubricaEmpregado2.Quantity := TabConfRH."Taxa Contr. Empregado ADSE";
                                 ProcessarEncSociais(VarValorTotal, TabConfRH."Contribui. Ent. Patronal ADSE", Empregado."Cód. Rúbrica Enc. ADSE", '', '');
                             end;
@@ -1154,7 +1164,7 @@ report 53037 "Processamento Vencimentos"
                             //************************************************
                             if TabRubricaSalarial.Genero = TabRubricaSalarial.Genero::IVA then begin
                                 VarValorTotal := TempRubricaEmpregado2."Total Amount";
-                                TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * Empregado."IVA %" / 100, 0.0001);
+                                TempRubricaEmpregado2."Total Amount" := Round(VarValorTotal * Empregado."IVA %" / 100, 0.01);
                                 TempRubricaEmpregado2.Quantity := Empregado."IVA %";
                             end;
 
@@ -1207,7 +1217,7 @@ report 53037 "Processamento Vencimentos"
                                                         if TabRubSalLinha.Find('-') then begin
 
                                                             if TabRubSalLinha."Valor Limite Máximo" <> 0.0 then
-                                                                VarValorLimite := Round(TabHistLinhaMovEmp2.Quantity * TabRubSalLinha."Valor Limite Máximo", 0.0001)
+                                                                VarValorLimite := Round(TabHistLinhaMovEmp2.Quantity * TabRubSalLinha."Valor Limite Máximo", 0.01)
                                                             else
                                                                 VarValorLimite := 0;
 
@@ -1734,7 +1744,7 @@ report 53037 "Processamento Vencimentos"
                                 rLinhaMovEmp.Validate("Payroll Item Code", rPenhora."Garnishment Rubric");
 
                                 rLinhaMovEmp.Quantity := 1;
-                                rLinhaMovEmp.Valor := Round(ValorAPenhorar, 0.0001) * -1;
+                                rLinhaMovEmp.Valor := Round(ValorAPenhorar, 0.01) * -1;
                                 rLinhaMovEmp."Garnishmen No." := rPenhora."Garnishmen No.";
                                 rLinhaMovEmp.Insert;
                                 if rPenhora.Status <> rPenhora.Status::Closed then begin
@@ -2540,7 +2550,7 @@ report 53037 "Processamento Vencimentos"
             else
                 TabLinhaMovEmpregado."Credit Acc. No." := varContaCred;
             TabLinhaMovEmpregado.Quantity := VarTaxa;
-            TabLinhaMovEmpregado.Valor := Round(Valor * VarTaxa / 100, 0.0001);
+            TabLinhaMovEmpregado.Valor := Round(Valor * VarTaxa / 100, 0.01);
 
             //Preencher o Tipo Rendimento por causa do Anexo J
             TabLinhaMovEmpregado."Tipo Rendimento" := Empregado."Tipo Rendimento";
