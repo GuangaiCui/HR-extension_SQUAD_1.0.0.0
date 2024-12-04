@@ -965,33 +965,21 @@ report 53037 "Processamento Vencimentos"
                                     TempRubricaEmpregadoValorTotalSemPercentagem.SetFilter("Employee No.", TempRubricaEmpregado."Employee No.");
                                     TempRubricaEmpregadoValorTotalSemPercentagem.SetFilter("Cód. Rúbrica Salarial", Format(TempRubricaEmpregado."Cód. Rúbrica Salarial"));
 
-                                    //Obter o valor total sem - % IRS. Temp
+                                    //Obter o valor total sem - % IRS. Temporario, usado como var auxiliar.
                                     TempRubricaEmpregadoDeducts."Total Amount" := TempRubricaEmpregado2."Total Amount";
 
                                     if TempRubricaEmpregadoValorTotalSemPercentagem.FindFirst() then begin
+                                        //se está aqui é em %
                                         IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount" - DescTaxaIRS, Empregado, "Periodos Processamento"."Data Registo", DeductValue);
                                         //Descontos que estejam relacionados com o IRS jovem.
                                         TempRubricaEmpregado2."Total Amount" := DescontosIRSJovemSeAplicavel(Empregado, TempRubricaEmpregado."Total Amount", TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount");
                                         //Recalcular o deductvalue com base no percentual:
-                                        DeductValue := Round(DeductValue * TempRubricaEmpregadoDeducts."Total Amount" / TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount", 0.01);
+                                        //DeductValue := Round(DeductValue * TempRubricaEmpregadoDeducts."Total Amount" / TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount", 0.01);
+                                        DeductValue := DeductValue * TempRubricaEmpregadoDeducts."Total Amount" / TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount";
                                     end else begin
                                         IRSTaxa := FuncoesRH.CalcularTaxaIRS2024(TempRubricaEmpregado2."Total Amount" - DescTaxaIRS, Empregado, "Periodos Processamento"."Data Registo", DeductValue);
                                         //Descontos que estejam relacionados com o IRS jovem.
                                         TempRubricaEmpregado2."Total Amount" := DescontosIRSJovemSeAplicavel(Empregado, TempRubricaEmpregado."Total Amount", TempRubricaEmpregado."Total Amount");
-                                    end;
-
-                                    //para os Empregados da categoria B o arredondamento é 0.01 (centimo mais proximo)
-                                    if Empregado."Tipo Rendimento" = Empregado."Tipo Rendimento"::B then begin
-                                        //Calcula primeiro sem o round.
-                                        //TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100;
-                                        //TempRubricaEmpregadoDeducts."Total Amount" := Abs(TempRubricaEmpregado2."Total Amount" / TempRubricaEmpregadoDeducts."Total Amount" * 100);
-                                        //TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount", 0.01, '=')
-                                    end
-                                    else begin
-                                        //Calcula primeiro sem o round.
-                                        //TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" * IRSTaxa / 100;
-                                        //TempRubricaEmpregadoDeducts."Total Amount" := Abs(TempRubricaEmpregado2."Total Amount" / TempRubricaEmpregadoDeducts."Total Amount" * 100);
-                                        //TempRubricaEmpregado2."Total Amount" := Round(TempRubricaEmpregado2."Total Amount", 1, '<');
                                     end;
 
                                     //Taxa IRS
@@ -1001,7 +989,8 @@ report 53037 "Processamento Vencimentos"
                                     if Empregado."IRS Jovem" <> true then begin
                                         TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" - DeductValue;
                                     end else begin
-                                        DeductValue := 0; //zerar deduct value quando é IRS jovem, não há parcela a abater neste caso.
+                                        TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" - DeductValue;
+                                        //DeductValue := 0; //zerar deduct value quando é IRS jovem, não há parcela a abater neste caso.
                                     end;
 
                                     TempRubricaEmpregadoDeducts."Total Amount" := Abs(TempRubricaEmpregado2."Total Amount" / TempRubricaEmpregadoDeducts."Total Amount" * 100);
