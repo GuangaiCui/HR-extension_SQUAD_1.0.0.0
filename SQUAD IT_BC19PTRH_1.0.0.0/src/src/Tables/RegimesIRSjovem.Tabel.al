@@ -7,7 +7,6 @@ table 53131 "Regimes IRS Jovem"
         field(1; Code; Code[60])
         {
             DataClassification = ToBeClassified;
-            Editable = false;
         }
         field(2; Ano; Integer)
         {
@@ -43,15 +42,15 @@ table 53131 "Regimes IRS Jovem"
         }
     }
 
-    trigger OnInsert()
-    begin
-        Code := StrSubstNo('%1_%2', Ano, Regime);
-    end;
+    // trigger OnInsert()
+    // begin
+    //     Code := StrSubstNo('%1_%2', Ano, Regime);
+    // end;
 
-    trigger OnModify()
-    var
-        ExistingRec: Record "Regimes IRS Jovem";
-    begin
-        Code := StrSubstNo('%1_%2', Ano, Regime);
-    end;
+    // trigger OnModify()
+    // var
+    //     ExistingRec: Record "Regimes IRS Jovem";
+    // begin
+    //     Code := StrSubstNo('%1_%2', Ano, Regime);
+    // end;
 }

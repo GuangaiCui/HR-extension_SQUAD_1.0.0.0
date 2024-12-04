@@ -462,6 +462,16 @@ page 53035 "Ficha Empregado"
                     {
                         ApplicationArea = All;
                         Editable = IsIrsJovemVisible;
+                        //Lookup = true;
+                        //LookupPageId = "Lista Regimes IRS Jovem";
+
+                        // trigger OnLookup(var text: Text): Boolean
+                        // var
+                        //     irsJovem: Record "Regimes IRS Jovem";
+                        // begin
+                        //     if Page.RunModal(Page::"Lista Regimes IRS Jovem", irsJovem) = Action::LookupOK then
+                        //         Rec."Escalão IRS Jovem" := irsJovem.Code;
+                        // end;
                     }
                 }
 

@@ -14,7 +14,7 @@ page 53125 "Lista Regimes IRS Jovem"
 
                 field(Code; Rec.Code)
                 {
-                    Editable = false;
+                    Editable = true;
                 }
                 field(Ano; Rec.Ano)
                 {
