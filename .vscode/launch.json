@@ -1,42 +1,42 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "INTROSYS SQD RH TESTE",
-            "type": "al",
-            "request": "launch",
-            "environmentType": "Sandbox",
-            "environmentName": "Sandbox_RHv3",
-            "startupObjectId": 53044,
-            "startupObjectType": "Report",
-            "breakOnError": "All",
-            //"schemaUpdateMode":"Synchronize",
-            "breakOnRecordWrite": "None",
-            "launchBrowser": true,
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
-        }
         // {
-        //     "name": "Publish: Squad RH SandBox",
+        //     "name": "INTROSYS SQD RH TESTE",
         //     "type": "al",
         //     "request": "launch",
         //     "environmentType": "Sandbox",
-        //     "environmentName": "SQUAD_SNDBX_RH",
-        //     "startupObjectId": 53064,
+        //     "environmentName": "Sandbox_RHv3",
+        //     "startupObjectId": 53044,
         //     "startupObjectType": "Report",
-        //     //"schemaUpdateMode":"ForceSync",
         //     "breakOnError": "All",
+        //     //"schemaUpdateMode":"Synchronize",
         //     "breakOnRecordWrite": "None",
         //     "launchBrowser": true,
         //     "enableSqlInformationDebugger": true,
         //     "enableLongRunningSqlStatements": true,
         //     "longRunningSqlStatementsThreshold": 500,
         //     "numberOfSqlStatements": 10,
-        //     "tenant": "91abd816-8e10-4bec-b57d-d65c9ba17f07"
+        //     "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
         // }
+         {
+            "name": "Publish: Squad RH SandBox",
+            "type": "al",
+            "request": "launch",
+            "environmentType": "Sandbox",
+            "environmentName": "SQUAD_SNDBX_RH",
+            "startupObjectId": 53064,
+            "startupObjectType": "Report",
+            //"schemaUpdateMode":"ForceSync",
+            "breakOnError": "All",
+            "breakOnRecordWrite": "None",
+            "launchBrowser": true,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "tenant": "91abd816-8e10-4bec-b57d-d65c9ba17f07"
+        }
         // ,
         // {
         //     "name": "Publish: INTRSYS",

@@ -110,7 +110,7 @@ table 53075 "Estabelecimentos da Empresa"
             Caption = 'Head Office';
             Description = 'RU';
         }
-        field(61; "ID Unidade Local"; Text[6])
+        field(61; "ID Unidade Local"; Text[10])
         {
             Caption = 'Local Unit Id.';
             Description = 'RU';
