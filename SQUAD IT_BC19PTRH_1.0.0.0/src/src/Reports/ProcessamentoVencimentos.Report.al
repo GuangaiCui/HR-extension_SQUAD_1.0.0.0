@@ -686,19 +686,26 @@ report 53037 "Processamento Vencimentos"
                                                 end;
                                             end;
 
-                                            //Guardar of valores totais
-                                            TabRubricaSalAux.Reset;
-                                            if TabRubricaSalAux.Get(RubricaSalariaLinhas."Payroll Item Code") then begin
-                                                TempRubricaEmpregadoValorTotalSemPercentagem."Employee No." := RubricaSalaEmpregado."Employee No.";
-                                                TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount" := RubricaSalaEmpregado."Total Amount";
-                                                TempRubricaEmpregadoValorTotalSemPercentagem."Line No." := NLinha;
-                                                TempRubricaEmpregadoValorTotalSemPercentagem."Cód. Rúbrica Salarial" := TempRubricaEmpregado."Cód. Rúbrica Salarial";
-                                                TempRubricaEmpregadoValorTotalSemPercentagem.Insert();
-                                            end;
                                         until RubricaSalaEmpregado.Next = 0;
                                     end;
                                 until RubricaSalariaLinhas.Next = 0;
                             end;
+
+                            //Guardar of valores totais
+                            TabRubricaSalAux.Reset;
+                            //if ((TabRubricaSalarial.NATREM = TabRubricaSalarial.NATREM::"Cód. Sub. Férias") or
+                            //(TabRubricaSalarial.NATREM = TabRubricaSalarial.NATREM::"Cód. Sub. Natal")) then begin
+                            //TempRubricaEmpregado
+                            //TODO: REVER!
+                            if TabRubricaSalAux.Get(RubricaSalariaLinhas."Payroll Item Code") then begin
+                                TempRubricaEmpregadoValorTotalSemPercentagem."Employee No." := RubricaSalaEmpregado."Employee No.";
+                                TempRubricaEmpregadoValorTotalSemPercentagem."Total Amount" := RubricaSalaEmpregado."Total Amount";
+                                TempRubricaEmpregadoValorTotalSemPercentagem."Line No." := NLinha;
+                                TempRubricaEmpregadoValorTotalSemPercentagem."Cód. Rúbrica Salarial" := TempRubricaEmpregado."Cód. Rúbrica Salarial";
+                                TempRubricaEmpregadoValorTotalSemPercentagem.Insert();
+                                //end;
+                            end;
+
                             //Para corrigir o problema do calculo do IVA. Quando um empregado tem várias
                             //linhas de honorários o IVA só estava a ser calculado sobre a primeira. assim junta as 3 e só depois calcula o IVA
                             Clear(TabRubricaSalAux);
@@ -991,6 +998,11 @@ report 53037 "Processamento Vencimentos"
                                     end else begin
                                         TempRubricaEmpregado2."Total Amount" := TempRubricaEmpregado2."Total Amount" - DeductValue;
                                         //DeductValue := 0; //zerar deduct value quando é IRS jovem, não há parcela a abater neste caso.
+                                    end;
+
+                                    //PODE SER MENOR QUE ZERO PORCAUSA DO DEDUCT VALUE!!
+                                    if TempRubricaEmpregado2."Total Amount" <= 0 then begin
+                                        TempRubricaEmpregado2."Total Amount" := 0;
                                     end;
 
                                     TempRubricaEmpregadoDeducts."Total Amount" := Abs(TempRubricaEmpregado2."Total Amount" / TempRubricaEmpregadoDeducts."Total Amount" * 100);
@@ -1867,6 +1879,7 @@ report 53037 "Processamento Vencimentos"
                 TempRubricaEmpregado.DeleteAll;
                 TempRubricaEmpregado2.DeleteAll;
                 TempRubricaEmpregadoValorTotalSemPercentagem.DeleteAll();
+                TempRubricaEmpregadoDeducts.DeleteAll();
                 NLinha := 0;
                 NLinha2 := 0;
                 VarAbateSubAlimentacao := 0;
@@ -2680,15 +2693,24 @@ report 53037 "Processamento Vencimentos"
                 if valor < valorTotal then begin
                     //Duodecimos
                     limiteIASEmpercentual := limiteMensal * valor / valorTotal;
-                    valorATributar := valor - limiteIASEmpercentual;
-                    exit(valorATributar);
-
+                    if ((valorRubricaMensal * regimeIRSJovem."Isenção" / 100) <= limiteMensal) then begin
+                        exit(valor - (valor * regimeIRSJovem."Isenção" / 100));
+                    end else begin
+                        valorATributar := valor - limiteIASEmpercentual;
+                        if valorATributar < 0 then begin
+                            valorATributar := 0;
+                        end;
+                        exit(valorATributar);
+                    end;
                 end else begin
                     //Sem duodecimos
                     if ((valorRubricaMensal * regimeIRSJovem."Isenção" / 100) <= limiteMensal) then begin
-                        exit(valor);
+                        exit(valor - (valor * regimeIRSJovem."Isenção" / 100));
                     end else begin
                         valorATributar := valorRubricaMensal - limiteMensal;
+                        if valorATributar < 0 then begin
+                            valorATributar := 0;
+                        end;
                         exit(valorATributar);
                     end;
                 end;

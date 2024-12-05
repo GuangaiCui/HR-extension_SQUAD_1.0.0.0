@@ -6,7 +6,7 @@
         //     "type": "al",
         //     "request": "launch",
         //     "environmentType": "Sandbox",
-        //     "environmentName": "Sandbox_RHv3",
+        //     "environmentName": "Sandbox_RHv4",
         //     "startupObjectId": 53044,
         //     "startupObjectType": "Report",
         //     "breakOnError": "All",
@@ -18,8 +18,8 @@
         //     "longRunningSqlStatementsThreshold": 500,
         //     "numberOfSqlStatements": 10,
         //     "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
-        // }
-         {
+        //  }
+          {
             "name": "Publish: Squad RH SandBox",
             "type": "al",
             "request": "launch",
