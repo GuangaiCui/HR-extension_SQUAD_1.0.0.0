@@ -32,7 +32,6 @@ codeunit 53045 Itimews
 
         soapAction := 'https://itimeweb.com/getUtilizadores';
 
-
         xmlNodeListRes := GetNodes(MakeCall(soapContentRequest, soapAction), '//*[local-name()="cUtilizadores"]');
 
         for index := 1 to xmlNodeListRes.Count() do begin
@@ -42,6 +41,83 @@ codeunit 53045 Itimews
             xmlNodeListRes.Get(index, xmlNode);
             numero := GetValueFromNode('//*[local-name()="nNumero"]', xmlNode);
             nome := GetValueFromNode('//*[local-name()="mNome"]', xmlNode);
+        end;
+    end;
+
+    local procedure GetUtilizadoresFull()
+    var
+        soapContentRequest: Text;
+        soapAction: Text;
+        xmlNodeListRes: XmlNodeList;
+        index: Integer;
+        xmlNode: XmlNode;
+        empregados: Record Empregado;
+        numero: Text;
+        lastUpdate: Text;
+        lastUpdateDate: Date;
+        dataInicioDate: Date;
+        dataFimDate: Date;
+        validateBIDate: Date;
+        dataNascimentoDate: Date;
+    begin
+        soapAction := 'https://itimeweb.com/getUtilizadoresFull';
+
+        soapContentRequest :=
+            '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:itim="https://itimeweb.com/">' +
+                '<soap:Header/>' +
+                '<soap:Body>' +
+                    '<itim:getUtilizadoresFull>' +
+                        '<itim:sigla>' + siglaEmpresa + '</itim:sigla>' +
+                    '</itim:getUtilizadoresFull>' +
+                '</soap:Body>' +
+            '</soap:Envelope>';
+
+        xmlNodeListRes := GetNodes(MakeCall(soapContentRequest, soapAction), '//*[local-name()="cUtilizadoresFull"]');
+
+        for index := 1 to xmlNodeListRes.Count() do begin
+            Clear(xmlNode);
+            Clear(numero);
+            Clear(validateBIDate);
+
+            empregados.Reset();
+            xmlNodeListRes.Get(index, xmlNode);
+            numero := GetValueFromNode('//*[local-name()="nNumero"]', xmlNode);
+            lastUpdate := GetValueFromNode('//*[local-name()="lastUpdate"]', xmlNode);
+
+            if empregados.Get(numero) then begin
+                Clear(lastUpdateDate);
+                Evaluate(lastUpdateDate, lastUpdate);
+
+                if empregados."Last Date Modified" < lastUpdateDate then begin
+                    //Updates empregado
+                    Clear(dataInicioDate);
+                    Clear(dataFimDate);
+                    Clear(dataNascimentoDate);
+                    Clear(validateBIDate);
+
+                    empregados.Name := GetValueFromNode('//*[local-name()="mNome"]', xmlNode);
+
+                    Evaluate(dataInicioDate, GetValueFromNode('//*[local-name()="dataini"]', xmlNode));
+                    empregados."Employment Date" := dataInicioDate;
+
+                    Evaluate(dataInicioDate, GetValueFromNode('//*[local-name()="datafim"]', xmlNode));
+                    empregados."End Date" := dataInicioDate;
+
+                    empregados.Address := GetValueFromNode('//*[local-name()="nMorada"]', xmlNode);
+                    empregados."Post Code" := GetValueFromNode('//*[local-name()="nCodPostal"]', xmlNode);
+                    empregados."No. Doc. Identificação" := GetValueFromNode('//*[local-name()="nBI"]', xmlNode);
+                    empregados."No. Contribuinte" := GetValueFromNode('//*[local-name()="nNIF"]', xmlNode);
+
+
+                    Evaluate(validateBIDate, GetValueFromNode('//*[local-name()="nValidadeBI"]', xmlNode));
+                    empregados."Data Validade Doc. Ident." := validateBIDate;
+
+                    Evaluate(dataNascimentoDate, GetValueFromNode('//*[local-name()="nDataNascimento"]', xmlNode));
+                    empregados."Birth Date" := dataNascimentoDate;
+                    //empregados."Estado Civil" := GetValueFromNode('//*[local-name()="nEstadoCivil"]', xmlNode); //potencial problemas com o option
+                    empregados."Mobile Phone No." := GetValueFromNode('//*[local-name()="nTelefone"]', xmlNode);
+                end;
+            end;
         end;
     end;
 
@@ -128,14 +204,20 @@ codeunit 53045 Itimews
         codigoDepartamento: Code[20];
         descricaoDepartamento: Text;
         defaultDimensions: Record "Default Dimension";
+        feriasEmpregados: Record "Férias Empregados";
         dataInicio: Text;
         dataFim: Text;
         numeroBi: Text;
         validadeBi: Text;
         dataNascimento: Text;
+        nFeriasAnoAtual: Integer;
+        nFeriasAnoAnterior: Integer;
+        anoFerias: Integer;
     begin
         soapAction := 'https://itimeweb.com/setUtilizadorFull';
 
+        //empregado.SetFilter(Status, Format(empregado.Status::Active)); //TODO: Validar
+        empregado.SetRange(Status, empregado.Status::Active);
         if empregado.FindSet() then
             repeat
                 Clear(dataInicio);
@@ -143,6 +225,11 @@ codeunit 53045 Itimews
                 Clear(validadeBi);
                 Clear(numeroBi);
                 Clear(dataNascimento);
+                Clear(descricaoDepartamento);
+                Clear(codigoDepartamento);
+                anoFerias := 0;
+                nFeriasAnoAtual := 0;
+                nFeriasAnoAnterior := 0;
 
                 if empregado."Employment Date" <> 0D then begin
                     dataInicio := FORMAT(empregado."Employment Date", 0, '<Year4>-<Month>-<Day>');
@@ -161,6 +248,31 @@ codeunit 53045 Itimews
 
                 if empregado."Birth Date" <> 0D then begin
                     dataNascimento := FORMAT(empregado."Birth Date", 0, '<Year4>-<Month>-<Day>');
+                end;
+
+                defaultDimensions.Reset();
+                defaultDimensions.SetFilter("No.", empregado."No.");
+                defaultDimensions.SetFilter("Dimension Code", 'DEPARTMENT'); //TODO: Validar isto
+                if defaultDimensions.FindFirst() then begin
+                    codigoDepartamento := defaultDimensions."Dimension Value Code";
+                    descricaoDepartamento := defaultDimensions."Dimension Value Name";
+                end;
+
+                feriasEmpregados.Reset();
+                feriasEmpregados.SetFilter("Employee No.", empregado."No.");
+                feriasEmpregados.SetFilter("Ano a que se refere", Format(Date2DMY(Today, 3)));
+                if feriasEmpregados.Count() > 0 then begin
+                    nFeriasAnoAtual := feriasEmpregados.Count();
+                    anoFerias := Date2DMY(Today, 3);
+                end;
+
+                feriasEmpregados.Reset();
+                feriasEmpregados.SetFilter("Employee No.", empregado."No.");
+                feriasEmpregados.SetFilter("Ano a que se refere", Format(Date2DMY(Today, 3) - 1));
+                feriasEmpregados.SetFilter(Gozada, Format(false));
+                if feriasEmpregados.Count() > 0 then begin
+                    nFeriasAnoAnterior := feriasEmpregados.Count();
+                    anoFerias := Date2DMY(Today, 3);
                 end;
 
                 soapContentRequest :=
@@ -183,7 +295,7 @@ codeunit 53045 Itimews
                         '<itim:nTelefone>' + empregado."Mobile Phone No." + '</itim:nTelefone>' +
                         '<itim:nProfissao></itim:nProfissao>' +
                         '<itim:nDepartamento>' + codigoDepartamento + '</itim:nDepartamento>' +
-                         '<itim:cDepartamento>' + descricaoDepartamento + '</itim:cDepartamento>' +
+                        '<itim:cDepartamento>' + descricaoDepartamento + '</itim:cDepartamento>' +
                          //<!--Optional:-->
                          //<itim:nSeccao>?</itim:nSeccao>
                          //<!--Optional:-->
@@ -206,9 +318,9 @@ codeunit 53045 Itimews
                          //<itim:cLocal>?</itim:cLocal>
                          '<itim:nEmail>' + empregado."Company E-Mail" + '</itim:nEmail>' +
                          //'<itim:nChefia>?</itim:nChefia>' +
-                         '<itim:fAno></itim:fAno>' +
-                         '<itim:fAnoAtual></itim:fAnoAtual>' +
-                         '<itim:fAnoAnterior></itim:fAnoAnterior>' +
+                         '<itim:fAno>' + Format(anoFerias) + '</itim:fAno>' +
+                         '<itim:fAnoAtual>' + Format(nFeriasAnoAtual) + '</itim:fAnoAtual>' +
+                         '<itim:fAnoAnterior>' + Format(nFeriasAnoAnterior) + '</itim:fAnoAnterior>' +
                      '</itim:setUtilizadorFull>' +
                      '</soapenv:Body>' +
                  '</soapenv:Envelope>';
@@ -231,6 +343,8 @@ codeunit 53045 Itimews
 
         soapAction := 'https://itimeweb.com/setRubricas';
 
+        //Só mandamos os abonos!
+        rubrica.SetRange("Payroll Item Type", rubrica."Payroll Item Type"::Abono);
         if rubrica.FindSet() then
             repeat
                 Clear(soapContentRequest);
@@ -250,8 +364,8 @@ codeunit 53045 Itimews
 
                 if rubrica."Payroll Item Type" = rubrica."Payroll Item Type"::Abono then begin
                     soapContentRequest := soapContentRequest.Replace('{Tipo}', 'A');
-                end else begin
-                    soapContentRequest := soapContentRequest.Replace('{Tipo}', 'F');
+                    //end else begin
+                    //soapContentRequest := soapContentRequest.Replace('{Tipo}', 'F'); //TODO: Dúvida. Mandamos os descontos como falta?
                 end;
 
                 MakeCall(soapContentRequest, soapAction);
@@ -330,6 +444,60 @@ codeunit 53045 Itimews
 
                     until feriasEmpregados.Next() = 0;
             until empgregados.Next() = 0;
+    end;
+
+    local procedure GetResultadosByTipo()
+    var
+        soapAction: Text;
+        soapContentRequest: Text;
+        result: XmlDocument;
+        xmlNodeListRes: XmlNodeList;
+        xmlNode: XmlNode;
+        index: Integer;
+        code: Text;
+        tipo: Text;
+        rubricas: Record "Payroll Item";
+    begin
+        soapAction := 'https://itimeweb.com/getResultadosByTipo';
+        soapContentRequest :=
+        '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:itim="https://itimeweb.com/">' +
+        '<soapenv:Header/>' +
+        '<soapenv:Body>' +
+            '<itim:getResultadosByTipo>' +
+                '<itim:sigla>' + siglaEmpresa + '</itim:sigla>' +
+                '<itim:dataini>?</itim:dataini>' +
+                '<itim:datafim>?</itim:datafim>' +
+                '<itim:tipo>F</itim:tipo>' +
+                '<itim:nNumero>0</itim:nNumero>' +
+            '<itim:nRubrica>0</itim:nRubrica>' +
+            '</itim:getResultadosByTipo>' +
+        '</soapenv:Body>' +
+        '</soapenv:Envelope>';
+
+        result := MakeCall(soapContentRequest, soapAction);
+
+        //DUVIDAS:
+        //Que rubricas vamos ver aqui?!
+        //Estamos a receber horas, dias ou minutos associadoss a um empregado.
+        //O que representa a data de inicio e a data de fim do resultado
+        //Que Datas vamos mandar no pedido?
+
+        //Tratar o resultado
+        xmlNodeListRes := GetNodes(MakeCall(soapContentRequest, soapAction), '//*[local-name()="cResultados"]');
+
+        for index := 1 to xmlNodeListRes.Count() do begin
+            Clear(xmlNode);
+            Clear(tipo);
+            Clear(code);
+
+            xmlNodeListRes.Get(index, xmlNode);
+            tipo := GetValueFromNode('//*[local-name()="mTipo"]', xmlNode);
+            code := GetValueFromNode('//*[local-name()="mRubrica"]', xmlNode);
+
+            rubricas.Reset();
+            if rubricas.Get(code) then begin
+            end;
+        end;
     end;
     #endregion
 

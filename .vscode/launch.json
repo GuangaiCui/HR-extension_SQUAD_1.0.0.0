@@ -18,7 +18,7 @@
         //     "longRunningSqlStatementsThreshold": 500,
         //     "numberOfSqlStatements": 10,
         //     "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
-        //  }
+         //}
           {
             "name": "Publish: Squad RH SandBox",
             "type": "al",
@@ -27,7 +27,7 @@
             "environmentName": "SQUAD_SNDBX_RH",
             "startupObjectId": 53064,
             "startupObjectType": "Report",
-            //"schemaUpdateMode":"ForceSync",
+            "schemaUpdateMode":"ForceSync",
             "breakOnError": "All",
             "breakOnRecordWrite": "None",
             "launchBrowser": true,
@@ -35,6 +35,22 @@
             "enableLongRunningSqlStatements": true,
             "longRunningSqlStatementsThreshold": 500,
             "numberOfSqlStatements": 10,
+            //"tenant": "91abd816-8e10->4bec-b57d-d65c9ba17f07"
+        },
+        {
+            "name": "Attach RH SandBox",
+            "type": "al",
+            "userId": "1e4737b4-08dc-4649-90fe-bd78d4030635",
+            "request": "attach",
+            "environmentType": "Sandbox",
+            "environmentName": "SQUAD_SNDBX_RH",
+            "breakOnError":true,
+            "breakOnRecordWrite": false,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "breakOnNext":"WebServiceClient",
             "tenant": "91abd816-8e10-4bec-b57d-d65c9ba17f07"
         }
         // ,
@@ -55,7 +71,7 @@
         //     "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
         // }
         // ,
-        // {
+        //  {
         //     "name": "Publish: Your own server",
         //     "type": "al",
         //     "request": "launch",
@@ -74,7 +90,7 @@
         //     "tenant": "default",
         //     "port": 7049,
         //     "usePublicURLFromServer": true,
-        //     "schemaUpdateMode":"ForceSync"
+        //     //"schemaUpdateMode":"ForceSync"
         // }
         // Use Ctrl+Space to trigger IntelliSense and get assistance on the supported configurations for AL development.
     ]

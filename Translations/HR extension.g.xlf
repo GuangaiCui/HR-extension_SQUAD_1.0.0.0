@@ -18428,6 +18428,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">XmlPort Exporta Empregados - Property Caption</note>
         </trans-unit>
+        <trans-unit id="XmlPort 988841493 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetArmazens</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GetArmazens - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4293520198 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetCentrosCusto</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GetCentrosCusto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 1187565675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetClientes</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GetClientes - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4048294265 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetEmpregados</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GetEmpregados - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 2264960449 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetFornecedores</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GetFornecedores - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4086385645 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetMateriais</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GetMateriais - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="XmlPort 4055869945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GetProjectos</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">XmlPort GetProjectos - Property Caption</note>
+        </trans-unit>
         <trans-unit id="XmlPort 883927791 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Importa Empregados</source>
           <note from="Developer" annotates="general" priority="2"></note>
