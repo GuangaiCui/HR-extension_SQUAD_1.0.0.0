@@ -443,8 +443,38 @@ page 53035 "Ficha Empregado"
                 field("IVA %"; Rec."IVA %")
                 {
                     ApplicationArea = All;
-
                 }
+
+                field("IRS Jovem"; Rec."IRS Jovem")
+                {
+                    ApplicationArea = All;
+                    trigger OnValidate()
+                    begin
+                        IsIrsJovemVisible := Rec."IRS Jovem";
+                        //CurrPage.Update(false);
+                    end;
+                }
+                group(IRSJovem)
+                {
+                    Visible = IsIrsJovemVisible;
+                    Caption = '';
+                    field("Escalão"; Rec."Escalão IRS Jovem")
+                    {
+                        ApplicationArea = All;
+                        Editable = IsIrsJovemVisible;
+                        //Lookup = true;
+                        //LookupPageId = "Lista Regimes IRS Jovem";
+
+                        // trigger OnLookup(var text: Text): Boolean
+                        // var
+                        //     irsJovem: Record "Regimes IRS Jovem";
+                        // begin
+                        //     if Page.RunModal(Page::"Lista Regimes IRS Jovem", irsJovem) = Action::LookupOK then
+                        //         Rec."Escalão IRS Jovem" := irsJovem.Code;
+                        // end;
+                    }
+                }
+
             }
             group("Seg. Social")
             {
@@ -1448,6 +1478,13 @@ page 53035 "Ficha Empregado"
 
         Rec.SetFilter("Data Filtro Inicio", '<=%1', WorkDate);
         Rec.SetFilter("Data Filtro Fim", '>=%1|=%2', WorkDate, 0D);
+
+        IsIrsJovemVisible := Rec."IRS Jovem";
+    end;
+
+    trigger OnAfterGetRecord()
+    begin
+        IsIrsJovemVisible := Rec."IRS Jovem";
     end;
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
@@ -1475,6 +1512,7 @@ page 53035 "Ficha Empregado"
         EditaEmp: Boolean;
         IsInsert: Boolean;
         rCriarFichaEmp: Report "Copiar Ficha Empregado";
+        IsIrsJovemVisible: Boolean;
 
 
     procedure ValidaDatas(): Boolean

@@ -10,7 +10,7 @@ report 53073 "Mapa Validação Contabilística"
     ApplicationArea = HumanResourcesAppArea;
 
     DefaultLayout = RDLC;
-    RDLCLayout = 'Layouts\MapaValidaçãoContabilística.rdl';
+    RDLCLayout = '.\Layouts\MapaValidaçãoContabilística.rdl';
 
     Caption = 'Mapa Validação Contabilística';
     Permissions = TableData "Integração Contabilistica" = rimd;

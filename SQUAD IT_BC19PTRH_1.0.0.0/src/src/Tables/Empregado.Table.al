@@ -7,6 +7,7 @@ table 53035 "Empregado"
     DataCaptionFields = "No.", "First Name", "Last Name", Status;
     DrillDownPageID = "Lista Empregado";
     LookupPageID = "Lista Empregado";
+    DataClassification = CustomerContent;
 
     fields
     {
@@ -219,7 +220,6 @@ table 53035 "Empregado"
         field(36; "Global Dimension 1 Code"; Code[20])
         {
             CaptionClass = '1,1,1';
-            DataClassification = ToBeClassified;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(1));
 
             trigger OnValidate()
@@ -230,7 +230,6 @@ table 53035 "Empregado"
         field(37; "Global Dimension 2 Code"; Code[20])
         {
             CaptionClass = '1,1,2';
-            DataClassification = ToBeClassified;
             TableRelation = "Dimension Value".Code WHERE("Global Dimension No." = CONST(2));
 
             trigger OnValidate()
@@ -1292,6 +1291,18 @@ table 53035 "Empregado"
             Caption = 'NIB Cartão Refeição';
             DataClassification = ToBeClassified;
             Description = 'tagus';
+        }
+
+        field(302; "IRS Jovem"; Boolean)
+        {
+            Caption = 'IRS Jovem';
+            DataClassification = ToBeClassified;
+        }
+        field(303; "Escalão IRS Jovem"; Code[60])
+        {
+            Caption = 'Escalão IRS Jovem';
+            DataClassification = ToBeClassified;
+            TableRelation = "Regimes IRS Jovem".Code;
         }
     }
 

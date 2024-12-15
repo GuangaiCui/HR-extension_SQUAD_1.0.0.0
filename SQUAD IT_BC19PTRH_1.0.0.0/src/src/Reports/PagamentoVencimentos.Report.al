@@ -180,6 +180,7 @@ report 53055 "Pagamento Vencimentos"
                     if TabSeccaoDiarioGeral.FindFirst then begin
                         NDocumento := NoSeriesMgt.GetNextNo(TabSeccaoDiarioGeral."No. Series", WorkDate, true);
                         nSerieReg := TabSeccaoDiarioGeral."Posting No. Series";
+
                     end else
                         Error(StrSubstNo(Text50000, l_Empregado."Nome Livro Diario Pag.", l_Empregado."Secção Diario Pag."));
 

@@ -1,7 +1,25 @@
 {
     "version": "0.2.0",
     "configurations": [
-        {
+        // {
+        //     "name": "INTROSYS SQD RH TESTE",
+        //     "type": "al",
+        //     "request": "launch",
+        //     "environmentType": "Sandbox",
+        //     "environmentName": "Sandbox_RHv4",
+        //     "startupObjectId": 53044,
+        //     "startupObjectType": "Report",
+        //     "breakOnError": "All",
+        //     //"schemaUpdateMode":"Synchronize",
+        //     "breakOnRecordWrite": "None",
+        //     "launchBrowser": true,
+        //     "enableSqlInformationDebugger": true,
+        //     "enableLongRunningSqlStatements": true,
+        //     "longRunningSqlStatementsThreshold": 500,
+        //     "numberOfSqlStatements": 10,
+        //     "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
+         //}
+          {
             "name": "Publish: Squad RH SandBox",
             "type": "al",
             "request": "launch",
@@ -17,47 +35,63 @@
             "enableLongRunningSqlStatements": true,
             "longRunningSqlStatementsThreshold": 500,
             "numberOfSqlStatements": 10,
+            //"tenant": "91abd816-8e10->4bec-b57d-d65c9ba17f07"
+        },
+        {
+            "name": "Attach RH SandBox",
+            "type": "al",
+            "userId": "1e4737b4-08dc-4649-90fe-bd78d4030635",
+            "request": "attach",
+            "environmentType": "Sandbox",
+            "environmentName": "SQUAD_SNDBX_RH",
+            "breakOnError":true,
+            "breakOnRecordWrite": false,
+            "enableSqlInformationDebugger": true,
+            "enableLongRunningSqlStatements": true,
+            "longRunningSqlStatementsThreshold": 500,
+            "numberOfSqlStatements": 10,
+            "breakOnNext":"WebServiceClient",
             "tenant": "91abd816-8e10-4bec-b57d-d65c9ba17f07"
         }
-        ,
-        {
-            "name": "Publish: INTRSYS",
-            "type": "al",
-            "request": "launch",
-            "environmentType": "Sandbox",
-            "environmentName": "INTRSYS_SNDBX",
-            "schemaUpdateMode":"ForceSync",
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
-            "launchBrowser": true,
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
-        }
-        ,
-        {
-            "name": "Publish: Your own server",
-            "type": "al",
-            "request": "launch",
-            "environmentType": "OnPrem",
-            "server": "http://localhost:8080/BC240",
-            "serverInstance": "BC240",
-            "authentication": "Windows",
-            "startupObjectId": 53131,
-            "breakOnError": "All",
-            "breakOnRecordWrite": "None",
-            "launchBrowser": true,
-            "enableSqlInformationDebugger": true,
-            "enableLongRunningSqlStatements": true,
-            "longRunningSqlStatementsThreshold": 500,
-            "numberOfSqlStatements": 10,
-            "tenant": "default",
-            "port": 7049,
-            "usePublicURLFromServer": true,
-            "schemaUpdateMode":"ForceSync"
-        }
+        // ,
+        // {
+        //     "name": "Publish: INTRSYS",
+        //     "type": "al",
+        //     "request": "launch",
+        //     "environmentType": "Sandbox",
+        //     "environmentName": "INTRSYS_SNDBX",
+        //     "schemaUpdateMode":"ForceSync",
+        //     "breakOnError": "All",
+        //     "breakOnRecordWrite": "None",
+        //     "launchBrowser": true,
+        //     "enableSqlInformationDebugger": true,
+        //     "enableLongRunningSqlStatements": true,
+        //     "longRunningSqlStatementsThreshold": 500,
+        //     "numberOfSqlStatements": 10,
+        //     "tenant": "27d0209d-d0e9-41d0-ad47-0342628dd53f"
+        // }
+        // ,
+        //  {
+        //     "name": "Publish: Your own server",
+        //     "type": "al",
+        //     "request": "launch",
+        //     "environmentType": "OnPrem",
+        //     "server": "http://localhost:8080/BC240",
+        //     "serverInstance": "BC240",
+        //     "authentication": "Windows",
+        //     "startupObjectId": 53131,
+        //     "breakOnError": "All",
+        //     "breakOnRecordWrite": "None",
+        //     "launchBrowser": true,
+        //     "enableSqlInformationDebugger": true,
+        //     "enableLongRunningSqlStatements": true,
+        //     "longRunningSqlStatementsThreshold": 500,
+        //     "numberOfSqlStatements": 10,
+        //     "tenant": "default",
+        //     "port": 7049,
+        //     "usePublicURLFromServer": true,
+        //     //"schemaUpdateMode":"ForceSync"
+        // }
         // Use Ctrl+Space to trigger IntelliSense and get assistance on the supported configurations for AL development.
     ]
 }
